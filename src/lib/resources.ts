@@ -136,11 +136,9 @@ const REVISION: Record<string, string[]> = {
 
 export function getChapterResources(
   subjectSlug: string,
-  curriculumSlug: string,
-  levelSlug: string,
   chapterId: string,
 ): ChapterResources {
-  const notes = getAvailableTopics({ curriculum: curriculumSlug, level: levelSlug, subject: subjectSlug, chapter: chapterId });
+  const notes = getAvailableTopics({ subject: subjectSlug, chapter: chapterId });
 
   const videos = notes.map((t) => ({
     title: `${t.title} — explained`,
@@ -166,8 +164,6 @@ export function getChapterResources(
 
   return {
     subject: subjectSlug,
-    curriculum: curriculumSlug,
-    level: levelSlug,
     chapter: chapterId,
     notes: notes.map((t) => ({ title: t.title, desc: t.desc, url: t.url })),
     worksheets: WORKSHEETS[chapterId] ?? [],

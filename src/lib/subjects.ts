@@ -1,8 +1,8 @@
 import type { Subject, SubjectCategory } from "./types";
 
 /**
- * Subjects, grouped by category. Chapters are curriculum-spanning outlines;
- * the actual lessons (topics) live per curriculum+level under content/.
+ * Subjects, grouped by category. Chapters are subject-level outlines;
+ * the actual lessons (topics) live per chapter under content/.
  */
 export const SUBJECTS: Record<string, Subject> = {
   mathematics: {

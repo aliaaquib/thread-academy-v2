@@ -6,7 +6,7 @@ import { getPostsBySubject } from "@/lib/blog";
 export const metadata = pageMetadata({
   title: "Blog — Learning Journal",
   description:
-    "The Thread Academy learning journal: in-depth student guides to the ideas students search for most, from linear equations to photosynthesis, linked to full curriculum lessons.",
+    "The Thread Academy learning journal: in-depth student guides to the ideas students search for most, from linear equations to photosynthesis, linked to full lessons.",
   path: "/blog",
 });
 
@@ -18,7 +18,7 @@ export default function BlogIndexPage() {
       <PageHero
         crumbs={[{ label: "Home", href: "/" }, { label: "Blog" }]}
         title="The learning journal."
-        lede="Long-form guides to the ideas students search for most — each one connected to the lessons, chapters, and curricula they belong to."
+        lede="Long-form guides to the ideas students search for most — each one connected to the lessons and chapters it belongs to."
       />
       <section className="subject-overview">
         {groups.map((group) => (

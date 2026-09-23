@@ -4,7 +4,7 @@ import { EXTRA_TOPICS } from "./chapter-topics-extra";
 /**
  * Topics per chapter. Keyed by chapter id (globally unique).
  * A topic becomes a real page when its MDX file exists at
- * content/<curriculum>/<level>/<subject>/<chapter>/<topic>.mdx —
+ * content/chapters/<subject>/<chapter>/<topic>.mdx —
  * adding a topic = adding an entry here + the MDX file, never rewriting components.
  */
 export const CHAPTER_TOPICS: Record<string, Topic[]> = {

@@ -6,7 +6,6 @@ import { openSiteSearch } from "./search-bus";
 const NAV = [
   { href: "/", label: "Home" },
   { href: "/subjects", label: "Subjects" },
-  { href: "/curriculum", label: "Curriculum" },
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },

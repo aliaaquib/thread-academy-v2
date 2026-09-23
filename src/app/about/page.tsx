@@ -9,7 +9,6 @@ export const metadata = pageMetadata({
 });
 
 const PROVIDES = [
-  "Curriculum-specific routes",
   "Subject and chapter maps",
   "Textbook-style explanations",
   "Practice and revision resources",
@@ -19,15 +18,15 @@ const PROVIDES = [
 const CHAPTERS = [
   {
     title: "The problem",
-    desc: "Online learning often separates explanations, practice, and curriculum context. Students can find an answer without seeing where the idea belongs.",
+    desc: "Online learning often separates explanations and practice. Students can find an answer without seeing where the idea belongs.",
   },
   {
     title: "Our structure",
-    desc: "Subject → Curriculum → Level → Chapter → Topic. British, Cambridge, American, and IB routes keep their own stages rather than being forced into one hierarchy.",
+    desc: "Subject → Chapter → Topic. Every subject keeps its own chapters, ordered from foundations to advanced ideas.",
   },
   {
     title: "How students use it",
-    desc: "Choose the route you study, read a complete topic, work through examples, answer quick checks, and follow related topics.",
+    desc: "Choose your subject, read a complete topic, work through examples, answer quick checks, and follow related topics.",
   },
   {
     title: "Our approach",

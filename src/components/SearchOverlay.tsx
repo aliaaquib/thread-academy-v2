@@ -12,7 +12,7 @@ interface IndexEntry {
 }
 
 /** Reference search overlay: fixed dimmed backdrop, panel with a bottom-rule
- *  input, and hairline result rows (title + curriculum path). Live-filters the
+ *  input, and hairline result rows (title + subject path). Live-filters the
  *  static search index shipped at /search-index.json. */
 export function SearchOverlay({
   open,

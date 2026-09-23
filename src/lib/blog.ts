@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { contentRoot } from "./content";
-import { getChapterFor } from "./stage-chapters";
+import { getChapterForSubject } from "./stage-chapters";
 
 export interface BlogPostMeta {
   slug: string;
@@ -12,13 +12,9 @@ export interface BlogPostMeta {
   date: string;
   subject: string;
   subjectSlug: string;
-  curriculum: string;
-  /** Level slug, e.g. "igcse". */
-  level: string;
-  levelName: string;
   author: string;
   keywords: string[];
-  /** Chapter ids in (subjectSlug, curriculum, level). */
+  /** Chapter ids in subjectSlug. */
   chapters: string[];
   /** "chapterId/topicId" pairs pointing at real lesson pages. */
   lessons: string[];
@@ -54,9 +50,6 @@ function readPost(file: string): BlogPost | null {
     date: dateStr(data.date),
     subject: str(data.subject),
     subjectSlug: str(data.subject_slug),
-    curriculum: str(data.curriculum),
-    level: str(data.level),
-    levelName: str(data.level_name),
     author: str(data.author, "Thread Academy"),
     keywords: arr(data.keywords),
     chapters: arr(data.chapters),
@@ -131,13 +124,13 @@ export interface RelatedLink {
  */
 export function getRelatedLinks(post: BlogPostMeta): RelatedLink[] {
   const links: RelatedLink[] = [];
-  const base = `/subjects/${post.subjectSlug}/${post.curriculum}/${post.level}`;
+  const base = `/subjects/${post.subjectSlug}`;
   const coveredChapters = new Set<string>();
 
   for (const pair of post.lessons) {
     const [chapterId, topicId] = pair.split("/");
     if (!chapterId || !topicId) continue;
-    const chapter = getChapterFor(post.subjectSlug, post.curriculum, post.level, chapterId);
+    const chapter = getChapterForSubject(post.subjectSlug, chapterId);
     if (!chapter) continue;
     coveredChapters.add(chapterId);
     links.push({
@@ -148,7 +141,7 @@ export function getRelatedLinks(post: BlogPostMeta): RelatedLink[] {
 
   for (const chapterId of post.chapters) {
     if (coveredChapters.has(chapterId)) continue;
-    const chapter = getChapterFor(post.subjectSlug, post.curriculum, post.level, chapterId);
+    const chapter = getChapterForSubject(post.subjectSlug, chapterId);
     if (!chapter) continue;
     links.push({ title: chapter.title, href: `${base}/${chapterId}` });
   }

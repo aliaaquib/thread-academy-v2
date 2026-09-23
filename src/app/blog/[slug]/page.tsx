@@ -60,7 +60,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <p style={{ fontSize: "0.95rem" }}>
             By {post.author} · {formatDate(post.date)}
             {post.subject ? ` · ${post.subject}` : ""}
-            {post.levelName ? ` · ${post.levelName}` : ""}
           </p>
           {/* blockJS:false — blog MDX is authored in-repo (trusted), same as lessons. */}
           <MDXRemote source={post.source} components={mdxComponents} options={{ blockJS: false }} />

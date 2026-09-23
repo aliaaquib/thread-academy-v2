@@ -1,48 +1,19 @@
 import type { Chapter } from "./types";
 import { getSubject } from "./subjects";
-import { resolveLevel } from "./curriculum";
 
 /**
- * Chapter sets per (subject, curriculum, level) — the data behind the
- * Subject → Curriculum → Level → Chapters flow. Levels resolve to their
- * stage; each stage maps to one of four bands. Every subject defines its
- * own chapters per band, so chapters genuinely differ across grades.
- * Bands holding a subject's published MDX lessons reuse that subject's
- * existing chapter ids, keeping every lesson link working.
+ * Chapter sets per subject — the data behind the Subject → Chapters flow.
+ * Every subject defines its own chapters per band (foundations → developing
+ * → examination → advanced); the subject page merges the four bands into one
+ * ordered chapter list, deduplicated by chapter id. Bands holding a subject's
+ * published MDX lessons reuse that subject's existing chapter ids, keeping
+ * every lesson link working.
  */
 
 export type Band = "foundations" | "developing" | "examination" | "advanced";
 
-const STAGE_BANDS: Record<string, Band> = {
-  "british:primary": "foundations",
-  "british:secondary": "developing",
-  "british:gcse-igcse": "examination",
-  "british:a-level": "advanced",
-  "cambridge:primary": "foundations",
-  "cambridge:lower-secondary": "developing",
-  "cambridge:igcse": "examination",
-  "cambridge:as-a-level": "advanced",
-  "american:elementary-school": "foundations",
-  "american:middle-school": "developing",
-  "american:high-school": "examination",
-  "ib:pyp": "foundations",
-  "ib:myp": "developing",
-  "ib:dp": "advanced",
-};
-
-/** Finer-grained overrides for individual year slugs. */
-const YEAR_BANDS: Record<string, Band> = {
-  "american:grades-11-12": "advanced",
-};
-
-/** Which band a (curriculum, level) route belongs to. */
-export function bandFor(curriculumSlug: string, levelSlug: string): Band {
-  const yearBand = YEAR_BANDS[`${curriculumSlug}:${levelSlug}`];
-  if (yearBand) return yearBand;
-  const resolved = resolveLevel(curriculumSlug, levelSlug);
-  const stageBand = STAGE_BANDS[`${curriculumSlug}:${resolved?.stage.slug ?? levelSlug}`];
-  return stageBand ?? "developing";
-}
+/** Band order for the merged per-subject chapter list. */
+const BAND_ORDER: Band[] = ["foundations", "developing", "examination", "advanced"];
 
 export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
   "arabic": {
@@ -678,24 +649,31 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
   },
 };
 
-/** Chapters for a specific subject + curriculum + level. Falls back to
- *  the subject's default chapter list when no band data exists. */
-export function getChaptersFor(subjectSlug: string, curriculumSlug: string, levelSlug: string): Chapter[] {
-  const band = bandFor(curriculumSlug, levelSlug);
-  const byBand = BAND_CHAPTERS[subjectSlug]?.[band];
-  if (byBand && byBand.length > 0) return byBand;
+/** Chapters for a subject: the four bands merged into one ordered list,
+ *  deduplicated by chapter id (first band wins). Falls back to the
+ *  subject's default chapter list when no band data exists. */
+export function getChaptersForSubject(subjectSlug: string): Chapter[] {
+  const byBand = BAND_CHAPTERS[subjectSlug];
+  if (byBand) {
+    const seen = new Set<string>();
+    const merged: Chapter[] = [];
+    for (const band of BAND_ORDER) {
+      for (const chapter of byBand[band] ?? []) {
+        if (!seen.has(chapter.id)) {
+          seen.add(chapter.id);
+          merged.push(chapter);
+        }
+      }
+    }
+    if (merged.length > 0) return merged;
+  }
   return getSubject(subjectSlug)?.chapters ?? [];
 }
 
-/** Find one chapter within a subject + curriculum + level. Checks the
- *  band chapters first, then the subject's default chapters. */
-export function getChapterFor(
-  subjectSlug: string,
-  curriculumSlug: string,
-  levelSlug: string,
-  chapterId: string
-): Chapter | null {
-  const inBand = getChaptersFor(subjectSlug, curriculumSlug, levelSlug).find((c) => c.id === chapterId);
-  if (inBand) return inBand;
+/** Find one chapter within a subject. Checks the merged band chapters
+ *  first, then the subject's default chapters. */
+export function getChapterForSubject(subjectSlug: string, chapterId: string): Chapter | null {
+  const inBands = getChaptersForSubject(subjectSlug).find((c) => c.id === chapterId);
+  if (inBands) return inBands;
   return getSubject(subjectSlug)?.chapters.find((c) => c.id === chapterId) ?? null;
 }

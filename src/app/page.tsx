@@ -1,13 +1,13 @@
 import Link from "next/link";
 import HeroSearch from "@/components/HeroSearch";
 import { CATEGORY_ORDER, subjectsByCategory } from "@/lib/subjects";
-import { CURRICULA, CURRICULUM_SLUGS } from "@/lib/curriculum";
+import { getChaptersForSubject } from "@/lib/stage-chapters";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Thread Academy",
   description:
-    "Free school lessons, worked examples, practice and tests across British, Cambridge, American and IB curricula — from primary foundations to advanced study. No account required.",
+    "Free school lessons, worked examples, practice and tests — from foundations to advanced study. No account required.",
   path: "/",
 });
 
@@ -27,28 +27,28 @@ const GLYPHS: Record<string, string> = {
   french: "Ç",
   "environmental-science": "♻",
   "earth-science": "⊕",
-  "astronomy": "✦",
-  "engineering": "⚙",
-  "psychology": "Ψ",
-  "sociology": "◉",
+  astronomy: "✦",
+  engineering: "⚙",
+  psychology: "Ψ",
+  sociology: "◉",
   "political-science": "⚖",
-  "philosophy": "φ",
+  philosophy: "φ",
   "religious-studies": "◈",
-  "civics": "§",
+  civics: "§",
   "global-studies": "🌐",
-  "german": "Ä",
-  "arabic": "ع",
-  "chinese": "中",
-  "japanese": "あ",
-  "russian": "Ж",
+  german: "Ä",
+  arabic: "ع",
+  chinese: "中",
+  japanese: "あ",
+  russian: "Ж",
 };
 
 /** Reference "How Thread Academy works" steps, verbatim. */
 const STEPS = [
   {
     num: "1",
-    title: "Choose a route",
-    text: "Select a subject or begin with your curriculum and level.",
+    title: "Choose a subject",
+    text: "Pick the subject you want to learn.",
   },
   {
     num: "2",
@@ -77,9 +77,8 @@ export default function HomePage() {
               Follow the thread. <span className="underline">Understand the subject.</span>
             </h1>
             <p className="hero-copy">
-              Thread Academy is an open learning platform for school subjects. Study Mathematics,
-              Biology, Physics, Computer Science, languages, and more through the curriculum and
-              level you actually follow.
+              Thread Academy is an open learning platform for school subjects. Pick a subject,
+              open a chapter, and follow the thread from first principles to advanced ideas.
             </p>
           </div>
         </div>
@@ -88,10 +87,9 @@ export default function HomePage() {
 
       <section className="section" id="subjects">
         <div className="section-head">
-          <h2>Subjects, connected to real curricula.</h2>
+          <h2>Subjects, organised by chapter.</h2>
           <p>
-            Start with a discipline, choose your curriculum and level, then move through chapters
-            and complete textbook-style topics.
+            Start with a discipline, move through its chapters, and complete textbook-style topics.
           </p>
         </div>
         {CATEGORY_ORDER.map((category) => (
@@ -113,7 +111,7 @@ export default function HomePage() {
                       <div>
                         <h3>{subject.name}</h3>
                         <div className="subject-meta">
-                          {subject.chapters.length} chapter areas · four curricula
+                          {getChaptersForSubject(subject.slug).length} chapters
                         </div>
                       </div>
                       <span className="subject-arrow" aria-hidden="true">
@@ -138,37 +136,6 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="section alt" id="curriculum">
-        <div className="inner">
-          <div className="section-head">
-            <h2>Four curricula. Their own structures.</h2>
-            <p>
-              British, Cambridge, American, and IB pathways keep the stages, years, grades, and
-              programmes that belong to them.
-            </p>
-          </div>
-          <div className="curriculum-grid">
-            {CURRICULUM_SLUGS.map((slug, i) => {
-              const c = CURRICULA[slug];
-              return (
-                <Link key={slug} className="curriculum-card" href={`/curriculum/${slug}`}>
-                  <span className="curriculum-num">
-                    {String(i + 1).padStart(2, "0")} / CURRICULUM
-                  </span>
-                  <h3>{c.name}</h3>
-                  <p>{c.desc}</p>
-                  <div className="stage-line" aria-hidden="true">
-                    {c.stages.map((s) => (
-                      <span key={s.slug}>{s.name}</span>
-                    ))}
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       <section className="section" id="why">
         <aside className="today-card">
           <div className="today-label">Why we built it</div>
@@ -187,7 +154,7 @@ export default function HomePage() {
         <div className="section-head">
           <h2>How Thread Academy works.</h2>
           <p>
-            Use the platform as a guided library: find the right route, learn the topic in depth,
+            Use the platform as a guided library: find your subject, learn the topic in depth,
             practise, then follow related ideas.
           </p>
         </div>

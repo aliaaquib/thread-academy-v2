@@ -2,11 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import { SUBJECT_SLUGS, getSubject, CATEGORY_ORDER, subjectsByCategory } from "@/lib/subjects";
-import {
-  CURRICULA,
-  CURRICULUM_SLUGS,
-  curriculumOffersSubject,
-} from "@/lib/curriculum";
+import { getChaptersForSubject } from "@/lib/stage-chapters";
 import { JsonLd, courseJsonLd, pageMetadata } from "@/lib/seo";
 import type { SubjectCategory } from "@/lib/types";
 
@@ -25,20 +21,20 @@ const GLYPHS: Record<string, string> = {
   french: "Ç",
   "environmental-science": "♻",
   "earth-science": "⊕",
-  "astronomy": "✦",
-  "engineering": "⚙",
-  "psychology": "Ψ",
-  "sociology": "◉",
+  astronomy: "✦",
+  engineering: "⚙",
+  psychology: "Ψ",
+  sociology: "◉",
   "political-science": "⚖",
-  "philosophy": "φ",
+  philosophy: "φ",
   "religious-studies": "◈",
-  "civics": "§",
+  civics: "§",
   "global-studies": "🌐",
-  "german": "Ä",
-  "arabic": "ع",
-  "chinese": "中",
-  "japanese": "あ",
-  "russian": "Ж",
+  german: "Ä",
+  arabic: "ع",
+  chinese: "中",
+  japanese: "あ",
+  russian: "Ж",
 };
 
 const CATEGORY_SLUGS = ["stem", "humanities", "languages"];
@@ -72,12 +68,9 @@ export async function generateMetadata({ params }: { params: { subject: string }
   }
   const subject = getSubject(params.subject);
   if (!subject) return {};
-  const curricula = CURRICULUM_SLUGS.filter((c) => curriculumOffersSubject(c, subject.slug))
-    .map((c) => CURRICULA[c].name)
-    .join(", ");
   return pageMetadata({
     title: `${subject.name} lessons, chapters and practice`,
-    description: `${subject.tagline ?? subject.intro} Follow ${subject.name} through ${curricula}: levels, chapters, lessons, worked examples and practice — free, no account required.`,
+    description: `${subject.tagline ?? subject.intro} Follow the ${subject.name} chapters: lessons, worked examples and practice — free, no account required.`,
     path: `/subjects/${subject.slug}`,
   });
 }
@@ -111,7 +104,7 @@ function CategoryView({ category, slug }: { category: SubjectCategory; slug: str
                 <div>
                   <h3>{subject.name}</h3>
                   <div className="subject-meta">
-                    {subject.chapters.length} chapter areas · four curricula
+                    {getChaptersForSubject(subject.slug).length} chapters
                   </div>
                 </div>
                 <span className="subject-arrow" aria-hidden="true">
@@ -133,6 +126,8 @@ export default function SubjectPage({ params }: { params: { subject: string } })
   }
   const subject = getSubject(params.subject);
   if (!subject) notFound();
+
+  const chapters = getChaptersForSubject(subject.slug);
 
   return (
     <>
@@ -156,35 +151,26 @@ export default function SubjectPage({ params }: { params: { subject: string } })
       <section className="subject-overview">
         <div>
           <div className="eyebrow" style={{ marginBottom: 18 }}>
-            Choose curriculum
+            Chapters
           </div>
-          <div className="curriculum-grid">
-              {CURRICULUM_SLUGS.filter((cSlug) => curriculumOffersSubject(cSlug, subject.slug)).map(
-                (cSlug, i) => {
-                  const curriculum = CURRICULA[cSlug];
-                  return (
-                    <Link
-                      key={cSlug}
-                      className="curriculum-card"
-                      href={`/subjects/${subject.slug}/${cSlug}`}
-                    >
-                      <span className="curriculum-num">
-                        {String(i + 1).padStart(2, "0")} / PATH
-                      </span>
-                      <h3>{curriculum.name}</h3>
-                      <p>
-                        {curriculum.stages.map((s) => s.name).join(" · ")}
-                      </p>
-                      <div className="stage-line" aria-hidden="true">
-                        <span>Curriculum</span>
-                        <span>Level</span>
-                        <span>Chapters</span>
-                      </div>
-                    </Link>
-                  );
-                }
-              )}
-            </div>
+          <div className="chapters">
+            {chapters.map((chapter, i) => {
+              return (
+                <Link
+                  key={chapter.id}
+                  className="chapter-link"
+                  href={`/subjects/${subject.slug}/${chapter.id}`}
+                >
+                  <span className="chapter-index">{String(i + 1).padStart(2, "0")}</span>
+                  <span>
+                    <span className="chapter-title">{chapter.title}</span>
+                    <span className="chapter-desc">{chapter.desc}</span>
+                  </span>
+                  <span className="chapter-status">Read →</span>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
     </>

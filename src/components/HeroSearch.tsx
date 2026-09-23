@@ -3,10 +3,10 @@
 import Link from "next/link";
 
 const QUICK_LINKS = [
-  { label: "Linear equations", href: "/subjects/mathematics/british/year-8/algebra/linear-equations" },
-  { label: "Cell structure", href: "/subjects/biology/cambridge/igcse/cell-biology/cell-structure" },
-  { label: "Newton’s laws", href: "/subjects/physics/cambridge/igcse/forces/newtons-laws" },
-  { label: "Variables", href: "/subjects/computer-science/cambridge/igcse/programming/variables" },
+  { label: "Linear equations", href: "/subjects/mathematics/algebra/linear-equations" },
+  { label: "Cell structure", href: "/subjects/biology/cell-biology/cell-structure" },
+  { label: "Newton’s laws", href: "/subjects/physics/forces/newtons-laws" },
+  { label: "Variables", href: "/subjects/computer-science/programming/variables" },
 ];
 
 /** Reference quick links to featured lessons. The hero search field was removed;

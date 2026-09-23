@@ -71,7 +71,7 @@ export function breadcrumbJsonLd(crumbs: Crumb[]): Record<string, unknown> {
   };
 }
 
-/** schema.org Course JSON-LD for a subject (optionally within a curriculum). */
+/** schema.org Course JSON-LD for a subject. */
 export function courseJsonLd(input: {
   name: string;
   description: string;

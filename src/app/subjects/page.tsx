@@ -1,12 +1,13 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { CATEGORY_ORDER, subjectsByCategory } from "@/lib/subjects";
+import { getChaptersForSubject } from "@/lib/stage-chapters";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Subjects",
   description:
-    "Explore 28 school subjects by category. Every subject can be followed through British, Cambridge, American, or IB structures.",
+    "Explore 28 school subjects by category. Every subject is organised into chapters with lessons, worked examples and practice.",
   path: "/subjects",
 });
 
@@ -69,7 +70,7 @@ export default function SubjectsPage() {
                     <div>
                       <h3>{subject.name}</h3>
                       <div className="subject-meta">
-                        {subject.chapters.length} chapter areas · four curricula
+                        {getChaptersForSubject(subject.slug).length} chapters
                       </div>
                     </div>
                     <span className="subject-arrow" aria-hidden="true">

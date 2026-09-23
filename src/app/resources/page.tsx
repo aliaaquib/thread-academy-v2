@@ -1,9 +1,8 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { getContentChapters } from "@/lib/content";
-import { getCurriculum, resolveLevel } from "@/lib/curriculum";
 import { SUBJECT_SLUGS, getSubject } from "@/lib/subjects";
-import { getChapterFor } from "@/lib/stage-chapters";
+import { getChapterForSubject, getChaptersForSubject } from "@/lib/stage-chapters";
 import { pageMetadata } from "@/lib/seo";
 
 const GLYPHS: Record<string, string> = {
@@ -32,19 +31,20 @@ export default function ResourcesHubPage() {
   const chapters = getContentChapters();
 
   const cards = SUBJECT_SLUGS.map((subjectSlug) => {
-    const combos = chapters.filter((c) => c.subject === subjectSlug);
-    if (combos.length === 0) return null;
-    const combo =
-      combos.find((c) => c.curriculum === "cambridge" && c.level === "igcse") ?? combos[0];
     const subject = getSubject(subjectSlug);
-    const curriculum = getCurriculum(combo.curriculum);
-    const level = curriculum ? resolveLevel(combo.curriculum, combo.level) : null;
-    const chapter = getChapterFor(subjectSlug, combo.curriculum, combo.level, combo.chapter);
-    if (!subject || !curriculum || !level || !chapter) return null;
+    if (!subject) return null;
+    // First chapter (in subject order) that has published lessons.
+    const withContent = new Set(
+      chapters.filter((c) => c.subject === subjectSlug).map((c) => c.chapter)
+    );
+    const first = getChaptersForSubject(subjectSlug).find((c) => withContent.has(c.id));
+    if (!first) return null;
+    const chapter = getChapterForSubject(subjectSlug, first.id);
+    if (!chapter) return null;
     return {
       subject,
-      href: `/resources/${subjectSlug}/${combo.curriculum}/${combo.level}/${combo.chapter}`,
-      meta: `${curriculum.name} · ${level.name} · ${chapter.title}`,
+      href: `/resources/${subjectSlug}/${chapter.id}`,
+      meta: chapter.title,
     };
   }).filter((c) => c !== null);
 

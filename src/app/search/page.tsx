@@ -19,7 +19,7 @@ export default function SearchPage() {
       <PageHero
         crumbs={[{ label: "Home", href: "/" }, { label: "Search" }]}
         title="Search"
-        lede="Every lesson, chapter and resource — across all subjects and curricula."
+        lede="Every lesson, chapter and resource — across all subjects."
       />
       <div className="subject-overview" style={{ paddingTop: 0 }}>
         <Suspense
