@@ -1,0 +1,77 @@
+---
+title: "Changing Data"
+lede: "Add, update and delete rows safely with INSERT, UPDATE and DELETE."
+---
+
+<LearningObjectives>
+  <li>Define and explain Changing Data in your own words</li>
+  <li>Use key terms such as table accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Changing Data: add, update and delete rows safely with INSERT, UPDATE and DELETE.
+
+<Definition term="Changing Data">
+  Add, update and delete rows safely with INSERT, UPDATE and DELETE.
+</Definition>
+
+## Key ideas
+
+### Keys stop data going missing
+
+A primary key guarantees every row can be found exactly once — without one, two customers called 'Smith' become indistinguishable. Foreign keys then link tables: an order row stores the customer's ID rather than copying their whole address, so an address change is updated in one place only. This is the foundation of reliable data.
+
+### SQL describes what, not how
+
+You write SELECT Name FROM Students WHERE Year = 12 and the database works out how to find the rows — SQL is declarative. WHERE filters rows, ORDER BY sorts them, and JOIN combines tables via their keys. Because you describe the result you want, the same query works on ten rows or ten million.
+
+**Key term — table:** A database structure of rows (records) and columns (fields), storing one type of thing — for example, one table per customer, one per order.
+
+<WorkedExample title="Querying the Students Table">
+  Table Students has columns ID, Name, Year with rows (1, Priya, 12), (2, Tom, 11), (3, Aisha, 12), (4, Leo, 10). Write a query listing the names of Year 12 students alphabetically.
+
+  We need names only, from the Students table: SELECT Name FROM Students.
+  Keep only Year 12 rows: add WHERE Year = 12. This matches Priya and Aisha.
+  Sort alphabetically: add ORDER BY Name. Aisha comes before Priya.
+  Full query: SELECT Name FROM Students WHERE Year = 12 ORDER BY Name;.
+
+  **Answer:** The query returns two rows: Aisha, then Priya.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Forgetting the WHERE clause in an UPDATE or DELETE** Correction: UPDATE Students SET Year = 13 with no WHERE changes every row — always write the WHERE first, or test with a SELECT using the same condition.
+  - **Storing the same fact in two tables** Correction: store it once and link with a foreign key — duplicated data drifts out of sync when only one copy is updated.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="What is wrong with DELETE FROM Students; and how do you fix it?" hint="Which rows does it delete?">
+    It deletes every row in the table — add a WHERE clause, for example DELETE FROM Students WHERE ID = 4;, to remove only Leo.
+  </PracticeItem>
+  <PracticeItem question="True or false: SQL tells the database exactly how to find the data, step by step." hint="Declarative versus imperative.">
+    False — SQL is declarative: you describe what you want and the database engine decides how to retrieve it.
+  </PracticeItem>
+  <PracticeItem question="Why must a primary key never be duplicated or left empty?" hint="Think about finding one exact row.">
+    It is the unique identifier for a row — duplicates or blanks would make it impossible to pinpoint exactly one record.
+  </PracticeItem>
+  <PracticeItem question="An Orders table has a CustomerID column. Is CustomerID a primary or foreign key here, and why?" hint="Which table does it identify rows in?">
+    A foreign key — it stores the primary key of a row in the Customers table, linking each order to its customer.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Changing Data — quick check">
+  <QuizQuestion question="Which of these best defines &quot;table&quot;?" options={["A field (or combination) that uniquely identifies each row in a table, such as a customer ID. It can never be empty or duplicated.", "A question asked of a database in SQL — most famously a SELECT statement that retrieves matching rows.", "A field in one table that stores the primary key of a row in another table, creating a link between them.", "A database structure of rows (records) and columns (fields), storing one type of thing — for example, one table per customer, one per order."]} answer={3} explanation="A database structure of rows (records) and columns (fields), storing one type of thing — for example, one table per customer, one per order." />
+  <QuizQuestion question="What does this return? SELECT Name FROM Students WHERE Year = 10; using the example table." options={["One row: Leo — only Leo has Year 9.", "One row: Leo — only Leo has Year 12.", "One row: Leo — only Leo has Year 11.", "One row: Leo — only Leo has Year 10."]} answer={3} explanation="One row: Leo — only Leo has Year 10." />
+  <QuizQuestion question="Write SQL to show the Title and Author of every book published in 2010 from a Books table." options={["SELECT Title, Author FROM Books WHERE Year = 2011;", "SELECT Title, Author FROM Books WHERE Year = 2012;", "SELECT Title, Author FROM Books WHERE Year = 2009;", "SELECT Title, Author FROM Books WHERE Year = 2010;"]} answer={3} explanation="SELECT Title, Author FROM Books WHERE Year = 2010;." />
+</Quiz>
+
+<Summary>
+  - Changing Data: add, update and delete rows safely with INSERT, UPDATE and DELETE.
+  - Keys stop data going missing: A primary key guarantees every row can be found exactly once — without one, two customers called 'Smith' become indistinguishable.
+  - query: A question asked of a database in SQL — most famously a SELECT statement that retrieves matching rows.
+  - Watch out for: forgetting the WHERE clause in an UPDATE or DELETE
+</Summary>

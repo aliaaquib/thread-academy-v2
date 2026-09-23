@@ -1,0 +1,79 @@
+---
+title: "Linear Search"
+lede: "Find items by checking each one in turn."
+---
+
+<LearningObjectives>
+  <li>Define and explain Linear Search in your own words</li>
+  <li>Use key terms such as linear search accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Not all solutions are equal: some find a name in a list of a million in twenty steps, while others need a million. At GCSE you move from writing any working solution to writing good ones. This chapter covers the classic searching and sorting algorithms — and how to measure which is best.
+
+This lesson focuses on Linear Search: find items by checking each one in turn.
+
+<Definition term="Linear Search">
+  Find items by checking each one in turn.
+</Definition>
+
+## Key ideas
+
+### Binary search needs sorted data
+
+Binary search is dramatically faster than linear search — about 20 comparisons for a million items — but it only works if the list is sorted first. Sorting costs time too, so for a one-off search of unsorted data, linear search can still win. The right algorithm depends on the situation, not just the theory.
+
+### Worst case is what matters
+
+An algorithm might get lucky and find the target first try, but engineers plan for the worst case — the slowest possible run. Big-O describes this growth: O(n) means doubling the input roughly doubles the time, while O(n²) means doubling the input roughly quadruples it.
+
+**Key term — linear search:** Checking each item in a list one by one until the target is found. Simple, works on unsorted lists, but slow on large ones.
+
+<WorkedExample title="Binary Search in Action">
+  Use binary search to find 7 in the sorted list [1, 3, 5, 7, 9, 11, 13].
+
+  low = 0, high = 6. Middle index = (0 + 6) // 2 = 3. The item at index 3 is 5.
+  5 is less than 7, so discard the left half: low becomes 4. Middle index = (4 + 6) // 2 = 5. The item at index 5 is 11.
+  11 is greater than 7, so discard the right half: high becomes 4. Middle index = (4 + 4) // 2 = 4. The item at index 4 is 7.
+  Found — 7 is at index 4, after just 3 comparisons.
+
+  **Answer:** Binary search finds 7 at index 4 in 3 comparisons; linear search would have needed 4.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Using binary search on an unsorted list** Correction: sort the list first, or use linear search — binary search on unsorted data gives wrong answers, not just slow ones.
+  - **Forgetting that list indices start at 0** Correction: in a 7-item list the last index is 6 — off-by-one errors are the classic exam trap, so trace carefully.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="How many comparisons does linear search need in the worst case to find an item in a list of 50?" hint="Worst case means checking every item.">
+    50 — every item must be checked if the target is last or missing.
+  </PracticeItem>
+  <PracticeItem question="Roughly how many comparisons does binary search need for 1,000,000 sorted items?" hint="Each comparison halves the list; 2 to the power of 20 is about a million.">
+    About 20 — each step halves the remaining items, so a million shrinks to one in roughly 20 halvings.
+  </PracticeItem>
+  <PracticeItem question="Why might linear search beat binary search for a single search?" hint="Think about what binary search needs first.">
+    If the list is unsorted, binary search needs it sorted first — that sorting cost can outweigh the faster search for a one-off lookup.
+  </PracticeItem>
+  <PracticeItem question="An algorithm takes 4 seconds for 100 items and 16 seconds for 200 items. What Big-O growth does this suggest?" hint="Doubling the input quadrupled the time.">
+    O(n²) — quadrupling when the input doubles is the signature of quadratic growth.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Linear Search — quick check">
+  <QuizQuestion question="Which of these best defines &quot;linear search&quot;?" options={["Sorting by repeatedly stepping through a list, swapping neighbouring items that are in the wrong order, until no swaps are needed.", "Repeatedly halving a sorted list to find a target — comparing with the middle item and discarding the half that cannot contain it.", "A way of describing how an algorithm's running time grows as the input grows — for example, linear search is O(n) and binary search is O(log n).", "Checking each item in a list one by one until the target is found. Simple, works on unsorted lists, but slow on large ones."]} answer={3} explanation="Checking each item in a list one by one until the target is found. Simple, works on unsorted lists, but slow on large ones." />
+  <QuizQuestion question="True or false: binary search is always the best searching algorithm." options={["Sometimes true", "Cannot be determined from the information given", "True", "False — it needs sorted data, and for tiny or unsorted lists the overhead is not worth it; the best algorithm depends on the situation."]} answer={3} explanation="False — it needs sorted data, and for tiny or unsorted lists the overhead is not worth it; the best algorithm depends on the situation." />
+  <QuizQuestion question="Trace one pass of bubble sort on [5, 3, 8, 1]. What is the list afterwards?" options={["[4 5, 1, 8] — 5 and 3 swap, 5 and 8 stay, 8 and 1 swap.", "[5 5, 1, 8] — 5 and 3 swap, 5 and 8 stay, 8 and 1 swap.", "[2 5, 1, 8] — 5 and 3 swap, 5 and 8 stay, 8 and 1 swap.", "[3, 5, 1, 8] — 5 and 3 swap, 5 and 8 stay, 8 and 1 swap."]} answer={3} explanation="[3, 5, 1, 8] — 5 and 3 swap, 5 and 8 stay, 8 and 1 swap." />
+</Quiz>
+
+<Summary>
+  - Linear Search: find items by checking each one in turn.
+  - Binary search needs sorted data: Binary search is dramatically faster than linear search — about 20 comparisons for a million items — but it only works if the list is sorted first.
+  - binary search: Repeatedly halving a sorted list to find a target — comparing with the middle item and discarding the half that cannot contain it.
+  - Watch out for: using binary search on an unsorted list
+</Summary>

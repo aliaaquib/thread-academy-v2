@@ -1,0 +1,664 @@
+/* ===== Self-hosted fonts (was: Google Fonts stylesheet) — identical files, same-origin ===== */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggexSg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggexSg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggexSg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggexSg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggSxSuXd.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggixSuXd.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/xn7gYHE41ni1AdIRggexSg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/cY9AfjOCX1hbuyalUrK439HyjJBG.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/cY9AfjOCX1hbuyalUrK439DyjJBG.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/cY9AfjOCX1hbuyalUrK4397yjA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/cY9AfjOCX1hbuyalUrK439HyjJBG.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/cY9AfjOCX1hbuyalUrK439DyjJBG.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/cY9AfjOCX1hbuyalUrK4397yjA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ============================================================
+   Thread Academy — approved visual reference, rebuilt 1:1.
+   White/light premium editorial design. Manrope (UI) +
+   Newsreader (headings). One lime accent. No gradients,
+   no border-radius (except the nav search circle), no shadows
+   except the two hard offset shadows and --shadow on
+   code-lab / search-panel.
+   Sections 1–8 below are the reference CSS verbatim.
+   Section 9 adapts the same visual language to the
+   textbook components used by the MDX content.
+   ============================================================ */
+
+/* ---------- 1. Design tokens (verbatim) ---------- */
+:root{color-scheme:light;--bg:#fff;--surface:#f5f6f2;--surface-2:#eceee8;--ink:#171914;--muted:#62665c;--line:#dfe2da;--accent:#d8ff3e;--accent-ink:#273300;--accent-deep:#526d00;--code:#171b16;--code-ink:#f2f6ee;--danger:#a63a35;--success:#386400;--shadow:0 18px 54px rgba(20,25,15,.08);--content:1240px;--reading:760px}
+
+/* ---------- 2. Base (verbatim; net-effective cascade) ---------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,sans-serif;line-height:1.55}
+button,input,select,textarea{font:inherit;color:inherit}
+button,a{cursor:pointer}
+a{font:inherit;color:inherit;text-decoration:none}
+svg{display:block}
+.shell{min-height:100vh}
+.view{min-height:calc(100vh - 78px)}
+
+/* ---------- 3. Navigation (verbatim) ---------- */
+.nav{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 max(24px,calc((100vw - var(--content))/2));gap:34px;background:var(--bg);position:sticky;top:0;z-index:20}
+.brand{font-family:Newsreader,serif;font-size:1.65rem;font-weight:600;letter-spacing:-.04em;display:flex;align-items:center;gap:10px}
+.brand-mark{width:15px;height:24px;background:var(--accent);border:1px solid var(--ink);transform:skew(-12deg)}
+.nav-links{display:flex;align-items:center;gap:27px;font-size:.88rem;font-weight:650}
+.nav-links a:hover{color:var(--accent-deep)}
+.nav-actions{margin-left:auto;display:flex;gap:10px;align-items:center}
+.nav-search{border:0;background:transparent;width:38px;height:38px;display:grid;place-items:center;border-radius:50%}
+.nav-search:hover{background:var(--surface)}
+.text-btn{border:0;background:transparent;padding:10px 12px;font-weight:650}
+.learn-btn{border:1px solid var(--ink);background:var(--accent);color:var(--accent-ink);padding:11px 18px;font-weight:800;box-shadow:3px 3px 0 var(--ink)}
+
+
+/* ---------- 4. Homepage hero (verbatim) ---------- */
+.home-hero{max-width:var(--content);margin:auto;padding:110px 24px 100px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:80px;align-items:end}
+.eyebrow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--accent-deep)}
+h1,h2,h3{font-family:Newsreader,serif;letter-spacing:-.035em}
+.home-hero h1{font-size:clamp(4rem,8vw,7.6rem);line-height:.83;margin:20px 0 34px;max-width:900px}
+.home-hero h1 .underline{position:relative;display:inline-block}
+.home-hero h1 .underline:after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.13em;background:var(--accent);z-index:-1}
+.hero-copy{font-size:1.14rem;max-width:650px;color:var(--muted);margin:0}
+.today-card{border-top:4px solid var(--ink);padding-top:22px}
+.today-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.09em;font-weight:800;color:var(--muted)}
+.today-card h2{font-size:2.15rem;line-height:1.02;margin:10px 0 14px}
+.today-card p{color:var(--muted);margin:0 0 18px}
+.inline-link{display:inline-flex;align-items:center;gap:10px;font-weight:800;border-bottom:2px solid var(--accent);padding-bottom:3px}
+.search-wrap{margin-top:66px;max-width:900px;position:relative}
+.hero-search{width:100%;height:78px;border:2px solid var(--ink);background:var(--bg);padding:0 150px 0 66px;font-size:1.08rem;outline:none;box-shadow:7px 7px 0 var(--accent)}
+.search-icon{position:absolute;left:23px;top:27px}
+.search-submit{position:absolute;right:14px;top:13px;height:52px;padding:0 24px;border:0;background:var(--ink);color:var(--bg);font-weight:800}
+.quick-links{display:flex;gap:10px 20px;flex-wrap:wrap;margin-top:24px;font-size:.84rem}
+.quick-links span{color:var(--muted)}
+.quick-links a{font-weight:700;border-bottom:1px solid var(--line)}
+.quick-links a:hover{border-color:var(--ink)}
+
+/* ---------- 5. Sections, cards, how-steps, footer (verbatim; net-effective cascade) ---------- */
+.section{max-width:var(--content);margin:auto;padding:110px 24px}
+.section.alt{max-width:none;background:var(--surface)}
+.section.alt>.inner{max-width:var(--content);margin:auto}
+.section-head{display:grid;grid-template-columns:1fr minmax(280px,430px);align-items:end;gap:50px;margin-bottom:48px}
+.section-head h2{font-size:clamp(2.7rem,5vw,4.5rem);line-height:.95;margin:0}
+.section-head p{color:var(--muted);font-size:1rem;margin:0}
+.subjects-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.subject-card{min-height:228px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg);transition:background .18s}
+.subject-card:hover{background:var(--accent)}
+.subject-card:hover .subject-meta,.subject-card:hover .subject-arrow{color:var(--accent-ink)}
+.subject-icon{width:52px;height:52px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;font-weight:800;font-size:1.12rem}
+.subject-bottom{display:flex;justify-content:space-between;align-items:end;gap:16px}
+.subject-card h3{font-size:1.75rem;line-height:1;margin:0 0 9px}
+.subject-meta{font-size:.77rem;color:var(--muted)}
+.subject-arrow{font-size:1.6rem;color:var(--muted)}
+.curriculum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.curriculum-card{background:var(--bg);border:1px solid var(--line);padding:38px;min-height:290px;display:flex;flex-direction:column}
+.curriculum-num{font-size:.73rem;letter-spacing:.1em;color:var(--muted);font-weight:800}
+.curriculum-card h3{font-size:2.4rem;line-height:1;margin:34px 0 14px}
+.curriculum-card p{color:var(--muted);max-width:480px;margin:0}
+.stage-line{margin-top:auto;padding-top:28px;display:flex;gap:8px;flex-wrap:wrap;font-size:.75rem;font-weight:700}
+.stage-line span,.stage-line a{padding:6px 9px;border:1px solid var(--line);background:var(--surface);color:inherit}
+.curriculum-card:hover{border-color:var(--ink)}
+.curriculum-card:hover h3{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:7px;text-underline-offset:2px}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.how-step{padding:30px 28px 8px 0;margin-right:28px;border-right:1px solid var(--line)}
+.how-step:last-child{border:0}
+.how-n{width:34px;height:34px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800;margin-bottom:44px}
+.how-step h3{font-size:1.7rem;margin:0 0 10px}
+.how-step p{font-size:.9rem;color:var(--muted);margin:0}
+.footer{border-top:1px solid var(--line);padding:56px max(24px,calc((100vw - var(--content))/2)) 34px;color:var(--muted);font-size:.85rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,minmax(0,1fr));gap:40px}
+.footer-brand b{color:var(--ink);font-size:1rem}
+.footer-brand p{margin:10px 0 0;max-width:260px;font-size:.82rem}
+.footer-h{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--muted);margin:0 0 12px}
+.footer-links{list-style:none;margin:0;padding:0}
+.footer-links li{margin:0;padding:7px 0}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--ink)}
+.footer-bottom{border-top:1px solid var(--line);margin-top:44px;padding-top:24px;display:flex;justify-content:space-between;gap:16px;font-size:.78rem}
+
+/* ---------- 6. Interior pages (verbatim) ---------- */
+.page-hero{max-width:var(--content);margin:auto;padding:72px 24px 62px}
+.breadcrumb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin-bottom:24px}
+.breadcrumb a:hover{color:var(--ink)}
+.page-hero h1{font-size:clamp(3.6rem,7vw,6.2rem);line-height:.9;margin:0 0 24px}
+.page-hero .lede{font-size:1.16rem;color:var(--muted);max-width:720px;margin:0}
+.subject-overview{max-width:var(--content);margin:auto;padding:0 24px 110px}
+.overview-grid{display:grid;grid-template-columns:340px minmax(0,1fr);gap:70px}
+.overview-aside{padding-top:8px}
+.overview-aside h2{font:800 .76rem/1.2 Manrope,sans-serif;text-transform:uppercase;letter-spacing:.1em;margin:0 0 18px}
+.learn-list{list-style:none;padding:0;margin:0}
+.learn-list li{padding:14px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.learn-list li:before{content:"✓";color:var(--accent-deep);font-weight:800;margin-right:10px}
+.chapters{border-top:1px solid var(--ink)}
+.chapter-link{display:grid;grid-template-columns:54px 1fr auto;gap:20px;align-items:center;padding:24px 4px;border-bottom:1px solid var(--line)}
+a.chapter-link:hover{background:var(--surface);padding-left:16px;padding-right:16px}
+.chapter-index{font-size:.78rem;color:var(--muted)}
+.chapter-title{display:block;font-family:Newsreader,serif;font-size:1.6rem;letter-spacing:-.02em;color:var(--ink)}
+.chapter-desc{display:block;font-size:.8rem;color:var(--muted);margin-top:3px}
+.chapter-status{font-size:.78rem;font-weight:700}
+.chapter-status.done{color:var(--success)}
+.curr-page{max-width:var(--content);margin:auto;padding:72px 24px 110px}
+.curr-page h1{font-size:clamp(3.7rem,7vw,6rem);line-height:.9;margin:16px 0 24px}
+.curr-intro{max-width:730px;color:var(--muted);font-size:1.12rem;margin-bottom:70px}
+.path-picker{display:grid;grid-template-columns:280px 1fr;gap:52px;align-items:start}
+.stage-nav{border-top:1px solid var(--ink)}
+.stage-btn{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;padding:18px 4px;text-align:left;font-weight:700;display:flex;justify-content:space-between}
+.stage-btn.active{background:var(--accent);color:var(--accent-ink);padding-inline:14px}
+.stage-panel{background:var(--surface);padding:40px}
+.stage-panel h2{font-size:2.7rem;line-height:1;margin:0 0 12px}
+.stage-panel>p{color:var(--muted);margin:0 0 32px}
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grade-card{border:1px solid var(--line);background:var(--bg);padding:20px;min-height:120px;text-align:left;display:flex;flex-direction:column;justify-content:space-between}
+.grade-card:hover{border-color:var(--ink)}
+.grade-card b{font-family:Newsreader,serif;font-size:1.35rem}
+.grade-card span{font-size:.76rem;color:var(--muted)}
+
+/* ---------- 7. Lesson page (verbatim) ---------- */
+.lesson-layout{max-width:1440px;margin:auto;display:grid;grid-template-columns:280px minmax(0,1fr);min-height:calc(100vh - 78px)}
+.lesson-sidebar{border-right:1px solid var(--line);padding:38px 24px;position:sticky;top:78px;height:calc(100vh - 78px);overflow:auto;background:var(--surface)}
+.side-back{font-size:.78rem;font-weight:800;display:inline-flex;gap:8px;margin-bottom:30px}
+.side-title{font:600 1.7rem/1 Newsreader,serif;margin-bottom:22px}
+.side-list{list-style:none;margin:0;padding:0}
+.side-list a{display:grid;grid-template-columns:28px 1fr auto;gap:8px;align-items:center;padding:11px 10px;margin:2px -10px;font-size:.83rem;color:var(--muted)}
+.side-list a:hover{color:var(--ink)}
+.side-list a.active{background:var(--accent);color:var(--accent-ink);font-weight:800}
+.side-list .tick{color:var(--success);font-weight:800}
+.side-progress{margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.progress-bar{height:7px;background:var(--line);overflow:hidden}
+.progress-fill{height:100%;background:var(--accent-deep);width:0}
+.progress-copy{font-size:.72rem;color:var(--muted);margin-top:8px}
+.lesson-main{min-width:0}
+.lesson-top{padding:58px max(30px,calc((100% - var(--reading))/2)) 45px;border-bottom:1px solid var(--line)}
+.lesson-kicker{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-deep)}
+.lesson-top h1{font-size:clamp(3.8rem,7vw,6.2rem);line-height:.88;margin:18px 0 22px}
+.lesson-top p{font-size:1.15rem;color:var(--muted);max-width:650px;margin:0}
+.lesson-article{max-width:var(--reading);margin:auto;padding:64px 0 110px}
+.lesson-article h2{font-size:2.8rem;line-height:1;margin:64px 0 18px}
+.lesson-article h3{font-size:1.75rem;margin:38px 0 12px}
+.lesson-article p{font-size:1.03rem;color:var(--muted);margin:0 0 20px}
+.definition{font-family:Newsreader,serif;font-size:1.85rem!important;line-height:1.25;color:var(--ink)!important;border-left:8px solid var(--accent);padding-left:24px;margin:28px 0 38px!important}
+.concept-diagram{background:var(--surface);padding:32px;margin:28px 0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:22px}
+.memory-box,.label-box{border:1px solid var(--line);background:var(--bg);padding:24px;text-align:center}
+.memory-box b,.label-box b{display:block;font:600 1.4rem Newsreader,serif;margin-bottom:6px}
+.diagram-arrow{font-size:2rem}
+.note{background:var(--accent);color:var(--accent-ink);padding:24px 26px;margin:26px 0}
+.note b{display:block;margin-bottom:5px}
+.code-lab{background:var(--code);color:var(--code-ink);margin:28px 0;box-shadow:var(--shadow)}
+.lab-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.15);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.lab-body{display:grid;grid-template-columns:1fr 1fr;min-height:250px}
+.editor-pane{border-right:1px solid rgba(255,255,255,.15)}
+.pane-label{padding:14px 18px 0;color:#9aa797;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+.code-editor{width:100%;height:205px;resize:vertical;border:0;outline:0;background:transparent;color:var(--code-ink);padding:10px 18px;font:500 .92rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+.code-output{padding:10px 18px;white-space:pre-wrap;font:500 .92rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+.lab-actions{display:flex;gap:10px;padding:14px 18px;border-top:1px solid rgba(255,255,255,.15)}
+.run-btn{background:var(--accent);color:var(--accent-ink);border:0;padding:10px 17px;font-weight:800}
+.reset-btn{background:transparent;color:var(--code-ink);border:1px solid rgba(255,255,255,.35);padding:10px 17px;font-weight:700}
+.practice-box{background:var(--surface);padding:30px;margin:32px 0}
+.practice-box h3{margin-top:0}
+.answer-row{display:flex;gap:10px;margin-top:18px}
+.answer-row input{min-width:0;flex:1;border:1px solid var(--line);background:var(--bg);padding:13px}
+.check-btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:13px 20px;font-weight:800}
+.feedback{min-height:25px;margin-top:10px;font-size:.86rem;font-weight:700}
+.quiz{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:28px 0;margin:34px 0}
+.quiz h3{margin-top:0}
+.question{padding:22px 0;border-top:1px solid var(--line)}
+.question:first-of-type{border-top:0}
+.question p{color:var(--ink);font-weight:700}
+.choices{display:grid;gap:8px}
+.choice{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);cursor:pointer}
+.choice:hover{background:var(--surface)}
+.quiz-submit{border:0;background:var(--ink);color:var(--bg);padding:12px 18px;font-weight:800}
+.lesson-summary{border:1px solid var(--line);padding:28px;margin:36px 0}
+.lesson-summary h3{margin-top:0}
+.lesson-summary ul{color:var(--muted);padding-left:20px}
+.lesson-finish{margin-top:42px;padding-top:30px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.complete-btn{background:var(--accent);color:var(--accent-ink);border:1px solid var(--ink);padding:14px 22px;font-weight:800;box-shadow:3px 3px 0 var(--ink)}
+.next-btn{background:var(--bg);border:1px solid var(--ink);padding:14px 22px;font-weight:800}
+.session-note{width:100%;font-size:.74rem;color:var(--muted)}
+
+/* ---------- 8. Search (verbatim) ---------- */
+.search-overlay{position:fixed;inset:0;background:rgba(12,14,11,.62);z-index:50;display:none;place-items:start center;padding:110px 20px}
+.search-overlay.open{display:grid}
+.search-panel{width:min(760px,100%);background:var(--bg);box-shadow:var(--shadow);padding:24px}
+.search-row{display:flex;gap:10px}
+.search-panel .search-wrap{margin-top:0;max-width:none;flex:1;min-width:0}
+.search-row input{flex:1;min-width:0;border:0;border-bottom:2px solid var(--ink);background:transparent;padding:14px 4px;font-size:1.25rem;outline:0}
+.close-search{border:0;background:var(--surface);width:50px}
+.search-results{margin-top:20px;border-top:1px solid var(--line);max-height:55vh;overflow:auto}
+.search-result{display:block;padding:16px 4px;border-bottom:1px solid var(--line)}
+.search-result:hover{background:var(--surface);padding-left:12px}
+.search-result b{display:block}
+.search-result span{font-size:.78rem;color:var(--muted)}
+.empty{padding:30px 4px;color:var(--muted)}
+
+/* ============================================================
+   9. Adaptation layer — the same visual language applied to the
+   textbook components used by the MDX content. No new ideas:
+   every treatment below mirrors a reference composition.
+   ============================================================ */
+
+.muted{color:var(--muted)}
+
+/* Inline code (MDX backticks) */
+.lesson-article code{font:500 .88em/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--surface);border:1px solid var(--line);padding:2px 6px;color:var(--ink)}
+.code-block code,.tryit code{background:none;border:0;padding:0}
+
+/* Links inside article prose use the reference inline-link treatment */
+.lesson-article p a,.lesson-article li a{font-weight:800;border-bottom:2px solid var(--accent)}
+
+/* WorkedExample / Example — bordered box, the lesson-summary language */
+.callout{border:1px solid var(--line);padding:28px;margin:36px 0;background:var(--bg)}
+.callout-title{font-family:Newsreader,serif;font-size:1.4rem;letter-spacing:-.02em;margin:0 0 12px;color:var(--ink)}
+.callout p:last-child{margin-bottom:0}
+
+/* Definition — the reference pull-quote (Definition component renders this class) */
+.definition p{font-size:inherit!important;color:inherit!important;line-height:inherit;margin:0 0 14px}
+.definition p:last-child{margin-bottom:0}
+.definition strong{color:inherit}
+
+/* ImportantNote — the reference lime note block */
+.note p{color:inherit}
+
+/* Quiz — the reference quiz language, with answer states */
+.quiz-head{font-family:Newsreader,serif;font-size:1.75rem;letter-spacing:-.035em;margin:0 0 6px;color:var(--ink)}
+.quiz-q{padding:22px 0;border-top:1px solid var(--line)}
+.quiz-q:first-of-type{border-top:0}
+.q-text{color:var(--ink)!important;font-weight:700}
+.quiz-opts{display:grid;gap:8px;margin-top:12px}
+.quiz-opt{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);background:var(--bg);cursor:pointer;text-align:left;width:100%}
+.quiz-opt:hover:not(:disabled){background:var(--surface)}
+.quiz-opt:disabled{cursor:default}
+.quiz-opt.correct{border-color:var(--success);color:var(--success);font-weight:700}
+.quiz-opt.wrong{border-color:var(--danger);color:var(--danger)}
+.quiz-explain{display:none;margin-top:10px;font-size:.9rem;color:var(--muted)}
+.quiz-explain.visible{display:block}
+.quiz-score{display:none;margin-top:18px;font-weight:800;color:var(--success)}
+.quiz-score.visible{display:block}
+
+/* PracticeQuestions — reveal-answer items, the question-row language */
+.practice{border-top:1px solid var(--ink);margin:34px 0}
+.practice-item{padding:22px 0;border-bottom:1px solid var(--line)}
+.p-q{color:var(--ink);font-weight:700}
+.p-hint{color:var(--muted);font-size:.9rem;margin-top:6px}
+.reveal-btn{border:1px solid var(--ink);background:var(--bg);padding:10px 16px;font-weight:800;margin-top:14px}
+.practice-answer{display:none;margin-top:14px}
+.practice-answer.visible{display:block}
+.practice-answer p{color:var(--muted)}
+
+/* CodeBlock — the code-lab language */
+.code-block{background:var(--code);color:var(--code-ink);margin:28px 0;box-shadow:var(--shadow)}
+.code-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.15);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.copy-btn{background:transparent;color:var(--code-ink);border:1px solid rgba(255,255,255,.35);padding:6px 12px;font-weight:700;font-size:.72rem}
+.code-block pre{margin:0;padding:18px;overflow:auto;font:500 .92rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+
+/* Diagram — bordered figure */
+.diagram{border:1px solid var(--line);background:var(--bg);padding:28px;margin:28px 0}
+.diagram svg{max-width:100%;height:auto;margin:auto}
+.diagram figcaption{color:var(--muted);font-size:.85rem;margin-top:14px}
+
+/* Formula — surface panel, serif display */
+.formula{background:var(--surface);padding:30px;margin:28px 0;text-align:center}
+.formula-label{display:block;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:12px}
+.formula>div{font-family:Newsreader,serif;font-size:1.6rem;color:var(--ink);line-height:1.3}
+
+/* MDX tables — hairline grid */
+.mdx-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:.95rem}
+.mdx-table th,.mdx-table td{border:1px solid var(--line);padding:12px 14px;text-align:left}
+.mdx-table th{background:var(--surface);font-weight:800}
+.mdx-table td{color:var(--muted)}
+
+/* EquationSolver — surface panel, the practice-box language */
+.solver{background:var(--surface);padding:30px;margin:32px 0}
+.solver-head strong{display:block;font-family:Newsreader,serif;font-size:1.75rem;letter-spacing:-.035em;color:var(--ink);margin-bottom:6px}
+.solver-head span{display:block;color:var(--muted);font-size:.95rem;margin-bottom:20px}
+.solver-input-row{display:flex;gap:10px}
+.solver-input-row input{min-width:0;flex:1;border:1px solid var(--line);background:var(--bg);padding:13px;font:500 1rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+.solver-error{color:var(--danger);font-weight:700;font-size:.9rem;margin:12px 0 0}
+.solver-steps{list-style:none;margin:18px 0 0;padding:0}
+.solver-steps li{padding:12px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+.solver-steps li.solver-result{color:var(--ink);font-weight:800}
+.empty-note{color:var(--muted);font-size:.92rem;margin:14px 0 0}
+
+/* TryItPython — the code-lab language */
+.tryit{background:var(--code);color:var(--code-ink);margin:28px 0;box-shadow:var(--shadow)}
+.tryit-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.15);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.tryit-head span{color:#9aa797}
+.tryit textarea{display:block;width:100%;min-height:180px;resize:vertical;border:0;outline:0;background:transparent;color:var(--code-ink);padding:14px 18px;font:500 .92rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+.tryit-foot{display:flex;gap:12px;align-items:center;padding:14px 18px;border-top:1px solid rgba(255,255,255,.15)}
+.tryit-status{font-size:.78rem;color:#9aa797}
+.tryit-output{display:none;margin:0;padding:14px 18px;border-top:1px solid rgba(255,255,255,.15);white-space:pre-wrap;font:500 .92rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--code-ink)}
+.tryit-output.visible{display:block}
+
+/* NextChapter card (MDX use) — bordered box */
+.next-lesson-card{display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid var(--line);padding:28px;margin:36px 0}
+.next-lesson-card:hover{border-color:var(--ink)}
+.nl-kicker{display:block;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:8px}
+.next-lesson-card h3{font-size:1.75rem;margin:0}
+.nl-arrow{font-size:1.6rem;color:var(--muted)}
+
+/* /search page — the search-panel language */
+.search-page-form{margin:0 0 10px}
+.search-page-form .search-row{align-items:stretch}
+.search-go{border:0;background:var(--ink);color:var(--bg);font-weight:800;padding:0 26px;white-space:nowrap}
+
+/* Video rows — the chapter-link language */
+.video-row{display:grid;grid-template-columns:54px 1fr auto;gap:20px;align-items:center;padding:24px 4px;border-bottom:1px solid var(--line)}
+.video-row:hover{background:var(--surface);padding-left:16px;padding-right:16px}
+.video-play{width:52px;height:52px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;font-size:1.1rem;color:var(--ink)}
+
+/* ---------- 10. Responsive (verbatim) ---------- */
+@media(max-width:980px){.nav-links{display:none}.hero-grid{grid-template-columns:1fr;gap:54px}.today-card{max-width:500px}.subjects-grid{grid-template-columns:repeat(2,1fr)}.how-grid{grid-template-columns:repeat(2,1fr);gap:40px 0}.how-step:nth-child(2){border:0}.overview-grid{grid-template-columns:1fr}.overview-aside{max-width:600px}.path-picker{grid-template-columns:1fr}.stage-nav{display:grid;grid-template-columns:repeat(2,1fr)}.lesson-layout{grid-template-columns:1fr}.lesson-sidebar{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}.side-list{display:grid;grid-template-columns:repeat(4,1fr)}.side-list a{display:block}.side-list a span:first-child{display:block;margin-bottom:3px}.lesson-article{padding-left:30px;padding-right:30px}}
+@media(max-width:650px){.nav{height:68px;padding:0 18px;gap:12px}.nav-actions .text-btn,.nav-actions .learn-btn{display:none}.view{min-height:calc(100vh - 68px)}.home-hero{padding:70px 20px 72px}.home-hero h1{font-size:clamp(3.55rem,17vw,5rem)}.hero-grid{gap:44px}.hero-search{height:68px;padding:0 18px 0 54px}.search-submit{position:static;width:100%;height:50px;margin-top:14px}.search-icon{top:23px}.section{padding:78px 20px}.section-head{grid-template-columns:1fr;gap:18px;margin-bottom:34px}.subjects-grid{grid-template-columns:1fr}.subject-card{min-height:190px}.curriculum-grid{grid-template-columns:1fr}.curriculum-card{min-height:270px;padding:28px}.how-grid{grid-template-columns:1fr}.how-step{border-right:0;border-bottom:1px solid var(--line);padding-bottom:34px;margin:0}.footer{padding:44px 20px 28px}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:7px}.page-hero,.curr-page{padding-left:20px;padding-right:20px}.overview-grid{gap:44px}.subject-overview{padding:0 20px 78px}.chapter-link{grid-template-columns:38px 1fr auto;gap:10px}.chapter-title{font-size:1.35rem}.chapter-status{display:none}.stage-nav{grid-template-columns:1fr 1fr}.stage-panel{padding:24px}.grade-grid{grid-template-columns:1fr 1fr}.lesson-sidebar{padding:28px 20px}.side-list{grid-template-columns:1fr 1fr}.lesson-top{padding:42px 20px 35px}.lesson-top h1{font-size:3.7rem}.lesson-article{padding:46px 20px 80px}.lesson-article h2{font-size:2.35rem}.concept-diagram{grid-template-columns:1fr}.diagram-arrow{transform:rotate(90deg);justify-self:center}.lab-body{grid-template-columns:1fr}.editor-pane{border-right:0;border-bottom:1px solid rgba(255,255,255,.15)}.answer-row{flex-direction:column}.lesson-finish{align-items:stretch}.complete-btn,.next-btn{width:100%}.search-overlay{padding:78px 14px}.search-panel{padding:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}

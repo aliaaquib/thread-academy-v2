@@ -1,0 +1,73 @@
+---
+title: "Using Queues"
+lede: "Store data first-in, first-out, like a real queue."
+---
+
+<LearningObjectives>
+  <li>Define and explain Using Queues in your own words</li>
+  <li>Use key terms such as queue accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Using Queues: store data first-in, first-out, like a real queue.
+
+<Definition term="Using Queues">
+  Store data first-in, first-out, like a real queue.
+</Definition>
+
+## Key ideas
+
+### LIFO versus FIFO changes everything
+
+Stacks reverse order — perfect for undo, back buttons and checking balanced brackets. Queues preserve order — perfect for print spooling and handling requests fairly. The operations differ too: stacks push and pop at the top, while queues enqueue at the rear and dequeue at the front. Picking the wrong one silently produces wrong answers.
+
+### Graphs model the real world
+
+Roads, friendships, computer networks and dependencies are all graphs: nodes for places or things, edges for connections. Weighted edges let algorithms such as Dijkstra's find the cheapest route. Unlike trees, graphs can contain cycles — paths that loop back — which algorithms must handle to avoid going round forever.
+
+**Key term — queue:** A first-in, first-out structure: items join at the rear and leave from the front — like a supermarket checkout queue.
+
+<WorkedExample title="Worked example: Using Queues">
+  A queue holds [A, B, C] with A at the front. After one dequeue and one enqueue of D, what is the queue?
+
+  [B, C, D] — A leaves from the front and D joins at the rear.
+
+  **Answer:** [B, C, D] — A leaves from the front and D joins at the rear.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Using a stack where a queue is needed** Correction: ask 'must the first arrival be served first?' — if yes, you need a queue; a stack would serve the last arrival first.
+  - **Popping or dequeuing from an empty structure** Correction: always check the structure is not empty first — removing from nothing causes an underflow error.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Which structure models a web browser's back button: stack or queue? Why?" hint="The last page visited is the first you go back to.">
+    A stack — each new page is pushed, and Back pops the most recent page, which is last-in, first-out.
+  </PracticeItem>
+  <PracticeItem question="Insert 5, 3, 8, 1 into an empty binary search tree in that order. What is the root's left child?" hint="Smaller values go left of each node.">
+    3 — it goes left of root 5, and then 1 goes left of 3.
+  </PracticeItem>
+  <PracticeItem question="What does an in-order traversal of a binary search tree produce?" hint="Left subtree, node, right subtree — with smaller values on the left.">
+    The values in ascending sorted order.
+  </PracticeItem>
+  <PracticeItem question="In a road network modelled as a graph, what do nodes, edges and weights represent?" hint="Think about junctions, roads and distances.">
+    Nodes are junctions (or towns), edges are the roads between them, and weights are distances or travel times.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Using Queues — quick check">
+  <QuizQuestion question="Which of these best defines &quot;queue&quot;?" options={["A connection between two nodes in a graph, which may have a direction and a weight such as a distance.", "A last-in, first-out structure: items are added and removed from the same end, called the top — like a spring-loaded plate dispenser.", "A single element in a tree or graph, holding data plus links to other nodes.", "A first-in, first-out structure: items join at the rear and leave from the front — like a supermarket checkout queue."]} answer={3} explanation="A first-in, first-out structure: items join at the rear and leave from the front — like a supermarket checkout queue." />
+  <QuizQuestion question="True or false: a stack can be used to check whether brackets in an expression are balanced." options={["Sometimes true", "Cannot be determined from the information given", "False", "True — push each opening bracket and pop on each closing one; the last opened must be the first closed, which is exactly LIFO."]} answer={3} explanation="True — push each opening bracket and pop on each closing one; the last opened must be the first closed, which is exactly LIFO." />
+</Quiz>
+
+<Summary>
+  - Using Queues: store data first-in, first-out, like a real queue.
+  - LIFO versus FIFO changes everything: Stacks reverse order — perfect for undo, back buttons and checking balanced brackets.
+  - node: A single element in a tree or graph, holding data plus links to other nodes.
+  - Watch out for: using a stack where a queue is needed
+</Summary>

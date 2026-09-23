@@ -1,0 +1,157 @@
+---
+title: "Understanding Quadratic Equations"
+description: "Understand quadratic equations from the ground up: the parabola connection, solving by factorisation, the quadratic formula, and discriminant intuition."
+slug: quadratic-equations
+date: 2026-09-14
+subject: Mathematics
+subject_slug: mathematics
+curriculum: cambridge
+level: igcse
+level_name: IGCSE
+author: Thread Academy
+keywords: ["quadratic equations", "factorisation", "quadratic formula", "parabola", "discriminant"]
+chapters: ["algebra"]
+lessons: ["algebra/quadratic-equations"]
+---
+
+Linear equations model steady change, but the world is full of curves: the arc of a thrown ball, the shape of a satellite dish, the path of maximum profit against price. Whenever the unknown appears squared, you have entered the world of quadratic equations. This guide explains what makes an equation quadratic, how quadratics connect to parabolas, and how to solve them by factorisation and by the famous quadratic formula.
+
+## What makes an equation quadratic
+
+An equation is **quadratic** when the highest power of the variable is 2. The standard form is:
+
+```
+ax^2 + bx + c = 0
+```
+
+where a, b, and c are numbers and a is not zero. If a were zero, the x^2 term would vanish and the equation would collapse back into a linear one.
+
+### Worked example 1: identifying quadratics
+
+Which of these equations are quadratic?
+
+a) x^2 + 5x + 6 = 0
+b) 2x + 3 = 0
+c) x^3 - x = 0
+d) 4x^2 = 16
+
+Step 1: Check the highest power. In (a), the highest power of x is 2, so it is quadratic. In (b), the highest power is 1, so it is linear.
+
+Step 2: In (c), the highest power is 3, so it is cubic, not quadratic. In (d), the highest power is 2, so it is quadratic, even though the x term and constant are missing. Missing terms simply mean b and c are zero.
+
+Answer: (a) and (d) are quadratic.
+
+A quadratic equation can have up to two solutions, unlike a linear equation which has exactly one. That fact shapes everything that follows.
+
+## The parabola connection
+
+Graphing y = ax^2 + bx + c always produces a smooth U-shaped curve called a **parabola**. If a is positive, the parabola opens upwards like a cup. If a is negative, it opens downwards like an upside-down cup.
+
+The solutions of ax^2 + bx + c = 0 are the x-coordinates where the parabola crosses the x-axis, because crossing the x-axis means y equals zero.
+
+### Worked example 2: reading solutions from a graph
+
+The parabola y = x^2 - 4 crosses the x-axis at x = 2 and x = -2. Solve x^2 - 4 = 0.
+
+Reasoning: The equation x^2 - 4 = 0 asks where the expression x^2 - 4 equals zero, which is exactly where the graph y = x^2 - 4 meets the x-axis.
+
+Answer: x = 2 or x = -2. You can verify: 2^2 - 4 = 0 and (-2)^2 - 4 = 0.
+
+This graphical picture also explains why some quadratics have two solutions, some have one, and some have none. A parabola can cross the x-axis twice, touch it once, or miss it entirely.
+
+## Solving by factorisation
+
+**Factorisation** reverses expansion: it rewrites the quadratic as a product of two brackets. Once factorised, the equation is solved using a simple but powerful fact: if two numbers multiply to give zero, then at least one of them must be zero.
+
+### Worked example 3: factorising a simple quadratic
+
+Solve x^2 + 5x + 6 = 0.
+
+Step 1: Factorise. Find two numbers that multiply to 6 and add to 5: 2 and 3.
+
+```
+(x + 2)(x + 3) = 0
+```
+
+Step 2: Apply the zero product fact. Either x + 2 = 0 or x + 3 = 0.
+
+Step 3: Solve each: x = -2 or x = -3.
+
+Step 4: Check by substitution. For x = -2: 4 - 10 + 6 = 0. Correct. For x = -3: 9 - 15 + 6 = 0. Correct.
+
+### Worked example 4: with negative constants
+
+Solve x^2 - 7x + 10 = 0.
+
+Step 1: Find two numbers that multiply to 10 and add to -7: -2 and -5.
+
+```
+(x - 2)(x - 5) = 0
+```
+
+Step 2: Either x - 2 = 0 or x - 5 = 0.
+
+Answer: x = 2 or x = 5.
+
+### Worked example 5: with a coefficient on x^2
+
+Solve 2x^2 + 5x + 2 = 0.
+
+Step 1: Factorise. We need brackets (2x + ?)(x + ?) with numbers multiplying to 2 and combining to give 5x: 1 and 2 work, since 2x times 2 is 4x and 1 times x is x, totalling 5x.
+
+```
+(2x + 1)(x + 2) = 0
+```
+
+Step 2: Either 2x + 1 = 0, giving x = -1/2, or x + 2 = 0, giving x = -2.
+
+Answer: x = -1/2 or x = -2.
+
+Before factorising, always check whether every term shares a common factor. Solving 3x^2 + 6x = 0 is far easier after dividing through by 3x to get x(x + 2) = 0, giving x = 0 or x = -2.
+
+## Introducing the quadratic formula
+
+Not every quadratic factorises neatly. The equation x^2 + 4x + 1 = 0 has no integer factors, yet it still has solutions. For these cases, the **quadratic formula** always works:
+
+```
+x = (-b ± sqrt(b^2 - 4ac)) / (2a)
+```
+
+Read it as: take negative b, then add or subtract the square root of b^2 - 4ac, then divide everything by 2a. The plus-or-minus sign is what produces the two solutions.
+
+### Worked example 6: using the formula
+
+Solve x^2 + 4x + 1 = 0, giving answers to two decimal places.
+
+Step 1: Identify a = 1, b = 4, c = 1.
+
+Step 2: Substitute into the formula:
+
+```
+x = (-4 ± sqrt(16 - 4)) / 2
+x = (-4 ± sqrt(12)) / 2
+```
+
+Step 3: Simplify. Dividing each term by 2 gives x = -2 ± sqrt(3).
+
+Step 4: Evaluate. Since sqrt(3) is approximately 1.73, the solutions are x = -2 + 1.73 = -0.27 and x = -2 - 1.73 = -3.73, to two decimal places.
+
+The formula looks intimidating but it is purely mechanical: identify a, b, and c, substitute carefully, and simplify. Sign errors when writing down negative b are the main trap, so write the substitution line out in full every time.
+
+## The discriminant: a quick preview
+
+Inside the formula sits the expression b^2 - 4ac, called the **discriminant**. Because you cannot take the square root of a negative number in ordinary arithmetic, the sign of the discriminant decides how many solutions exist:
+
+- If the discriminant is positive, the formula gives two different solutions, and the parabola crosses the x-axis twice.
+- If the discriminant is zero, the square root vanishes and both solutions coincide into one repeated solution, and the parabola just touches the x-axis.
+- If the discriminant is negative, there are no real solutions, and the parabola never reaches the x-axis.
+
+Check this against worked example 6: b^2 - 4ac = 16 - 4 = 12, which is positive, matching the two solutions we found. The discriminant is a quick diagnostic you can compute before doing any heavy algebra.
+
+## Key takeaways
+
+- A quadratic equation has highest power 2 and standard form ax^2 + bx + c = 0, with a not equal to zero.
+- Its graph is a parabola, and its solutions are the x-intercepts of that parabola.
+- Factorisation solves quadratics by rewriting them as a product of brackets and using the fact that a zero product means a zero factor.
+- The quadratic formula x = (-b ± sqrt(b^2 - 4ac)) / (2a) solves every quadratic, including ones that do not factorise.
+- The discriminant b^2 - 4ac predicts the number of solutions: positive means two, zero means one repeated, negative means none.

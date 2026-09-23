@@ -1,0 +1,111 @@
+---
+title: "Quadratic Equations"
+lede: "When x² appears, equations curve. Learn to solve quadratics by factorising — and meet the quadratic formula, the tool that never fails."
+---
+
+<LearningObjectives>
+  <li>Recognise quadratic equations</li>
+  <li>Solve quadratics by factorising</li>
+  <li>Use the quadratic formula</li>
+  <li>Interpret the two solutions</li>
+</LearningObjectives>
+
+## When x is squared
+
+A **quadratic equation** contains `x²` (but no higher powers). Its graph is a curve — a parabola — which is why quadratics can have **two** solutions: the curve can cross the x-axis twice.
+
+<Definition term="quadratic equation">
+  A **quadratic equation** is an equation where the highest power of the unknown is 2,
+  e.g. `x² + 5x + 6 = 0` or `2x² − 8 = 0`.
+</Definition>
+
+## Solving by factorising
+
+The key trick: **if two things multiply to zero, one of them is zero.** So:
+
+1. Rearrange into the form `... = 0`.
+2. Factorise the quadratic.
+3. Set each bracket to zero and solve.
+
+<WorkedExample title="Worked example">
+  Solve `x² + 5x + 6 = 0`.
+
+  ```maths
+  x² + 5x + 6 = 0
+  (x + 2)(x + 3) = 0      factorise: which pair sums to 5 and multiplies to 6?
+  x + 2 = 0  or  x + 3 = 0
+  x = −2  or  x = −3
+  ```
+
+  Check `x = −2`: `4 − 10 + 6 = 0` ✓
+</WorkedExample>
+
+To factorise `x² + bx + c`, find two numbers that **multiply to c** and **add to b**. For `x² + 5x + 6`: 2 and 3 (2 × 3 = 6, 2 + 3 = 5).
+
+## The quadratic formula
+
+Not every quadratic factorises neatly. The **quadratic formula** solves *any* quadratic `ax² + bx + c = 0`:
+
+<Formula label="The quadratic formula">
+  x = (−b ± √(b² − 4ac)) / 2a
+</Formula>
+
+<WorkedExample title="Worked example">
+  Solve `2x² + 5x − 3 = 0`, where `a = 2`, `b = 5`, `c = −3`.
+
+  ```maths
+  x = (−5 ± √(25 − 4(2)(−3))) / 4
+  x = (−5 ± √(25 + 24)) / 4
+  x = (−5 ± 7) / 4
+  x = 0.5  or  x = −3
+  ```
+</WorkedExample>
+
+<ImportantNote title="The discriminant">
+  The part under the square root, `b² − 4ac`, is called the **discriminant**.
+  If it's positive there are two solutions; if zero, one repeated solution; if negative, no real solutions.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Solve: x² − 9 = 0." hint="Rearrange or factorise as a difference of two squares.">
+    `x² = 9`, so `x = 3` or `x = −3`. (Or `(x − 3)(x + 3) = 0`.)
+  </PracticeItem>
+  <PracticeItem question="Solve: x² + 7x + 12 = 0 by factorising." hint="Find two numbers that multiply to 12 and add to 7.">
+    `(x + 3)(x + 4) = 0`, so `x = −3` or `x = −4`.
+  </PracticeItem>
+  <PracticeItem question="Solve x² + 4x + 1 = 0 using the quadratic formula. Give answers to 2 decimal places." hint="a = 1, b = 4, c = 1.">
+    `x = (−4 ± √12)/2 = −2 ± √3`, so `x ≈ −0.27` or `x ≈ −3.73`.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Quadratic equations — quick check">
+  <QuizQuestion
+    question="Which is a quadratic equation?"
+    options={["3x + 2 = 11", "x² − 5x + 4 = 0", "2/x = 6", "x³ = 8"]}
+    answer={1}
+    explanation="The highest power of x is 2."
+  />
+  <QuizQuestion
+    question="Factorise x² + 8x + 15."
+    options={["(x + 3)(x + 5)", "(x + 15)(x + 1)", "(x − 3)(x − 5)", "(x + 8)(x + 15)"]}
+    answer={0}
+    explanation="3 × 5 = 15 and 3 + 5 = 8."
+  />
+  <QuizQuestion
+    question="Solve (x − 4)(x + 1) = 0."
+    options={["x = 4 or x = 1", "x = −4 or x = −1", "x = 4 or x = −1", "x = 0"]}
+    answer={2}
+    explanation="Each bracket is zero in turn: x = 4 or x = −1."
+  />
+</Quiz>
+
+<Summary>
+  - Quadratics have x² as the highest power and up to two solutions.
+  - To factorise: rearrange to = 0, factorise, set each bracket to zero.
+  - The quadratic formula x = (−b ± √(b² − 4ac)) / 2a solves any quadratic.
+  - The discriminant b² − 4ac tells you how many real solutions exist.
+</Summary>

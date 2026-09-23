@@ -1,0 +1,76 @@
+---
+title: "Introducing Integration"
+lede: "Antidifferentiation, definite integrals, and areas under curves."
+---
+
+<LearningObjectives>
+  <li>Define and explain Introducing Integration in your own words</li>
+  <li>Use key terms such as Function accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Introducing Integration: antidifferentiation, definite integrals, and areas under curves.
+
+<Definition term="Introducing Integration">
+  Antidifferentiation, definite integrals, and areas under curves.
+</Definition>
+
+## Key ideas
+
+### Integration as reverse differentiation
+
+The integral of xⁿ is xⁿ⁺¹/(n+1) plus a constant C. A definite integral between limits gives the signed area under the curve: ∫₀² x² dx = [x³/3]₀² = 8/3.
+
+### Differentiating polynomials
+
+From first principles, the gradient of xⁿ is nxⁿ⁻¹ — the power rule. So f(x) = 3x³ − 5x² + 2x − 7 gives f′(x) = 9x² − 10x + 2, and at x = 2 the gradient is 36 − 20 + 2 = 18.
+
+**Key term — Function:** A rule that assigns each input exactly one output, written y = f(x); the set of allowed inputs is the domain.
+
+<WorkedExample title="Differentiate and find the gradient">
+  Given f(x) = 3x³ − 5x² + 2x − 7, find f′(x) and the gradient at x = 2.
+
+  Apply the power rule to each term: 3x³ → 9x², −5x² → −10x, 2x → 2, and the constant −7 differentiates to 0.
+  So f′(x) = 9x² − 10x + 2.
+  Substitute x = 2: 9(4) − 10(2) + 2 = 36 − 20 + 2 = 18.
+
+  **Answer:** f′(x) = 9x² − 10x + 2; gradient at x = 2 is 18.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Losing the constant of integration** An indefinite integral must end with + C; different values of C give the whole family of antiderivatives.
+  - **Differentiating the constant term to 1 or x** The derivative of any constant is 0 — it contributes no change.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Differentiate y = 4x³ + 6x." hint="Power rule on each term.">
+    dy/dx = 12x² + 6.
+  </PracticeItem>
+  <PracticeItem question="Find the 10th term of the arithmetic sequence 5, 9, 13, 17, …" hint="a = 5, d = 4; nth term = a + (n − 1)d.">
+    5 + 9 × 4 = 5 + 36 = 41.
+  </PracticeItem>
+  <PracticeItem question="Find ∫ (6x² + 4) dx." hint="Integrate term by term; don't forget + C.">
+    2x³ + 4x + C.
+  </PracticeItem>
+  <PracticeItem question="Evaluate ∫₀³ 2x dx." hint="Integrate, then substitute the limits.">
+    [x²]₀³ = 9 − 0 = 9.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Introducing Integration — quick check">
+  <QuizQuestion question="Which of these best defines &quot;Function&quot;?" options={["The function f′(x) giving the gradient of y = f(x) at each point; the limit of the average rate of change as the interval shrinks to zero.", "A sequence where each term differs from the previous by a constant common difference, e.g. 3, 7, 11, 15.", "A point where the derivative is zero, so the tangent is horizontal: a maximum, minimum or point of inflection.", "A rule that assigns each input exactly one output, written y = f(x); the set of allowed inputs is the domain."]} answer={3} explanation="A rule that assigns each input exactly one output, written y = f(x); the set of allowed inputs is the domain." />
+  <QuizQuestion question="Find f(g(x)) given f(x) = x² and g(x) = 2x + 1." options={["f(g(x)) = (1x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (4x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (3x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (2x + 1)² = 4x² + 4x + 1."]} answer={3} explanation="f(g(x)) = (2x + 1)² = 4x² + 4x + 1." />
+  <QuizQuestion question="Find the stationary points of y = x² − 6x + 5." options={["dy/dx = 3x − 6 = 0 → x = 3; stationary point (3, −4), a minimum since d²y/dx² = 2, which is positive.", "dy/dx = 1x − 6 = 0 → x = 3; stationary point (3, −4), a minimum since d²y/dx² = 2, which is positive.", "dy/dx = 4x − 6 = 0 → x = 3; stationary point (3, −4), a minimum since d²y/dx² = 2, which is positive.", "dy/dx = 2x − 6 = 0 → x = 3; stationary point (3, −4), a minimum since d²y/dx² = 2, which is positive."]} answer={3} explanation="dy/dx = 2x − 6 = 0 → x = 3; stationary point (3, −4), a minimum since d²y/dx² = 2, which is positive." />
+</Quiz>
+
+<Summary>
+  - Introducing Integration: antidifferentiation, definite integrals, and areas under curves.
+  - Integration as reverse differentiation: The integral of xⁿ is xⁿ⁺¹/(n+1) plus a constant C.
+  - Arithmetic progression: A sequence where each term differs from the previous by a constant common difference, e.g.
+  - Watch out for: losing the constant of integration
+</Summary>

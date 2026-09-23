@@ -1,0 +1,73 @@
+---
+title: "SELECT Queries"
+lede: "Retrieve exactly the data you need with SELECT, WHERE and ORDER BY."
+---
+
+<LearningObjectives>
+  <li>Define and explain SELECT Queries in your own words</li>
+  <li>Use key terms such as query accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on SELECT Queries: retrieve exactly the data you need with SELECT, WHERE and ORDER BY.
+
+<Definition term="SELECT Queries">
+  Retrieve exactly the data you need with SELECT, WHERE and ORDER BY.
+</Definition>
+
+## Key ideas
+
+### Keys stop data going missing
+
+A primary key guarantees every row can be found exactly once — without one, two customers called 'Smith' become indistinguishable. Foreign keys then link tables: an order row stores the customer's ID rather than copying their whole address, so an address change is updated in one place only. This is the foundation of reliable data.
+
+### SQL describes what, not how
+
+You write SELECT Name FROM Students WHERE Year = 12 and the database works out how to find the rows — SQL is declarative. WHERE filters rows, ORDER BY sorts them, and JOIN combines tables via their keys. Because you describe the result you want, the same query works on ten rows or ten million.
+
+**Key term — query:** A question asked of a database in SQL — most famously a SELECT statement that retrieves matching rows.
+
+<WorkedExample title="Worked example: SELECT Queries">
+  True or false: SQL tells the database exactly how to find the data, step by step.
+
+  False — SQL is declarative: you describe what you want and the database engine decides how to retrieve it.
+
+  **Answer:** False — SQL is declarative: you describe what you want and the database engine decides how to retrieve it.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Forgetting the WHERE clause in an UPDATE or DELETE** Correction: UPDATE Students SET Year = 13 with no WHERE changes every row — always write the WHERE first, or test with a SELECT using the same condition.
+  - **Storing the same fact in two tables** Correction: store it once and link with a foreign key — duplicated data drifts out of sync when only one copy is updated.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Why must a primary key never be duplicated or left empty?" hint="Think about finding one exact row.">
+    It is the unique identifier for a row — duplicates or blanks would make it impossible to pinpoint exactly one record.
+  </PracticeItem>
+  <PracticeItem question="An Orders table has a CustomerID column. Is CustomerID a primary or foreign key here, and why?" hint="Which table does it identify rows in?">
+    A foreign key — it stores the primary key of a row in the Customers table, linking each order to its customer.
+  </PracticeItem>
+  <PracticeItem question="Write SQL to show the Title and Author of every book published in 2010 from a Books table." hint="SELECT columns FROM table WHERE condition.">
+    SELECT Title, Author FROM Books WHERE Year = 2010;.
+  </PracticeItem>
+  <PracticeItem question="What does this return? SELECT Name FROM Students WHERE Year = 10; using the example table." hint="Check each row's Year value.">
+    One row: Leo — only Leo has Year 10.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="SELECT Queries — quick check">
+  <QuizQuestion question="Which of these best defines &quot;query&quot;?" options={["A field in one table that stores the primary key of a row in another table, creating a link between them.", "A question asked of a database in SQL — most famously a SELECT statement that retrieves matching rows.", "A field (or combination) that uniquely identifies each row in a table, such as a customer ID. It can never be empty or duplicated.", "A database structure of rows (records) and columns (fields), storing one type of thing — for example, one table per customer, one per order."]} answer={1} explanation="A question asked of a database in SQL — most famously a SELECT statement that retrieves matching rows." />
+  <QuizQuestion question="What is wrong with DELETE FROM Students; and how do you fix it?" options={["It deletes every row in the table — add a WHERE clause, for example DELETE FROM Students WHERE ID = 5;, to remove only Leo.", "It deletes every row in the table — add a WHERE clause, for example DELETE FROM Students WHERE ID = 6;, to remove only Leo.", "It deletes every row in the table — add a WHERE clause, for example DELETE FROM Students WHERE ID = 3;, to remove only Leo.", "It deletes every row in the table — add a WHERE clause, for example DELETE FROM Students WHERE ID = 4;, to remove only Leo."]} answer={3} explanation="It deletes every row in the table — add a WHERE clause, for example DELETE FROM Students WHERE ID = 4;, to remove only Leo." />
+</Quiz>
+
+<Summary>
+  - SELECT Queries: retrieve exactly the data you need with SELECT, WHERE and ORDER BY.
+  - Keys stop data going missing: A primary key guarantees every row can be found exactly once — without one, two customers called 'Smith' become indistinguishable.
+  - table: A database structure of rows (records) and columns (fields), storing one type of thing — for example, one table per customer, one per order.
+  - Watch out for: forgetting the WHERE clause in an UPDATE or DELETE
+</Summary>

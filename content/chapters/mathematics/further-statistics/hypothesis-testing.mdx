@@ -1,0 +1,73 @@
+---
+title: "Hypothesis testing"
+lede: "Null and alternative hypotheses, significance levels, and deciding whether to reject H₀."
+---
+
+<LearningObjectives>
+  <li>Define and explain Hypothesis testing in your own words</li>
+  <li>Use key terms such as Null hypothesis (H₀) accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Hypothesis testing: null and alternative hypotheses, significance levels, and deciding whether to reject H₀.
+
+<Definition term="Hypothesis testing">
+  Null and alternative hypotheses, significance levels, and deciding whether to reject H₀.
+</Definition>
+
+## Key ideas
+
+### The logic of hypothesis testing
+
+Assume H₀ is true, compute the probability of results at least as extreme as observed (the p-value), and reject H₀ if this is below the significance level. Failing to reject H₀ is not proof it is true — only that the evidence is insufficient.
+
+### Binomial probabilities
+
+P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ. The conditions matter: fixed n, two outcomes, constant p, independent trials. For n = 5, p = 0.3: P(X = 2) = 10 × 0.09 × 0.343 = 0.3087.
+
+**Key term — Null hypothesis (H₀):** The default claim in a hypothesis test — typically 'no effect' or 'no change' — which is rejected only if the evidence is strong enough.
+
+<WorkedExample title="Worked example: Hypothesis testing">
+  A test at the 5% level gives p-value 0.032. What is the conclusion?
+
+  0.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis.
+
+  **Answer:** 0.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Confusing one-tailed and two-tailed tests** A two-tailed alternative ('not equal to') splits the significance level across both tails; using one tail doubles your chance of a false rejection.
+  - **Using the binomial model when trials are not independent** Check the conditions: without replacement from a small population, p changes each trial and the binomial does not apply.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Explain why 'the mean has increased' is a one-tailed alternative hypothesis." hint="Which direction of change is being tested?">
+    It specifies an increase only, so the critical region lies in a single (upper) tail of the distribution.
+  </PracticeItem>
+  <PracticeItem question="X ~ B(4, 0.5). Find P(X = 0)." hint="All four trials fail.">
+    P = C(4,0) × 0.5⁰ × 0.5⁴ = 0.0625.
+  </PracticeItem>
+  <PracticeItem question="X ~ B(6, 0.2). Find P(X = 1)." hint="C(6,1) = 6.">
+    P = 6 × 0.2 × 0.8⁵ = 6 × 0.2 × 0.32768 = 0.393216.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(100, 15²). Find the z-score for x = 130." hint="z = (x − μ)/σ.">
+    z = (130 − 100)/15 = 2.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Hypothesis testing — quick check">
+  <QuizQuestion question="Which of these best defines &quot;Null hypothesis (H₀)&quot;?" options={["A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²).", "The probability threshold (often 5%) below which observed results are deemed too unlikely under H₀, so H₀ is rejected.", "The distribution of the number of successes in n independent trials each with success probability p, written X ~ B(n, p).", "The default claim in a hypothesis test — typically 'no effect' or 'no change' — which is rejected only if the evidence is strong enough."]} answer={3} explanation="The default claim in a hypothesis test — typically 'no effect' or 'no change' — which is rejected only if the evidence is strong enough." />
+  <QuizQuestion question="For X ~ N(μ, σ²), what is P(X greater than μ)?" options={["1.5 — half the area lies above the mean.", "2.5 — half the area lies above the mean.", "5.5 — half the area lies above the mean.", "0.5 — half the area lies above the mean."]} answer={3} explanation="0.5 — half the area lies above the mean." />
+</Quiz>
+
+<Summary>
+  - Hypothesis testing: null and alternative hypotheses, significance levels, and deciding whether to reject H₀.
+  - The logic of hypothesis testing: Assume H₀ is true, compute the probability of results at least as extreme as observed (the p-value), and reject H₀ if this is below the significance level.
+  - Significance level: The probability threshold (often 5%) below which observed results are deemed too unlikely under H₀, so H₀ is rejected.
+  - Watch out for: confusing one-tailed and two-tailed tests
+</Summary>

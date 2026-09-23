@@ -1,0 +1,85 @@
+---
+title: "What Is a Computer Network?"
+description: "What is a computer network? See how LANs and WANs differ, how routers and switches connect devices, and what the internet and IP addresses really are."
+slug: "what-is-a-computer-network"
+date: 2026-09-05
+subject: "Computer Science"
+subject_slug: "computer-science"
+curriculum: "cambridge"
+level: "igcse"
+level_name: "IGCSE"
+author: "Thread Academy"
+keywords:
+  - "what is a network"
+  - "LAN vs WAN"
+  - "network hardware router switch"
+  - "the internet explained"
+  - "IP address basics"
+chapters:
+  - "computational-thinking"
+lessons: []
+---
+
+A **computer network** is a group of devices connected together so they can communicate and share things. When you print a document to a school printer, stream a video, or send a message to a friend, a network is doing the work. Understanding networks means understanding how the modern digital world fits together.
+
+## LANs and WANs
+
+Networks are usually described by their size.
+
+A **LAN** (Local Area Network) covers a small area, such as a single home, school, or office. Your home Wi-Fi is a LAN: your phone, laptop, and printer all connect to it, and they can share files and use the same internet connection.
+
+A **WAN** (Wide Area Network) covers a large area — a city, a country, or even the world. A company with offices in several cities might link their LANs into one private WAN. WANs are slower and more expensive to build than LANs, but they reach much further.
+
+| Feature   | LAN | WAN |
+|-----------|-----|-----|
+| Area covered | One building or site | Cities, countries, worldwide |
+| Speed | Fast | Slower |
+| Ownership | Usually one organisation | Often leased from telecom providers |
+| Example | School computer suite | The internet |
+
+## The hardware that makes networks work
+
+Data does not move by magic. A few key pieces of hardware carry it from device to device:
+
+- **Router** — directs data between different networks. Your home router sends your requests out to the internet and delivers the responses back to the right device. It is the junction where your LAN meets the outside world.
+- **Switch** — connects devices within one network so they can talk to each other directly. A school computer suite might use a switch to link all its computers to one shared printer.
+- **NIC** (Network Interface Card) — the component inside each device that lets it physically connect to a network, whether through a cable (Ethernet) or wirelessly (Wi-Fi). Every networked device has one.
+
+A simple worked picture: when you type a web address on your laptop, your laptop's NIC sends the request to your router over the home LAN. The router forwards it across the WAN of your internet provider, and the reply comes back along the same path in reverse.
+
+## The internet: a network of networks
+
+The **internet** is not a single network. It is a huge collection of LANs and WANs joined together through routers, all speaking the same set of rules called **protocols**. This is why it is sometimes called a "network of networks": no single organisation owns it, and no single computer controls it.
+
+That openness is a strength. Anyone can connect a new network to the internet, and it can immediately communicate with every other connected device. It also explains why the internet keeps growing: adding a network is easier than building the whole thing.
+
+## Benefits and risks
+
+Networks bring real advantages:
+
+- **Sharing resources** — one printer, one internet connection, or one set of files can serve many users, which saves money.
+- **Communication** — messages, video calls, and collaborative documents work because devices are connected.
+- **Centralised storage** — files kept on one server can be backed up once and accessed from anywhere on the network.
+
+But sharing also creates risks:
+
+- **Security** — anything connected to a network can potentially be reached by others, so passwords, encryption, and firewalls matter.
+- **Privacy** — data sent across a network passes through other people's equipment; assume it could be seen unless it is encrypted.
+- **Dependence** — if the network goes down, so does everything that depends on it.
+
+## IP addresses in plain terms
+
+For data to reach the right device, every device on a network needs an address. An **IP address** (Internet Protocol address) is that address: a unique number assigned to each device, like a phone number for computers.
+
+A typical IPv4 address looks like this: `192.168.1.1`. The four groups of numbers identify the network and then the specific device on it, so a router knows where to send each packet of data.
+
+You do not memorise these numbers yourself — the Domain Name System (DNS) translates friendly names like `www.example.com` into IP addresses automatically. But knowing what an IP address is makes the whole system less mysterious: it is simply how devices find each other on a network.
+
+## Key takeaways
+
+- A computer network is a group of connected devices that communicate and share resources.
+- A LAN covers a small area such as a home or school; a WAN covers cities or countries.
+- Routers direct data between networks, switches connect devices within a network, and NICs give each device its network connection.
+- The internet is a network of networks: many independent networks joined by shared protocols.
+- Networks enable sharing, communication, and centralised storage — but also demand security, privacy, and resilience planning.
+- An IP address is a unique number that identifies each device so data can find its way there.

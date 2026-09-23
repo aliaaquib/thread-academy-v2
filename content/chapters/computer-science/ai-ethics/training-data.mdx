@@ -1,0 +1,77 @@
+---
+title: "Training Data"
+lede: "Understand why the quality and quantity of data decides what AI learns."
+---
+
+<LearningObjectives>
+  <li>Define and explain Training Data in your own words</li>
+  <li>Use key terms such as training data accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Training Data: understand why the quality and quantity of data decides what AI learns.
+
+<Definition term="Training Data">
+  Understand why the quality and quantity of data decides what AI learns.
+</Definition>
+
+## Key ideas
+
+### Learning replaces hand-written rules
+
+Nobody could write rules to recognise every cat photo, so instead a model is shown thousands of labelled examples and adjusts its internal numbers until it predicts well. This is training; the model's skill is then tested on new examples it has never seen. If it only memorises the training set — overfitting — it fails on anything new.
+
+### Biased data in, biased decisions out
+
+A hiring tool trained on a decade of a company's past hires will learn to prefer the kind of people the company used to hire — baking old discrimination into new software. Because the bias hides inside millions of tuned numbers, it is hard to spot without deliberately testing for fairness across groups.
+
+**Key term — training data:** The examples a model learns from — thousands of labelled photos, texts or records. Its quality and balance shape everything the model does.
+
+<WorkedExample title="The Cat Detector That Failed">
+  A team trains a cat photo classifier on 10,000 photos — but 9,500 show white cats. It scores 98% in testing, then fails on users' ginger and black cats. Explain why.
+
+  The training data is unbalanced: the model sees white cats 19 times more often than all other colours combined.
+  The model learns the easy pattern 'white and fluffy means cat' instead of learning true cat features like ears and whiskers.
+  Testing used photos from the same collection, so the test set was unbalanced too — the 98% score measured skill on white cats, not cats in general.
+  On real users' varied photos, the shortcut fails: ginger and black cats do not match the learned pattern.
+
+  **Answer:** The classifier learned colour, not 'cat-ness', because unbalanced training and testing data rewarded the shortcut. Fix: train and test on diverse, representative photos.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Assuming AI is neutral because maths is neutral** Correction: models inherit the biases of their training data — neutrality must be tested for, never assumed.
+  - **Trusting a high accuracy score without asking what it was tested on** Correction: always ask whether the test data was balanced and representative — 98% on easy data can hide total failure elsewhere.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="What is the difference between traditional programming and machine learning?" hint="Rules written by hand versus patterns found in data.">
+    In traditional programming humans write explicit rules; in machine learning the program finds its own patterns by training on data.
+  </PracticeItem>
+  <PracticeItem question="Why does a model trained only on photos taken in daylight struggle at night?" hint="Think about what patterns it has actually seen.">
+    Its training data contains no night-time patterns, so it never learned the features of dark images — it can only recognise what it has seen.
+  </PracticeItem>
+  <PracticeItem question="What is overfitting, and how would you detect it?" hint="Great on training data, poor on new data.">
+    Overfitting is when a model memorises training examples instead of learning general patterns; it shows as high training accuracy but poor accuracy on unseen test data.
+  </PracticeItem>
+  <PracticeItem question="True or false: removing names from training data guarantees a model cannot discriminate." hint="Can other details hint at the same groups?">
+    False — remaining details like postcode or school can act as proxies for protected characteristics, so bias can survive.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Training Data — quick check">
+  <QuizQuestion question="Which of these best defines &quot;training data&quot;?" options={["A systematic unfairness in a model's decisions, usually inherited from unrepresentative or prejudiced training data.", "A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules.", "The trained program produced by machine learning — a set of tuned numbers that maps new inputs to predictions.", "The examples a model learns from — thousands of labelled photos, texts or records. Its quality and balance shape everything the model does."]} answer={3} explanation="The examples a model learns from — thousands of labelled photos, texts or records. Its quality and balance shape everything the model does." />
+  <QuizQuestion question="You use an AI chatbot to draft your history essay. What is the responsible way to handle this?" options={["A systematic unfairness in a model's decisions, usually inherited from unrepresentative or prejudiced training data.", "Correction: models inherit the biases of their training data — neutrality must be tested for, never assumed.", "A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules.", "Be honest that AI assisted you, check every fact yourself (AI can invent plausible-sounding errors), and make sure the final thinking and wording are your own."]} answer={3} explanation="Be honest that AI assisted you, check every fact yourself (AI can invent plausible-sounding errors), and make sure the final thinking and wording are your own." />
+  <QuizQuestion question="A university uses AI to screen applications, trained on ten years of past admissions. Name one fairness risk." options={["A systematic unfairness in a model's decisions, usually inherited from unrepresentative or prejudiced training data.", "Correction: models inherit the biases of their training data — neutrality must be tested for, never assumed.", "A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules.", "The model may learn to prefer applicants resembling past successful ones, entrenching old biases against under-represented groups."]} answer={3} explanation="The model may learn to prefer applicants resembling past successful ones, entrenching old biases against under-represented groups." />
+</Quiz>
+
+<Summary>
+  - Training Data: understand why the quality and quantity of data decides what AI learns.
+  - Learning replaces hand-written rules: Nobody could write rules to recognise every cat photo, so instead a model is shown thousands of labelled examples and adjusts its internal numbers until it predicts well.
+  - bias: A systematic unfairness in a model's decisions, usually inherited from unrepresentative or prejudiced training data.
+  - Watch out for: assuming AI is neutral because maths is neutral
+</Summary>

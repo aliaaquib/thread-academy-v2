@@ -1,0 +1,73 @@
+---
+title: "Table Relationships"
+lede: "Link tables with foreign keys in one-to-many relationships."
+---
+
+<LearningObjectives>
+  <li>Define and explain Table Relationships in your own words</li>
+  <li>Use key terms such as foreign key accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Table Relationships: link tables with foreign keys in one-to-many relationships.
+
+<Definition term="Table Relationships">
+  Link tables with foreign keys in one-to-many relationships.
+</Definition>
+
+## Key ideas
+
+### Keys stop data going missing
+
+A primary key guarantees every row can be found exactly once — without one, two customers called 'Smith' become indistinguishable. Foreign keys then link tables: an order row stores the customer's ID rather than copying their whole address, so an address change is updated in one place only. This is the foundation of reliable data.
+
+### Relationships mirror the real world
+
+One customer places many orders — a one-to-many relationship, built by putting the customer's ID as a foreign key in the Orders table. The foreign key must always point at a real primary key, a rule called referential integrity that stops orphaned records. Well-designed relationships mean no duplicated facts anywhere.
+
+**Key term — foreign key:** A field in one table that stores the primary key of a row in another table, creating a link between them.
+
+<WorkedExample title="Worked example: Table Relationships">
+  An Orders table has a CustomerID column. Is CustomerID a primary or foreign key here, and why?
+
+  A foreign key — it stores the primary key of a row in the Customers table, linking each order to its customer.
+
+  **Answer:** A foreign key — it stores the primary key of a row in the Customers table, linking each order to its customer.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Storing the same fact in two tables** Correction: store it once and link with a foreign key — duplicated data drifts out of sync when only one copy is updated.
+  - **Forgetting the WHERE clause in an UPDATE or DELETE** Correction: UPDATE Students SET Year = 13 with no WHERE changes every row — always write the WHERE first, or test with a SELECT using the same condition.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Write SQL to show the Title and Author of every book published in 2010 from a Books table." hint="SELECT columns FROM table WHERE condition.">
+    SELECT Title, Author FROM Books WHERE Year = 2010;.
+  </PracticeItem>
+  <PracticeItem question="What does this return? SELECT Name FROM Students WHERE Year = 10; using the example table." hint="Check each row's Year value.">
+    One row: Leo — only Leo has Year 10.
+  </PracticeItem>
+  <PracticeItem question="What is wrong with DELETE FROM Students; and how do you fix it?" hint="Which rows does it delete?">
+    It deletes every row in the table — add a WHERE clause, for example DELETE FROM Students WHERE ID = 4;, to remove only Leo.
+  </PracticeItem>
+  <PracticeItem question="Why must a primary key never be duplicated or left empty?" hint="Think about finding one exact row.">
+    It is the unique identifier for a row — duplicates or blanks would make it impossible to pinpoint exactly one record.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Table Relationships — quick check">
+  <QuizQuestion question="Which of these best defines &quot;foreign key&quot;?" options={["A database structure of rows (records) and columns (fields), storing one type of thing — for example, one table per customer, one per order.", "A question asked of a database in SQL — most famously a SELECT statement that retrieves matching rows.", "A field (or combination) that uniquely identifies each row in a table, such as a customer ID. It can never be empty or duplicated.", "A field in one table that stores the primary key of a row in another table, creating a link between them."]} answer={3} explanation="A field in one table that stores the primary key of a row in another table, creating a link between them." />
+  <QuizQuestion question="True or false: SQL tells the database exactly how to find the data, step by step." options={["Sometimes true", "Cannot be determined from the information given", "True", "False — SQL is declarative: you describe what you want and the database engine decides how to retrieve it."]} answer={3} explanation="False — SQL is declarative: you describe what you want and the database engine decides how to retrieve it." />
+</Quiz>
+
+<Summary>
+  - Table Relationships: link tables with foreign keys in one-to-many relationships.
+  - Keys stop data going missing: A primary key guarantees every row can be found exactly once — without one, two customers called 'Smith' become indistinguishable.
+  - table: A database structure of rows (records) and columns (fields), storing one type of thing — for example, one table per customer, one per order.
+  - Watch out for: storing the same fact in two tables
+</Summary>

@@ -1,0 +1,76 @@
+---
+title: "Correlation and regression"
+lede: "Measuring linear association and fitting regression lines for prediction."
+---
+
+<LearningObjectives>
+  <li>Define and explain Correlation and regression in your own words</li>
+  <li>Use key terms such as Binomial distribution accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Correlation and regression: measuring linear association and fitting regression lines for prediction.
+
+<Definition term="Correlation and regression">
+  Measuring linear association and fitting regression lines for prediction.
+</Definition>
+
+## Key ideas
+
+### Binomial probabilities
+
+P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ. The conditions matter: fixed n, two outcomes, constant p, independent trials. For n = 5, p = 0.3: P(X = 2) = 10 × 0.09 × 0.343 = 0.3087.
+
+### Standardising the normal
+
+Convert X ~ N(μ, σ²) to Z ~ N(0, 1) via z = (x − μ)/σ, then read probabilities from tables. The total area under the curve is 1, and the curve is symmetric about μ, so the probability that X falls below the mean μ is 0.5.
+
+**Key term — Binomial distribution:** The distribution of the number of successes in n independent trials each with success probability p, written X ~ B(n, p).
+
+<WorkedExample title="A binomial probability">
+  X ~ B(5, 0.3). Find P(X = 2).
+
+  Use P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ with n = 5, r = 2, p = 0.3.
+  C(5, 2) = 10; 0.3² = 0.09; 0.7³ = 0.343.
+  Multiply: 10 × 0.09 × 0.343 = 0.3087.
+
+  **Answer:** P(X = 2) = 0.3087 (to 4 decimal places).
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Interpreting the regression line outside the data range** Extrapolating beyond observed x-values assumes the linear relationship continues, which is often false.
+  - **Using the binomial model when trials are not independent** Check the conditions: without replacement from a small population, p changes each trial and the binomial does not apply.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="X ~ B(4, 0.5). Find P(X = 0)." hint="All four trials fail.">
+    P = C(4,0) × 0.5⁰ × 0.5⁴ = 0.0625.
+  </PracticeItem>
+  <PracticeItem question="X ~ B(6, 0.2). Find P(X = 1)." hint="C(6,1) = 6.">
+    P = 6 × 0.2 × 0.8⁵ = 6 × 0.2 × 0.32768 = 0.393216.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(100, 15²). Find the z-score for x = 130." hint="z = (x − μ)/σ.">
+    z = (130 − 100)/15 = 2.
+  </PracticeItem>
+  <PracticeItem question="For X ~ N(μ, σ²), what is P(X greater than μ)?" hint="Think about symmetry.">
+    0.5 — half the area lies above the mean.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Correlation and regression — quick check">
+  <QuizQuestion question="Which of these best defines &quot;Binomial distribution&quot;?" options={["The probability threshold (often 5%) below which observed results are deemed too unlikely under H₀, so H₀ is rejected.", "A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²).", "The default claim in a hypothesis test — typically 'no effect' or 'no change' — which is rejected only if the evidence is strong enough.", "The distribution of the number of successes in n independent trials each with success probability p, written X ~ B(n, p)."]} answer={3} explanation="The distribution of the number of successes in n independent trials each with success probability p, written X ~ B(n, p)." />
+  <QuizQuestion question="Explain why 'the mean has increased' is a one-tailed alternative hypothesis." options={["Interpreting the regression line outside the data range", "Extrapolating beyond observed x-values assumes the linear relationship continues, which is often false.", "A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²).", "It specifies an increase only, so the critical region lies in a single (upper) tail of the distribution."]} answer={3} explanation="It specifies an increase only, so the critical region lies in a single (upper) tail of the distribution." />
+  <QuizQuestion question="A test at the 5% level gives p-value 0.032. What is the conclusion?" options={["2.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis.", "5.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis.", "1.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis.", "0.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis."]} answer={3} explanation="0.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis." />
+</Quiz>
+
+<Summary>
+  - Correlation and regression: measuring linear association and fitting regression lines for prediction.
+  - Binomial probabilities: P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ.
+  - Normal distribution: A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²).
+  - Watch out for: interpreting the regression line outside the data range
+</Summary>

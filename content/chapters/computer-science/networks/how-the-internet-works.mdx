@@ -1,0 +1,73 @@
+---
+title: "How the Internet Works"
+lede: "Trace a web request from your device to a server and back."
+---
+
+<LearningObjectives>
+  <li>Define and explain How the Internet Works in your own words</li>
+  <li>Use key terms such as network accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on How the Internet Works: trace a web request from your device to a server and back.
+
+<Definition term="How the Internet Works">
+  Trace a web request from your device to a server and back.
+</Definition>
+
+## Key ideas
+
+### Data travels in packets
+
+A photo is too big to send in one go, so it is split into numbered packets that may take different routes. Each packet carries the sender's and receiver's IP addresses, and the receiving device reassembles them in order — requesting any that go missing. This is why a video can keep playing even on a wobbly connection.
+
+### Protocols keep everyone compatible
+
+Devices from thousands of manufacturers can communicate because they all follow the same protocols, such as TCP/IP. A protocol defines exactly how packets are addressed, sent and acknowledged — without these shared rules, the internet would be a tower of Babel.
+
+**Key term — network:** Two or more devices connected so they can share data and resources, from a home Wi-Fi to the entire internet.
+
+<WorkedExample title="Worked example: How the Internet Works">
+  What is the difference between a LAN and a WAN?
+
+  A LAN connects devices in a small area like a home or school; a WAN spans large distances — the internet is the biggest WAN of all.
+
+  **Answer:** A LAN connects devices in a small area like a home or school; a WAN spans large distances — the internet is the biggest WAN of all.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Thinking the internet and the World Wide Web are the same thing** Correction: the internet is the network of connected devices; the Web is just one service — pages and links — that runs on top of it, like email and streaming do.
+  - **Assuming packets arrive in order** Correction: packets take different routes and arrive jumbled — numbering lets the receiver sort them out.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Your friend says Wi-Fi and the internet are the same thing. How do you correct them?" hint="One is how you connect; the other is what you connect to.">
+    Wi-Fi is just the wireless link between your device and the router; the internet is the global network beyond the router that your data travels across.
+  </PracticeItem>
+  <PracticeItem question="True or false: every device on a network must use a different IP address." hint="What would happen if two devices shared one postal address?">
+    True — addresses must be unique so packets reach the right device, just as post needs a unique address per house.
+  </PracticeItem>
+  <PracticeItem question="Why is a long video split into packets instead of being sent whole?" hint="What happens if one tiny piece goes missing?">
+    Only the missing packets need re-sending instead of the whole video, and packets can travel different routes to avoid congestion.
+  </PracticeItem>
+  <PracticeItem question="What must every packet carry so routers can deliver it — and what everyday item does this resemble?" hint="Think about posting a letter.">
+    The destination IP address — like the address on an envelope, it tells every router where the packet is heading.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="How the Internet Works — quick check">
+  <QuizQuestion question="Which of these best defines &quot;network&quot;?" options={["An agreed set of rules for how devices communicate — like good manners for computers.", "A unique numerical label for a device on a network, so packets know where to go — like a postal address.", "A small chunk of data sent across a network, carrying part of the message plus addressing information.", "Two or more devices connected so they can share data and resources, from a home Wi-Fi to the entire internet."]} answer={3} explanation="Two or more devices connected so they can share data and resources, from a home Wi-Fi to the entire internet." />
+  <QuizQuestion question="How does encryption protect data on a public Wi-Fi network?" options={["An agreed set of rules for how devices communicate — like good manners for computers.", "A unique numerical label for a device on a network, so packets know where to go — like a postal address.", "Correction: the internet is the network of connected devices; the Web is just one service — pages and links — that runs on top of it, like email and streaming do.", "It scrambles the data so anyone intercepting the packets sees only meaningless noise without the key to unscramble it."]} answer={3} explanation="It scrambles the data so anyone intercepting the packets sees only meaningless noise without the key to unscramble it." />
+</Quiz>
+
+<Summary>
+  - How the Internet Works: trace a web request from your device to a server and back.
+  - Data travels in packets: A photo is too big to send in one go, so it is split into numbered packets that may take different routes.
+  - protocol: An agreed set of rules for how devices communicate — like good manners for computers.
+  - Watch out for: thinking the internet and the World Wide Web are the same thing
+</Summary>

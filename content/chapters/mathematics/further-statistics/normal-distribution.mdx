@@ -1,0 +1,73 @@
+---
+title: "The normal distribution"
+lede: "The bell curve, standardisation with z-scores, and finding probabilities from tables or technology."
+---
+
+<LearningObjectives>
+  <li>Define and explain The normal distribution in your own words</li>
+  <li>Use key terms such as Normal distribution accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on The normal distribution: the bell curve, standardisation with z-scores, and finding probabilities from tables or technology.
+
+<Definition term="The normal distribution">
+  The bell curve, standardisation with z-scores, and finding probabilities from tables or technology.
+</Definition>
+
+## Key ideas
+
+### Standardising the normal
+
+Convert X ~ N(μ, σ²) to Z ~ N(0, 1) via z = (x − μ)/σ, then read probabilities from tables. The total area under the curve is 1, and the curve is symmetric about μ, so the probability that X falls below the mean μ is 0.5.
+
+### Finding probabilities from the curve
+
+Because the total area under the curve is 1, areas are probabilities. Use symmetry first: P(X greater than μ) = 0.5, and P(μ − a less than X less than μ + a) is symmetric. For other values, standardise with z = (x − μ)/σ and read the probability from tables or a calculator. The empirical rule is a handy check: about 68% of values lie within one standard deviation of the mean, 95% within two, and 99.7% within three.
+
+**Key term — Normal distribution:** A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²).
+
+<WorkedExample title="Worked example: The normal distribution">
+  X ~ N(100, 15²). Find P(X less than 115).
+
+  Standardise: z = (115 − 100)/15 = 1. From tables, P(Z less than 1) ≈ 0.8413.
+
+  **Answer:** P(X less than 115) ≈ 0.8413.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Using the variance where the standard deviation belongs** The z-score formula needs σ, not σ²: for X ~ N(100, 15²), σ = 15, so z = (x − 100)/15.
+  - **Answering P(X less than x) when the question asks P(X greater than x)** Read carefully: P(X greater than x) = 1 − P(X less than x). Symmetry only gives you 0.5 exactly at the mean.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="X ~ N(100, 15²). Find the z-score for x = 130." hint="z = (x − μ)/σ.">
+    z = (130 − 100)/15 = 2.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(50, 10²). Find the z-score for x = 65." hint="z = (x − μ)/σ.">
+    z = (65 − 50)/10 = 1.5.
+  </PracticeItem>
+  <PracticeItem question="For X ~ N(μ, σ²), roughly what percentage of values lie within two standard deviations of the mean?" hint="Think 68–95–99.7.">
+    About 95%.
+  </PracticeItem>
+  <PracticeItem question="For X ~ N(μ, σ²), what is P(X greater than μ)?" hint="Think about symmetry.">
+    0.5 — half the area lies above the mean.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="The normal distribution — quick check">
+  <QuizQuestion question="Which of these best defines &quot;Normal distribution&quot;?" options={["The probability threshold (often 5%) below which observed results are deemed too unlikely under H₀, so H₀ is rejected.", "The default claim in a hypothesis test — typically 'no effect' or 'no change' — which is rejected only if the evidence is strong enough.", "The distribution of the number of successes in n independent trials each with success probability p, written X ~ B(n, p).", "A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²)."]} answer={3} explanation="A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²)." />
+  <QuizQuestion question="X ~ N(100, 15²). What is P(X less than 100)?" options={["1 — the total area under the curve.", "0 — no values lie below the mean.", "0.025 — the area beyond two standard deviations.", "0.5 — half the area lies below the mean by symmetry."]} answer={3} explanation="0.5 — half the area lies below the mean by symmetry." />
+</Quiz>
+
+<Summary>
+  - The normal distribution: the bell curve, standardisation with z-scores, and finding probabilities from tables or technology.
+  - Standardising the normal: Convert X ~ N(μ, σ²) to Z ~ N(0, 1) via z = (x − μ)/σ, then read probabilities from tables.
+  - Finding probabilities from the curve: Areas are probabilities; use symmetry, z = (x − μ)/σ with tables, and the 68–95–99.7 rule as a check.
+  - Watch out for: using the variance where the standard deviation belongs
+</Summary>

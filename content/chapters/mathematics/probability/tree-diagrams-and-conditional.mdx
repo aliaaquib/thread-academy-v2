@@ -1,0 +1,76 @@
+---
+title: "Tree diagrams and conditional probability"
+lede: "Building tree diagrams for events with and without replacement, and finding conditional probabilities."
+---
+
+<LearningObjectives>
+  <li>Define and explain Tree diagrams and conditional probability in your own words</li>
+  <li>Use key terms such as Conditional probability accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Tree diagrams and conditional probability: building tree diagrams for events with and without replacement, and finding conditional probabilities.
+
+<Definition term="Tree diagrams and conditional probability">
+  Building tree diagrams for events with and without replacement, and finding conditional probabilities.
+</Definition>
+
+## Key ideas
+
+### Tree diagrams
+
+A tree diagram shows every branch of a multi-step experiment with probabilities on each branch. Multiply along a branch for that route's probability; add the routes that satisfy the event. Always check all branches from one point sum to 1.
+
+### The multiplication rule
+
+For independent events, P(A and B) = P(A) × P(B). Two heads on two fair coin tosses gives 1/2 × 1/2 = 1/4. For dependent events such as drawing without replacement, use the new totals after each draw.
+
+**Key term — Conditional probability:** The probability of an event given that another event has already happened, written P(A given B), used when events are not independent.
+
+<WorkedExample title="Probability without replacement">
+  A bag holds 3 red and 2 blue counters. Two are drawn without replacement. Find the probability both are red.
+
+  First draw: P(red) = 3/5.
+  Second draw: one red is gone, so 2 red remain out of 4 counters: P(red given red) = 2/4 = 1/2.
+  Multiply: 3/5 × 1/2 = 3/10.
+
+  **Answer:** 3/10 (0.3 or 30%).
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Multiplying when events are dependent** Without replacement the second probability changes — use the reduced totals, or draw a tree diagram.
+  - **Adding probabilities of events that overlap** The addition rule needs mutually exclusive events; drawing a red card or a king double-counts the king of hearts.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="A fair six-sided die is rolled. Find P(rolling an even number)." hint="Count the even faces: 2, 4, 6.">
+    P = 3/6 = 1/2.
+  </PracticeItem>
+  <PracticeItem question="A fair coin is tossed twice. Find P(two heads)." hint="Tosses are independent: multiply.">
+    P = 1/2 × 1/2 = 1/4.
+  </PracticeItem>
+  <PracticeItem question="P(it rains tomorrow) = 0.3. Find P(it does not rain)." hint="Use the complement: probabilities sum to 1.">
+    P = 1 − 0.3 = 0.7.
+  </PracticeItem>
+  <PracticeItem question="A spinner has sectors 1, 2, 3, 4 (equally likely). Find P(spinning a 1 or a 2)." hint="The outcomes are mutually exclusive: add.">
+    P = 1/4 + 1/4 = 1/2.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Tree diagrams and conditional probability — quick check">
+  <QuizQuestion question="Which of these best defines &quot;Conditional probability&quot;?" options={["A number between 0 and 1 measuring how likely an event is, where 0 means impossible and 1 means certain. For equally likely outcomes it is (favourable outcomes) ÷ (total outcomes).", "Two events that cannot happen at the same time, such as rolling a 2 and rolling a 5 on one throw; their probabilities add.", "Two events are independent when one does not affect the other, such as two coin tosses; multiply their probabilities.", "The probability of an event given that another event has already happened, written P(A given B), used when events are not independent."]} answer={3} explanation="The probability of an event given that another event has already happened, written P(A given B), used when events are not independent." />
+  <QuizQuestion question="Two dice are rolled. Find P(total of 7)." options={["7 favourable pairs out of 36: P = 6/36 = 1/6.", "8 favourable pairs out of 36: P = 6/36 = 1/6.", "5 favourable pairs out of 36: P = 6/36 = 1/6.", "6 favourable pairs out of 36: P = 6/36 = 1/6."]} answer={3} explanation="6 favourable pairs out of 36: P = 6/36 = 1/6." />
+  <QuizQuestion question="A bag holds 4 green and 6 yellow sweets. One sweet is taken at random. Find P(green)." options={["P = 5/10 = 2/5.", "P = 6/10 = 2/5.", "P = 3/10 = 2/5.", "P = 4/10 = 2/5."]} answer={3} explanation="P = 4/10 = 2/5." />
+</Quiz>
+
+<Summary>
+  - Tree diagrams and conditional probability: building tree diagrams for events with and without replacement, and finding conditional probabilities.
+  - Tree diagrams: A tree diagram shows every branch of a multi-step experiment with probabilities on each branch.
+  - Mutually exclusive: Two events that cannot happen at the same time, such as rolling a 2 and rolling a 5 on one throw; their probabilities add.
+  - Watch out for: multiplying when events are dependent
+</Summary>

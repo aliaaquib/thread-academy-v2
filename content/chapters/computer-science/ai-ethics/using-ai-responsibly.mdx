@@ -1,0 +1,73 @@
+---
+title: "Using AI Responsibly"
+lede: "Weigh up privacy, accountability and honest use of AI tools."
+---
+
+<LearningObjectives>
+  <li>Define and explain Using AI Responsibly in your own words</li>
+  <li>Use key terms such as machine learning accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Using AI Responsibly: weigh up privacy, accountability and honest use of AI tools.
+
+<Definition term="Using AI Responsibly">
+  Weigh up privacy, accountability and honest use of AI tools.
+</Definition>
+
+## Key ideas
+
+### Humans stay responsible
+
+An AI cannot be blamed: the people who build, deploy and rely on it answer for its mistakes. That means checking high-stakes decisions — medical, legal, financial — keeping humans in the loop, and being honest about when AI generated your work. Powerful tools demand careful owners.
+
+### Learning replaces hand-written rules
+
+Nobody could write rules to recognise every cat photo, so instead a model is shown thousands of labelled examples and adjusts its internal numbers until it predicts well. This is training; the model's skill is then tested on new examples it has never seen. If it only memorises the training set — overfitting — it fails on anything new.
+
+**Key term — machine learning:** A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules.
+
+<WorkedExample title="Worked example: Using AI Responsibly">
+  You use an AI chatbot to draft your history essay. What is the responsible way to handle this?
+
+  Be honest that AI assisted you, check every fact yourself (AI can invent plausible-sounding errors), and make sure the final thinking and wording are your own.
+
+  **Answer:** Be honest that AI assisted you, check every fact yourself (AI can invent plausible-sounding errors), and make sure the final thinking and wording are your own.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Trusting a high accuracy score without asking what it was tested on** Correction: always ask whether the test data was balanced and representative — 98% on easy data can hide total failure elsewhere.
+  - **Assuming AI is neutral because maths is neutral** Correction: models inherit the biases of their training data — neutrality must be tested for, never assumed.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="What is the difference between traditional programming and machine learning?" hint="Rules written by hand versus patterns found in data.">
+    In traditional programming humans write explicit rules; in machine learning the program finds its own patterns by training on data.
+  </PracticeItem>
+  <PracticeItem question="Why does a model trained only on photos taken in daylight struggle at night?" hint="Think about what patterns it has actually seen.">
+    Its training data contains no night-time patterns, so it never learned the features of dark images — it can only recognise what it has seen.
+  </PracticeItem>
+  <PracticeItem question="A university uses AI to screen applications, trained on ten years of past admissions. Name one fairness risk." hint="What if past admissions favoured one group?">
+    The model may learn to prefer applicants resembling past successful ones, entrenching old biases against under-represented groups.
+  </PracticeItem>
+  <PracticeItem question="What is overfitting, and how would you detect it?" hint="Great on training data, poor on new data.">
+    Overfitting is when a model memorises training examples instead of learning general patterns; it shows as high training accuracy but poor accuracy on unseen test data.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Using AI Responsibly — quick check">
+  <QuizQuestion question="Which of these best defines &quot;machine learning&quot;?" options={["A systematic unfairness in a model's decisions, usually inherited from unrepresentative or prejudiced training data.", "The examples a model learns from — thousands of labelled photos, texts or records. Its quality and balance shape everything the model does.", "The trained program produced by machine learning — a set of tuned numbers that maps new inputs to predictions.", "A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules."]} answer={3} explanation="A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules." />
+  <QuizQuestion question="True or false: removing names from training data guarantees a model cannot discriminate." options={["True", "Sometimes true", "Cannot be determined from the information given", "False — remaining details like postcode or school can act as proxies for protected characteristics, so bias can survive."]} answer={3} explanation="False — remaining details like postcode or school can act as proxies for protected characteristics, so bias can survive." />
+</Quiz>
+
+<Summary>
+  - Using AI Responsibly: weigh up privacy, accountability and honest use of AI tools.
+  - Humans stay responsible: An AI cannot be blamed: the people who build, deploy and rely on it answer for its mistakes.
+  - training data: The examples a model learns from — thousands of labelled photos, texts or records.
+  - Watch out for: trusting a high accuracy score without asking what it was tested on
+</Summary>

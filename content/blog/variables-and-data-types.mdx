@@ -1,0 +1,156 @@
+---
+title: "Variables and Data Types Explained"
+description: "Variables are named boxes storing program values. Learn Python assignment, the five core data types with examples, why type errors happen, and constants."
+slug: "variables-and-data-types"
+date: 2026-09-07
+subject: "Computer Science"
+subject_slug: "computer-science"
+curriculum: "cambridge"
+level: "igcse"
+level_name: "IGCSE"
+author: "Thread Academy"
+keywords:
+  - "variables in programming"
+  - "Python data types"
+  - "integer float string Boolean"
+  - "type errors"
+  - "constants in programming"
+chapters:
+  - "programming"
+  - "data-representation"
+lessons:
+  - "programming/variables"
+---
+
+Almost every program needs to remember something: a score, a name, a total. Programs remember things using **variables** — named storage locations that hold a value while the program runs. If you understand variables and the types of values they hold, you understand a large part of how programs work.
+
+## What a variable is
+
+Think of a variable as a labelled box. You choose a name, put a value inside, and later you can read the value or replace it with a new one. In Python, **assignment** uses the `=` symbol, and it works like this:
+
+```python
+score = 0
+score = 10
+print(score)
+```
+
+The first line creates the variable `score` and stores 0 in it. The second line replaces the old value with 10. The third line outputs `10`. A variable's value can change during a program — that is exactly why it is called variable.
+
+Good names matter. `score` tells the reader what the value means; `x` does not. Choose names that describe the data they hold.
+
+## The five main data types
+
+Every value stored in a variable has a **data type**, which determines what kind of value it is and what operations make sense for it. The five core types you need to know are:
+
+### Integer
+
+Whole numbers, positive or negative, with no decimal point. Used for counts and anything that cannot sensibly be fractional.
+
+```python
+age = 16
+temperature = -3
+lives_remaining = 5
+```
+
+### Real (float)
+
+Numbers with a decimal point, used for measurements and anything that needs fractions. In Python this type is called a **float**.
+
+```python
+price = 4.99
+average = 72.5
+gravity = 9.81
+```
+
+### Char
+
+A single character: one letter, digit, or symbol. In Python, chars are handled as one-character strings, but the concept of a single character matters in many languages.
+
+```python
+grade = "A"
+initial = "k"
+```
+
+### String
+
+A sequence of characters: words, sentences, or any text. Strings are written in quotes.
+
+```python
+name = "Ada Lovelace"
+message = "Hello, world!"
+postcode = "1026"   # digits stored as text — see below
+```
+
+### Boolean
+
+One of only two values, `True` or `False`, used for yes-or-no decisions and the results of comparisons.
+
+```python
+is_logged_in = True
+game_over = False
+```
+
+## Why data types matter: type errors
+
+The data type controls which operations are valid. Adding two integers makes sense; adding a number to text usually does not. Watch what happens:
+
+```python
+score = 10
+name = "Ada"
+
+total = score + name   # TypeError: cannot add a number and a string
+```
+
+This is a **type error**: the program tries to perform an operation on data types that do not fit together. Python stops and reports the error, which is genuinely helpful — it tells you exactly where your thinking went wrong.
+
+Types also protect against silent mistakes. A postcode of `"1026"` looks like a number, but treating it as a string is correct: you would never add two postcodes together. Choosing the right type is part of describing your data accurately.
+
+Sometimes you need to **convert** between types deliberately. Python provides functions such as `int()`, `float()`, and `str()` for this:
+
+```python
+age_text = input("How old are you? ")   # input() always returns a string
+age = int(age_text)                      # convert to an integer for maths
+print("Next year you will be " + str(age + 1))
+```
+
+Notice the careful conversions: input arrives as text, becomes an integer for the calculation, and converts back to text for printing.
+
+## Constants
+
+Some values should never change while a program runs: the number of days in a week, the price of an item in a fixed catalogue, or a school's name. These are **constants**.
+
+```python
+DAYS_IN_WEEK = 7
+SCHOOL_NAME = "Thread Academy"
+```
+
+By convention, constant names are written in CAPITAL_LETTERS so that any reader can see they are not meant to change. Using a named constant instead of a bare number is better for two reasons: it documents what the value means, and if it ever does need updating, you change it in one place.
+
+## Key takeaways
+
+- A variable is a named storage location whose value can change while a program runs.
+- Python assignment uses `=`: `score = 10` creates or updates the variable `score`.
+- The five core data types are integer, real (float), char, string, and Boolean.
+- Data types decide which operations are valid; mismatched types cause type errors.
+- Converting types deliberately with `int()`, `float()`, or `str()` avoids surprises.
+- Constants are values that must not change; name them in CAPITALS to mark that clearly.
+
+## Putting it together: a small program
+
+Here is a short program that uses almost everything in this article. It greets a user, works out a total price, and decides whether the order qualifies for free delivery.
+
+```python
+FREE_DELIVERY_LIMIT = 25.0
+VAT_RATE = 0.20
+
+customer = "Bilal"
+subtotal = 18.50
+vat = subtotal * VAT_RATE
+total = subtotal + vat
+
+print("Customer: " + customer)
+print("Total: " + str(round(total, 2)))
+print("Free delivery: " + str(total >= FREE_DELIVERY_LIMIT))
+```
+
+The variables `customer`, `subtotal`, `vat`, and `total` change as the program runs, while `FREE_DELIVERY_LIMIT` and `VAT_RATE` stay fixed. Each value has the type that fits it: text is a string, prices are floats, and the free-delivery answer is a Boolean produced by checking whether `total` is greater than or equal to `FREE_DELIVERY_LIMIT`. Notice the `str()` conversions before printing, and `round()` to keep the money to two decimal places. Read the program again slowly, and check that every variable has a sensible type for the job it does — that habit will save you from most type errors before they happen.

@@ -1,0 +1,76 @@
+---
+title: "Bubble Sort"
+lede: "Sort lists by repeatedly swapping neighbouring items."
+---
+
+<LearningObjectives>
+  <li>Define and explain Bubble Sort in your own words</li>
+  <li>Use key terms such as bubble sort accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Bubble Sort: sort lists by repeatedly swapping neighbouring items.
+
+<Definition term="Bubble Sort">
+  Sort lists by repeatedly swapping neighbouring items.
+</Definition>
+
+## Key ideas
+
+### How bubble sort works
+
+One pass steps through the list comparing each neighbouring pair and swapping them when they are in the wrong order. After a full pass, the largest unsorted item has "bubbled" to its final position at the end. The algorithm repeats passes over the shrinking unsorted section until a complete pass makes no swaps — then the list is sorted. Each pass does about n comparisons, and up to n passes may be needed.
+
+### Bubble sort is simple, not fast
+
+Bubble sort is easy to understand and to code, which is why it is taught first — but comparing every pair of neighbours makes it slow, at O(n²) in the worst case. Python's built-in sort uses a far cleverer algorithm called Timsort. In exams, know bubble sort's steps and its weakness.
+
+**Key term — bubble sort:** Sorting by repeatedly stepping through a list, swapping neighbouring items that are in the wrong order, until no swaps are needed.
+
+<WorkedExample title="Worked example: Bubble Sort">
+  Sort [4, 2, 5, 1] using bubble sort, showing each pass.
+
+  Pass 1: compare 4,2 → swap → [2,4,5,1]; compare 4,5 → stay; compare 5,1 → swap → [2,4,1,5]. The 5 has bubbled to the end.
+  Pass 2: compare 2,4 → stay; compare 4,1 → swap → [2,1,4,5]. The 4 is now placed.
+  Pass 3: compare 2,1 → swap → [1,2,4,5].
+  Pass 4: no swaps — sorted.
+
+  **Answer:** [1, 2, 4, 5] after 4 passes.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Claiming bubble sort is efficient because it is short to write** Correction: short code is not fast code — bubble sort's nested comparisons make it O(n²), slow for large lists.
+  - **Stopping after a single pass** Correction: one pass only places the largest item — keep passing until a full pass makes no swaps, otherwise the list is not sorted.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Trace one pass of bubble sort on [5, 3, 8, 1]. What is the list afterwards?" hint="Compare neighbours left to right, swapping when out of order.">
+    [3, 5, 1, 8] — 5 and 3 swap, 5 and 8 stay, 8 and 1 swap.
+  </PracticeItem>
+  <PracticeItem question="How many comparisons does one pass of bubble sort make on a list of 6 items?" hint="Each neighbouring pair is compared once.">
+    5 — the pairs are (1,2), (2,3), (3,4), (4,5), (5,6).
+  </PracticeItem>
+  <PracticeItem question="After the first full pass of bubble sort on [7, 3, 9, 2], which item is in its final position?" hint="What bubbles to the end?">
+    9 — the largest item bubbles to the end of the list after one pass.
+  </PracticeItem>
+  <PracticeItem question="An algorithm takes 4 seconds for 100 items and 16 seconds for 200 items. What Big-O growth does this suggest?" hint="Doubling the input quadrupled the time.">
+    O(n²) — quadrupling when the input doubles is the signature of quadratic growth.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Bubble Sort — quick check">
+  <QuizQuestion question="Which of these best defines &quot;bubble sort&quot;?" options={["Repeatedly halving a sorted list to find a target — comparing with the middle item and discarding the half that cannot contain it.", "Checking each item in a list one by one until the target is found. Simple, works on unsorted lists, but slow on large ones.", "A way of describing how an algorithm's running time grows as the input grows — for example, linear search is O(n) and binary search is O(log n).", "Sorting by repeatedly stepping through a list, swapping neighbouring items that are in the wrong order, until no swaps are needed."]} answer={3} explanation="Sorting by repeatedly stepping through a list, swapping neighbouring items that are in the wrong order, until no swaps are needed." />
+  <QuizQuestion question="After one complete pass of bubble sort, what do you know for certain?" options={["The whole list is sorted.", "The smallest item is in its final position.", "No more passes are needed.", "The largest unsorted item has bubbled into its final position."]} answer={3} explanation="The largest unsorted item has bubbled into its final position." />
+</Quiz>
+
+<Summary>
+  - Bubble Sort: sort lists by repeatedly swapping neighbouring items.
+  - How bubble sort works: Each pass swaps neighbouring out-of-order pairs, bubbling the largest remaining item to the end; repeat until a pass makes no swaps.
+  - bubble sort complexity: Up to n passes of about n comparisons gives O(n²) worst-case time — simple to code, slow on large lists.
+  - Watch out for: claiming bubble sort is efficient because it is short to write
+</Summary>

@@ -1,0 +1,73 @@
+---
+title: "Packets and Protocols"
+lede: "See how data is split into packets that follow agreed rules."
+---
+
+<LearningObjectives>
+  <li>Define and explain Packets and Protocols in your own words</li>
+  <li>Use key terms such as protocol accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Packets and Protocols: see how data is split into packets that follow agreed rules.
+
+<Definition term="Packets and Protocols">
+  See how data is split into packets that follow agreed rules.
+</Definition>
+
+## Key ideas
+
+### Protocols keep everyone compatible
+
+Devices from thousands of manufacturers can communicate because they all follow the same protocols, such as TCP/IP. A protocol defines exactly how packets are addressed, sent and acknowledged — without these shared rules, the internet would be a tower of Babel.
+
+### Data travels in packets
+
+A photo is too big to send in one go, so it is split into numbered packets that may take different routes. Each packet carries the sender's and receiver's IP addresses, and the receiving device reassembles them in order — requesting any that go missing. This is why a video can keep playing even on a wobbly connection.
+
+**Key term — protocol:** An agreed set of rules for how devices communicate — like good manners for computers.
+
+<WorkedExample title="Worked example: Packets and Protocols">
+  Why is a long video split into packets instead of being sent whole?
+
+  Only the missing packets need re-sending instead of the whole video, and packets can travel different routes to avoid congestion.
+
+  **Answer:** Only the missing packets need re-sending instead of the whole video, and packets can travel different routes to avoid congestion.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Believing a bigger pipe makes data travel faster** Correction: bandwidth is how much data fits at once, not the speed of each packet — a wider road carries more cars, but each car drives the same speed.
+  - **Assuming packets arrive in order** Correction: packets take different routes and arrive jumbled — numbering lets the receiver sort them out.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="How does encryption protect data on a public Wi-Fi network?" hint="Think about what a stranger would see.">
+    It scrambles the data so anyone intercepting the packets sees only meaningless noise without the key to unscramble it.
+  </PracticeItem>
+  <PracticeItem question="Your friend says Wi-Fi and the internet are the same thing. How do you correct them?" hint="One is how you connect; the other is what you connect to.">
+    Wi-Fi is just the wireless link between your device and the router; the internet is the global network beyond the router that your data travels across.
+  </PracticeItem>
+  <PracticeItem question="True or false: every device on a network must use a different IP address." hint="What would happen if two devices shared one postal address?">
+    True — addresses must be unique so packets reach the right device, just as post needs a unique address per house.
+  </PracticeItem>
+  <PracticeItem question="What must every packet carry so routers can deliver it — and what everyday item does this resemble?" hint="Think about posting a letter.">
+    The destination IP address — like the address on an envelope, it tells every router where the packet is heading.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Packets and Protocols — quick check">
+  <QuizQuestion question="Which of these best defines &quot;protocol&quot;?" options={["A small chunk of data sent across a network, carrying part of the message plus addressing information.", "A unique numerical label for a device on a network, so packets know where to go — like a postal address.", "Two or more devices connected so they can share data and resources, from a home Wi-Fi to the entire internet.", "An agreed set of rules for how devices communicate — like good manners for computers."]} answer={3} explanation="An agreed set of rules for how devices communicate — like good manners for computers." />
+  <QuizQuestion question="What is the difference between a LAN and a WAN?" options={["Correction: bandwidth is how much data fits at once, not the speed of each packet — a wider road carries more cars, but each car drives the same speed.", "A small chunk of data sent across a network, carrying part of the message plus addressing information.", "Two or more devices connected so they can share data and resources, from a home Wi-Fi to the entire internet.", "A LAN connects devices in a small area like a home or school; a WAN spans large distances — the internet is the biggest WAN of all."]} answer={3} explanation="A LAN connects devices in a small area like a home or school; a WAN spans large distances — the internet is the biggest WAN of all." />
+</Quiz>
+
+<Summary>
+  - Packets and Protocols: see how data is split into packets that follow agreed rules.
+  - Protocols keep everyone compatible: Devices from thousands of manufacturers can communicate because they all follow the same protocols, such as TCP/IP.
+  - packet: A small chunk of data sent across a network, carrying part of the message plus addressing information.
+  - Watch out for: believing a bigger pipe makes data travel faster
+</Summary>

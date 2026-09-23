@@ -1,0 +1,119 @@
+---
+title: "Functions"
+lede: "A function is a machine: feed in a number, get another number out. Learn function notation, how to evaluate functions, and what graphs reveal."
+---
+
+<LearningObjectives>
+  <li>Understand function notation f(x)</li>
+  <li>Evaluate functions for given inputs</li>
+  <li>Find inverse operations with functions</li>
+  <li>Read function graphs</li>
+</LearningObjectives>
+
+## Input → machine → output
+
+A **function** is a rule that turns each input into exactly one output. Think of a machine: drop in 3, out comes 7. Drop in 10, out comes 21. The machine here doubles and adds 1.
+
+<Definition term="function">
+  A **function** is a rule assigning each input exactly one output.
+  We write `f(x) = 2x + 1`, read as "f of x equals 2x + 1".
+</Definition>
+
+The notation `f(x)` looks like multiplication but isn't — it's the function's *name* (`f`) applied to the input (`x`).
+
+<Diagram caption="A function machine: each input has exactly one output.">
+<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <ellipse cx="110" cy="100" rx="62" ry="42" fill="#fbfbfa" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="110" y="94" textAnchor="middle" fontSize="15" fontWeight="700">input</text>
+  <text x="110" y="116" textAnchor="middle" fontSize="15">x = 3</text>
+  <rect x="230" y="55" width="100" height="90" rx="14" fill="#f3f8dc" stroke="#7c9a0c" strokeWidth="2"/>
+  <text x="280" y="95" textAnchor="middle" fontSize="15" fontWeight="700" fill="#4c6106">× 2</text>
+  <text x="280" y="118" textAnchor="middle" fontSize="15" fontWeight="700" fill="#4c6106">+ 1</text>
+  <ellipse cx="450" cy="100" rx="62" ry="42" fill="#fbfbfa" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="450" y="94" textAnchor="middle" fontSize="15" fontWeight="700">output</text>
+  <text x="450" y="116" textAnchor="middle" fontSize="15">f(3) = 7</text>
+  <line x1="172" y1="100" x2="226" y2="100" stroke="#1a1a1a" strokeWidth="2"/>
+  <polygon points="226,100 216,93 216,107" fill="#1a1a1a"/>
+  <line x1="334" y1="100" x2="384" y2="100" stroke="#1a1a1a" strokeWidth="2"/>
+  <polygon points="388,100 378,93 378,107" fill="#1a1a1a"/>
+</svg>
+</Diagram>
+
+## Evaluating functions
+
+**Evaluating** `f(3)` means substituting 3 wherever `x` appears:
+
+```maths
+f(x) = 2x + 1
+f(3) = 2(3) + 1 = 7
+f(−2) = 2(−2) + 1 = −3
+f(0) = 1
+```
+
+<WorkedExample title="Worked example">
+  If `g(x) = x² − 4`, find `g(5)` and the values of `x` for which `g(x) = 21`.
+
+  ```maths
+  g(5) = 25 − 4 = 21
+  x² − 4 = 21  →  x² = 25  →  x = 5 or x = −5
+  ```
+</WorkedExample>
+
+## Going backwards
+
+Functions can be undone by reversing each step. If `f(x) = 2x + 1` turns 3 into 7, the reverse turns 7 back into 3: subtract 1, then halve. This reverse function is called the **inverse**, written `f⁻¹(x) = (x − 1)/2`.
+
+Not every function has a neat inverse — but every linear function does.
+
+## Functions as graphs
+
+Plot input on the x-axis and output on the y-axis, and the function becomes a **graph**. The graph of `f(x) = 2x + 1` is a straight line; reading values off it is the same calculation, done visually. Solving `f(x) = 7` means finding where the graph reaches height 7.
+
+<ImportantNote title="One input, one output">
+  The defining rule: each input gives **exactly one** output. A rule giving two outputs for one input
+  (like "x = ±√y") is not a function. This is the vertical-line test on graphs.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="If f(x) = 3x − 2, find f(4) and f(−1)." hint="Substitute each value for x.">
+    `f(4) = 3(4) − 2 = 10`. `f(−1) = 3(−1) − 2 = −5`.
+  </PracticeItem>
+  <PracticeItem question="If h(x) = 5 − 2x, find x such that h(x) = 11." hint="Set up and solve the equation.">
+    `5 − 2x = 11` → `−2x = 6` → `x = −3`.
+  </PracticeItem>
+  <PracticeItem question="Write the inverse function of f(x) = 3x + 6." hint="Reverse the steps: what undoes ×3 then +6?">
+    Undo `+6` (subtract 6), then undo `×3` (divide by 3): `f⁻¹(x) = (x − 6)/3`.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Functions — quick check">
+  <QuizQuestion
+    question="If f(x) = x² + 1, what is f(3)?"
+    options={["7", "10", "8", "9"]}
+    answer={1}
+    explanation="f(3) = 3² + 1 = 9 + 1 = 10."
+  />
+  <QuizQuestion
+    question="What does f(x) notation mean?"
+    options={["f times x", "The function f applied to input x", "f divided by x", "The x-th function"]}
+    answer={1}
+    explanation="f(x) is read 'f of x' — the output of function f for input x."
+  />
+  <QuizQuestion
+    question="If g(x) = 4x, what is the inverse function g⁻¹(x)?"
+    options={["x/4", "4/x", "x − 4", "−4x"]}
+    answer={0}
+    explanation="Undo ×4 by ÷4: g⁻¹(x) = x/4."
+  />
+</Quiz>
+
+<Summary>
+  - A function maps each input to exactly one output; f(x) is "f of x".
+  - Evaluate by substituting the input for x.
+  - Inverse functions reverse the steps: undo last operation first.
+  - Graphs turn functions into pictures — solving becomes reading coordinates.
+</Summary>

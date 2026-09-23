@@ -1,0 +1,75 @@
+---
+title: "Binary Numbers"
+lede: "Count in base 2 and convert between binary and denary."
+---
+
+<LearningObjectives>
+  <li>Define and explain Binary Numbers in your own words</li>
+  <li>Use key terms such as denary accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Every photo, song, message and game on your devices is stored as billions of tiny switches, each either on or off. Data representation is the clever set of codes that turns those ones and zeros into everything a computer shows you. Once you can read binary, you can see through the magic.
+
+This lesson focuses on Binary Numbers: count in base 2 and convert between binary and denary.
+
+<Definition term="Binary Numbers">
+  Count in base 2 and convert between binary and denary.
+</Definition>
+
+## Key ideas
+
+### Place value works in any base
+
+Denary uses columns worth 1, 10, 100 and so on; binary uses columns worth 1, 2, 4, 8, 16 and so on, doubling each time. To convert binary to denary, add up the column values where there is a 1 — so 1011 means 8 + 2 + 1 = 11.
+
+### Everything is binary underneath
+
+Text, images, sound and video are all stored as patterns of bits — the computer just interprets the patterns differently. The binary pattern 01000001 means the letter 'A' in text, but the same pattern could mean the number 65 or a dark pixel in an image. Meaning comes from context, not from the bits themselves.
+
+**Key term — denary:** The ordinary base-10 number system we use every day, with the digits 0 to 9. Also called decimal.
+
+<WorkedExample title="Worked example: Binary Numbers">
+  Convert the binary number 1101 to denary.
+
+  13 — that is 8 + 4 + 1.
+
+  **Answer:** 13 — that is 8 + 4 + 1.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Reading binary left to right as if the leftmost digit is worth 1** Correction: the rightmost column is always worth 1 — write the place values above the digits before adding.
+  - **Thinking 8 bits can store the number 999** Correction: 8 bits hold 0 to 255 only; larger numbers need more bits — check 2 to the power of n first.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Write denary 20 as a binary number." hint="The biggest place value that fits is 16.">
+    10100 — that is 16 + 4.
+  </PracticeItem>
+  <PracticeItem question="The letter 'A' is stored as 01000001. What number is that in denary, and why might the same pattern mean something else elsewhere?" hint="Convert, then think about context.">
+    65 — and the same bits could be a colour value or part of an image, because meaning comes from how the program interprets the bits.
+  </PracticeItem>
+  <PracticeItem question="A sound file sampled at a higher rate is larger. Why?" hint="Think about what the sampling rate counts.">
+    A higher rate takes more samples every second, so more numbers must be stored — better quality costs more bits.
+  </PracticeItem>
+  <PracticeItem question="True or false: adding one more bit to a code doubles the number of values it can represent." hint="Compare 2 to the power of n with 2 to the power of (n + 1).">
+    True — each extra bit doubles the combinations, since every existing pattern can end in either 0 or 1.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Binary Numbers — quick check">
+  <QuizQuestion question="Which of these best defines &quot;denary&quot;?" options={["A single binary digit — a 0 or a 1. The smallest unit of data in computing.", "A group of 8 bits. One byte can represent 256 different values, from 0 to 255.", "The smallest dot in a digital image. Images are grids of pixels, each stored as a binary colour value.", "The ordinary base-10 number system we use every day, with the digits 0 to 9. Also called decimal."]} answer={3} explanation="The ordinary base-10 number system we use every day, with the digits 0 to 9. Also called decimal." />
+  <QuizQuestion question="How many different values can 4 bits represent?" options={["17 — from 0 to 15.", "15 — from 0 to 15.", "18 — from 0 to 15.", "16 — from 0 to 15."]} answer={3} explanation="16 — from 0 to 15." />
+</Quiz>
+
+<Summary>
+  - Binary Numbers: count in base 2 and convert between binary and denary.
+  - Place value works in any base: Denary uses columns worth 1, 10, 100 and so on; binary uses columns worth 1, 2, 4, 8, 16 and so on, doubling each time.
+  - bit: A single binary digit — a 0 or a 1.
+  - Watch out for: reading binary left to right as if the leftmost digit is worth 1
+</Summary>

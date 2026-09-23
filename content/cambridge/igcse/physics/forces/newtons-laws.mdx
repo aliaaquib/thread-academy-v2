@@ -1,0 +1,151 @@
+---
+title: "Newton's Laws of Motion"
+lede: "Three laws from 1687 that still govern everything from a falling apple to a rocket launch. Learn them, draw the forces, and calculate what happens next."
+---
+
+<LearningObjectives>
+  <li>State Newton's three laws of motion</li>
+  <li>Use F = ma to calculate force, mass and acceleration</li>
+  <li>Explain everyday situations with the third law</li>
+  <li>Distinguish mass from weight</li>
+</LearningObjectives>
+
+## A universe with rules
+
+In 1687 Isaac Newton published three laws that describe how objects move. They aren't obvious — it took humanity thousands of years to get them right — but once you have them, you can predict everything from a braking car to a satellite's orbit.
+
+<Definition term="force">
+  A **force** is a push or a pull. It is measured in **newtons (N)** and always has both a size and a direction.
+  Forces change motion: they speed things up, slow them down, or change their direction.
+</Definition>
+
+The key idea running through all three laws is the **resultant force** — what you get when all the forces on an object are added together (as arrows). If the resultant force is zero, the forces are **balanced**. If not, they're **unbalanced** — and the motion changes.
+
+## Newton's first law: keep doing what you're doing
+
+<Formula label="Newton's 1st law">
+  An object keeps its velocity unless a resultant force acts on it.
+</Formula>
+
+A hockey puck sliding on ice keeps sliding — it doesn't need a force to *keep* moving, only to *change* its motion. This property is called **inertia**: the tendency of objects to resist changes to their motion. More mass means more inertia.
+
+Why does a passenger lurch forward when a bus brakes? The bus slows, but the passenger's body keeps its velocity (first law) until the seatbelt provides the force to slow them too.
+
+## Newton's second law: F = ma
+
+<Formula label="Newton's 2nd law">
+  F = m × a
+</Formula>
+
+The **resultant force** on an object equals its **mass** times its **acceleration**. Bigger force → bigger acceleration. Bigger mass → smaller acceleration for the same force.
+
+<WorkedExample title="Worked example">
+  A 2 kg trolley accelerates at 3 m/s². What is the resultant force?
+
+  ```maths
+  F = m × a
+  F = 2 kg × 3 m/s²
+  F = 6 N
+  ```
+
+  And in reverse: a 1200 kg car experiences a resultant force of 3000 N. Its acceleration is `a = F/m = 3000/1200 = 2.5 m/s²`.
+</WorkedExample>
+
+<ImportantNote title="Mass vs weight — don't mix them up">
+  **Mass** (kg) is how much matter an object contains — the same everywhere.
+  **Weight** (N) is the force of gravity on that mass: `weight = mass × gravitational field strength`.
+  On Earth, g ≈ 10 N/kg, so a 2 kg bag weighs about 20 N. On the Moon it would weigh less but its mass wouldn't change.
+</ImportantNote>
+
+<Diagram caption="Free-body diagram: draw every force on the object as an arrow before you calculate.">
+<svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <rect x="230" y="90" width="100" height="70" rx="8" fill="#f3f8dc" stroke="#7c9a0c" strokeWidth="2"/>
+  <text x="280" y="130" textAnchor="middle" fontSize="15" fontWeight="700" fill="#1a1a1a">object</text>
+  <line x1="280" y1="90" x2="280" y2="38" stroke="#4c6106" strokeWidth="3"/>
+  <polygon points="280,30 272,42 288,42" fill="#4c6106"/>
+  <text x="292" y="52" fontSize="14" fontWeight="700" fill="#4c6106">reaction</text>
+  <line x1="280" y1="160" x2="280" y2="210" stroke="#1a1a1a" strokeWidth="3"/>
+  <polygon points="280,218 272,206 288,206" fill="#1a1a1a"/>
+  <text x="292" y="200" fontSize="14" fontWeight="700">weight</text>
+  <line x1="230" y1="125" x2="150" y2="125" stroke="#1a1a1a" strokeWidth="3"/>
+  <polygon points="142,125 154,117 154,133" fill="#1a1a1a"/>
+  <text x="150" y="110" fontSize="14" fontWeight="700">friction</text>
+  <line x1="330" y1="125" x2="410" y2="125" stroke="#4c6106" strokeWidth="3"/>
+  <polygon points="418,125 406,117 406,133" fill="#4c6106"/>
+  <text x="368" y="110" fontSize="14" fontWeight="700" fill="#4c6106">push</text>
+</svg>
+</Diagram>
+
+## Newton's third law: every action has a reaction
+
+<Formula label="Newton's 3rd law">
+  For every action there is an equal and opposite reaction.
+</Formula>
+
+Push on a wall and the wall pushes back on you — that's why your hand hurts, not the wall. The two forces act on **different objects**, which is why they don't cancel out.
+
+<Example title="How rockets work">
+  A rocket pushes exhaust gases **backwards** (action). The gases push the rocket **forwards** with an equal and opposite force (reaction).
+  Notice: no air is needed to "push against" — rockets work perfectly in the vacuum of space.
+</Example>
+
+Swimming, walking, birds flying — all third-law stories. You push water back; water pushes you forward.
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="State Newton's three laws in your own words." hint="Think: keep going / F = ma / action–reaction.">
+    1) Objects maintain their velocity unless a resultant force acts. 2) F = ma — resultant force equals mass × acceleration. 3) Every action has an equal and opposite reaction.
+  </PracticeItem>
+  <PracticeItem question="A 5 kg object accelerates at 4 m/s². Find the resultant force." hint="F = ma.">
+    F = 5 × 4 = 20 N.
+  </PracticeItem>
+  <PracticeItem question="Explain why a rocket can accelerate in empty space." hint="What does it push on?">
+    The rocket expels gas backwards (action); by the third law the gas pushes the rocket forwards (reaction). No surrounding air is required.
+  </PracticeItem>
+  <PracticeItem question="A car (1200 kg) brakes with a resultant force of 6000 N. Find its deceleration." hint="Rearrange F = ma to a = F/m.">
+    a = 6000/1200 = 5 m/s² (deceleration).
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Newton's laws — quick check">
+  <QuizQuestion
+    question="A puck slides across frictionless ice at constant velocity. The resultant force on it is…"
+    options={["equal to its weight", "zero", "in the direction of motion", "increasing"]}
+    answer={1}
+    explanation="Constant velocity means no change in motion, so (1st law) the resultant force is zero."
+  />
+  <QuizQuestion
+    question="A 10 N resultant force acts on a 2 kg mass. The acceleration is…"
+    options={["20 m/s²", "5 m/s²", "12 m/s²", "0.2 m/s²"]}
+    answer={1}
+    explanation="a = F/m = 10/2 = 5 m/s²."
+  />
+  <QuizQuestion
+    question="When you walk, the force that pushes you forward comes from…"
+    options={["your muscles pushing air", "the ground pushing back on your foot", "gravity pulling you", "friction stopping you"]}
+    answer={1}
+    explanation="Your foot pushes backwards on the ground (action); the ground pushes you forwards (reaction) — Newton's third law."
+  />
+  <QuizQuestion
+    question="An astronaut's mass is 80 kg on Earth. On the Moon it is…"
+    options={["80 kg", "about 13 kg", "zero", "800 kg"]}
+    answer={0}
+    explanation="Mass measures amount of matter — it doesn't change. Weight changes; mass doesn't."
+  />
+</Quiz>
+
+<Summary>
+  - 1st law: objects keep their velocity unless a resultant force acts (inertia).
+  - 2nd law: F = ma — link force, mass and acceleration, and rearrange confidently.
+  - 3rd law: every action has an equal and opposite reaction, acting on different objects.
+  - Mass (kg) is matter; weight (N) is gravity's pull on it: weight = m × g.
+  - Draw free-body diagrams before calculating — arrows first, numbers second.
+</Summary>
+
+<RelatedTopics items={[
+  { title: "Motion — speed, velocity and acceleration", href: "/subjects/physics/cambridge/igcse/motion" },
+  { title: "Energy", href: "/subjects/physics/cambridge/igcse/energy" },
+]} />

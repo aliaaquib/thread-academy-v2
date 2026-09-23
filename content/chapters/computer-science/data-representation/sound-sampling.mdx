@@ -1,0 +1,73 @@
+---
+title: "Sound and Sampling"
+lede: "Learn how sound waves are sampled into digital audio."
+---
+
+<LearningObjectives>
+  <li>Define and explain Sound and Sampling in your own words</li>
+  <li>Use key terms such as pixel accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Sound and Sampling: learn how sound waves are sampled into digital audio.
+
+<Definition term="Sound and Sampling">
+  Learn how sound waves are sampled into digital audio.
+</Definition>
+
+## Key ideas
+
+### Everything is binary underneath
+
+Text, images, sound and video are all stored as patterns of bits — the computer just interprets the patterns differently. The binary pattern 01000001 means the letter 'A' in text, but the same pattern could mean the number 65 or a dark pixel in an image. Meaning comes from context, not from the bits themselves.
+
+### More bits means more detail
+
+With n bits you can represent 2 to the power of n different values: 8 bits give 256 colours or characters, while 24 bits give over 16 million colours. Higher colour depth, higher image resolution and higher sound quality all cost more bits — a trade-off between quality and file size.
+
+**Key term — pixel:** The smallest dot in a digital image. Images are grids of pixels, each stored as a binary colour value.
+
+<WorkedExample title="Worked example: Sound and Sampling">
+  A sound file sampled at a higher rate is larger. Why?
+
+  A higher rate takes more samples every second, so more numbers must be stored — better quality costs more bits.
+
+  **Answer:** A higher rate takes more samples every second, so more numbers must be stored — better quality costs more bits.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Reading binary left to right as if the leftmost digit is worth 1** Correction: the rightmost column is always worth 1 — write the place values above the digits before adding.
+  - **Thinking 8 bits can store the number 999** Correction: 8 bits hold 0 to 255 only; larger numbers need more bits — check 2 to the power of n first.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Convert the binary number 1101 to denary." hint="Place values are 8, 4, 2, 1 — add the ones with a 1.">
+    13 — that is 8 + 4 + 1.
+  </PracticeItem>
+  <PracticeItem question="Write denary 20 as a binary number." hint="The biggest place value that fits is 16.">
+    10100 — that is 16 + 4.
+  </PracticeItem>
+  <PracticeItem question="How many different values can 4 bits represent?" hint="Work out 2 to the power of 4.">
+    16 — from 0 to 15.
+  </PracticeItem>
+  <PracticeItem question="The letter 'A' is stored as 01000001. What number is that in denary, and why might the same pattern mean something else elsewhere?" hint="Convert, then think about context.">
+    65 — and the same bits could be a colour value or part of an image, because meaning comes from how the program interprets the bits.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Sound and Sampling — quick check">
+  <QuizQuestion question="Which of these best defines &quot;pixel&quot;?" options={["A group of 8 bits. One byte can represent 256 different values, from 0 to 255.", "The ordinary base-10 number system we use every day, with the digits 0 to 9. Also called decimal.", "A single binary digit — a 0 or a 1. The smallest unit of data in computing.", "The smallest dot in a digital image. Images are grids of pixels, each stored as a binary colour value."]} answer={3} explanation="The smallest dot in a digital image. Images are grids of pixels, each stored as a binary colour value." />
+  <QuizQuestion question="True or false: adding one more bit to a code doubles the number of values it can represent." options={["True — each extra bit doubles the combinations, since every existing pattern can end in either 2 or 1.", "True — each extra bit doubles the combinations, since every existing pattern can end in either 10 or 1.", "True — each extra bit doubles the combinations, since every existing pattern can end in either 1 or 1.", "True — each extra bit doubles the combinations, since every existing pattern can end in either 0 or 1."]} answer={3} explanation="True — each extra bit doubles the combinations, since every existing pattern can end in either 0 or 1." />
+</Quiz>
+
+<Summary>
+  - Sound and Sampling: learn how sound waves are sampled into digital audio.
+  - Everything is binary underneath: Text, images, sound and video are all stored as patterns of bits — the computer just interprets the patterns differently.
+  - bit: A single binary digit — a 0 or a 1.
+  - Watch out for: reading binary left to right as if the leftmost digit is worth 1
+</Summary>

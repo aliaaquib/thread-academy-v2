@@ -1,0 +1,129 @@
+---
+title: "Linear Equations"
+lede: "Find the mystery number: whatever you do to one side of an equation, do to the other. One-step and two-step equations, Year 8 style."
+---
+
+<LearningObjectives>
+  <li>Solve one-step equations using inverse operations</li>
+  <li>Solve two-step equations like 3x + 2 = 14</li>
+  <li>Check answers by substituting back</li>
+</LearningObjectives>
+
+## The mystery number
+
+An **equation** like `x + 5 = 12` is a puzzle: *which number, plus 5, gives 12?* Solving it means finding that mystery number. (Here it's 7 — but let's learn a method that works every time, not just guessing.)
+
+<Definition term="solving an equation">
+  **Solving** an equation means finding the value of the unknown (usually `x`) that makes the equation true.
+</Definition>
+
+## The golden rule
+
+Imagine the equals sign as the pivot of a perfectly balanced see-saw. If you change one side, you must change the other side in exactly the same way — or it tips over.
+
+<Formula label="The golden rule">
+  Whatever you do to one side, do to the other.
+</Formula>
+
+## One-step equations
+
+In `x + 5 = 12`, the `+ 5` is getting in the way of `x`. Undo it with its **inverse operation** — subtraction — on **both** sides:
+
+```maths
+x + 5 = 12
+x + 5 − 5 = 12 − 5
+x = 7
+```
+
+<WorkedExample title="Worked example">
+  Solve `x − 4 = 9`.
+
+  The inverse of "minus 4" is "plus 4":
+
+  ```maths
+  x − 4 = 9
+  x − 4 + 4 = 9 + 4
+  x = 13
+  ```
+</WorkedExample>
+
+Multiplication and division work the same way — they're inverses of each other:
+
+```maths
+x/3 = 9
+x = 9 × 3
+x = 27
+```
+
+## Two-step equations
+
+`3x + 2 = 14` has two layers wrapped around `x`: multiply by 3, then add 2. Undo them in **reverse order** — addition/subtraction first:
+
+```maths
+3x + 2 = 14        subtract 2 from both sides
+3x = 12            divide both sides by 3
+x = 4
+```
+
+<ImportantNote title="Always check">
+  Put your answer back into the *original* equation. `3(4) + 2 = 14` ✓ — correct!
+  Checking takes seconds and catches most mistakes.
+</ImportantNote>
+
+## Try it yourself
+
+Type any linear equation below and watch each balancing step unfold.
+
+<EquationSolver />
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Solve: x + 9 = 20." hint="Subtract 9 from both sides.">
+    `x = 11`. Check: `11 + 9 = 20` ✓
+  </PracticeItem>
+  <PracticeItem question="Solve: 5x = 35." hint="Divide both sides by 5.">
+    `x = 7`. Check: `5 × 7 = 35` ✓
+  </PracticeItem>
+  <PracticeItem question="Solve: 2x − 3 = 11." hint="Add 3 first, then divide by 2.">
+    `2x = 14`, so `x = 7`. Check: `2(7) − 3 = 11` ✓
+  </PracticeItem>
+  <PracticeItem question="I think of a number, multiply it by 4 and subtract 6. The answer is 26. What was my number?" hint="Write it as 4x − 6 = 26, then solve.">
+    `4x = 32`, so `x = 8`.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Linear equations — quick check">
+  <QuizQuestion
+    question="To solve x + 7 = 15, you should…"
+    options={["add 7 to both sides", "subtract 7 from both sides", "divide both sides by 7", "multiply both sides by 7"]}
+    answer={1}
+    explanation="Undo +7 with −7 on both sides: x = 8."
+  />
+  <QuizQuestion
+    question="Solve: 4x + 1 = 21."
+    options={["x = 4", "x = 5", "x = 6", "x = 5.5"]}
+    answer={1}
+    explanation="Subtract 1: 4x = 20. Divide by 4: x = 5."
+  />
+  <QuizQuestion
+    question="Why do we check our answer?"
+    options={["To make the work longer", "Substitution catches mistakes", "Teachers require it", "It changes the answer"]}
+    answer={1}
+    explanation="Substituting back verifies the solution actually works in the original equation."
+  />
+</Quiz>
+
+<Summary>
+  - Solving means finding the x that makes the equation true.
+  - Golden rule: do the same thing to both sides.
+  - Undo with inverse operations: +/− cancel each other, ×/÷ cancel each other.
+  - For two-step equations, undo addition/subtraction before multiplication/division.
+  - Always check by substituting back.
+</Summary>
+
+<RelatedTopics items={[
+  { title: "Algebra — Cambridge IGCSE version", href: "/subjects/mathematics/cambridge/igcse/algebra/linear-equations" },
+]} />

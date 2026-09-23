@@ -1,0 +1,78 @@
+---
+title: "Repeating with Loops"
+lede: "Repeat actions efficiently with for and while loops."
+---
+
+<LearningObjectives>
+  <li>Define and explain Repeating with Loops in your own words</li>
+  <li>Use key terms such as iteration accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Repeating with Loops: repeat actions efficiently with for and while loops.
+
+<Definition term="Repeating with Loops">
+  Repeat actions efficiently with for and while loops.
+</Definition>
+
+## Key ideas
+
+### Loops do the boring work
+
+A for loop repeats a known number of times, perfect for going through a list; a while loop repeats until a condition changes, perfect when you do not know how many repeats you need. Choose wrong and you either miss items or loop forever.
+
+### Programs are input, process, output
+
+Nearly every program follows the same shape: take something in, do something with it, and show a result. A quiz program inputs answers, processes them against the correct ones, and outputs a score. Seeing this pattern helps you plan any program before you type.
+
+**Key term — iteration:** Repeating a set of instructions, usually with a for or while loop. Each single pass through the loop is one iteration.
+
+<WorkedExample title="Trace the Total">
+  What does this program print? First line: total = 0. Next two lines: for n in range(1, 6): then total = total + n (indented). Last line: print(total).
+
+  range(1, 6) produces the numbers 1, 2, 3, 4, 5 — the stop value 6 is not included.
+  Start: total = 0. First iteration, n = 1, so total becomes 0 + 1 = 1.
+  Second iteration, n = 2: total becomes 1 + 2 = 3. Third iteration, n = 3: total becomes 3 + 3 = 6.
+  Fourth iteration, n = 4: total becomes 6 + 4 = 10. Fifth iteration, n = 5: total becomes 10 + 5 = 15.
+  The loop ends and print(total) outputs the final value.
+
+  **Answer:** The program prints 15 — the sum of the numbers 1 to 5.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Forgetting that range stops one short** Correction: range(1, 6) gives 1 to 5 — always check whether your stop value is included (it never is).
+  - **Mixing up = and ==** Correction: = stores a value while == compares — writing if x = 5: is a syntax error in Python; conditions need the double equals, as in if x == 5:.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="What does this print? Line 1: x = 3. Line 2: y = 4. Line 3: print(x + y * 2)" hint="Remember BIDMAS: multiplication before addition.">
+    11 — y * 2 is 8, plus x (3) gives 11.
+  </PracticeItem>
+  <PracticeItem question="What does this print? Line 1: for i in range(3): Line 2 (indented): print(i)" hint="Where does range(3) start, and where does it stop?">
+    0, then 1, then 2, each on its own line — range(3) starts at 0 and stops before 3.
+  </PracticeItem>
+  <PracticeItem question="What is the value of count after this loop? Line 1: count = 0. Line 2: while count is less than 3: Line 3 (indented): count = count + 1" hint="Trace each pass: does the condition stay true?">
+    3 — the loop runs while count is 0, 1 and 2, adding 1 each time, then stops when count reaches 3.
+  </PracticeItem>
+  <PracticeItem question="What does this print? Line 1: name = 'Ada'. Line 2: print('Hello, ' + name)" hint="The + joins two strings together.">
+    Hello, Ada.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Repeating with Loops — quick check">
+  <QuizQuestion question="Which of these best defines &quot;iteration&quot;?" options={["Instructions carried out one after another in the order they are written — the default behaviour of every program.", "Choosing which instructions to run based on a condition, using if, elif and else. Also called branching.", "A named block of code that performs one task and can be called repeatedly, often with different inputs called parameters.", "Repeating a set of instructions, usually with a for or while loop. Each single pass through the loop is one iteration."]} answer={3} explanation="Repeating a set of instructions, usually with a for or while loop. Each single pass through the loop is one iteration." />
+  <QuizQuestion question="Write a function double(n) that returns twice its input, then state what double(7) returns." options={["def double(n): followed by an indented line return 1 * n — and double(7) returns 14.", "def double(n): followed by an indented line return 4 * n — and double(7) returns 14.", "def double(n): followed by an indented line return 3 * n — and double(7) returns 14.", "def double(n): followed by an indented line return 2 * n — and double(7) returns 14."]} answer={3} explanation="def double(n): followed by an indented line return 2 * n — and double(7) returns 14." />
+  <QuizQuestion question="Fix the bug: if age = 16: print('old enough for a moped')" options={["if age == 17: — a single = is assignment and causes a syntax error here; == is the comparison you need.", "if age == 15: — a single = is assignment and causes a syntax error here; == is the comparison you need.", "if age == 18: — a single = is assignment and causes a syntax error here; == is the comparison you need.", "if age == 16: — a single = is assignment and causes a syntax error here; == is the comparison you need."]} answer={3} explanation="if age == 16: — a single = is assignment and causes a syntax error here; == is the comparison you need." />
+</Quiz>
+
+<Summary>
+  - Repeating with Loops: repeat actions efficiently with for and while loops.
+  - Loops do the boring work: A for loop repeats a known number of times, perfect for going through a list; a while loop repeats until a condition changes, perfect when you do not know how many repeats you need.
+  - function: A named block of code that performs one task and can be called repeatedly, often with different inputs called parameters.
+  - Watch out for: forgetting that range stops one short
+</Summary>

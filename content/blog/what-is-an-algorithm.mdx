@@ -1,0 +1,103 @@
+---
+title: "What Is an Algorithm?"
+description: "What is an algorithm? Everyday step-by-step instructions, pseudocode basics, and a worked linear search showing correctness and efficiency in action."
+slug: "what-is-an-algorithm"
+date: 2026-09-09
+subject: "Computer Science"
+subject_slug: "computer-science"
+curriculum: "cambridge"
+level: "igcse"
+level_name: "IGCSE"
+author: "Thread Academy"
+keywords:
+  - "algorithm definition"
+  - "pseudocode basics"
+  - "linear search example"
+  - "algorithm correctness"
+  - "algorithm efficiency"
+chapters:
+  - "algorithms"
+lessons:
+  - "algorithms/linear-search"
+---
+
+An algorithm is simply a set of step-by-step instructions that solves a problem or completes a task. Every computer program you have ever used is built from algorithms, but the idea is far older and far more general than computers. Whenever you follow a fixed sequence of steps to get something done, you are carrying out an algorithm.
+
+## Algorithms in everyday life
+
+You already know many algorithms, even if you have never called them that:
+
+- A recipe: a ordered list of steps that turns ingredients into a meal.
+- Directions to a friend's house: turn left, go straight for two streets, then turn right.
+- Your morning routine: a sequence of actions performed in a fixed order each day.
+
+What makes these algorithmic is that they are **unambiguous** (each step is clear), **ordered** (the steps happen in a defined sequence), and **finite** (they come to an end). If a step were vague, such as "cook until it looks right", a computer would not know what to do. Precision is the whole point.
+
+## Expressing algorithms in pseudocode
+
+Programmers often plan an algorithm in **pseudocode** before writing real code. Pseudocode is plain, structured English that looks a little like a program but is not tied to any programming language. It focuses on the logic, not the syntax.
+
+Here is a small example: finding the largest number in a list.
+
+```
+SET largest TO first number in list
+FOR each remaining number in list
+    IF number is greater than largest THEN
+        SET largest TO number
+    END IF
+NEXT number
+OUTPUT largest
+```
+
+Notice how each line is one clear action, the indentation shows which steps belong inside the loop, and the whole thing will always finish. Anyone — or any computer — can follow it without guessing.
+
+## A worked example: linear search
+
+Linear search is one of the simplest and most useful algorithms: it finds whether a value exists in a list by checking each item in turn, from the first to the last.
+
+Suppose we want to find the number 7 in the list `[4, 9, 7, 1, 12]`. Here is the algorithm in pseudocode:
+
+```
+SET target TO 7
+SET found TO false
+FOR each item in list
+    IF item equals target THEN
+        SET found TO true
+        OUTPUT "Found at position" and position of item
+        STOP
+    END IF
+NEXT item
+IF found is false THEN
+    OUTPUT "Not found"
+END IF
+```
+
+Let us trace it through, one step at a time:
+
+1. The first item is 4. Is 4 equal to 7? No. Move on.
+2. The second item is 9. Is 9 equal to 7? No. Move on.
+3. The third item is 7. Is 7 equal to 7? Yes. Output the position (position 3) and stop.
+
+The search examined three items and then ended. If the target had been absent, the algorithm would have checked every item, reached the end of the list, and reported "Not found". This careful, step-by-step checking is typical of algorithmic thinking.
+
+## What makes a good algorithm?
+
+Not all algorithms are equal. Two questions judge any algorithm:
+
+- **Is it correct?** It must produce the right answer for every valid input, including edge cases such as an empty list or a target at the very end. Tracing your algorithm by hand on a few test cases is the simplest way to check.
+- **Is it efficient?** It should finish in a reasonable amount of time and use a reasonable amount of memory. Linear search, for example, is simple and always correct, but if the list has a million items, checking them one by one can be slow. Later you will meet faster methods, such as binary search, that exploit a sorted list to skip most of the work.
+
+A good algorithm balances these two qualities: first make it correct, then make it fast enough.
+
+## Key takeaways
+
+- An algorithm is a precise, ordered, finite set of steps for solving a problem.
+- Algorithms are everywhere: recipes, directions, and daily routines are all algorithmic.
+- Pseudocode lets you plan an algorithm in structured plain language before coding.
+- Linear search finds a value by checking each list item in order, stopping when it finds a match.
+- Correctness comes first: an algorithm must work on every valid input, including edge cases.
+- Efficiency matters too: a correct algorithm that takes far too long is rarely useful in practice.
+
+## Spotting algorithms around you
+
+Once you start thinking in algorithms, you see them everywhere. A doctor diagnosing an illness follows a decision tree: check symptoms, rule causes out one by one, arrive at a diagnosis. A music app recommending your next song follows a sequence of steps that looks at what you have played and scores new candidates. Even a video game character that patrols a corridor, turns around at each wall, and chases the player when spotted is running an algorithm. Try describing one of your own habits — packing a school bag, or making tea — as numbered, unambiguous steps. If a friend can follow your instructions without asking a single question, you have written a good algorithm.

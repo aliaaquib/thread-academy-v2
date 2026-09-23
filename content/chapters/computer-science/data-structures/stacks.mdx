@@ -1,0 +1,79 @@
+---
+title: "Using Stacks"
+lede: "Store data last-in, first-out, like a pile of plates."
+---
+
+<LearningObjectives>
+  <li>Define and explain Using Stacks in your own words</li>
+  <li>Use key terms such as stack accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+A list is not always the right tool: undo buttons, printer queues, file systems and sat-navs each need their own way of organising data. Data structures are these specialised containers, and choosing well is what separates working code from elegant code. This chapter builds the four structures every A-level student must master.
+
+This lesson focuses on Using Stacks: store data last-in, first-out, like a pile of plates.
+
+<Definition term="Using Stacks">
+  Store data last-in, first-out, like a pile of plates.
+</Definition>
+
+## Key ideas
+
+### LIFO versus FIFO changes everything
+
+Stacks reverse order — perfect for undo, back buttons and checking balanced brackets. Queues preserve order — perfect for print spooling and handling requests fairly. The operations differ too: stacks push and pop at the top, while queues enqueue at the rear and dequeue at the front. Picking the wrong one silently produces wrong answers.
+
+### Trees turn searching into halving
+
+A binary search tree keeps smaller values left and larger values right, so each comparison discards half the tree — the same idea as binary search, built into the structure. Traversals visit nodes in different orders: in-order on a binary search tree yields the values sorted. Insert order shapes the tree, and a badly ordered insert degrades it into a slow linked list.
+
+**Key term — stack:** A last-in, first-out structure: items are added and removed from the same end, called the top — like a spring-loaded plate dispenser.
+
+<WorkedExample title="Tracing a Stack">
+  Start with an empty stack. Push 4, push 7, pop, push 2, pop. What does each pop return, and what is left?
+
+  Push 4: the stack is [4] with 4 on top. Push 7: the stack is [4, 7] with 7 on top.
+  Pop removes from the top, so the first pop returns 7. The stack is [4].
+  Push 2: the stack is [4, 2] with 2 on top.
+  Pop again removes the top, so the second pop returns 2. The stack is [4].
+
+  **Answer:** The pops return 7 then 2, and the stack holds just [4] — last in, first out.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Using a stack where a queue is needed** Correction: ask 'must the first arrival be served first?' — if yes, you need a queue; a stack would serve the last arrival first.
+  - **Popping or dequeuing from an empty structure** Correction: always check the structure is not empty first — removing from nothing causes an underflow error.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Which structure models a web browser's back button: stack or queue? Why?" hint="The last page visited is the first you go back to.">
+    A stack — each new page is pushed, and Back pops the most recent page, which is last-in, first-out.
+  </PracticeItem>
+  <PracticeItem question="True or false: a stack can be used to check whether brackets in an expression are balanced." hint="Think about what must close first.">
+    True — push each opening bracket and pop on each closing one; the last opened must be the first closed, which is exactly LIFO.
+  </PracticeItem>
+  <PracticeItem question="A queue holds [A, B, C] with A at the front. After one dequeue and one enqueue of D, what is the queue?" hint="Dequeue removes from the front; enqueue adds at the rear.">
+    [B, C, D] — A leaves from the front and D joins at the rear.
+  </PracticeItem>
+  <PracticeItem question="Insert 5, 3, 8, 1 into an empty binary search tree in that order. What is the root's left child?" hint="Smaller values go left of each node.">
+    3 — it goes left of root 5, and then 1 goes left of 3.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Using Stacks — quick check">
+  <QuizQuestion question="Which of these best defines &quot;stack&quot;?" options={["A single element in a tree or graph, holding data plus links to other nodes.", "A connection between two nodes in a graph, which may have a direction and a weight such as a distance.", "A first-in, first-out structure: items join at the rear and leave from the front — like a supermarket checkout queue.", "A last-in, first-out structure: items are added and removed from the same end, called the top — like a spring-loaded plate dispenser."]} answer={3} explanation="A last-in, first-out structure: items are added and removed from the same end, called the top — like a spring-loaded plate dispenser." />
+  <QuizQuestion question="In a road network modelled as a graph, what do nodes, edges and weights represent?" options={["Correction: ask 'must the first arrival be served first?' — if yes, you need a queue; a stack would serve the last arrival first.", "Using a stack where a queue is needed", "A single element in a tree or graph, holding data plus links to other nodes.", "Nodes are junctions (or towns), edges are the roads between them, and weights are distances or travel times."]} answer={3} explanation="Nodes are junctions (or towns), edges are the roads between them, and weights are distances or travel times." />
+  <QuizQuestion question="What does an in-order traversal of a binary search tree produce?" options={["Correction: ask 'must the first arrival be served first?' — if yes, you need a queue; a stack would serve the last arrival first.", "Using a stack where a queue is needed", "A single element in a tree or graph, holding data plus links to other nodes.", "The values in ascending sorted order."]} answer={3} explanation="The values in ascending sorted order." />
+</Quiz>
+
+<Summary>
+  - Using Stacks: store data last-in, first-out, like a pile of plates.
+  - LIFO versus FIFO changes everything: Stacks reverse order — perfect for undo, back buttons and checking balanced brackets.
+  - node: A single element in a tree or graph, holding data plus links to other nodes.
+  - Watch out for: using a stack where a queue is needed
+</Summary>

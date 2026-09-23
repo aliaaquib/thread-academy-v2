@@ -1,0 +1,73 @@
+---
+title: "Measuring Efficiency"
+lede: "Compare algorithms using Big-O notation and worst cases."
+---
+
+<LearningObjectives>
+  <li>Define and explain Measuring Efficiency in your own words</li>
+  <li>Use key terms such as Big-O notation accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Measuring Efficiency: compare algorithms using Big-O notation and worst cases.
+
+<Definition term="Measuring Efficiency">
+  Compare algorithms using Big-O notation and worst cases.
+</Definition>
+
+## Key ideas
+
+### Bubble sort is simple, not fast
+
+Bubble sort is easy to understand and to code, which is why it is taught first — but comparing every pair of neighbours makes it slow, at O(n²) in the worst case. Python's built-in sort uses a far cleverer algorithm called Timsort. In exams, know bubble sort's steps and its weakness.
+
+### Worst case is what matters
+
+An algorithm might get lucky and find the target first try, but engineers plan for the worst case — the slowest possible run. Big-O describes this growth: O(n) means doubling the input roughly doubles the time, while O(n²) means doubling the input roughly quadruples it.
+
+**Key term — Big-O notation:** A way of describing how an algorithm's running time grows as the input grows — for example, linear search is O(n) and binary search is O(log n).
+
+<WorkedExample title="Worked example: Measuring Efficiency">
+  How many comparisons does linear search need in the worst case to find an item in a list of 50?
+
+  50 — every item must be checked if the target is last or missing.
+
+  **Answer:** 50 — every item must be checked if the target is last or missing.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Claiming bubble sort is efficient because it is short to write** Correction: short code is not fast code — bubble sort's nested comparisons make it O(n²), slow for large lists.
+  - **Using binary search on an unsorted list** Correction: sort the list first, or use linear search — binary search on unsorted data gives wrong answers, not just slow ones.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Roughly how many comparisons does binary search need for 1,000,000 sorted items?" hint="Each comparison halves the list; 2 to the power of 20 is about a million.">
+    About 20 — each step halves the remaining items, so a million shrinks to one in roughly 20 halvings.
+  </PracticeItem>
+  <PracticeItem question="An algorithm takes 4 seconds for 100 items and 16 seconds for 200 items. What Big-O growth does this suggest?" hint="Doubling the input quadrupled the time.">
+    O(n²) — quadrupling when the input doubles is the signature of quadratic growth.
+  </PracticeItem>
+  <PracticeItem question="True or false: binary search is always the best searching algorithm." hint="Consider unsorted data and tiny lists.">
+    False — it needs sorted data, and for tiny or unsorted lists the overhead is not worth it; the best algorithm depends on the situation.
+  </PracticeItem>
+  <PracticeItem question="Trace one pass of bubble sort on [5, 3, 8, 1]. What is the list afterwards?" hint="Compare neighbours left to right, swapping when out of order.">
+    [3, 5, 1, 8] — 5 and 3 swap, 5 and 8 stay, 8 and 1 swap.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Measuring Efficiency — quick check">
+  <QuizQuestion question="Which of these best defines &quot;Big-O notation&quot;?" options={["Repeatedly halving a sorted list to find a target — comparing with the middle item and discarding the half that cannot contain it.", "Checking each item in a list one by one until the target is found. Simple, works on unsorted lists, but slow on large ones.", "Sorting by repeatedly stepping through a list, swapping neighbouring items that are in the wrong order, until no swaps are needed.", "A way of describing how an algorithm's running time grows as the input grows — for example, linear search is O(n) and binary search is O(log n)."]} answer={3} explanation="A way of describing how an algorithm's running time grows as the input grows — for example, linear search is O(n) and binary search is O(log n)." />
+  <QuizQuestion question="Why might linear search beat binary search for a single search?" options={["Repeatedly halving a sorted list to find a target — comparing with the middle item and discarding the half that cannot contain it.", "Checking each item in a list one by one until the target is found. Simple, works on unsorted lists, but slow on large ones.", "Correction: short code is not fast code — bubble sort's nested comparisons make it O(n²), slow for large lists.", "If the list is unsorted, binary search needs it sorted first — that sorting cost can outweigh the faster search for a one-off lookup."]} answer={3} explanation="If the list is unsorted, binary search needs it sorted first — that sorting cost can outweigh the faster search for a one-off lookup." />
+</Quiz>
+
+<Summary>
+  - Measuring Efficiency: compare algorithms using Big-O notation and worst cases.
+  - Bubble sort is simple, not fast: Bubble sort is easy to understand and to code, which is why it is taught first — but comparing every pair of neighbours makes it slow, at O(n²) in the worst case.
+  - binary search: Repeatedly halving a sorted list to find a target — comparing with the middle item and discarding the half that cannot contain it.
+  - Watch out for: claiming bubble sort is efficient because it is short to write
+</Summary>

@@ -1,0 +1,126 @@
+---
+title: "Variables"
+lede: "A variable is a named box that stores a value you can reuse and change. Learn to create them in real Python — running right here in your browser."
+---
+
+<LearningObjectives>
+  <li>Create and use variables in Python</li>
+  <li>Explain what the = sign really does</li>
+  <li>Follow the rules for naming variables</li>
+  <li>Change a variable's value and predict the result</li>
+</LearningObjectives>
+
+## What is a variable?
+
+A **variable** is a named box that stores a value. You give it a name, put a value inside, and use the name later wherever you need that value.
+
+<Definition term="variable">
+  A **variable** is a named storage location holding one value at a time.
+  Assigning a new value overwrites the old one.
+</Definition>
+
+```python
+name = "Aaquib"
+age = 17
+print(name)
+print(age)
+```
+
+Here `name` and `age` are variables. The `=` sign **assigns** the value on the right to the name on the left — it does *not* mean "equals" the way it does in maths. Read `age = 17` as "age *gets* 17".
+
+## Variables can change
+
+Run the program below. Then change the code — set `score` to 100 — and run it again. Notice the old value is gone, replaced.
+
+<TryItPython
+  title="Try it: variables"
+  subtitle="Edit the code, then press Run."
+  initialCode={`score = 0
+print(score)
+
+score = 10
+print(score)
+
+# Your turn: create a variable called city and print it`}
+/>
+
+The computer executes instructions **top to bottom**. When it reaches `score = 10`, it throws away the old 0 and stores 10 instead. A variable holds one value at a time.
+
+## Naming rules
+
+Python is picky about names. Break these rules and your program crashes:
+
+- Names can contain letters, digits and underscores: `player_score`, `age2`.
+- Names must **start** with a letter or underscore — never a digit. `2nd_place` is illegal.
+- Names are **case-sensitive**: `Score` and `score` are different variables.
+- Choose **meaningful** names: `total_price` beats `x` every time.
+
+<ImportantNote title="Why names matter">
+  You will read code far more often than you write it. `total_price = 49.99` explains itself;
+  `x = 49.99` explains nothing. Good names are documentation that never goes out of date.
+</ImportantNote>
+
+## Variables in action
+
+Variables become powerful when programs *compute* with them:
+
+```python
+apples = 12
+friends = 4
+each = apples / friends
+print(each)   # 3.0 — each friend gets 3 apples
+```
+
+The program doesn't care that the numbers might change tomorrow. Update `apples` and `friends`, and `each` is recalculated automatically. That is the whole point of variables: **write the logic once, reuse it with any values.**
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Create a variable called city holding your city, then print it." hint='Text values go in quotes: city = "..."'>
+    ```python
+    city = "Bishkek"
+    print(city)
+    ```
+  </PracticeItem>
+  <PracticeItem question='What is wrong with this line? 2nd_place = "Sara"' hint="Check the naming rules.">
+    Variable names cannot start with a digit. Rename it, e.g. `second_place = "Sara"`.
+  </PracticeItem>
+  <PracticeItem question="After a = 3 then a = 7, what is the value of a? Why?" hint="A variable holds one value at a time.">
+    `a` is 7 — the second assignment overwrites the first.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Variables — quick check">
+  <QuizQuestion
+    question="What does the = sign do in x = 5?"
+    options={["Checks whether x equals 5", "Assigns 5 to the variable x", "Adds 5 to x", "Declares x as a number"]}
+    answer={1}
+    explanation="= is the assignment operator: it stores the right-hand value in the left-hand name."
+  />
+  <QuizQuestion
+    question="Which is a valid variable name?"
+    options={["2fast", "my-score", "_total", "my score"]}
+    answer={2}
+    explanation="Names may start with a letter or underscore; hyphens and spaces are not allowed."
+  />
+  <QuizQuestion
+    question="What does this print? a = 3 / a = 7 / print(a)"
+    options={["3", "10", "7", "37"]}
+    answer={2}
+    explanation="The second assignment overwrites the first, so a is 7 when printed."
+  />
+</Quiz>
+
+<Summary>
+  - A variable is a named box storing one value; `=` assigns, it doesn't mean "equals".
+  - Programs run top to bottom; reassigning a variable replaces its old value.
+  - Names must start with a letter or underscore, and should be meaningful.
+  - Variables let you write logic once and reuse it with any values.
+</Summary>
+
+<RelatedTopics items={[
+  { title: "Computational Thinking", href: "/subjects/computer-science/cambridge/igcse/computational-thinking" },
+  { title: "Programming Fundamentals — chapter", href: "/subjects/computer-science/cambridge/igcse/programming" },
+]} />

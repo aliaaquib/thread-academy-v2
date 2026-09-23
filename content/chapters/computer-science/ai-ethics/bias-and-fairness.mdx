@@ -1,0 +1,73 @@
+---
+title: "Bias and Fairness"
+lede: "Explore how biased data creates unfair AI — and how to fight it."
+---
+
+<LearningObjectives>
+  <li>Define and explain Bias and Fairness in your own words</li>
+  <li>Use key terms such as bias accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+This lesson focuses on Bias and Fairness: explore how biased data creates unfair AI — and how to fight it.
+
+<Definition term="Bias and Fairness">
+  Explore how biased data creates unfair AI — and how to fight it.
+</Definition>
+
+## Key ideas
+
+### Biased data in, biased decisions out
+
+A hiring tool trained on a decade of a company's past hires will learn to prefer the kind of people the company used to hire — baking old discrimination into new software. Because the bias hides inside millions of tuned numbers, it is hard to spot without deliberately testing for fairness across groups.
+
+### Learning replaces hand-written rules
+
+Nobody could write rules to recognise every cat photo, so instead a model is shown thousands of labelled examples and adjusts its internal numbers until it predicts well. This is training; the model's skill is then tested on new examples it has never seen. If it only memorises the training set — overfitting — it fails on anything new.
+
+**Key term — bias:** A systematic unfairness in a model's decisions, usually inherited from unrepresentative or prejudiced training data.
+
+<WorkedExample title="Worked example: Bias and Fairness">
+  A university uses AI to screen applications, trained on ten years of past admissions. Name one fairness risk.
+
+  The model may learn to prefer applicants resembling past successful ones, entrenching old biases against under-represented groups.
+
+  **Answer:** The model may learn to prefer applicants resembling past successful ones, entrenching old biases against under-represented groups.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Assuming AI is neutral because maths is neutral** Correction: models inherit the biases of their training data — neutrality must be tested for, never assumed.
+  - **Trusting a high accuracy score without asking what it was tested on** Correction: always ask whether the test data was balanced and representative — 98% on easy data can hide total failure elsewhere.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="True or false: removing names from training data guarantees a model cannot discriminate." hint="Can other details hint at the same groups?">
+    False — remaining details like postcode or school can act as proxies for protected characteristics, so bias can survive.
+  </PracticeItem>
+  <PracticeItem question="What is the difference between traditional programming and machine learning?" hint="Rules written by hand versus patterns found in data.">
+    In traditional programming humans write explicit rules; in machine learning the program finds its own patterns by training on data.
+  </PracticeItem>
+  <PracticeItem question="Why does a model trained only on photos taken in daylight struggle at night?" hint="Think about what patterns it has actually seen.">
+    Its training data contains no night-time patterns, so it never learned the features of dark images — it can only recognise what it has seen.
+  </PracticeItem>
+  <PracticeItem question="What is overfitting, and how would you detect it?" hint="Great on training data, poor on new data.">
+    Overfitting is when a model memorises training examples instead of learning general patterns; it shows as high training accuracy but poor accuracy on unseen test data.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Bias and Fairness — quick check">
+  <QuizQuestion question="Which of these best defines &quot;bias&quot;?" options={["The trained program produced by machine learning — a set of tuned numbers that maps new inputs to predictions.", "The examples a model learns from — thousands of labelled photos, texts or records. Its quality and balance shape everything the model does.", "A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules.", "A systematic unfairness in a model's decisions, usually inherited from unrepresentative or prejudiced training data."]} answer={3} explanation="A systematic unfairness in a model's decisions, usually inherited from unrepresentative or prejudiced training data." />
+  <QuizQuestion question="You use an AI chatbot to draft your history essay. What is the responsible way to handle this?" options={["Correction: models inherit the biases of their training data — neutrality must be tested for, never assumed.", "Correction: always ask whether the test data was balanced and representative — 98% on easy data can hide total failure elsewhere.", "A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules.", "Be honest that AI assisted you, check every fact yourself (AI can invent plausible-sounding errors), and make sure the final thinking and wording are your own."]} answer={3} explanation="Be honest that AI assisted you, check every fact yourself (AI can invent plausible-sounding errors), and make sure the final thinking and wording are your own." />
+</Quiz>
+
+<Summary>
+  - Bias and Fairness: explore how biased data creates unfair AI — and how to fight it.
+  - Biased data in, biased decisions out: A hiring tool trained on a decade of a company's past hires will learn to prefer the kind of people the company used to hire — baking old discrimination into new software.
+  - machine learning: A branch of AI where programs improve at a task by finding patterns in data, rather than by following explicitly programmed rules.
+  - Watch out for: assuming AI is neutral because maths is neutral
+</Summary>

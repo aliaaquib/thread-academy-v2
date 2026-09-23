@@ -1,0 +1,75 @@
+---
+title: "Tables and Keys"
+lede: "Design tables with primary keys that uniquely identify each row."
+---
+
+<LearningObjectives>
+  <li>Define and explain Tables and Keys in your own words</li>
+  <li>Use key terms such as primary key accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Behind every app you use sits a database: tables of neatly organised data, linked together and questioned with SQL. Databases turn chaos into answers — which customers ordered what, which books are overdue. In this chapter you will design tables, link them, and write real SQL to interrogate them.
+
+This lesson focuses on Tables and Keys: design tables with primary keys that uniquely identify each row.
+
+<Definition term="Tables and Keys">
+  Design tables with primary keys that uniquely identify each row.
+</Definition>
+
+## Key ideas
+
+### Keys stop data going missing
+
+A primary key guarantees every row can be found exactly once — without one, two customers called 'Smith' become indistinguishable. Foreign keys then link tables: an order row stores the customer's ID rather than copying their whole address, so an address change is updated in one place only. This is the foundation of reliable data.
+
+### Relationships mirror the real world
+
+One customer places many orders — a one-to-many relationship, built by putting the customer's ID as a foreign key in the Orders table. The foreign key must always point at a real primary key, a rule called referential integrity that stops orphaned records. Well-designed relationships mean no duplicated facts anywhere.
+
+**Key term — primary key:** A field (or combination) that uniquely identifies each row in a table, such as a customer ID. It can never be empty or duplicated.
+
+<WorkedExample title="Worked example: Tables and Keys">
+  Why must a primary key never be duplicated or left empty?
+
+  It is the unique identifier for a row — duplicates or blanks would make it impossible to pinpoint exactly one record.
+
+  **Answer:** It is the unique identifier for a row — duplicates or blanks would make it impossible to pinpoint exactly one record.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Storing the same fact in two tables** Correction: store it once and link with a foreign key — duplicated data drifts out of sync when only one copy is updated.
+  - **Using a name field as a primary key** Correction: names can repeat and change — use a meaningless unique ID instead, which never needs editing.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="An Orders table has a CustomerID column. Is CustomerID a primary or foreign key here, and why?" hint="Which table does it identify rows in?">
+    A foreign key — it stores the primary key of a row in the Customers table, linking each order to its customer.
+  </PracticeItem>
+  <PracticeItem question="Write SQL to show the Title and Author of every book published in 2010 from a Books table." hint="SELECT columns FROM table WHERE condition.">
+    SELECT Title, Author FROM Books WHERE Year = 2010;.
+  </PracticeItem>
+  <PracticeItem question="What does this return? SELECT Name FROM Students WHERE Year = 10; using the example table." hint="Check each row's Year value.">
+    One row: Leo — only Leo has Year 10.
+  </PracticeItem>
+  <PracticeItem question="What is wrong with DELETE FROM Students; and how do you fix it?" hint="Which rows does it delete?">
+    It deletes every row in the table — add a WHERE clause, for example DELETE FROM Students WHERE ID = 4;, to remove only Leo.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Tables and Keys — quick check">
+  <QuizQuestion question="Which of these best defines &quot;primary key&quot;?" options={["A field in one table that stores the primary key of a row in another table, creating a link between them.", "A database structure of rows (records) and columns (fields), storing one type of thing — for example, one table per customer, one per order.", "A question asked of a database in SQL — most famously a SELECT statement that retrieves matching rows.", "A field (or combination) that uniquely identifies each row in a table, such as a customer ID. It can never be empty or duplicated."]} answer={3} explanation="A field (or combination) that uniquely identifies each row in a table, such as a customer ID. It can never be empty or duplicated." />
+  <QuizQuestion question="True or false: SQL tells the database exactly how to find the data, step by step." options={["True", "Sometimes true", "Cannot be determined from the information given", "False — SQL is declarative: you describe what you want and the database engine decides how to retrieve it."]} answer={3} explanation="False — SQL is declarative: you describe what you want and the database engine decides how to retrieve it." />
+</Quiz>
+
+<Summary>
+  - Tables and Keys: design tables with primary keys that uniquely identify each row.
+  - Keys stop data going missing: A primary key guarantees every row can be found exactly once — without one, two customers called 'Smith' become indistinguishable.
+  - foreign key: A field in one table that stores the primary key of a row in another table, creating a link between them.
+  - Watch out for: storing the same fact in two tables
+</Summary>

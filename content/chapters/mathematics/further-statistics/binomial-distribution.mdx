@@ -1,0 +1,75 @@
+---
+title: "The binomial distribution"
+lede: "Modelling fixed numbers of independent trials with two outcomes, and computing probabilities."
+---
+
+<LearningObjectives>
+  <li>Define and explain The binomial distribution in your own words</li>
+  <li>Use key terms such as Binomial distribution accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Further statistics moves beyond description to inference: generalising from samples to populations. These are the tools behind clinical trials, opinion polls and quality control.
+
+This lesson focuses on The binomial distribution: modelling fixed numbers of independent trials with two outcomes, and computing probabilities.
+
+<Definition term="The binomial distribution">
+  Modelling fixed numbers of independent trials with two outcomes, and computing probabilities.
+</Definition>
+
+## Key ideas
+
+### Binomial probabilities
+
+P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ. The conditions matter: fixed n, two outcomes, constant p, independent trials. For n = 5, p = 0.3: P(X = 2) = 10 × 0.09 × 0.343 = 0.3087.
+
+### Standardising the normal
+
+Convert X ~ N(μ, σ²) to Z ~ N(0, 1) via z = (x − μ)/σ, then read probabilities from tables. The total area under the curve is 1, and the curve is symmetric about μ, so the probability that X falls below the mean μ is 0.5.
+
+**Key term — Binomial distribution:** The distribution of the number of successes in n independent trials each with success probability p, written X ~ B(n, p).
+
+<WorkedExample title="Worked example: The binomial distribution">
+  Explain why 'the mean has increased' is a one-tailed alternative hypothesis.
+
+  It specifies an increase only, so the critical region lies in a single (upper) tail of the distribution.
+
+  **Answer:** It specifies an increase only, so the critical region lies in a single (upper) tail of the distribution.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Using the binomial model when trials are not independent** Check the conditions: without replacement from a small population, p changes each trial and the binomial does not apply.
+  - **Confusing one-tailed and two-tailed tests** A two-tailed alternative ('not equal to') splits the significance level across both tails; using one tail doubles your chance of a false rejection.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="X ~ B(4, 0.5). Find P(X = 0)." hint="All four trials fail.">
+    P = C(4,0) × 0.5⁰ × 0.5⁴ = 0.0625.
+  </PracticeItem>
+  <PracticeItem question="X ~ B(6, 0.2). Find P(X = 1)." hint="C(6,1) = 6.">
+    P = 6 × 0.2 × 0.8⁵ = 6 × 0.2 × 0.32768 = 0.393216.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(100, 15²). Find the z-score for x = 130." hint="z = (x − μ)/σ.">
+    z = (130 − 100)/15 = 2.
+  </PracticeItem>
+  <PracticeItem question="For X ~ N(μ, σ²), what is P(X greater than μ)?" hint="Think about symmetry.">
+    0.5 — half the area lies above the mean.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="The binomial distribution — quick check">
+  <QuizQuestion question="Which of these best defines &quot;Binomial distribution&quot;?" options={["A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²).", "The default claim in a hypothesis test — typically 'no effect' or 'no change' — which is rejected only if the evidence is strong enough.", "The probability threshold (often 5%) below which observed results are deemed too unlikely under H₀, so H₀ is rejected.", "The distribution of the number of successes in n independent trials each with success probability p, written X ~ B(n, p)."]} answer={3} explanation="The distribution of the number of successes in n independent trials each with success probability p, written X ~ B(n, p)." />
+  <QuizQuestion question="A test at the 5% level gives p-value 0.032. What is the conclusion?" options={["1.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis.", "5.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis.", "2.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis.", "0.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis."]} answer={3} explanation="0.032 is less than 0.05, so reject H₀; there is sufficient evidence against the null hypothesis." />
+</Quiz>
+
+<Summary>
+  - The binomial distribution: modelling fixed numbers of independent trials with two outcomes, and computing probabilities.
+  - Binomial probabilities: P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ.
+  - Normal distribution: A continuous symmetric bell-shaped distribution, fully described by its mean μ and variance σ², written X ~ N(μ, σ²).
+  - Watch out for: using the binomial model when trials are not independent
+</Summary>
