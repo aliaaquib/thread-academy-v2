@@ -20,14 +20,22 @@ export interface TopicParams {
 
 /**
  * Lesson files live once per chapter at
- * content/chapters/<subject>/<chapter>/<topic>.mdx.
+ * content/subject/<subject>/grade-<n>/<chapter>/<topic>.mdx.
  */
-function topicFile(p: TopicParams): string {
-  return path.join(contentRoot(), "chapters", p.subject, p.chapter, `${p.topic}.mdx`);
+function chapterDir(p: Omit<TopicParams, "topic">): string | null {
+  const grade = getGradeForChapter(p.subject, p.chapter);
+  if (!grade) return null;
+  return path.join(contentRoot(), "subject", p.subject, gradeSlug(grade), p.chapter);
+}
+
+function topicFile(p: TopicParams): string | null {
+  const dir = chapterDir(p);
+  return dir ? path.join(dir, `${p.topic}.mdx`) : null;
 }
 
 export function topicExists(p: TopicParams): boolean {
-  return fs.existsSync(topicFile(p));
+  const file = topicFile(p);
+  return !!file && fs.existsSync(file);
 }
 
 export interface TopicContent {
@@ -39,7 +47,7 @@ export interface TopicContent {
 /** Read + parse an MDX topic file (frontmatter: title, lede). */
 export function getTopicContent(p: TopicParams): TopicContent | null {
   const file = topicFile(p);
-  if (!fs.existsSync(file)) return null;
+  if (!file || !fs.existsSync(file)) return null;
   const raw = fs.readFileSync(file, "utf8");
   const { data, content } = matter(raw);
   return {
@@ -51,8 +59,8 @@ export function getTopicContent(p: TopicParams): TopicContent | null {
 
 /** Slugs of topics that actually have MDX files for this chapter. */
 export function existingTopicSlugs(p: Omit<TopicParams, "topic">): string[] {
-  const dir = path.join(contentRoot(), "chapters", p.subject, p.chapter);
-  if (!fs.existsSync(dir)) return [];
+  const dir = chapterDir(p);
+  if (!dir || !fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".mdx"))
@@ -92,17 +100,21 @@ export function allSubjectChapters(): Omit<TopicParams, "topic">[] {
 /** Every topic that has an MDX file — for generateStaticParams. */
 export function getAllTopicParams(): TopicParams[] {
   const out: TopicParams[] = [];
-  const sharedRoot = path.join(contentRoot(), "chapters");
-  if (!fs.existsSync(sharedRoot)) return out;
-  for (const subject of fs.readdirSync(sharedRoot)) {
-    const sDir = path.join(sharedRoot, subject);
+  const subjectRoot = path.join(contentRoot(), "subject");
+  if (!fs.existsSync(subjectRoot)) return out;
+  for (const subject of fs.readdirSync(subjectRoot)) {
+    const sDir = path.join(subjectRoot, subject);
     if (!fs.statSync(sDir).isDirectory()) continue;
-    for (const chapter of fs.readdirSync(sDir)) {
-      const chDir = path.join(sDir, chapter);
-      if (!fs.statSync(chDir).isDirectory()) continue;
-      for (const file of fs.readdirSync(chDir)) {
-        if (!file.endsWith(".mdx")) continue;
-        out.push({ subject, chapter, topic: file.replace(/\.mdx$/, "") });
+    for (const gradeDir of fs.readdirSync(sDir)) {
+      const gDir = path.join(sDir, gradeDir);
+      if (!fs.statSync(gDir).isDirectory()) continue;
+      for (const chapter of fs.readdirSync(gDir)) {
+        const chDir = path.join(gDir, chapter);
+        if (!fs.statSync(chDir).isDirectory()) continue;
+        for (const file of fs.readdirSync(chDir)) {
+          if (!file.endsWith(".mdx")) continue;
+          out.push({ subject, chapter, topic: file.replace(/\.mdx$/, "") });
+        }
       }
     }
   }

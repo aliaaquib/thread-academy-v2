@@ -22,6 +22,13 @@ export function parseGradeSlug(slug: string): Grade | null {
  * Chapters were ordered easiest-first (Foundations -> Developing ->
  * Examination -> Advanced) and dealt across grades 7-12 as evenly as
  * possible; every chapter belongs to exactly one grade.
+ *
+ * To add a chapter later:
+ *  1. Add its id to the right grade list below.
+ *  2. Add its metadata to src/lib/stage-chapters.ts (it must exist there).
+ *  3. Add its topics to CHAPTER_TOPICS in src/lib/chapters.ts.
+ *  4. Drop the lesson files in content/subject/<subject>/grade-<n>/<chapter>/.
+ * The site rebuild picks everything up automatically.
  */
 export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
   "arabic": {

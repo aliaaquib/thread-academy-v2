@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { contentRoot } from "./content";
+import { contentRoot, getTopicContent } from "./content";
 import { getChapterForSubject } from "./stage-chapters";
 import { getGradeForChapter, gradeSlug } from "./grades";
 
@@ -102,11 +102,8 @@ export function getPostsBySubject(): { subject: string; subjectSlug: string; pos
 
 /** Lesson (topic) page title from its MDX frontmatter. */
 function lessonTitle(subjectSlug: string, chapterId: string, topicId: string): string {
-  const file = path.join(contentRoot(), "chapters", subjectSlug, chapterId, `${topicId}.mdx`);
-  if (fs.existsSync(file)) {
-    const { data } = matter(fs.readFileSync(file, "utf8"));
-    if (typeof data.title === "string" && data.title) return data.title;
-  }
+  const content = getTopicContent({ subject: subjectSlug, chapter: chapterId, topic: topicId });
+  if (content && content.title) return content.title;
   return topicId
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
