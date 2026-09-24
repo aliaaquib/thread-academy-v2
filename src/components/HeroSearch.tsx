@@ -3,10 +3,10 @@
 import Link from "next/link";
 
 const QUICK_LINKS = [
-  { label: "Linear equations", href: "/subjects/mathematics/algebra/linear-equations" },
-  { label: "Cell structure", href: "/subjects/biology/cell-biology/cell-structure" },
-  { label: "Newton’s laws", href: "/subjects/physics/forces/newtons-laws" },
-  { label: "Variables", href: "/subjects/computer-science/programming/variables" },
+  { label: "Linear equations", href: "/subjects/mathematics/grade-9/algebra/linear-equations" },
+  { label: "Cell structure", href: "/subjects/biology/grade-8/cell-biology/cell-structure" },
+  { label: "Newton’s laws", href: "/subjects/physics/grade-8/forces/newtons-laws" },
+  { label: "Variables", href: "/subjects/computer-science/grade-9/programming/variables" },
 ];
 
 /** Reference quick links to featured lessons. The hero search field was removed;

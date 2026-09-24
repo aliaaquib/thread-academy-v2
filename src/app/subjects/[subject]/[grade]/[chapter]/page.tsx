@@ -2,32 +2,38 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import { SUBJECT_SLUGS, getSubject } from "@/lib/subjects";
-import { getChapterForSubject, getChaptersForSubject } from "@/lib/stage-chapters";
+import { getChapterForSubject } from "@/lib/stage-chapters";
+import {
+  allGradeChapters,
+  getGradeForChapter,
+  gradeSlug,
+  parseGradeSlug,
+} from "@/lib/grades";
 import { getAvailableTopics } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
-  const params: { subject: string; chapter: string }[] = [];
-  for (const subject of SUBJECT_SLUGS) {
-    for (const chapter of getChaptersForSubject(subject)) {
-      params.push({ subject, chapter: chapter.id });
-    }
-  }
-  return params;
+  return allGradeChapters().map(({ subject, grade, chapter }) => ({
+    subject,
+    grade: gradeSlug(grade),
+    chapter,
+  }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { subject: string; chapter: string };
+  params: { subject: string; grade: string; chapter: string };
 }) {
   const subject = getSubject(params.subject);
+  const grade = parseGradeSlug(params.grade);
   const chapter = getChapterForSubject(params.subject, params.chapter);
-  if (!subject || !chapter) return {};
+  if (!subject || !grade || !chapter) return {};
+  if (getGradeForChapter(params.subject, params.chapter) !== grade) return {};
   return pageMetadata({
-    title: `${chapter.title} — ${subject.name}`,
-    description: `${chapter.desc} Open ${chapter.title} for ${subject.name}: lessons, worked examples and practice questions.`,
-    path: `/subjects/${subject.slug}/${chapter.id}`,
+    title: `${chapter.title} — Grade ${grade} ${subject.name}`,
+    description: `${chapter.desc} Open ${chapter.title} for grade ${grade} ${subject.name}: lessons, worked examples and practice questions.`,
+    path: `/subjects/${subject.slug}/${gradeSlug(grade)}/${chapter.id}`,
     type: "article",
   });
 }
@@ -35,12 +41,15 @@ export async function generateMetadata({
 export default function ChapterPage({
   params,
 }: {
-  params: { subject: string; chapter: string };
+  params: { subject: string; grade: string; chapter: string };
 }) {
   const subject = getSubject(params.subject);
+  const grade = parseGradeSlug(params.grade);
   const chapter = getChapterForSubject(params.subject, params.chapter);
-  if (!subject || !chapter) notFound();
+  if (!subject || !grade || !chapter) notFound();
+  if (getGradeForChapter(params.subject, params.chapter) !== grade) notFound();
 
+  const gradePath = `/subjects/${subject.slug}/${gradeSlug(grade)}`;
   const topics = getAvailableTopics({
     subject: params.subject,
     chapter: params.chapter,
@@ -53,6 +62,7 @@ export default function ChapterPage({
           { label: "Home", href: "/" },
           { label: "Subjects", href: "/subjects" },
           { label: subject.name, href: `/subjects/${subject.slug}` },
+          { label: `Grade ${grade}`, href: gradePath },
           { label: chapter.title },
         ]}
         title={chapter.title}
@@ -95,7 +105,7 @@ export default function ChapterPage({
             </div>
             {topics.length > 0 && (
               <p style={{ marginTop: 28 }}>
-                <Link className="inline-link" href={`/resources/${params.subject}/${params.chapter}`}>
+                <Link className="inline-link" href={`/resources/${params.subject}/${gradeSlug(grade)}/${params.chapter}`}>
                   Chapter resources →
                 </Link>
               </p>

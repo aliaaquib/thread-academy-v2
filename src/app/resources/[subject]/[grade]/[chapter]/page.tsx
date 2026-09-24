@@ -5,6 +5,7 @@ import { PracticeItem, PracticeQuestions } from "@/components/textbook/PracticeQ
 import EquationSolver from "@/components/widgets/EquationSolver";
 import { getSubject } from "@/lib/subjects";
 import { getChapterForSubject } from "@/lib/stage-chapters";
+import { getGradeForChapter, gradeSlug, parseGradeSlug } from "@/lib/grades";
 import { getContentChapters } from "@/lib/content";
 import { getChapterResources } from "@/lib/resources";
 import { pageMetadata } from "@/lib/seo";
@@ -12,6 +13,7 @@ import { pageMetadata } from "@/lib/seo";
 export function generateStaticParams() {
   return getContentChapters().map((c) => ({
     subject: c.subject,
+    grade: gradeSlug(c.grade),
     chapter: c.chapter,
   }));
 }
@@ -19,15 +21,17 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { subject: string; chapter: string };
+  params: { subject: string; grade: string; chapter: string };
 }) {
   const subject = getSubject(params.subject);
+  const grade = parseGradeSlug(params.grade);
   const chapter = getChapterForSubject(params.subject, params.chapter);
-  if (!subject || !chapter) return {};
+  if (!subject || !grade || !chapter) return {};
+  if (getGradeForChapter(params.subject, params.chapter) !== grade) return {};
   return pageMetadata({
-    title: `${chapter.title} resources — ${subject.name}`,
-    description: `Notes, worksheets, videos, interactive tools and revision materials for ${chapter.title} (${subject.name}).`,
-    path: `/resources/${params.subject}/${params.chapter}`,
+    title: `${chapter.title} resources — Grade ${grade} ${subject.name}`,
+    description: `Notes, worksheets, videos, interactive tools and revision materials for ${chapter.title} (grade ${grade} ${subject.name}).`,
+    path: `/resources/${params.subject}/${gradeSlug(grade)}/${params.chapter}`,
   });
 }
 
@@ -55,14 +59,16 @@ function ResourceSection({ id, eyebrow, title, lede, children }: {
 export default function ChapterResourcesPage({
   params,
 }: {
-  params: { subject: string; chapter: string };
+  params: { subject: string; grade: string; chapter: string };
 }) {
   const subject = getSubject(params.subject);
+  const grade = parseGradeSlug(params.grade);
   const chapter = getChapterForSubject(params.subject, params.chapter);
-  if (!subject || !chapter) notFound();
+  if (!subject || !grade || !chapter) notFound();
+  if (getGradeForChapter(params.subject, params.chapter) !== grade) notFound();
 
   const resources = getChapterResources(params.subject, params.chapter);
-  const chapterBase = `/subjects/${params.subject}/${params.chapter}`;
+  const chapterBase = `/subjects/${params.subject}/${gradeSlug(grade)}/${params.chapter}`;
 
   return (
     <>
@@ -71,10 +77,11 @@ export default function ChapterResourcesPage({
           { label: "Home", href: "/" },
           { label: "Resources", href: "/resources" },
           { label: subject.name },
+          { label: `Grade ${grade}`, href: `/subjects/${params.subject}/${gradeSlug(grade)}` },
           { label: `${chapter.title} resources` },
         ]}
         title={`${chapter.title} resources`}
-        lede={`${subject.name}. Notes, worksheets, videos, interactive tools and revision materials for this chapter.`}
+        lede={`${subject.name}, grade ${grade}. Notes, worksheets, videos, interactive tools and revision materials for this chapter.`}
       />
 
       <div className="subject-overview">

@@ -2,12 +2,13 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 import { SUBJECT_SLUGS } from "@/lib/subjects";
 import { getPostSlugs } from "@/lib/blog";
-import { allSubjectChapters, getAllTopicParams, getContentChapters } from "@/lib/content";
+import { getAllTopicParams, getContentChapters } from "@/lib/content";
+import { GRADES, allGradeChapters, getGradeForChapter, gradeSlug } from "@/lib/grades";
 
 /**
  * Generates /sitemap.xml for the static export.
  * Lists every public, indexable page: home, indexes, subjects,
- * chapters, topics and resource pages. Search is intentionally
+ * grade pages, chapters, topics and resource pages. Search is intentionally
  * excluded (it carries a noindex meta tag).
  */
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -35,17 +36,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`/subjects/${category}`, 0.8);
   }
 
-  // Subject → chapter routes.
-  for (const { subject, chapter } of allSubjectChapters()) {
-    add(`/subjects/${subject}/${chapter}`, 0.9);
+  // Grade index pages (e.g. /subjects/mathematics/grade-8).
+  for (const subject of SUBJECT_SLUGS) {
+    for (const grade of GRADES) {
+      add(`/subjects/${subject}/${gradeSlug(grade)}`, 0.85);
+    }
+  }
+
+  // Subject → grade → chapter routes.
+  for (const { subject, grade, chapter } of allGradeChapters()) {
+    add(`/subjects/${subject}/${gradeSlug(grade)}/${chapter}`, 0.9);
   }
   for (const t of getAllTopicParams()) {
-    add(`/subjects/${t.subject}/${t.chapter}/${t.topic}`, 0.9);
+    const grade = getGradeForChapter(t.subject, t.chapter);
+    if (!grade) continue;
+    add(`/subjects/${t.subject}/${gradeSlug(grade)}/${t.chapter}/${t.topic}`, 0.9);
   }
 
   // Resource pages.
   for (const c of getContentChapters()) {
-    add(`/resources/${c.subject}/${c.chapter}`, 0.7);
+    add(`/resources/${c.subject}/${gradeSlug(c.grade)}/${c.chapter}`, 0.7);
   }
 
   // Deduplicate.

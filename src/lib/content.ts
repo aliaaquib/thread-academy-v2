@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { getChapterTopics } from "./chapters";
 import { SUBJECT_SLUGS } from "./subjects";
 import { getChaptersForSubject } from "./stage-chapters";
+import { getGradeForChapter, gradeSlug } from "./grades";
 import type { TopicWithContent } from "./types";
 
 /** Absolute path to the content/ directory (project root). */
@@ -65,11 +66,15 @@ export function existingTopicSlugs(p: Omit<TopicParams, "topic">): string[] {
  */
 export function getAvailableTopics(p: Omit<TopicParams, "topic">): TopicWithContent[] {
   const existing = new Set(existingTopicSlugs(p));
+  const grade = getGradeForChapter(p.subject, p.chapter);
+  const chapterBase = grade
+    ? `/subjects/${p.subject}/${gradeSlug(grade)}/${p.chapter}`
+    : `/subjects/${p.subject}/${p.chapter}`;
   return getChapterTopics(p.chapter)
     .filter((t) => existing.has(t.slug))
     .map((t) => ({
       ...t,
-      url: `/subjects/${p.subject}/${p.chapter}/${t.slug}`,
+      url: `${chapterBase}/${t.slug}`,
     }));
 }
 
@@ -107,6 +112,8 @@ export function getAllTopicParams(): TopicParams[] {
 export interface SubjectChapter {
   subject: string;
   chapter: string;
+  /** Grade the chapter belongs to (each chapter lives in exactly one grade). */
+  grade: number;
   topicCount: number;
 }
 
@@ -117,7 +124,11 @@ export function getContentChapters(): SubjectChapter[] {
     const key = `${p.subject}/${p.chapter}`;
     const entry = seen.get(key);
     if (entry) entry.topicCount += 1;
-    else seen.set(key, { subject: p.subject, chapter: p.chapter, topicCount: 1 });
+    else {
+      const grade = getGradeForChapter(p.subject, p.chapter);
+      if (!grade) continue;
+      seen.set(key, { subject: p.subject, chapter: p.chapter, grade, topicCount: 1 });
+    }
   }
   return [...seen.values()].sort((a, b) =>
     `${a.subject}${a.chapter}`.localeCompare(`${b.subject}${b.chapter}`),

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import { SUBJECT_SLUGS, getSubject, CATEGORY_ORDER, subjectsByCategory } from "@/lib/subjects";
 import { getChaptersForSubject } from "@/lib/stage-chapters";
+import { getGradesForSubject, gradeSlug } from "@/lib/grades";
 import { JsonLd, courseJsonLd, pageMetadata } from "@/lib/seo";
 import type { SubjectCategory } from "@/lib/types";
 
@@ -69,8 +70,8 @@ export async function generateMetadata({ params }: { params: { subject: string }
   const subject = getSubject(params.subject);
   if (!subject) return {};
   return pageMetadata({
-    title: `${subject.name} lessons, chapters and practice`,
-    description: `${subject.tagline ?? subject.intro} Follow the ${subject.name} chapters: lessons, worked examples and practice — free, no account required.`,
+    title: `${subject.name} lessons by grade`,
+    description: `Choose your grade (7 to 12) and follow the ${subject.name} chapters: lessons, worked examples and practice questions — free, no account required.`,
     path: `/subjects/${subject.slug}`,
   });
 }
@@ -127,7 +128,7 @@ export default function SubjectPage({ params }: { params: { subject: string } })
   const subject = getSubject(params.subject);
   if (!subject) notFound();
 
-  const chapters = getChaptersForSubject(subject.slug);
+  const grades = getGradesForSubject(subject.slug);
 
   return (
     <>
@@ -151,22 +152,29 @@ export default function SubjectPage({ params }: { params: { subject: string } })
       <section className="subject-overview">
         <div>
           <div className="eyebrow" style={{ marginBottom: 18 }}>
-            Chapters
+            Choose your grade
           </div>
           <div className="chapters">
-            {chapters.map((chapter, i) => {
+            {grades.map(({ grade, chapters }) => {
+              const preview = chapters
+                .slice(0, 3)
+                .map((c) => c.title)
+                .join(" · ");
               return (
                 <Link
-                  key={chapter.id}
+                  key={grade}
                   className="chapter-link"
-                  href={`/subjects/${subject.slug}/${chapter.id}`}
+                  href={`/subjects/${subject.slug}/${gradeSlug(grade)}`}
                 >
-                  <span className="chapter-index">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="chapter-index">{String(grade).padStart(2, "0")}</span>
                   <span>
-                    <span className="chapter-title">{chapter.title}</span>
-                    <span className="chapter-desc">{chapter.desc}</span>
+                    <span className="chapter-title">Grade {grade}</span>
+                    <span className="chapter-desc">
+                      {chapters.length} chapter{chapters.length === 1 ? "" : "s"} · {preview}
+                      {chapters.length > 3 ? " …" : ""}
+                    </span>
                   </span>
-                  <span className="chapter-status">Read →</span>
+                  <span className="chapter-status">Choose →</span>
                 </Link>
               );
             })}

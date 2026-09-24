@@ -3,6 +3,7 @@ import { SUBJECTS } from "./subjects";
 import { getChapterForSubject } from "./stage-chapters";
 import { getChapterTopics } from "./chapters";
 import { getAllTopicParams, getTopicContent, getContentChapters } from "./content";
+import { getGradeForChapter, gradeSlug } from "./grades";
 
 /**
  * Build the full-text search index at build time.
@@ -37,15 +38,17 @@ export function buildSearchIndex(): SearchEntry[] {
     if (!subject) continue;
     const chapter = getChapterForSubject(p.subject, p.chapter);
     if (!chapter) continue;
+    const grade = getGradeForChapter(p.subject, p.chapter);
+    if (!grade) continue;
     const meta = getChapterTopics(p.chapter).find((t) => t.slug === p.topic);
     const content = getTopicContent(p);
     const title = content?.title ?? meta?.title ?? p.topic;
-    const breadcrumb = `${subject.name} → ${chapter.title} → ${title}`;
+    const breadcrumb = `${subject.name} → Grade ${grade} → ${chapter.title} → ${title}`;
     push({
       kind: "topic",
       title,
       path: breadcrumb,
-      url: `/subjects/${p.subject}/${p.chapter}/${p.topic}`,
+      url: `/subjects/${p.subject}/${gradeSlug(grade)}/${p.chapter}/${p.topic}`,
       text: `${title} ${breadcrumb} ${content?.lede ?? ""} ${meta?.desc ?? ""}`,
     });
   }
@@ -59,19 +62,19 @@ export function buildSearchIndex(): SearchEntry[] {
     const topicTitles = getChapterTopics(combo.chapter)
       .map((t) => t.title)
       .join(" ");
-    const breadcrumb = `${subject.name} → ${chapter.title}`;
+    const breadcrumb = `${subject.name} → Grade ${combo.grade} → ${chapter.title}`;
     push({
       kind: "chapter",
       title: chapter.title,
       path: breadcrumb,
-      url: `/subjects/${combo.subject}/${combo.chapter}`,
+      url: `/subjects/${combo.subject}/${gradeSlug(combo.grade)}/${combo.chapter}`,
       text: `${chapter.title} ${breadcrumb} ${chapter.desc} ${topicTitles}`,
     });
     push({
       kind: "resource",
       title: `${chapter.title} resources`,
       path: `Resources → ${breadcrumb}`,
-      url: `/resources/${combo.subject}/${combo.chapter}`,
+      url: `/resources/${combo.subject}/${gradeSlug(combo.grade)}/${combo.chapter}`,
       text: `${chapter.title} resources notes worksheets videos revision ${breadcrumb} ${topicTitles}`,
     });
   }

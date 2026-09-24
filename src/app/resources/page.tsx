@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import { getContentChapters } from "@/lib/content";
 import { SUBJECT_SLUGS, getSubject } from "@/lib/subjects";
 import { getChapterForSubject, getChaptersForSubject } from "@/lib/stage-chapters";
+import { getGradeForChapter, gradeSlug } from "@/lib/grades";
 import { pageMetadata } from "@/lib/seo";
 
 const GLYPHS: Record<string, string> = {
@@ -41,10 +42,12 @@ export default function ResourcesHubPage() {
     if (!first) return null;
     const chapter = getChapterForSubject(subjectSlug, first.id);
     if (!chapter) return null;
+    const grade = getGradeForChapter(subjectSlug, first.id);
+    if (!grade) return null;
     return {
       subject,
-      href: `/resources/${subjectSlug}/${chapter.id}`,
-      meta: chapter.title,
+      href: `/resources/${subjectSlug}/${gradeSlug(grade)}/${chapter.id}`,
+      meta: `${chapter.title} · Grade ${grade}`,
     };
   }).filter((c) => c !== null);
 

@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { contentRoot } from "./content";
 import { getChapterForSubject } from "./stage-chapters";
+import { getGradeForChapter, gradeSlug } from "./grades";
 
 export interface BlogPostMeta {
   slug: string;
@@ -124,7 +125,6 @@ export interface RelatedLink {
  */
 export function getRelatedLinks(post: BlogPostMeta): RelatedLink[] {
   const links: RelatedLink[] = [];
-  const base = `/subjects/${post.subjectSlug}`;
   const coveredChapters = new Set<string>();
 
   for (const pair of post.lessons) {
@@ -132,10 +132,12 @@ export function getRelatedLinks(post: BlogPostMeta): RelatedLink[] {
     if (!chapterId || !topicId) continue;
     const chapter = getChapterForSubject(post.subjectSlug, chapterId);
     if (!chapter) continue;
+    const grade = getGradeForChapter(post.subjectSlug, chapterId);
+    if (!grade) continue;
     coveredChapters.add(chapterId);
     links.push({
       title: lessonTitle(post.subjectSlug, chapterId, topicId),
-      href: `${base}/${chapterId}/${topicId}`,
+      href: `/subjects/${post.subjectSlug}/${gradeSlug(grade)}/${chapterId}/${topicId}`,
     });
   }
 
@@ -143,7 +145,9 @@ export function getRelatedLinks(post: BlogPostMeta): RelatedLink[] {
     if (coveredChapters.has(chapterId)) continue;
     const chapter = getChapterForSubject(post.subjectSlug, chapterId);
     if (!chapter) continue;
-    links.push({ title: chapter.title, href: `${base}/${chapterId}` });
+    const grade = getGradeForChapter(post.subjectSlug, chapterId);
+    if (!grade) continue;
+    links.push({ title: chapter.title, href: `/subjects/${post.subjectSlug}/${gradeSlug(grade)}/${chapterId}` });
   }
 
   if (post.subject) {
