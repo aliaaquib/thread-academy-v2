@@ -1,3 +1,10 @@
+/**
+ * READS THE LESSON FILES from the content/ folder.
+ *
+ * Lessons live at: content/subject/<subject>/grade-<n>/<chapter>/<topic>.mdx
+ * This file finds and reads them. You never edit this file to change content —
+ * just add or edit the .mdx files and rebuild the site.
+ */
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";

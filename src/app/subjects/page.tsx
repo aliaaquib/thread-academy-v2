@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Subjects",
   description:
-    "Explore 28 school subjects by category. Every subject is organised into chapters with lessons, worked examples and practice.",
+    "Explore 13 school subjects by category. Every subject is organised into chapters with lessons, worked examples and practice.",
   path: "/subjects",
 });
 
@@ -21,24 +21,9 @@ const GLYPHS: Record<string, string> = {
   history: "AD",
   geography: "◎",
   economics: "↗",
-  business: "B",
-  spanish: "Ñ",
-  french: "Ç",
-  "environmental-science": "♻",
-  "earth-science": "⊕",
-  "astronomy": "✦",
-  "engineering": "⚙",
   "psychology": "Ψ",
   "sociology": "◉",
   "political-science": "⚖",
-  "philosophy": "φ",
-  "religious-studies": "◈",
-  "civics": "§",
-  "global-studies": "🌐",
-  "german": "Ä",
-  "arabic": "ع",
-  "chinese": "中",
-  "japanese": "あ",
   "russian": "Ж",
 };
 

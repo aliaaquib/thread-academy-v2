@@ -1,3 +1,11 @@
+/**
+ * WHICH CHAPTER GOES IN WHICH GRADE (7-12), per subject.
+ *
+ * To move a chapter to another grade: cut its id from one grade list and
+ * paste it into another. To add a chapter: add its id to a grade list, and
+ * make sure the chapter also exists in stage-chapters.ts and chapters.ts.
+ * Every chapter id must appear in exactly one grade.
+ */
 import type { Chapter } from "./types";
 import { getChapterForSubject } from "./stage-chapters";
 
@@ -31,22 +39,6 @@ export function parseGradeSlug(slug: string): Grade | null {
  * The site rebuild picks everything up automatically.
  */
 export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
-  "arabic": {
-    7: ["arabic-sounds", "arabic-greetings"],
-    8: ["arabic-numbers", "script"],
-    9: ["arabic-my-world", "first-words"],
-    10: ["practical-arabic", "arabic-literature"],
-    11: ["arabic-advanced-grammar"],
-    12: ["arabic-culture"],
-  },
-  "astronomy": {
-    7: ["night-sky", "planets-tour"],
-    8: ["sun-rises", "solar-system"],
-    9: ["gravity-orbits", "stars-galaxies"],
-    10: ["exploring-space", "cosmology"],
-    11: ["exoplanets"],
-    12: ["astrophysics"],
-  },
   "biology": {
     7: ["living-things", "plants", "animals-humans"],
     8: ["cell-biology", "organisation"],
@@ -54,14 +46,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     10: ["bioenergetics", "genetics"],
     11: ["ecology", "biochemistry"],
     12: ["physiology", "evolution"],
-  },
-  "business": {
-    7: ["young-entrepreneurs", "money-matters"],
-    8: ["teamwork", "business-basics"],
-    9: ["marketing", "enterprise"],
-    10: ["finance", "strategy"],
-    11: ["corporate-finance"],
-    12: ["operations"],
   },
   "chemistry": {
     7: ["sorting-materials", "solids-liquids", "mixtures"],
@@ -71,22 +55,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     11: ["quantitative-chemistry", "physical-chemistry"],
     12: ["organic-chemistry", "analytical-chemistry"],
   },
-  "chinese": {
-    7: ["chinese-sounds", "chinese-greetings"],
-    8: ["chinese-numbers", "sounds-tones"],
-    9: ["chinese-my-world", "first-conversations"],
-    10: ["daily-chinese", "chinese-literature"],
-    11: ["chinese-advanced-grammar"],
-    12: ["chinese-culture"],
-  },
-  "civics": {
-    7: ["community-helpers", "rules-fairness"],
-    8: ["symbols", "citizenship"],
-    9: ["government", "media-literacy"],
-    10: ["constitution", "elections"],
-    11: ["comparative-politics", "civil-rights"],
-    12: ["media-democracy"],
-  },
   "computer-science": {
     7: ["algorithms-unplugged", "staying-safe-online"],
     8: ["creating-media", "computational-thinking"],
@@ -94,14 +62,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     10: ["networks", "algorithms"],
     11: ["data-structures", "databases-sql"],
     12: ["ai-ethics"],
-  },
-  "earth-science": {
-    7: ["rocks-soil", "day-night-seasons"],
-    8: ["weather-watch", "earth-structure"],
-    9: ["rocks-minerals", "volcanoes-earthquakes"],
-    10: ["water-systems", "geochemistry"],
-    11: ["oceanography"],
-    12: ["palaeontology"],
   },
   "economics": {
     7: ["needs-wants", "money"],
@@ -111,14 +71,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     11: ["international-trade"],
     12: ["development-economics"],
   },
-  "engineering": {
-    7: ["building-things", "materials-job"],
-    8: ["pulleys-levers"],
-    9: ["design-process"],
-    10: ["structures"],
-    11: ["mechanisms"],
-    12: ["machines"],
-  },
   "english": {
     7: ["phonics", "story-time"],
     8: ["handwriting", "reading-skills"],
@@ -126,22 +78,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     10: ["writing-skills", "literature"],
     11: ["language-analysis"],
     12: ["rhetoric"],
-  },
-  "environmental-science": {
-    7: ["nature-around-us", "reduce-reuse"],
-    8: ["water-precious", "ecosystems"],
-    9: ["food-webs", "human-impact"],
-    10: ["sustainability", "climate-policy"],
-    11: ["conservation-biology"],
-    12: ["environmental-economics"],
-  },
-  "french": {
-    7: ["french-sounds", "french-greetings"],
-    8: ["french-numbers", "french-basics"],
-    9: ["french-my-world", "french-grammar"],
-    10: ["revision", "french-literature"],
-    11: ["french-advanced-grammar"],
-    12: ["french-culture"],
   },
   "geography": {
     7: ["my-place", "weather-seasons"],
@@ -151,22 +87,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     11: ["urbanisation"],
     12: ["global-development"],
   },
-  "german": {
-    7: ["german-sounds", "german-greetings"],
-    8: ["german-numbers", "getting-started"],
-    9: ["german-my-world", "core-grammar"],
-    10: ["everyday-german", "german-literature"],
-    11: ["german-advanced-grammar"],
-    12: ["german-culture"],
-  },
-  "global-studies": {
-    7: ["our-world", "cultures"],
-    8: ["helping-others"],
-    9: ["globalisation"],
-    10: ["migration"],
-    11: ["trade"],
-    12: ["global-citizenship"],
-  },
   "history": {
     7: ["my-history", "toys-past"],
     8: ["great-events", "modern-world"],
@@ -175,14 +95,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     11: ["cold-war"],
     12: ["decolonisation"],
   },
-  "japanese": {
-    7: ["japanese-sounds", "japanese-greetings"],
-    8: ["japanese-numbers", "writing-systems"],
-    9: ["japanese-my-world", "speaking-basics"],
-    10: ["daily-japanese", "japanese-literature"],
-    11: ["japanese-advanced-grammar"],
-    12: ["japanese-culture"],
-  },
   "mathematics": {
     7: ["counting", "addition-subtraction", "shapes-measures"],
     8: ["fractions-first", "number-arithmetic"],
@@ -190,14 +102,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     10: ["geometry", "statistics"],
     11: ["probability", "pure-mathematics"],
     12: ["mechanics", "further-statistics"],
-  },
-  "philosophy": {
-    7: ["big-questions", "thinking"],
-    8: ["fairness"],
-    9: ["thinking-clearly"],
-    10: ["ethics"],
-    11: ["logic"],
-    12: ["reality-knowledge"],
   },
   "physics": {
     7: ["pushes-pulls", "everyday-materials"],
@@ -223,14 +127,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     11: ["the-brain"],
     12: ["development"],
   },
-  "religious-studies": {
-    7: ["celebrations", "sacred-stories"],
-    8: ["kindness", "world-religions"],
-    9: ["beliefs", "worship"],
-    10: ["philosophy-religion", "religion-society"],
-    11: ["theology"],
-    12: ["religion-ethics"],
-  },
   "russian": {
     7: ["russian-sounds", "russian-greetings"],
     8: ["russian-numbers", "cyrillic"],
@@ -246,14 +142,6 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     10: ["culture-identity"],
     11: ["socialisation"],
     12: ["inequality"],
-  },
-  "spanish": {
-    7: ["spanish-sounds", "spanish-greetings"],
-    8: ["spanish-numbers", "spanish-basics"],
-    9: ["spanish-my-world", "spanish-grammar"],
-    10: ["spanish-literature"],
-    11: ["spanish-advanced-grammar"],
-    12: ["spanish-culture"],
   },
 };
 

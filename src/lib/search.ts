@@ -1,3 +1,10 @@
+/**
+ * SITE SEARCH — builds the search index when the site is built.
+ *
+ * It reads every lesson, chapter and blog post and writes them to
+ * public/search-index.json. The /search page then filters that file in the
+ * visitor's browser. You never edit this file to change content.
+ */
 import type { SearchEntry } from "./types";
 import { SUBJECTS } from "./subjects";
 import { getChapterForSubject } from "./stage-chapters";

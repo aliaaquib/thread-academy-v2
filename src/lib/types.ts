@@ -1,5 +1,10 @@
-/** Core data-model types for Thread Academy. */
-
+/**
+ * THE SHAPES OF THE DATA — what a Subject, Chapter and Topic look like.
+ *
+ * This file holds no content, only descriptions of the data's shape so the
+ * code stays consistent. You only touch this when adding a brand-new kind
+ * of data to the site.
+ */
 export type SubjectCategory = "STEM" | "HUMANITIES" | "LANGUAGES";
 
 export interface Subject {

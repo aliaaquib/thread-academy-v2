@@ -1,3 +1,11 @@
+/**
+ * PRACTICE WORKSHEETS + VIDEO LINKS per chapter.
+ *
+ * WORKSHEETS below holds hand-written practice questions, keyed by chapter id.
+ * Videos are never hard-coded: they are YouTube search links built from the
+ * chapter name, so they can't go stale. To add questions for a chapter, add a
+ * block keyed by that chapter's id.
+ */
 import type { ChapterResources, WorksheetQuestion } from "./types";
 import { getAvailableTopics } from "./content";
 

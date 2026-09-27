@@ -16,9 +16,6 @@ const GLYPHS: Record<string, string> = {
   history: "AD",
   geography: "◎",
   economics: "↗",
-  business: "B",
-  spanish: "Ñ",
-  french: "Ç",
 };
 
 export const metadata = pageMetadata({

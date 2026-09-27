@@ -1,3 +1,12 @@
+/**
+ * CHAPTER NAMES — every chapter's display title and description, per subject.
+ *
+ * To rename a chapter: change its `title` here (keep the `id` the same so
+ * links don't break). To add a chapter: add a line to the right subject and
+ * band below, then add the chapter id to grades.ts and its topics to
+ * chapters.ts. Bands run easiest -> hardest: foundations, developing,
+ * examination, advanced.
+ */
 import type { Chapter } from "./types";
 import { getSubject } from "./subjects";
 
@@ -16,50 +25,6 @@ export type Band = "foundations" | "developing" | "examination" | "advanced";
 const BAND_ORDER: Band[] = ["foundations", "developing", "examination", "advanced"];
 
 export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
-  "arabic": {
-    "foundations": [
-      { id: "arabic-sounds", title: "The Arabic Alphabet", desc: "Meet the letters and how they join together." },
-      { id: "arabic-greetings", title: "Greetings", desc: "Say hello, goodbye and introduce yourself in Arabic." },
-      { id: "arabic-numbers", title: "Numbers and Colours", desc: "Count and describe the world around you in Arabic." },
-    ],
-    "developing": [
-      { id: "script", title: "The Arabic Script", desc: "Reading and writing from zero." },
-      { id: "arabic-my-world", title: "My World", desc: "Family, friends, school and hobbies in Arabic." },
-      { id: "first-words", title: "First Words", desc: "Greetings and everyday phrases." },
-    ],
-    "examination": [
-      { id: "script", title: "The Arabic Script", desc: "Reading and writing from zero." },
-      { id: "first-words", title: "First Words", desc: "Greetings and everyday phrases." },
-      { id: "practical-arabic", title: "Practical Arabic", desc: "Numbers, time and daily life." },
-    ],
-    "advanced": [
-      { id: "arabic-literature", title: "Literature and Film", desc: "Stories, poems and films in Arabic." },
-      { id: "arabic-advanced-grammar", title: "Advanced Grammar", desc: "Complex sentences and refined expression in Arabic." },
-      { id: "arabic-culture", title: "Culture and Society", desc: "Daily life and traditions across the Arabic-speaking world." },
-    ],
-  },
-  "astronomy": {
-    "foundations": [
-      { id: "night-sky", title: "The Night Sky", desc: "Stars, the Moon and finding constellations." },
-      { id: "planets-tour", title: "The Planets", desc: "A tour of the eight planets." },
-      { id: "sun-rises", title: "Day and Night", desc: "Why the Sun rises and sets each day." },
-    ],
-    "developing": [
-      { id: "solar-system", title: "The Solar System", desc: "Our neighbourhood in space." },
-      { id: "gravity-orbits", title: "Gravity and Orbits", desc: "Why planets stay in orbit around the Sun." },
-      { id: "stars-galaxies", title: "Stars and Galaxies", desc: "How stars live, die and light up the universe." },
-    ],
-    "examination": [
-      { id: "solar-system", title: "The Solar System", desc: "Our neighbourhood in space." },
-      { id: "stars-galaxies", title: "Stars and Galaxies", desc: "How stars live, die and light up the universe." },
-      { id: "exploring-space", title: "Exploring Space", desc: "How we study the universe." },
-    ],
-    "advanced": [
-      { id: "cosmology", title: "Cosmology", desc: "The Big Bang and the fate of the universe." },
-      { id: "exoplanets", title: "Exoplanets", desc: "Worlds orbiting other stars." },
-      { id: "astrophysics", title: "Astrophysics", desc: "The physics of stars and galaxies." },
-    ],
-  },
   "biology": {
     "foundations": [
       { id: "living-things", title: "Living Things", desc: "What makes something alive? Explore habitats near you." },
@@ -83,28 +48,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "biochemistry", title: "Biochemistry", desc: "The molecules of life: proteins, enzymes and DNA." },
       { id: "physiology", title: "Human Physiology", desc: "Nervous and hormonal control in depth." },
       { id: "evolution", title: "Evolution", desc: "Natural selection, speciation and the evidence." },
-    ],
-  },
-  "business": {
-    "foundations": [
-      { id: "young-entrepreneurs", title: "Young Entrepreneurs", desc: "Ideas for small businesses you could run." },
-      { id: "money-matters", title: "Money Matters", desc: "Earning, saving and spending wisely." },
-      { id: "teamwork", title: "Teamwork", desc: "Working together to get things done." },
-    ],
-    "developing": [
-      { id: "business-basics", title: "Business Basics", desc: "Enterprise, business types and the fundamentals of trading." },
-      { id: "marketing", title: "Marketing", desc: "Understanding customers and reaching them." },
-      { id: "enterprise", title: "Enterprise", desc: "Spotting opportunities and taking risks." },
-    ],
-    "examination": [
-      { id: "business-basics", title: "Business Basics", desc: "Enterprise, business types and the fundamentals of trading." },
-      { id: "marketing", title: "Marketing", desc: "Understanding customers and reaching them." },
-      { id: "finance", title: "Finance", desc: "Money in, money out: costs, revenue and profit." },
-    ],
-    "advanced": [
-      { id: "strategy", title: "Business Strategy", desc: "Competing and growing in global markets." },
-      { id: "corporate-finance", title: "Corporate Finance", desc: "Investment, takeovers and financial planning." },
-      { id: "operations", title: "Operations Management", desc: "Making production lean and efficient." },
     ],
   },
   "chemistry": {
@@ -132,51 +75,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "analytical-chemistry", title: "Analytical Techniques", desc: "Spectroscopy and chemical tests for substances." },
     ],
   },
-  "chinese": {
-    "foundations": [
-      { id: "chinese-sounds", title: "Sounds and Tones", desc: "Pinyin sounds and the four tones of Mandarin." },
-      { id: "chinese-greetings", title: "Greetings", desc: "Say hello, goodbye and introduce yourself in Chinese." },
-      { id: "chinese-numbers", title: "Numbers and Colours", desc: "Count and describe the world around you in Chinese." },
-    ],
-    "developing": [
-      { id: "sounds-tones", title: "Sounds and Tones", desc: "Pinyin and the four tones." },
-      { id: "chinese-my-world", title: "My World", desc: "Family, friends, school and hobbies in Chinese." },
-      { id: "first-conversations", title: "First Conversations", desc: "Greetings and introductions." },
-    ],
-    "examination": [
-      { id: "sounds-tones", title: "Sounds and Tones", desc: "Pinyin and the four tones." },
-      { id: "first-conversations", title: "First Conversations", desc: "Greetings and introductions." },
-      { id: "daily-chinese", title: "Daily Chinese", desc: "Numbers, time and getting around." },
-    ],
-    "advanced": [
-      { id: "chinese-literature", title: "Literature and Film", desc: "Stories, poems and films in Chinese." },
-      { id: "chinese-advanced-grammar", title: "Advanced Grammar", desc: "Complex sentences and refined expression in Chinese." },
-      { id: "chinese-culture", title: "Culture and Society", desc: "Daily life and traditions across the Chinese-speaking world." },
-    ],
-  },
-  "civics": {
-    "foundations": [
-      { id: "community-helpers", title: "Community Helpers", desc: "The people who help our community." },
-      { id: "rules-fairness", title: "Rules and Fairness", desc: "Why rules keep everyone safe." },
-      { id: "symbols", title: "Symbols", desc: "Flags, anthems and what they stand for." },
-    ],
-    "developing": [
-      { id: "citizenship", title: "Citizenship", desc: "Rights, duties and belonging." },
-      { id: "government", title: "Government", desc: "How the state is organised." },
-      { id: "media-literacy", title: "Media Literacy", desc: "Reading the news like a citizen." },
-    ],
-    "examination": [
-      { id: "citizenship", title: "Citizenship", desc: "Rights, duties and belonging." },
-      { id: "government", title: "Government", desc: "How the state is organised." },
-      { id: "constitution", title: "The Constitution", desc: "How a country's most important rules are written." },
-      { id: "elections", title: "Elections", desc: "Campaigns, voting and results." },
-    ],
-    "advanced": [
-      { id: "comparative-politics", title: "Comparative Politics", desc: "How different countries govern." },
-      { id: "civil-rights", title: "Civil Rights", desc: "The movements that changed history." },
-      { id: "media-democracy", title: "Media and Democracy", desc: "Press freedom, bias and propaganda." },
-    ],
-  },
   "computer-science": {
     "foundations": [
       { id: "algorithms-unplugged", title: "Algorithms Without Computers", desc: "Give precise step-by-step instructions to solve tasks." },
@@ -201,28 +99,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "ai-ethics", title: "AI and Ethics", desc: "How machine learning works and using it responsibly." },
     ],
   },
-  "earth-science": {
-    "foundations": [
-      { id: "rocks-soil", title: "Rocks and Soil", desc: "Explore rocks, soil and what lies underground." },
-      { id: "day-night-seasons", title: "Day, Night and Seasons", desc: "The Sun, the Moon and why seasons change." },
-      { id: "weather-watch", title: "Weather Watch", desc: "Measure and describe the weather around you." },
-    ],
-    "developing": [
-      { id: "earth-structure", title: "Earth’s Structure", desc: "Layers, plates and the forces that move continents." },
-      { id: "rocks-minerals", title: "Rocks and Minerals", desc: "The materials that build the planet." },
-      { id: "volcanoes-earthquakes", title: "Volcanoes and Earthquakes", desc: "Plate tectonics in action." },
-    ],
-    "examination": [
-      { id: "earth-structure", title: "Earth’s Structure", desc: "Layers, plates and the forces that move continents." },
-      { id: "rocks-minerals", title: "Rocks and Minerals", desc: "The materials that build the planet." },
-      { id: "water-systems", title: "Water Systems", desc: "Oceans, rivers and the water cycle." },
-    ],
-    "advanced": [
-      { id: "geochemistry", title: "Geochemistry", desc: "The chemistry of rocks and minerals." },
-      { id: "oceanography", title: "Oceanography", desc: "Currents, tides and marine systems." },
-      { id: "palaeontology", title: "Palaeontology", desc: "Fossils and the history of life on Earth." },
-    ],
-  },
   "economics": {
     "foundations": [
       { id: "needs-wants", title: "Needs and Wants", desc: "Why we cannot have everything we want." },
@@ -242,28 +118,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "behavioural-economics", title: "Behavioural Economics", desc: "How psychology shapes economic choices." },
       { id: "international-trade", title: "International Trade", desc: "Exchange rates, tariffs and globalisation." },
       { id: "development-economics", title: "Development Economics", desc: "Growth, poverty and inequality." },
-    ],
-  },
-  "engineering": {
-    "foundations": [
-      { id: "building-things", title: "Building Things", desc: "Design and build simple structures that stand up." },
-      { id: "materials-job", title: "Materials", desc: "Choosing the right material for the job." },
-      { id: "pulleys-levers", title: "Pulleys and Levers", desc: "How simple machines make work easier." },
-    ],
-    "developing": [
-      { id: "design-process", title: "The Design Process", desc: "How engineers turn problems into solutions." },
-      { id: "structures", title: "Structures", desc: "Why buildings stand up — and bridges don’t fall down." },
-      { id: "mechanisms", title: "Mechanisms", desc: "Gears, cams and linkages in machines." },
-    ],
-    "examination": [
-      { id: "design-process", title: "The Design Process", desc: "How engineers turn problems into solutions." },
-      { id: "structures", title: "Structures", desc: "Why buildings stand up — and bridges don’t fall down." },
-      { id: "machines", title: "Machines", desc: "How machines multiply human effort." },
-    ],
-    "advanced": [
-      { id: "design-process", title: "The Design Process", desc: "How engineers turn problems into solutions." },
-      { id: "structures", title: "Structures", desc: "Why buildings stand up — and bridges don’t fall down." },
-      { id: "machines", title: "Machines", desc: "How machines multiply human effort." },
     ],
   },
   "english": {
@@ -288,50 +142,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "rhetoric", title: "Rhetoric", desc: "The art of persuasive speaking and writing." },
     ],
   },
-  "environmental-science": {
-    "foundations": [
-      { id: "nature-around-us", title: "Nature Around Us", desc: "Plants, animals and habitats in your neighbourhood." },
-      { id: "reduce-reuse", title: "Reduce and Reuse", desc: "Why waste matters and what we can do about it." },
-      { id: "water-precious", title: "Water", desc: "Where water comes from and why it is precious." },
-    ],
-    "developing": [
-      { id: "ecosystems", title: "Ecosystems", desc: "How living things and their environment fit together." },
-      { id: "food-webs", title: "Food Webs", desc: "How energy flows through living communities." },
-      { id: "human-impact", title: "Human Impact", desc: "Pollution, climate change and their effects." },
-    ],
-    "examination": [
-      { id: "ecosystems", title: "Ecosystems", desc: "How living things and their environment fit together." },
-      { id: "human-impact", title: "Human Impact", desc: "Pollution, climate change and their effects." },
-      { id: "sustainability", title: "Sustainability", desc: "Meeting needs today without wrecking tomorrow." },
-    ],
-    "advanced": [
-      { id: "climate-policy", title: "Climate Policy", desc: "International agreements and climate action." },
-      { id: "conservation-biology", title: "Conservation Biology", desc: "Protecting biodiversity around the world." },
-      { id: "environmental-economics", title: "Environmental Economics", desc: "Valuing nature in human decisions." },
-    ],
-  },
-  "french": {
-    "foundations": [
-      { id: "french-sounds", title: "French Sounds", desc: "The French alphabet and its sounds." },
-      { id: "french-greetings", title: "Greetings", desc: "Say hello, goodbye and introduce yourself in French." },
-      { id: "french-numbers", title: "Numbers and Colours", desc: "Count and describe the world around you in French." },
-    ],
-    "developing": [
-      { id: "french-basics", title: "French Basics", desc: "Your first steps in français." },
-      { id: "french-my-world", title: "My World", desc: "Family, friends, school and hobbies in French." },
-      { id: "french-grammar", title: "Grammar Foundations", desc: "Patterns that unlock the language." },
-    ],
-    "examination": [
-      { id: "french-basics", title: "French Basics", desc: "Your first steps in français." },
-      { id: "french-grammar", title: "Grammar Foundations", desc: "Patterns that unlock the language." },
-      { id: "revision", title: "Revision", desc: "Consolidate your French with mixed practice." },
-    ],
-    "advanced": [
-      { id: "french-literature", title: "Literature and Film", desc: "Stories, poems and films in French." },
-      { id: "french-advanced-grammar", title: "Advanced Grammar", desc: "Complex sentences and refined expression in French." },
-      { id: "french-culture", title: "Culture and Society", desc: "Daily life and traditions across the French-speaking world." },
-    ],
-  },
   "geography": {
     "foundations": [
       { id: "my-place", title: "My Place", desc: "Maps of your classroom, school and neighbourhood." },
@@ -354,50 +164,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "global-development", title: "Development", desc: "Measuring and explaining global inequality." },
     ],
   },
-  "german": {
-    "foundations": [
-      { id: "german-sounds", title: "German Sounds", desc: "The German alphabet and its sounds." },
-      { id: "german-greetings", title: "Greetings", desc: "Say hello, goodbye and introduce yourself in German." },
-      { id: "german-numbers", title: "Numbers and Colours", desc: "Count and describe the world around you in German." },
-    ],
-    "developing": [
-      { id: "getting-started", title: "Getting Started", desc: "Sounds, greetings and first words." },
-      { id: "german-my-world", title: "My World", desc: "Family, friends, school and hobbies in German." },
-      { id: "core-grammar", title: "Core Grammar", desc: "Verbs, word order and cases." },
-    ],
-    "examination": [
-      { id: "getting-started", title: "Getting Started", desc: "Sounds, greetings and first words." },
-      { id: "core-grammar", title: "Core Grammar", desc: "Verbs, word order and cases." },
-      { id: "everyday-german", title: "Everyday German", desc: "Real situations, real conversations." },
-    ],
-    "advanced": [
-      { id: "german-literature", title: "Literature and Film", desc: "Stories, poems and films in German." },
-      { id: "german-advanced-grammar", title: "Advanced Grammar", desc: "Complex sentences and refined expression in German." },
-      { id: "german-culture", title: "Culture and Society", desc: "Daily life and traditions across the German-speaking world." },
-    ],
-  },
-  "global-studies": {
-    "foundations": [
-      { id: "our-world", title: "Our World", desc: "Countries, flags and maps." },
-      { id: "cultures", title: "Cultures", desc: "Food, clothes and customs around the world." },
-      { id: "helping-others", title: "Helping Others", desc: "Kindness that crosses borders." },
-    ],
-    "developing": [
-      { id: "globalisation", title: "Globalisation", desc: "How the world became connected." },
-      { id: "migration", title: "Migration", desc: "Why people move — and what happens when they do." },
-      { id: "trade", title: "Trade", desc: "How goods travel around the world." },
-    ],
-    "examination": [
-      { id: "globalisation", title: "Globalisation", desc: "How the world became connected." },
-      { id: "migration", title: "Migration", desc: "Why people move — and what happens when they do." },
-      { id: "global-citizenship", title: "Global Citizenship", desc: "Acting in a connected world." },
-    ],
-    "advanced": [
-      { id: "globalisation", title: "Globalisation", desc: "How the world became connected." },
-      { id: "migration", title: "Migration", desc: "Why people move — and what happens when they do." },
-      { id: "global-citizenship", title: "Global Citizenship", desc: "Acting in a connected world." },
-    ],
-  },
   "history": {
     "foundations": [
       { id: "my-history", title: "My History", desc: "Timelines of your own life and family." },
@@ -418,28 +184,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "historiography", title: "Historiography", desc: "How historians argue about the past." },
       { id: "cold-war", title: "The Cold War", desc: "Superpower rivalry and how it ended." },
       { id: "decolonisation", title: "Decolonisation", desc: "Independence movements across the world." },
-    ],
-  },
-  "japanese": {
-    "foundations": [
-      { id: "japanese-sounds", title: "Hiragana and Katakana", desc: "The two syllable scripts of Japanese." },
-      { id: "japanese-greetings", title: "Greetings", desc: "Say hello, goodbye and introduce yourself in Japanese." },
-      { id: "japanese-numbers", title: "Numbers and Colours", desc: "Count and describe the world around you in Japanese." },
-    ],
-    "developing": [
-      { id: "writing-systems", title: "Writing Systems", desc: "Hiragana, katakana, kanji." },
-      { id: "japanese-my-world", title: "My World", desc: "Family, friends, school and hobbies in Japanese." },
-      { id: "speaking-basics", title: "Speaking Basics", desc: "Greetings and first sentences." },
-    ],
-    "examination": [
-      { id: "writing-systems", title: "Writing Systems", desc: "Hiragana, katakana, kanji." },
-      { id: "speaking-basics", title: "Speaking Basics", desc: "Greetings and first sentences." },
-      { id: "daily-japanese", title: "Daily Japanese", desc: "Numbers, time and everyday life." },
-    ],
-    "advanced": [
-      { id: "japanese-literature", title: "Literature and Film", desc: "Stories, poems and films in Japanese." },
-      { id: "japanese-advanced-grammar", title: "Advanced Grammar", desc: "Complex sentences and refined expression in Japanese." },
-      { id: "japanese-culture", title: "Culture and Society", desc: "Daily life and traditions across the Japanese-speaking world." },
     ],
   },
   "mathematics": {
@@ -467,28 +211,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "pure-mathematics", title: "Pure Mathematics", desc: "Functions, sequences and an introduction to calculus." },
       { id: "mechanics", title: "Mechanics", desc: "Kinematics, forces and Newton's laws applied to motion." },
       { id: "further-statistics", title: "Further Statistics", desc: "Distributions, hypothesis testing and regression." },
-    ],
-  },
-  "philosophy": {
-    "foundations": [
-      { id: "big-questions", title: "Big Questions", desc: "Wondering about the world around us." },
-      { id: "thinking", title: "Thinking", desc: "Giving reasons for what you believe." },
-      { id: "fairness", title: "Fairness", desc: "What is fair and what is unfair?" },
-    ],
-    "developing": [
-      { id: "thinking-clearly", title: "Thinking Clearly", desc: "Arguments, logic and fallacies." },
-      { id: "ethics", title: "Ethics", desc: "What makes actions right or wrong?" },
-      { id: "logic", title: "Logic", desc: "Spotting good arguments and bad ones." },
-    ],
-    "examination": [
-      { id: "thinking-clearly", title: "Thinking Clearly", desc: "Arguments, logic and fallacies." },
-      { id: "ethics", title: "Ethics", desc: "What makes actions right or wrong?" },
-      { id: "reality-knowledge", title: "Reality and Knowledge", desc: "What exists, and how do we know?" },
-    ],
-    "advanced": [
-      { id: "thinking-clearly", title: "Thinking Clearly", desc: "Arguments, logic and fallacies." },
-      { id: "ethics", title: "Ethics", desc: "What makes actions right or wrong?" },
-      { id: "reality-knowledge", title: "Reality and Knowledge", desc: "What exists, and how do we know?" },
     ],
   },
   "physics": {
@@ -560,28 +282,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "development", title: "Development", desc: "How minds grow from childhood on." },
     ],
   },
-  "religious-studies": {
-    "foundations": [
-      { id: "celebrations", title: "Celebrations", desc: "Festivals celebrated around the world." },
-      { id: "sacred-stories", title: "Sacred Stories", desc: "Stories told by different traditions." },
-      { id: "kindness", title: "Kindness", desc: "How religions teach us to treat others." },
-    ],
-    "developing": [
-      { id: "world-religions", title: "World Religions", desc: "The great faith traditions." },
-      { id: "beliefs", title: "Beliefs", desc: "What different people believe." },
-      { id: "worship", title: "Worship", desc: "How people pray and celebrate." },
-    ],
-    "examination": [
-      { id: "world-religions", title: "World Religions", desc: "The great faith traditions." },
-      { id: "philosophy-religion", title: "Philosophy of Religion", desc: "Does God exist? Can we know?" },
-      { id: "religion-society", title: "Religion and Society", desc: "Faith in the modern world." },
-    ],
-    "advanced": [
-      { id: "philosophy-religion", title: "Philosophy of Religion", desc: "Does God exist? Can we know?" },
-      { id: "theology", title: "Theology", desc: "Arguing carefully about God and meaning." },
-      { id: "religion-ethics", title: "Religion and Ethics", desc: "Moral questions seen through faith." },
-    ],
-  },
   "russian": {
     "foundations": [
       { id: "russian-sounds", title: "The Cyrillic Alphabet", desc: "Meet the letters of the Russian alphabet." },
@@ -624,27 +324,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "foundations", title: "Foundations", desc: "What sociology is and how it thinks." },
       { id: "culture-identity", title: "Culture and Identity", desc: "Norms, socialisation and who we become." },
       { id: "inequality", title: "Inequality", desc: "Class, mobility and who gets what." },
-    ],
-  },
-  "spanish": {
-    "foundations": [
-      { id: "spanish-sounds", title: "Spanish Sounds", desc: "The Spanish alphabet and its sounds." },
-      { id: "spanish-greetings", title: "Greetings", desc: "Say hello, goodbye and introduce yourself in Spanish." },
-      { id: "spanish-numbers", title: "Numbers and Colours", desc: "Count and describe the world around you in Spanish." },
-    ],
-    "developing": [
-      { id: "spanish-basics", title: "Spanish Basics", desc: "Your first steps in español: greetings and introductions." },
-      { id: "spanish-my-world", title: "My World", desc: "Family, friends, school and hobbies in Spanish." },
-      { id: "spanish-grammar", title: "Grammar Foundations", desc: "Verbs, gender and the patterns behind the language." },
-    ],
-    "examination": [
-      { id: "spanish-basics", title: "Spanish Basics", desc: "Your first steps in español: greetings and introductions." },
-      { id: "spanish-grammar", title: "Grammar Foundations", desc: "Verbs, gender and the patterns behind the language." },
-    ],
-    "advanced": [
-      { id: "spanish-literature", title: "Literature and Film", desc: "Stories, poems and films in Spanish." },
-      { id: "spanish-advanced-grammar", title: "Advanced Grammar", desc: "Complex sentences and refined expression in Spanish." },
-      { id: "spanish-culture", title: "Culture and Society", desc: "Daily life and traditions across the Spanish-speaking world." },
     ],
   },
 };

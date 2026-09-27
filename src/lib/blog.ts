@@ -1,3 +1,10 @@
+/**
+ * THE BLOG — reads posts from content/blog/ and builds the blog pages.
+ *
+ * Each post is one .mdx file with title, date and subject at the top.
+ * "Related lessons" links under each post are built automatically from the
+ * chapter data, so they never point to a page that doesn't exist.
+ */
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
