@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: { params: { subject: string }
   const subject = getSubject(params.subject);
   if (!subject) return {};
   return pageMetadata({
-    title: `${subject.name} lessons by grade`,
+    title: `${subject.name} revision & learning resources`,
     description: `Choose your grade (7 to 12) and follow the ${subject.name} chapters: lessons, worked examples and practice questions — free, no account required.`,
     path: `/subjects/${subject.slug}`,
   });

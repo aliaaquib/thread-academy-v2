@@ -26,6 +26,8 @@ export interface BlogPostMeta {
   chapters: string[];
   /** "chapterId/topicId" pairs pointing at real lesson pages. */
   lessons: string[];
+  /** Optional ISO date (YYYY-MM-DD) when the post was last substantially updated. */
+  updated?: string;
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -62,6 +64,7 @@ function readPost(file: string): BlogPost | null {
     keywords: arr(data.keywords),
     chapters: arr(data.chapters),
     lessons: arr(data.lessons),
+    updated: data.updated ? dateStr(data.updated) || undefined : undefined,
     source: content,
   };
 }

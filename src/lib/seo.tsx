@@ -10,12 +10,11 @@ import type { Metadata } from "next";
 /**
  * Canonical production URL for Thread Academy.
  *
- * IMPORTANT: Vercel currently serves this project on per-deployment preview
- * URLs behind Deployment Protection (SSO login), which Google cannot crawl.
- * Replace this with the final public production domain as soon as it is set
- * (and Deployment Protection is disabled), then rebuild.
+ * This is the domain Google should index. Every canonical URL, sitemap
+ * entry, robots.txt reference and JSON-LD url on the site is built from it —
+ * never point it at localhost or a preview deployment.
  */
-export const SITE_URL = "https://threadlearning.vercel.app";
+export const SITE_URL = "https://threadacademy.aaquibali.com";
 
 export const SITE_NAME = "Thread Academy";
 
@@ -115,6 +114,36 @@ export function articleJsonLd(input: {
     isPartOf: { "@type": "CreativeWork", name: input.chapter },
     author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  };
+}
+
+/**
+ * schema.org WebSite data for the home page.
+ * Tells Google the site's name, address and what it is.
+ */
+export function websiteJsonLd(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: SITE_URL,
+    description:
+      "Free school subject revision: chapter-based lessons, worked examples and practice questions for grades 7–12.",
+    inLanguage: "en",
+  };
+}
+
+/**
+ * schema.org Organization data for the site's publisher.
+ * Only states what is true: the site's name and address. No fake
+ * ratings, reviews or statistics.
+ */
+export function organizationJsonLd(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
   };
 }
 

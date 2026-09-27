@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
 import { SITE_URL } from "@/lib/seo";
 import { SUBJECT_SLUGS } from "@/lib/subjects";
-import { getPostSlugs } from "@/lib/blog";
-import { getAllTopicParams, getContentChapters } from "@/lib/content";
+import { getAllPosts } from "@/lib/blog";
+import { contentRoot, getAllTopicParams, getContentChapters, topicFileMtime } from "@/lib/content";
 import { GRADES, allGradeChapters, getGradeForChapter, gradeSlug } from "@/lib/grades";
 
 /**
@@ -10,11 +12,16 @@ import { GRADES, allGradeChapters, getGradeForChapter, gradeSlug } from "@/lib/g
  * Lists every public, indexable page: home, indexes, subjects,
  * grade pages, chapters, topics and resource pages. Search is intentionally
  * excluded (it carries a noindex meta tag).
+ *
+ * lastModified is real wherever the site knows it: a blog post's published
+ * (or updated) date, or a lesson file's actual modification time. Entries
+ * without a known date fall back to build time.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [];
-  const add = (path: string, priority: number) =>
-    urls.push({ url: `${SITE_URL}${path}`, lastModified: new Date(), priority });
+  const buildDate = new Date();
+  const add = (path: string, priority: number, lastModified: Date = buildDate) =>
+    urls.push({ url: `${SITE_URL}${path}`, lastModified, priority });
 
   add("/", 1.0);
   add("/subjects", 0.9);
@@ -22,9 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   add("/blog", 0.8);
   add("/about", 0.5);
 
-  // Blog posts (learning journal).
-  for (const slug of getPostSlugs()) {
-    add(`/blog/${slug}`, 0.8);
+  // Blog posts (learning journal) — real publish/update dates.
+  for (const post of getAllPosts()) {
+    add(`/blog/${post.slug}`, 0.8, new Date(post.updated || post.date));
   }
 
   for (const subject of SUBJECT_SLUGS) {
@@ -50,12 +57,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const t of getAllTopicParams()) {
     const grade = getGradeForChapter(t.subject, t.chapter);
     if (!grade) continue;
-    add(`/subjects/${t.subject}/${gradeSlug(grade)}/${t.chapter}/${t.topic}`, 0.9);
+    add(
+      `/subjects/${t.subject}/${gradeSlug(grade)}/${t.chapter}/${t.topic}`,
+      0.9,
+      topicFileMtime({ subject: t.subject, chapter: t.chapter, topic: t.topic }),
+    );
   }
 
-  // Resource pages.
+  // Resource pages — the chapter's folder modification time.
   for (const c of getContentChapters()) {
-    add(`/resources/${c.subject}/${gradeSlug(c.grade)}/${c.chapter}`, 0.7);
+    const chapterDir = path.join(
+      contentRoot(),
+      "subject",
+      c.subject,
+      gradeSlug(c.grade),
+      c.chapter,
+    );
+    let mtime = buildDate;
+    try {
+      mtime = fs.statSync(chapterDir).mtime;
+    } catch {
+      /* keep buildDate */
+    }
+    add(`/resources/${c.subject}/${gradeSlug(c.grade)}/${c.chapter}`, 0.7, mtime);
   }
 
   // Deduplicate.

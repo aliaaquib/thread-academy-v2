@@ -4,18 +4,35 @@
  * (STEM / Humanities / Languages). Content comes from src/lib/subjects.ts —
  * to change which subjects appear, edit that file, not this one.
  */
+import type { Metadata } from "next";
 import Link from "next/link";
 import HeroSearch from "@/components/HeroSearch";
 import { CATEGORY_ORDER, subjectsByCategory } from "@/lib/subjects";
 import { getChaptersForSubject } from "@/lib/stage-chapters";
-import { pageMetadata } from "@/lib/seo";
+import { JsonLd, organizationJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Thread Academy",
-  description:
-    "Free school lessons, worked examples, practice and tests — from foundations to advanced study. No account required.",
+const HOME_TITLE = "Free School Subject Revision & Learning Resources";
+const HOME_TITLE_FULL = `${HOME_TITLE} — Thread Academy`;
+const HOME_DESCRIPTION =
+  "Free school subject revision: chapter-based lessons, worked examples and practice questions for grades 7–12 — useful for GCSE, IGCSE and IB exam preparation.";
+
+const homeBase = pageMetadata({
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   path: "/",
 });
+
+/**
+ * The title Google shows for the home page.
+ * `absolute` is used because the root layout's title template does not apply
+ * to the root segment's own title — without it the brand suffix would be missing.
+ */
+export const metadata: Metadata = {
+  ...homeBase,
+  title: { absolute: HOME_TITLE_FULL },
+  openGraph: { ...homeBase.openGraph, title: HOME_TITLE_FULL },
+  twitter: { ...homeBase.twitter, title: HOME_TITLE_FULL },
+};
 
 /** Reference glyphs per subject slug (approved design; not emoji). */
 const GLYPHS: Record<string, string> = {
@@ -62,6 +79,8 @@ const STEPS = [
 export default function HomePage() {
   return (
     <>
+      {/* Machine-readable site data for Google. Invisible to visitors. */}
+      <JsonLd data={[websiteJsonLd(), organizationJsonLd()]} />
       <header className="home-hero">
         <div className="hero-grid">
           <div>

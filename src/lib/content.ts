@@ -45,6 +45,20 @@ export function topicExists(p: TopicParams): boolean {
   return !!file && fs.existsSync(file);
 }
 
+/**
+ * Last-modified time of a topic's .mdx file (used as the sitemap lastmod).
+ * Falls back to build time when the file is missing.
+ */
+export function topicFileMtime(p: TopicParams): Date {
+  try {
+    const file = topicFile(p);
+    if (file) return fs.statSync(file).mtime;
+  } catch {
+    /* fall through to the default below */
+  }
+  return new Date();
+}
+
 export interface TopicContent {
   title: string;
   lede: string;

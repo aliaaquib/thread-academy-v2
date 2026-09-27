@@ -42,9 +42,8 @@ export async function generateMetadata({
   if (!content || !subject || !grade) return {};
   if (getGradeForChapter(params.subject, params.chapter) !== grade) return {};
   const chapter = getChapterForSubject(params.subject, params.chapter);
-  const chapterPart = chapter ? ` — ${chapter.title}` : "";
   return pageMetadata({
-    title: `${content.title}${chapterPart} — Grade ${grade} ${subject.name}`,
+    title: `${content.title} — ${subject.name} (Grade ${grade})`,
     description: content.lede
       ? `${content.lede} A grade ${grade} ${subject.name} lesson with worked examples and practice.`
       : `${content.title}: a grade ${grade} ${subject.name} lesson with worked examples and practice.`,
@@ -72,6 +71,12 @@ export default function TopicPage({
     subject: params.subject,
     chapter: params.chapter,
   });
+
+  // Previous / next lessons inside this chapter, for easy navigation.
+  const currentIndex = topics.findIndex((t) => t.slug === params.topic);
+  const prevTopic = currentIndex > 0 ? topics[currentIndex - 1] : null;
+  const nextTopic =
+    currentIndex >= 0 && currentIndex < topics.length - 1 ? topics[currentIndex + 1] : null;
 
   return (
     <>
@@ -102,6 +107,23 @@ export default function TopicPage({
         backLabel={`Grade ${grade}`}
       />
       <div className="lesson-main">
+        <nav aria-label="Breadcrumb" className="lesson-breadcrumb">
+          <ol>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href={`/subjects/${params.subject}`}>{subject.name}</Link>
+            </li>
+            <li>
+              <Link href={gradePath}>Grade {grade}</Link>
+            </li>
+            <li>
+              <Link href={chapterPath}>{chapter.title}</Link>
+            </li>
+            <li aria-current="page">{content.title}</li>
+          </ol>
+        </nav>
         <div className="lesson-top">
           <h1>{content.title}</h1>
           {content.lede && <p>{content.lede}</p>}
@@ -112,6 +134,16 @@ export default function TopicPage({
               blockDangerousJS stays on (v6 default) as a safety net. */}
           <MDXRemote source={content.source} components={mdxComponents} options={{ blockJS: false }} />
           <div className="lesson-finish">
+            {prevTopic && (
+              <Link className="next-btn" href={`${chapterPath}/${prevTopic.slug}`}>
+                ← {prevTopic.title}
+              </Link>
+            )}
+            {nextTopic && (
+              <Link className="next-btn" href={`${chapterPath}/${nextTopic.slug}`}>
+                {nextTopic.title} →
+              </Link>
+            )}
             <Link className="next-btn" href={gradePath}>
               Back to Grade {grade} chapters
             </Link>

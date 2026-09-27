@@ -52,6 +52,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           description: post.description,
           url: absoluteUrl(path),
           datePublished: post.date,
+          ...(post.updated ? { dateModified: post.updated } : {}),
           keywords: post.keywords.join(", "),
           author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
           publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
