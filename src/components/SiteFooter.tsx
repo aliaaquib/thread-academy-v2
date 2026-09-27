@@ -1,3 +1,7 @@
+/**
+ * SITE FOOTER — the link columns at the bottom of every page.
+ * Edit the COLUMNS list below to change footer links.
+ */
 import Link from "next/link";
 
 const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] = [

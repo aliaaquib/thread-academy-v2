@@ -1,3 +1,9 @@
+/**
+ * SITE SHELL — wraps EVERY page on the site.
+ * Puts the header at the top, the footer at the bottom, loads the fonts and
+ * the search overlay, and sets the default page title / SEO tags.
+ * Edit here only to change something shown on ALL pages.
+ */
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";

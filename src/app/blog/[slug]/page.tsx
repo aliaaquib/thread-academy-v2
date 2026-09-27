@@ -1,3 +1,8 @@
+/**
+ * BLOG POST — the page at /blog/<post-name>.
+ * Renders one .mdx file from content/blog/, plus "related lessons" links
+ * built automatically from the chapter data (src/lib/blog.ts).
+ */
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -7,10 +12,12 @@ import { RelatedTopics } from "@/components/textbook/RelatedTopics";
 import { getPost, getPostSlugs, getRelatedLinks } from "@/lib/blog";
 import { JsonLd, absoluteUrl, pageMetadata, SITE_NAME, SITE_URL } from "@/lib/seo";
 
+/** Tells the site builder which pages to create ahead of time (one per subject/grade/chapter/topic). */
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
 }
 
+/** The title + description Google and link previews show for this page. */
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug);
   if (!post) return {};
@@ -28,6 +35,7 @@ function formatDate(iso: string): string {
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 }
 
+/** The page itself — what the visitor sees. */
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug);
   if (!post) notFound();

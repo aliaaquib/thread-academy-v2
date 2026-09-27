@@ -1,3 +1,10 @@
+/**
+ * LESSON BUILDING BLOCKS — connects .mdx lesson files to their visual parts.
+ *
+ * When a lesson file uses <Quiz>, <Callout>, <Formula> etc., THIS file decides
+ * which React component renders it. To change how a lesson element looks
+ * everywhere, edit the component in src/components/textbook/ or src/components/widgets/.
+ */
 import Link from "next/link";
 import type { AnchorHTMLAttributes, ComponentType, ReactElement, ReactNode } from "react";
 import { Callout, Definition, Example, ImportantNote, Summary, WorkedExample } from "./components/textbook/Callout";

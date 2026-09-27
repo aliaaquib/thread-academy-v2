@@ -1,3 +1,8 @@
+/**
+ * PAGE HERO — the title banner at the top of every content page.
+ * Takes a title, a one-line description (lede) and breadcrumb links
+ * (Home / Subjects / ...). Styling is locked — don't restyle, just reuse.
+ */
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { JsonLd, breadcrumbJsonLd } from "@/lib/seo";

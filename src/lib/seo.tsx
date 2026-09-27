@@ -1,3 +1,10 @@
+/**
+ * GOOGLE / SEO HELPERS — page titles, descriptions and structured data.
+ *
+ * pageMetadata() builds the <title> + description every page shows to Google.
+ * The *JsonLd functions add machine-readable data (breadcrumbs, articles).
+ * SITE_URL below must be the real public domain — update it if the domain changes.
+ */
 import type { Metadata } from "next";
 
 /**

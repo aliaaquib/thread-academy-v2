@@ -1,3 +1,8 @@
+/**
+ * BLOG INDEX — the page at /blog ("The learning journal").
+ * Lists every blog post from content/blog/, grouped by subject.
+ * To add a post, drop a new .mdx file in content/blog/ — no code changes needed.
+ */
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { pageMetadata } from "@/lib/seo";
@@ -10,6 +15,7 @@ export const metadata = pageMetadata({
   path: "/blog",
 });
 
+/** The page itself — what the visitor sees. */
 export default function BlogIndexPage() {
   const groups = getPostsBySubject();
   let n = 0;

@@ -1,3 +1,9 @@
+/**
+ * HOME PAGE — the page at / (the very first page visitors see).
+ * Shows the hero, quick lesson links, and subject cards grouped by category
+ * (STEM / Humanities / Languages). Content comes from src/lib/subjects.ts —
+ * to change which subjects appear, edit that file, not this one.
+ */
 import Link from "next/link";
 import HeroSearch from "@/components/HeroSearch";
 import { CATEGORY_ORDER, subjectsByCategory } from "@/lib/subjects";
@@ -22,24 +28,9 @@ const GLYPHS: Record<string, string> = {
   history: "AD",
   geography: "◎",
   economics: "↗",
-  business: "B",
-  spanish: "Ñ",
-  french: "Ç",
-  "environmental-science": "♻",
-  "earth-science": "⊕",
-  astronomy: "✦",
-  engineering: "⚙",
   psychology: "Ψ",
   sociology: "◉",
   "political-science": "⚖",
-  philosophy: "φ",
-  "religious-studies": "◈",
-  civics: "§",
-  "global-studies": "🌐",
-  german: "Ä",
-  arabic: "ع",
-  chinese: "中",
-  japanese: "あ",
   russian: "Ж",
 };
 
@@ -67,6 +58,7 @@ const STEPS = [
   },
 ];
 
+/** The page itself — what the visitor sees. */
 export default function HomePage() {
   return (
     <>

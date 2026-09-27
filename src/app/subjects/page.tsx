@@ -1,3 +1,8 @@
+/**
+ * SUBJECTS INDEX — the page at /subjects.
+ * Shows all 13 subjects grouped by category (STEM / Humanities / Languages).
+ * The list comes from src/lib/subjects.ts — edit that file to add/remove subjects.
+ */
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { CATEGORY_ORDER, subjectsByCategory } from "@/lib/subjects";
@@ -27,6 +32,7 @@ const GLYPHS: Record<string, string> = {
   "russian": "Ж",
 };
 
+/** The page itself — what the visitor sees. */
 export default function SubjectsPage() {
   return (
     <>

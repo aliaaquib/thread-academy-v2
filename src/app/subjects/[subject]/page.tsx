@@ -1,3 +1,9 @@
+/**
+ * GRADE PICKER — the page at /subjects/<subject> (e.g. /subjects/mathematics).
+ * Shows grades 7-12 as cards; each card previews its chapters.
+ * This file ALSO serves /subjects/stem, /subjects/humanities and
+ * /subjects/languages (the category pages) — see CategoryView below.
+ */
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
@@ -35,6 +41,7 @@ function categoryFromSlug(slug: string): SubjectCategory | null {
   return (CATEGORY_ORDER as string[]).includes(upper) ? (upper as SubjectCategory) : null;
 }
 
+/** Tells the site builder which pages to create ahead of time (one per subject/grade/chapter/topic). */
 export function generateStaticParams() {
   return [
     ...SUBJECT_SLUGS.map((subject) => ({ subject })),
@@ -42,6 +49,7 @@ export function generateStaticParams() {
   ];
 }
 
+/** The title + description Google and link previews show for this page. */
 export async function generateMetadata({ params }: { params: { subject: string } }) {
   const category = categoryFromSlug(params.subject);
   if (category) {
@@ -105,6 +113,7 @@ function CategoryView({ category, slug }: { category: SubjectCategory; slug: str
   );
 }
 
+/** The page itself — what the visitor sees. */
 export default function SubjectPage({ params }: { params: { subject: string } }) {
   const category = categoryFromSlug(params.subject);
   if (category) {

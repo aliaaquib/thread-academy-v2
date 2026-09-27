@@ -1,3 +1,9 @@
+/**
+ * SEARCH BOX + RESULTS — the interactive part of the /search page.
+ * (The page shell is page.tsx next to this file.)
+ * Loads public/search-index.json (built at build time) and filters it in the
+ * visitor's browser as they type. No server, no database.
+ */
 "use client";
 
 import { useEffect, useMemo, useState } from "react";

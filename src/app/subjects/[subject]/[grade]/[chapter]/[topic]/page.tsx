@@ -1,3 +1,9 @@
+/**
+ * LESSON PAGE — the page at /subjects/<subject>/grade-<n>/<chapter>/<topic>
+ * (e.g. .../algebra/linear-equations).
+ * Renders one .mdx lesson file with the sidebar, breadcrumbs and Google data.
+ * The lesson text itself lives in content/subject/... — this file only displays it.
+ */
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -13,6 +19,7 @@ import {
 import { getAllTopicParams, getAvailableTopics, getTopicContent } from "@/lib/content";
 import { JsonLd, articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
+/** Tells the site builder which pages to create ahead of time (one per subject/grade/chapter/topic). */
 export function generateStaticParams() {
   const params: { subject: string; grade: string; chapter: string; topic: string }[] = [];
   for (const p of getAllTopicParams()) {
@@ -23,6 +30,7 @@ export function generateStaticParams() {
   return params;
 }
 
+/** The title + description Google and link previews show for this page. */
 export async function generateMetadata({
   params,
 }: {
@@ -45,6 +53,7 @@ export async function generateMetadata({
   });
 }
 
+/** The page itself — what the visitor sees. */
 export default function TopicPage({
   params,
 }: {

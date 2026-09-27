@@ -1,3 +1,8 @@
+/**
+ * ABOUT PAGE — the page at /about.
+ * Static text explaining what Thread Academy is. Edit the text lists below
+ * (PROVIDES / CHAPTERS) to change what it says.
+ */
 import PageHero from "@/components/PageHero";
 import { pageMetadata } from "@/lib/seo";
 
@@ -34,6 +39,7 @@ const CHAPTERS = [
   },
 ];
 
+/** The page itself — what the visitor sees. */
 export default function AboutPage() {
   return (
     <>

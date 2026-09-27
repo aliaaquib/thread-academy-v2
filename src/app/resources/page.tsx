@@ -1,3 +1,8 @@
+/**
+ * RESOURCES HUB — the page at /resources.
+ * Entry point to worksheets, videos and practice for every chapter that has
+ * lesson content. Chapter list comes from src/lib/content.ts.
+ */
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { getContentChapters } from "@/lib/content";
@@ -25,6 +30,7 @@ export const metadata = pageMetadata({
   path: "/resources",
 });
 
+/** The page itself — what the visitor sees. */
 export default function ResourcesHubPage() {
   const chapters = getContentChapters();
 

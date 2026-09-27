@@ -1,3 +1,9 @@
+/**
+ * CHAPTER RESOURCES — the page at /resources/<subject>/grade-<n>/<chapter>.
+ * Worksheets, video links and interactive tools for one chapter.
+ * Questions live in src/lib/resources.ts; videos are YouTube search links
+ * built from the chapter name so they never go stale.
+ */
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
@@ -10,6 +16,7 @@ import { getContentChapters } from "@/lib/content";
 import { getChapterResources } from "@/lib/resources";
 import { pageMetadata } from "@/lib/seo";
 
+/** Tells the site builder which pages to create ahead of time (one per subject/grade/chapter/topic). */
 export function generateStaticParams() {
   return getContentChapters().map((c) => ({
     subject: c.subject,
@@ -18,6 +25,7 @@ export function generateStaticParams() {
   }));
 }
 
+/** The title + description Google and link previews show for this page. */
 export async function generateMetadata({
   params,
 }: {
@@ -56,6 +64,7 @@ function ResourceSection({ id, eyebrow, title, lede, children }: {
   );
 }
 
+/** The page itself — what the visitor sees. */
 export default function ChapterResourcesPage({
   params,
 }: {

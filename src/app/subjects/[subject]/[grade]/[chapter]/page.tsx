@@ -1,3 +1,9 @@
+/**
+ * CHAPTER TOPICS — the page at /subjects/<subject>/grade-<n>/<chapter>
+ * (e.g. /subjects/mathematics/grade-9/algebra).
+ * Lists the chapter's lessons. Only topics that have a real .mdx lesson file
+ * are shown (checked by src/lib/content.ts), so links never go nowhere.
+ */
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
@@ -12,6 +18,7 @@ import {
 import { getAvailableTopics } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
+/** Tells the site builder which pages to create ahead of time (one per subject/grade/chapter/topic). */
 export function generateStaticParams() {
   return allGradeChapters().map(({ subject, grade, chapter }) => ({
     subject,
@@ -20,6 +27,7 @@ export function generateStaticParams() {
   }));
 }
 
+/** The title + description Google and link previews show for this page. */
 export async function generateMetadata({
   params,
 }: {
@@ -38,6 +46,7 @@ export async function generateMetadata({
   });
 }
 
+/** The page itself — what the visitor sees. */
 export default function ChapterPage({
   params,
 }: {
