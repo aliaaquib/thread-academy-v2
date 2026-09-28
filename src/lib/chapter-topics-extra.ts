@@ -8,7 +8,7 @@ import type { Topic } from "./types";
  */
 export const EXTRA_TOPICS: Record<string, Topic[]> = {
   // ── Mathematics ──
-  counting: [
+  "counting": [
     { slug: "counting-to-10", title: "Counting to 10", desc: "Count reliably from 0 to 10 using objects and number songs." },
     { slug: "counting-to-100", title: "Counting to 100", desc: "Count on and back in ones and tens up to 100." },
     { slug: "ordering-numbers", title: "Ordering Numbers", desc: "Place numbers in order from smallest to largest and back." },
@@ -44,19 +44,19 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "direct-proportion", title: "Direct Proportion", desc: "Solve problems where two quantities grow together." },
     { slug: "scale-and-maps", title: "Scale and Maps", desc: "Use scale factors to find real distances from maps and plans." },
   ],
-  geometry: [
+  "geometry": [
     { slug: "angles-and-angle-facts", title: "Angles and angle facts", desc: "Names of angles, angles on a line and around a point, and angles formed by parallel lines." },
     { slug: "triangles-and-quadrilaterals", title: "Triangles and quadrilaterals", desc: "Properties of 2D shapes, angle sums in triangles and quadrilaterals, and symmetry." },
     { slug: "perimeter-and-area", title: "Perimeter and area", desc: "Perimeter and area of rectangles, triangles, trapezia and compound shapes." },
     { slug: "circles-and-pi", title: "Circles and pi", desc: "Circumference and area of circles, with pi as the link between diameter and circumference." },
   ],
-  statistics: [
+  "statistics": [
     { slug: "averages-and-range", title: "Averages and range", desc: "Mean, median, mode and range, and which average suits which situation." },
     { slug: "charts-and-graphs", title: "Charts and graphs", desc: "Bar charts, pie charts, frequency diagrams and pictograms, drawn and read accurately." },
     { slug: "scatter-diagrams", title: "Scatter diagrams", desc: "Plotting paired data, spotting correlation, and drawing a line of best fit." },
     { slug: "interpreting-data", title: "Interpreting data honestly", desc: "Reading claims critically and spotting misleading scales and cherry-picked averages." },
   ],
-  probability: [
+  "probability": [
     { slug: "probability-scale-and-basics", title: "Probability scale and basics", desc: "The 0 to 1 scale, equally likely outcomes, and writing probabilities as fractions, decimals or percentages." },
     { slug: "combined-outcomes", title: "Combined outcomes", desc: "Sample space diagrams and listing all outcomes for two-step experiments." },
     { slug: "independent-and-mutually-exclusive", title: "Independent and mutually exclusive events", desc: "Multiplying probabilities for independent events and adding for mutually exclusive ones." },
@@ -68,7 +68,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "introducing-differentiation", title: "Introducing Differentiation", desc: "Gradients from first principles ideas, the power rule, and stationary points." },
     { slug: "introducing-integration", title: "Introducing Integration", desc: "Antidifferentiation, definite integrals, and areas under curves." },
   ],
-  mechanics: [
+  "mechanics": [
     { slug: "kinematics-in-a-straight-line", title: "Kinematics in a straight line", desc: "Displacement, velocity and acceleration, with the constant-acceleration SUVAT equations." },
     { slug: "newtons-laws-of-motion", title: "Newton's laws of motion", desc: "Inertia, F = ma, and action–reaction pairs applied to real situations." },
     { slug: "friction-and-connected-particles", title: "Friction and connected particles", desc: "Modelling friction with F ≤ μR and solving systems of connected particles." },
@@ -99,36 +99,36 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "how-shadows-form", title: "How Shadows Form", desc: "Seeing how an opaque object blocks light to make a shadow." },
     { slug: "changing-shadows", title: "Changing Shadows", desc: "Investigating how moving a light or object makes shadows grow, shrink and move." },
   ],
-  forces: [
+  "forces": [
     { slug: "types-of-forces", title: "Types of Forces", desc: "Meeting contact forces like friction and non-contact forces like gravity and magnetism." },
     { slug: "balanced-and-unbalanced", title: "Balanced and Unbalanced", desc: "Using force diagrams to see when forces cancel out or cause acceleration." },
     { slug: "friction-and-drag", title: "Friction and Drag", desc: "Exploring how surfaces and air resistance oppose motion — and when that helps." },
   ],
-  motion: [
+  "motion": [
     { slug: "speed-and-velocity", title: "Speed and Velocity", desc: "Calculating speed from distance and time, and seeing how velocity adds direction." },
     { slug: "distance-time-graphs", title: "Distance–Time Graphs", desc: "Reading journeys from graphs and finding speed from the gradient." },
     { slug: "acceleration", title: "What Is Acceleration", desc: "Working out how quickly velocity changes using a = (v − u) ÷ t." },
     { slug: "velocity-time-graphs", title: "Velocity–Time Graphs", desc: "Finding acceleration from the gradient and distance from the area under the graph." },
   ],
-  energy: [
+  "energy": [
     { slug: "kinetic-energy", title: "Kinetic Energy", desc: "Calculating the energy of moving objects with E = ½mv²." },
     { slug: "potential-energy", title: "Potential Energy", desc: "Working with gravitational potential energy, E = mgh, and stored elastic energy." },
     { slug: "energy-transfers", title: "Energy Transfers", desc: "Tracing energy as it moves between stores, from batteries to bouncing balls." },
     { slug: "conservation-and-efficiency", title: "Conservation and Efficiency", desc: "Using the conservation of energy and calculating the efficiency of devices." },
   ],
-  sound: [
+  "sound": [
     { slug: "how-sounds-are-made", title: "How Sounds Are Made", desc: "Linking every sound you hear to a vibrating object." },
     { slug: "sound-needs-a-medium", title: "Sound Needs a Medium", desc: "Learning that sound travels through solids, liquids and gases — but not through space." },
     { slug: "pitch-and-loudness", title: "Pitch and Loudness", desc: "Relating pitch to frequency and loudness to amplitude." },
     { slug: "echoes-and-hearing", title: "Echoes and Hearing", desc: "Using echoes to find distances and seeing how the ear detects sound." },
   ],
-  waves: [
+  "waves": [
     { slug: "transverse-and-longitudinal", title: "Transverse and Longitudinal", desc: "Comparing the two wave types and the direction of their vibrations." },
     { slug: "wave-speed-equation", title: "The Wave Speed Equation", desc: "Using v = f × λ to link speed, frequency and wavelength." },
     { slug: "reflection-and-refraction", title: "Reflection and Refraction", desc: "Explaining how waves bounce off surfaces and bend at boundaries." },
     { slug: "electromagnetic-spectrum", title: "The Electromagnetic Spectrum", desc: "Ordering the spectrum from radio waves to gamma rays and meeting their uses." },
   ],
-  electricity: [
+  "electricity": [
     { slug: "current-and-charge", title: "Current and Charge", desc: "Linking current to the flow of charge with Q = I × t." },
     { slug: "voltage-and-resistance", title: "Voltage and Resistance", desc: "Using V = I × R and reading simple circuit measurements." },
     { slug: "series-and-parallel", title: "Series and Parallel", desc: "Comparing current, voltage and resistance in the two circuit types." },
@@ -140,7 +140,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "momentum-and-impulse", title: "Momentum and Impulse", desc: "Using p = mv and impulse FΔt = Δp for impacts and safety design." },
     { slug: "collisions", title: "Elastic and Inelastic Collisions", desc: "Applying conservation of momentum to elastic and inelastic collisions." },
   ],
-  fields: [
+  "fields": [
     { slug: "gravitational-fields", title: "Gravitational Fields", desc: "Mapping g fields with F = GmM/r² and linking field strength to potential." },
     { slug: "electric-fields", title: "Electric Fields", desc: "Using E = F/Q and E = V/d for point charges and uniform fields." },
     { slug: "magnetic-fields", title: "Magnetic Fields", desc: "Finding field patterns and the force F = BIl on current-carrying wires." },
@@ -165,13 +165,13 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "melting-and-freezing", title: "Melting and Freezing", desc: "Watch what happens to ice, chocolate and butter when they are warmed and cooled." },
     { slug: "heating-and-cooling", title: "Heating and Cooling", desc: "Investigate how warming and cooling change materials, and how to test fairly." },
   ],
-  mixtures: [
+  "mixtures": [
     { slug: "what-is-a-mixture", title: "What Is a Mixture", desc: "Learn how mixtures are made of two or more materials mixed together." },
     { slug: "sieving", title: "Separating by Sieving", desc: "Use a sieve to separate solids of different sizes, like flour from lumps." },
     { slug: "filtering", title: "Separating by Filtering", desc: "Use filter paper to separate a solid from a liquid, like sand from water." },
     { slug: "evaporating", title: "Separating by Evaporating", desc: "Use gentle heat to leave dissolved salt behind when water evaporates." },
   ],
-  particles: [
+  "particles": [
     { slug: "particle-model", title: "The Particle Model", desc: "Meet the idea that all matter is made of tiny moving particles." },
     { slug: "solids-liquids-gases", title: "Solids, Liquids and Gases", desc: "Compare how particles are arranged and move in each state." },
     { slug: "changes-of-state", title: "Changes of State", desc: "Explain melting, boiling, condensing and freezing with particles." },
@@ -237,7 +237,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "sorting-animals", title: "Sorting Animals", desc: "Group animals by their features into mammals, birds, fish, reptiles, amphibians and minibeasts." },
     { slug: "simple-food-chains", title: "Simple Food Chains", desc: "Follow food chains from producer to consumer and see why plants start them all." },
   ],
-  plants: [
+  "plants": [
     { slug: "parts-of-a-plant", title: "Parts of a Plant", desc: "Name the roots, stem, leaves and flower and learn what each part does for the plant." },
     { slug: "what-plants-need", title: "What Plants Need", desc: "Discover the light, water, warmth and air that plants need to stay healthy and grow." },
     { slug: "how-seeds-grow", title: "How Seeds Grow", desc: "Follow germination as a seed sprouts roots and shoots and becomes a new plant." },
@@ -254,13 +254,13 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "specialised-cells", title: "Specialised Cells", desc: "See how root hair cells, sperm cells, red blood cells and neurones are adapted to their jobs." },
     { slug: "mitosis", title: "Cell Division: Mitosis", desc: "Follow the stages of mitosis and learn why growth and repair need identical cells." },
   ],
-  organisation: [
+  "organisation": [
     { slug: "levels-of-organisation", title: "Levels of Organisation", desc: "Build the hierarchy from cells to tissues, organs and organ systems." },
     { slug: "digestive-system", title: "The Digestive System", desc: "Trace food through the gut and learn how nutrients reach the blood." },
     { slug: "heart-circulation", title: "Heart and Circulation", desc: "Explore the double circulatory system and how blood moves around the body." },
     { slug: "enzymes-in-digestion", title: "Enzymes in Digestion", desc: "Meet amylase, protease and lipase and see how enzymes speed up digestion." },
   ],
-  reproduction: [
+  "reproduction": [
     { slug: "plant-reproduction", title: "Plant Reproduction", desc: "Learn how flowers, pollination and seeds create the next generation of plants." },
     { slug: "animal-life-cycles", title: "Animal Life Cycles", desc: "Compare the life cycles of mammals, birds, amphibians and insects, including metamorphosis." },
     { slug: "human-life-cycle", title: "The Human Life Cycle", desc: "Follow the stages from baby to adult to older age and what changes at each stage." },
@@ -272,37 +272,37 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "vaccines", title: "How Vaccines Work", desc: "Learn how vaccination trains the immune system to defeat a disease before it strikes." },
     { slug: "healthy-lifestyle", title: "A Healthy Lifestyle", desc: "Explore how diet, exercise, sleep and avoiding smoking protect long-term health." },
   ],
-  bioenergetics: [
+  "bioenergetics": [
     { slug: "photosynthesis", title: "How Photosynthesis Works", desc: "Master the word and symbol equations and how leaves are adapted for the job." },
     { slug: "limiting-factors", title: "Limiting Factors", desc: "Investigate how light, carbon dioxide and temperature limit the rate of photosynthesis." },
     { slug: "respiration", title: "Aerobic and Anaerobic Respiration", desc: "Compare the equations for respiration with and without oxygen, and their uses." },
     { slug: "energy-in-ecosystems", title: "Energy in Ecosystems", desc: "Calculate the percentage efficiency of energy transfer between trophic levels." },
   ],
-  genetics: [
+  "genetics": [
     { slug: "dna-genes-chromosomes", title: "DNA, Genes and Chromosomes", desc: "Connect DNA, genes, chromosomes and alleles into one clear picture." },
     { slug: "punnett-squares", title: "Punnett Squares", desc: "Predict the outcomes of single-gene crosses with step-by-step Punnett squares." },
     { slug: "inherited-disorders", title: "Inherited Disorders", desc: "Trace cystic fibrosis and polydactyly through family trees." },
     { slug: "variation-and-selection", title: "Variation and Selection", desc: "Explain the genetic and environmental causes of variation in populations." },
   ],
-  ecology: [
+  "ecology": [
     { slug: "food-webs", title: "Food Webs", desc: "Build food webs and identify producers, consumers, predators and decomposers." },
     { slug: "pyramids-of-biomass", title: "Pyramids of Biomass", desc: "Construct pyramids of biomass and explain why energy transfer is inefficient." },
     { slug: "carbon-cycle", title: "The Carbon Cycle", desc: "Follow carbon through photosynthesis, respiration, decay and combustion." },
     { slug: "human-impacts", title: "Humans and the Environment", desc: "Evaluate deforestation, pollution and global warming, and how we can respond." },
   ],
-  biochemistry: [
+  "biochemistry": [
     { slug: "biological-molecules", title: "Biological Molecules", desc: "Classify carbohydrates, lipids, proteins and nucleic acids, and test foods for them." },
     { slug: "protein-structure", title: "Protein Structure", desc: "Build proteins from amino acids through primary to quaternary structure." },
     { slug: "enzymes", title: "Enzymes in Depth", desc: "Explain specificity, the induced-fit model, and the effects of pH and temperature." },
     { slug: "dna-replication", title: "DNA Structure and Replication", desc: "Describe the double helix and the semi-conservative replication mechanism." },
   ],
-  physiology: [
+  "physiology": [
     { slug: "neurones-synapses", title: "Neurones and Synapses", desc: "Trace nerve impulses along neurones and across synapses in detail." },
     { slug: "reflex-arc", title: "The Reflex Arc", desc: "Map the five stages of a spinal reflex and explain why speed matters." },
     { slug: "hormones", title: "Hormonal Control", desc: "Compare nervous and hormonal control and explore the glands of the endocrine system." },
     { slug: "homeostasis", title: "Homeostasis: Blood Glucose", desc: "Explain the negative-feedback control of blood glucose by insulin and glucagon." },
   ],
-  evolution: [
+  "evolution": [
     { slug: "natural-selection", title: "Natural Selection", desc: "Explain Darwin's theory step by step, with real examples like antibiotic resistance." },
     { slug: "evidence-for-evolution", title: "Evidence for Evolution", desc: "Weigh the fossil, anatomical, embryological and DNA evidence for common ancestry." },
     { slug: "speciation", title: "How Speciation Happens", desc: "Show how isolation and selection split one species into two." },
@@ -333,7 +333,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "abstraction", title: "Focusing on What Matters", desc: "Strip away unimportant detail to focus on what matters." },
     { slug: "algorithmic-thinking", title: "Algorithmic Thinking", desc: "Turn your plan into clear, ordered steps a computer can follow." },
   ],
-  programming: [
+  "programming": [
     { slug: "output-and-input", title: "Output and Input", desc: "Make programs talk to the user with print and input." },
     { slug: "selection", title: "Making Decisions", desc: "Branch your program's behaviour with if, elif and else." },
     { slug: "loops", title: "Repeating with Loops", desc: "Repeat actions efficiently with for and while loops." },
@@ -344,13 +344,13 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "images-pixels", title: "Images and Pixels", desc: "Discover how grids of coloured dots become photographs." },
     { slug: "sound-sampling", title: "Sound and Sampling", desc: "Learn how sound waves are sampled into digital audio." },
   ],
-  networks: [
+  "networks": [
     { slug: "what-is-a-network", title: "What Is a Network?", desc: "Explore LANs, WANs and the hardware that connects devices." },
     { slug: "packets-and-protocols", title: "Packets and Protocols", desc: "See how data is split into packets that follow agreed rules." },
     { slug: "how-the-internet-works", title: "How the Internet Works", desc: "Trace a web request from your device to a server and back." },
     { slug: "network-security", title: "Network Security", desc: "Learn how encryption and firewalls keep networks safe." },
   ],
-  algorithms: [
+  "algorithms": [
     { slug: "linear-search", title: "Linear Search", desc: "Find items by checking each one in turn." },
     { slug: "binary-search", title: "Binary Search", desc: "Search sorted lists far faster by halving the problem." },
     { slug: "bubble-sort", title: "Bubble Sort", desc: "Sort lists by repeatedly swapping neighbouring items." },
@@ -416,7 +416,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "road-to-the-second-world-war", title: "Road to the Second World War", desc: "Treaty of Versailles, the Depression and Hitler's rise." },
     { slug: "britain-in-the-second-world-war", title: "Britain in the Second World War", desc: "The Blitz, Dunkirk and the home front, 1939-1945." },
   ],
-  historiography: [
+  "historiography": [
     { slug: "what-is-historiography", title: "What Is Historiography", desc: "Why history is an argument about the past, not just a list of facts." },
     { slug: "schools-of-thought", title: "Schools of Thought", desc: "Marxist, Whig, revisionist and postmodern approaches to writing history." },
     { slug: "debating-the-first-world-war", title: "Debating the First World War", desc: "Fischer, revisionists and the argument over who caused the war." },
@@ -428,7 +428,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "the-cold-war-worldwide", title: "The Cold War Worldwide", desc: "Proxy wars, decolonisation and the superpowers' global contest." },
     { slug: "how-the-cold-war-ended", title: "How the Cold War Ended", desc: "Gorbachev, people power and the fall of the Berlin Wall in 1989." },
   ],
-  decolonisation: [
+  "decolonisation": [
     { slug: "why-empires-ended", title: "Why Empires Ended", desc: "War, debt and nationalism: the forces that broke up the European empires." },
     { slug: "india-independence-1947", title: "India: Independence 1947", desc: "Gandhi, partition and the birth of India and Pakistan." },
     { slug: "africa-free", title: "Africa Free", desc: "From Ghana in 1957 to the independence movements across the continent." },
@@ -476,13 +476,13 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "urban-growth", title: "Urban Growth", desc: "Investigate how towns and cities expand through migration and natural increase." },
     { slug: "global-connections", title: "Global Connections", desc: "Explore how trade, transport and communications link countries together." },
   ],
-  coasts: [
+  "coasts": [
     { slug: "coastal-processes", title: "Coastal Processes", desc: "Examine destructive and constructive waves, weathering and mass movement at the coast." },
     { slug: "erosional-landforms", title: "Erosional Landforms", desc: "Trace the sequence from crack to cave to arch to stack to stump." },
     { slug: "depositional-landforms", title: "Depositional Landforms", desc: "Explain how longshore drift builds spits, bars and tombolos." },
     { slug: "coastal-management", title: "Managing Coasts", desc: "Evaluate hard and soft engineering strategies and their trade-offs." },
   ],
-  urbanisation: [
+  "urbanisation": [
     { slug: "causes-of-urbanisation", title: "Causes of Urbanisation", desc: "Analyse rural–urban migration and natural increase as drivers of city growth." },
     { slug: "urban-land-use-models", title: "Urban Land-Use Models", desc: "Apply the Burgess and Hoyt models to explain how cities are organised." },
     { slug: "challenges-in-cities", title: "Challenges in Cities", desc: "Assess housing, congestion, pollution and inequality in growing cities." },
@@ -501,7 +501,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "making-choices", title: "Making Choices", desc: "See how every choice means giving something else up." },
     { slug: "saving-and-spending", title: "Saving and Spending", desc: "Practise using limited money wisely through saving first and spending carefully." },
   ],
-  money: [
+  "money": [
     { slug: "what-money-is", title: "What Money Is", desc: "Learn what money is and why everyone agrees to accept it." },
     { slug: "using-money", title: "Using Money", desc: "See how we pay with cash, cards and phones." },
     { slug: "where-money-comes-from", title: "Where Money Comes From", desc: "Find out how people earn money through work." },
@@ -513,12 +513,12 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "goods-and-services", title: "Goods and Services", desc: "Learn the difference between things we make and help we give." },
     { slug: "jobs-in-our-community", title: "Jobs in Our Community", desc: "See how local jobs keep a community running." },
   ],
-  microeconomics: [
+  "microeconomics": [
     { slug: "market-equilibrium", title: "Market Equilibrium", desc: "Find the price where quantity demanded equals quantity supplied." },
     { slug: "elasticity", title: "Elasticity of Demand", desc: "Measure how strongly demand reacts to price changes." },
     { slug: "costs-of-production", title: "Costs of Production", desc: "Explore fixed, variable and marginal costs for firms." },
   ],
-  markets: [
+  "markets": [
     { slug: "what-is-a-market", title: "What Is a Market?", desc: "Discover what economists mean by a market." },
     { slug: "buyers-and-sellers", title: "Buyers and Sellers", desc: "See how the two sides of every market meet and trade." },
     { slug: "how-prices-are-set", title: "How Prices Are Set", desc: "Learn how bargaining and competition discover prices." },
@@ -530,7 +530,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "public-services", title: "Public Services", desc: "Explore the services that taxes pay for." },
     { slug: "spending-and-budgets", title: "Spending and Budgets", desc: "See how governments plan their spending and handle trade-offs." },
   ],
-  macroeconomics: [
+  "macroeconomics": [
     { slug: "economic-growth", title: "Economic Growth", desc: "Learn how GDP measures growth and why it matters." },
     { slug: "inflation-explained", title: "Inflation Explained", desc: "Understand rising prices and how they are measured." },
     { slug: "unemployment", title: "Unemployment Explained", desc: "Explore the types and costs of joblessness." },
@@ -555,7 +555,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "development-strategies", title: "Development Strategies", desc: "Evaluate aid, trade and investment as routes to growth." },
   ],
   // ── English ──
-  phonics: [
+  "phonics": [
     { slug: "single-letter-sounds", title: "Single Letter Sounds", desc: "Learn the sound each letter of the alphabet makes, from a to z." },
     { slug: "blending-cvc-words", title: "Blending Simple Words", desc: "Push letter sounds together to read three-letter words like c-a-t." },
     { slug: "digraphs-and-blends", title: "Digraphs and Blends", desc: "Read two-letter sounds such as sh, ch and th, plus blends like st and br." },
@@ -567,7 +567,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "characters-and-settings", title: "Characters and Settings", desc: "Meet the people in stories and describe where their adventures happen." },
     { slug: "retelling-stories", title: "Retelling Stories", desc: "Tell a story back in your own words, keeping the events in order." },
   ],
-  handwriting: [
+  "handwriting": [
     { slug: "grip-and-posture", title: "Grip and Posture", desc: "Hold your pencil correctly and sit comfortably so writing feels easy." },
     { slug: "letter-formation", title: "Forming Letters", desc: "Learn where each letter starts and which way it travels." },
     { slug: "lowercase-uppercase", title: "Lowercase and Uppercase", desc: "Practise small letters and capital letters, and know when to use each." },
@@ -596,7 +596,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "descriptive-writing", title: "Descriptive Writing", desc: "Create vivid settings using the five senses and precise language." },
     { slug: "writing-to-argue", title: "Writing to Argue", desc: "Persuade readers with structured arguments and rhetorical devices." },
   ],
-  literature: [
+  "literature": [
     { slug: "reading-shakespeare", title: "Reading Shakespeare", desc: "Unlock Shakespeare's language, verse and stagecraft." },
     { slug: "studying-the-novel", title: "Studying the Novel", desc: "Analyse narrative voice, character and structure in prose fiction." },
     { slug: "analysing-poetry", title: "Analysing Poetry", desc: "Explore form, rhythm and imagery in poems from different eras." },
@@ -608,20 +608,20 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "pragmatics-in-action", title: "Pragmatics in Action", desc: "Uncover implied meaning, politeness and what is left unsaid." },
     { slug: "stylistic-analysis", title: "Stylistic Analysis", desc: "Combine every linguistic level into a full critical commentary." },
   ],
-  rhetoric: [
+  "rhetoric": [
     { slug: "ethos-pathos-logos", title: "Ethos, Pathos, Logos", desc: "Master Aristotle's three modes of persuasion." },
     { slug: "rhetorical-devices", title: "Rhetorical Devices", desc: "Deploy anaphora, tricolon and rhetorical questions with precision." },
     { slug: "building-an-argument", title: "Building an Argument", desc: "Structure claims, evidence and counterarguments convincingly." },
     { slug: "great-speeches", title: "Great Speeches", desc: "Study landmark speeches and the techniques that made them endure." },
   ],
   // ── Psychology ──
-  feelings: [
+  "feelings": [
     { slug: "naming-our-feelings", title: "Naming Our Feelings", desc: "Learn the words for happy, sad, angry, scared, surprised and calm, and practise spotting each feeling in yourself." },
     { slug: "what-feelings-are-for", title: "What Feelings Are For", desc: "Discover how emotions are messages from your brain that tell you what you need, like comfort, rest or fairness." },
     { slug: "expressing-feelings-safely", title: "Expressing Feelings Safely", desc: "Practise healthy ways to show big feelings, such as using words, drawing, slow breathing and asking for help." },
     { slug: "understanding-other-people", title: "Understanding Other People", desc: "Learn to notice how others feel from their faces and voices, and how to show you care." },
   ],
-  friendship: [
+  "friendship": [
     { slug: "what-makes-a-good-friend", title: "What Makes a Good Friend", desc: "Spot the qualities of a good friend, such as kindness, honesty and listening, and practise being one yourself." },
     { slug: "taking-turns-and-sharing", title: "Taking Turns and Sharing", desc: "Learn why turn-taking keeps games fair and fun, and practise waiting patiently for your go." },
     { slug: "fixing-arguments", title: "Fixing Arguments", desc: "Discover a simple step-by-step way to sort out disagreements without shouting or sulking." },
@@ -647,12 +647,12 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "messages-along-nerves", title: "Messages Along Nerves", desc: "Follow an electrical signal racing along a neuron and jumping the synapse as a chemical message." },
     { slug: "connections-that-grow", title: "Connections That Grow", desc: "Discover how learning strengthens the links between neurons — and why practice matters." },
   ],
-  development: [
+  "development": [
     { slug: "piagets-stages", title: "Piaget's Stages", desc: "Walk through Piaget's four stages of cognitive development, from object permanence to abstract thought." },
     { slug: "vygotskys-scaffolding", title: "Vygotsky's Scaffolding", desc: "Learn how the zone of proximal development and scaffolding explain learning with help from others." },
   ],
   // ── Sociology ──
-  families: [
+  "families": [
     { slug: "what-is-a-family", title: "What Makes a Family?", desc: "Discover what families have in common and why they are so important." },
     { slug: "nuclear-and-extended", title: "Nuclear and Extended Families", desc: "Compare small family households with big family groups that share a home." },
     { slug: "one-parent-and-blended", title: "One-Parent and Blended Families", desc: "See how families take new shapes when parents live apart or remarry." },
@@ -664,13 +664,13 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "belonging-to-a-group", title: "Belonging to a Group", desc: "Learn what belonging feels like and why groups matter." },
     { slug: "being-a-good-citizen", title: "Being a Good Citizen", desc: "Practise the small acts that make school better for everyone." },
   ],
-  communities: [
+  "communities": [
     { slug: "what-is-a-community", title: "What Is a Community?", desc: "Discover what makes a group of people a community." },
     { slug: "community-helpers", title: "Community Helpers", desc: "Meet the people whose jobs keep a community running safely." },
     { slug: "communities-change", title: "How Communities Change", desc: "See how places change as new people and buildings arrive." },
     { slug: "helping-your-community", title: "Helping Your Community", desc: "Find simple ways to make a difference where you live." },
   ],
-  foundations: [
+  "foundations": [
     { slug: "three-core-perspectives", title: "Three Core Perspectives", desc: "Compare functionalism, conflict theory and symbolic interactionism." },
     { slug: "structure-and-agency", title: "Structure and Agency", desc: "Debate how much society shapes us versus how much we shape ourselves." },
   ],
@@ -678,30 +678,30 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "subcultures-and-countercultures", title: "Subcultures and Countercultures", desc: "Explore groups that live by different rules, from mods to hippies." },
     { slug: "globalisation-and-hybridity", title: "Globalisation and Hybridity", desc: "See how world cultures mix, blend and borrow from each other." },
   ],
-  socialisation: [
+  "socialisation": [
     { slug: "agents-of-socialisation", title: "Agents of Socialisation", desc: "Meet the family, school, peers, media and religion as our social teachers." },
     { slug: "primary-and-secondary", title: "Primary and Secondary Socialisation", desc: "Compare childhood's first lessons with the ones that come later." },
     { slug: "meads-i-and-me", title: "Mead's I and Me", desc: "Explore how George Herbert Mead saw the self growing through other people." },
     { slug: "socialisation-for-life", title: "Socialisation for Life", desc: "See how learning society's ways continues from cradle to old age." },
   ],
-  inequality: [
+  "inequality": [
     { slug: "marx-vs-weber", title: "Marx vs Weber on Stratification", desc: "Contrast Marx's two-class model with Weber's class, status and party." },
     { slug: "gender-inequality", title: "Gender Inequality", desc: "Examine the gender pay gap and the barrier called the glass ceiling." },
   ],
   // ── Political Science ──
-  rules: [
+  "rules": [
     { slug: "why-we-have-rules", title: "Why We Have Rules", desc: "Explores how rules keep everyone safe, fair and able to get along at home and at school." },
     { slug: "rules-vs-laws", title: "Rules Versus Laws", desc: "Shows the difference between school rules and the country's laws, and who enforces each." },
     { slug: "fair-and-unfair-rules", title: "Fair and Unfair Rules", desc: "Helps learners spot the difference between rules that protect everyone and rules that are unfair." },
     { slug: "following-rules", title: "Following Rules and Consequences", desc: "Explains what happens when rules are kept or broken, and why consequences should be fair." },
   ],
-  leaders: [
+  "leaders": [
     { slug: "what-leaders-do", title: "What Leaders Do", desc: "Describes how leaders make decisions, look after people and take responsibility." },
     { slug: "kinds-of-leaders", title: "Different Kinds of Leaders", desc: "Meets leaders from the classroom to the country, such as class reps, mayors and the prime minister." },
     { slug: "choosing-leaders", title: "Choosing Leaders Fairly", desc: "Shows how fair elections, votes and rotas let everyone have a say." },
     { slug: "good-leader-qualities", title: "Good Leader Qualities", desc: "Identifies the qualities of a good leader, like honesty, kindness and listening." },
   ],
-  voting: [
+  "voting": [
     { slug: "what-is-voting", title: "What Voting Is", desc: "Explains how voting lets a group choose fairly when people disagree." },
     { slug: "one-person-one-vote", title: "One Person, One Vote", desc: "Shows why every vote should count equally in a fair election." },
     { slug: "secret-ballot", title: "Secret Ballots", desc: "Explains why voting in secret keeps people free from pressure and bullying." },
@@ -711,11 +711,11 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "understanding-power", title: "Understanding Power", desc: "Covers Max Weber's definition of power as getting your way despite resistance, plus Joseph Nye's hard power and soft power." },
     { slug: "authority-and-legitimacy", title: "Authority and Legitimacy", desc: "Explains Weber's three types of legitimate authority: traditional, charismatic and rational-legal." },
   ],
-  democracy: [
+  "democracy": [
     { slug: "liberal-democracy-features", title: "Features of Liberal Democracy", desc: "Identifies the pillars of liberal democracy, from free elections to the rule of law and Montesquieu's separation of powers." },
     { slug: "direct-vs-representative", title: "Direct Versus Representative Democracy", desc: "Compares ancient Athens, where citizens voted directly, with modern systems that elect representatives." },
   ],
-  rights: [
+  "rights": [
     { slug: "what-are-human-rights", title: "What Human Rights Are", desc: "Introduces human rights as freedoms and protections that belong to every person." },
     { slug: "universal-declaration", title: "The Universal Declaration", desc: "Explores the Universal Declaration of Human Rights, adopted by the United Nations in 1948." },
     { slug: "childrens-rights", title: "Children's Rights", desc: "Covers the UN Convention on the Rights of the Child and the protections it gives young people." },
@@ -744,7 +744,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "rainbow-of-colours", title: "A Rainbow of Colours", desc: "Learn the colour words from красный (krásnyy — red) to белый (bélyy — white) and spot them everywhere." },
     { slug: "describing-things", title: "Describing Things", desc: "Put colours and nouns together to describe the world: красная машина (krásnaya mashína — red car)!" },
   ],
-  cyrillic: [
+  "cyrillic": [
     { slug: "lookalike-letters", title: "Look-Alike Letters", desc: "Tell apart tricky pairs like Ш (sha) and Щ (shcha), И (i) and Й (short y), Е (ye) and Ё (yo)." },
     { slug: "hard-and-soft-signs", title: "Hard and Soft Signs", desc: "Learn what Ъ (the hard sign) and Ь (the soft sign) really do and why they change pronunciation." },
   ],
