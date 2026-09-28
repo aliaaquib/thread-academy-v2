@@ -25,6 +25,7 @@ export type Band = "foundations" | "developing" | "examination" | "advanced";
 const BAND_ORDER: Band[] = ["foundations", "developing", "examination", "advanced"];
 
 export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
+  // ── Biology ──
   "biology": {
     "foundations": [
       { id: "living-things", title: "Living Things", desc: "What makes something alive? Explore habitats near you." },
@@ -50,6 +51,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "evolution", title: "Evolution", desc: "Natural selection, speciation and the evidence." },
     ],
   },
+  // ── Chemistry ──
   "chemistry": {
     "foundations": [
       { id: "sorting-materials", title: "Sorting Materials", desc: "Grouping everyday materials by their properties." },
@@ -75,6 +77,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "analytical-chemistry", title: "Analytical Techniques", desc: "Spectroscopy and chemical tests for substances." },
     ],
   },
+  // ── Computer Science ──
   "computer-science": {
     "foundations": [
       { id: "algorithms-unplugged", title: "Algorithms Without Computers", desc: "Give precise step-by-step instructions to solve tasks." },
@@ -99,6 +102,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "ai-ethics", title: "AI and Ethics", desc: "How machine learning works and using it responsibly." },
     ],
   },
+  // ── Economics ──
   "economics": {
     "foundations": [
       { id: "needs-wants", title: "Needs and Wants", desc: "Why we cannot have everything we want." },
@@ -120,6 +124,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "development-economics", title: "Development Economics", desc: "Growth, poverty and inequality." },
     ],
   },
+  // ── English ──
   "english": {
     "foundations": [
       { id: "phonics", title: "Phonics", desc: "Letter sounds and blending them to read words." },
@@ -142,6 +147,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "rhetoric", title: "Rhetoric", desc: "The art of persuasive speaking and writing." },
     ],
   },
+  // ── Geography ──
   "geography": {
     "foundations": [
       { id: "my-place", title: "My Place", desc: "Maps of your classroom, school and neighbourhood." },
@@ -164,6 +170,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "global-development", title: "Development", desc: "Measuring and explaining global inequality." },
     ],
   },
+  // ── History ──
   "history": {
     "foundations": [
       { id: "my-history", title: "My History", desc: "Timelines of your own life and family." },
@@ -186,6 +193,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "decolonisation", title: "Decolonisation", desc: "Independence movements across the world." },
     ],
   },
+  // ── Mathematics ──
   "mathematics": {
     "foundations": [
       { id: "counting", title: "Counting", desc: "Count, order and compare whole numbers with confidence." },
@@ -213,6 +221,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "further-statistics", title: "Further Statistics", desc: "Distributions, hypothesis testing and regression." },
     ],
   },
+  // ── Physics ──
   "physics": {
     "foundations": [
       { id: "pushes-pulls", title: "Pushes and Pulls", desc: "How pushes and pulls can change how things move." },
@@ -238,6 +247,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "particle-physics", title: "Particle Physics", desc: "The standard model and ideas from quantum physics." },
     ],
   },
+  // ── Political Science ──
   "political-science": {
     "foundations": [
       { id: "rules", title: "Rules", desc: "Why we have rules at home and at school." },
@@ -260,6 +270,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "global-politics", title: "Global Politics", desc: "Nations, power and cooperation." },
     ],
   },
+  // ── Psychology ──
   "psychology": {
     "foundations": [
       { id: "feelings", title: "Feelings", desc: "Naming and understanding our emotions." },
@@ -282,6 +293,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "development", title: "Development", desc: "How minds grow from childhood on." },
     ],
   },
+  // ── Russian ──
   "russian": {
     "foundations": [
       { id: "russian-sounds", title: "The Cyrillic Alphabet", desc: "Meet the letters of the Russian alphabet." },
@@ -304,6 +316,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "russian-culture", title: "Culture and Society", desc: "Daily life and traditions across the Russian-speaking world." },
     ],
   },
+  // ── Sociology ──
   "sociology": {
     "foundations": [
       { id: "families", title: "Families", desc: "Different kinds of families around the world." },

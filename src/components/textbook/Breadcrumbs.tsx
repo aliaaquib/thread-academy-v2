@@ -1,3 +1,7 @@
+/**
+ * BREADCRUMBS — the Home / Subject / Grade / Chapter trail above page titles.
+ * Pages pass it a list of crumbs; it renders the links (last one is plain text).
+ */
 import Link from "next/link";
 
 export interface CrumbItem {

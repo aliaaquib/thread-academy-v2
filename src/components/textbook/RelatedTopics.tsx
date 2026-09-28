@@ -1,3 +1,7 @@
+/**
+ * RELATED TOPICS — the "keep learning" link list, usually at the bottom of
+ * a lesson or blog post. Every link is built from real chapter data.
+ */
 import Link from "next/link";
 
 export interface RelatedLink {

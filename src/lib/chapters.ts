@@ -1,6 +1,3 @@
-import type { Topic } from "./types";
-import { EXTRA_TOPICS } from "./chapter-topics-extra";
-
 /**
  * Topics inside each chapter, grouped by subject.
  * Key = chapter id (the folder name under content/subject/<subject>/grade-<n>/).
@@ -12,6 +9,10 @@ import { EXTRA_TOPICS } from "./chapter-topics-extra";
  * Hand-written topics below always come first. getChapterTopics() tops each
  * chapter up to four lessons using chapter-topics-extra.ts.
  */
+
+import type { Topic } from "./types";
+import { EXTRA_TOPICS } from "./chapter-topics-extra";
+
 export const CHAPTER_TOPICS: Record<string, Topic[]> = {
   // ── Mathematics ──
   algebra: [

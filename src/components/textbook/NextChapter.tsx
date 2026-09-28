@@ -1,3 +1,7 @@
+/**
+ * NEXT CHAPTER — the "continue to the next lesson" card at the bottom of
+ * a lesson page.
+ */
 import Link from "next/link";
 
 /** .next-lesson-card: footer navigation to the next lesson. */

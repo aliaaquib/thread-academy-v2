@@ -1,3 +1,9 @@
+/**
+ * SITEMAP — builds /sitemap.xml for the static export.
+ * Lists every public, indexable page (home, subjects, grades, chapters,
+ * topics, resources, blog). Search is excluded on purpose. lastModified is
+ * real wherever known: blog post dates and lesson file modification times.
+ */
 import type { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";

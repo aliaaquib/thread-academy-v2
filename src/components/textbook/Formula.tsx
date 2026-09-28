@@ -1,3 +1,7 @@
+/**
+ * FORMULA — a centred display formula for maths and science lessons.
+ * An optional label (e.g. a formula name) can be shown beside it.
+ */
 import type { ReactNode } from "react";
 
 /** Centred display formula in the design's tokens. */

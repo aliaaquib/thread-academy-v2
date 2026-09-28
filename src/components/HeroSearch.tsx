@@ -1,3 +1,7 @@
+/**
+ * HERO SEARCH — the big search box in the home page hero, with quick links
+ * to popular lessons. Submitting jumps to /search with the query.
+ */
 "use client";
 
 import Link from "next/link";

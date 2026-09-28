@@ -1,3 +1,7 @@
+/**
+ * TRY IT PYTHON — the in-browser Python playground widget used in programming
+ * lessons. Code runs on the visitor's device; nothing leaves the page.
+ */
 "use client";
 
 import { useRef, useState } from "react";

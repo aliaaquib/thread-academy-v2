@@ -1,3 +1,7 @@
+/**
+ * DIAGRAM — a bordered figure wrapper for lesson illustrations, usually
+ * around an inline SVG, with an optional caption.
+ */
 import type { ReactNode } from "react";
 
 /** .diagram: bordered figure, usually wrapping inline SVG. */

@@ -1,3 +1,7 @@
+/**
+ * SEARCH OVERLAY — the popup search panel opened from the nav search buttons.
+ * Filters the built search index as the visitor types; Escape closes it.
+ */
 "use client";
 
 import Link from "next/link";

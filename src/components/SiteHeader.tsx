@@ -1,3 +1,8 @@
+/**
+ * SITE HEADER — the navigation bar shown on every page.
+ * Logo, subject links, and the search button that opens the search overlay.
+ * (Approved design; edit links here, not the styling.)
+ */
 "use client";
 
 import Link from "next/link";

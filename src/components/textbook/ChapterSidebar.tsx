@@ -1,3 +1,7 @@
+/**
+ * CHAPTER SIDEBAR — the lesson list shown beside each lesson: every topic in
+ * the chapter, with the current one highlighted, plus a back link to the grade.
+ */
 import Link from "next/link";
 
 export interface SidebarTopic {

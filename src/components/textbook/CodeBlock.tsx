@@ -1,3 +1,7 @@
+/**
+ * CODE BLOCK — a code sample with a copy button, used in programming lessons.
+ * The language label is just a caption; no syntax highlighting is applied.
+ */
 "use client";
 
 import { useState } from "react";

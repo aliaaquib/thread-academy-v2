@@ -1,3 +1,8 @@
+/**
+ * SEARCH OVERLAY HOST — invisible wrapper rendered once in the site layout.
+ * Listens for the open-search signal (see search-bus.ts) and shows the
+ * SearchOverlay on top of the current page.
+ */
 "use client";
 
 import { useCallback, useEffect, useState } from "react";

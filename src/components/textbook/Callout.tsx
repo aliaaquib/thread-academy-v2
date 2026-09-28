@@ -1,3 +1,7 @@
+/**
+ * CALLOUT — a highlighted box inside lesson text for key ideas, warnings
+ * and tips. kind="key" gives it the soft lime background.
+ */
 import type { ReactNode } from "react";
 
 /** .callout with lime left border. kind="key" → soft lime background. */

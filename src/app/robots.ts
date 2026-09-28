@@ -1,3 +1,8 @@
+/**
+ * ROBOTS — builds /robots.txt for the static export.
+ * Lets search engines crawl everything except /search, and points them at
+ * the sitemap. The sitemap URL is built from the canonical domain in lib/seo.
+ */
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 

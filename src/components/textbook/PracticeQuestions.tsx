@@ -1,3 +1,7 @@
+/**
+ * PRACTICE QUESTIONS — practice blocks inside lessons. Each item hides its
+ * answer until the reader opens it, so they attempt the question first.
+ */
 "use client";
 
 import { useState } from "react";

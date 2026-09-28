@@ -1,3 +1,7 @@
+/**
+ * EQUATION SOLVER — the interactive widget that solves an entered equation
+ * step by step, used in algebra lessons. Pure client-side maths, no server.
+ */
 "use client";
 
 import { useState } from "react";

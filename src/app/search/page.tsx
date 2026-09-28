@@ -1,3 +1,9 @@
+/**
+ * SEARCH PAGE — the page at /search.
+ * A thin shell: the interactive search box lives in SearchUI.tsx next to it.
+ * This page carries a noindex tag — Google should index the lessons, not the
+ * search results page.
+ */
 import { Suspense } from "react";
 import PageHero from "@/components/PageHero";
 import SearchUI from "./SearchUI";

@@ -1,3 +1,8 @@
+/**
+ * QUIZ — the interactive multiple-choice quiz at the end of lessons.
+ * Runs entirely in the visitor's browser; nothing is sent anywhere and
+ * nothing is saved.
+ */
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState } from "react";
