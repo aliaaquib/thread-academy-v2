@@ -48,6 +48,8 @@ def clean_inline(t: str) -> str:
     t = re.sub(r"<br\s*/?>", " ", t)
     t = re.sub(r"&lt;", "<", t)
     t = re.sub(r"&gt;", ">", t)
+    t = re.sub(r"&quot;", '"', t)
+    t = re.sub(r"&#39;", "'", t)
     t = re.sub(r"&amp;", "&", t)
     return t.strip()
 
@@ -61,7 +63,10 @@ def mdx_to_text(body: str) -> str:
         q = m.group(1)
         a = clean_inline(m.group(2))
         return f"\n\nPractice question: {q}\nAnswer: {a}\n"
-    body = re.sub(r'<PracticeItem\s+question="([^"]*)">(.*?)</PracticeItem>', practice, body, flags=re.S)
+    body = re.sub(r'<PracticeItem\s+question="([^"]*)"[^>]*>(.*?)</PracticeItem>', practice, body, flags=re.S)
+    body = re.sub(r"<PracticeItem\s+question='([^']*)'[^>]*>(.*?)</PracticeItem>",
+                  lambda m: f"\n\nPractice question: {m.group(1)}\nAnswer: {clean_inline(m.group(2))}\n",
+                  body, flags=re.S)
 
     # Quiz questions similarly
     def quiz(m):

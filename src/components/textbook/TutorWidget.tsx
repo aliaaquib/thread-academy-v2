@@ -100,14 +100,23 @@ export function TutorWidget() {
     setInput("");
     try {
       const qv = await embedQuery(pipeRef.current, q);
+      // Boost chunks from the lesson/chapter the student is currently reading —
+      // a question asked on a lesson page is usually about that lesson.
+      const path = window.location.pathname;
+      const chapterPath = path.split("/").slice(0, 6).join("/");
       const scored: Source[] = chunks
-        .map((c) => ({
-          url: c.url,
-          lesson: c.lesson,
-          heading: c.heading,
-          text: c.text,
-          score: cosine(qv, c.v),
-        }))
+        .map((c) => {
+          let boost = 0;
+          if (c.url === path) boost = 0.25;
+          else if (c.url.startsWith(chapterPath) && chapterPath.length > 20) boost = 0.15;
+          return {
+            url: c.url,
+            lesson: c.lesson,
+            heading: c.heading,
+            text: c.text,
+            score: cosine(qv, c.v) + boost,
+          };
+        })
         .sort((a, b) => b.score - a.score)
         .slice(0, TOP_K);
 
