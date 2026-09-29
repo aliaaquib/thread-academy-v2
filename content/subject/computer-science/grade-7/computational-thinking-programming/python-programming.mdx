@@ -1,0 +1,114 @@
+---
+title: "Python Programming"
+lede: "Your first Python: print, variables, input and if-statements."
+---
+
+<LearningObjectives>
+  <li>Define and explain variables in your own words</li>
+  <li>Use key terms such as string accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Python is one of the most popular languages in the world — and one of the friendliest for beginners. Everything you planned in flowcharts (sequence, selection) now becomes real, typed code.
+
+<Definition term="Variable">
+  A named box that stores a value your program can use and change later.
+</Definition>
+
+## Key ideas
+
+### Output and storage
+
+`print()` shows something on screen. A variable stores something for later with `=`:
+
+<CodeBlock lang="Python">
+print("Hello, world!")
+score = 0
+print(score)
+</CodeBlock>
+
+This prints `Hello, world!`, stores 0 in `score`, then prints `0`. Text in quotes is called a **string**; numbers need no quotes.
+
+### Input — with a catch
+
+`input()` asks the user to type something. The catch: whatever is typed always comes back as a **string** — even digits. To do maths with it, convert it first:
+
+<CodeBlock lang="Python">
+age_text = input("Your age: ")
+age = int(age_text)
+next_year = age + 1
+print(next_year)
+</CodeBlock>
+
+`int()` turns the text "12" into the number 12. Without it, `age + 1` would crash — you cannot add 1 to text.
+
+### Selection in code: if-statements
+
+Remember the flowchart diamond? In Python it looks like this:
+
+<CodeBlock lang="Python">
+score = 65
+if score >= 50:
+    print("Pass")
+else:
+    print("Fail")
+</CodeBlock>
+
+The condition uses `==` for "is equal to" (a single `=` would try to store, not compare). The indented lines underneath run only when the condition is true. Indentation is not decoration in Python — it is part of the syntax.
+
+Try it yourself — edit the code and press Run:
+
+<TryItPython
+  title="Try it: your first Python"
+  subtitle="Edit the code, then press Run."
+  initialCode={`print("Hello!")
+name = input("Your name: ")
+print("Nice to meet you, " + name)`}
+/>
+
+<WorkedExample title="Trace the age checker">
+  Code: `age = int(input("Age: "))` then `if age >= 13: print("Teen")` else `print("Child")`. The user types 10.
+
+  Line by line: input shows "Age: " and the user types 10 — as text "10". int() converts it to the number 10, stored in age. The condition `10 >= 13` is false, so the indented print("Teen") is skipped; the else branch runs instead.
+
+  **Answer:** The program prints "Child". If the user had typed 15, the condition would be true and it would print "Teen".
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **= instead of ==** Correction: = stores a value (score = 65); == compares (if score == 65:). Using = inside an if is an error.
+  - **Forgetting int() on input** Correction: input() always returns a string — wrap it in int() before any arithmetic, or the program crashes.
+  - **Wrong indentation** Correction: the lines under if must be indented (usually 4 spaces). Python uses indentation to decide which lines belong to the if.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="What does this print? Line 1: x = 7. Line 2: print(x * 3)" hint="x stores the number 7.">
+    21 — x holds 7, and 7 * 3 is 21.
+  </PracticeItem>
+  <PracticeItem question="The user types 9 for this code: n = int(input('Number: ')) then print(n + 1). What prints?" hint="int() converts the typed text to a number.">
+    10 — "9" becomes the number 9, plus 1 is 10.
+  </PracticeItem>
+  <PracticeItem question="Fix the bug: if password = 'secret': print('Welcome')">
+    if password == 'secret': — comparing needs ==; a single = tries to store and is an error here.
+  </PracticeItem>
+  <PracticeItem question="What is a string? Give an example from this lesson.">
+    Text in quotes, such as "Hello, world!" or the result of input() before conversion.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Python programming — quick check">
+  <QuizQuestion question="What does input() always return?" options={["A number, ready for maths.", "A string — text — even if the user types digits.", "True or False.", "Nothing; it only displays a message."]} answer={1} explanation="A string — text — even if the user types digits." />
+  <QuizQuestion question="Which line correctly checks whether score equals 50?" options={["if score = 50:", "if score == 50:", "if score := 50:", "if score equals 50:"]} answer={1} explanation="if score == 50:" />
+  <QuizQuestion question="Why does Python care about indentation under an if?" options={["It is just style; Python ignores it.", "Indentation is part of the syntax — it marks which lines belong to the if.", "It makes the code run faster.", "It is only needed in flowcharts, not in code."]} answer={1} explanation="Indentation is part of the syntax — it marks which lines belong to the if." />
+</Quiz>
+
+<Summary>
+  - Variable: a named box storing a value; print() shows output; strings are text in quotes.
+  - input() always returns a string — use int() to convert typed digits into numbers.
+  - if/else brings flowchart selection into code; == compares, = stores; indentation is syntax.
+  - Watch out for: = vs ==, forgetting int() on input, and wrong indentation.
+</Summary>

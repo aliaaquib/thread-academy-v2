@@ -82,6 +82,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
     "foundations": [
       { id: "algorithms-unplugged", title: "Algorithms Without Computers", desc: "Give precise step-by-step instructions to solve tasks." },
       { id: "staying-safe-online", title: "Staying Safe Online", desc: "Passwords, privacy and kind communication." },
+      { id: "computational-thinking-programming", title: "Computational Thinking and Programming", desc: "Plan with flowcharts, then bring your ideas to life in Python." },
       { id: "creating-media", title: "Creating Digital Media", desc: "Make simple presentations, images and animations." },
     ],
     "developing": [
