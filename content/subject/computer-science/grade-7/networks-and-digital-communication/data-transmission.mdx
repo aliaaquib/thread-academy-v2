@@ -38,6 +38,22 @@ Packets cross equipment owned by strangers, so sensitive data is **encrypted** �
 
 **Key term — packet:** A small chunk of data sent across a network, carrying source and destination addresses plus a sequence number for reassembly.
 
+### When data goes wrong: transmission errors
+
+Data does not always arrive as sent. Something is wrong with the data — part of it is incorrect — when accidental errors creep in during transmission:
+
+- **Surges in electricity** — a spike on a wired line can flip bits.
+- **Interference in radio waves** — other signals or electrical noise corrupt wireless data.
+- **Crosstalk** — signals leaking between adjacent wires, mixing messages together.
+
+These are accidental errors: nobody attacked the data, but the original is changed or damaged anyway. Networks fight back with error detection — extra check data sent alongside the message.
+
+### A real check: counting the 1s
+
+One simple detection method: agree that every chunk of data must contain an even number of 1s. Take the message "MY FAVOURITE SUBJECT IS COMPUTING!" — converted to binary, the sender counts the 1s in each chunk and adds one extra **check bit** to make the total even.
+
+If interference flips a bit in transit, the count becomes odd — and the receiver knows *something is wrong with the data*, even though it cannot tell which bit flipped. The damaged chunk is discarded and re-sent. One flipped bit, one odd count, one caught error: that is error detection working.
+
 <WorkedExample title="Trace an email">
   You send a 3-packet email from Bishkek to a friend in Osh.
 
@@ -66,6 +82,12 @@ Packets cross equipment owned by strangers, so sensitive data is **encrypted** �
   </PracticeItem>
   <PracticeItem question="Why encrypt data before transmission?">
     Packets cross strangers' equipment; encryption makes intercepted packets unreadable gibberish.
+  </PracticeItem>
+  <PracticeItem question="Name two causes of accidental errors in transmitted data.">
+    Any two: surges in electricity, interference in radio waves, crosstalk.
+  </PracticeItem>
+  <PracticeItem question="A chunk of data should have an even number of 1s, but the receiver counts an odd number. What does this mean?">
+    A bit was flipped in transit — something is wrong with the data, so the chunk should be discarded and re-sent.
   </PracticeItem>
 </PracticeQuestions>
 

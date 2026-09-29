@@ -52,9 +52,27 @@ Test scores in B2:B6 are 65, 70, 58, 82, 74
 =MAX(B2:B6)       gives 82
 </CodeBlock>
 
-### Presenting the data
+### A real example: Sofia's bike loan
 
-Numbers alone are hard to read at a glance. **Formatting** (bold headings, borders, decimal places, currency symbols) makes a sheet readable, and a **chart** turns a table into a picture — a bar chart of monthly sales shows the best month instantly.
+A spreadsheet tracks a bike bought on credit:
+
+<CodeBlock lang="Example">
+Cost of bike ......... 420
+Deposit paid ......... 80
+Amount borrowed = Cost of bike − Deposit → 340
+</CodeBlock>
+
+The formula subtracts the deposit from the cost to give the amount borrowed. Change the deposit to 100 and the amount borrowed recalculates to 320 — the spreadsheet does the "what if" for you.
+
+### Conditional formatting: colours that mean something
+
+**Conditional formatting** colours cells automatically based on their values. The classic rule for a balance column:
+
+- Balance > 0 → green text and background
+- Balance < 0 → red text and background
+- Balance = 0 → orange text and background
+
+Why? To attract the user's attention to certain parts of the spreadsheet, and to make it easy to see important information — a sea of red balances screams "problem" before you read a single number.
 
 <WorkedExample title="Build the marks sheet">
   Scores for five students sit in B2:B6. In B7 you type =SUM(B2:B6); in B8, =AVERAGE(B2:B6); in B9, =MAX(B2:B6).
@@ -84,6 +102,12 @@ Numbers alone are hard to read at a glance. **Formatting** (bold headings, borde
   </PracticeItem>
   <PracticeItem question="Why is =B2*1.2 better than typing the answer by hand?">
     If B2 changes, the formula recalculates automatically — a typed answer would go stale and wrong.
+  </PracticeItem>
+  <PracticeItem question="Sofia's bike costs 420 and she pays an 80 deposit. Write the formula for the amount borrowed.">
+    = Cost − Deposit, e.g. =B2−B3 → 340. If the deposit changes, the borrowed amount updates itself.
+  </PracticeItem>
+  <PracticeItem question="A balance column uses conditional formatting: green above 0, red below 0, orange at 0. What is the point?">
+    To attract attention to important values and make patterns visible at a glance — red balances signal a problem instantly.
   </PracticeItem>
 </PracticeQuestions>
 

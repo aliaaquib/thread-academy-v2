@@ -36,6 +36,21 @@ Sometimes one question is not enough. Three little words combine conditions:
 
 **Key term — condition:** A check that is either true or false, such as "score ≥ 50". Decisions test conditions.
 
+### A real example: the purple test
+
+Conditions are often comparisons of text:
+
+<CodeBlock lang="Flowchart steps">
+START → INPUT colour → ◆ colour == "purple"? → Yes → OUTPUT "I like purple too" → STOP
+                                                      → No → OUTPUT "That colour is ok, but purple is better" → STOP
+</CodeBlock>
+
+Input "purple" takes the Yes arrow; input "green" takes the No arrow. Notice the condition, the true-action and the false-action are all visible — a selection always has all three.
+
+### Boolean values come in many spellings
+
+A condition's answer is a **Boolean**: True or False. You will also see it written as yes/no or 1/0 — same idea. When *both* conditions in an AND are False, the whole thing is False; when *one or both* are False, OR can still be True; NOT simply reverses the value.
+
 <Diagram caption="One diamond, two conditions: entry needs age 12+ AND a ticket.">
 <svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
   <ellipse cx="280" cy="28" rx="60" ry="24" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>

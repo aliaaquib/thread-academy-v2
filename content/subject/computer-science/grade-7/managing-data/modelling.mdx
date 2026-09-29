@@ -46,6 +46,28 @@ What if 40 pupils come? Change A2 to 40 → total becomes 660 instantly. What if
 
 Models help with decisions (can we afford it?), predictions (what will we spend?) and planning. But a model is only as good as its rules: it ignores things the real world includes — pupils dropping out, traffic delays, price rises. Never trust a model blindly; ask what it leaves out.
 
+### Simulations: models that imitate real life
+
+A **simulation** is a model that gives a realistic imitation of a real-life situation or system. Think of a car-driving simulator used to train drivers:
+
+- The screens imitate a normal road: pedestrians, other traffic, road layout, traffic lights.
+- Each control does something: the steering, pedals and indicators change what the screens show, what sounds play, even what vibrations the seat gives — so it feels like the car is moving.
+- It must handle mistakes: what should happen if the driver does nothing when an obstacle appears, or steers into an object, or off the road?
+
+### Testing a model's rules
+
+A model is only trustworthy if its rules work. Take a sales model with a target: the rule says cell C6 turns green when sales are on target, red when they miss it. To test the rule, change the values in C3, C4 or C5 until C6 goes above the sales target — if the cell flips from green to red (or red to green) as expected, the rule works. Deliberately pushing a model past its limits is how you prove it behaves.
+
+### Why simulations are never perfect
+
+- A simulator can never replicate real life completely accurately.
+- Simulators can be very expensive to build.
+- If the programming contains mistakes, the simulator will not be as good.
+- People behave differently in a simulation — a driver takes risks knowing nobody can really get hurt.
+- Irrelevant data can make the system slower; too little data about rare events makes it behave unrealistically.
+
+That is why pilots train in simulators *and* in real planes: the model teaches cheaply, but reality is the final test.
+
 <WorkedExample title="Compare two scenarios">
   The trip model above. Scenario 1: 30 pupils, tickets 12, coach 180 → total 540, which is 18 per pupil. Scenario 2: the coach company offers a bigger coach for 240 that holds 45 — 40 pupils sign up.
 
@@ -74,6 +96,15 @@ Models help with decisions (can we afford it?), predictions (what will we spend?
   </PracticeItem>
   <PracticeItem question="Why must the total be a formula, not a typed number, in a model?">
     Only a formula recalculates when a variable changes — a typed number stays frozen and the "what if" breaks.
+  </PracticeItem>
+  <PracticeItem question="What is a simulation, in one sentence?">
+    A model that gives a realistic imitation of a real-life situation or system, e.g. a driving simulator.
+  </PracticeItem>
+  <PracticeItem question="A sales model's rule should turn C6 red when sales miss the target. How would you test that rule?">
+    Change the input values (C3, C4, C5) until C6 goes above or below the target, and check the colour flips as expected.
+  </PracticeItem>
+  <PracticeItem question="Give two reasons a driving simulator can never fully replace real driving practice.">
+    Any two: it can never replicate real life completely accurately; people behave differently knowing it is safe; programming mistakes make it less good; simulators are very expensive.
   </PracticeItem>
 </PracticeQuestions>
 

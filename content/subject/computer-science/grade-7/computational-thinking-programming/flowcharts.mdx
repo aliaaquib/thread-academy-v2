@@ -78,6 +78,26 @@ Start at the START oval and follow the arrows, top to bottom. When you reach a d
 
 **Key term — algorithm:** A set of step-by-step instructions for solving a problem. A flowchart is one way to *show* an algorithm; code is another way to *write* it.
 
+### The book's classic: miles to kilometres
+
+One of the first flowcharts learners ever draw converts miles to kilometres:
+
+<CodeBlock lang="Flowchart steps">
+START → INPUT distanceMiles → km = distanceMiles * 1.609 → OUTPUT km → STOP
+</CodeBlock>
+
+Trace it with distanceMiles = 10: the parallelogram reads 10, the rectangle computes 10 × 1.609 = 16.09, the second parallelogram outputs 16.09. **Tracing** — walking through a flowchart with real values — is how you prove an algorithm works before you code it.
+
+### Stretching further: the seven times table
+
+The same shape scales up. This flowchart inputs a number and prints its seven times table:
+
+<CodeBlock lang="Flowchart steps">
+START → INPUT number → answer = number * 7 → OUTPUT number & " * 7 = " & answer → STOP
+</CodeBlock>
+
+With number = 3: answer becomes 21, and the output reads "3 * 7 = 21". The & joins the number, the text, and the answer into one line. One input, one process, one output — the simplest useful algorithm there is.
+
 <WorkedExample title="Trace the flowchart">
   A flowchart for a test result: START → INPUT "read the score" → DECISION "score ≥ 50?" → Yes → OUTPUT "print Pass" → STOP; No → OUTPUT "print Fail" → STOP.
 

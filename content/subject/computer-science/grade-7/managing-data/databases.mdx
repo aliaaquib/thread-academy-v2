@@ -41,9 +41,34 @@ Each row is a record (one book); each column is a field (Title, Author…).
 
 Each field has a **data type** — the kind of data it holds: text, number, date, yes/no. A Year field set to "number" rejects "nineteen eighty-eight". Types stop bad data at the door.
 
+### A real database: computer games
+
+<CodeBlock lang="Example">
+Table: Games
+| Game code | Game name       | Genre       | Age rating |
+|-----------|-----------------|-------------|------------|
+| BB01      | Bill & Betty    | 2D platform | 12         |
+| BB02      | Build Blocks    | Arcade      | 3          |
+| AB01      | Angry Bugs      | Puzzle      | 3          |
+| WIO01     | Work It Out     | Puzzle      | 8          |
+</CodeBlock>
+
+Each row is a record (one game); each column is a field. Notice the field types: Game name holds **Text** (alphanumeric), Age rating holds **Integer** (a number).
+
+### Queries with real criteria
+
+A query picks out the records you want using **criteria**:
+
+- Age rating < 5 → games for young children: Build Blocks, Angry Bugs (both rated 3).
+- Age rating >= 8 → games for older children: Bill & Betty (12), Work It Out (8).
+- Genre = "Puzzle" → Angry Bugs, Work It Out.
+- Game name > "Q" → names starting after Q alphabetically.
+
+Same idea in a stock database: Product ID is the primary key (the only field with a unique entry for each product); a query with criteria Number in stock < 10 finds products running low, and >= 20 finds well-stocked ones; Product name >= "N" finds products from N onwards alphabetically.
+
 ### The primary key: every record's ID
 
-The **primary key** is the field that uniquely identifies each record — here, BookID. No two books share B001. It is how the database tells records apart, even if two books had the same title.
+The **primary key** is the field that contains a unique piece of data for every record — here, Game code. No two games share BB01. Why not use Game name? Multiple records could have the same name; why not Genre? Many records share a genre. The primary key must identify *exactly one* record — that is what keeps the database's data accurate.
 
 ### Searching and sorting
 
@@ -82,6 +107,18 @@ A query with 10,000 records returns in a blink — try that in a paper notebook.
   </PracticeItem>
   <PracticeItem question="What data type should a 'Date of birth' field use, and why?">
     Date — so the database can sort by age and reject nonsense like "yesterdayish".
+  </PracticeItem>
+  <PracticeItem question="Using the Games table: which records match Age rating >= 8?">
+    BB01 Bill & Betty (12) and WIO01 Work It Out (8).
+  </PracticeItem>
+  <PracticeItem question="Using the Games table: which records match Genre = 'Puzzle'?">
+    AB01 Angry Bugs and WIO01 Work It Out.
+  </PracticeItem>
+  <PracticeItem question="In the Games table, why is Game code the primary key and not Genre?">
+    Game code is unique for every record; many records share the same Genre, so Genre cannot identify one record.
+  </PracticeItem>
+  <PracticeItem question="A shop wants products with Number in stock below 10. Write the criterion and name the field it applies to.">
+    Field: Number in stock; criterion: < 10.
   </PracticeItem>
 </PracticeQuestions>
 

@@ -42,16 +42,32 @@ Denary place values go 1, 10, 100, 1000 (powers of 10). Binary place values go *
 
 To convert denary → binary, subtract the largest place value that fits, working left to right: 83 → 64 fits (1), remainder 19 → 32 no (0) → 16 fits (1), remainder 3 → 8,4 no (0,0) → 2 fits (1), remainder 1 → 1 fits (1): **01010011**.
 
-### One binary, many meanings
+### The number systems, side by side
 
-The same byte means different things in different contexts:
+- **Denary** — a base-10 number system, mainly used by humans. Ten digits: 0–9.
+- **Binary** — a base-2 number system, used by computers. Two digits: 0 and 1.
 
-- **Numbers** — 01000001 = 65.
-- **Characters** — 01000001 = the letter "A" (in ASCII/Unicode, every character has a numeric code).
-- **Images** — a photo is a grid of pixels; each pixel's colour is stored as binary numbers. More bits per pixel = more colours.
-- **Sound** — recorded thousands of times per second; each sample's loudness stored as a binary number.
+Try these: 101, 11, 1000, 010, 01, 111 — read as binary, they are 5, 3, 8, 2, 1, 7 in denary. Same digits you already know; completely different values once you know the base.
 
-Analogue things (a photo's smooth colours, a voice's wave) are **digitised**: measured at many tiny points and each measurement stored in binary.
+### Analogue vs digital
+
+The real world is **analogue**: a continuous stream of data made up of many values — sound waves, light shades, temperature gliding up and down. Computers cannot store "continuous", so they convert it to **digital**: binary data a computer system can process. Digitising means sampling the smooth analogue world at many points and storing each measurement as binary.
+
+### Images: pixels, resolution, colour depth
+
+- **Pixel** — a very small part of an image. Millions are laid out in a grid to build the picture.
+- **Resolution** — the quality of an image, related to the number of pixels it contains for its size. More pixels, sharper image.
+- **Colour depth** — the number of bits used to create colours in an image. With 2 bits per pixel you get 4 colours — for example white, black, red/pink and green.
+
+How an image is digitised, in three steps: the analogue image is divided into pixels; each pixel is given a single colour; each colour has a matching binary value.
+
+### File sizes: why some images are huge
+
+Compare the same photo saved two ways: **tiff** and **raw** files are much larger than **jpg** files — in file size, resolution and bit depth. Why? Tiff and raw are *uncompressed* image types (every pixel stored in full), while jpg is *compressed* (cleverly shrunk). Uncompressed keeps every detail; compressed trades some detail for a far smaller file.
+
+### Sound: sample rate and quality
+
+Digital sound is sampled — measured thousands of times per second. **Higher sample rate = larger file**, because more measurements are stored. And quality needs differ: in voice calls, sound quality is not nearly as important — you just need to understand what is being said. Music is much more complex and exists for entertainment, so quality matters far more there.
 
 <WorkedExample title="Convert 11010110">
   Place values: 128, 64, 32, 16, 8, 4, 2, 1. The 1s sit under 128, 64, 16, 4, 2.
@@ -81,6 +97,24 @@ Analogue things (a photo's smooth colours, a voice's wave) are **digitised**: me
   </PracticeItem>
   <PracticeItem question="Why does a photo file contain binary numbers?">
     The image is digitised into pixels; each pixel's colour is stored as binary numbers.
+  </PracticeItem>
+  <PracticeItem question="What is the difference between denary and binary?">
+    Denary is a base-10 number system mainly used by humans; binary is a base-2 system used by computers.
+  </PracticeItem>
+  <PracticeItem question="What is the difference between analogue and digital data?">
+    Analogue is a continuous stream of many values; digital is binary data processed by a computer system.
+  </PracticeItem>
+  <PracticeItem question="How many colours can 2 bits per pixel represent? Name the four in the book's example.">
+    Four colours: white, black, red/pink and green.
+  </PracticeItem>
+  <PracticeItem question="List the three steps of digitising an image.">
+    1. The analogue image is divided into pixels. 2. Each pixel is given a single colour. 3. Each colour is given a matching binary value.
+  </PracticeItem>
+  <PracticeItem question="Why is a tiff file much larger than a jpg of the same photo?">
+    Tiff is uncompressed (every pixel stored in full); jpg is compressed, trading some detail for a smaller file.
+  </PracticeItem>
+  <PracticeItem question="Why does music need higher sound quality than a voice call?">
+    Voice calls only need speech to be understandable; music is more complex and exists for entertainment, so quality matters more.
   </PracticeItem>
 </PracticeQuestions>
 

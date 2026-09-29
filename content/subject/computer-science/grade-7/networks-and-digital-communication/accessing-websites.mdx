@@ -32,6 +32,19 @@ protocol     domain          path
 - **Domain** (www.example.com) — which computer (server) holds the site.
 - **Path** (/news/today) — which page on that server you want.
 
+### Domain names: text addresses for computers
+
+A **domain name** is a text-based address for a web server — the human-friendly part of a URL. Computers do not understand words, though; they need numbers. The system that translates between the two is called **DNS** (Domain Name System): it stores a list of URLs/domain names and their matching IP addresses.
+
+### What DNS does, step by step
+
+1. Your web browser sends the URL to a DNS server.
+2. The DNS server looks up the matching IP address for that URL.
+3. It sends the IP address back to the browser.
+4. The browser uses the IP address to request the page from the right server.
+
+If the final DNS searched has no match, it sends back a **404 error** — "website cannot be found". Every page you have ever visited went through these four steps in a fraction of a second.
+
 ### Browser vs search engine — not the same thing
 
 - **Web browser** — the program that displays websites: Chrome, Firefox, Safari, Edge. It fetches pages and shows them.
@@ -48,6 +61,7 @@ Good searching is a skill: use specific **keywords** ("cambridge lower secondary
 Before typing a password or card number, check:
 
 - **https://** and a **padlock icon** — the connection is encrypted, so eavesdroppers see gibberish.
+- **The digital certificate is valid** — click the padlock to check it; an invalid or expired certificate is a warning sign.
 - **The domain looks right** — your-bank-secure-login.example is not your bank.
 - **No scary warnings** — browsers warn about known-dangerous sites; do not click through.
 
@@ -81,6 +95,18 @@ Encryption protects data *in transit* — it says nothing about whether the site
   </PracticeItem>
   <PracticeItem question="A shop's checkout page shows http:// (no s) and no padlock. Should you pay?">
     No — without https the card details travel unencrypted and could be intercepted.
+  </PracticeItem>
+  <PracticeItem question="What is a domain name, and what does DNS do with it?">
+    A domain name is a text-based address for a web server (part of a URL). DNS stores domain names with their matching IP addresses and translates between them.
+  </PracticeItem>
+  <PracticeItem question="List the four steps of a DNS lookup.">
+    1. The browser sends the URL to a DNS server. 2. The server finds the matching IP address. 3. It sends the IP back to the browser. 4. The browser requests the page using the IP.
+  </PracticeItem>
+  <PracticeItem question="You type a URL and get a 404 error. What happened?">
+    The DNS lookup found no matching IP address for that URL — the website cannot be found.
+  </PracticeItem>
+  <PracticeItem question="Name three things to check before entering a password on a website.">
+    Any three: the protocol is https; the padlock symbol is present; the digital certificate is valid; the domain is the genuine one; no browser warnings.
   </PracticeItem>
 </PracticeQuestions>
 

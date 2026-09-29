@@ -13,7 +13,7 @@ lede: "AND, OR, NOT: the tiny switches behind every decision a computer makes."
 Electricity enters a computer at one voltage — but binary needs two states. **Logic gates** are the tiny components that switch electricity between high (1) and low (0), following the rules of Boolean logic. Millions of them make every decision a computer takes.
 
 <Definition term="Logic gate">
-  A small electronic component that takes one or more binary inputs and produces a single binary output according to a fixed logical rule.
+  A very small hardware component in a computer system, used to control the flow of electricity: it takes one or more binary inputs and produces a single binary output according to a fixed logical rule.
 </Definition>
 
 ## Key ideas
@@ -76,12 +76,14 @@ Learn to read them and you can work out any gate's behaviour without memorising 
 
 Gates combine into **logic circuits**: the output of one gate feeds the next. Circuits add numbers, compare values, and decide ("is the password correct?"). The CPU is, at bottom, an enormous arrangement of AND, OR and NOT gates.
 
-<WorkedExample title="Design a simple alarm">
-  A shed alarm should sound if it is night (input N = 1) AND the door opens (input D = 1).
+<WorkedExample title="Match the gate to the situation">
+  Three situations, three gates (AND, OR, NOT) — which fits each?
 
-  Which gate? The alarm needs 1 only when both inputs are 1 — that is the AND rule. Truth table check: N=1, D=1 → 1 (sounds). Any other combination → 0 (silent). Daytime door opening (N=0, D=1) → 0 — correct, no false alarm.
+  Situation 1: a hallway light that should switch on if *either* of two switches is pressed. Situation 2: a safe that opens only if *both* keys are turned. Situation 3: a sensor that sounds when a signal is *absent*.
 
-  **Answer:** An AND gate with inputs N and D; output 1 sounds the alarm.
+  Situation 1 → OR (either input gives 1). Situation 2 → AND (both inputs must be 1). Situation 3 → NOT (flips the input: no signal in, alarm out).
+
+  **Answer:** 1: OR, 2: AND, 3: NOT — read what the situation demands: "either", "both", or "opposite".
 </WorkedExample>
 
 <ImportantNote title="Common mistakes">
@@ -104,6 +106,12 @@ Gates combine into **logic circuits**: the output of one gate feeds the next. Ci
   </PracticeItem>
   <PracticeItem question="A microwave should run only if the door is closed AND the start button is pressed. Which gate models this?">
     AND — output 1 (run) only when both inputs are 1.
+  </PracticeItem>
+  <PracticeItem question="In one sentence, what is a logic gate?">
+    A very small hardware component used to control the flow of electricity within the computer.
+  </PracticeItem>
+  <PracticeItem question="A burglar alarm must sound when a window is opened OR a door is opened. Which gate?">
+    OR — either input being 1 should give output 1.
   </PracticeItem>
 </PracticeQuestions>
 

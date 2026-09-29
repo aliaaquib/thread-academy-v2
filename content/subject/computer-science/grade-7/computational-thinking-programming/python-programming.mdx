@@ -35,6 +35,13 @@ This prints `Hello, world!`, stores 0 in `score`, then prints `0`. Text in quote
 `input()` asks the user to type something. The catch: whatever is typed always comes back as a **string** — even digits. To do maths with it, convert it first:
 
 <CodeBlock lang="Python">
+colour = input("Enter a colour")
+print(colour)
+</CodeBlock>
+
+Type "blue" and it prints blue. Now with numbers:
+
+<CodeBlock lang="Python">
 age_text = input("Your age: ")
 age = int(age_text)
 next_year = age + 1
@@ -42,6 +49,29 @@ print(next_year)
 </CodeBlock>
 
 `int()` turns the text "12" into the number 12. Without it, `age + 1` would crash — you cannot add 1 to text.
+
+### Data types: four kinds of value
+
+Every value in Python has a type, and the type decides what you can do with it:
+
+- **Integer** — a whole number: 120, 0, -7.
+- **Real** (float) — a number with a decimal part: 21.3, 1.609.
+- **Character** — a single character: '!', 'V', 'o'.
+- **String** — one or more characters: "house", "Victoria Ellis".
+
+An Integer is a whole number; a Real can have a decimal part. A Character is only one character; a String is one or more. Mixing them up is a classic source of bugs — "10" (string) and 10 (integer) look alike but behave differently.
+
+### Naming rules: valid and invalid identifiers
+
+Variable names (identifiers) have strict rules:
+
+- Valid: colour, totalCost, numA, result
+- Invalid — starts with a number: 2ndPlace
+- Invalid — has a space or full stop: my score, my.score
+- Invalid — it is a reserved word: print, if
+- Invalid — has a hyphen: my-score
+
+Break a rule and Python refuses the name. Good names are also meaningful: totalCost beats x when someone else reads your code.
 
 ### Selection in code: if-statements
 
@@ -75,6 +105,21 @@ print("Nice to meet you, " + name)`}
   **Answer:** The program prints "Child". If the user had typed 15, the condition would be true and it would print "Teen".
 </WorkedExample>
 
+<WorkedExample title="Read a division program">
+  This program takes two numbers as input from the user, divides the first by the second, and outputs the answer:
+
+<CodeBlock lang="Python">
+num1 = int(input("First number: "))
+num2 = int(input("Second number: "))
+answer = num1 / num2
+print(answer)
+</CodeBlock>
+
+  Trace with 20 and 4: num1 = 20, num2 = 4, answer = 20 / 4 = 5.0, prints 5.0.
+
+  **Answer:** It prints 5.0 — and notice the Real result: division in Python gives a decimal even for whole numbers.
+</WorkedExample>
+
 <ImportantNote title="Common mistakes">
   - **= instead of ==** Correction: = stores a value (score = 65); == compares (if score == 65:). Using = inside an if is an error.
   - **Forgetting int() on input** Correction: input() always returns a string — wrap it in int() before any arithmetic, or the program crashes.
@@ -95,6 +140,15 @@ print("Nice to meet you, " + name)`}
   </PracticeItem>
   <PracticeItem question="What is a string? Give an example from this lesson.">
     Text in quotes, such as "Hello, world!" or the result of input() before conversion.
+  </PracticeItem>
+  <PracticeItem question="Which of these identifiers is valid: totalCost, 2ndPlace, my score, my-score, print? Explain each.">
+    totalCost is valid. 2ndPlace starts with a number — invalid. "my score" has a space — invalid. my-score has a hyphen — invalid. print is a reserved word — invalid.
+  </PracticeItem>
+  <PracticeItem question="Is 21.3 an Integer, Real, Character or String? What about '!'?">
+    21.3 is a Real (it has a decimal part). '!' is a Character (a single character).
+  </PracticeItem>
+  <PracticeItem question="Why does this line crash: age = input('Age: ') then print(age + 1)?">
+    input() returns a string, so age + 1 tries to add a number to text — you need int(input('Age: ')) first.
   </PracticeItem>
 </PracticeQuestions>
 

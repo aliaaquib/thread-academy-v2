@@ -27,6 +27,31 @@ Every physical system is the same pattern you already know — input, process, o
 
 A burglar alarm: motion sensor (input) → "was there movement?" (process) → siren (output).
 
+### Meet the micro:bit
+
+The classic classroom physical-computing board is the **micro:bit** — a tiny computer you can hold, with built-in inputs and outputs:
+
+- **Inputs** — button presses, movement/tilt (accelerometer), temperature sensor, compass.
+- **Outputs** — LEDs (it can light up patterns), sounds (speaker).
+
+No wiring needed: press a button (input) and the LEDs light up (output), all in one device.
+
+### A real example: the shake counter
+
+<CodeBlock lang="Pseudocode">
+number = 10
+DISPLAY smiley face
+FOREVER
+    IF micro:bit is shaken THEN
+        number = number - 1
+    IF number &lt;= 0 THEN
+        DISPLAY sad face
+    END IF
+END FOREVER
+</CodeBlock>
+
+Trace it: the micro:bit first displays a smiley face. Each shake subtracts 1 from the variable number. After 10 shakes number reaches 0 — and 0 ≤ 0 is true — so a sad face is displayed. Inputs (shake), a variable, selection, output (LEDs): a whole program in one tiny device.
+
 ### Programs that never stop
 
 Screen programs usually run once and finish. Physical programs typically loop **forever**: keep checking the sensor, keep reacting. An automatic streetlight does not check the darkness once — it checks all night.
@@ -78,6 +103,12 @@ Trace it at dusk: light_level reads 15 → 15 < 20 is true → LEDs ON → loop 
   </PracticeItem>
   <PracticeItem question="A student writes: IF dark THEN lights ON. What is missing for a computer to run this?">
     A measurable threshold — "dark" must become something exact like light_level < 20.
+  </PracticeItem>
+  <PracticeItem question="Name two inputs and two outputs of the micro:bit.">
+    Inputs: any two of button press, accelerometer/tilt/movement, temperature sensor, compass. Outputs: LEDs lighting up, speaker/sound.
+  </PracticeItem>
+  <PracticeItem question="In the shake counter, what does the micro:bit display after 10 shakes, and why?">
+    A sad face — each shake subtracts 1 from number (starting at 10), so after 10 shakes number ≤ 0 and the sad-face condition becomes true.
   </PracticeItem>
 </PracticeQuestions>
 

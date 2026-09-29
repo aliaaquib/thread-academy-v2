@@ -40,6 +40,23 @@ Line 1 is correct. Line 2 fails — Python keywords are lowercase, so `Print` me
 
 **Key term — syntax:** The exact spelling, punctuation and layout rules of a programming language. Break them and you get a syntax error.
 
+### Real beginner programs — and their real errors
+
+The first programs learners write print their own name:
+
+<CodeBlock lang="Python">
+print("I am 11 years old")
+print("Victoria Ellis")
+</CodeBlock>
+
+Both work. Now the classic mistakes every beginner makes:
+
+- `PRINT("Hi")` — fails: keywords are lowercase, and the language is case-sensitive.
+- `print("Hi)` — fails: the closing quotation mark is missing.
+- `print("Hi"` — fails: the closing bracket is missing.
+
+Fixing `PRINT("Victoria Ellis)` into `print("Victoria Ellis")` is two one-character changes — and the difference between a program that runs and one that does not.
+
 <WorkedExample title="Read a line of code">
   Line: `name = input("Your name: ")`
 
