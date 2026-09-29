@@ -310,18 +310,6 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "classification", title: "Classification and Phylogeny", desc: "Use the taxonomic hierarchy and DNA data to build evolutionary trees." },
   ],
   // ── Computer Science ──
-  "algorithms-unplugged": [
-    { slug: "what-is-an-algorithm", title: "What Is an Algorithm?", desc: "Discover that an algorithm is simply a careful set of instructions, like a recipe." },
-    { slug: "following-instructions", title: "Following Instructions Exactly", desc: "Act out instructions word for word to see why order and detail matter." },
-    { slug: "writing-clear-steps", title: "Writing Clear Steps", desc: "Practise writing your own precise instructions for everyday tasks." },
-    { slug: "fixing-mistakes", title: "Finding and Fixing Mistakes", desc: "Learn how debugging means spotting errors in instructions and correcting them." },
-  ],
-  "staying-safe-online": [
-    { slug: "strong-passwords", title: "Strong Passwords", desc: "Learn what makes a password hard to guess and why you must never share it." },
-    { slug: "private-stays-private", title: "Private Stays Private", desc: "Decide which personal details are safe to share online and which must stay secret." },
-    { slug: "kind-online", title: "Being Kind Online", desc: "Practise friendly, respectful messages and learn what to do if someone is unkind." },
-    { slug: "spot-the-tricks", title: "Spotting Online Tricks", desc: "Recognise suspicious messages, pop-ups and requests from strangers." },
-  ],
   "creating-media": [
     { slug: "planning-your-project", title: "Planning Your Project", desc: "Sketch a simple storyboard before you start making anything." },
     { slug: "making-images", title: "Making Images", desc: "Create and edit pictures, then save them with sensible file names." },
