@@ -165,10 +165,10 @@ def main():
 
     print(f"loading {MODEL_ID} …", flush=True)
     from huggingface_hub import snapshot_download
-    snap = snapshot_download(MODEL_ID, allow_patterns=["onnx/model.onnx", "tokenizer.json", "config.json"])
+    snap = snapshot_download(MODEL_ID, allow_patterns=["onnx/model_quantized.onnx", "tokenizer.json", "config.json"])
     tok = AutoTokenizer.from_pretrained(snap)
     sess = ort.InferenceSession(
-        f"{snap}/onnx/model.onnx",
+        f"{snap}/onnx/model_quantized.onnx",
         providers=["CPUExecutionProvider"],
     )
 

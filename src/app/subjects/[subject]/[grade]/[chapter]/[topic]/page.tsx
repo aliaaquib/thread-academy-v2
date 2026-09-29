@@ -9,7 +9,6 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponents } from "@/mdx-components";
 import { ChapterSidebar } from "@/components/textbook/ChapterSidebar";
-import { TutorWidget } from "@/components/textbook/TutorWidget";
 import { getSubject } from "@/lib/subjects";
 import { getChapterForSubject } from "@/lib/stage-chapters";
 import {
@@ -158,7 +157,6 @@ export default function TopicPage({
         </article>
       </div>
       </div>
-      <TutorWidget />
     </>
   );
 }

@@ -18,7 +18,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const TRANSFORMERS_CDN = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.5.1/+esm";
-const MODEL_ID = "Xenova/all-MiniLM-L6-v2";
+// The embedding model is self-hosted at /tutor-model (no huggingface.co needed
+// at runtime). dtype q8 = the 23MB quantized build, plenty for retrieval.
+const MODEL_PATH = "/tutor-model";
 const TOP_K = 5;
 const MIN_SCORE = 0.32;
 const API_URL = process.env.NEXT_PUBLIC_TUTOR_API_URL || "";
@@ -55,6 +57,7 @@ async function embedQuery(pipe: any, text: string): Promise<Float32Array> {
 export function TutorWidget() {
   const [open, setOpen] = useState(false);
   const [ready, setReady] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [status, setStatus] = useState("");
   const [chunks, setChunks] = useState<Chunk[] | null>(null);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
@@ -65,21 +68,23 @@ export function TutorWidget() {
   const ensureLoaded = useCallback(async () => {
     if (pipeRef.current && chunks) return;
     setReady("loading");
+    setStatus("Loading the lesson index…");
     try {
-      const [mod, res] = await Promise.all([
-        import(/* webpackIgnore: true */ TRANSFORMERS_CDN),
-        fetch("/tutor-index.json"),
-      ]);
-      if (!res.ok) throw new Error("index fetch failed");
+      const mod = await import(/* webpackIgnore: true */ TRANSFORMERS_CDN);
+      setStatus("Loading the lesson index…");
+      const res = await fetch("/tutor-index.json");
+      if (!res.ok) throw new Error(`index HTTP ${res.status}`);
       const index = await res.json();
-      // Allow the model files to be cached by the browser between visits.
-      mod.env.allowLocalModels = false;
-      const pipe = await mod.pipeline("feature-extraction", MODEL_ID);
+      if (!index.chunks?.length) throw new Error("index empty");
+      setStatus("Loading the AI model (one-time download, ~25MB)…");
+      const pipe = await mod.pipeline("feature-extraction", MODEL_PATH, { dtype: "q8" });
       pipeRef.current = pipe;
       setChunks(index.chunks as Chunk[]);
       setReady("ready");
+      setStatus("");
     } catch (e) {
       console.error("tutor load failed", e);
+      setStatus(e instanceof Error ? e.message : "unknown error");
       setReady("error");
     }
   }, [chunks]);
@@ -250,13 +255,36 @@ export function TutorWidget() {
               </div>
             )}
             {ready === "loading" && (
-              <div style={{ fontSize: 14, color: "#5f5f5c" }}>
-                Waking the tutor up… (one-time download, then it's instant)
+              <div style={{ fontSize: 14, color: "#5f5f5c", lineHeight: 1.55 }}>
+                {status || "Waking the tutor up…"}
+                <div style={{ fontSize: 12, marginTop: 6, opacity: 0.8 }}>
+                  First visit downloads the tutor brain once — afterwards it's instant.
+                </div>
               </div>
             )}
             {ready === "error" && (
-              <div style={{ fontSize: 14, color: "#a33" }}>
-                The tutor couldn't load — check your connection and reopen me.
+              <div style={{ fontSize: 14, color: "#5f5f5c", lineHeight: 1.55 }}>
+                <div style={{ color: "#a33", fontWeight: 700, marginBottom: 6 }}>The tutor couldn't load.</div>
+                <div style={{ fontSize: 12.5, marginBottom: 10 }}>({status || "connection problem"})</div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setReady("idle");
+                    ensureLoaded();
+                  }}
+                  style={{
+                    border: "none",
+                    borderRadius: 999,
+                    background: "#1a1a1a",
+                    color: "#fff",
+                    fontWeight: 800,
+                    padding: "9px 18px",
+                    fontSize: 13,
+                    cursor: "pointer",
+                  }}
+                >
+                  Try again
+                </button>
               </div>
             )}
             {msgs.map((m, i) => (
