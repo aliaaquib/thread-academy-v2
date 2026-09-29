@@ -1,0 +1,1 @@
+{"description":"Tiny Cloudflare Worker that powers Thread Academy's AI tutor answers. No build step.","name":"thread-academy-tutor-worker","private":true,"version":"1.0.0"}
