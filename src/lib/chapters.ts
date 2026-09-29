@@ -36,6 +36,33 @@ export const CHAPTER_TOPICS: Record<string, Topic[]> = {
     { slug: "cell-structure", title: "Cell Structure", desc: "Meet the organelles: the tiny machines inside every cell." },
   ],
   // ── Computer Science ──
+  "computational-thinking-programming": [
+    { slug: "flowcharts", title: "Flowcharts", desc: "Draw the steps of a solution with standard flowchart symbols." },
+    { slug: "selection-and-logic-in-flowcharts", title: "Selection and Logic in Flowcharts", desc: "Make decisions with diamonds, and combine conditions with AND, OR and NOT." },
+    { slug: "pattern-recognition-and-subroutines-in-flowcharts", title: "Pattern Recognition and Sub-routines in Flowcharts", desc: "Spot repeated steps and package them into reusable sub-routines." },
+    { slug: "introduction-to-text-based-programming", title: "Introduction to Text-Based Programming", desc: "From blocks to typed code: what a programming language actually is." },
+    { slug: "python-programming", title: "Python Programming", desc: "Your first Python: print, variables, input and if-statements." },
+    { slug: "software-development-and-testing", title: "Software Development and Testing", desc: "Plan, code, test, fix: how software gets built properly." },
+    { slug: "physical-computing", title: "Physical Computing", desc: "Programs that touch the real world: sensors, buttons and lights." },
+  ],
+  "managing-data": [
+    { slug: "spreadsheets", title: "Spreadsheets", desc: "Cells, formulas and functions: SUM, AVERAGE and charts that calculate for you." },
+    { slug: "modelling", title: "Modelling", desc: "Build a spreadsheet model and ask 'what if' to compare scenarios." },
+    { slug: "databases", title: "Databases", desc: "Tables, records and fields: store data properly and search it fast." },
+    { slug: "data-collection", title: "Data Collection", desc: "Gather data well: surveys, sensors, and checks that catch bad data." },
+  ],
+  "networks-and-digital-communication": [
+    { slug: "accessing-websites", title: "Accessing Websites", desc: "URLs, browsers and search engines — and how to tell a site is secure." },
+    { slug: "types-of-network", title: "Types of Network", desc: "PAN, LAN and WAN: how networks are classified by size." },
+    { slug: "data-transmission", title: "Data Transmission", desc: "Packets, IP addresses and routers: how data crosses the world." },
+  ],
+  "computer-systems": [
+    { slug: "computer-design", title: "Computer Design", desc: "Input, process, output: the parts inside and how they work together." },
+    { slug: "types-of-software", title: "Types of Software", desc: "System software vs application software — and who makes each." },
+    { slug: "data-representation", title: "Data Representation", desc: "Binary, bits and bytes: how computers store numbers, text and images." },
+    { slug: "logic-gates", title: "Logic Gates", desc: "AND, OR, NOT: the tiny switches behind every decision a computer makes." },
+    { slug: "automation-and-artificial-intelligence", title: "Automation and Artificial Intelligence", desc: "Machines that act on their own: automation in industry and what AI really is." },
+  ],
   programming: [
     { slug: "variables", title: "Variables", desc: "A named box that stores a value — in real, runnable Python." },
   ],

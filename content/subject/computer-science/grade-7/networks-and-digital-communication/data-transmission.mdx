@@ -1,0 +1,85 @@
+---
+title: "Data Transmission"
+lede: "Packets, IP addresses and routers: how data crosses the world."
+---
+
+<LearningObjectives>
+  <li>Define and explain data transmission in your own words</li>
+  <li>Use key terms such as packet accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Click a link and a page appears — but the page did not teleport. It was chopped up, addressed, thrown across the planet in pieces, and rebuilt on your screen. Here is how.
+
+<Definition term="Data transmission">
+  Sending data from one device to another across a network, usually by splitting it into packets.
+</Definition>
+
+## Key ideas
+
+### Packets: data in envelopes
+
+Big files are split into small chunks called **packets**. Each packet carries three things: the data itself, the **sender's address**, the **destination address**, and a **sequence number** (packet 3 of 12). Packets can take different routes and arrive out of order — the sequence numbers let the destination rebuild the original.
+
+Think of posting a jigsaw puzzle one piece per envelope, each numbered: the pieces may arrive jumbled, but the numbers restore the picture.
+
+### IP addresses: every device has one
+
+An **IP address** is a device's numeric address on a network, e.g. 192.168.1.25. Packets are addressed with IPs the way letters use street addresses — without them, routers would not know where to send anything.
+
+### Routers: the postal sorters
+
+**Routers** read each packet's destination IP and forward it toward its target, hop by hop across networks. Your message to another continent may pass through a dozen routers, each making one local decision: "not mine — send it that way."
+
+### Keeping it safe: encryption
+
+Packets cross equipment owned by strangers, so sensitive data is **encrypted** — scrambled with a key so only the intended recipient can read it. That is what the "s" in https does: anyone intercepting your packets sees gibberish, not your password.
+
+**Key term — packet:** A small chunk of data sent across a network, carrying source and destination addresses plus a sequence number for reassembly.
+
+<WorkedExample title="Trace an email">
+  You send a 3-packet email from Bishkek to a friend in Osh.
+
+  The email is split into packets 1, 2, 3, each stamped with your IP (source) and your friend's IP (destination). Router A forwards them toward Osh; packet 2 takes a faster route and arrives first. Your friend's computer holds packets 1 and 3, waits for 2, then uses the sequence numbers to rebuild the email in order.
+
+  **Answer:** Splitting + addressing + sequencing = reliable delivery even when packets travel separately and arrive shuffled.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **"Data travels whole"** Correction: large data is split into packets — that is why a video can start playing before it has fully arrived.
+  - **Packets must arrive in order** Correction: they often do not; sequence numbers exist precisely because order is not guaranteed.
+  - **Encryption = the site is honest** Correction: encryption only scrambles data in transit — it says nothing about who runs the destination.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Name the three things a packet carries besides its data.">
+    Source address, destination address, and a sequence number.
+  </PracticeItem>
+  <PracticeItem question="What is an IP address, in one sentence?">
+    A numeric address identifying a device on a network, used to route packets to it.
+  </PracticeItem>
+  <PracticeItem question="Packets 1–4 of a file arrive in the order 2, 4, 1, 3. Is the file corrupted?">
+    No — the receiver uses the sequence numbers to reassemble them as 1, 2, 3, 4.
+  </PracticeItem>
+  <PracticeItem question="Why encrypt data before transmission?">
+    Packets cross strangers' equipment; encryption makes intercepted packets unreadable gibberish.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Data transmission — quick check">
+  <QuizQuestion question="Why is data split into packets for transmission?" options={["To make files smaller forever.", "So chunks can travel independently and be reassembled, keeping the network efficient and resilient.", "Because routers cannot handle large files at all.", "To encrypt the data automatically."]} answer={1} explanation="So chunks can travel independently and be reassembled, keeping the network efficient and resilient." />
+  <QuizQuestion question="What is the job of a router?" options={["To store websites permanently.", "To read each packet's destination IP and forward it toward its target.", "To encrypt every packet.", "To assign domain names."]} answer={1} explanation="To read each packet's destination IP and forward it toward its target." />
+  <QuizQuestion question="What does encryption protect during transmission?" options={["It speeds the packets up.", "It guarantees the destination is honest.", "It scrambles data so interceptors cannot read it.", "It stops packets arriving out of order."]} answer={2} explanation="It scrambles data so interceptors cannot read it." />
+</Quiz>
+
+<Summary>
+  - Data transmission: sending data across networks, split into addressed, numbered packets.
+  - IP addresses identify devices; routers forward packets hop by hop toward the destination.
+  - Sequence numbers rebuild the original even when packets arrive shuffled.
+  - Encryption scrambles data in transit so strangers' equipment cannot read it.
+</Summary>

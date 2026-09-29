@@ -1,0 +1,101 @@
+---
+title: "Databases"
+lede: "Tables, records and fields: store data properly and search it fast."
+---
+
+<LearningObjectives>
+  <li>Define and explain databases in your own words</li>
+  <li>Use key terms such as record accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+A spreadsheet is fine for a class list. But a library with 10,000 books, or a shop with 50,000 customers, needs something stricter: a **database** — data organised so strictly that a computer can search, sort and filter it in a fraction of a second.
+
+<Definition term="Database">
+  An organised collection of data, stored in tables so it can be searched, sorted and updated efficiently.
+</Definition>
+
+## Key ideas
+
+### Tables, records, fields
+
+A simple (flat-file) database is one table:
+
+- **Table** — the whole collection, e.g. "Books".
+- **Record** — one row: all the data about one thing, e.g. one book.
+- **Field** — one column: one piece of data about each thing, e.g. Title, Author, Year.
+
+<CodeBlock lang="Example">
+Table: Books
+| BookID | Title              | Author   | Year |
+|--------|--------------------|----------|------|
+| B001   | The Hobbit         | Tolkien  | 1937 |
+| B002   | Matilda            | Dahl     | 1988 |
+| B003   | Wonder             | Palacio  | 2012 |
+</CodeBlock>
+
+Each row is a record (one book); each column is a field (Title, Author…).
+
+### Data types keep data clean
+
+Each field has a **data type** — the kind of data it holds: text, number, date, yes/no. A Year field set to "number" rejects "nineteen eighty-eight". Types stop bad data at the door.
+
+### The primary key: every record's ID
+
+The **primary key** is the field that uniquely identifies each record — here, BookID. No two books share B001. It is how the database tells records apart, even if two books had the same title.
+
+### Searching and sorting
+
+This is where databases earn their keep:
+
+- **Search (query)** — ask for records matching criteria: "Year > 2000" finds Wonder; "Author = Dahl AND Year < 1990" finds Matilda.
+- **Sort** — order records by a field: titles A–Z, or Year newest-first.
+
+A query with 10,000 records returns in a blink — try that in a paper notebook.
+
+<WorkedExample title="Find the books">
+  Using the Books table above, run the query: Year ≥ 1988 AND Author ≠ "Dahl".
+
+  Check each record: The Hobbit (1937) — fails the year test. Matilda (1988) — passes the year test but Author is Dahl, so it fails. Wonder (2012) — passes both.
+
+  **Answer:** Only Wonder matches. Combining conditions with AND narrows results; each extra condition removes more records.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Mixing up record and field** Correction: a record is a whole row (one thing); a field is one column (one fact about each thing).
+  - **No primary key** Correction: without a unique ID, two identical titles become indistinguishable — every table needs a primary key.
+  - **Wrong data type** Correction: storing Year as text means "200" sorts after "1999" — match the type to the data.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="A Pets table has fields Name, Species, Age. How many records are there if it lists 12 pets?">
+    12 — one record (row) per pet.
+  </PracticeItem>
+  <PracticeItem question="Why is PetID a better primary key than Name?">
+    Two pets can share a name, but each PetID is unique — the primary key must identify exactly one record.
+  </PracticeItem>
+  <PracticeItem question="Write a search criterion to find pets older than 5.">
+    Age > 5 — records where the Age field is greater than 5.
+  </PracticeItem>
+  <PracticeItem question="What data type should a 'Date of birth' field use, and why?">
+    Date — so the database can sort by age and reject nonsense like "yesterdayish".
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Databases — quick check">
+  <QuizQuestion question="In a database table, what is a record?" options={["One column of the table.", "One row: all the data about one thing.", "The name of the table.", "A backup of the database."]} answer={1} explanation="One row: all the data about one thing." />
+  <QuizQuestion question="What is a primary key?" options={["The first column, whatever it holds.", "The field that uniquely identifies each record.", "The password for the database.", "The fastest search query."]} answer={1} explanation="The field that uniquely identifies each record." />
+  <QuizQuestion question="Why give each field a data type?" options={["To make the table print nicely.", "To stop the wrong kind of data being entered, e.g. text in a Year field.", "To encrypt the data.", "Data types are optional decoration."]} answer={1} explanation="To stop the wrong kind of data being entered, e.g. text in a Year field." />
+</Quiz>
+
+<Summary>
+  - Database: an organised collection of data in tables, built for fast searching and sorting.
+  - Table = whole collection; record = one row (one thing); field = one column (one fact).
+  - Primary key: the unique ID for each record; data types keep each field's data valid.
+  - Watch out for: mixing up records and fields, missing primary keys, and wrong data types.
+</Summary>

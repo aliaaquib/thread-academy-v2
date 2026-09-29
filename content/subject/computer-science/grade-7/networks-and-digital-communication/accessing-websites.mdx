@@ -1,0 +1,100 @@
+---
+title: "Accessing Websites"
+lede: "URLs, browsers and search engines — and how to tell a site is secure."
+---
+
+<LearningObjectives>
+  <li>Define and explain URLs in your own words</li>
+  <li>Use key terms such as browser accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Every day you "go to" websites — but what actually happens between typing an address and seeing a page? And how do you know a site is safe to trust with your details?
+
+<Definition term="URL">
+  Uniform Resource Locator — the address of a resource on the web, e.g. https://www.example.com/news/today.
+</Definition>
+
+## Key ideas
+
+### Reading a URL
+
+A URL has parts, each with a job:
+
+<CodeBlock lang="Example">
+https://  www.example.com  /news/today
+  │            │                │
+protocol     domain          path
+</CodeBlock>
+
+- **Protocol** (https://) — the rules for fetching the page. The **s** matters: it means the connection is encrypted (more below).
+- **Domain** (www.example.com) — which computer (server) holds the site.
+- **Path** (/news/today) — which page on that server you want.
+
+### Browser vs search engine — not the same thing
+
+- **Web browser** — the program that displays websites: Chrome, Firefox, Safari, Edge. It fetches pages and shows them.
+- **Search engine** — a website that finds other websites: Google, Bing, DuckDuckGo. It is a page you visit *inside* your browser.
+
+Mixing them up is the classic beginner error: Google is not the internet — it is one site on it.
+
+### Searching well
+
+Good searching is a skill: use specific **keywords** ("cambridge lower secondary computing syllabus"), put exact phrases in **quotes** ("types of network"), and add a minus to exclude words (jaguar -car). Fewer, better words beat a full sentence.
+
+### Is this site secure?
+
+Before typing a password or card number, check:
+
+- **https://** and a **padlock icon** — the connection is encrypted, so eavesdroppers see gibberish.
+- **The domain looks right** — your-bank-secure-login.example is not your bank.
+- **No scary warnings** — browsers warn about known-dangerous sites; do not click through.
+
+Encryption protects data *in transit* — it says nothing about whether the site itself is honest. A scam site can have https too.
+
+<WorkedExample title="Spot the safe site">
+  Two login pages: A shows https://mybank.com/login with a padlock. B shows http://mybank-secure.tk/login with no padlock.
+
+  A: correct domain, https, padlock — the connection is encrypted and the address is the bank's real one. B: no s in http (unencrypted), a strange .tk domain with "secure" stuffed into the name — classic phishing signs.
+
+  **Answer:** Use A. Never enter credentials on B — report it instead.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **"Google is the internet"** Correction: Google is a search engine — one website. The browser is the program; the web is the billions of pages.
+  - **Ignoring the URL** Correction: always read the domain before logging in — phishing lives on lookalike addresses.
+  - **https = trustworthy** Correction: https means the connection is encrypted, not that the site is honest. Check the domain too.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="In https://www.school.edu/timetable, which part is the domain?">
+    www.school.edu — the part naming the server; /timetable is the path.
+  </PracticeItem>
+  <PracticeItem question="What is the difference between a web browser and a search engine?">
+    A browser is the program that displays websites; a search engine is a website (used inside a browser) that finds other websites.
+  </PracticeItem>
+  <PracticeItem question="You want reviews of one specific laptop model. Write a better search than: tell me about laptops.">
+    "laptop model name" reviews — quoted exact phrase plus the word reviews; specific keywords beat sentences.
+  </PracticeItem>
+  <PracticeItem question="A shop's checkout page shows http:// (no s) and no padlock. Should you pay?">
+    No — without https the card details travel unencrypted and could be intercepted.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Accessing websites — quick check">
+  <QuizQuestion question="What does the 's' in https:// mean?" options={["The site is a school site.", "The connection is encrypted.", "The site is guaranteed honest.", "The page will load slowly."]} answer={1} explanation="The connection is encrypted." />
+  <QuizQuestion question="Which statement is correct?" options={["A browser finds websites; a search engine displays them.", "A browser displays websites; a search engine is a site that finds other sites.", "Browsers and search engines are the same thing.", "Search engines only work without a browser."]} answer={1} explanation="A browser displays websites; a search engine is a site that finds other sites." />
+  <QuizQuestion question="Why check the domain before logging in?" options={["Long domains load faster.", "Phishing sites use lookalike domains to steal credentials.", "Domains show the page's author.", "It is required by law."]} answer={1} explanation="Phishing sites use lookalike domains to steal credentials." />
+</Quiz>
+
+<Summary>
+  - URL: protocol + domain + path — the address of a web resource.
+  - Browser displays websites; search engine (a website itself) finds them.
+  - Search with specific keywords, quotes for exact phrases, minus to exclude.
+  - Check https + padlock + the real domain before trusting a site — encryption is not honesty.
+</Summary>

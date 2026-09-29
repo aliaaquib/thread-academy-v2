@@ -1,0 +1,102 @@
+---
+title: "Selection and Logic in Flowcharts"
+lede: "Make decisions with diamonds, and combine conditions with AND, OR and NOT."
+---
+
+<LearningObjectives>
+  <li>Define and explain selection in your own words</li>
+  <li>Use key terms such as condition accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Most programs cannot do the same thing every time — they have to react. A game reacts to your score, a login reacts to your password. That reacting has a name: selection.
+
+<Definition term="Selection">
+  Choosing which instructions to run based on whether a condition is true or false.
+</Definition>
+
+## Key ideas
+
+### The diamond does the choosing
+
+In a flowchart, selection is the diamond: one arrow in, two arrows out — Yes and No. The program checks the condition, then follows the matching path. Everything after the two paths rejoin continues as normal.
+
+### Decisions can sit inside decisions
+
+A Yes path can lead straight into another diamond. Going out: "is it raining?" → Yes → "do you have an umbrella?" → Yes → "take it" / No → "stay in". Each extra diamond handles a more specific situation. This is called nesting, and it is just decisions inside decisions.
+
+### Combining conditions: AND, OR, NOT
+
+Sometimes one question is not enough. Three little words combine conditions:
+
+- **AND** — both must be true. "age ≥ 12 AND has a ticket": a 14-year-old *with* a ticket gets in; a 14-year-old *without* one does not.
+- **OR** — at least one must be true. "is Saturday OR is Sunday": either day means it is the weekend.
+- **NOT** — flips the answer. "NOT raining" is true exactly when it is dry.
+
+**Key term — condition:** A check that is either true or false, such as "score ≥ 50". Decisions test conditions.
+
+<Diagram caption="One diamond, two conditions: entry needs age 12+ AND a ticket.">
+<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <ellipse cx="280" cy="28" rx="60" ry="24" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="33" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">START</text>
+  <line x1="280" y1="52" x2="280" y2="78" stroke="#4c6106" strokeWidth="2"/>
+  <polygon points="280,78 400,128 280,178 160,128" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="124" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">age ≥ 12 AND</text>
+  <text x="280" y="140" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">has ticket?</text>
+  <line x1="400" y1="128" x2="450" y2="128" stroke="#4c6106" strokeWidth="2"/>
+  <text x="425" y="120" fontSize="12" fill="#4c6106">Yes</text>
+  <rect x="450" y="100" width="100" height="56" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="500" y="133" fontSize="12" textAnchor="middle" fill="#1a1a1a">Allow entry</text>
+  <line x1="280" y1="178" x2="280" y2="208" stroke="#4c6106" strokeWidth="2"/>
+  <text x="294" y="198" fontSize="12" fill="#4c6106">No</text>
+  <rect x="220" y="208" width="120" height="44" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="235" fontSize="12" textAnchor="middle" fill="#1a1a1a">Refuse entry</text>
+</svg>
+</Diagram>
+
+<WorkedExample title="Trace the entry check">
+  The flowchart above runs for a visitor who is 10 years old and has a ticket.
+
+  Check the condition: "age ≥ 12" is false (10 is less than 12), "has ticket" is true. AND needs *both* — false AND true gives false. Take the No path: "Refuse entry".
+
+  **Answer:** Entry refused, even though they have a ticket — AND is strict. If the visitor were 14 with a ticket, both parts would be true and they would get in.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **A diamond with only one path out** Correction: a decision must have both Yes and No paths leading somewhere — even if one just goes straight to STOP.
+  - **Mixing up AND and OR** Correction: AND needs both conditions true; OR needs only one. "Weekend" is Saturday OR Sunday, not AND — no day is both.
+  - **Reading NOT backwards** Correction: NOT flips the result. "NOT (score ≥ 50)" is true when the score is *below* 50.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="In a flowchart, how many arrows leave a decision diamond, and what are they labelled?">
+    Two arrows: one labelled Yes (condition true) and one labelled No (condition false).
+  </PracticeItem>
+  <PracticeItem question="A cinema rule: 'age ≥ 12 OR with an adult'. A 9-year-old arrives with her father. Does she get in?" hint="OR needs only one side to be true.">
+    Yes — "with an adult" is true, and OR needs just one true side.
+  </PracticeItem>
+  <PracticeItem question="What does 'NOT (temperature > 30)' mean in plain words?" hint="NOT flips the condition.">
+    The temperature is 30 or below — NOT turns "hotter than 30" into its opposite.
+  </PracticeItem>
+  <PracticeItem question="Why might you put one decision inside another instead of using AND?">
+    When the second question only makes sense after the first answer — e.g. ask "do you have an umbrella?" only if it is raining.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Selection and logic — quick check">
+  <QuizQuestion question="What is selection?" options={["Repeating instructions a set number of times.", "Choosing which instructions run based on whether a condition is true or false.", "Naming a block of code so it can be reused.", "Drawing the steps of an algorithm as a diagram."]} answer={1} explanation="Choosing which instructions run based on whether a condition is true or false." />
+  <QuizQuestion question="Rule: 'member AND paid'. Who gets the discount?" options={["A member who has not paid — membership alone is enough.", "A non-member who has paid — payment alone is enough.", "A member who has paid — AND needs both sides true.", "Nobody — AND can never be satisfied."]} answer={2} explanation="A member who has paid — AND needs both sides true." />
+  <QuizQuestion question="What does OR mean in a condition like 'is raining OR is snowing'?" options={["Both must be true at the same time.", "At least one must be true — rain, snow, or both.", "Neither may be true.", "The two conditions must be opposites."]} answer={1} explanation="At least one must be true — rain, snow, or both." />
+</Quiz>
+
+<Summary>
+  - Selection: choosing which instructions run based on whether a condition is true or false — the diamond in a flowchart.
+  - Decisions can nest: a Yes/No path can lead to another diamond for more specific situations.
+  - AND needs both conditions true; OR needs at least one; NOT flips a condition's answer.
+  - Watch out for: diamonds with a missing branch, mixing up AND and OR, and reading NOT backwards.
+</Summary>

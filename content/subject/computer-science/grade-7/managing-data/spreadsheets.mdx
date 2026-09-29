@@ -1,0 +1,103 @@
+---
+title: "Spreadsheets"
+lede: "Cells, formulas and functions: SUM, AVERAGE and charts that calculate for you."
+---
+
+<LearningObjectives>
+  <li>Define and explain spreadsheets in your own words</li>
+  <li>Use key terms such as cell reference accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+A spreadsheet is a grid that calculates. Shops use them for stock, teachers for marks, scientists for measurements — anywhere numbers need organising and the computer should do the arithmetic.
+
+<Definition term="Spreadsheet">
+  A grid of rows and columns used to organise, calculate and present data. Each box in the grid is a cell.
+</Definition>
+
+## Key ideas
+
+### The anatomy of a spreadsheet
+
+- **Columns** run top to bottom and are labelled with letters: A, B, C…
+- **Rows** run left to right and are numbered: 1, 2, 3…
+- **Cell** — one box, named by its column letter and row number. The cell in column B, row 4 is **B4**. This name is its **cell reference**.
+- **Range** — a block of cells, written with a colon: B2:B6 means "cells B2 down to B6".
+
+### Formulas: the spreadsheet calculates
+
+A formula always starts with `=`. It can use numbers, cell references and operators:
+
+<CodeBlock lang="Example">
+= B2 + B3
+= B2 * 1.2
+= (B2 + B3) / 2
+</CodeBlock>
+
+The power: if the value in B2 changes, every formula using B2 recalculates instantly. That is why spreadsheets beat calculators for repeated work.
+
+### Functions: ready-made formulas
+
+A **function** is a built-in calculation you call by name:
+
+- `=SUM(B2:B6)` — adds everything in the range
+- `=AVERAGE(B2:B6)` — the mean of the range
+- `=MIN(B2:B6)` / `=MAX(B2:B6)` — the smallest / largest value
+
+<CodeBlock lang="Example">
+Test scores in B2:B6 are 65, 70, 58, 82, 74
+=SUM(B2:B6)       gives 349
+=AVERAGE(B2:B6)   gives 69.8
+=MAX(B2:B6)       gives 82
+</CodeBlock>
+
+### Presenting the data
+
+Numbers alone are hard to read at a glance. **Formatting** (bold headings, borders, decimal places, currency symbols) makes a sheet readable, and a **chart** turns a table into a picture — a bar chart of monthly sales shows the best month instantly.
+
+<WorkedExample title="Build the marks sheet">
+  Scores for five students sit in B2:B6. In B7 you type =SUM(B2:B6); in B8, =AVERAGE(B2:B6); in B9, =MAX(B2:B6).
+
+  The sheet shows: total 349, average 69.8, best 82. Now a score is corrected from 58 to 68 — you change one cell, and B7, B8 and B9 all update on their own.
+
+  **Answer:** Total 349, average 69.8, maximum 82 — and every formula stays correct when data changes, because formulas reference cells, not typed-in numbers.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Typing numbers instead of cell references** Correction: =65+70+58 breaks when a score changes; =SUM(B2:B6) never does — always reference cells.
+  - **Forgetting the = sign** Correction: without =, the spreadsheet treats your formula as plain text and calculates nothing.
+  - **Wrong range** Correction: =SUM(B2:B5) silently misses B6 — double-check your ranges include every row.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="What is the cell reference of the cell in column D, row 9?">
+    D9 — column letter first, then row number.
+  </PracticeItem>
+  <PracticeItem question="Write the range covering cells C1 down to C10.">
+    C1:C10 — start cell, colon, end cell.
+  </PracticeItem>
+  <PracticeItem question="Prices are in D2:D7. Write a formula for the total.">
+    =SUM(D2:D7) — SUM adds every cell in the range.
+  </PracticeItem>
+  <PracticeItem question="Why is =B2*1.2 better than typing the answer by hand?">
+    If B2 changes, the formula recalculates automatically — a typed answer would go stale and wrong.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Spreadsheets — quick check">
+  <QuizQuestion question="What is a cell reference?" options={["The formula typed into a cell.", "The name of a cell from its column letter and row number, e.g. B4.", "A chart drawn from spreadsheet data.", "The password protecting a spreadsheet."]} answer={1} explanation="The name of a cell from its column letter and row number, e.g. B4." />
+  <QuizQuestion question="What does =AVERAGE(C2:C8) do?" options={["Adds all values in C2 to C8.", "Counts how many cells are in C2 to C8.", "Calculates the mean of the values in C2 to C8.", "Finds the largest value in C2 to C8."]} answer={2} explanation="Calculates the mean of the values in C2 to C8." />
+  <QuizQuestion question="A formula shows as plain text and does not calculate. What is the most likely cause?" options={["The numbers are too large.", "The formula is missing its = sign at the start.", "The cells are formatted as bold.", "The spreadsheet needs a chart first."]} answer={1} explanation="The formula is missing its = sign at the start." />
+</Quiz>
+
+<Summary>
+  - Spreadsheet: a grid of cells (named by column letter + row number) for organising, calculating and presenting data.
+  - Formulas start with = and use cell references so they recalculate when data changes.
+  - Functions SUM, AVERAGE, MIN and MAX perform ready-made calculations on ranges.
+  - Watch out for: typing numbers instead of references, forgetting =, and ranges that miss rows.
+</Summary>
