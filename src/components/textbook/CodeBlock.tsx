@@ -4,12 +4,27 @@
  */
 "use client";
 
-import { useState } from "react";
+import { useState, isValidElement } from "react";
+import type { ReactNode } from "react";
+
+/**
+ * Pull plain text out of whatever MDX hands us. MDX compiles block-level
+ * component content as markdown, so plain text arrives wrapped in a <p>
+ * element (String() on that gives "[object Object]"). This walks strings,
+ * arrays and elements and returns just the text.
+ */
+function textOf(node: ReactNode): string {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(textOf).join("");
+  if (isValidElement<{ children?: ReactNode }>(node)) return textOf(node.props.children);
+  return "";
+}
 
 /** Dark .code-block with language label + copy button. */
-export function CodeBlock({ lang = "Code", children }: { lang?: string; children: string }) {
+export function CodeBlock({ lang = "Code", children }: { lang?: string; children?: ReactNode }) {
   const [copied, setCopied] = useState(false);
-  const code = String(children).replace(/\n$/, "");
+  const code = textOf(children).replace(/^\n+|\n+$/g, "");
 
   const copy = async () => {
     try {
