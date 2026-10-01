@@ -135,7 +135,6 @@ export const CHAPTER_TOPICS: Record<string, Topic[]> = {
     { slug: "time-and-phrases", title: "Time and Phrases", desc: "Telling time, daily expressions." },
   ],
   "test-chapter": [
-    { slug: "lesson-1", title: "lesson 1", desc: "lesson 1" },
   ],
 };
 
