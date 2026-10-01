@@ -109,7 +109,7 @@ export function getAvailableTopics(p: Omit<TopicParams, "topic">, lang: Lang = "
   const chapterBase = grade
     ? `/subjects/${p.subject}/${gradeSlug(grade)}/${p.chapter}`
     : `/subjects/${p.subject}/${p.chapter}`;
-  return getChapterTopics(p.chapter, lang)
+  return getChapterTopics(p.subject, p.chapter, lang)
     .filter((t) => existing.has(t.slug))
     .map((t) => ({
       ...t,

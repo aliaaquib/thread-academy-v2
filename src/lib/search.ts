@@ -56,7 +56,7 @@ export function buildSearchIndex(lang: Lang = "en"): SearchEntry[] {
     if (!chapter) continue;
     const grade = getGradeForChapter(p.subject, p.chapter);
     if (!grade) continue;
-    const meta = getChapterTopics(p.chapter, lang).find((t) => t.slug === p.topic);
+    const meta = getChapterTopics(p.subject, p.chapter, lang).find((t) => t.slug === p.topic);
     const content = getTopicContent(p, lang);
     const title = content?.title ?? meta?.title ?? p.topic;
     const breadcrumb = `${subject.name} → ${gradeLabel(grade)} → ${chapter.title} → ${title}`;
@@ -75,7 +75,7 @@ export function buildSearchIndex(lang: Lang = "en"): SearchEntry[] {
     if (!subject) continue;
     const chapter = getChapterForSubject(combo.subject, combo.chapter, lang);
     if (!chapter) continue;
-    const topicTitles = getChapterTopics(combo.chapter, lang)
+    const topicTitles = getChapterTopics(combo.subject, combo.chapter, lang)
       .map((t) => t.title)
       .join(" ");
     const breadcrumb = `${subject.name} → ${gradeLabel(combo.grade)} → ${chapter.title}`;

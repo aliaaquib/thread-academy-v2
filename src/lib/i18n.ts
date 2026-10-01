@@ -58,6 +58,9 @@ export function stripLangPrefix(path: string): { lang: Lang; path: string } {
 export interface LangOverlay {
   subjects: Record<string, { name?: string; tagline?: string; intro?: string; learn?: string[] }>;
   chapters: Record<string, { title?: string; desc?: string }>;
+  /** Topic keys are "subject/slug" (e.g. "mathematics/variables") so the same
+   *  slug in different subjects never collides. A bare slug key is also read
+   *  as a legacy fallback. */
   topics: Record<string, { title?: string; desc?: string }>;
 }
 

@@ -138,7 +138,7 @@ export const CHAPTER_TOPICS: Record<string, Topic[]> = {
   ],
 };
 
-export function getChapterTopics(chapterId: string, lang: Lang = "en"): Topic[] {
+export function getChapterTopics(subject: string, chapterId: string, lang: Lang = "en"): Topic[] {
   const base = CHAPTER_TOPICS[chapterId] ?? [];
   // Hand-written topics always come first; generated ones top the chapter up to four lessons.
   let topics: Topic[];
@@ -150,8 +150,10 @@ export function getChapterTopics(chapterId: string, lang: Lang = "en"): Topic[] 
   if (lang === "en") return topics;
   const overlays = getOverlay(lang)?.topics;
   if (!overlays) return topics;
+  // Topic overlay keys are "subject/slug" so the same slug in different
+  // subjects (e.g. "variables" in maths vs computer science) never collide.
   return topics.map((t) => {
-    const o = overlays[t.slug];
+    const o = overlays[`${subject}/${t.slug}`] ?? overlays[t.slug];
     return o ? { ...t, title: o.title ?? t.title, desc: o.desc ?? t.desc } : t;
   });
 }
