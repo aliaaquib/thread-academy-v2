@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import { SUBJECT_SLUGS, getSubject } from "@/lib/subjects";
 import { GRADES, getChaptersForGrade, gradeSlug, parseGradeSlug } from "@/lib/grades";
-import { pageMetadata } from "@/lib/seo";
+import { JsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
 
 /** Tells the site builder which pages to create ahead of time (one per subject/grade/chapter/topic). */
 export function generateStaticParams() {
@@ -53,6 +53,14 @@ export default function GradePage({
 
   return (
     <>
+      {/* Tells Google which chapters this grade contains. */}
+      {chapters.length > 0 && (
+        <JsonLd
+          data={itemListJsonLd(
+            chapters.map((c) => ({ name: c.title, url: `${gradePath}/${c.id}` })),
+          )}
+        />
+      )}
       <PageHero
         crumbs={[
           { label: "Home", href: "/" },

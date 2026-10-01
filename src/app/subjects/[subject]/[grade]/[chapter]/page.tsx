@@ -16,7 +16,7 @@ import {
   parseGradeSlug,
 } from "@/lib/grades";
 import { getAvailableTopics } from "@/lib/content";
-import { pageMetadata } from "@/lib/seo";
+import { JsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
 
 /** Tells the site builder which pages to create ahead of time (one per subject/grade/chapter/topic). */
 export function generateStaticParams() {
@@ -66,6 +66,11 @@ export default function ChapterPage({
 
   return (
     <>
+      {/* Tells Google which lessons this chapter contains. Only rendered
+          when the chapter actually has lessons. */}
+      {topics.length > 0 && (
+        <JsonLd data={itemListJsonLd(topics.map((t) => ({ name: t.title, url: t.url })))} />
+      )}
       <PageHero
         crumbs={[
           { label: "Home", href: "/" },

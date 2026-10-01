@@ -37,6 +37,14 @@ interface PageMetaInput {
 /** Builds title, description, canonical, Open Graph and Twitter metadata. */
 export function pageMetadata({ title, description, path, type = "website", noindex = false }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
+  // One default share image for the whole site (static export cannot
+  // generate per-page images). Resolved against metadataBase in the root layout.
+  const shareImage = {
+    url: "/og-image.png",
+    width: 1200,
+    height: 630,
+    alt: "Thread Academy — free school lessons, worked examples and practice questions, grades 7–12.",
+  };
   return {
     title,
     description,
@@ -47,11 +55,13 @@ export function pageMetadata({ title, description, path, type = "website", noind
       siteName: SITE_NAME,
       title: `${title} — ${SITE_NAME}`,
       description,
+      images: [shareImage],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: `${title} — ${SITE_NAME}`,
       description,
+      images: ["/og-image.png"],
     },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
   };
@@ -104,6 +114,14 @@ export function articleJsonLd(input: {
   description: string;
   path: string;
   chapter: string;
+  /**
+   * ISO date string of the real last-modified date (taken from the lesson
+   * file's modification time). Only passed when known — never invented.
+   * There is no datePublished because the original publish date is not recorded.
+   */
+  dateModified?: string;
+  /** Real school level, e.g. "Grade 7". Only passed when known. */
+  educationalLevel?: string;
 }): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
@@ -111,9 +129,32 @@ export function articleJsonLd(input: {
     headline: input.headline,
     description: input.description,
     url: absoluteUrl(input.path),
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
+    // Education vocabulary: this article IS a lesson, so say so with
+    // schema.org's learning properties, using only real values.
+    learningResourceType: "Lesson",
+    ...(input.educationalLevel ? { educationalLevel: input.educationalLevel } : {}),
     isPartOf: { "@type": "CreativeWork", name: input.chapter },
     author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  };
+}
+
+/**
+ * schema.org ItemList JSON-LD — a page listing a set of child pages,
+ * e.g. the lessons inside a chapter or the chapters inside a grade.
+ * Helps search engines understand the page's structure.
+ */
+export function itemListJsonLd(items: { name: string; url: string }[]): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: absoluteUrl(item.url),
+    })),
   };
 }
 

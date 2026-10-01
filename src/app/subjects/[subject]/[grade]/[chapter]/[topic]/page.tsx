@@ -16,7 +16,7 @@ import {
   gradeSlug,
   parseGradeSlug,
 } from "@/lib/grades";
-import { getAllTopicParams, getAvailableTopics, getTopicContent } from "@/lib/content";
+import { getAllTopicParams, getAvailableTopics, getTopicContent, topicFileMtime } from "@/lib/content";
 import { JsonLd, articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 /** Tells the site builder which pages to create ahead of time (one per subject/grade/chapter/topic). */
@@ -94,6 +94,13 @@ export default function TopicPage({
             description: content.lede || `${content.title} — a grade ${grade} ${subject.name} lesson.`,
             path: `/subjects/${params.subject}/${gradeSlug(grade)}/${params.chapter}/${params.topic}`,
             chapter: chapter.title,
+            // Real last-modified date from the lesson file itself — never invented.
+            dateModified: topicFileMtime({
+              subject: params.subject,
+              chapter: params.chapter,
+              topic: params.topic,
+            }).toISOString(),
+            educationalLevel: `Grade ${grade}`,
           }),
         ]}
       />
