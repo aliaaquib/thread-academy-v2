@@ -31,7 +31,6 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "living-things", title: "Living Things", desc: "What makes something alive? Explore habitats near you." },
       { id: "plants", title: "Plants", desc: "What plants need to grow and stay healthy." },
       { id: "animals-humans", title: "Animals and Humans", desc: "Senses, skeletons and how to stay healthy." },
-          { id: "test-chapter", title: "test chapter", desc: "this is the test chapter" },
 ],
     "developing": [
       { id: "cell-biology", title: "Cell Biology", desc: "The building blocks of life: cells, organelles and microscopes." },

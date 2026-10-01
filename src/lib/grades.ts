@@ -40,7 +40,7 @@ export function parseGradeSlug(slug: string): Grade | null {
  */
 export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
   "biology": {
-    7: ["living-things", "plants", "animals-humans", "test-chapter"],
+    7: ["living-things", "plants", "animals-humans"],
     8: ["cell-biology", "organisation"],
     9: ["reproduction", "health-disease"],
     10: ["bioenergetics", "genetics"],
