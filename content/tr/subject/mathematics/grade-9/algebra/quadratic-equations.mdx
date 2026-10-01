@@ -1,0 +1,106 @@
+---
+title: "İkinci Dereceden Denklemler"
+lede: "x² görününce denklemler eğrilir. İkinci dereceden denklemleri çarpanlara ayırarak çözmeyi öğren — ve asla yanıltmayan araç, ikinci dereceden denklem formülüyle tanış."
+---
+
+<LearningObjectives>
+  <li>İkinci dereceden denklemleri tanı</li>
+  <li>Çarpanlara ayırarak ikinci dereceden denklemleri çöz</li>
+  <li>İkinci dereceden denklem formülünü kullan</li>
+  <li>İki çözümü yorumla</li>
+</LearningObjectives>
+
+## x'in karesi alındığında
+
+**İkinci dereceden denklem**, `x²` içerir (ama daha yüksek üsler içermez). Grafiği bir eğridir — bir parabol — bu yüzden ikinci dereceden denklemlerin **iki** çözümü olabilir: eğri x eksenini iki kez kesebilir.
+
+<Definition term="ikinci dereceden denklem">
+  **İkinci dereceden denklem**, bilinmeyenin en yüksek üssünün 2 olduğu denklemdir,
+  örneğin `x² + 5x + 6 = 0` ya da `2x² − 8 = 0`.
+</Definition>
+
+## Çarpanlara ayırarak çözme
+
+Püf noktası şu: **iki şeyin çarpımı sıfırsa biri sıfırdır.** O halde:
+
+1. `... = 0` biçimine getir.
+2. İkinci dereceden ifadeyi çarpanlara ayır.
+3. Her parantezi sıfıra eşitle ve çöz.
+
+<WorkedExample title="Çözümlü örnek">
+  `x² + 5x + 6 = 0` denklemini çöz.
+
+  ```maths
+  x² + 5x + 6 = 0
+  (x + 2)(x + 3) = 0      factorise: which pair sums to 5 and multiplies to 6?
+  x + 2 = 0  or  x + 3 = 0
+  x = −2  or  x = −3
+  ```
+
+  `x = −2` kontrolü: `4 − 10 + 6 = 0` ✓
+</WorkedExample>
+
+`x² + bx + c`'yi çarpanlara ayırmak için **çarpımları c olan** ve **toplamları b olan** iki sayı bul. `x² + 5x + 6` için: 2 ve 3 (2 × 3 = 6, 2 + 3 = 5).
+
+## İkinci dereceden denklem formülü
+
+Her ikinci dereceden denklem düzgünce çarpanlara ayrılmaz. **İkinci dereceden denklem formülü** *herhangi* bir `ax² + bx + c = 0` denklemini çözer:
+
+<Formula label="İkinci dereceden denklem formülü">
+  x = (−b ± √(b² − 4ac)) / 2a
+</Formula>
+
+<WorkedExample title="Çözümlü örnek">
+  `2x² + 5x − 3 = 0` denklemini çöz; burada `a = 2`, `b = 5`, `c = −3`.
+
+  ```maths
+  x = (−5 ± √(25 − 4(2)(−3))) / 4
+  x = (−5 ± √(25 + 24)) / 4
+  x = (−5 ± 7) / 4
+  x = 0.5  or  x = −3
+  ```
+</WorkedExample>
+
+<ImportantNote title="Diskriminant">
+  Karekökün altındaki kısım, `b² − 4ac`, **diskriminant** olarak adlandırılır.
+  Pozitifse iki çözüm vardır; sıfırsa bir çakışık çözüm; negatifse gerçek çözüm yoktur.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Çöz: x² − 9 = 0." hint="İki kare farkı olarak düzenle ya da çarpanlara ayır.">
+    `x² = 9`, yani `x = 3` ya da `x = −3`. (Ya da `(x − 3)(x + 3) = 0`.)
+  </PracticeItem>
+  <PracticeItem question="x² + 7x + 12 = 0 denklemini çarpanlara ayırarak çöz." hint="Çarpımları 12, toplamları 7 olan iki sayı bul.">
+    `(x + 3)(x + 4) = 0`, yani `x = −3` ya da `x = −4`.
+  </PracticeItem>
+  <PracticeItem question="x² + 4x + 1 = 0 denklemini ikinci dereceden denklem formülüyle çöz. Cevapları 2 ondalık basamağa ver." hint="a = 1, b = 4, c = 1.">
+    `x = (−4 ± √12)/2 = −2 ± √3`, yani `x ≈ −0.27` ya da `x ≈ −3.73`.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="İkinci dereceden denklemler — kısa kontrol">
+  <QuizQuestion
+    question="Hangisi ikinci dereceden bir denklemdir?"
+    options={["3x + 2 = 11", "x² − 5x + 4 = 0", "2/x = 6", "x³ = 8"]}
+    answer={1}
+    explanation="x'in en yüksek üssü 2'dir."
+  />
+  <QuizQuestion
+    question="x² + 8x + 15 ifadesini çarpanlara ayır."
+    options={["(x + 3)(x + 5)", "(x + 15)(x + 1)", "(x − 3)(x − 5)", "(x + 8)(x + 15)"]}
+    answer={0}
+    explanation="3 × 5 = 15 ve 3 + 5 = 8."
+  />
+  <QuizQuestion question="(x − 4)(x + 1) = 0 denklemini çöz." options={["x = 5 ya da x = −1", "x = 6 ya da x = −1", "x = 3 ya da x = −1", "x = 4 ya da x = −1"]} answer={3} explanation="Her parantez sırayla sıfır olur: x = 4 ya da x = −1." />
+</Quiz>
+
+<Summary>
+  - İkinci dereceden denklemlerde en yüksek üs x²'dir ve en fazla iki çözüm vardır.
+  - Çarpanlara ayırmak için: = 0 biçimine getir, çarpanlara ayır, her parantezi sıfıra eşitle.
+  - x = (−b ± √(b² − 4ac)) / 2a formülü her ikinci dereceden denklemi çözer.
+  - b² − 4ac diskriminantı kaç gerçek çözüm olduğunu söyler.
+</Summary>

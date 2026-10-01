@@ -1,0 +1,79 @@
+---
+title: "Değişkenler"
+lede: "Verileri adlandırılmış kutularda sakla ve yeniden kullan."
+---
+
+<LearningObjectives>
+  <li>Değişkenler'i kendi cümlelerinle tanımla ve açıkla</li>
+  <li>değişken ve operatör gibi temel terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Değişkenler'e odaklanıyor: verileri adlandırılmış kutularda sakla ve yeniden kullan.
+
+<Definition term="Değişkenler">
+  Verileri adlandırılmış kutularda sakla ve yeniden kullan.
+</Definition>
+
+## Temel fikirler
+
+### Veriler için adlandırılmış kutular
+
+**Değişken**, bir değer tutan adlandırılmış kutudur — `score = 0` kutuyu oluşturur, `score = score + 10` ise içindekini günceller. Ad, değerin ne anlama geldiğini söylemeli: `total_price` her zaman `x`'ten iyidir. Değer bir kez saklanınca programın her yerinde yeniden kullanılabilir.
+
+### Adlandırma kuralları önemlidir
+
+Değişken adları bir harf ya da alt çizgiyle başlamalı ve yalnızca harf, rakam ve alt çizgi içerebilir — bu yüzden `player1` olur ama `1player` ve `player-name` olmaz. Python büyük-küçük harfe duyarlıdır: `Score` ve `score` farklı kutulardır. Kurala uy: alt çizgiyle birleştirilmiş küçük harfli sözcükler, örneğin `high_score`.
+
+### Türler değerlerle birlikte gelir
+
+Her değerin bir türü vardır: tam sayılar (`42`), ondalıklı sayılar (`3.14`), dizgeler (`"Ada"`) ve mantıksal değerler (`True`) en önemli dörtlüdür. Tür, ne yapabileceğini belirler — iki tam sayıyı toplayabilirsin, ama bir dizgeyle bir tam sayıyı toplamak çöker. Kutunun içinde ne olduğundan emin değilsen `type()` kullan.
+
+**Temel terim — değişken:** Bir program çalışırken değişebilen bir değerin adı.
+
+**Temel terim — operatör:** `+` ya da `==` gibi bir işlem yapan simge.
+
+<WorkedExample title="Çözümlü örnek: Değişkenler">
+  <TryItPython title="Bir Değişken Oluştur" subtitle="Kodu çalıştır ve değişkenin 6 yazdırdığını gör." initialCode={`total = 4 + 2
+print(total)
+# Sıra sende: 10 yazdırsın.`} />
+
+  <RelatedTopics topics={[{ title: "Hesaplamalı Düşünme", href: "/subject/computer-science/grade-8/computational-thinking" }, { title: "Programlama Temelleri — bölüm", href: "/subject/computer-science/grade-9/programming" }, { title: "Değişkenler", href: "/subject/computer-science/grade-9/programming/variables" }]} />
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Bir değişkeni atamadan kullanmak** Düzeltme: Önce değişkene değer ata — `score = 0`'dan önce `print(score)` NameError ile çöker.
+  - **`=` ile `==`'i karıştırmak** Düzeltme: `=` bir değişkene değer kaydeder; `==` iki değeri karşılaştırır — birbirinin yerine kullanılamazlar.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bu ne yazdırır? `total = 4 + 2` ardından `print(total)`" hint="Değeri kutunun içine, sonra dışarı izle.">
+    `6` — değişken `4 + 2`'nin sonucunu saklar ve `print` onu gösterir.
+  </PracticeItem>
+  <PracticeItem question="Bunlardan hangileri geçerli Python değişken adıdır? `player1`, `1player`, `player-name`, `_score`" hint="Adlandırma kurallarını kontrol et: harf, rakam, alt çizgi; başta rakam yok; tire yok.">
+    `player1` ve `_score` geçerlidir; `1player` rakamla başlar, `player-name` ise tire içerir.
+  </PracticeItem>
+  <PracticeItem question="`while x > 0:` döngüsünde güncelleme satırı eksik. Risk ne, nasıl düzeltirsin?" hint="`x` hiç değişmezse ne olur?">
+    Risk sonsuz döngüdür — `x` hiç değişmez, bu yüzden koşul doğru kalır. Döngünün içine `x`'i değiştiren bir satır ekleyerek düzelt, örneğin `x = x - 1`.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: `for i in range(10)` 1'den 10'a yazdırır." hint="`range` 0'dan başlar.">
+    Yanlış — 0'dan 9'a yazdırır, çünkü `range(10)` 9'da durur.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı test
+
+<Quiz title="Değişkenler — hızlı test">
+  <QuizQuestion question="Hangisi &quot;değişken&quot;i en iyi tanımlar?" options={["Tekrar eden bir kod bloğu.", "Bir program çalışırken değişebilen bir değerin adı.", "`+` ya da `==` gibi bir işlem yapan simge.", "Bir döngünün tek turu."]} answer={1} explanation="Bir program çalışırken değişebilen bir değerin adı." />
+  <QuizQuestion question="Hangisi &quot;operatör&quot;ü en iyi tanımlar?" options={["Tekrar eden bir kod bloğu.", "Bir döngünün tek turu.", "Bir program çalışırken değişebilen bir değerin adı.", "`+` ya da `==` gibi bir işlem yapan simge."]} answer={3} explanation="`+` ya da `==` gibi bir işlem yapan simge." />
+</Quiz>
+
+<Summary>
+  - Değişkenler: verileri adlandırılmış kutularda sakla ve yeniden kullan.
+  - Veriler için adlandırılmış kutular: **Değişken**, bir değer tutan adlandırılmış kutudur — `score = 0` kutuyu oluşturur, `score = score + 10` ise içindekini günceller.
+  - değişken: Bir program çalışırken değişebilen bir değerin adı.
+  - Dikkat: bir değişkeni atamadan kullanmak
+</Summary>

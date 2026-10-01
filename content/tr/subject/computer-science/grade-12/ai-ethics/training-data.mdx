@@ -1,0 +1,74 @@
+---
+title: "Eğitim Verisi"
+lede: "Temsili, dengeli eğitim verisi toplayın ve aşırı öğrenme ile veri sızıntısından kaçının."
+---
+
+<LearningObjectives>
+  <li>Eğitim Verisi'ni kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Eğitim verisi gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Eğitim Verisi'ne odaklanır: temsili, dengeli eğitim verisi toplayın ve aşırı öğrenme ile veri sızıntısından kaçının.
+
+<Definition term="Eğitim Verisi">
+  Temsili, dengeli eğitim verisi toplayın ve aşırı öğrenme ile veri sızıntısından kaçının.
+</Definition>
+
+## Temel fikirler
+
+### Veri, modelin dünyasıdır
+
+Bir model yalnızca eğitim verisinde gördüklerini bilir — veri geçmişteki adaletsizliği yansıtıyorsa model onu da öğrenir. Temsili bir örneklem, gerçek dünyadaki dağılımı yansıtır; dengeli bir örneklem de her gruptan yeterli veri içerir. Örneğin yalnızca gündüz fotoğraflarıyla eğitilen bir model gece sahnelerinde kör kalır.
+
+### Modeli kendi yansımasıyla test etmeyin
+
+Aşırı öğrenmede model eğitim verisini o kadar yakından ezberler ki yeni örneklerde başarısız olur — bu yüzden doğruluğu görünmemiş veriyle test edin. Veri sızıntısında ise cevap eğitim kümesine taşar ve ölçümler şişer; özelliklerin test kümesinde bulunmayacak bilgiyi kodlamadığını her zaman kontrol edin.
+
+**Terim — eğitim verisi:** Modeli öğretmek için kullanılan etiketli ya da etiketsiz örnekler kümesi — modelin öğreneceği tek dünyadır.
+
+<WorkedExample title="Çözümlü örnek: Başarısız Olan Kedi Dedektörü">
+  Bir model ev fotoğraflarıyla eğitilir ve kedileri kusursuz bulur, ama sokak fotoğraflarında başarısız olur. Neden?
+
+  Temsili olmayan örneklem — model sokak sahnelerini hiç görmemişti.
+
+  **Cevap:** Temsili olmayan örneklem — model sokak sahnelerini hiç görmemişti.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Veri sızıntısı** Düzeltme: özelliğin test kümesinde bulunmayacak bilgiyi kodladığını her zaman kontrol edin.
+  - **Farklı gruplar için ayrı ölçüm yapmamak** Düzeltme: toplam doğruluğu bir kenara bırakıp adillik ölçütlerini her bir grup için ayrı ayrı değerlendirin.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir model eğitim verisini o kadar yakından ezberler ki yeni örneklerde başarısız olur. Bu duruma ne denir?" hint="Modelin genellemeyi öğrenip öğrenmediğini düşünün.">
+    Aşırı öğrenme.
+  </PracticeItem>
+  <PracticeItem question="Bir yapay zekâ uygulaması geçmiş işe alım kayıtlarıyla eğitilir ve belirli bir gruptan az sayıda başvuru olduğunu fark edersiniz. Hangi yanlılık riski ortaya çıkar?" hint="Modelin o grup için ne kadar güvenilir olacağını düşünün.">
+    Temsili olmayan örneklem — model o grup için güvenilir karar veremez.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: Eğitim verisi üzerinde %100 doğruluk, modelin iyi çalıştığını kanıtlar." hint="Doğruluğu görünmemiş veriyle test etmeyi düşünün.">
+    Yanlış — bu aşırı öğrenme belirtisidir; doğruluğu görünmemiş veriyle test edin.
+  </PracticeItem>
+  <PracticeItem question="Özellikler test kümesinde bulunmayacak bilgiyi kodluyorsa bunun adı nedir?" hint="Test sonuçları neden yanıltıcı olur?">
+    Veri sızıntısı.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Eğitim Verisi — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;eğitim verisi&quot;ni en iyi tanımlar?" options={["Kişileri ya da kaynakları sınıflandıran, ancak gruplar arasında adilliği garantilemeyen tek bir sayı.", "Modeli öğretmek için kullanılan etiketli ya da etiketsiz örnekler kümesi — modelin öğreneceği tek dünyadır.", "Bazı grupları sistematik olarak daha iyi ya da daha kötü etkileyen, verideki ya da modeldeki çarpıklık — örneğin eğitime sokulan önyargılar gibi.", "Yapay zekâ destekli bir aracı geliştiren, dağıtan ya da kullanan kişi ya da kuruluş; genellikle sonuçları için hesap verir."]} answer={1} explanation="Modeli öğretmek için kullanılan etiketli ya da etiketsiz örnekler kümesi — modelin öğreneceği tek dünyadır." />
+  <QuizQuestion question="Bir model ev fotoğraflarıyla eğitilir ve kedileri kusursuz bulur, ama sokak fotoğraflarında başarısız olur. Neden?" options={["Temsili olmayan örneklem — model sokak sahnelerini hiç görmemişti.", "Aşırı öğrenme — modelin genellemeyi öğrenip öğrenmediğini düşünün.", "Veri sızıntısı", "Eğitim verisindeki geçmiş önyargı — model, geçmişteki haksız kalıpları öğrendi."]} answer={0} explanation="Temsili olmayan örneklem — model sokak sahnelerini hiç görmemişti." />
+  <QuizQuestion question="Doğru mu yanlış mı: Yüksek doğruluk, modelin adil olduğu anlamına gelir." options={["Bazen doğru", "Verilen bilgilerden belirlenemez", "Doğru", "Yanlış — adillik, her bir grup için ayrı ölçütler gerektirir."]} answer={3} explanation="Yanlış — adillik, her bir grup için ayrı ölçütler gerektirir." />
+</Quiz>
+
+<Summary>
+  - Eğitim Verisi: temsili, dengeli eğitim verisi toplayın ve aşırı öğrenme ile veri sızıntısından kaçının.
+  - Veri, modelin dünyasıdır: Bir model yalnızca eğitim verisinde gördüklerini bilir — veri geçmişteki adaletsizliği yansıtıyorsa model onu da öğrenir.
+  - Model: Mevcut veri kullanılarak eğitildikten sonra yeni veriye uygulanabilen, öğrenilen kurallar ya da istatistiksel ilişki kümesi.
+  - Dikkat edin: veri sızıntısı
+</Summary>

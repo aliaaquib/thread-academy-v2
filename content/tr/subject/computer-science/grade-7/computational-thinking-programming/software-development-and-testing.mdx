@@ -1,0 +1,131 @@
+---
+title: "Yazılım Geliştirme ve Test"
+lede: "Planla, kodla, test et, düzelt: yazılım düzgünce böyle yapılır."
+---
+
+<LearningObjectives>
+  <li>Test etmeyi kendi cümlelerinle tanımla ve açıkla</li>
+  <li>hata gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Programlar nadiren ilk seferde çalışır. Profesyoneller bunu bilir — bu yüzden yazılımı bir döngüde yaparlar: biraz planla, biraz kodla, test et, düzelt ve tekrarla. Test bir sonradan ekleme değildir; işin yarısıdır.
+
+<Definition term="Hata">
+  Programın yanlış davranmasına veya çökmesine neden olan bir program hatası. Hataları bulup düzeltmeye hata ayıklama denir.
+</Definition>
+
+## Temel fikirler
+
+### Geliştirme döngüsü
+
+Gerçek yazılım tek bir düz çizgide değil, döngüler hâlinde yapılır:
+
+1. **Analiz** — program ne yapmalı ve kim için?
+2. **Tasarım** — çözümü taslakla (akış şemaları burada işe yarar).
+3. **Kodlama** — bir programlama dilinde yaz.
+4. **Test** — farklı girdilerle çalıştır ve sonuçları kontrol et.
+5. **Düzeltme** — testin bulduğunu onar, sonra tekrar test et.
+
+Her tur programı iyileştirir. Sınıf projelerin bile en az bir tur dönmeli: ilk taslak, test, düzeltme.
+
+### Prototipler: önce küçük yap
+
+Bir **prototip**, yalnızca bazı özelliklere sahip olabilen, ürünün erken ve küçük bir sürümüdür. Ekipler, tam yapıya girişmeden önce tasarımın uygun olup olmadığını, girdi ve çıktıların yerinde olup olmadığını ve gereksinimleri karşılayıp karşılamadığını kontrol etmek için bir tane yapar. Başarısız bir prototip sana ucuza öğretir; başarısız tam bir ürün sana pahalıya öğretir.
+
+### Yalnızca kodu değil, projeyi de planlama
+
+Kodlamadan önce ekipler pratik konularda da anlaşır:
+
+- **Gereksinimler** — bitmiş ürün tam olarak ne yapmalı?
+- **Görevler** — kim ne yapacak, böylece herkes işini bilir ve uygun bir görevi olur.
+- **Teslim tarihleri** — ne, ne zamana kadar bitmeli ki proje zamanında ulaşsın?
+- **Girdiler, işlemler, çıktılar** — önceden belirlenir ve program boyunca tutarlı kullanılır.
+
+Bu olmadan insanlar, başka bir görev bitmediği için tamamlanamayan işlere başlar — klasik proje trafik sıkışıklığı.
+
+### Dedektif gibi test et, hayran gibi değil
+
+Acemiler, *umarım* çalışır dedikleri girdiyle test eder — "mutlu yol". Testçiler bilerek bir şeyleri kırmaya çalışır ve üç çeşit veri kullanır:
+
+- **Normal veri** — sıradan, beklenen girdi. Geçti/kaldı programı için 65 puanı.
+- **Sınır verisi** — hataların saklandığı kenarlardaki değerler. "puan ≥ 50 ise geçti" için tam 50 ve tam 49.
+- **Geçersiz (hatalı) veri** — yanlış türde veya saçma girdi. 10 yerine "on" yazmak veya negatif bir puan.
+
+Bir **test tablosu** her şeyi düzenli tutar — dört sütunlu resmî bir kayıt: neyin test edildiğinin açıklaması, girdi verisi, beklenen çıktı ve gerçek sonuç. Yazıya dökülmüş hâliyle neyin test edildiğini kanıtlar ve aynı testlerin tekrarlanmasını engeller.
+
+### Profesyonel gibi hata ayıklama
+
+Kod ters davrandığında ona bakıp ilham bekleme. Sistemli çalış:
+
+1. **Kodu satır satır oku** ve mantıklı olup olmadığını kontrol et.
+2. **Bir kontrol listesi kullan** — anahtar kelimeler, operatörler, değişkenler: her biri doğru mu? (1. satır: son parantez eksik; 4. satır: average := yerine average = olmalı.)
+3. **Değişkenleri izle** — değişken adlarını ve her adımdaki değerlerini yaz ve doğru olduklarını kontrol et.
+
+Bu yöntemli yaklaşım hem söz dizimi hatalarını (dilin kurallarını çiğneyen ve çalışmayacak kod) hem de mantık hatalarını (çalışan ama yanlış yapan kod — Total'ın - number3 değil, + number3 olması gerektiği gibi) bulur.
+
+### İki çeşit hata
+
+- **Söz dizimi hatası** — kod dilin kurallarını çiğner, bu yüzden hiç çalışmaz. Python bunu sana hemen söyler (örneğin eksik bir parantez). Sinir bozucu ama bulması kolay.
+- **Mantık hatası** — kod sorunsuz çalışır ama yanlış cevap verir. Program *kastettiğini* değil, *söylediğini* yapar. Bunlar sinsi olanlardır — onları yalnızca test yakalar.
+
+<WorkedExample title="Test tablosu oluştur">
+  Program: puan ≥ 50 ise "Geçti", değilse "Kaldı" yazdırır.
+
+  | Test | Veri | Tür | Beklenen | Gerçek | Geçti mi? |
+  |---|---|---|---|---|---|
+  | 1 | 65 | normal | Geçti | Geçti | ✓ |
+  | 2 | 50 | sınır | Geçti | Geçti | ✓ |
+  | 3 | 49 | sınır | Kaldı | Kaldı | ✓ |
+  | 4 | "on" | geçersiz | hata ele alındı | çökme | ✗ |
+
+  **Cevap:** 1–3. testler geçer ama 4. test bir hatayı ortaya çıkarır — program metin girdisinde çöküyor, onu ele almak yerine. O başarısız test değerlidir: programcıya tam olarak neyi düzelteceğini söyler.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Yalnızca mutlu yolu test etmek** Düzeltme: yalnızca normal veri kenar hatalarını kaçırır — her zaman sınır ve geçersiz testler ekle.
+  - **Yeniden test etmeden düzeltmek** Düzeltme: her düzeltme başka bir şeyi bozabilir. Her değişiklikten sonra test tablosunun tamamını yeniden çalıştır.
+  - **Başarısız testi başarısızlık sanmak** Düzeltme: başarısız bir test, testçi için bir başarıdır — kullanıcıdan önce bir hata buldu.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir program 65 yaş ve üstüne indirim veriyor. Bir sınır test değeri ver ve nedenini söyle.">
+    Tam 65 — kuralın tam kenarında durur; birerlik hatalar orada saklanır. (64 diğer sınırdır.)
+  </PracticeItem>
+  <PracticeItem question="Bu bir söz dizimi hatası mı mantık hatası mı: program çalışıyor ama ortalamayı 25 yerine 250 yazdırıyor?">
+    Mantık hatası — kod çalışıyor, demek ki söz dizimi düzgün; hesaplamanın kendisi yanlış.
+  </PracticeItem>
+  <PracticeItem question="Yaşını soran bir program için geçersiz veriye bir örnek ver.">
+    "on iki" (sayı yerine metin) veya -5 (saçma bir yaş) — programın tasarlanmadığı girdi.
+  </PracticeItem>
+  <PracticeItem question="Geliştiriciler neden bir kez yerine test edip, düzeltip, tekrar test eder?">
+    Çünkü düzeltmeler yeni hatalar getirebilir — yeniden test, düzeltmenin işe yaradığını ve başka hiçbir şeyin bozulmadığını doğrular.
+  </PracticeItem>
+  <PracticeItem question="Prototip nedir ve neden yapılır?">
+    Yalnızca bazı özelliklere sahip erken, küçük bir sürüm — ekip tam ürünü yapmadan önce tasarımı ve gereksinimleri ucuza kontrol etsin diye.
+  </PracticeItem>
+  <PracticeItem question="Bir test tablosunun dört sütunu vardır. Bunları söyle.">
+    Neyin test edildiğinin açıklaması, girdi verisi, beklenen çıktı ve gerçek sonuç.
+  </PracticeItem>
+  <PracticeItem question="Sistemli hata ayıklamanın üç adımını listele.">
+    Kodu satır satır oku; bir kontrol listesi kullan (anahtar kelimeler, operatörler, değişkenler); değişken adlarını ve değerlerini izleyerek doğru olduklarını kontrol et.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Geliştirme ve test — hızlı kontrol">
+  <QuizQuestion question="'5 yaş altına ücretsiz giriş' kuralı için hangisi bir sınır değeridir?" options={["10 yaş — sınırın güvenle üstünde.", "3 yaş — normal bir değer, sınır değil.", "5 yaş — tam kuralın kenarında durur.", "'beş' metni — bu geçersiz veri, sınır verisi değil."]} answer={2} explanation="5 yaş — tam kuralın kenarında durur." />
+  <QuizQuestion question="Söz dizimi hatası ile mantık hatası arasındaki fark nedir?" options={["Söz dizimi hataları yanlış cevap verir; mantık hataları programı çökertir.", "Söz dizimi hatası dilin kurallarını çiğner, kod çalışmaz; mantık hatası çalışır ama yanlış cevap verir.", "Fark yoktur — ikisi de hata diye adlandırılır.", "Söz dizimi hataları yalnızca Python'da olur."]} answer={1} explanation="Söz dizimi hatası dilin kurallarını çiğner, kod çalışmaz; mantık hatası çalışır ama yanlış cevap verir." />
+  <QuizQuestion question="Bir test başarısız olur. Testçi ne hissetmeli?" options={["Mahcup — program çalışmalıydı.", "Memnun — test, kullanıcılardan önce bir hata bularak işini yaptı.", "Hiçbir şey — başarısız testler yok sayılır.", "Programcıya kızgın."]} answer={1} explanation="Memnun — test, kullanıcılardan önce bir hata bularak işini yaptı." />
+</Quiz>
+
+<Summary>
+  - Yazılım bir döngüde yapılır: analiz, tasarım, kodlama, test, düzeltme — sonra tekrar tur.
+  - Normal, sınır ve geçersiz veriyle test et; hepsini bir test tablosuna kaydet.
+  - Söz dizimi hataları kodun çalışmasını engeller; mantık hataları çalışır ama yanlış cevap verir — onları yalnızca test yakalar.
+  - Dikkat et: yalnızca mutlu yolu test etmek ve yeniden test etmeden kodu düzeltmek.
+</Summary>

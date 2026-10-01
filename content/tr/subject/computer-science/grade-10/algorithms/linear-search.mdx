@@ -1,0 +1,79 @@
+---
+title: "Doğrusal Arama"
+lede: "Her öğeyi tek tek kontrol ederek öğeleri bulun."
+---
+
+<LearningObjectives>
+  <li>Doğrusal Arama'yı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Doğrusal arama gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Tüm çözümler eşit değildir: bazıları bir milyonluk listede bir ismi yirmi adımda bulur, bazıları ise bir milyona ihtiyaç duyar. GCSE seviyesinde, çalışan herhangi bir çözümü yazmaktan iyi çözümler yazmaya geçersiniz. Bu bölüm, klasik arama ve sıralama algoritmalarını ve hangisinin en iyi olduğunu nasıl ölçeceğinizi kapsar.
+
+Bu ders, Doğrusal Arama'ya odaklanır: her öğeyi tek tek kontrol ederek öğeleri bulun.
+
+<Definition term="Doğrusal Arama">
+  Her öğeyi tek tek kontrol ederek öğeleri bulun.
+</Definition>
+
+## Temel fikirler
+
+### İkili arama sıralı veri gerektirir
+
+İkili arama, doğrusal aramadan çok daha hızlıdır — bir milyon öğe için yaklaşık 20 karşılaştırma — ama yalnızca liste önce sıralanmışsa çalışır. Sıralamanın da bir maliyeti vardır, bu yüzden sıralanmamış veride tek seferlik bir arama için doğrusal arama yine de kazanabilir. Doğru algoritma duruma bağlıdır, sadece teoriye değil.
+
+### En kötü durum önemlidir
+
+Bir algoritma şanslı olup hedefi ilk denemede bulabilir, ama mühendisler en kötü duruma göre plan yapar — olabilecek en yavaş çalışmaya. Big-O bu büyümeyi açıklar: O(n), girdiyi iki katına çıkarmak süreyi kabaca iki katına çıkarır demektir; O(n²) ise girdiyi iki katına çıkarmak süreyi kabaca dört katına çıkarır demektir.
+
+**Terim — doğrusal arama:** Hedef bulunana kadar listedeki her öğeyi tek tek kontrol etme. Basit, sıralanmamış listelerde çalışır ama büyük listelerde yavaştır.
+
+<WorkedExample title="İkili Arama İş Başında">
+  [1, 3, 5, 7, 9, 11, 13] sıralı listesinde 7'yi bulmak için ikili arama kullanın.
+
+  low = 0, high = 6. Orta indis = (0 + 6) // 2 = 3. 3. indisteki öğe 5'tir.
+  5, 7'den küçüktür, bu yüzden sol yarıyı atın: low 4 olur. Orta indis = (4 + 6) // 2 = 5. 5. indisteki öğe 11'dir.
+  11, 7'den büyüktür, bu yüzden sağ yarıyı atın: high 4 olur. Orta indis = (4 + 4) // 2 = 4. 4. indisteki öğe 7'dir.
+  Bulundu — 7, 4. indiste, sadece 3 karşılaştırmadan sonra.
+
+  **Cevap:** İkili arama 7'yi 4. indiste 3 karşılaştırmada bulur; doğrusal arama 4 karşılaştırmaya ihtiyaç duyardı.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Sıralanmamış listede ikili arama kullanma** Düzeltme: listeyi önce sıralayın ya da doğrusal arama kullanın — sıralanmamış veride ikili arama sadece yavaş değil, yanlış sonuç verir.
+  - **Liste indislerinin 0'dan başladığını unutma** Düzeltme: 7 öğelik bir listede son indis 6'dır — bir eksik/bir fazla hataları klasik sınav tuzağıdır, bu yüzden dikkatle izleyin.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="50 öğelik bir listede bir öğeyi bulmak için doğrusal arama en kötü durumda kaç karşılaştırma gerektirir?" hint="En kötü durum, her öğeyi kontrol etmek demektir.">
+    50 — hedef son sıradaysa ya da yoksa her öğe kontrol edilmelidir.
+  </PracticeItem>
+  <PracticeItem question="1.000.000 sıralı öğe için ikili arama yaklaşık kaç karşılaştırma gerektirir?" hint="Her karşılaştırma listeyi yarıya indirir; 2'nin 20. kuvveti yaklaşık bir milyondur.">
+    Yaklaşık 20 — her adım kalan öğeleri yarıya indirir, böylece bir milyon yaklaşık 20 yarıya indirmede bire iner.
+  </PracticeItem>
+  <PracticeItem question="Tek bir arama için doğrusal arama neden ikili aramayı geçebilir?" hint="İkili aramanın önce neye ihtiyacı olduğunu düşünün.">
+    Liste sıralanmamışsa ikili aramanın önce sıralanması gerekir — bu sıralama maliyeti, tek seferlik bir aramada daha hızlı aramayı dengeleyebilir.
+  </PracticeItem>
+  <PracticeItem question="Bir algoritma 100 öğe için 4 saniye, 200 öğe için 16 saniye sürüyor. Bu hangi Big-O büyümesine işaret eder?" hint="Girdi iki katına çıkınca süre dört katına çıktı.">
+    O(n²) — girdi iki katına çıkınca dört katına çıkmak, ikinci dereceden büyümenin işaretidir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Doğrusal Arama — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;doğrusal arama&quot;yı en iyi tanımlar?" options={["Listeyi tekrar tekrar geçerek yanlış sırada olan komşu öğeleri yer değiştirme; yer değiştirme kalmayana kadar devam etme.", "Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma.", "Bir algoritmanın çalışma süresinin girdi büyüdükçe nasıl arttığını anlatmanın bir yolu — örneğin doğrusal arama O(n), ikili arama O(log n)'dir.", "Hedef bulunana kadar listedeki her öğeyi tek tek kontrol etme. Basit, sıralanmamış listelerde çalışır ama büyük listelerde yavaştır."]} answer={3} explanation="Hedef bulunana kadar listedeki her öğeyi tek tek kontrol etme. Basit, sıralanmamış listelerde çalışır ama büyük listelerde yavaştır." />
+  <QuizQuestion question="Doğru mu yanlış mı: ikili arama her zaman en iyi arama algoritmasıdır." options={["Bazen doğru", "Verilen bilgilerden belirlenemez", "Doğru", "Yanlış — sıralı veri gerektirir; küçük ya da sıralanmamış listelerde ek maliyet buna değmez; en iyi algoritma duruma bağlıdır."]} answer={3} explanation="Yanlış — sıralı veri gerektirir; küçük ya da sıralanmamış listelerde ek maliyet buna değmez; en iyi algoritma duruma bağlıdır." />
+  <QuizQuestion question="[5, 3, 8, 1] listesinde kabarcık sıralamanın bir geçişini izleyin. Liste sonrasında nasıl olur?" options={["[4 5, 1, 8] — 5 ile 3 yer değiştirir, 5 ile 8 kalır, 8 ile 1 yer değiştirir.", "[5 5, 1, 8] — 5 ile 3 yer değiştirir, 5 ile 8 kalır, 8 ile 1 yer değiştirir.", "[2 5, 1, 8] — 5 ile 3 yer değiştirir, 5 ile 8 kalır, 8 ile 1 yer değiştirir.", "[3, 5, 1, 8] — 5 ile 3 yer değiştirir, 5 ile 8 kalır, 8 ile 1 yer değiştirir."]} answer={3} explanation="[3, 5, 1, 8] — 5 ile 3 yer değiştirir, 5 ile 8 kalır, 8 ile 1 yer değiştirir." />
+</Quiz>
+
+<Summary>
+  - Doğrusal Arama: her öğeyi tek tek kontrol ederek öğeleri bulun.
+  - İkili arama sıralı veri gerektirir: İkili arama doğrusal aramadan çok daha hızlıdır — bir milyon öğe için yaklaşık 20 karşılaştırma — ama yalnızca liste önce sıralanmışsa çalışır.
+  - İkili arama: Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma.
+  - Dikkat edin: sıralanmamış listede ikili arama kullanma
+</Summary>

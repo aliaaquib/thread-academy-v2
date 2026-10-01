@@ -1,0 +1,75 @@
+---
+title: "Problemleri Parçalara Ayırma"
+lede: "Büyük problemleri çözülebilir daha küçük parçalara böl."
+---
+
+<LearningObjectives>
+  <li>Problemleri Parçalara Ayırma'yı kendi cümlelerinle tanımla ve açıkla</li>
+  <li>ayrıştırma gibi temel terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Kimse kod yazmadan çok önce, programcılar düşünür. Hesaplamalı düşünme, her uygulamanın, oyunun ve web sitesinin arkasındaki dört parçalı düşünme biçimidir: problemleri parçala, örüntüleri fark et, gereksiz ayrıntıları görmezden gel ve adım adım çözümler tasarla. Bu alışkanlıklarda ustalaş, programlama çok daha kolaylaşır — sınav tekrarı ve günlük hayatta da işe yararlar.
+
+Bu ders Problemleri Parçalara Ayırma'ya odaklanıyor: büyük problemleri çözülebilir daha küçük parçalara böl.
+
+<Definition term="Problemleri Parçalara Ayırma">
+  Büyük problemleri çözülebilir daha küçük parçalara böl.
+</Definition>
+
+## Temel fikirler
+
+### Örüntüler bir çözümü çoğuna dönüştürür
+
+Bir listedeki en büyük sayıyı bulan bir yordam yazdığında, en yüksek sınav notunu, en sıcak günü ve en pahalı ürünü bulmayı da çözmüş olursun — örüntü aynıdır. Bunu fark etmek, programcıları çözümleri baştan icat etmekten kurtarır.
+
+### Dört temel birlikte çalışır
+
+Bir okul şenliği düzenlemekle karşı karşıya kaldığında, onu stantlar, biletler ve tanıtım olarak parçalara ayırırsın; bilet satışının geçen yılki konserle aynı örüntüyü izlediğini fark edersin; biletlerin rengi gibi ayrıntıları soyutlarsın; sonra algoritmayı yazarsın — her standı kurmak için sıralı adımlar. Gerçek programcılar bu dördü arasında sürekli gidip gelir.
+
+**Temel terim — ayrıştırma:** Büyük ve karmaşık bir problemi, tek tek çözülmesi daha kolay küçük alt problemlere bölme.
+
+<WorkedExample title="Çözümlü örnek: Problemleri Parçalara Ayırma">
+  Bir yardım koşusu düzenlemelisin. Problemi parçalamanın iki yolunu söyle.
+
+  Olası bölmeler: rota planlama, sponsorluk ve tanıtım; ya da etkinlik öncesi, sırası ve sonrası — alt problemlere yapılan her mantıklı bölme puan alır.
+
+  **Cevap:** Olası bölmeler: rota planlama, sponsorluk ve tanıtım; ya da etkinlik öncesi, sırası ve sonrası — alt problemlere yapılan her mantıklı bölme puan alır.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Düşünmeden doğrudan koda atlama** Düzeltme: önce kâğıt üzerinde parçalamaya ve planlamaya on dakika ayır — bu, saatlerce yeniden yazmayı önler.
+  - **Tesadüfü örüntü sanma** Düzeltme: bir çözüm kurmadan önce örüntünün birkaç durumda geçerli olduğunu kontrol et; tek bir örnek örüntü değildir.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="'Bir oyun yap' neden doğrudan kodlamaya başlamak için çok büyük?" hint="Parçalamayı düşün.">
+    Bu, onlarca alt problemi — grafikleri, kontrolleri, puanlamayı — gizleyen devasa bir problemdir; bunlar parçalanıp tek tek ele alınmalıdır.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: hesaplamalı düşünme sadece bilgisayarlarla kullanılabilir." hint="Tekrar programı örneğini düşün.">
+    Yanlış — bu, planlama, ders çalışma ve her şeyi düzenleme için işe yarayan genel bir problem çözme düşünme biçimidir.
+  </PracticeItem>
+  <PracticeItem question="Matematik ödevi çözerken örüntüleri fark etmek ne işe yarar?" hint="Farklı görünüp aynı şekilde çalışan soruları düşün.">
+    Aynı yapıyı paylaşan sorular aynı yöntemle çözülebilir, bu yüzden örüntüyü fark etmek sıfırdan başlamak yerine bir yöntemi yeniden kullanmanı sağlar.
+  </PracticeItem>
+  <PracticeItem question="Bir otobüs tarifesi güzergâhları ve saatleri gösterir ama her otobüsün rengini göstermez. Bu hangi düşünme becerisidir?" hint="Gereksiz ayrıntı çıkarılmış.">
+    Soyutlama — ilgisiz ayrıntı (otobüs rengi) elenmiş, önemli olan (güzergâhlar ve saatler) kalmış.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı test
+
+<Quiz title="Problemleri Parçalara Ayırma — hızlı test">
+  <QuizQuestion question="Hangisi &quot;ayrıştırma&quot;yı en iyi tanımlar?" options={["Bilgisayarın iyi tanımlanmış bir dizi adımı yerine getirmesini sağlama, böylece çözüm her seferinde insan çabası olmadan çalışır.", "Gereksiz ayrıntıyı çıkarıp problemin önemli özelliklerine odaklanma — yolları gösterip her ağacı göstermeyen bir harita kullanmak gibi.", "Problemlerin içindeki ve arasındaki benzerlik ya da tekrarları fark etme, böylece önce işe yaramış bir çözüm yeniden kullanılabilir.", "Büyük ve karmaşık bir problemi, tek tek çözülmesi daha kolay küçük alt problemlere bölme."]} answer={3} explanation="Büyük ve karmaşık bir problemi, tek tek çözülmesi daha kolay küçük alt problemlere bölme." />
+  <QuizQuestion question="Günlük hayattan bir otomasyon örneği ver." options={["Gereksiz ayrıntıyı çıkarıp problemin önemli özelliklerine odaklanma — yolları gösterip her ağacı göstermeyen bir harita kullanmak gibi.", "Bilgisayarın iyi tanımlanmış bir dizi adımı yerine getirmesini sağlama, böylece çözüm her seferinde insan çabası olmadan çalışır.", "Problemlerin içindeki ve arasındaki benzerlik ya da tekrarları fark etme, böylece önce işe yaramış bir çözüm yeniden kullanılabilir.", "Yıkama programını çalıştıran bir çamaşır makinesi ya da merkezi ısıtma zamanlayıcısı — ikisi de her seferinde insan müdahalesi olmadan önceden belirlenmiş adımları izler."]} answer={3} explanation="Yıkama programını çalıştıran bir çamaşır makinesi ya da merkezi ısıtma zamanlayıcısı — ikisi de her seferinde insan müdahalesi olmadan önceden belirlenmiş adımları izler." />
+</Quiz>
+
+<Summary>
+  - Problemleri Parçalara Ayırma: büyük problemleri çözülebilir daha küçük parçalara böl.
+  - Örüntüler bir çözümü çoğuna dönüştürür: Bir listedeki en büyük sayıyı bulan bir yordam yazdığında, en yüksek sınav notunu, en sıcak günü ve en pahalı ürünü bulmayı da çözmüş olursun — örüntü aynıdır.
+  - örüntü tanıma: Problemlerin içindeki ve arasındaki benzerlik ya da tekrarları fark etme, böylece önce işe yaramış bir çözüm yeniden kullanılabilir.
+  - Dikkat: düşünmeden doğrudan koda atlama
+</Summary>

@@ -1,0 +1,77 @@
+---
+title: "SELECT Sorguları"
+lede: "SELECT, WHERE ve ORDER BY ile tablolardan tam ihtiyacınız olan veriyi çekin."
+---
+
+<LearningObjectives>
+  <li>SELECT Sorguları'nı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Sorgu gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, SELECT Sorguları'na odaklanır: SELECT, WHERE ve ORDER BY ile tablolardan tam ihtiyacınız olan veriyi çekin.
+
+<Definition term="SELECT Sorguları">
+  SELECT, WHERE ve ORDER BY ile tablolardan tam ihtiyacınız olan veriyi çekin.
+</Definition>
+
+## Temel fikirler
+
+### SQL nasıl'ı değil ne'yi anlatır
+
+SELECT Name FROM Students WHERE Year = 12 yazarsınız ve veritabanı satırları nasıl bulacağını çözer — SQL bildirimseldir. WHERE satırları süzgeçler, ORDER BY sıralar, JOIN ise anahtarlar üzerinden tabloları birleştirir. İstediğiniz sonucu anlattığınız için aynı sorgu on satırda da on milyonda da çalışır.
+
+### Anahtarlar verinin kaybolmasını engeller
+
+Bir birincil anahtar, her satırın tam bir kez bulunabileceğini garanti eder — o olmadan 'Smith' adlı iki müşteri ayırt edilemez hâle gelir. Yabancı anahtarlar da tabloları bağlar: bir sipariş satırı, müşterinin tüm adresini kopyalamak yerine müşterinin ID'sini saklar; böylece bir adres değişikliği yalnızca tek bir yerde güncellenir. Bu, güvenilir verinin temelidir.
+
+**Terim — sorgu:** Veritabanına SQL ile sorulan soru — en ünlüsü, eşleşen satırları getiren SELECT ifadesidir.
+
+<WorkedExample title="Çözümlü örnek: SELECT Sorguları">
+  Students tablosunun ID, Name, Year sütunları ve (1, Priya, 12), (2, Tom, 11), (3, Aisha, 12), (4, Leo, 10) satırları var. 12. sınıf öğrencilerinin isimlerini alfabetik sıralayarak listeleyen bir sorgu yazın.
+
+  Yalnızca isimler gerekli, Students tablosundan: SELECT Name FROM Students.
+  Yalnızca 12. sınıf satırlarını tutun: WHERE Year = 12 ekleyin. Bu, Priya ve Aisha ile eşleşir.
+  Alfabetik sıralayın: ORDER BY Name ekleyin. Aisha, Priya'dan önce gelir.
+  Tam sorgu: SELECT Name FROM Students WHERE Year = 12 ORDER BY Name;.
+
+  **Cevap:** Sorgu iki satır döndürür: önce Aisha, sonra Priya.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **UPDATE ya da DELETE'te WHERE koşulunu unutma** Düzeltme: WHERE'siz UPDATE Students SET Year = 13 her satırı değiştirir — WHERE'yi önce yazın ya da aynı koşulla bir SELECT ile test edin.
+  - **Aynı bilgiyi iki tabloda saklama** Düzeltme: bir kez saklayın ve yabancı anahtarla bağlayın — yinelenen veri, yalnızca bir kopya güncellendiğinde senkronu bozulur.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir Books tablosundan 2010'da yayımlanan her kitabın Title ve Author'ını gösterecek SQL yazın." hint="SELECT sütunlar FROM tablo WHERE koşul.">
+    SELECT Title, Author FROM Books WHERE Year = 2010;.
+  </PracticeItem>
+  <PracticeItem question="Örnek tabloyu kullanarak bu ne döndürür? SELECT Name FROM Students WHERE Year = 10;" hint="Her satırın Year değerini kontrol edin.">
+    Bir satır: Leo — yalnızca Leo'nun Year'ı 10.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: SQL, veritabanına veriyi adım adım tam olarak nasıl bulacağını söyler." hint="Bildirimsel ile buyurgan arasındaki fark.">
+    Yanlış — SQL bildirimseldir: ne istediğinizi anlatırsınız, veritabanı motoru onu nasıl getireceğine karar verir.
+  </PracticeItem>
+  <PracticeItem question="Bir Orders tablosunun CustomerID sütunu var. Burada CustomerID birincil anahtar mı yoksa yabancı anahtar mı, neden?" hint="Hangi tabloda satırları tanımlar?">
+    Yabancı anahtar — Customers tablosundaki bir satırın birincil anahtarını saklar ve her siparişi müşterisine bağlar.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="SELECT Sorguları — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;sorgu&quot;yu en iyi tanımlar?" options={["Satırlar (kayıtlar) ve sütunlardan (alanlar) oluşan veritabanı yapısı; tek bir şey türünü saklar — örneğin müşteri başına bir tablo, sipariş başına bir tablo.", "Tablodaki her satırı benzersiz tanımlayan alan (ya da alanlar birleşimi), örneğin müşteri ID'si. Asla boş ya da yinelenen olamaz.", "Bir tabloda, başka bir tablodaki bir satırın birincil anahtarını saklayan ve aralarında bağlantı kuran alan.", "Veritabanına SQL ile sorulan soru — en ünlüsü, eşleşen satırları getiren SELECT ifadesidir."]} answer={3} explanation="Veritabanına SQL ile sorulan soru — en ünlüsü, eşleşen satırları getiren SELECT ifadesidir." />
+  <QuizQuestion question="Örnek tabloyu kullanarak bu ne döndürür? SELECT Name FROM Students WHERE Year = 10;" options={["Bir satır: Leo — yalnızca Leo'nun Year'ı 10.", "Bir satır: Leo — yalnızca Leo'nun Year'ı 9.", "Bir satır: Leo — yalnızca Leo'nun Year'ı 12.", "Bir satır: Leo — yalnızca Leo'nun Year'ı 11."]} answer={0} explanation="Bir satır: Leo — yalnızca Leo'nun Year'ı 10." />
+  <QuizQuestion question="Bir Books tablosundan 2010'da yayımlanan her kitabın Title ve Author'ını gösterecek SQL yazın." options={["SELECT Title, Author FROM Books WHERE Year = 2010;.", "SELECT Title, Author FROM Books WHERE Year = 2011;", "SELECT Title, Author FROM Books WHERE Year = 2012;", "SELECT Title, Author FROM Books WHERE Year = 2009;"]} answer={0} explanation="SELECT Title, Author FROM Books WHERE Year = 2010;." />
+</Quiz>
+
+<Summary>
+  - SELECT Sorguları: SELECT, WHERE ve ORDER BY ile tablolardan tam ihtiyacınız olan veriyi çekin.
+  - SQL nasıl'ı değil ne'yi anlatır: SELECT Name FROM Students WHERE Year = 12 yazarsınız ve veritabanı satırları nasıl bulacağını çözer — SQL bildirimseldir.
+  - Birincil anahtar: Tablodaki her satırı benzersiz tanımlayan alan (ya da alanlar birleşimi), örneğin müşteri ID'si. Asla boş ya da yinelenen olamaz.
+  - Dikkat edin: UPDATE ya da DELETE'te WHERE koşulunu unutma
+</Summary>

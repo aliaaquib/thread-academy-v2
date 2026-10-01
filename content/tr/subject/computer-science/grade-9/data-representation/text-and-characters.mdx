@@ -1,0 +1,73 @@
+---
+title: "Metin ve Karakterler"
+lede: "Bilgisayarların harfleri, rakamları ve simgeleri nasıl sakladığını anla."
+---
+
+<LearningObjectives>
+  <li>Metin ve Karakterler'i kendi cümlelerinle tanımla ve açıkla</li>
+  <li>bayt gibi temel terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Metin ve Karakterler'e odaklanıyor: bilgisayarların harfleri, rakamları ve simgeleri nasıl sakladığını anla.
+
+<Definition term="Metin ve Karakterler">
+  Bilgisayarların harfleri, rakamları ve simgeleri nasıl sakladığını anla.
+</Definition>
+
+## Temel fikirler
+
+### Basamak değeri her tabanda işler
+
+Onlu sistemde basamaklar 1, 10, 100 diye gider; ikili sistemde basamaklar 1, 2, 4, 8, 16 diye her seferinde iki katına çıkar. İkili sayıdan onlu sayıya çevirmek için içinde 1 olan basamakların değerlerini topla — yani 1011, 8 + 2 + 1 = 11 demektir.
+
+### Derinlerde her şey ikilidir
+
+Metin, görüntü, ses ve video hep bit örüntüleri olarak saklanır — bilgisayar bu örüntüleri sadece farklı yorumlar. 01000001 ikili örüntüsü metinde 'A' harfi demektir, ama aynı örüntü 65 sayısı ya da bir görüntüdeki koyu bir piksel de olabilir. Anlam, bitlerin kendisinden değil bağlamdan gelir.
+
+**Temel terim — bayt:** 8 bitten oluşan grup. Bir bayt 0'dan 255'e kadar 256 farklı değer gösterebilir.
+
+<WorkedExample title="Çözümlü örnek: Metin ve Karakterler">
+  'A' harfi 01000001 olarak saklanıyor. Bu onlu sistemde kaçtır ve aynı örüntü başka bir yerde neden başka bir anlama gelebilir?
+
+  65 — ve aynı bitler bir renk değeri ya da bir görüntünün parçası olabilir, çünkü anlam programın bitleri nasıl yorumladığından gelir.
+
+  **Cevap:** 65 — ve aynı bitler bir renk değeri ya da bir görüntünün parçası olabilir, çünkü anlam programın bitleri nasıl yorumladığından gelir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **ASCII'de 256 karakter olduğunu sanma** Düzeltme: standart ASCII yalnızca 128 karakter kullanır (7 bit); genişletilmiş ASCII ya da Unicode daha çok karakteri kapsar — kodlamayı ve bit sayısını doğru eşleştir.
+  - **İkili sayıyı, en soldaki basamak 1 değerindeymiş gibi soldan sağa okuma** Düzeltme: en sağdaki basamak her zaman 1 değerindedir — toplamadan önce basamak değerlerini rakamların üzerine yaz.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="1101 ikili sayısını onlu sayıya çevir." hint="Basamak değerleri 8, 4, 2, 1 — içinde 1 olanları topla.">
+    13 — yani 8 + 4 + 1.
+  </PracticeItem>
+  <PracticeItem question="'A' harfi 01000001 olarak saklanıyor. Bu onlu sistemde kaçtır ve aynı örüntü başka bir yerde neden başka bir anlama gelebilir?" hint="Önce çevir, sonra bağlamı düşün.">
+    65 — ve aynı bitler bir renk değeri ya da bir görüntünün parçası olabilir, çünkü anlam programın bitleri nasıl yorumladığından gelir.
+  </PracticeItem>
+  <PracticeItem question="Daha yüksek hızda örneklenmiş bir ses dosyası daha büyüktür. Neden?" hint="Örnekleme hızının neyi saydığını düşün.">
+    Daha yüksek hız, her saniye daha çok örnek alır, yani daha çok sayı saklanmalıdır — daha iyi kalite daha çok bit ister.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: bir koda bir bit daha eklemek, gösterebileceği değer sayısını ikiye katlar." hint="2 üzeri n ile 2 üzeri (n + 1)'i karşılaştır.">
+    Doğru — her fazladan bit kombinasyonları ikiye katlar, çünkü mevcut her örüntü 0 ya da 1 ile bitebilir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı test
+
+<Quiz title="Metin ve Karakterler — hızlı test">
+  <QuizQuestion question="Hangisi &quot;bayt&quot;ı en iyi tanımlar?" options={["Tek bir ikili basamak — 0 ya da 1. Bilişimdeki en küçük veri birimi.", "Her gün kullandığımız, 0'dan 9'a rakamları olan sıradan 10 tabanlı sayı sistemi. Ondalık da denir.", "Bir ses dalgasını düzenli zaman aralıklarında ölçme. Daha yüksek örnekleme hızı daha çok veri demektir.", "8 bitten oluşan grup. Bir bayt 0'dan 255'e kadar 256 farklı değer gösterebilir."]} answer={3} explanation="8 bitten oluşan grup. Bir bayt 0'dan 255'e kadar 256 farklı değer gösterebilir." />
+  <QuizQuestion question="4 bit kaç farklı değer gösterebilir?" options={["17 — 0'dan 15'e.", "15 — 0'dan 15'e.", "18 — 0'dan 15'e.", "16 — 0'dan 15'e."]} answer={3} explanation="16 — 0'dan 15'e." />
+</Quiz>
+
+<Summary>
+  - Metin ve Karakterler: bilgisayarların harfleri, rakamları ve simgeleri nasıl sakladığını anla.
+  - Basamak değeri her tabanda işler: Onlu sistemde basamaklar 1, 10, 100 diye gider; ikili sistemde basamaklar 1, 2, 4, 8, 16 diye her seferinde iki katına çıkar.
+  - bit: Tek bir ikili basamak — 0 ya da 1.
+  - Dikkat: ASCII'de 256 karakter olduğunu sanma
+</Summary>

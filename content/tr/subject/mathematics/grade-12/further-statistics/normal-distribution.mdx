@@ -1,0 +1,73 @@
+---
+title: "Normal Dağılım"
+lede: "Çan eğrisi, z-skorlarıyla standartlaştırma ve tablolardan ya da teknolojiyle olasılık bulma."
+---
+
+<LearningObjectives>
+  <li>Normal Dağılım'ı kendi cümlelerinle tanımla ve açıkla</li>
+  <li>Normal dağılım gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Normal Dağılım konusuna odaklanır: çan eğrisi, z-skorlarıyla standartlaştırma ve tablolardan ya da teknolojiyle olasılık bulma.
+
+<Definition term="Normal Dağılım">
+  Çan eğrisi, z-skorlarıyla standartlaştırma ve tablolardan ya da teknolojiyle olasılık bulma.
+</Definition>
+
+## Temel fikirler
+
+### Normali standartlaştırma
+
+X ~ N(μ, σ²)'yi z = (x − μ)/σ ile Z ~ N(0, 1)'e dönüştür, sonra olasılıkları tablodan oku. Eğri altında kalan toplam alan 1'dir ve eğri μ'ya göre simetriktir, dolayısıyla X'in ortalama μ'nun altında kalma olasılığı 0,5'tir.
+
+### Eğriden olasılık bulma
+
+Eğri altında kalan toplam alan 1 olduğundan, alanlar olasılıktır. Önce simetriyi kullan: P(X, μ'dan büyüktür) = 0,5 ve P(μ − a küçüktür X küçüktür μ + a) simetriktir. Diğer değerler için z = (x − μ)/σ ile standartlaştır ve olasılığı tablodan ya da hesap makinesinden oku. Ampirik kural pratik bir kontrol yoludur: değerlerin yaklaşık %68'i ortalamanın bir standart sapma yakınında, %95'i ikisi içinde, %99,7'si üçü içindedir.
+
+**Anahtar terim — Normal dağılım:** μ ortalaması ve σ² varyansıyla tam olarak tanımlanan, sürekli simetrik çan eğrisi dağılımı, X ~ N(μ, σ²) şeklinde yazılır.
+
+<WorkedExample title="Çözümlü örnek: Normal Dağılım">
+  X ~ N(100, 15²). P(X küçüktür 115) bul.
+
+  Standartlaştır: z = (115 − 100)/15 = 1. Tablolardan P(Z küçüktür 1) ≈ 0,8413.
+
+  **Cevap:** P(X küçüktür 115) ≈ 0,8413.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Standart sapmanın yerine varyansı kullanmak** z-skoru formülüne σ² değil σ gerekir: X ~ N(100, 15²) için σ = 15, dolayısıyla z = (x − 100)/15.
+  - **Soru P(X büyüktür x) isterken P(X küçüktür x) cevabı vermek** Dikkatli oku: P(X büyüktür x) = 1 − P(X küçüktür x). Simetri yalnızca tam ortalamada 0,5 verir.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="X ~ N(100, 15²). x = 130 için z-skorunu bul." hint="z = (x − μ)/σ.">
+    z = (130 − 100)/15 = 2.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(50, 10²). x = 65 için z-skorunu bul." hint="z = (x − μ)/σ.">
+    z = (65 − 50)/10 = 1,5.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(μ, σ²) için değerlerin yaklaşık yüzde kaçı ortalamanın iki standart sapma yakınındadır?" hint="68–95–99,7'yi düşün.">
+    Yaklaşık %95.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(μ, σ²) için P(X, μ'dan büyüktür) nedir?" hint="Simetriyi düşün.">
+    0,5 — alanın yarısı ortalamanın üstündedir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Normal dağılım — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;Normal dağılım&quot;ı en iyi tanımlar?" options={["Gözlenen sonuçların H₀ altında fazla düşük olasılıklı sayılıp H₀'nın reddedildiği olasılık eşiği (genellikle %5).", "Hipotez testindeki varsayılan iddia — genellikle 'etki yok' ya da 'değişim yok' — yalnızca kanıt yeterince güçlüyse reddedilir.", "Her biri p başarı olasılıklı n bağımsız denemede başarı sayısının dağılımı, X ~ B(n, p) şeklinde yazılır.", "μ ortalaması ve σ² varyansıyla tam olarak tanımlanan, sürekli simetrik çan eğrisi dağılımı, X ~ N(μ, σ²) şeklinde yazılır."]} answer={3} explanation="μ ortalaması ve σ² varyansıyla tam olarak tanımlanan, sürekli simetrik çan eğrisi dağılımı, X ~ N(μ, σ²) şeklinde yazılır." />
+  <QuizQuestion question="X ~ N(100, 15²). P(X küçüktür 100) nedir?" options={["1 — eğri altında kalan toplam alan.", "0 — ortalamanın altında hiç değer yok.", "0,025 — iki standart sapmanın ötesindeki alan.", "0,5 — simetriye göre alanın yarısı ortalamanın altındadır."]} answer={3} explanation="0,5 — simetriye göre alanın yarısı ortalamanın altındadır." />
+</Quiz>
+
+<Summary>
+  - Normal Dağılım: çan eğrisi, z-skorlarıyla standartlaştırma ve tablolardan ya da teknolojiyle olasılık bulma.
+  - Normali standartlaştırma: X ~ N(μ, σ²)'yi z = (x − μ)/σ ile Z ~ N(0, 1)'e dönüştür, sonra olasılıkları tablodan oku.
+  - Eğriden olasılık bulma: Alanlar olasılıktır; simetriyi, tablolarla z = (x − μ)/σ'yı ve kontrol için 68–95–99,7 kuralını kullan.
+  - Dikkat et: standart sapmanın yerine varyansı kullanmak
+</Summary>

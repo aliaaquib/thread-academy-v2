@@ -1,0 +1,73 @@
+---
+title: "İkili Arama"
+lede: "Sıralı listelerde, problemi yarıya indirerek çok daha hızlı arama yapın."
+---
+
+<LearningObjectives>
+  <li>İkili Arama'yı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>İkili arama gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, İkili Arama'ya odaklanır: sıralı listelerde, problemi yarıya indirerek çok daha hızlı arama yapın.
+
+<Definition term="İkili Arama">
+  Sıralı listelerde, problemi yarıya indirerek çok daha hızlı arama yapın.
+</Definition>
+
+## Temel fikirler
+
+### İkili arama sıralı veri gerektirir
+
+İkili arama, doğrusal aramadan çok daha hızlıdır — bir milyon öğe için yaklaşık 20 karşılaştırma — ama yalnızca liste önce sıralanmışsa çalışır. Sıralamanın da bir maliyeti vardır, bu yüzden sıralanmamış veride tek seferlik bir arama için doğrusal arama yine de kazanabilir. Doğru algoritma duruma bağlıdır, sadece teoriye değil.
+
+### Aramayı yarıya indirme
+
+Her adımda hedef, mevcut aralığın ortasındaki öğeyle karşılaştırılır. Eşleşirse iş biter; hedef daha küçükse üst yarı atılır, daha büyükse alt yarı atılır. Sonra kalan yarıda tekrarlanır. Aralık her adımda yarıya indiği için, bir milyon sıralı öğe yaklaşık 20 karşılaştırmada bire iner — bu O(log n) süredir, öğeleri tek tek kontrol etmekten çok daha hızlıdır.
+
+**Terim — ikili arama:** Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma.
+
+<WorkedExample title="Çözümlü örnek: İkili Arama">
+  1.000.000 sıralı öğe için ikili arama yaklaşık kaç karşılaştırma gerektirir?
+
+  Yaklaşık 20 — her adım kalan öğeleri yarıya indirir, böylece bir milyon yaklaşık 20 yarıya indirmede bire iner.
+
+  **Cevap:** Yaklaşık 20 — her adım kalan öğeleri yarıya indirir, böylece bir milyon yaklaşık 20 yarıya indirmede bire iner.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Sıralanmamış listede ikili arama kullanma** Düzeltme: listeyi önce sıralayın ya da doğrusal arama kullanın — sıralanmamış veride ikili arama sadece yavaş değil, yanlış sonuç verir.
+  - **Ortadaki öğeyi seçerken bir eksik/bir fazla hatası** Düzeltme: çift uzunluklu aralıkta iki orta öğe vardır — hangisini seçtiğinizde tutarlı olun, yoksa izlemeniz beklenen cevaptan sapar.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Tek bir arama için doğrusal arama neden ikili aramayı geçebilir?" hint="İkili aramanın önce neye ihtiyacı olduğunu düşünün.">
+    Liste sıralanmamışsa ikili aramanın önce sıralanması gerekir — bu sıralama maliyeti, tek seferlik bir aramada daha hızlı aramayı dengeleyebilir.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: ikili arama her zaman en iyi arama algoritmasıdır." hint="Sıralanmamış verileri ve küçük listeleri düşünün.">
+    Yanlış — sıralı veri gerektirir; küçük ya da sıralanmamış listelerde ek maliyet buna değmez; en iyi algoritma duruma bağlıdır.
+  </PracticeItem>
+  <PracticeItem question="[1, 3, 5, 7, 9, 11] listesinde 7 için ikili aramayı izleyin. Hangi öğeler, hangi sırayla karşılaştırılır?" hint="Tüm listenin ortasından başlayın.">
+    5, sonra 9, sonra 7 — [1,3,5,7,9,11] listesinin ortası 5'tir; 7 daha büyük olduğu için [7,9,11] aranır; ortası 9'dur; 7 daha küçük olduğu için [7] aranır; bulundu.
+  </PracticeItem>
+  <PracticeItem question="1.000 sıralı öğe için ikili arama yaklaşık kaç karşılaştırma gerektirir?" hint="1.000'i kaç kez yarıya indirebilirsiniz?">
+    Yaklaşık 10 — 2¹⁰ = 1024, yani on yarıya indirme 1.000 öğeyi bire indirir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="İkili Arama — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;ikili arama&quot;yı en iyi tanımlar?" options={["Bir algoritmanın çalışma süresinin girdi büyüdükçe nasıl arttığını anlatmanın bir yolu — örneğin doğrusal arama O(n), ikili arama O(log n)'dir.", "Listeyi tekrar tekrar geçerek yanlış sırada olan komşu öğeleri yer değiştirme; yer değiştirme kalmayana kadar devam etme.", "Hedef bulunana kadar listedeki her öğeyi tek tek kontrol etme. Basit, sıralanmamış listelerde çalışır ama büyük listelerde yavaştır.", "Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma."]} answer={3} explanation="Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma." />
+  <QuizQuestion question="İkili aramayı kullanmadan önce liste neden sıralanmış olmalı?" options={["Çünkü ikili arama her öğeyi tek tek karşılaştırır, bu da sıralanmamış veride yavaştır.", "Çünkü listeyi önce sıralamak doğrusal aramayı gereksiz kılar.", "Çünkü sıralanmamış bir liste bellekte saklanamaz.", "Çünkü sıralanmamış veride yanlış yarıyı atmak hedefi de atabilir."]} answer={3} explanation="Çünkü sıralanmamış veride yanlış yarıyı atmak hedefi de atabilir." />
+</Quiz>
+
+<Summary>
+  - İkili Arama: sıralı listelerde, problemi yarıya indirerek çok daha hızlı arama yapın.
+  - İkili arama sıralı veri gerektirir: İkili arama doğrusal aramadan çok daha hızlıdır — bir milyon öğe için yaklaşık 20 karşılaştırma — ama yalnızca liste önce sıralanmışsa çalışır.
+  - Aramayı yarıya indirme: Ortadaki öğeyle karşılaştırın, hedefi içeremeyecek yarıyı atın ve tekrarlayın — O(log n) süre.
+  - Dikkat edin: sıralanmamış listede ikili arama kullanma
+</Summary>

@@ -1,0 +1,76 @@
+---
+title: "Korelasyon ve Regresyon"
+lede: "Doğrusal ilişkiyi ölçme ve tahmin için regresyon doğruları uydurma."
+---
+
+<LearningObjectives>
+  <li>Korelasyon ve Regresyon'u kendi cümlelerinle tanımla ve açıkla</li>
+  <li>Binom dağılımı gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Korelasyon ve Regresyon konusuna odaklanır: doğrusal ilişkiyi ölçme ve tahmin için regresyon doğruları uydurma.
+
+<Definition term="Korelasyon ve Regresyon">
+  Doğrusal ilişkiyi ölçme ve tahmin için regresyon doğruları uydurma.
+</Definition>
+
+## Temel fikirler
+
+### Binom olasılıkları
+
+P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ. Koşullar önemlidir: sabit n, iki sonuç, sabit p, bağımsız denemeler. n = 5, p = 0,3 için: P(X = 2) = 10 × 0,09 × 0,343 = 0,3087.
+
+### Normali standartlaştırma
+
+X ~ N(μ, σ²)'yi z = (x − μ)/σ ile Z ~ N(0, 1)'e dönüştür, sonra olasılıkları tablodan oku. Eğri altında kalan toplam alan 1'dir ve eğri μ'ya göre simetriktir, dolayısıyla X'in ortalama μ'nun altında kalma olasılığı 0,5'tir.
+
+**Anahtar terim — Binom dağılımı:** Her biri p başarı olasılıklı n bağımsız denemede başarı sayısının dağılımı, X ~ B(n, p) şeklinde yazılır.
+
+<WorkedExample title="Çözümlü örnek: Bir binom olasılığı">
+  X ~ B(5, 0,3). P(X = 2) bul.
+
+  n = 5, r = 2, p = 0,3 ile P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ'i kullan.
+  C(5, 2) = 10; 0,3² = 0,09; 0,7³ = 0,343.
+  Çarp: 10 × 0,09 × 0,343 = 0,3087.
+
+  **Cevap:** P(X = 2) = 0,3087 (4 ondalık basamağa).
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Regresyon doğrusunu veri aralığının dışında yorumlamak** Gözlenen x değerlerinin ötesine tahmin yapmak, doğrusal ilişkinin devam ettiğini varsayar; bu çoğu zaman yanlıştır.
+  - **Denemeler bağımsız değilken binom modelini kullanmak** Koşulları kontrol et: küçük bir nüfustan yerine koymadan çekimde p her denemede değişir ve binom uygulanamaz.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="X ~ B(4, 0,5). P(X = 0) bul." hint="Dört deneme de başarısız.">
+    P = C(4,0) × 0,5⁰ × 0,5⁴ = 0,0625.
+  </PracticeItem>
+  <PracticeItem question="X ~ B(6, 0,2). P(X = 1) bul." hint="C(6,1) = 6.">
+    P = 6 × 0,2 × 0,8⁵ = 6 × 0,2 × 0,32768 = 0,393216.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(100, 15²). x = 130 için z-skorunu bul." hint="z = (x − μ)/σ.">
+    z = (130 − 100)/15 = 2.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(μ, σ²) için P(X, μ'dan büyüktür) nedir?" hint="Simetriyi düşün.">
+    0,5 — alanın yarısı ortalamanın üstündedir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Korelasyon ve regresyon — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;Binom dağılımı&quot;nı en iyi tanımlar?" options={["Gözlenen sonuçların H₀ altında fazla düşük olasılıklı sayılıp H₀'nın reddedildiği olasılık eşiği (genellikle %5).", "μ ortalaması ve σ² varyansıyla tam olarak tanımlanan, sürekli simetrik çan eğrisi dağılımı, X ~ N(μ, σ²) şeklinde yazılır.", "Hipotez testindeki varsayılan iddia — genellikle 'etki yok' ya da 'değişim yok' — yalnızca kanıt yeterince güçlüyse reddedilir.", "Her biri p başarı olasılıklı n bağımsız denemede başarı sayısının dağılımı, X ~ B(n, p) şeklinde yazılır."]} answer={3} explanation="Her biri p başarı olasılıklı n bağımsız denemede başarı sayısının dağılımı, X ~ B(n, p) şeklinde yazılır." />
+  <QuizQuestion question="'Ortalama arttı' ifadesinin neden tek kuyruklu alternatif hipotez olduğunu açıkla." options={["Regresyon doğrusunu veri aralığının dışında yorumlamak", "Gözlenen x değerlerinin ötesine tahmin yapmak, doğrusal ilişkinin devam ettiğini varsayar; bu çoğu zaman yanlıştır.", "μ ortalaması ve σ² varyansıyla tam olarak tanımlanan, sürekli simetrik çan eğrisi dağılımı, X ~ N(μ, σ²) şeklinde yazılır.", "Yalnızca bir artış belirtir, dolayısıyla kritik bölge dağılımın tek (üst) kuyruğunda yer alır."]} answer={3} explanation="Yalnızca bir artış belirtir, dolayısıyla kritik bölge dağılımın tek (üst) kuyruğunda yer alır." />
+  <QuizQuestion question="%5 düzeyinde bir test p-değeri 0,032 veriyor. Sonuç nedir?" options={["2,032 0,05'ten küçük, dolayısıyla H₀ reddedilir; sıfır hipotezine karşı yeterli kanıt var.", "5,032 0,05'ten küçük, dolayısıyla H₀ reddedilir; sıfır hipotezine karşı yeterli kanıt var.", "1,032 0,05'ten küçük, dolayısıyla H₀ reddedilir; sıfır hipotezine karşı yeterli kanıt var.", "0,032 0,05'ten küçük, dolayısıyla H₀ reddedilir; sıfır hipotezine karşı yeterli kanıt var."]} answer={3} explanation="0,032 0,05'ten küçük, dolayısıyla H₀ reddedilir; sıfır hipotezine karşı yeterli kanıt var." />
+</Quiz>
+
+<Summary>
+  - Korelasyon ve Regresyon: doğrusal ilişkiyi ölçme ve tahmin için regresyon doğruları uydurma.
+  - Binom olasılıkları: P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ.
+  - Normal dağılım: μ ortalaması ve σ² varyansıyla tam olarak tanımlanan, sürekli simetrik çan eğrisi dağılımı, X ~ N(μ, σ²) şeklinde yazılır.
+  - Dikkat et: regresyon doğrusunu veri aralığının dışında yorumlamak
+</Summary>

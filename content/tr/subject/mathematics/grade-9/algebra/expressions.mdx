@@ -1,0 +1,107 @@
+---
+title: "İfadeler"
+lede: "Cebiri düzenle: benzer terimleri topla, parantezleri genişlet ve çarpanlara ayır. Önce sadeleştirmek her denklemi çözmeyi kolaylaştırır."
+---
+
+<LearningObjectives>
+  <li>Benzer terimleri topla</li>
+  <li>Tek parantezleri genişlet</li>
+  <li>Basit ifadeleri çarpanlara ayır</li>
+</LearningObjectives>
+
+## Cebiri düzenleme
+
+**Sadeleştirme**, bir ifadenin değerini değiştirmeden en düzgün biçimde yeniden yazar. İşe başlamadan önce masanı toplamanın cebirsel karşılığıdır — sonrası her şey kolaylaşır.
+
+## Benzer terimler
+
+**Benzer terimler** tam olarak aynı değişken kısımlara sahiptir. `3x` ve `5x` benzer terimlerdir; `3x` ve `3x²` değildir (farklı üsler); `2ab` ve `3ba` benzerdir (çarpma yer değiştirir).
+
+```maths
+3x + 5x = 8x                  like terms combine
+4a + 2b − a = 3a + 2b          a-terms combine; b stays
+2x + 3x² → cannot combine      different powers
+```
+
+<Callout title="Meyve salatası cebiri" kind="key">
+  `x`'i elma, `y`'yi muz gibi düşün: `3 elma + 2 elma = 5 elma`, ama `3 elma + 2 muz` birleştirilemez.
+  Kulağa saçma geliyor ama asla yanıltmaz.
+</Callout>
+
+## Parantezleri genişletme
+
+Parantezin içindeki her şeyi dışındakiyle çarp:
+
+```maths
+3(x + 4) = 3x + 12
+−2(5 − y) = −10 + 2y
+x(x + 3) = x² + 3x
+```
+
+<ImportantNote title="İşaretler">
+  Parantezin dışındaki eksi, içerideki her işareti ters çevirir: `−(a − b) = −a + b`.
+  Hataların çoğu burada olur — yavaşça genişlet ve her işareti kontrol et.
+</ImportantNote>
+
+## Çarpanlara ayırma
+
+**Çarpanlara ayırma**, genişletmenin tersidir: ortak çarpanı dışarı al.
+
+```maths
+6x + 9 = 3(2x + 3)        3 is the highest common factor
+4a² − 8a = 4a(a − 2)      take out 4a
+```
+
+Kontrol için cevabını genişlet — başladığın yere dönmelisin.
+
+<WorkedExample title="Çözümlü örnek">
+  `3(x + 2) + 2x` ifadesini sadeleştir.
+
+  Önce genişlet, sonra benzer terimleri topla:
+
+  ```maths
+  3(x + 2) + 2x = 3x + 6 + 2x = 5x + 6
+  ```
+</WorkedExample>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Sadeleştir: 7p − 2p + 4." hint="p'li terimleri birleştir.">
+    `5p + 4`.
+  </PracticeItem>
+  <PracticeItem question="Genişlet: 5(2x − 3)." hint="İki terimi de 5 ile çarp.">
+    `10x − 15`.
+  </PracticeItem>
+  <PracticeItem question="Çarpanlara ayır: 8y + 12." hint="8'i de 12'yi de ne böler?">
+    `4(2y + 3)`.
+  </PracticeItem>
+  <PracticeItem question="Sadeleştir: 2(a − 3) − (a + 5)." hint="İkinci parantezin önündeki eksiye dikkat et.">
+    `2a − 6 − a − 5 = a − 11`.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="İfadeler — kısa kontrol">
+  <QuizQuestion
+    question="6m + 2 − 4m ifadesini sadeleştir."
+    options={["2m + 2", "10m − 4m", "2m − 2", "12m"]}
+    answer={0}
+    explanation="6m − 4m = 2m; sabit 2 kalır: 2m + 2."
+  />
+  <QuizQuestion question="−4(x − 5) ifadesini genişlet." options={["−5x + 20", "−6x + 20", "−3x + 20", "−4x + 20"]} answer={3} explanation="−4 × x = −4x; −4 × −5 = +20." />
+  <QuizQuestion
+    question="9x − 6 ifadesini çarpanlara ayır."
+    options={["3(3x − 2)", "3(3x − 6)", "9(x − 6)", "3(6x − 3)"]}
+    answer={0}
+    explanation="En büyük ortak bölen 3'tür: 3(3x − 2). Kontrol için genişlet."
+  />
+</Quiz>
+
+<Summary>
+  - Sadece aynı değişken kısımlı benzer terimleri birleştir.
+  - Parantezleri içinden çarparak genişlet; işaretlere dikkat et.
+  - Çarpanlara ayırma ortak çarpanı dışarı alır — genişletme bunu tersine çevirir.
+  - Çözmeden önce sadeleştir: düzenli ifadeler denklemleri kolaylaştırır.
+</Summary>

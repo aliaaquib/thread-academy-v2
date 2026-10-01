@@ -1,0 +1,128 @@
+---
+title: "Fiziksel Hesaplama"
+lede: "Gerçek dünyaya dokunan programlar: sensörler, düğmeler ve ışıklar."
+---
+
+<LearningObjectives>
+  <li>Fiziksel hesaplamayı kendi cümlelerinle tanımla ve açıkla</li>
+  <li>sensör gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Şimdiye kadar programların ekranda yaşıyordu. Fiziksel hesaplama bunun dışına çıkar: gerçek dünyayı sensörlerle okuyan ve ışıklar, sesler ve motorlarla karşılık veren programlar — otomatik kapıların, akıllı saatlerin ve robotların içindeki teknoloji.
+
+<Definition term="Fiziksel hesaplama">
+  Yazılımın sensörler (girdiler) aracılığıyla fiziksel dünyayla etkileşime girdiği ve ışıklar ile motorlar gibi eyleyicilerle (çıktılar) karşılık verdiği sistemler kurma.
+</Definition>
+
+## Temel fikirler
+
+### Girdiler algılar, çıktılar hareket eder
+
+Her fiziksel sistem zaten bildiğin örüntünün aynısıdır — giriş, işlem, çıkış — iki ucunda da donanım var:
+
+- **Girdiler** dünyayı algılar: düğmeler, ışık sensörleri, sıcaklık sensörleri, hareket sensörleri, mikrofonlar.
+- **Çıktılar** dünyayı değiştirir: LED'ler, hoparlörler/ziller, motorlar, ekranlar.
+
+Bir hırsız alarmı: hareket sensörü (girdi) → "hareket oldu mu?" (işlem) → siren (çıktı).
+
+### Micro:bit ile tanış
+
+Sınıfların klasik fiziksel hesaplama kartı **micro:bit**'tir — elinde tutabileceğin minik bir bilgisayar; yerleşik girdileri ve çıktıları vardır:
+
+- **Girdiler** — düğme basımları, hareket/eğilme (ivmeölçer), sıcaklık sensörü, pusula.
+- **Çıktılar** — LED'ler (desenler yakabilir), sesler (hoparlör).
+
+Kablo gerekmez: bir düğmeye bas (girdi) ve LED'ler yansın (çıktı), hepsi tek cihazda.
+
+### Gerçek bir örnek: sallama sayacı
+
+<CodeBlock lang="Sözde kod">
+number = 10
+DISPLAY smiley face
+FOREVER
+    IF micro:bit is shaken THEN
+        number = number - 1
+    IF number &lt;= 0 THEN
+        DISPLAY sad face
+    END IF
+END FOREVER
+</CodeBlock>
+
+İzle: micro:bit önce gülen bir yüz gösterir. Her sallamada number değişkeni 1 azalır. 10 sallamadan sonra number 0'a ulaşır — 0 ≤ 0 doğrudur — ve üzgün bir yüz gösterilir. Girdiler (sallama), bir değişken, seçim, çıktı (LED'ler): minik bir cihazda koskoca bir program.
+
+### Asla durmayan programlar
+
+Ekran programları genellikle bir kez çalışıp biter. Fiziksel programlar genelde **sonsuza kadar** döngüye girer: sensörü kontrol etmeye, tepki vermeye devam eder. Otomatik bir sokak lambası karanlığı bir kez kontrol etmez — bütün gece kontrol eder.
+
+### Örnek: gece lambası
+
+Işık sensörlü ve LED'li küçük bir kart. Kural: hava kararınca LED'leri yak.
+
+<CodeBlock lang="Sözde kod">
+FOREVER
+    light_level = read light sensor
+    IF light_level < 20 THEN
+        turn LEDs ON
+    ELSE
+        turn LEDs OFF
+    END IF
+END FOREVER
+</CodeBlock>
+
+Alacakaranlıkta izle: light_level 15 okur → 15 < 20 doğrudur → LED'ler YANAR → döngüye dön, tekrar kontrol et. Şafakta okuma 20'nin üzerine çıkar ve ELSE kolu onları KAPATIR. Akış şemalarında öğrendiğin seçim ve tekrarlamanın aynısı — şimdi gerçek donanımı yönetiyor.
+
+**Anahtar terim — sensör:** Ortamdaki bir şeyi (ışık, ısı, hareket, ses) ölçen ve bunu programın okuyabileceği veriye dönüştüren cihaz.
+
+<WorkedExample title="Bitki sulayıcı tasarla">
+  Hedef: toprağı kuruyunca bitkiyi sula. Parçaları seç: bir nem sensörü (girdi — toprağın ne kadar ıslak olduğunu okur), küçük bir su pompası (çıktı) ve şu mantık:
+
+  SONSUZA KADAR: moisture = nem sensörünü oku; IF moisture < 30 THEN pompayı 5 saniye AÇ, ELSE pompayı KAPALI tut.
+
+  **Cevap:** Kuru toprak (moisture 20) 5 saniyelik sulamayı başlatır; nemli toprak (moisture 60) pompayı kapalı tutar. Döngü sayesinde bitki, kimse izlemeden defalarca kontrol edilir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Girdi ve çıktıları karıştırmak** Düzeltme: sensörler ve düğmeler bilgi toplar (girdi); LED'ler, ziller ve motorlar bir şeyler yapar (çıktı). Sor: "algılıyor mu, yoksa harekete mi geçiyor?"
+  - **Sonsuz döngüyü unutmak** Düzeltme: sensörü bir kez kontrol etmek nadiren yeter — fiziksel programlar genellikle kontrolü sürekli tekrarlar.
+  - **Eşik değeri yok** Düzeltme: "hava kararınca" bilgisayar için belirsizdir — kararı kesinleştirmek için light_level < 20 gibi bir sayı ver.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Termometre tarzı bir sıcaklık sensörü girdi mi çıktı mıdır? Neden?">
+    Girdi — ortamı algılar ve programa veri besler; kendi başına hiçbir şeyi değiştirmez.
+  </PracticeItem>
+  <PracticeItem question="Otomatik bir kapı, biri yaklaşınca açılır. Muhtemel girdi ve çıktıyı söyle.">
+    Girdi: kişiyi algılayan bir hareket (veya mesafe) sensörü. Çıktı: kapıyı kaydırarak açan motor.
+  </PracticeItem>
+  <PracticeItem question="Gece lambası programı neden bir kez çalışmak yerine SONSUZA KADAR kullanır?">
+    Çünkü karanlık gelir ve gider — program koşulların ne zaman değiştiğine tepki verebilmek için sensörü kontrol etmeye devam etmelidir.
+  </PracticeItem>
+  <PracticeItem question="Bir öğrenci şunu yazıyor: IF karanlık THEN ışıklar AÇIK. Bilgisayarın bunu çalıştırması için ne eksik?">
+    Ölçülebilir bir eşik değeri — "karanlık", light_level < 20 gibi kesin bir şeye dönüşmelidir.
+  </PracticeItem>
+  <PracticeItem question="Micro:bit'in iki girdisini ve iki çıktısını söyle.">
+    Girdiler: düğme basımı, ivmeölçer/eğilme/hareket, sıcaklık sensörü, pusuladan herhangi ikisi. Çıktılar: LED'lerin yanması, hoparlör/ses.
+  </PracticeItem>
+  <PracticeItem question="Sallama sayacında 10 sallamadan sonra micro:bit ne gösterir ve neden?">
+    Üzgün bir yüz — her sallamada number değişkeni 1 azalır (10'dan başlayarak), bu yüzden 10 sallamadan sonra number ≤ 0 olur ve üzgün yüz koşulu doğru hâle gelir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Fiziksel hesaplama — hızlı kontrol">
+  <QuizQuestion question="Fiziksel hesaplama nedir?" options={["Yalnızca süper bilgisayarlarda çalışan programlar yazmak.", "Yazılımın sensörler ve ışıklar ile motorlar gibi çıktılar aracılığıyla fiziksel dünyayla etkileşimi.", "Fiziksel egzersizlerin akış şemalarını çizmek.", "Programları test tabloları yerine gerçek kullanıcılarla test etmek."]} answer={1} explanation="Yazılımın sensörler ve ışıklar ile motorlar gibi çıktılar aracılığıyla fiziksel dünyayla etkileşimi." />
+  <QuizQuestion question="Hangi çift girdi → çıktıdır?" options={["LED → düğme: LED basmayı algılar.", "Motor → sıcaklık sensörü: motor ısıyı ölçer.", "Işık sensörü → LED: sensör karanlığı okur, LED yanar.", "Hoparlör → mikrofon: hoparlör dinler."]} answer={2} explanation="Işık sensörü → LED: sensör karanlığı okur, LED yanar." />
+  <QuizQuestion question="Fiziksel programlar neden genellikle sonsuza kadar döngüye girer?" options={["Çünkü bilgisayarlar kendi kendine duramaz.", "Gerçek dünya değişirken algılamaya ve tepki vermeye devam edebilmek için.", "Daha fazla elektrik harcamak için.", "Sonsuz döngüler kanunen zorunludur."]} answer={1} explanation="Gerçek dünya değişirken algılamaya ve tepki vermeye devam edebilmek için." />
+</Quiz>
+
+<Summary>
+  - Fiziksel hesaplama: yazılımın sensörler (girdiler) ve LED'ler ile motorlar gibi eyleyiciler (çıktılar) aracılığıyla gerçek dünyayla etkileşimi.
+  - Genellikle sonsuz bir döngüye sarılmış aynı giriş → işlem → çıkış örüntüsü.
+  - Kararlar "karanlık" gibi belirsiz kelimelerle değil, kesin eşiklerle (light_level < 20) verilmelidir.
+  - Dikkat et: girdi ve çıktıları karıştırmak ve sensörü yalnızca bir kez kontrol etmek.
+</Summary>

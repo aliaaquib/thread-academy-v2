@@ -1,0 +1,81 @@
+---
+title: "Çıktı ve Girdi"
+lede: "Sonuçları ekranda göster ve klavyeden veri al."
+---
+
+<LearningObjectives>
+  <li>Çıktı ve Girdi'yi kendi cümlelerinle tanımla ve açıkla</li>
+  <li>değişken ve operatör gibi temel terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Çıktı ve Girdi'ye odaklanıyor: sonuçları ekranda göster ve klavyeden veri al.
+
+<Definition term="Çıktı ve Girdi">
+  Sonuçları ekranda göster ve klavyeden veri al.
+</Definition>
+
+## Temel fikirler
+
+### Programlar insanlarla konuşur
+
+Bilgisayarlar girdiler ve çıktılarla iletişim kurar: `input()` klavyeden metin alır, `print()` ise sonuçları ekranda gösterir. Dosyalar, mikrofonlar, sensörler ve ağ iletilerinin hepsi girdidir; ekranlar, hoparlörler ve dosyaların hepsi çıktı olabilir. Çoğu program bir sohbettir — girdi alır, biraz işlem yapar ve çıktı üretir.
+
+### İki girdi çeşidi
+
+**Klavye girdisi** `input()` ile her zaman metin olarak gelir — kullanıcı rakam yazsa bile `"42"` gibi bir dizge alırsın. Onunla matematik yapmak için önce `int()` ya da `float()` ile dönüştür, yoksa programın sayılar yerine dizgeleri toplar. **Sensör girdisi** ise programının doğrudan kullanabileceği sayılar olarak gelir.
+
+### Çıktı bir tasarımdır
+
+İyi çıktı açık ve etiketlidir: `print("Total:", total)` kullanıcıya sayının ne anlama geldiğini söylerken, sade bir `print(total)` onu tahmin etmeye zorlar. Sayıları mantıklı biçimlendir ve ham girdiye asla güvenme — kullanmadan önce kontrol et.
+
+**Temel terim — değişken:** Bir program çalışırken değişebilen bir değerin adı.
+
+**Temel terim — operatör:** `+` ya da `==` gibi bir işlem yapan simge.
+
+<WorkedExample title="Çözümlü örnek: Toplamı İzle">
+  <TryItPython title="Bir Döngü Çalıştır" subtitle="Kodu çalıştır ve döngünün 0'dan 4'e yazdırdığını izle." initialCode={`for i in range(5):
+    print(i)
+# Sıra sende: 0'dan 9'a yazdırsın.`} />
+
+  <RelatedTopics topics={[{ title: "Çıktı ve Girdi", href: "/subject/computer-science/grade-9/programming/output-and-input" }, { title: "Döngüler", href: "/subject/computer-science/grade-9/programming/loops" }, { title: "Seçim", href: "/subject/computer-science/grade-9/programming/selection" }]} />
+
+  **Cevap:** 55 — total 0+1+...+10 toplamına eşittir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **`input()` çıktısını doğrudan matematikte kullanmak** Düzeltme: `input()` bir dizge döndürür — matematik yapmadan önce onu `int()` ya da `float()` ile dönüştür.
+  - **Çıktıyı etiketlemeyi unutmak** Düzeltme: Kullanıcıların her değerin ne anlama geldiğini bilmesi için `print("Total:", total)` gibi etiketler ekle.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="`int(input())` ne yapar?" hint="`input()`'un ne döndürdüğünü ve `int()`'in neyi dönüştürdüğünü düşün.">
+    `input()` ile klavyeden metin okur ve `int()` ile tam sayıya dönüştürür, böylece program onunla matematik yapabilir.
+  </PracticeItem>
+  <PracticeItem question="Dönüştürme yapmadan `print(a + b)` çalıştıran bir programa `3` ve `4` yazıyorsun. Ne yazdırılır?" hint="`a` ve `b`'nin türü ne?">
+    `34` yazdırılır — `a` ve `b` dizgedir, bu yüzden `+` onları toplamak yerine birleştirir.
+  </PracticeItem>
+  <PracticeItem question="`while x > 0:` döngüsünde güncelleme satırı eksik. Risk ne, nasıl düzeltirsin?" hint="`x` hiç değişmezse ne olur?">
+    Risk sonsuz döngüdür — `x` hiç değişmez, bu yüzden koşul doğru kalır. Döngünün içine `x`'i değiştiren bir satır ekleyerek düzelt, örneğin `x = x - 1`.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: `for i in range(10)` 1'den 10'a yazdırır." hint="`range` 0'dan başlar.">
+    Yanlış — 0'dan 9'a yazdırır, çünkü `range(10)` 9'da durur.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı test
+
+<Quiz title="Çıktı ve Girdi — hızlı test">
+  <QuizQuestion question="Hangisi &quot;değişken&quot;i en iyi tanımlar?" options={["Tekrar eden bir kod bloğu.", "Bir program çalışırken değişebilen bir değerin adı.", "`+` ya da `==` gibi bir işlem yapan simge.", "Bir döngünün tek turu."]} answer={1} explanation="Bir program çalışırken değişebilen bir değerin adı." />
+  <QuizQuestion question="Hangisi &quot;fonksiyon&quot;u en iyi tanımlar?" options={["Tekrar eden bir kod bloğu.", "Bir döngünün tek turu.", "Yeniden kullanılabilir, adlandırılmış bir kod bloğu.", "`+` ya da `==` gibi bir işlem yapan simge."]} answer={2} explanation="Yeniden kullanılabilir, adlandırılmış bir kod bloğu." />
+</Quiz>
+
+<Summary>
+  - Çıktı ve Girdi: sonuçları ekranda göster ve klavyeden veri al.
+  - Programlar insanlarla konuşur: Bilgisayarlar girdiler ve çıktılarla iletişim kurar: `input()` klavyeden metin alır, `print()` ise sonuçları ekranda gösterir.
+  - değişken: Bir program çalışırken değişebilen bir değerin adı.
+  - Dikkat: `input()` çıktısını doğrudan matematikte kullanmak
+</Summary>

@@ -1,0 +1,74 @@
+---
+title: "Yapay Zekâyı Sorumluca Kullanma"
+lede: "Yapay zekâ destekli araçları uygularken sonuçlarının sorumluluğunu üstlenin."
+---
+
+<LearningObjectives>
+  <li>Yapay Zekâyı Sorumluca Kullanma'yı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Uygulayıcı gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Yapay Zekâyı Sorumluca Kullanma'ya odaklanır: yapay zekâ destekli araçları uygularken sonuçlarının sorumluluğunu üstlenin.
+
+<Definition term="Yapay Zekâyı Sorumluca Kullanma">
+  Yapay zekâ destekli araçları uygularken sonuçlarının sorumluluğunu üstlenin.
+</Definition>
+
+## Temel fikirler
+
+### Sorumluluk araçta değil uygulayıcıdadır
+
+Bir uygulayıcı, yapay zekâ destekli bir aracı geliştiren, dağıtan ya da kullanan kişi ya da kuruluştur; genellikle sonuçları için hesap verir. Model bir tahmin sunar, kararı siz verirsiniz — bu yüzden sonucu kullanmadan önce adilliği test edin ve yüksek riskli kararları insan gözetimine bırakın.
+
+### Sayılar her şeyi anlatmaz
+
+Bir ölçüt, kişileri ya da kaynakları sınıflandıran tek bir sayıdır, ancak gruplar arasında adilliği garantilemez. Yüksek doğruluk adil bir model demek değildir — her bir grup için ayrı ayrı ölçüm yapın ve modelin verideki geçmiş önyargıları yansıtıp yansıtmadığını sorgulayın.
+
+**Terim — uygulayıcı:** Yapay zekâ destekli bir aracı geliştiren, dağıtan ya da kullanan kişi ya da kuruluş; genellikle sonuçları için hesap verir.
+
+<WorkedExample title="Çözümlü örnek: Yapay Zekâyı Sorumluca Kullanma">
+  Bir model eğitim verisini o kadar yakından ezberler ki yeni örneklerde başarısız olur. Bu duruma ne denir?
+
+  Aşırı öğrenme — modelin genellemeyi öğrenip öğrenmediğini düşünün.
+
+  **Cevap:** Aşırı öğrenme — modelin genellemeyi öğrenip öğrenmediğini düşünün.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Farklı gruplar için ayrı ölçüm yapmamak** Düzeltme: toplam doğruluğu bir kenara bırakıp adillik ölçütlerini her bir grup için ayrı ayrı değerlendirin.
+  - **Veri sızıntısı** Düzeltme: özelliğin test kümesinde bulunmayacak bilgiyi kodladığını her zaman kontrol edin.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir yapay zekâ aracını dağıtan şirkette sonuçların sorumluluğu kime aittir?" hint="Kararı kim verir?">
+    Uygulayıcıya — model tahmin sunar, kararı siz verirsiniz.
+  </PracticeItem>
+  <PracticeItem question="Bir model geçmiş işe alım kayıtlarıyla eğitilir ve kadın başvurularını sistematik olarak eler. Bu hangi yanlılık türüdür?" hint="Model bu kararı nereden öğrendi?">
+    Eğitim verisindeki geçmiş önyargı — model, geçmişteki haksız kalıpları öğrendi.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: Yüksek doğruluk, modelin adil olduğu anlamına gelir." hint="Tek bir toplu sayının neyi gizleyebileceğini düşünün.">
+    Yanlış — adillik, her bir grup için ayrı ölçütler gerektirir.
+  </PracticeItem>
+  <PracticeItem question="Bir yapay zekâ uygulaması geçmiş işe alım kayıtlarıyla eğitilir ve belirli bir gruptan az sayıda başvuru olduğunu fark edersiniz. Hangi yanlılık riski ortaya çıkar?" hint="Modelin o grup için ne kadar güvenilir olacağını düşünün.">
+    Temsili olmayan örneklem — model o grup için güvenilir karar veremez.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Yapay Zekâyı Sorumluca Kullanma — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;uygulayıcı&quot;yı en iyi tanımlar?" options={["Mevcut veri kullanılarak eğitildikten sonra yeni veriye uygulanabilen, öğrenilen kurallar ya da istatistiksel ilişki kümesi.", "Bazı grupları sistematik olarak daha iyi ya da daha kötü etkileyen, verideki ya da modeldeki çarpıklık — örneğin eğitime sokulan önyargılar gibi.", "Kişileri ya da kaynakları sınıflandıran, ancak gruplar arasında adilliği garantilemeyen tek bir sayı.", "Yapay zekâ destekli bir aracı geliştiren, dağıtan ya da kullanan kişi ya da kuruluş; genellikle sonuçları için hesap verir."]} answer={3} explanation="Yapay zekâ destekli bir aracı geliştiren, dağıtan ya da kullanan kişi ya da kuruluş; genellikle sonuçları için hesap verir." />
+  <QuizQuestion question="Bir yapay zekâ aracının sonuçlarının sorumluluğu kime aittir?" options={["Yalnızca eğitim verisine", "Uygulayıcıya — model tahmin sunar, kararı siz verirsiniz.", "Ölçütün kendisine", "Hiç kimseye — araçlar tarafsızdır"]} answer={1} explanation="Uygulayıcıya — model tahmin sunar, kararı siz verirsiniz." />
+  <QuizQuestion question="Doğru mu yanlış mı: Eğitim verisi üzerinde %100 doğruluk, modelin iyi çalıştığını kanıtlar." options={["Doğru", "Bazen doğru", "Verilen bilgilerden belirlenemez", "Yanlış — bu aşırı öğrenme belirtisidir; doğruluğu görünmemiş veriyle test edin."]} answer={3} explanation="Yanlış — bu aşırı öğrenme belirtisidir; doğruluğu görünmemiş veriyle test edin." />
+</Quiz>
+
+<Summary>
+  - Yapay Zekâyı Sorumluca Kullanma: yapay zekâ destekli araçları uygularken sonuçlarının sorumluluğunu üstlenin.
+  - Sorumluluk araçta değil uygulayıcıdadır: Bir uygulayıcı, yapay zekâ destekli bir aracı geliştiren, dağıtan ya da kullanan kişi ya da kuruluştur; genellikle sonuçları için hesap verir.
+  - Ölçüt: Kişileri ya da kaynakları sınıflandıran, ancak gruplar arasında adilliği garantilemeyen tek bir sayı.
+  - Dikkat edin: farklı gruplar için ayrı ölçüm yapmamak
+</Summary>

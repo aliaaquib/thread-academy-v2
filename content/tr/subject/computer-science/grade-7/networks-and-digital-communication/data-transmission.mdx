@@ -1,0 +1,109 @@
+---
+title: "Veri İletimi"
+lede: "Veri ağda nasıl yolculuk eder: paketler, hız ve güvenlik."
+---
+
+<LearningObjectives>
+  <li>Ağları kendi cümlelerinle tanımla ve açıkla</li>
+  <li>paket gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bir video izliyorsun — milyonlarca bit saniyeler içinde dünyanın öbür ucundan geliyor. Veri tek parça hâlinde gitmez; küçük **paketlere** bölünür, her paket kendi yolunu bulur, hedefte yeniden birleşir.
+
+<Definition term="Paket">
+  Ağda yolculuk eden küçük veri parçası; adres ve sıra numarası taşır.
+</Definition>
+
+## Temel fikirler
+
+### Paketler nasıl yolculuk eder?
+
+1. **Bölme** — gönderen veriyi küçük paketlere böler (her biri ~1500 bayt).
+2. **Adresleme** — her pakete hedef IP ve sıra numarası yazılır.
+3. **Yönlendirme** — **yönlendiriciler** (router) her paketi en iyi yoldan geçirir; paketler farklı yollardan gidebilir.
+4. **Birleştirme** — hedefte paketler sıra numarasına göre yeniden birleşir; kayıp paket yeniden istenir.
+
+### Hız: bant genişliği ve gecikme
+
+- **Bant genişliği** — saniyede kaç bit geçebilir (Mbps). Borunun genişliği.
+- **Gecikme (ping)** — bir bitin gidip gelmesi ne kadar sürer (ms). Borunun uzunluğu.
+
+Video donuyorsa genelde bant genişliği yetmiyordur; oyunda gecikme varsa ping yüksektir.
+
+### Güvenlik: şifreleme
+
+Paketler başkalarının ağlarından geçer. **Şifreleme**, veriyi okunamaz hâle getirir; yalnızca hedef çözebilir. Adres çubuğundaki kilit (HTTPS) şifreleme var demektir.
+
+<Diagram caption="Veri paketlere bölünür, farklı yollardan gider ve hedefte birleşir.">
+<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <rect x="20" y="80" width="90" height="50" rx="8" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="65" y="108" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">Gönderen</text>
+  <rect x="450" y="80" width="90" height="50" rx="8" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="495" y="108" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">Hedef</text>
+  <rect x="180" y="30" width="60" height="30" rx="4" fill="#e8f4e8" stroke="#1a1a1a" strokeWidth="1"/>
+  <text x="210" y="50" fontSize="11" textAnchor="middle" fill="#1a1a1a">1</text>
+  <rect x="260" y="80" width="60" height="30" rx="4" fill="#e8f4e8" stroke="#1a1a1a" strokeWidth="1"/>
+  <text x="290" y="100" fontSize="11" textAnchor="middle" fill="#1a1a1a">2</text>
+  <rect x="180" y="130" width="60" height="30" rx="4" fill="#e8f4e8" stroke="#1a1a1a" strokeWidth="1"/>
+  <text x="210" y="150" fontSize="11" textAnchor="middle" fill="#5f5f5c">3</text>
+  <text x="290" y="60" fontSize="11" textAnchor="middle" fill="#5f5f5c">yönlendiriciler</text>
+  <text x="290" y="140" fontSize="11" textAnchor="middle" fill="#5f5f5c">farklı yollar</text>
+  <text x="280" y="185" fontSize="11" textAnchor="middle" fill="#5f5f5c">hedefte sıra numarasına göre birleşir</text>
+</svg>
+</Diagram>
+
+<WorkedExample title="Neden donuyor?">
+  Belirti: video sürekli duruyor ama sayfalar hızlı açılıyor. Sayfalar küçük (bant genişliği yeter), video büyük (yetmez).
+
+  **Cevap:** Bant genişliği sorunu — video, sayfadan çok daha fazla bit/saniye ister.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Hız = tek sayı** Düzeltme: bant genişliği (Mbps) ve gecikme (ms) farklı şeylerdir.
+  - **Paketler sırayla gider** Düzeltme: farklı yollardan gidebilir; sıra numaraları birleştirir.
+  - **Kilit = güvenli site** Düzeltme: kilit şifreleme var demektir, sitenin dürüst olduğu anlamına gelmez.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Paket nedir?">
+    Ağda yolculuk eden küçük veri parçası; adres ve sıra numarası taşır.
+  </PracticeItem>
+  <PracticeItem question="Veri neden paketlere bölünür?">
+    Ağı verimli kullanmak için; kayıp parça tek başına yeniden istenebilir.
+  </PracticeItem>
+  <PracticeItem question="Yönlendirici ne yapar?">
+    Her paketi hedefe giden en iyi yoldan geçirir.
+  </PracticeItem>
+  <PracticeItem question="Bant genişliği ile gecikme arasındaki fark nedir?">
+    Bant genişliği: saniyede kaç bit (hız); gecikme: bitin gidip gelme süresi (tepki).
+  </PracticeItem>
+  <PracticeItem question="Kayıp paket ne olur?">
+    Hedef fark eder ve gönderen yeniden gönderir.
+  </PracticeItem>
+  <PracticeItem question="Şifreleme ne işe yarar?">
+    Veriyi okunamaz hâle getirir; yalnızca hedef çözebilir.
+  </PracticeItem>
+  <PracticeItem question="HTTPS'teki S ne demek?">
+    Secure (güvenli) — bağlantı şifrelidir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Veri iletimi — hızlı kontrol">
+  <QuizQuestion question="Paketler hedefte nasıl birleşir?" options={["Geliş sırasına göre.", "Sıra numarasına göre.", "Rastgele.", "Birleşmezler."]} answer={1} explanation="Sıra numarasına göre." />
+  <QuizQuestion question="Bant genişliği nedir?" options={["Gecikme süresi.", "Saniyede geçebilen bit miktarı.", "Paket boyutu.", "Kablo uzunluğu."]} answer={1} explanation="Saniyede geçebilen bit miktarı." />
+  <QuizQuestion question="Adres çubuğundaki kilit ne demek?" options={["Site dürüsttür.", "Bağlantı şifrelidir.", "Site hızlıdır.", "Site ücretsizdir."]} answer={1} explanation="Bağlantı şifrelidir." />
+</Quiz>
+
+<Summary>
+  - Veri paketlere bölünür; her paket adres + sıra numarası taşır.
+  - Yönlendiriciler paketleri geçirir; hedefte birleşir, kayıp yeniden istenir.
+  - Bant genişliği = hız, gecikme = tepki süresi.
+  - Şifreleme (HTTPS) veriyi korur.
+  - Dikkat et: hızı tek sayı sanmak, paketlerin sıralı gittiğini sanmak, kilidi güven sanmak.
+</Summary>

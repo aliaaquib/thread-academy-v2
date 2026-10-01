@@ -1,0 +1,76 @@
+---
+title: "İntegrale Giriş"
+lede: "Ters türev, belirli integraller ve eğriler altında kalan alanlar."
+---
+
+<LearningObjectives>
+  <li>İntegrale Giriş'i kendi cümlelerinle tanımla ve açıkla</li>
+  <li>Fonksiyon gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders İntegrale Giriş konusuna odaklanır: ters türev, belirli integraller ve eğriler altında kalan alanlar.
+
+<Definition term="İntegrale Giriş">
+  Ters türev, belirli integraller ve eğriler altında kalan alanlar.
+</Definition>
+
+## Temel fikirler
+
+### Ters türev olarak integral
+
+xⁿ'in integrali xⁿ⁺¹/(n+1) artı bir C sabitidir. Sınırlar arasındaki belirli integral, eğrinin altında kalan işaretli alanı verir: ∫₀² x² dx = [x³/3]₀² = 8/3.
+
+### Polinomların türevi
+
+İlk ilkelerden, xⁿ'in eğimi nxⁿ⁻¹'dir — kuvvet kuralı. Yani f(x) = 3x³ − 5x² + 2x − 7 için f′(x) = 9x² − 10x + 2 olur ve x = 2'deki eğim 36 − 20 + 2 = 18'dir.
+
+**Anahtar terim — Fonksiyon:** Her girdiye tam bir çıktı atayan kural, y = f(x) şeklinde yazılır; izin verilen girdilerin kümesi tanım kümesidir.
+
+<WorkedExample title="Çözümlü örnek: Türev al ve eğimi bul">
+  f(x) = 3x³ − 5x² + 2x − 7 verildiğinde f′(x)'i ve x = 2'deki eğimi bul.
+
+  Kuvvet kuralını her terime uygula: 3x³ → 9x², −5x² → −10x, 2x → 2 ve sabit terim −7'nin türevi 0'dır.
+  Yani f′(x) = 9x² − 10x + 2.
+  x = 2 yaz: 9(4) − 10(2) + 2 = 36 − 20 + 2 = 18.
+
+  **Cevap:** f′(x) = 9x² − 10x + 2; x = 2'deki eğim 18.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **İntegrasyon sabitini unutmak** Belirsiz integral + C ile bitmelidir; C'nin farklı değerleri tüm ters türev ailesini verir.
+  - **Sabit terimin türevini 1 ya da x almak** Herhangi bir sabitin türevi 0'dır — değişime katkısı yoktur.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="y = 4x³ + 6x'in türevini al." hint="Her terime kuvvet kuralı.">
+    dy/dx = 12x² + 6.
+  </PracticeItem>
+  <PracticeItem question="5, 9, 13, 17, … aritmetik dizisinin 10. terimini bul." hint="a = 5, d = 4; n. terim = a + (n − 1)d.">
+    5 + 9 × 4 = 5 + 36 = 41.
+  </PracticeItem>
+  <PracticeItem question="∫ (6x² + 4) dx'i bul." hint="Terim terim integre et; + C'yi unutma.">
+    2x³ + 4x + C.
+  </PracticeItem>
+  <PracticeItem question="∫₀³ 2x dx'i hesapla." hint="İntegre et, sonra sınırları yaz.">
+    [x²]₀³ = 9 − 0 = 9.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="İntegrale giriş — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;Fonksiyon&quot;u en iyi tanımlar?" options={["Her noktada y = f(x)'in eğimini veren f′(x) fonksiyonu; aralık sıfıra daralırken ortalama değişim hızının limiti.", "Her terimin bir öncekinden sabit bir ortak farkla değiştiği dizi, örneğin 3, 7, 11, 15.", "Türevin sıfır olduğu, teğetin yatay olduğu nokta: maksimum, minimum ya da dönüm noktası.", "Her girdiye tam bir çıktı atayan kural, y = f(x) şeklinde yazılır; izin verilen girdilerin kümesi tanım kümesidir."]} answer={3} explanation="Her girdiye tam bir çıktı atayan kural, y = f(x) şeklinde yazılır; izin verilen girdilerin kümesi tanım kümesidir." />
+  <QuizQuestion question="f(x) = x² ve g(x) = 2x + 1 için f(g(x))'i bul." options={["f(g(x)) = (1x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (4x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (3x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (2x + 1)² = 4x² + 4x + 1."]} answer={3} explanation="f(g(x)) = (2x + 1)² = 4x² + 4x + 1." />
+  <QuizQuestion question="y = x² − 6x + 5'in durağan noktalarını bul." options={["dy/dx = 3x − 6 = 0 → x = 3; durağan nokta (3, −4), minimum çünkü d²y/dx² = 2, yani pozitif.", "dy/dx = 1x − 6 = 0 → x = 3; durağan nokta (3, −4), minimum çünkü d²y/dx² = 2, yani pozitif.", "dy/dx = 4x − 6 = 0 → x = 3; durağan nokta (3, −4), minimum çünkü d²y/dx² = 2, yani pozitif.", "dy/dx = 2x − 6 = 0 → x = 3; durağan nokta (3, −4), minimum çünkü d²y/dx² = 2, yani pozitif."]} answer={3} explanation="dy/dx = 2x − 6 = 0 → x = 3; durağan nokta (3, −4), minimum çünkü d²y/dx² = 2, yani pozitif." />
+</Quiz>
+
+<Summary>
+  - İntegrale Giriş: ters türev, belirli integraller ve eğriler altında kalan alanlar.
+  - Ters türev olarak integral: xⁿ'in integrali xⁿ⁺¹/(n+1) artı bir C sabitidir.
+  - Aritmetik dizi: Her terimin bir öncekinden sabit bir ortak farkla değiştiği dizi, örneğin 3, 7, 11, 15.
+  - Dikkat et: integrasyon sabitini unutmak
+</Summary>

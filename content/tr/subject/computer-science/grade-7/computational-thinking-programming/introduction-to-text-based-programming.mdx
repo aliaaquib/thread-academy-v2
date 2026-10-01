@@ -1,0 +1,104 @@
+---
+title: "Metin Tabanlı Programlamaya Giriş"
+lede: "Bloklardan yazılı koda: bir programlama dili aslında nedir."
+---
+
+<LearningObjectives>
+  <li>Programlama dillerini kendi cümlelerinle tanımla ve açıkla</li>
+  <li>söz dizimi gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Şimdiye kadar akış şemalarıyla plan yaptın ve (belki) birbirine geçen bloklardan programlar kurdun. Şimdi kodla, profesyonellerin yazdığı hâliyle tanışma zamanı: yazılmış metin.
+
+<Definition term="Programlama dili">
+  Bilgisayarın takip edebileceği talimatları yazmanın üzerinde anlaşılmış bir yolu; örneğin Python, Java veya C++.
+</Definition>
+
+## Temel fikirler
+
+### Bloklardan metne
+
+Blok dillerinde komutları yapboz parçaları gibi birbirine eklersin — parçalar yalnızca ait oldukları yere oturduğundan söz dizimi hatası yapamazsın. Metin dillerinde aynı fikirler (sıralama, seçim, tekrarlama) geçerlidir ama her karakteri kendin yazarsın. Daha fazla özgürlük, daha fazla sorumluluk: bilgisayar ne demek istediğini tahmin etmez.
+
+### Bir dil aslında nedir
+
+Programlama dili, insan fikirleriyle makine arasında durur. Python gibi üst düzey diller neredeyse İngilizce gibi okunur, bu da onları öğrenmek için uygun kılar. Altta ise her şey **makine koduna** çevrilir — işlemcinin gerçekten çalıştırdığı 1'ler ve 0'lar. Sen insanlar için yazarsın; çeviriyi çevirmen halleder.
+
+### Söz dizimi: kodun dil bilgisi
+
+Her dilin **söz dizimi** denen katı kuralları vardır — onun dil bilgisi ve yazım kuralları. Bilgisayar tamamen harfiyendir: ne demek istediğini değil, ne yazdıysan tam olarak onu yapar.
+
+<CodeBlock lang="Python">
+print("Hello")
+Print("Hello")
+print("Hello"
+</CodeBlock>
+
+1. satır doğrudur. 2. satır çalışmaz — Python anahtar kelimeleri küçük harflidir, bu yüzden `Print` hiçbir şey ifade etmez. 3. satır çalışmaz — kapatma parantezi eksiktir. Tek bir karakter, çalışan ile bozuk arasındaki fark olabilir.
+
+**Anahtar terim — söz dizimi:** Bir programlama dilinin tam yazım, noktalama ve düzen kuralları. Bunları çiğnersen söz dizimi hatası alırsın.
+
+### Gerçek acemi programları — ve gerçek hataları
+
+Öğrencilerin yazdığı ilk programlar kendi adlarını yazdırır:
+
+<CodeBlock lang="Python">
+print("I am 11 years old")
+print("Victoria Ellis")
+</CodeBlock>
+
+İkisi de çalışır. Şimdi her aceminin yaptığı klasik hatalar:
+
+- `PRINT("Hi")` — çalışmaz: anahtar kelimeler küçük harflidir ve dil büyük/küçük harfe duyarlıdır.
+- `print("Hi)` — çalışmaz: kapatma tırnak işareti eksiktir.
+- `print("Hi"` — çalışmaz: kapatma parantezi eksiktir.
+
+`PRINT("Victoria Ellis)` ifadesini `print("Victoria Ellis")` hâline getirmek, iki tane tek karakterlik değişikliktir — ve çalışan bir programla çalışmayan bir program arasındaki fark budur.
+
+<WorkedExample title="Bir satır kodu oku">
+  Satır: `name = input("Your name: ")`
+
+  Soldan sağa oku: `name` bir değişkendir — bir şeyleri saklamak için isimlendirilmiş bir kutu. `=` içine bir değer saklar (burada "eşittir" anlamına gelmez). `input(...)` parantez içindeki metni ekranda gösteren ve kullanıcının yazmasını bekleyen bir komuttur. Yani bütün satır şu anlama gelir: "'Adın: ' yazısını göster, yazmayı bekle ve yazılanı name adlı kutuya sakla."
+
+  **Cevap:** Bu satır kullanıcıdan adını ister ve cevabı name adlı bir değişkende saklar.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Yanlış büyük/küçük harf kullanımı** Düzeltme: çoğu dil büyük/küçük harfe duyarlıdır — print çalışır, Print çalışmaz. Anahtar kelimeleri aynen kopyala.
+  - **Dengelenmemiş parantezler veya tırnaklar** Düzeltme: her açılan parantezin bir kapananı, her açılan tırnağın bir kapananı olmalı — bir şey bozulduğunda bunları say.
+  - **Bilgisayarın niyeti anladığını sanmak** Düzeltme: anlamaz. Tırnaksız ve parantezsiz "Print hello", Python için sadece kelimelerdir — tam ve kesin talimatı yaz.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Blok dili ile metin tabanlı dil arasındaki fark nedir?">
+    Blok dillerinde görsel parçalar birbirine eklenir (söz dizimi hatası imkânsızdır); metin tabanlı diller elle yazılır, daha fazla güç verir ama kesin söz dizimi ister.
+  </PracticeItem>
+  <PracticeItem question="Makine kodu nedir?">
+    İşlemcinin gerçekten çalıştırdığı 1'ler ve 0'lar — üst düzey bir dilde yazılan her şey buna çevrilir.
+  </PracticeItem>
+  <PracticeItem question="Söz dizimi hatasını bul: print('Total:' total)">
+    'Total:' ile total arasında eksik virgül veya artı — arada birleştiren hiçbir şey olmadan yan yana duran iki şey geçerli söz dizimi değildir.
+  </PracticeItem>
+  <PracticeItem question="score = 10 satırında = 'eşittir' mi demek?">
+    Hayır — buradaki = değeri 10'u score değişkenine saklar. Karşılaştırmada "eşittir" için == kullanılır (Python'da yakında).
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Metin tabanlı programlama — hızlı kontrol">
+  <QuizQuestion question="Söz dizimi nedir?" options={["İşlemcinin çalıştırdığı 1'ler ve 0'lar.", "Bir programlama dilinin tam yazım, noktalama ve düzen kuralları.", "Değer saklayan isimlendirilmiş bir kutu.", "Şekillerle çizilmiş bir algoritma diyagramı."]} answer={1} explanation="Bir programlama dilinin tam yazım, noktalama ve düzen kuralları." />
+  <QuizQuestion question="print('hi') neden doğru da Print('hi') neden hatadır?" options={["Python'da print komutu hiç yoktur.", "Python büyük/küçük harfe duyarlıdır: yalnızca küçük harfli print gerçek komuttur.", "Tırnakların türü yanlıştır.", "print parantez istemez."]} answer={1} explanation="Python büyük/küçük harfe duyarlıdır: yalnızca küçük harfli print gerçek komuttur." />
+  <QuizQuestion question="Python gibi üst düzey bir dil, makine koduna göre insana ne kazandırır?" options={["Çevirisiz çalışır.", "Neredeyse İngilizce gibi okunan talimatlar; insanlar bunları yazıp okuyabilir.", "Yalnızca oyunlar için kullanılabilir.", "Söz dizimi kuralı istemez."]} answer={1} explanation="Neredeyse İngilizce gibi okunan talimatlar; insanlar bunları yazıp okuyabilir." />
+</Quiz>
+
+<Summary>
+  - Programlama dili: bilgisayarın takip edebileceği talimatları yazmanın üzerinde anlaşılmış yolu; üst düzey diller makine koduna çevrilir.
+  - Blok dilleri söz dizimi hatalarını engeller; metin dilleri kesin yazım ister ama daha fazla güç verir.
+  - Anahtar terim — söz dizimi: dilin tam yazım ve noktalama kuralları; bilgisayar tamamen harfiyendir.
+  - Dikkat et: yanlış büyük/küçük harf, dengelenmemiş parantez/tırnak ve bilgisayarın ne demek istediğini bildiğini sanmak.
+</Summary>

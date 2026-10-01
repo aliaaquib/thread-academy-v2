@@ -1,0 +1,81 @@
+---
+title: "Döngüler"
+lede: "Adımlı ve koşullu döngülerle tekrarla, sonsuz döngülerden kaçın."
+---
+
+<LearningObjectives>
+  <li>Döngüler'i kendi cümlelerinle tanımla ve açıkla</li>
+  <li>döngü ve yineleme gibi temel terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Döngüler'e odaklanıyor: adımlı ve koşullu döngülerle tekrarla, sonsuz döngülerden kaçın.
+
+<Definition term="Döngüler">
+  Adımlı ve koşullu döngülerle tekrarla, sonsuz döngülerden kaçın.
+</Definition>
+
+## Temel fikirler
+
+### Döngüler her yerde
+
+Bilgisayarlar sıkıcı tekrarlarda çok iyidir; bu yüzden işin tekrarlandığı her yerde döngüler karşımıza çıkar: bir sayı listesini toplarken, bir karakteri kare kare canlandırırken, bir testteki her cevabı kontrol ederken. Tekrarı fark ettiğinde döngüyü de fark etmiş olursun.
+
+### Öğrenilecek iki döngü türü
+
+Adımlı bir döngü sabit sayıda tekrarlar (ör. `for i in range(10)`); koşullu bir döngü ise bir şey değişene kadar tekrarlar (ör. `while score < 100`). Kaç tekrar gerektiğini biliyorsan adımlı döngüyü, yalnızca durma kuralını biliyorsan koşullu döngüyü seç.
+
+### Bitiş koşuluna dikkat
+
+Her döngünün bir çıkış yolu olmalı. Koşulu asla yanlış olmayan koşullu bir döngü asla durmaz — bu bir sonsuz döngüdür. `while` döngülerinde, döngünün içindeki bir şeyin koşulu değiştirdiğinden emin ol; `for` döngülerinde `range()` sınırlarını iki kez kontrol et.
+
+**Temel terim — döngü:** Tekrar eden bir kod bloğu.
+
+**Temel terim — yineleme:** Bir döngünün tek turu.
+
+<WorkedExample title="Çözümlü örnek: Toplamı İzle">
+  <TryItPython title="Bir Döngü Çalıştır" subtitle="Kodu çalıştır ve döngünün 0'dan 4'e yazdırdığını izle." initialCode={`for i in range(5):
+    print(i)
+# Sıra sende: 0'dan 9'a yazdırsın.`} />
+
+  <RelatedTopics topics={[{ title: "Çıktı ve Girdi", href: "/subject/computer-science/grade-9/programming/output-and-input" }, { title: "Döngüler", href: "/subject/computer-science/grade-9/programming/loops" }, { title: "Seçim", href: "/subject/computer-science/grade-9/programming/selection" }]} />
+
+  **Cevap:** 55 — total 0+1+...+10 toplamına eşittir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **1'den 10'a kadar yazdırmak için `for` döngüsünde `range(1, 10)` kullanmak — 10 yazdırılmaz** Düzeltme: `range(1, 10)` yalnızca 1'den 9'a gider — bitiş değerinin yazdırılmadığını unutma.
+  - **Koşulunu asla değiştirmeyen bir `while` döngüsü** Düzeltme: Döngü gövdesinin koşulu değiştirdiğinden emin ol, yoksa sonsuz döngü elde edersin.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Kod `for i in range(6): print(i)` dediğinde `print(i)` kaç kez çalışır say." hint="`range(6)`'nın kaç tam sayı ürettiğini say.">
+    6 kez — `range(6)` 0'dan 5'e kadar sayıları üretir.
+  </PracticeItem>
+  <PracticeItem question="`while guess != 42:` döngüsünde döngüyü ne durdurur?" hint="Her seferinde değişen şeyi düşün.">
+    `guess` 42 olunca döngü durur; yani döngü gövdesi `guess`'i döngünün içinde değiştirmelidir.
+  </PracticeItem>
+  <PracticeItem question="`while x > 0:` döngüsünde güncelleme satırı eksik. Risk ne, nasıl düzeltirsin?" hint="`x` hiç değişmezse ne olur?">
+    Risk sonsuz döngüdür — `x` hiç değişmez, bu yüzden koşul doğru kalır. Döngünün içine `x`'i değiştiren bir satır ekleyerek düzelt, örneğin `x = x - 1`.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: `for i in range(10)` 1'den 10'a yazdırır." hint="`range` 0'dan başlar.">
+    Yanlış — 0'dan 9'a yazdırır, çünkü `range(10)` 9'da durur.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı test
+
+<Quiz title="Döngüler — hızlı test">
+  <QuizQuestion question="Hangisi &quot;döngü&quot; tanımına en uygun?" options={["Bir program çalışırken değişebilen bir değerin adı.", "Tekrar eden bir kod bloğu.", "Bir döngünün tek turu.", "Bir koşula göre iki ya da daha çok yol arasında seçim."]} answer={1} explanation="Tekrar eden bir kod bloğu." />
+  <QuizQuestion question="Hangisi &quot;değişken&quot;i en iyi tanımlar?" options={["Tekrar eden bir kod bloğu.", "Bir döngünün tek turu.", "Bir koşula göre iki ya da daha çok yol arasında seçim.", "Bir program çalışırken değişebilen bir değerin adı."]} answer={3} explanation="Bir program çalışırken değişebilen bir değerin adı." />
+</Quiz>
+
+<Summary>
+  - Döngüler: adımlı ve koşullu döngülerle tekrarla, sonsuz döngülerden kaçın.
+  - Döngüler her yerde: Bilgisayarlar sıkıcı tekrarlarda çok iyidir; bu yüzden işin tekrarlandığı her yerde döngüler karşımıza çıkar: bir sayı listesini toplarken, bir karakteri kare kare canlandırırken, bir testteki her cevabı kontrol ederken.
+  - döngü: Tekrar eden bir kod bloğu.
+  - Dikkat: koşulunu asla değiştirmeyen bir `while` döngüsü
+</Summary>

@@ -1,0 +1,74 @@
+---
+title: "Makine Öğrenmesi Nasıl Çalışır"
+lede: "Modellerin eğitim verisinden kalıpları nasıl öğrendiğini ve neden başarısız olduklarını kavrayın."
+---
+
+<LearningObjectives>
+  <li>Makine Öğrenmesi Nasıl Çalışır'ı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Model gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Makine Öğrenmesi Nasıl Çalışır'a odaklanır: modellerin eğitim verisinden kalıpları nasıl öğrendiğini ve neden başarısız olduklarını kavrayın.
+
+<Definition term="Makine Öğrenmesi Nasıl Çalışır">
+  Modellerin eğitim verisinden kalıpları nasıl öğrendiğini ve neden başarısız olduklarını kavrayın.
+</Definition>
+
+## Temel fikirler
+
+### Modeller kalıpları öğrenir, gerçekleri ezberlemez
+
+Bir model, mevcut veriyle eğitildikten sonra yeni veriye uygulanabilen, öğrenilmiş kurallar ya da istatistiksel ilişkiler kümesidir. Örneğin, spam filtresini etiketlenmiş e-postalarla eğitirsiniz; o da "spam" yazımı ile spam olma arasındaki ilişkiyi öğrenir. Modeli eğitmek, kuralları yazmaktan çok parametreleri veriye uydurmaktır; kalıpları bulma işini algoritma yapar.
+
+### Eğitimdeki hatalar da öğrenilir
+
+Eğitim verisi geçmişteki adaletsizliği yansıtıyorsa model onu da öğrenir — bu yüzden temsil gücü ve ölçütler önemlidir. Aşırı öğrenmede model eğitim verisini o kadar yakından ezberler ki yeni örneklerde başarısız olur; veri sızıntısında ise cevap eğitim kümesine taşıdığı için ölçümler şişer.
+
+**Terim — model:** Mevcut veri kullanılarak eğitildikten sonra yeni veriye uygulanabilen, öğrenilen kurallar ya da istatistiksel ilişki kümesi.
+
+<WorkedExample title="Çözümlü örnek: Makine Öğrenmesi Nasıl Çalışır">
+  Bir model eğitim verisini o kadar yakından ezberler ki yeni örneklerde başarısız olur. Bu duruma ne denir?
+
+  Aşırı öğrenme — modelin genellemeyi öğrenip öğrenmediğini düşünün.
+
+  **Cevap:** Aşırı öğrenme — modelin genellemeyi öğrenip öğrenmediğini düşünün.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Veri sızıntısı** Düzeltme: özelliğin test kümesinde bulunmayacak bilgiyi kodladığını her zaman kontrol edin.
+  - **Farklı gruplar için ayrı ölçüm yapmamak** Düzeltme: toplam doğruluğu bir kenara bırakıp adillik ölçütlerini her bir grup için ayrı ayrı değerlendirin.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir model geçmiş işe alım kayıtlarıyla eğitilir ve kadın başvurularını sistematik olarak eler. Bu hangi yanlılık türüdür?" hint="Model bu kararı nereden öğrendi?">
+    Eğitim verisindeki geçmiş önyargı — model, geçmişteki haksız kalıpları öğrendi.
+  </PracticeItem>
+  <PracticeItem question="Bir yapay zekâ uygulaması geçmiş işe alım kayıtlarıyla eğitilir ve belirli bir gruptan az sayıda başvuru olduğunu fark edersiniz. Hangi yanlılık riski ortaya çıkar?" hint="Modelin o grup için ne kadar güvenilir olacağını düşünün.">
+    Temsili olmayan örneklem — model o grup için güvenilir karar veremez.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: Eğitim verisi üzerinde %100 doğruluk, modelin iyi çalıştığını kanıtlar." hint="Doğruluğu görünmemiş veriyle test etmeyi düşünün.">
+    Yanlış — bu aşırı öğrenme belirtisidir; doğruluğu görünmemiş veriyle test edin.
+  </PracticeItem>
+  <PracticeItem question="Özellikler test kümesinde bulunmayacak bilgiyi kodluyorsa bunun adı nedir?" hint="Test sonuçları neden yanıltıcı olur?">
+    Veri sızıntısı.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Makine Öğrenmesi Nasıl Çalışır — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;model&quot;i en iyi tanımlar?" options={["Yapay zekâ destekli bir aracı geliştiren, dağıtan ya da kullanan kişi ya da kuruluş; genellikle sonuçları için hesap verir.", "Kişileri ya da kaynakları sınıflandıran, ancak gruplar arasında adilliği garantilemeyen tek bir sayı.", "Bazı grupları sistematik olarak daha iyi ya da daha kötü etkileyen, verideki ya da modeldeki çarpıklık — örneğin eğitime sokulan önyargılar gibi.", "Mevcut veri kullanılarak eğitildikten sonra yeni veriye uygulanabilen, öğrenilen kurallar ya da istatistiksel ilişki kümesi."]} answer={3} explanation="Mevcut veri kullanılarak eğitildikten sonra yeni veriye uygulanabilen, öğrenilen kurallar ya da istatistiksel ilişki kümesi." />
+  <QuizQuestion question="Bir model eğitim verisini o kadar yakından ezberler ki yeni örneklerde başarısız olur. Bu duruma ne denir?" options={["Temsili olmayan örneklem", "Eğitim verisindeki geçmiş önyargı — model, geçmişteki haksız kalıpları öğrendi.", "Veri sızıntısı", "Aşırı öğrenme — modelin genellemeyi öğrenip öğrenmediğini düşünün."]} answer={3} explanation="Aşırı öğrenme — modelin genellemeyi öğrenip öğrenmediğini düşünün." />
+  <QuizQuestion question="Doğru mu yanlış mı: Yüksek doğruluk, modelin adil olduğu anlamına gelir." options={["Verilen bilgilerden belirlenemez", "Bazen doğru", "Doğru", "Yanlış — adillik, her bir grup için ayrı ölçütler gerektirir."]} answer={3} explanation="Yanlış — adillik, her bir grup için ayrı ölçütler gerektirir." />
+</Quiz>
+
+<Summary>
+  - Makine Öğrenmesi Nasıl Çalışır: modellerin eğitim verisinden kalıpları nasıl öğrendiğini ve neden başarısız olduklarını kavrayın.
+  - Modeller kalıpları öğrenir, gerçekleri ezberlemez: Bir model, mevcut veriyle eğitildikten sonra yeni veriye uygulanabilen, öğrenilmiş kurallar ya da istatistiksel ilişkiler kümesidir.
+  - Yanlılık: Bazı grupları sistematik olarak daha iyi ya da daha kötü etkileyen, verideki ya da modeldeki çarpıklık — örneğin eğitime sokulan önyargılar gibi.
+  - Dikkat edin: veri sızıntısı
+</Summary>

@@ -1,0 +1,76 @@
+---
+title: "Kabarcık Sıralama"
+lede: "Komşu öğeleri tekrar tekrar yer değiştirerek listeleri sıralayın."
+---
+
+<LearningObjectives>
+  <li>Kabarcık Sıralama'yı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Kabarcık sıralama gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Kabarcık Sıralama'ya odaklanır: komşu öğeleri tekrar tekrar yer değiştirerek listeleri sıralayın.
+
+<Definition term="Kabarcık Sıralama">
+  Komşu öğeleri tekrar tekrar yer değiştirerek listeleri sıralayın.
+</Definition>
+
+## Temel fikirler
+
+### Kabarcık sıralama nasıl çalışır
+
+Bir geçiş, listeyi baştan sona gezip her komşu çifti karşılaştırır ve yanlış sırada olanları yer değiştirir. Tam bir geçişten sonra, sıralanmamış en büyük öğe sona "köpürerek" son konumuna yerleşir. Algoritma, küçülen sıralanmamış bölüm üzerinde, tam bir geçişte hiç yer değiştirme olmayana kadar geçişleri tekrarlar — o zaman liste sıralanmıştır. Her geçiş yaklaşık n karşılaştırma yapar ve n geçişe kadar gerekebilir.
+
+### Kabarcık sıralama basittir, hızlı değil
+
+Kabarcık sıralamayı anlamak ve kodlamak kolaydır, bu yüzden ilk öğretilir — ama her komşu çifti karşılaştırmak onu yavaşlatır; en kötü durumda O(n²)'dir. Python'un yerleşik sıralaması Timsort adlı çok daha akıllı bir algoritma kullanır. Sınavlarda kabarcık sıralamanın adımlarını ve zayıflığını bilin.
+
+**Terim — kabarcık sıralama:** Listedeki yanlış sırada olan komşu öğeleri, yer değiştirme kalmayana kadar tekrar tekrar yer değiştirerek sıralama.
+
+<WorkedExample title="Çözümlü örnek: Kabarcık Sıralama">
+  [4, 2, 5, 1] listesini kabarcık sıralamayla, her geçişi göstererek sıralayın.
+
+  1. Geçiş: 4,2 karşılaştır → yer değiştir → [2,4,5,1]; 4,5 karşılaştır → kalsın; 5,1 karşılaştır → yer değiştir → [2,4,1,5]. 5 sona köpürdü.
+  2. Geçiş: 2,4 karşılaştır → kalsın; 4,1 karşılaştır → yer değiştir → [2,1,4,5]. 4 artık yerleşti.
+  3. Geçiş: 2,1 karşılaştır → yer değiştir → [1,2,4,5].
+  4. Geçiş: yer değiştirme yok — sıralandı.
+
+  **Cevap:** 4 geçişten sonra [1, 2, 4, 5].
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Kabarcık sıralamanın yazması kısa olduğu için verimli olduğunu iddia etme** Düzeltme: kısa kod hızlı kod demek değildir — kabarcık sıralamanın iç içe karşılaştırmaları onu O(n²) yapar, büyük listelerde yavaştır.
+  - **Tek geçişten sonra durma** Düzeltme: tek geçiş yalnızca en büyük öğeyi yerleştirir — tam bir geçişte hiç yer değiştirme olmayana kadar geçmeye devam edin, yoksa liste sıralanmış değildir.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="[5, 3, 8, 1] listesinde kabarcık sıralamanın bir geçişini izleyin. Liste sonrasında nasıl olur?" hint="Komşuları soldan sağa karşılaştırın, sırası bozuksa yer değiştirin.">
+    [3, 5, 1, 8] — 5 ile 3 yer değiştirir, 5 ile 8 kalır, 8 ile 1 yer değiştirir.
+  </PracticeItem>
+  <PracticeItem question="6 öğelik bir listede kabarcık sıralamanın bir geçişi kaç karşılaştırma yapar?" hint="Her komşu çift bir kez karşılaştırılır.">
+    5 — çiftler (1,2), (2,3), (3,4), (4,5), (5,6).
+  </PracticeItem>
+  <PracticeItem question="[7, 3, 9, 2] listesinde kabarcık sıralamanın ilk tam geçişinden sonra hangi öğe son konumundadır?" hint="Sona ne köpürür?">
+    9 — bir geçişten sonra en büyük öğe listenin sonuna köpürür.
+  </PracticeItem>
+  <PracticeItem question="Bir algoritma 100 öğe için 4 saniye, 200 öğe için 16 saniye sürüyor. Bu hangi Big-O büyümesine işaret eder?" hint="Girdi iki katına çıkınca süre dört katına çıktı.">
+    O(n²) — girdi iki katına çıkınca dört katına çıkmak, ikinci dereceden büyümenin işaretidir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Kabarcık Sıralama — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;kabarcık sıralama&quot;yı en iyi tanımlar?" options={["Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma.", "Hedef bulunana kadar listedeki her öğeyi tek tek kontrol etme. Basit, sıralanmamış listelerde çalışır ama büyük listelerde yavaştır.", "Bir algoritmanın çalışma süresinin girdi büyüdükçe nasıl arttığını anlatmanın bir yolu — örneğin doğrusal arama O(n), ikili arama O(log n)'dir.", "Listedeki yanlış sırada olan komşu öğeleri, yer değiştirme kalmayana kadar tekrar tekrar yer değiştirerek sıralama."]} answer={3} explanation="Listedeki yanlış sırada olan komşu öğeleri, yer değiştirme kalmayana kadar tekrar tekrar yer değiştirerek sıralama." />
+  <QuizQuestion question="Kabarcık sıralamanın tam bir geçişinden sonra kesin olarak ne bilirsiniz?" options={["Tüm liste sıralanmıştır.", "En küçük öğe son konumundadır.", "Artık geçişe gerek yoktur.", "Sıralanmamış en büyük öğe son konumuna köpürmüştür."]} answer={3} explanation="Sıralanmamış en büyük öğe son konumuna köpürmüştür." />
+</Quiz>
+
+<Summary>
+  - Kabarcık Sıralama: komşu öğeleri tekrar tekrar yer değiştirerek listeleri sıralayın.
+  - Kabarcık sıralama nasıl çalışır: Her geçiş, sırası bozuk komşu çiftleri yer değiştirir ve kalan en büyük öğeyi sona köpürtür; bir geçişte yer değiştirme olmayana kadar tekrarlayın.
+  - Kabarcık sıralama karmaşıklığı: Yaklaşık n karşılaştırmalı n geçişe kadar, en kötü durumda O(n²) süre verir — kodlaması basit, büyük listelerde yavaş.
+  - Dikkat edin: kabarcık sıralamanın yazması kısa olduğu için verimli olduğunu iddia etme
+</Summary>

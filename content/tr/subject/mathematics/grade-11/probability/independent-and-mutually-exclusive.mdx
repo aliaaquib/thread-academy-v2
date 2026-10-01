@@ -1,0 +1,76 @@
+---
+title: "Bağımsız ve Ayrık Olaylar"
+lede: "Bağımsız olaylar için olasılıkları çarpma, ayrık olaylar için toplama."
+---
+
+<LearningObjectives>
+  <li>Bağımsız ve Ayrık Olaylar'ı kendi cümlelerinle tanımla ve açıkla</li>
+  <li>Ayrık gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Bağımsız ve Ayrık Olaylar konusuna odaklanır: bağımsız olaylar için olasılıkları çarpma, ayrık olaylar için toplama.
+
+<Definition term="Bağımsız ve Ayrık Olaylar">
+  Bağımsız olaylar için olasılıkları çarpma, ayrık olaylar için toplama.
+</Definition>
+
+## Temel fikirler
+
+### Toplama kuralı
+
+Ayrık olaylar için P(A veya B) = P(A) + P(B). Adil bir zarda 1 veya 6 atmak 1/6 + 1/6 = 2/6 = 1/3 verir. Bu ancak olaylar aynı anda gerçekleşemediğinde işler.
+
+### Çarpma kuralı
+
+Bağımsız olaylar için P(A ve B) = P(A) × P(B). İki adil para atışında iki yazı 1/2 × 1/2 = 1/4 verir. Yerine koymadan çekme gibi bağımlı olaylar için her çekişten sonra yeni toplamları kullan.
+
+**Anahtar terim — Ayrık:** Bir atışta 2 ve 5 atmak gibi aynı anda gerçekleşemeyen iki olay; olasılıkları toplanır.
+
+<WorkedExample title="Çözümlü örnek: Yerine koymadan olasılık">
+  Bir torbada 3 kırmızı ve 2 mavi pul var. Yerine koymadan iki tane çekiliyor. İkisinin de kırmızı olma olasılığını bul.
+
+  İlk çekiliş: P(kırmızı) = 3/5.
+  İkinci çekiliş: bir kırmızı gitti, 4 puldan 2 kırmızı kaldı: P(kırmızı | kırmızı) = 2/4 = 1/2.
+  Çarp: 3/5 × 1/2 = 3/10.
+
+  **Cevap:** 3/10 (%0,3 ya da %30).
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Kesişen olayların olasılıklarını toplamak** Toplama kuralı ayrık olaylar gerektirir; kırmızı kart ya da papaz çekmek, kupa papazını iki kez sayar.
+  - **Olaylar bağımlıyken çarpmak** Yerine koymadan çekimde ikinci olasılık değişir — azaltılmış toplamları kullan ya da ağaç diyagramı çiz.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Adil bir altı yüzlü zar atılıyor. P(çift sayı atmak) bul." hint="Çift yüzleri say: 2, 4, 6.">
+    P = 3/6 = 1/2.
+  </PracticeItem>
+  <PracticeItem question="Adil bir para iki kez atılıyor. P(iki yazı) bul." hint="Atışlar bağımsızdır: çarp.">
+    P = 1/2 × 1/2 = 1/4.
+  </PracticeItem>
+  <PracticeItem question="P(yarın yağmur) = 0,3. P(yağmur yağmaz) bul." hint="Tümleyeni kullan: olasılıkların toplamı 1'dir.">
+    P = 1 − 0,3 = 0,7.
+  </PracticeItem>
+  <PracticeItem question="Bir çarkta 1, 2, 3, 4 sektörleri var (eşit muhtemel). P(1 ya da 2 çevirmek) bul." hint="Sonuçlar ayrıktır: topla.">
+    P = 1/4 + 1/4 = 1/2.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Bağımsız ve ayrık olaylar — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;Ayrık&quot;ı en iyi tanımlar?" options={["İki para atışı gibi biri öbürünü etkilemediğinde iki olay bağımsızdır; olasılıkları çarpılır.", "Başka bir olay zaten gerçekleştiğinde bir olayın olasılığı, P(A verildi B) şeklinde yazılır; olaylar bağımsız değilken kullanılır.", "0 ile 1 arasında, bir olayın ne kadar muhtemel olduğunu ölçen sayı; 0 imkânsız, 1 kesin demektir. Eşit muhtemel sonuçlar için (istenen sonuçlar) ÷ (toplam sonuçlar).", "Bir atışta 2 ve 5 atmak gibi aynı anda gerçekleşemeyen iki olay; olasılıkları toplanır."]} answer={3} explanation="Bir atışta 2 ve 5 atmak gibi aynı anda gerçekleşemeyen iki olay; olasılıkları toplanır." />
+  <QuizQuestion question="İki zar atılıyor. P(toplam 7) bul." options={["36'da 7 uygun çift: P = 6/36 = 1/6.", "36'da 5 uygun çift: P = 6/36 = 1/6.", "36'da 8 uygun çift: P = 6/36 = 1/6.", "36'da 6 uygun çift: P = 6/36 = 1/6."]} answer={3} explanation="36'da 6 uygun çift: P = 6/36 = 1/6." />
+  <QuizQuestion question="Bir torbada 4 yeşil ve 6 sarı şeker var. Rastgele bir şeker alınıyor. P(yeşil) bul." options={["P = 5/10 = 2/5.", "P = 3/10 = 2/5.", "P = 6/10 = 2/5.", "P = 4/10 = 2/5."]} answer={3} explanation="P = 4/10 = 2/5." />
+</Quiz>
+
+<Summary>
+  - Bağımsız ve Ayrık Olaylar: bağımsız olaylar için olasılıkları çarpma, ayrık olaylar için toplama.
+  - Toplama kuralı: Ayrık olaylar için P(A veya B) = P(A) + P(B).
+  - Bağımsız: İki para atışı gibi biri öbürünü etkilemediğinde iki olay bağımsızdır; olasılıkları çarpılır.
+  - Dikkat et: kesişen olayların olasılıklarını toplamak
+</Summary>

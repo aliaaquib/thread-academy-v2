@@ -1,0 +1,93 @@
+---
+title: "Değişkenler"
+lede: "x harfi bir gizem değil, bir kaptır. Değişkenlerin neyi temsil ettiğini, nasıl değiştiğini ve ifadelere değer koymayı öğren."
+---
+
+<LearningObjectives>
+  <li>Bir değişkenin neyi temsil ettiğini açıkla</li>
+  <li>İfadelere değer koy</li>
+  <li>Değişkenleri bilinmeyenlerden ayırt et</li>
+</LearningObjectives>
+
+## Bir sayıyı temsil eden harf
+
+Cebirde harfler sayıları temsil eder. `3x + 2`'deki `x` harfi gizemli değildir — bir **yer tutucudur**. Bazen henüz bulmadığımız tek bir sayıyı temsil eder (denklemdeki bir **bilinmeyen**). Bazen *herhangi* bir sayıyı temsil eder (formüldeki bir **değişken**).
+
+<Definition term="değişken">
+  **Değişken**, değişebilen bir sayıyı temsil eden harftir.
+  `3x + 2 = 11` gibi bir denklemde `x`, tek bir değeri olan bilinmeyendir; `C = πd` gibi bir formülde harfler birçok değer alabilen değişkenlerdir.
+</Definition>
+
+Matematikçiler geleneksel olarak bilinmeyenler için `x`, `y`, `z`; bilinen ama belirtilmemiş sayılar için `a`, `b`, `c` kullanır — ama her harf olur. Fen bilimlerinde zaman için `t`, kütle için `m`, hız için `v` ile karşılaşırsın: anlamlarına göre seçilmiş harfler.
+
+## Yerine koyma: sayıları yerleştirmek
+
+**Yerine koyma**, her harfi bir sayıyla değiştirip sonra hesap yapmak demektir. `x = 4` ise:
+
+```maths
+3x + 2  →  3(4) + 2  =  12 + 2  =  14
+```
+
+<WorkedExample title="Çözümlü örnek">
+  `a = 6` ve `b = 2` iken `2a − 5b` ifadesinin değerini bul.
+
+  ```maths
+  2a − 5b  →  2(6) − 5(2)  =  12 − 10  =  2
+  ```
+
+  Parantezleri yaz — `2(6)`, `26` değil — aritmetik gerisini halleder.
+</WorkedExample>
+
+<ImportantNote title="Dikkat">
+  `3x`, `3 × x` demektir, asla `3 + x` değil. Ve `x²`, `x × x` demektir. Negatif bir sayı koyarken
+  her zaman parantez kullan: `x = −3` ise `x² = (−3)² = 9`, `−9` değil.
+</ImportantNote>
+
+## Formüllerdeki değişkenler
+
+**Formül**, değişkenlerle yazılmış bir kuraldır. Yamuğun alanı:
+
+<Formula label="Yamuğun alanı">
+  A = ½(a + b)h
+</Formula>
+
+Burada `a` ve `b` paralel kenarlar, `h` yüksekliktir. Herhangi bir ölçüyü koy ve formül işi yapsın — değişkenlerin gücü budur: **bir kural, sonsuz durum.**
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="x = 7 iken 5x − 3 ifadesinin değerini bul." hint="x yerine 7 koy, sonra hesapla.">
+    `5(7) − 3 = 35 − 3 = 32`.
+  </PracticeItem>
+  <PracticeItem question="y = −2 ise y² nedir? −y² nedir?" hint="Önce parantez: (−2)².">
+    `y² = (−2)² = 4`. Ama `−y² = −(4) = −4` — eksi, kare almadan sonra uygulanır.
+  </PracticeItem>
+  <PracticeItem question="C = 5(F − 32)/9 formülü Fahrenheit'ı Celsius'a çevirir. F = 77 iken C'yi bul." hint="F = 77 koy, sonra önce parantezin içini hesapla.">
+    `C = 5(77 − 32)/9 = 5(45)/9 = 225/9 = 25°C`.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Değişkenler — kısa kontrol">
+  <QuizQuestion
+    question="x = 5 ise 2x + 1 nedir?"
+    options={["11", "12", "7", "10"]}
+    answer={0}
+    explanation="2(5) + 1 = 10 + 1 = 11."
+  />
+  <QuizQuestion question="n = −4 ise n² nedir?" options={["17", "15", "18", "16"]} answer={3} explanation="(−4)² = (−4) × (−4) = 16. Negatifle negatifin çarpımı pozitiftir." />
+  <QuizQuestion
+    question="3x = 15 denkleminde x en iyi nasıl tanımlanır?"
+    options={["her şey olabilen bir değişken", "tek bir değeri olan bir bilinmeyen", "bir sabit", "bir katsayı"]}
+    answer={1}
+    explanation="Denklem x'i tam olarak bir değere sabitler: x = 5."
+  />
+</Quiz>
+
+<Summary>
+  - Değişken, bir sayıyı temsil eden harftir; bilinmeyen, bulunacak tek bir değeri olan değişkendir.
+  - Harfleri parantez içinde sayılarla değiştirerek yerine koy, sonra hesapla.
+  - `3x` çarpma demektir; negatifleri koyarken işaretlere dikkat et.
+  - Formüller değişkenleri yeniden kullanılabilir kurallara dönüştürür.
+</Summary>

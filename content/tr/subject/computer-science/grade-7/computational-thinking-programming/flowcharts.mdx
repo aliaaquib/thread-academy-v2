@@ -1,0 +1,145 @@
+---
+title: "Akış Şemaları"
+lede: "Bir çözümün adımlarını standart akış şeması sembolleriyle çiz."
+---
+
+<LearningObjectives>
+  <li>Akış şemalarını kendi cümlelerinle tanımla ve açıkla</li>
+  <li>algoritma gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Akış şeması, bir planın resmidir. Kimse kod yazmadan önce programın ne yapması gerektiğini çizer — standart şekiller kullanır, böylece çizimi okuyan herkes onu aynı şekilde anlar.
+
+<Definition term="Akış şeması">
+  Bir algoritmanın adımlarını oklarla birleştirilmiş standart şekiller kullanarak sırayla gösteren diyagram.
+</Definition>
+
+## Temel fikirler
+
+### Önce kâğıt üzerinde planla
+
+Kod uğraştırıcıdır: tek bir yanlış karakter, her şeyin çalışmamasına yeter. Akış şeması, söz dizimiyle uğraşmadan önce *mantığı* doğru kurmanı sağlar. Plan kâğıt üzerinde yanlışsa kodda da yanlış olur — bu yüzden programcılar önce çizer, sonra yazar.
+
+### Herkesin üzerinde anlaştığı şekiller
+
+Öğrenilecek yalnızca birkaç şekil var ve dünyanın her yerinde aynı:
+
+- **Oval** — başlangıç ve bitiş. Her akış şeması bir BAŞLAT ovaliyle açılır ve bir DUR ovaliyle kapanır.
+- **Dikdörtgen** — bir işlem. Bilgisayarın yaptığı bir şey, örneğin "toplama 1 ekle".
+- **Paralelkenar** (eğik dikdörtgen) — giriş veya çıkış. "Puanı oku" veya "sonucu yazdır".
+- **Eşkenar dörtgen** — bir karar. Evet/hayır cevabı olan bir soru, örneğin "puan 50 veya daha fazla mı?".
+- **Oklar** — akış çizgileri. Hangi adımın sonra geldiğini gösterir, bu yüzden her okun net bir yönü olmalıdır.
+
+<Diagram caption="Beş akış şeması sembolü. Bunları öğren, her akış şemasını okuyabilirsin.">
+<svg viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <ellipse cx="70" cy="50" rx="58" ry="30" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="70" y="46" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">BAŞLAT</text>
+  <text x="70" y="62" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">DUR</text>
+  <text x="70" y="105" fontSize="12" textAnchor="middle" fill="#5f5f5c">oval</text>
+  <rect x="158" y="20" width="104" height="60" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="210" y="55" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">işlem</text>
+  <text x="210" y="105" fontSize="12" textAnchor="middle" fill="#5f5f5c">dikdörtgen</text>
+  <polygon points="300,20 392,20 372,80 280,80" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="336" y="55" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">giriş / çıkış</text>
+  <text x="336" y="105" fontSize="12" textAnchor="middle" fill="#5f5f5c">paralelkenar</text>
+  <polygon points="476,20 528,50 476,80 424,50" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="476" y="55" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">karar</text>
+  <text x="476" y="105" fontSize="12" textAnchor="middle" fill="#5f5f5c">eşkenar dörtgen</text>
+</svg>
+</Diagram>
+
+### Akış şeması okuma
+
+BAŞLAT ovalinden başla ve okları yukarıdan aşağıya takip et. Bir eşkenar dörtgene geldiğinde sorusunu cevapla ve uygun yolu seç — sonra DUR'a ulaşana kadar devam et.
+
+<Diagram caption="Şemsiye almalı mısın? Yukarıdan başla ve okları takip et.">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <ellipse cx="280" cy="30" rx="60" ry="25" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="35" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">BAŞLAT</text>
+  <line x1="280" y1="55" x2="280" y2="85" stroke="#4c6106" strokeWidth="2" markerEnd="url(#ah)"/>
+  <polygon points="280,85 355,135 280,185 205,135" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="140" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">Yağmur yağıyor mu?</text>
+  <line x1="355" y1="135" x2="405" y2="135" stroke="#4c6106" strokeWidth="2"/>
+  <text x="380" y="128" fontSize="12" fill="#4c6106">Evet</text>
+  <rect x="405" y="105" width="120" height="60" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="465" y="140" fontSize="13" textAnchor="middle" fill="#1a1a1a">Şemsiyeyi al</text>
+  <line x1="465" y1="165" x2="465" y2="200" stroke="#4c6106" strokeWidth="2"/>
+  <ellipse cx="465" cy="225" rx="60" ry="25" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="465" y="230" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">DUR</text>
+  <line x1="280" y1="185" x2="280" y2="225" stroke="#4c6106" strokeWidth="2"/>
+  <text x="294" y="210" fontSize="12" fill="#4c6106">Hayır</text>
+  <ellipse cx="280" cy="250" rx="60" ry="25" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="255" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">DUR</text>
+  <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#4c6106" strokeWidth="2"/></marker></defs>
+</svg>
+</Diagram>
+
+**Anahtar terim — algoritma:** Bir problemi çözmek için adım adım verilen talimatlar dizisi. Akış şeması bir algoritmayı *göstermenin* bir yoludur; kod ise onu *yazmanın* bir yoludur.
+
+### Dersin klasiği: milden kilometreye
+
+Öğrencilerin çizdiği ilk akış şemalarından biri mili kilometreye çevirir:
+
+<CodeBlock lang="Akış şeması adımları">
+START → INPUT distanceMiles → km = distanceMiles * 1.609 → OUTPUT km → STOP
+</CodeBlock>
+
+distanceMiles = 10 ile izle: paralelkenar 10'u okur, dikdörtgen 10 × 1.609 = 16.09'u hesaplar, ikinci paralelkenar 16.09'u yazdırır. **İzleme** — bir akış şemasını gerçek değerlerle adım adım takip etme — kod yazmadan önce algoritmanın çalıştığını kanıtlamanın yoludur.
+
+### Daha ileri: yediler çarpım tablosu
+
+Aynı şekil büyür. Bu akış şeması bir sayı alır ve yediler çarpım tablosunu yazdırır:
+
+<CodeBlock lang="Akış şeması adımları">
+START → INPUT number → answer = number * 7 → OUTPUT number & " * 7 = " & answer → STOP
+</CodeBlock>
+
+number = 3 ile: answer 21 olur ve çıktı "3 * 7 = 21" şeklinde okunur. & işareti sayıyı, metni ve cevabı tek satırda birleştirir. Bir giriş, bir işlem, bir çıkış — var olan en basit kullanışlı algoritma.
+
+<WorkedExample title="Akış şemasını izle">
+  Bir sınav sonucu için akış şeması: START → INPUT "puanı oku" → DECISION "puan ≥ 50 mi?" → Evet → OUTPUT "Geçti yazdır" → STOP; Hayır → OUTPUT "Kaldı yazdır" → STOP.
+
+  Puan 65. Okları takip et: BAŞLAT, 65'i oku, "65 ≥ 50 mi?" diye sor — evet — o zaman Evet yolunu seç, "Geçti" yazdır, DUR.
+
+  **Cevap:** Akış şeması "Geçti" çıktısını verir. Puan 40 olsaydı Hayır yolu "Kaldı" yazdırırdı.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Yönsüz oklar** Düzeltme: her ok bir yere işaret etmelidir — net yönü olmayan bir ok, okuyucunun hangi adımın sonra geldiğini tahmin etmesine yol açar.
+  - **Eksik BAŞLAT veya DUR** Düzeltme: her akış şeması bir BAŞLAT ovaliyle açılır ve bir DUR ovaliyle kapanır, böylece okuyucu algoritmanın nerede başlayıp nerede bittiğini bilir.
+  - **Giriş/çıkış için dikdörtgen** Düzeltme: "puanı oku" bir giriştir, o yüzden paralelkenara aittir — dikdörtgenler yalnızca işlemler içindir.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="'sayı çift mi?' gibi bir karar için hangi şekil kullanılır?">
+    Eşkenar dörtgen — kararlar hep eşkenar dörtgenlere yazılır; bir ok girer, iki ok çıkar (Evet ve Hayır).
+  </PracticeItem>
+  <PracticeItem question="Bir akış şeması adımında 'toplamı yazdır' yazıyor. Hangi şekil olmalı?">
+    Paralelkenar — yazdırmak bir çıkıştır ve giriş/çıkış adımlarında eğik dikdörtgen kullanılır.
+  </PracticeItem>
+  <PracticeItem question="Bu akış şemasını izle: START → 'count'u 0 yap' → 'count'a 1 ekle' → karar 'count = 3 mü?' → Hayır 'count'a 1 ekle' adımına döner; Evet → DUR. Durduğunda count kaçtır?" hint="Döngüden geçerken her turda say.">
+    3 — count önce 1, sonra 2, sonra 3 olur; 3'te karar Evet cevabını verir ve akış şeması durur.
+  </PracticeItem>
+  <PracticeItem question="Programcılar neden kod yazmadan önce akış şeması çizer?">
+    Önce mantığı doğru kurmak için — bir hatayı çizimde fark edip düzeltmek, kodda düzeltmekten daha kolaydır.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Akış şemaları — hızlı kontrol">
+  <QuizQuestion question="Akış şemasının başlangıcını hangi şekil gösterir?" options={["Dikdörtgen — 'toplama 1 ekle' gibi işlem adımlarını taşır.", "Paralelkenar — giriş ve çıkış adımlarını taşır.", "Oval — her akış şeması bir BAŞLAT ovaliyle açılır ve bir DUR ovaliyle kapanır.", "Eşkenar dörtgen — evet/hayır kararlarını taşır."]} answer={2} explanation="Oval — her akış şeması bir BAŞLAT ovaliyle açılır ve bir DUR ovaliyle kapanır." />
+  <QuizQuestion question="Bir eşkenar dörtgenin içinde her zaman ne bulunur?" options={["'toplama 1 ekle' gibi bir işlem adımı.", "'puanı oku' gibi bir giriş veya çıkış adımı.", "Bir evet/hayır sorusu; bir ok girer, iki ok çıkar.", "Şemanın sonundaki dur talimatı."]} answer={2} explanation="Bir evet/hayır sorusu; bir ok girer, iki ok çıkar." />
+  <QuizQuestion question="Bir adımda 'ortalamayı göster' yazıyor. Hangi şekil olmalı?" options={["Oval, çünkü her adımın bir başlangıcı ve sonu olmalı.", "Dikdörtgen, çünkü göstermek bilgisayarın yaptığı bir şeydir.", "Paralelkenar, çünkü göstermek bir çıkıştır.", "Eşkenar dörtgen, çünkü ne gösterileceğine karar verilmelidir."]} answer={2} explanation="Paralelkenar, çünkü göstermek bir çıkıştır." />
+</Quiz>
+
+<Summary>
+  - Akış şeması: bir algoritmanın adımlarını oklarla birleştirilmiş standart şekillerle sırayla gösteren diyagram.
+  - Önce kâğıt üzerinde planla: kodun söz dizimiyle uğraşmadan önce mantığı çizimde doğru kur.
+  - Anahtar terim — algoritma: bir problemi çözmek için adım adım talimatlar; akış şeması bunu gösterir, kod bunu yazar.
+  - Dikkat et: yönsüz oklar, eksik BAŞLAT/DUR ovalleri ve giriş/çıkış için dikdörtgen kullanmak.
+</Summary>

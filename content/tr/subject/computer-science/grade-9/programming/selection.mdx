@@ -1,0 +1,81 @@
+---
+title: "Seçim"
+lede: "`if`, `elif` ve `else` ile karar ver."
+---
+
+<LearningObjectives>
+  <li>Seçim'i kendi cümlelerinle tanımla ve açıkla</li>
+  <li>koşul ve seçim gibi temel terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Seçim'e odaklanıyor: `if`, `elif` ve `else` ile karar ver.
+
+<Definition term="Seçim">
+  `if`, `elif` ve `else` ile karar ver.
+</Definition>
+
+## Temel fikirler
+
+### Kararlar karşılaştırmadır
+
+Her `if` ifadesi, koşul denen bir evet-hayır sorusu sorar — doğru ya da yanlış olan `score >= 50` gibi bir şey. Karşılaştırma işleçleri (`==`, `!=`, `<`, `>`) koşulları kurar; koşul doğruysa program bir yolu, yanlışsa başka bir yolu izler.
+
+### Seçimin üç biçimi
+
+`if`, kodu yalnızca koşul doğruysa çalıştırır. `if`/`else` iki yol arasında seçim yapar. `if`/`elif`/`else` zincirleri birçok durumu sırayla ele alır — Python her koşulu yukarıdan aşağıya kontrol eder ve doğru olan ilkini çalıştırıp gerisini atlar.
+
+### İç içe yazarken dikkatli ol
+
+Bir `if`'in içindeki `if`'e iç içe yazma denir. Tek düzey iç içe yazma sorun değildir, ama derin iç içe yazma hızla kafa karıştırır. İki düzeyden fazlan varsa mantığı düzleştirmenin bir yolunu ara — koşulları `and` ile birleştir ya da `elif` ile yeniden düzenle.
+
+**Temel terim — seçim:** Koşula göre dallanma — yollar arasında seçim.
+
+**Temel terim — koşul:** Doğru ya da yanlış olan bir evet-hayır sorusu.
+
+<WorkedExample title="Çözümlü örnek: Toplamı İzle">
+  <TryItPython title="Bir Döngü Çalıştır" subtitle="Kodu çalıştır ve döngünün 0'dan 4'e yazdırdığını izle." initialCode={`for i in range(5):
+    print(i)
+# Sıra sende: 0'dan 9'a yazdırsın.`} />
+
+  <RelatedTopics topics={[{ title: "Çıktı ve Girdi", href: "/subject/computer-science/grade-9/programming/output-and-input" }, { title: "Döngüler", href: "/subject/computer-science/grade-9/programming/loops" }, { title: "Seçim", href: "/subject/computer-science/grade-9/programming/selection" }]} />
+
+  **Cevap:** 55 — total 0+1+...+10 toplamına eşittir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Koşulda `==` yerine `=` kullanmak** Düzeltme: `=` değer atar; `==` iki değeri karşılaştırır — koşullarda `==` kullan.
+  - **`elif` zincirinde çakışan koşullar yazmak** Düzeltme: Doğru dalın önce çalışması için koşullarını en özgülden en genele doğru sırala.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bu ne yazdırır? `x = 7` ardından `if x > 10: print(&quot;big&quot;) else: print(&quot;small&quot;)`" hint="Koşulun doğru olup olmadığını kontrol et.">
+    `small` yazdırır — 7, 10'dan büyük değildir; yani koşul yanlıştır ve `else` dalı çalışır.
+  </PracticeItem>
+  <PracticeItem question="Şunun koşulunu yaz: sıcaklık en az 30." hint="En az, büyük-eşit demektir.">
+    `temp >= 30` — en az 30, 30'un kendisini de içerir.
+  </PracticeItem>
+  <PracticeItem question="`while x > 0:` döngüsünde güncelleme satırı eksik. Risk ne, nasıl düzeltirsin?" hint="`x` hiç değişmezse ne olur?">
+    Risk sonsuz döngüdür — `x` hiç değişmez, bu yüzden koşul doğru kalır. Döngünün içine `x`'i değiştiren bir satır ekleyerek düzelt, örneğin `x = x - 1`.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: `for i in range(10)` 1'den 10'a yazdırır." hint="`range` 0'dan başlar.">
+    Yanlış — 0'dan 9'a yazdırır, çünkü `range(10)` 9'da durur.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı test
+
+<Quiz title="Seçim — hızlı test">
+  <QuizQuestion question="Hangisi &quot;seçim&quot;i en iyi tanımlar?" options={["Koşula göre dallanma — yollar arasında seçim.", "Yeniden kullanılabilir, adlandırılmış bir kod bloğu.", "Bir döngünün tek turu.", "Bir program çalışırken değişebilen bir değerin adı."]} answer={0} explanation="Koşula göre dallanma — yollar arasında seçim." />
+  <QuizQuestion question="Hangisi &quot;döngü&quot;yü en iyi tanımlar?" options={["Koşula göre dallanma — yollar arasında seçim.", "Yeniden kullanılabilir, adlandırılmış bir kod bloğu.", "Bir döngünün tek turu.", "Tekrar eden bir kod bloğu."]} answer={3} explanation="Tekrar eden bir kod bloğu." />
+</Quiz>
+
+<Summary>
+  - Seçim: `if`, `elif` ve `else` ile karar ver.
+  - Kararlar karşılaştırmadır: Her `if` ifadesi, koşul denen bir evet-hayır sorusu sorar — doğru ya da yanlış olan `score >= 50` gibi bir şey.
+  - seçim: Koşula göre dallanma — yollar arasında seçim.
+  - Dikkat: koşulda `==` yerine `=` kullanmak
+</Summary>

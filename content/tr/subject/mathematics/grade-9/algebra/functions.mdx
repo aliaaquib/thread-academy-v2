@@ -1,0 +1,119 @@
+---
+title: "Fonksiyonlar"
+lede: "Fonksiyon bir makinedir: bir sayı gir, başka bir sayı çık. Fonksiyon gösterimini, fonksiyonları hesaplamayı ve grafiklerin ne anlattığını öğren."
+---
+
+<LearningObjectives>
+  <li>f(x) fonksiyon gösterimini anla</li>
+  <li>Verilen girdiler için fonksiyonları hesapla</li>
+  <li>Fonksiyonlarla ters işlemleri bul</li>
+  <li>Fonksiyon grafiklerini oku</li>
+</LearningObjectives>
+
+## Girdi → makine → çıktı
+
+**Fonksiyon**, her girdiyi tam olarak bir çıktıya dönüştüren bir kuraldır. Bir makine gibi düşün: 3'ü at, 7 çıksın. 10'u at, 21 çıksın. Buradaki makine ikiyle çarpıp 1 ekliyor.
+
+<Definition term="fonksiyon">
+  **Fonksiyon**, her girdiye tam olarak bir çıktı atayan kuraldır.
+  `f(x) = 2x + 1` şeklinde yazarız ve "f of x eşittir 2x + 1" diye okuruz.
+</Definition>
+
+`f(x)` gösterimi çarpmaya benzer ama değildir — bu, fonksiyonun *adı* (`f`) ile girdiye (`x`) uygulanmış halidir.
+
+<Diagram caption="Bir fonksiyon makinesi: her girdinin tam olarak bir çıktısı vardır.">
+<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <ellipse cx="110" cy="100" rx="62" ry="42" fill="#fbfbfa" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="110" y="94" textAnchor="middle" fontSize="15" fontWeight="700">girdi</text>
+  <text x="110" y="116" textAnchor="middle" fontSize="15">x = 3</text>
+  <rect x="230" y="55" width="100" height="90" rx="14" fill="#f3f8dc" stroke="#7c9a0c" strokeWidth="2"/>
+  <text x="280" y="95" textAnchor="middle" fontSize="15" fontWeight="700" fill="#4c6106">× 2</text>
+  <text x="280" y="118" textAnchor="middle" fontSize="15" fontWeight="700" fill="#4c6106">+ 1</text>
+  <ellipse cx="450" cy="100" rx="62" ry="42" fill="#fbfbfa" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="450" y="94" textAnchor="middle" fontSize="15" fontWeight="700">çıktı</text>
+  <text x="450" y="116" textAnchor="middle" fontSize="15">f(3) = 7</text>
+  <line x1="172" y1="100" x2="226" y2="100" stroke="#1a1a1a" strokeWidth="2"/>
+  <polygon points="226,100 216,93 216,107" fill="#1a1a1a"/>
+  <line x1="334" y1="100" x2="384" y2="100" stroke="#1a1a1a" strokeWidth="2"/>
+  <polygon points="388,100 378,93 378,107" fill="#1a1a1a"/>
+</svg>
+</Diagram>
+
+## Fonksiyonları hesaplama
+
+`f(3)`'ü **hesaplamak**, 3'ü `x`'in geçtiği her yere koymak demektir:
+
+```maths
+f(x) = 2x + 1
+f(3) = 2(3) + 1 = 7
+f(−2) = 2(−2) + 1 = −3
+f(0) = 1
+```
+
+<WorkedExample title="Çözümlü örnek">
+  `g(x) = x² − 4` ise `g(5)`'i ve `g(x) = 21` olan `x` değerlerini bul.
+
+  ```maths
+  g(5) = 25 − 4 = 21
+  x² − 4 = 21  →  x² = 25  →  x = 5 or x = −5
+  ```
+</WorkedExample>
+
+## Geriye gitme
+
+Fonksiyonlar, her adım tersine çevrilerek geri alınabilir. `f(x) = 2x + 1`, 3'ü 7'ye çeviriyorsa tersi 7'yi 3'e geri çevirir: 1 çıkar, sonra yarıya böl. Bu ters fonksiyona **ters fonksiyon** denir ve `f⁻¹(x) = (x − 1)/2` şeklinde yazılır.
+
+Her fonksiyonun düzgün bir tersi yoktur — ama her doğrusal fonksiyonun vardır.
+
+## Grafik olarak fonksiyonlar
+
+Girdiyi x eksenine, çıktıyı y eksenine çiz ve fonksiyon bir **grafik** haline gelsin. `f(x) = 2x + 1`'in grafiği düz bir doğrudur; değerleri buradan okumak aynı hesabı görsel olarak yapmaktır. `f(x) = 7` denklemini çözmek, grafiğin yüksekliğinin 7 olduğu yeri bulmak demektir.
+
+<ImportantNote title="Bir girdi, bir çıktı">
+  Belirleyici kural: her girdi **tam olarak bir** çıktı verir. Bir girdi için iki çıktı veren kural
+  ("x = ±√y" gibi) fonksiyon değildir. Grafiklerde bu dikey doğru testidir.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="f(x) = 3x − 2 ise f(4) ve f(−1)'i bul." hint="Her değeri x yerine koy.">
+    `f(4) = 3(4) − 2 = 10`. `f(−1) = 3(−1) − 2 = −5`.
+  </PracticeItem>
+  <PracticeItem question="h(x) = 5 − 2x ise h(x) = 11 yapan x'i bul." hint="Denklemi kur ve çöz.">
+    `5 − 2x = 11` → `−2x = 6` → `x = −3`.
+  </PracticeItem>
+  <PracticeItem question="f(x) = 3x + 6 fonksiyonunun ters fonksiyonunu yaz." hint="Adımları tersine çevir: ×3 sonra +6'yı ne geri alır?">
+    Önce `+6`'yı geri al (6 çıkar), sonra `×3`'ü geri al (3'e böl): `f⁻¹(x) = (x − 6)/3`.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Fonksiyonlar — kısa kontrol">
+  <QuizQuestion
+    question="f(x) = x² + 1 ise f(3) nedir?"
+    options={["7", "10", "8", "9"]}
+    answer={1}
+    explanation="f(3) = 3² + 1 = 9 + 1 = 10."
+  />
+  <QuizQuestion
+    question="f(x) gösterimi ne anlama gelir?"
+    options={["f çarpı x", "f fonksiyonunun x girdisine uygulanması", "f bölü x", "x'inci fonksiyon"]}
+    answer={1}
+    explanation="f(x), 'f of x' diye okunur — f fonksiyonunun x girdisi için çıktısı."
+  />
+  <QuizQuestion
+    question="g(x) = 4x ise ters fonksiyon g⁻¹(x) nedir?"
+    options={["x/4", "4/x", "x − 4", "−4x"]}
+    answer={0}
+    explanation="×4'ü ÷4 ile geri al: g⁻¹(x) = x/4."
+  />
+</Quiz>
+
+<Summary>
+  - Fonksiyon her girdiyi tam olarak bir çıktıya eşler; f(x), "f of x" diye okunur.
+  - Hesaplamak için girdiyi x yerine koy.
+  - Ters fonksiyonlar adımları tersine çevirir: önce son işlemi geri al.
+  - Grafikler fonksiyonları resme dönüştürür — çözmek koordinat okumaya dönüşür.
+</Summary>

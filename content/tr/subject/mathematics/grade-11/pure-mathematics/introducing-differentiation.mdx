@@ -1,0 +1,73 @@
+---
+title: "Türeve Giriş"
+lede: "İlk ilkeler fikriyle eğimler, kuvvet kuralı ve durağan noktalar."
+---
+
+<LearningObjectives>
+  <li>Türeve Giriş'i kendi cümlelerinle tanımla ve açıkla</li>
+  <li>Durağan nokta gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Türeve Giriş konusuna odaklanır: ilk ilkeler fikriyle eğimler, kuvvet kuralı ve durağan noktalar.
+
+<Definition term="Türeve Giriş">
+  İlk ilkeler fikriyle eğimler, kuvvet kuralı ve durağan noktalar.
+</Definition>
+
+## Temel fikirler
+
+### Polinomların türevi
+
+İlk ilkelerden, xⁿ'in eğimi nxⁿ⁻¹'dir — kuvvet kuralı. Yani f(x) = 3x³ − 5x² + 2x − 7 için f′(x) = 9x² − 10x + 2 olur ve x = 2'deki eğim 36 − 20 + 2 = 18'dir.
+
+### Durağan noktalar ve doğaları
+
+Durağan noktaları bulmak için f′(x) = 0'ı çöz, sonra ikinci türevi ya da işaret tablosu kullan: pozitif ikinci türev minimum, negatif olan maksimum demektir. f(x) = x³ − 3x için f′(x) = 3x² − 3 = 0'dan x = ±1 bulunur; x = −1'de maksimum, x = 1'de minimum vardır.
+
+**Anahtar terim — Durağan nokta:** Türevin sıfır olduğu, teğetin yatay olduğu nokta: maksimum, minimum ya da dönüm noktası.
+
+<WorkedExample title="Çözümlü örnek: Türeve Giriş">
+  y = x² − 6x + 5'in durağan noktalarını bul.
+
+  dy/dx = 2x − 6 = 0 → x = 3; durağan nokta (3, −4), minimum çünkü d²y/dx² = 2, yani pozitif.
+
+  **Cevap:** dy/dx = 2x − 6 = 0 → x = 3; durağan nokta (3, −4), minimum çünkü d²y/dx² = 2, yani pozitif.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Kuvvet kuralını xⁿ'e yanlış uygulamak** Eski kuvvetle çarp, sonra onu bir azalt: x⁵'in türevi 5x⁴'tür, 5x⁵ ya da x⁴ değil.
+  - **Sabit terimin türevini 1 ya da x almak** Herhangi bir sabitin türevi 0'dır — değişime katkısı yoktur.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="y = 4x³ + 6x'in türevini al." hint="Her terime kuvvet kuralı.">
+    dy/dx = 12x² + 6.
+  </PracticeItem>
+  <PracticeItem question="5, 9, 13, 17, … aritmetik dizisinin 10. terimini bul." hint="a = 5, d = 4; n. terim = a + (n − 1)d.">
+    5 + 9 × 4 = 5 + 36 = 41.
+  </PracticeItem>
+  <PracticeItem question="∫ (6x² + 4) dx'i bul." hint="Terim terim integre et; + C'yi unutma.">
+    2x³ + 4x + C.
+  </PracticeItem>
+  <PracticeItem question="∫₀³ 2x dx'i hesapla." hint="İntegre et, sonra sınırları yaz.">
+    [x²]₀³ = 9 − 0 = 9.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Türeve giriş — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;Durağan nokta&quot;yı en iyi tanımlar?" options={["Her terimin bir öncekinden sabit bir ortak farkla değiştiği dizi, örneğin 3, 7, 11, 15.", "Her girdiye tam bir çıktı atayan kural, y = f(x) şeklinde yazılır; izin verilen girdilerin kümesi tanım kümesidir.", "Her noktada y = f(x)'in eğimini veren f′(x) fonksiyonu; aralık sıfıra daralırken ortalama değişim hızının limiti.", "Türevin sıfır olduğu, teğetin yatay olduğu nokta: maksimum, minimum ya da dönüm noktası."]} answer={3} explanation="Türevin sıfır olduğu, teğetin yatay olduğu nokta: maksimum, minimum ya da dönüm noktası." />
+  <QuizQuestion question="f(x) = x² ve g(x) = 2x + 1 için f(g(x))'i bul." options={["f(g(x)) = (3x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (1x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (4x + 1)² = 4x² + 4x + 1.", "f(g(x)) = (2x + 1)² = 4x² + 4x + 1."]} answer={3} explanation="f(g(x)) = (2x + 1)² = 4x² + 4x + 1." />
+</Quiz>
+
+<Summary>
+  - Türeve Giriş: ilk ilkeler fikriyle eğimler, kuvvet kuralı ve durağan noktalar.
+  - Polinomların türevi: İlk ilkelerden, xⁿ'in eğimi nxⁿ⁻¹'dir — kuvvet kuralı.
+  - Fonksiyon: Her girdiye tam bir çıktı atayan kural, y = f(x) şeklinde yazılır; izin verilen girdilerin kümesi tanım kümesidir.
+  - Dikkat et: kuvvet kuralını xⁿ'e yanlış uygulamak
+</Summary>

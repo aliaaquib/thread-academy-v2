@@ -1,0 +1,73 @@
+---
+title: "Ağaç Yapıları"
+lede: "İkili ağaçlar ve dolaşmalarla hiyerarşik veriyi düzenleyin."
+---
+
+<LearningObjectives>
+  <li>Ağaç Yapıları'nı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Düğüm gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Ağaç Yapıları'na odaklanır: ikili ağaçlar ve dolaşmalarla hiyerarşik veriyi düzenleyin.
+
+<Definition term="Ağaç Yapıları">
+  İkili ağaçlar ve dolaşmalarla hiyerarşik veriyi düzenleyin.
+</Definition>
+
+## Temel fikirler
+
+### Ağaçlar aramayı yarıya indirmeye dönüştürür
+
+İkili arama ağacı, küçük değerleri solda, büyük değerleri sağda tutar; böylece her karşılaştırma ağacın yarısını atar — ikili arama ile aynı fikir, yapının içine gömülü. Dolaşmalar düğümleri farklı sıralarla ziyaret eder: ikili arama ağacında iç-sıra dolaşma değerleri sıralı verir. Ekleme sırası ağacı şekillendirir; kötü sıralı bir ekleme onu yavaş bir bağlı listeye dönüştürür.
+
+### Graflar gerçek dünyayı modeller
+
+Yollar, arkadaşlıklar, bilgisayar ağları ve bağımlılıklar hep graftır: yerler ya da şeyler için düğümler, bağlantılar için kenarlar. Ağırlıklı kenarlar, Dijkstra gibi algoritmaların en ucuz rotayı bulmasını sağlar. Ağaçların aksine, graflar döngü içerebilir — geri dönen yollar — algoritmaların sonsuza dek dönmemek için bunlarla başa çıkması gerekir.
+
+**Terim — düğüm:** Ağaç ya da graftaki tek bir öğe; veri ve diğer düğümlere bağlantılar tutar.
+
+<WorkedExample title="Çözümlü örnek: Ağaç Yapıları">
+  İkili arama ağacının iç-sıra dolaşması ne üretir?
+
+  Değerleri artan sıralı şekilde.
+
+  **Cevap:** Değerleri artan sıralı şekilde.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Boş bir yapıdan çıkarma ya da kuyruktan çıkarma** Düzeltme: önce yapının boş olmadığını her zaman kontrol edin — hiçlikten çıkarmak taşma hatasına neden olur.
+  - **Kuyruk gerekirken yığın kullanma** Düzeltme: 'önce gelen önce mi hizmet almalı?' diye sorun — cevap evetse kuyruk gerekir; yığın, en son geleni önce hizmete alırdı.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="5, 3, 8, 1'i bu sırayla boş bir ikili arama ağacına ekleyin. Kökün sol çocuğu nedir?" hint="Küçük değerler her düğümün soluna gider.">
+    3 — kök 5'in soluna gider, sonra 1 de 3'ün soluna gider.
+  </PracticeItem>
+  <PracticeItem question="Bir web tarayıcısının geri düğmesini hangi yapı modeller: yığın mı kuyruk mu? Neden?" hint="Ziyaret edilen son sayfa, geri döndüğünüz ilk sayfadır.">
+    Yığın — her yeni sayfa itilir ve Geri, en son sayfayı çıkarır; bu, son giren ilk çıkar.
+  </PracticeItem>
+  <PracticeItem question="Bir kuyruk, A önde olacak şekilde [A, B, C] tutuyor. Bir kuyruktan çıkarma ve bir D kuyruğa eklemeden sonra kuyruk ne olur?" hint="Kuyruktan çıkarma önden çıkarır; kuyruğa ekleme arkaya ekler.">
+    [B, C, D] — A önden ayrılır, D arkaya katılır.
+  </PracticeItem>
+  <PracticeItem question="Bir yol ağı graf olarak modellenmişse düğümler, kenarlar ve ağırlıklar neyi temsil eder?" hint="Kavşakları, yolları ve mesafeleri düşünün.">
+    Düğümler kavşaklardır (ya da şehirler), kenarlar aralarındaki yollardır, ağırlıklar ise mesafeler ya da yolculuk süreleridir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Ağaç Yapıları — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;düğüm&quot;ü en iyi tanımlar?" options={["İlk giren ilk çıkar yapısı: öğeler arkadan katılır, önden ayrılır — süpermarket kasası sırası gibi.", "Grafda iki düğüm arasındaki bağlantı; yönü ve mesafe gibi bir ağırlığı olabilir.", "Son giren ilk çıkar yapısı: öğeler üst denen aynı uçtan eklenir ve çıkarılır — yaylı tabak dağıtıcısı gibi.", "Ağaç ya da graftaki tek bir öğe; veri ve diğer düğümlere bağlantılar tutar."]} answer={3} explanation="Ağaç ya da graftaki tek bir öğe; veri ve diğer düğümlere bağlantılar tutar." />
+  <QuizQuestion question="Doğru mu yanlış mı: bir yığın, bir ifadedeki parantezlerin dengeli olup olmadığını kontrol etmek için kullanılabilir." options={["Bazen doğru", "Verilen bilgilerden belirlenemez", "Yanlış", "Doğru — her açan parantezi itin ve her kapatan parantezde çıkarın; en son açılan ilk kapanmalıdır, bu tam olarak LIFO'dur."]} answer={3} explanation="Doğru — her açan parantezi itin ve her kapatan parantezde çıkarın; en son açılan ilk kapanmalıdır, bu tam olarak LIFO'dur." />
+</Quiz>
+
+<Summary>
+  - Ağaç Yapıları: ikili ağaçlar ve dolaşmalarla hiyerarşik veriyi düzenleyin.
+  - Ağaçlar aramayı yarıya indirmeye dönüştürür: İkili arama ağacı, küçük değerleri solda, büyük değerleri sağda tutar; böylece her karşılaştırma ağacın yarısını atar — ikili arama ile aynı fikir, yapının içine gömülü.
+  - Yığın: Son giren ilk çıkar yapısı: öğeler üst denen aynı uçtan eklenir ve çıkarılır — yaylı tabak dağıtıcısı gibi.
+  - Dikkat edin: boş bir yapıdan çıkarma ya da kuyruktan çıkarma
+</Summary>

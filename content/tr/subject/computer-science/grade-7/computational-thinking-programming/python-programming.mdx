@@ -1,0 +1,168 @@
+---
+title: "Python Programlama"
+lede: "İlk Python'un: print, değişkenler, input ve if ifadeleri."
+---
+
+<LearningObjectives>
+  <li>Değişkenleri kendi cümlelerinle tanımla ve açıkla</li>
+  <li>string gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Python, dünyanın en popüler dillerinden biridir — ve yeni başlayanlar için en dostça olanlardan. Akış şemalarında planladığın her şey (sıralama, seçim) artık gerçek, yazılmış koda dönüşüyor.
+
+<Definition term="Değişken">
+  Programının kullanıp daha sonra değiştirebileceği bir değeri saklayan isimlendirilmiş kutu.
+</Definition>
+
+## Temel fikirler
+
+### Çıktı ve saklama
+
+`print()` ekrana bir şey gösterir. Bir değişken, `=` ile daha sonra kullanmak üzere bir şey saklar:
+
+<CodeBlock lang="Python">
+print("Hello, world!")
+score = 0
+print(score)
+</CodeBlock>
+
+Bu `Hello, world!` yazdırır, 0'ı `score` içinde saklar, sonra `0` yazdırır. Tırnak içindeki metne **string** denir; sayılar tırnak istemez.
+
+### Girdi — bir püf noktasıyla
+
+`input()` kullanıcıdan bir şey yazmasını ister. Püf noktası: yazılan her neyse her zaman bir **string** olarak geri gelir — rakamlar bile. Onunla matematik yapmak için önce dönüştür:
+
+<CodeBlock lang="Python">
+colour = input("Enter a colour")
+print(colour)
+</CodeBlock>
+
+"blue" yaz ve blue yazdırır. Şimdi sayılarla:
+
+<CodeBlock lang="Python">
+age_text = input("Your age: ")
+age = int(age_text)
+next_year = age + 1
+print(next_year)
+</CodeBlock>
+
+`int()` "12" metnini 12 sayısına çevirir. Olmadan `age + 1` çöker — 1'i metne ekleyemezsin.
+
+### Veri tipleri: dört çeşit değer
+
+Python'daki her değerin bir tipi vardır ve tip, onunla ne yapabileceğini belirler:
+
+- **Integer** — tam sayı: 120, 0, -7.
+- **Real** (float) — ondalık kısmı olan sayı: 21.3, 1.609.
+- **Character** — tek bir karakter: '!', 'V', 'o'.
+- **String** — bir veya daha fazla karakter: "house", "Victoria Ellis".
+
+Integer tam sayıdır; Real'in ondalık kısmı olabilir. Character yalnızca tek karakterdir; String bir veya daha fazladır. Bunları karıştırmak klasik bir hata kaynağıdır — "10" (string) ile 10 (integer) birbirine benzer ama farklı davranır.
+
+### Adlandırma kuralları: geçerli ve geçersiz tanımlayıcılar
+
+Değişken adlarının (tanımlayıcılar) katı kuralları vardır:
+
+- Geçerli: colour, totalCost, numA, result
+- Geçersiz — sayıyla başlıyor: 2ndPlace
+- Geçersiz — boşluk veya nokta var: my score, my.score
+- Geçersiz — ayrılmış kelime: print, if
+- Geçersiz — tire var: my-score
+
+Bir kuralı çiğne, Python adı reddeder. İyi adlar ayrıca anlamlıdır: totalCost, kodunu okuyan biri için x'ten iyidir.
+
+### Kodda seçim: if ifadeleri
+
+Akış şemasındaki eşkenar dörtgeni hatırlıyor musun? Python'da şöyle görünür:
+
+<CodeBlock lang="Python">
+score = 65
+if score >= 50:
+    print("Pass")
+else:
+    print("Fail")
+</CodeBlock>
+
+Koşul, "eşittir" için `==` kullanır (tek `=` saklamaya çalışır, karşılaştırmaz). Altındaki girintili satırlar yalnızca koşul doğruyken çalışır. Girinti Python'da süs değildir — söz diziminin bir parçasıdır.
+
+Kendin dene — kodu düzenle ve Çalıştır'a bas:
+
+<TryItPython
+  title="Dene: ilk Python'un"
+  subtitle="Kodu düzenle, sonra Çalıştır'a bas."
+  initialCode={`print("Hello!")
+name = input("Your name: ")
+print("Nice to meet you, " + name)`}
+/>
+
+<WorkedExample title="Yaş denetleyicisini izle">
+  Kod: `age = int(input("Age: "))` sonra `if age >= 13: print("Teen")` else `print("Child")`. Kullanıcı 10 yazıyor.
+
+  Satır satır: input "Age: " gösterir ve kullanıcı 10 yazar — "10" metni olarak. int() onu 10 sayısına çevirir, age içinde saklanır. `10 >= 13` koşulu yanlıştır, bu yüzden girintili print("Teen") atlanır; else kolu çalışır.
+
+  **Cevap:** Program "Child" yazdırır. Kullanıcı 15 yazsaydı koşul doğru olur ve "Teen" yazdırırdı.
+</WorkedExample>
+
+<WorkedExample title="Bölme programını oku">
+  Bu program kullanıcıdan iki sayı alır, ilkini ikinciye böler ve cevabı yazdırır:
+
+<CodeBlock lang="Python">
+num1 = int(input("First number: "))
+num2 = int(input("Second number: "))
+answer = num1 / num2
+print(answer)
+</CodeBlock>
+
+  20 ve 4 ile izle: num1 = 20, num2 = 4, answer = 20 / 4 = 5.0, 5.0 yazdırır.
+
+  **Cevap:** 5.0 yazdırır — ve Real sonuca dikkat et: Python'da bölme, tam sayılarda bile ondalıklı sonuç verir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **== yerine =** Düzeltme: = bir değer saklar (score = 65); == karşılaştırır (if score == 65:). if içinde = kullanmak hatadır.
+  - **input'ta int() unutmak** Düzeltme: input() her zaman string döndürür — herhangi bir aritmetikten önce int() ile sarmala, yoksa program çöker.
+  - **Yanlış girinti** Düzeltme: if'in altındaki satırlar girintili olmalı (genelde 4 boşluk). Python hangi satırların if'e ait olduğuna girintiyle karar verir.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bu ne yazdırır? 1. satır: x = 7. 2. satır: print(x * 3)" hint="x, 7 sayısını saklar.">
+    21 — x, 7 tutar ve 7 * 3, 21'dir.
+  </PracticeItem>
+  <PracticeItem question="Kullanıcı bu kod için 9 yazıyor: n = int(input('Number: ')) sonra print(n + 1). Ne yazdırır?" hint="int() yazılan metni sayıya çevirir.">
+    10 — "9" 9 sayısına dönüşür, artı 1, 10 eder.
+  </PracticeItem>
+  <PracticeItem question="Hatayı düzelt: if password = 'secret': print('Welcome')">
+    if password == 'secret': — karşılaştırma == ister; tek = saklamaya çalışır ve burada hatadır.
+  </PracticeItem>
+  <PracticeItem question="String nedir? Bu dersten bir örnek ver.">
+    Tırnak içindeki metin; örneğin "Hello, world!" veya input()'un dönüştürmeden önceki sonucu.
+  </PracticeItem>
+  <PracticeItem question="Bunlardan hangisi geçerli tanımlayıcıdır: totalCost, 2ndPlace, my score, my-score, print? Her birini açıkla.">
+    totalCost geçerlidir. 2ndPlace sayıyla başlıyor — geçersiz. "my score" boşluk içeriyor — geçersiz. my-score tire içeriyor — geçersiz. print ayrılmış kelimedir — geçersiz.
+  </PracticeItem>
+  <PracticeItem question="21.3 bir Integer mı, Real mı, Character mı, String mi? Peki '!'?">
+    21.3 bir Real'dir (ondalık kısmı var). '!' bir Character'dir (tek karakter).
+  </PracticeItem>
+  <PracticeItem question="Bu satır neden çöker: age = input('Age: ') sonra print(age + 1)?">
+    input() bir string döndürür, bu yüzden age + 1 sayıyı metne eklemeye çalışır — önce int(input('Age: ')) gerekir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Python programlama — hızlı kontrol">
+  <QuizQuestion question="input() her zaman ne döndürür?" options={["Matematiğe hazır bir sayı.", "Bir string — metin — kullanıcı rakam yazsa bile.", "True veya False.", "Hiçbir şey; yalnızca bir mesaj gösterir."]} answer={1} explanation="Bir string — metin — kullanıcı rakam yazsa bile." />
+  <QuizQuestion question="score'un 50'ye eşit olup olmadığını hangi satır doğru kontrol eder?" options={["if score = 50:", "if score == 50:", "if score := 50:", "if score equals 50:"]} answer={1} explanation="if score == 50:" />
+  <QuizQuestion question="Python neden if'in altındaki girintiyi önemser?" options={["Sadece tarzdır; Python onu yok sayar.", "Girinti söz diziminin bir parçasıdır — hangi satırların if'e ait olduğunu gösterir.", "Kodu daha hızlı çalıştırır.", "Yalnızca akış şemalarında gerekir, kodda değil."]} answer={1} explanation="Girinti söz diziminin bir parçasıdır — hangi satırların if'e ait olduğunu gösterir." />
+</Quiz>
+
+<Summary>
+  - Değişken: değer saklayan isimlendirilmiş kutu; print() çıktı gösterir; string'ler tırnak içindeki metindir.
+  - input() her zaman string döndürür — yazılan rakamları sayıya çevirmek için int() kullan.
+  - if/else, akış şemasındaki seçimi koda taşır; == karşılaştırır, = saklar; girinti söz dizimidir.
+  - Dikkat et: = ile ==, input'ta int() unutmak ve yanlış girinti.
+</Summary>

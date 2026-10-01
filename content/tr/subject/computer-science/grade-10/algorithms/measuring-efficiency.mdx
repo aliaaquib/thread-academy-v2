@@ -1,0 +1,73 @@
+---
+title: "Verimliliği Ölçme"
+lede: "Big-O gösterimi ve en kötü durumlarla algoritmaları karşılaştırın."
+---
+
+<LearningObjectives>
+  <li>Verimliliği Ölçme'yi kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Big-O gösterimi gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Verimliliği Ölçme'ye odaklanır: Big-O gösterimi ve en kötü durumlarla algoritmaları karşılaştırın.
+
+<Definition term="Verimliliği Ölçme">
+  Big-O gösterimi ve en kötü durumlarla algoritmaları karşılaştırın.
+</Definition>
+
+## Temel fikirler
+
+### Kabarcık sıralama basittir, hızlı değil
+
+Kabarcık sıralamayı anlamak ve kodlamak kolaydır, bu yüzden ilk öğretilir — ama her komşu çifti karşılaştırmak onu yavaşlatır; en kötü durumda O(n²)'dir. Python'un yerleşik sıralaması Timsort adlı çok daha akıllı bir algoritma kullanır. Sınavlarda kabarcık sıralamanın adımlarını ve zayıflığını bilin.
+
+### En kötü durum önemlidir
+
+Bir algoritma şanslı olup hedefi ilk denemede bulabilir, ama mühendisler en kötü duruma göre plan yapar — olabilecek en yavaş çalışmaya. Big-O bu büyümeyi açıklar: O(n), girdiyi iki katına çıkarmak süreyi kabaca iki katına çıkarır demektir; O(n²) ise girdiyi iki katına çıkarmak süreyi kabaca dört katına çıkarır demektir.
+
+**Terim — Big-O gösterimi:** Bir algoritmanın çalışma süresinin girdi büyüdükçe nasıl arttığını anlatmanın bir yolu — örneğin doğrusal arama O(n), ikili arama O(log n)'dir.
+
+<WorkedExample title="Çözümlü örnek: Verimliliği Ölçme">
+  50 öğelik bir listede bir öğeyi bulmak için doğrusal arama en kötü durumda kaç karşılaştırma gerektirir?
+
+  50 — hedef son sıradaysa ya da yoksa her öğe kontrol edilmelidir.
+
+  **Cevap:** 50 — hedef son sıradaysa ya da yoksa her öğe kontrol edilmelidir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Kabarcık sıralamanın yazması kısa olduğu için verimli olduğunu iddia etme** Düzeltme: kısa kod hızlı kod demek değildir — kabarcık sıralamanın iç içe karşılaştırmaları onu O(n²) yapar, büyük listelerde yavaştır.
+  - **Sıralanmamış listede ikili arama kullanma** Düzeltme: listeyi önce sıralayın ya da doğrusal arama kullanın — sıralanmamış veride ikili arama sadece yavaş değil, yanlış sonuç verir.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="1.000.000 sıralı öğe için ikili arama yaklaşık kaç karşılaştırma gerektirir?" hint="Her karşılaştırma listeyi yarıya indirir; 2'nin 20. kuvveti yaklaşık bir milyondur.">
+    Yaklaşık 20 — her adım kalan öğeleri yarıya indirir, böylece bir milyon yaklaşık 20 yarıya indirmede bire iner.
+  </PracticeItem>
+  <PracticeItem question="Bir algoritma 100 öğe için 4 saniye, 200 öğe için 16 saniye sürüyor. Bu hangi Big-O büyümesine işaret eder?" hint="Girdi iki katına çıkınca süre dört katına çıktı.">
+    O(n²) — girdi iki katına çıkınca dört katına çıkmak, ikinci dereceden büyümenin işaretidir.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: ikili arama her zaman en iyi arama algoritmasıdır." hint="Sıralanmamış verileri ve küçük listeleri düşünün.">
+    Yanlış — sıralı veri gerektirir; küçük ya da sıralanmamış listelerde ek maliyet buna değmez; en iyi algoritma duruma bağlıdır.
+  </PracticeItem>
+  <PracticeItem question="[5, 3, 8, 1] listesinde kabarcık sıralamanın bir geçişini izleyin. Liste sonrasında nasıl olur?" hint="Komşuları soldan sağa karşılaştırın, sırası bozuksa yer değiştirin.">
+    [3, 5, 1, 8] — 5 ile 3 yer değiştirir, 5 ile 8 kalır, 8 ile 1 yer değiştirir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Verimliliği Ölçme — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;Big-O gösterimi&quot;ni en iyi tanımlar?" options={["Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma.", "Hedef bulunana kadar listedeki her öğeyi tek tek kontrol etme. Basit, sıralanmamış listelerde çalışır ama büyük listelerde yavaştır.", "Listeyi tekrar tekrar geçerek yanlış sırada olan komşu öğeleri yer değiştirme; yer değiştirme kalmayana kadar devam etme.", "Bir algoritmanın çalışma süresinin girdi büyüdükçe nasıl arttığını anlatmanın bir yolu — örneğin doğrusal arama O(n), ikili arama O(log n)'dir."]} answer={3} explanation="Bir algoritmanın çalışma süresinin girdi büyüdükçe nasıl arttığını anlatmanın bir yolu — örneğin doğrusal arama O(n), ikili arama O(log n)'dir." />
+  <QuizQuestion question="Tek bir arama için doğrusal arama neden ikili aramayı geçebilir?" options={["Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma.", "Hedef bulunana kadar listedeki her öğeyi tek tek kontrol etme. Basit, sıralanmamış listelerde çalışır ama büyük listelerde yavaştır.", "Düzeltme: kısa kod hızlı kod demek değildir — kabarcık sıralamanın iç içe karşılaştırmaları onu O(n²) yapar, büyük listelerde yavaştır.", "Liste sıralanmamışsa ikili aramanın önce sıralanması gerekir — bu sıralama maliyeti, tek seferlik bir aramada daha hızlı aramayı dengeleyebilir."]} answer={3} explanation="Liste sıralanmamışsa ikili aramanın önce sıralanması gerekir — bu sıralama maliyeti, tek seferlik bir aramada daha hızlı aramayı dengeleyebilir." />
+</Quiz>
+
+<Summary>
+  - Verimliliği Ölçme: Big-O gösterimi ve en kötü durumlarla algoritmaları karşılaştırın.
+  - Kabarcık sıralama basittir, hızlı değil: Kabarcık sıralamayı anlamak ve kodlamak kolaydır, bu yüzden ilk öğretilir — ama her komşu çifti karşılaştırmak onu yavaşlatır; en kötü durumda O(n²)'dir.
+  - İkili arama: Sıralı bir listeyi yarıya indirerek hedefi bulma — ortadaki öğeyle karşılaştırıp hedefi içeremeyecek yarıyı atma.
+  - Dikkat edin: kabarcık sıralamanın yazması kısa olduğu için verimli olduğunu iddia etme
+</Summary>

@@ -1,0 +1,73 @@
+---
+title: "Hipotez Testi"
+lede: "Sıfır ve alternatif hipotezler, anlamlılık düzeyleri ve H₀'nın reddedilip reddedilmeyeceğine karar verme."
+---
+
+<LearningObjectives>
+  <li>Hipotez Testi'ni kendi cümlelerinle tanımla ve açıkla</li>
+  <li>Sıfır hipotezi (H₀) gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Hipotez Testi konusuna odaklanır: sıfır ve alternatif hipotezler, anlamlılık düzeyleri ve H₀'nın reddedilip reddedilmeyeceğine karar verme.
+
+<Definition term="Hipotez Testi">
+  Sıfır ve alternatif hipotezler, anlamlılık düzeyleri ve H₀'nın reddedilip reddedilmeyeceğine karar verme.
+</Definition>
+
+## Temel fikirler
+
+### Hipotez testinin mantığı
+
+H₀'nın doğru olduğunu varsay, gözlenen kadar ya da daha uç sonuçların olasılığını hesapla (p-değeri) ve bu anlamlılık düzeyinin altındaysa H₀'yı reddet. H₀'yı reddetmemek onun doğru olduğunun kanıtı değildir — yalnızca kanıtın yetersiz olduğudur.
+
+### Binom olasılıkları
+
+P(X = r) = C(n, r) pʳ (1 − p)ⁿ⁻ʳ. Koşullar önemlidir: sabit n, iki sonuç, sabit p, bağımsız denemeler. n = 5, p = 0,3 için: P(X = 2) = 10 × 0,09 × 0,343 = 0,3087.
+
+**Anahtar terim — Sıfır hipotezi (H₀):** Hipotez testindeki varsayılan iddia — genellikle "etki yok" ya da "değişim yok" — yalnızca kanıt yeterince güçlüyse reddedilir.
+
+<WorkedExample title="Çözümlü örnek: Hipotez Testi">
+  %5 düzeyinde bir test p-değeri 0,032 veriyor. Sonuç nedir?
+
+  0,032 0,05'ten küçük, dolayısıyla H₀ reddedilir; sıfır hipotezine karşı yeterli kanıt var.
+
+  **Cevap:** 0,032 0,05'ten küçük, dolayısıyla H₀ reddedilir; sıfır hipotezine karşı yeterli kanıt var.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Tek kuyruklu ve çift kuyruklu testleri karıştırmak** Çift kuyruklu bir alternatif ("eşit değildir") anlamlılık düzeyini iki kuyruğa dağıtır; tek kuyruk kullanmak yanlış reddetme şansını iki katına çıkarır.
+  - **Denemeler bağımsız değilken binom modelini kullanmak** Koşulları kontrol et: küçük bir nüfustan yerine koymadan çekimde p her denemede değişir ve binom uygulanamaz.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="'Ortalama arttı' ifadesinin neden tek kuyruklu alternatif hipotez olduğunu açıkla." hint="Hangi yönde değişim test ediliyor?">
+    Yalnızca bir artış belirtir, dolayısıyla kritik bölge dağılımın tek (üst) kuyruğunda yer alır.
+  </PracticeItem>
+  <PracticeItem question="X ~ B(4, 0,5). P(X = 0) bul." hint="Dört deneme de başarısız.">
+    P = C(4,0) × 0,5⁰ × 0,5⁴ = 0,0625.
+  </PracticeItem>
+  <PracticeItem question="X ~ B(6, 0,2). P(X = 1) bul." hint="C(6,1) = 6.">
+    P = 6 × 0,2 × 0,8⁵ = 6 × 0,2 × 0,32768 = 0,393216.
+  </PracticeItem>
+  <PracticeItem question="X ~ N(100, 15²). x = 130 için z-skorunu bul." hint="z = (x − μ)/σ.">
+    z = (130 − 100)/15 = 2.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Hipotez testi — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;Sıfır hipotezi (H₀)&quot;nı en iyi tanımlar?" options={["μ ortalaması ve σ² varyansıyla tam olarak tanımlanan, sürekli simetrik çan eğrisi dağılımı, X ~ N(μ, σ²) şeklinde yazılır.", "Gözlenen sonuçların H₀ altında fazla düşük olasılıklı sayılıp H₀'nın reddedildiği olasılık eşiği (genellikle %5).", "Her biri p başarı olasılıklı n bağımsız denemede başarı sayısının dağılımı, X ~ B(n, p) şeklinde yazılır.", "Hipotez testindeki varsayılan iddia — genellikle 'etki yok' ya da 'değişim yok' — yalnızca kanıt yeterince güçlüyse reddedilir."]} answer={3} explanation="Hipotez testindeki varsayılan iddia — genellikle 'etki yok' ya da 'değişim yok' — yalnızca kanıt yeterince güçlüyse reddedilir." />
+  <QuizQuestion question="X ~ N(μ, σ²) için P(X, μ'dan büyüktür) nedir?" options={["1,5 — alanın yarısı ortalamanın üstündedir.", "2,5 — alanın yarısı ortalamanın üstündedir.", "5,5 — alanın yarısı ortalamanın üstündedir.", "0,5 — alanın yarısı ortalamanın üstündedir."]} answer={3} explanation="0,5 — alanın yarısı ortalamanın üstündedir." />
+</Quiz>
+
+<Summary>
+  - Hipotez Testi: sıfır ve alternatif hipotezler, anlamlılık düzeyleri ve H₀'nın reddedilip reddedilmeyeceğine karar verme.
+  - Hipotez testinin mantığı: H₀'nın doğru olduğunu varsay, gözlenen kadar ya da daha uç sonuçların olasılığını hesapla (p-değeri) ve bu anlamlılık düzeyinin altındaysa H₀'yı reddet.
+  - Anlamlılık düzeyi: Gözlenen sonuçların H₀ altında fazla düşük olasılıklı sayılıp H₀'nın reddedildiği olasılık eşiği (genellikle %5).
+  - Dikkat et: tek kuyruklu ve çift kuyruklu testleri karıştırmak
+</Summary>

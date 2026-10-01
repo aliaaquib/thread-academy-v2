@@ -1,0 +1,73 @@
+---
+title: "Graf Ağları"
+lede: "Düğümler ve kenarlarla ağları ve ilişkileri modelleyin."
+---
+
+<LearningObjectives>
+  <li>Graf Ağları'nı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Düğüm gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Graf Ağları'na odaklanır: düğümler ve kenarlarla ağları ve ilişkileri modelleyin.
+
+<Definition term="Graf Ağları">
+  Düğümler ve kenarlarla ağları ve ilişkileri modelleyin.
+</Definition>
+
+## Temel fikirler
+
+### Graflar gerçek dünyayı modeller
+
+Yollar, arkadaşlıklar, bilgisayar ağları ve bağımlılıklar hep graftır: yerler ya da şeyler için düğümler, bağlantılar için kenarlar. Ağırlıklı kenarlar, Dijkstra gibi algoritmaların en ucuz rotayı bulmasını sağlar. Ağaçların aksine, graflar döngü içerebilir — geri dönen yollar — algoritmaların sonsuza dek dönmemek için bunlarla başa çıkması gerekir.
+
+### Ağaçlar aramayı yarıya indirmeye dönüştürür
+
+İkili arama ağacı, küçük değerleri solda, büyük değerleri sağda tutar; böylece her karşılaştırma ağacın yarısını atar — ikili arama ile aynı fikir, yapının içine gömülü. Dolaşmalar düğümleri farklı sıralarla ziyaret eder: ikili arama ağacında iç-sıra dolaşma değerleri sıralı verir. Ekleme sırası ağacı şekillendirir; kötü sıralı bir ekleme onu yavaş bir bağlı listeye dönüştürür.
+
+**Terim — düğüm:** Ağaç ya da graftaki tek bir öğe; veri ve diğer düğümlere bağlantılar tutar.
+
+<WorkedExample title="Çözümlü örnek: Graf Ağları">
+  Bir yol ağı graf olarak modellenmişse düğümler, kenarlar ve ağırlıklar neyi temsil eder?
+
+  Düğümler kavşaklardır (ya da şehirler), kenarlar aralarındaki yollardır, ağırlıklar ise mesafeler ya da yolculuk süreleridir.
+
+  **Cevap:** Düğümler kavşaklardır (ya da şehirler), kenarlar aralarındaki yollardır, ağırlıklar ise mesafeler ya da yolculuk süreleridir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Grafların döngü içerebileceğini unutma** Düzeltme: bir grafı dolaşırken ziyaret edilenler kümesi tutun — yoksa algoritmanız bir döngünün etrafında sonsuza dek dönebilir.
+  - **Boş bir yapıdan çıkarma ya da kuyruktan çıkarma** Düzeltme: önce yapının boş olmadığını her zaman kontrol edin — hiçlikten çıkarmak taşma hatasına neden olur.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir web tarayıcısının geri düğmesini hangi yapı modeller: yığın mı kuyruk mu? Neden?" hint="Ziyaret edilen son sayfa, geri döndüğünüz ilk sayfadır.">
+    Yığın — her yeni sayfa itilir ve Geri, en son sayfayı çıkarır; bu, son giren ilk çıkar.
+  </PracticeItem>
+  <PracticeItem question="Bir kuyruk, A önde olacak şekilde [A, B, C] tutuyor. Bir kuyruktan çıkarma ve bir D kuyruğa eklemeden sonra kuyruk ne olur?" hint="Kuyruktan çıkarma önden çıkarır; kuyruğa ekleme arkaya ekler.">
+    [B, C, D] — A önden ayrılır, D arkaya katılır.
+  </PracticeItem>
+  <PracticeItem question="5, 3, 8, 1'i bu sırayla boş bir ikili arama ağacına ekleyin. Kökün sol çocuğu nedir?" hint="Küçük değerler her düğümün soluna gider.">
+    3 — kök 5'in soluna gider, sonra 1 de 3'ün soluna gider.
+  </PracticeItem>
+  <PracticeItem question="İkili arama ağacının iç-sıra dolaşması ne üretir?" hint="Sol alt ağaç, düğüm, sağ alt ağaç — küçük değerler solda.">
+    Değerleri artan sıralı şekilde.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Graf Ağları — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;düğüm&quot;ü en iyi tanımlar?" options={["Son giren ilk çıkar yapısı: öğeler üst denen aynı uçtan eklenir ve çıkarılır — yaylı tabak dağıtıcısı gibi.", "Grafda iki düğüm arasındaki bağlantı; yönü ve mesafe gibi bir ağırlığı olabilir.", "İlk giren ilk çıkar yapısı: öğeler arkadan katılır, önden ayrılır — süpermarket kasası sırası gibi.", "Ağaç ya da graftaki tek bir öğe; veri ve diğer düğümlere bağlantılar tutar."]} answer={3} explanation="Ağaç ya da graftaki tek bir öğe; veri ve diğer düğümlere bağlantılar tutar." />
+  <QuizQuestion question="Doğru mu yanlış mı: bir yığın, bir ifadedeki parantezlerin dengeli olup olmadığını kontrol etmek için kullanılabilir." options={["Yanlış", "Verilen bilgilerden belirlenemez", "Bazen doğru", "Doğru — her açan parantezi itin ve her kapatan parantezde çıkarın; en son açılan ilk kapanmalıdır, bu tam olarak LIFO'dur."]} answer={3} explanation="Doğru — her açan parantezi itin ve her kapatan parantezde çıkarın; en son açılan ilk kapanmalıdır, bu tam olarak LIFO'dur." />
+</Quiz>
+
+<Summary>
+  - Graf Ağları: düğümler ve kenarlarla ağları ve ilişkileri modelleyin.
+  - Graflar gerçek dünyayı modeller: Yollar, arkadaşlıklar, bilgisayar ağları ve bağımlılıklar hep graftır: yerler ya da şeyler için düğümler, bağlantılar için kenarlar.
+  - Kenar: Grafda iki düğüm arasındaki bağlantı; yönü ve mesafe gibi bir ağırlığı olabilir.
+  - Dikkat edin: grafların döngü içerebileceğini unutma
+</Summary>

@@ -1,0 +1,77 @@
+---
+title: "Algoritmik Düşünme"
+lede: "Planını bilgisayarın izleyebileceği açık ve sıralı adımlara dönüştür."
+---
+
+<LearningObjectives>
+  <li>Algoritmik Düşünme'yi kendi cümlelerinle tanımla ve açıkla</li>
+  <li>otomasyon gibi temel terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Bu ders Algoritmik Düşünme'ye odaklanıyor: planını bilgisayarın izleyebileceği açık ve sıralı adımlara dönüştür.
+
+<Definition term="Algoritmik Düşünme">
+  Planını bilgisayarın izleyebileceği açık ve sıralı adımlara dönüştür.
+</Definition>
+
+## Temel fikirler
+
+### Dört temel birlikte çalışır
+
+Bir okul şenliği düzenlemekle karşı karşıya kaldığında, onu stantlar, biletler ve tanıtım olarak parçalara ayırırsın; bilet satışının geçen yılki konserle aynı örüntüyü izlediğini fark edersin; biletlerin rengi gibi ayrıntıları soyutlarsın; sonra algoritmayı yazarsın — her standı kurmak için sıralı adımlar. Gerçek programcılar bu dördü arasında sürekli gidip gelir.
+
+### Soyutlama her şeyi görmezden gelmek değildir
+
+İyi soyutlama, sonucu etkileyen ayrıntıları tutar, gerisini eler. Bir hava durumu uygulaması sıcaklığa ve yağış olasılığına ihtiyaç duyar, uydu fotoğrafındaki bulutların rengine değil. Tutulacak yanlış ayrıntıları seçmek, bilişimdeki en yaygın düşünme hatalarından biridir.
+
+**Temel terim — otomasyon:** Bilgisayarın iyi tanımlanmış bir dizi adımı yerine getirmesini sağlama, böylece çözüm her seferinde insan çabası olmadan çalışır.
+
+<WorkedExample title="Mükemmel Tekrar Programını Planlama">
+  Bir haftada beş ders için tekrar planlamak üzere hesaplamalı düşünmeyi kullan.
+
+  Parçala: haftayı derslere, her dersi konulara, her konuyu 25 dakikalık oturumlara böl.
+  Örüntü tanıma: her dersin aynı döngüye ihtiyaç duyduğunu fark et — öğren, soru çöz, hataları gözden geçir — böylece tek bir oturum şablonu beşine de uyar.
+  Soyutlama: hangi kalemi kullanacağın gibi ilgisiz ayrıntıları görmezden gel; önemli olanı tut — konunun zorluğu, uygun saatler ve sınav tarihleri.
+  Algoritmik düşünme: sıralı adımları yaz — konuları listele, zorluğa göre sırala, en zor konuları en dinç saatlerine ata ve son günü tekrara ayır.
+
+  **Cevap:** Program; haftayı oturumlara bölerek, tek bir oturum örüntüsünü yeniden kullanarak, önemsiz ayrıntıları soyutlayarak ve sıralı adımları izleyerek kurulur — hesaplamalı düşünmenin gerçek bir plana dönüşmüş hâli.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Düşünmeden doğrudan koda atlama** Düzeltme: önce kâğıt üzerinde parçalamaya ve planlamaya on dakika ayır — bu, saatlerce yeniden yazmayı önler.
+  - **Tesadüfü örüntü sanma** Düzeltme: bir çözüm kurmadan önce örüntünün birkaç durumda geçerli olduğunu kontrol et; tek bir örnek örüntü değildir.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Doğru mu yanlış mı: hesaplamalı düşünme sadece bilgisayarlarla kullanılabilir." hint="Tekrar programı örneğini düşün.">
+    Yanlış — bu, planlama, ders çalışma ve her şeyi düzenleme için işe yarayan genel bir problem çözme düşünme biçimidir.
+  </PracticeItem>
+  <PracticeItem question="Günlük hayattan bir otomasyon örneği ver." hint="Sensiz sabit adımları izleyen bir makine düşün.">
+    Yıkama programını çalıştıran bir çamaşır makinesi ya da merkezi ısıtma zamanlayıcısı — ikisi de her seferinde insan müdahalesi olmadan önceden belirlenmiş adımları izler.
+  </PracticeItem>
+  <PracticeItem question="Bir yardım koşusu düzenlemelisin. Problemi parçalamanın iki yolunu söyle." hint="Farklı ekiplerin yapabileceği ayrı işleri düşün.">
+    Olası bölmeler: rota planlama, sponsorluk ve tanıtım; ya da etkinlik öncesi, sırası ve sonrası — alt problemlere yapılan her mantıklı bölme puan alır.
+  </PracticeItem>
+  <PracticeItem question="Bir otobüs tarifesi güzergâhları ve saatleri gösterir ama her otobüsün rengini göstermez. Bu hangi düşünme becerisidir?" hint="Gereksiz ayrıntı çıkarılmış.">
+    Soyutlama — ilgisiz ayrıntı (otobüs rengi) elenmiş, önemli olan (güzergâhlar ve saatler) kalmış.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı test
+
+<Quiz title="Algoritmik Düşünme — hızlı test">
+  <QuizQuestion question="Hangisi &quot;otomasyon&quot;u en iyi tanımlar?" options={["Gereksiz ayrıntıyı çıkarıp problemin önemli özelliklerine odaklanma — yolları gösterip her ağacı göstermeyen bir harita kullanmak gibi.", "Büyük ve karmaşık bir problemi, tek tek çözülmesi daha kolay küçük alt problemlere bölme.", "Problemlerin içindeki ve arasındaki benzerlik ya da tekrarları fark etme, böylece önce işe yaramış bir çözüm yeniden kullanılabilir.", "Bilgisayarın iyi tanımlanmış bir dizi adımı yerine getirmesini sağlama, böylece çözüm her seferinde insan çabası olmadan çalışır."]} answer={3} explanation="Bilgisayarın iyi tanımlanmış bir dizi adımı yerine getirmesini sağlama, böylece çözüm her seferinde insan çabası olmadan çalışır." />
+  <QuizQuestion question="'Bir oyun yap' neden doğrudan kodlamaya başlamak için çok büyük?" options={["Düzeltme: önce kâğıt üzerinde parçalamaya ve planlamaya on dakika ayır — bu, saatlerce yeniden yazmayı önler.", "Büyük ve karmaşık bir problemi, tek tek çözülmesi daha kolay küçük alt problemlere bölme.", "Düşünmeden doğrudan koda atlama", "Bu, onlarca alt problemi — grafikleri, kontrolleri, puanlamayı — gizleyen devasa bir problemdir; bunlar parçalanıp tek tek ele alınmalıdır."]} answer={3} explanation="Bu, onlarca alt problemi — grafikleri, kontrolleri, puanlamayı — gizleyen devasa bir problemdir; bunlar parçalanıp tek tek ele alınmalıdır." />
+  <QuizQuestion question="Matematik ödevi çözerken örüntüleri fark etmek ne işe yarar?" options={["Düzeltme: önce kâğıt üzerinde parçalamaya ve planlamaya on dakika ayır — bu, saatlerce yeniden yazmayı önler.", "Büyük ve karmaşık bir problemi, tek tek çözülmesi daha kolay küçük alt problemlere bölme.", "Düşünmeden doğrudan koda atlama", "Aynı yapıyı paylaşan sorular aynı yöntemle çözülebilir, bu yüzden örüntüyü fark etmek sıfırdan başlamak yerine bir yöntemi yeniden kullanmanı sağlar."]} answer={3} explanation="Aynı yapıyı paylaşan sorular aynı yöntemle çözülebilir, bu yüzden örüntüyü fark etmek sıfırdan başlamak yerine bir yöntemi yeniden kullanmanı sağlar." />
+</Quiz>
+
+<Summary>
+  - Algoritmik Düşünme: planını bilgisayarın izleyebileceği açık ve sıralı adımlara dönüştür.
+  - Dört temel birlikte çalışır: Bir okul şenliği düzenlemekle karşı karşıya kaldığında, onu stantlar, biletler ve tanıtım olarak parçalara ayırırsın; bilet satışının geçen yılki konserle aynı örüntüyü izlediğini fark edersin; biletlerin rengi gibi ayrıntıları soyutlarsın; sonra algoritmayı yazarsın — her standı kurmak için sıralı adımlar.
+  - ayrıştırma: Büyük ve karmaşık bir problemi, tek tek çözülmesi daha kolay küçük alt problemlere bölme.
+  - Dikkat: düşünmeden doğrudan koda atlama
+</Summary>

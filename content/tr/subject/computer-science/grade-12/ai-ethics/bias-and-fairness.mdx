@@ -1,0 +1,74 @@
+---
+title: "Yanlılık ve Adillik"
+lede: "Eğitim verisindeki yanlılığın yapay zekâ kararlarına nasıl sızdığını fark edin ve adillik için test yapın."
+---
+
+<LearningObjectives>
+  <li>Yanlılık ve Adillik'i kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Yanlılık gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Yanlılık ve Adillik'e odaklanır: eğitim verisindeki yanlılığın yapay zekâ kararlarına nasıl sızdığını fark edin ve adillik için test yapın.
+
+<Definition term="Yanlılık ve Adillik">
+  Eğitim verisindeki yanlılığın yapay zekâ kararlarına nasıl sızdığını fark edin ve adillik için test yapın.
+</Definition>
+
+## Temel fikirler
+
+### Yanlılık veriden girer
+
+Bir model, onu eğitmek için kullanılan verideki kalıpları öğrenir — veri geçmişteki adaletsizliği yansıtıyorsa model de öğrenir. Örneğin eski işe alım kayıtlarıyla eğitilen bir model, o kayıtlara geçmiş önyargılarla işlenen kadınları eleyebilir. Aşırı öğrenmede ise model, eğitim verisini o kadar yakından ezberler ki yeni örneklerde başarısız olur; veri sızıntısı da cevabı eğitim kümesine taşıdığında ölçümleri şişirir.
+
+### Örneklem ve kurulum kararları da sayılır
+
+Temsili olmayan bir örneklem — örneğin yalnızca gündüz fotoğraflarıyla eğitim — modelin o boşluklarda kör kalması demektir. İş problemini modelleme şekliniz bile adilliği değiştirir: "şirketi en çok kazandıracak çalışanı tahmin et" demek, "işi en iyi yapacak çalışanı tahmin et" demekle aynı şey değildir.
+
+**Terim — yanlılık:** Bazı grupları sistematik olarak daha iyi ya da daha kötü etkileyen, verideki ya da modeldeki çarpıklık — örneğin eğitime sokulan önyargılar gibi.
+
+<WorkedExample title="Çözümlü örnek: Yanlılık ve Adillik">
+  Bir yapay zekâ uygulaması geçmiş işe alım kayıtlarıyla eğitilir ve belirli bir gruptan az sayıda başvuru olduğunu fark edersiniz. Hangi yanlılık riski ortaya çıkar?
+
+  Temsili olmayan örneklem — model o grup için güvenilir karar veremez.
+
+  **Cevap:** Temsili olmayan örneklem — model o grup için güvenilir karar veremez.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Farklı gruplar için ayrı ölçüm yapmamak** Düzeltme: toplam doğruluğu bir kenara bırakıp adillik ölçütlerini her bir grup için ayrı ayrı değerlendirin.
+  - **Veri sızıntısı** Düzeltme: özelliğin test kümesinde bulunmayacak bilgiyi kodladığını her zaman kontrol edin.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir model geçmiş işe alım kayıtlarıyla eğitilir ve kadın başvurularını sistematik olarak eler. Bu hangi yanlılık türüdür?" hint="Model bu kararı nereden öğrendi?">
+    Eğitim verisindeki geçmiş önyargı — model, geçmişteki haksız kalıpları öğrendi.
+  </PracticeItem>
+  <PracticeItem question="Bir model eğitim verisini o kadar yakından ezberler ki yeni örneklerde başarısız olur. Bu duruma ne denir?" hint="Modelin genellemeyi öğrenip öğrenmediğini düşünün.">
+    Aşırı öğrenme.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: Doğruluk yüksekse model adil kabul edilir." hint="Tek bir toplu sayının neyi gizleyebileceğini düşünün.">
+    Yanlış — adillik, her bir grup için ayrı ölçütler gerektirir.
+  </PracticeItem>
+  <PracticeItem question="Özellikler test kümesinde bulunmayacak bilgiyi kodluyorsa bunun adı nedir?" hint="Test sonuçları neden yanıltıcı olur?">
+    Veri sızıntısı.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Yanlılık ve Adillik — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;yanlılık&quot;ı en iyi tanımlar?" options={["Mevcut veri kullanılarak eğitildikten sonra yeni veriye uygulanabilen, öğrenilen kurallar ya da istatistiksel ilişki kümesi.", "Bazı grupları sistematik olarak daha iyi ya da daha kötü etkileyen, verideki ya da modeldeki çarpıklık — örneğin eğitime sokulan önyargılar gibi.", "Yapay zekâ destekli bir aracı geliştiren, dağıtan ya da kullanan kişi ya da kuruluş; genellikle sonuçları için hesap verir.", "Kişileri ya da kaynakları sınıflandıran, ancak gruplar arasında adilliği garantilemeyen tek bir sayı."]} answer={1} explanation="Bazı grupları sistematik olarak daha iyi ya da daha kötü etkileyen, verideki ya da modeldeki çarpıklık — örneğin eğitime sokulan önyargılar gibi." />
+  <QuizQuestion question="Bir model geçmiş işe alım kayıtlarıyla eğitilir ve kadın başvurularını sistematik olarak eler. Bu hangi yanlılık türüdür?" options={["Aşırı öğrenme", "Temsili olmayan örneklem", "Eğitim verisindeki geçmiş önyargı — model, geçmişteki haksız kalıpları öğrendi.", "Veri sızıntısı"]} answer={2} explanation="Eğitim verisindeki geçmiş önyargı — model, geçmişteki haksız kalıpları öğrendi." />
+  <QuizQuestion question="Doğru mu yanlış mı: Eğitim verisi üzerinde %100 doğruluk, modelin iyi çalıştığını kanıtlar." options={["Verilen bilgilerden belirlenemez", "Bazen doğru", "Doğru", "Yanlış — bu aşırı öğrenme belirtisidir; doğruluğu görünmemiş veriyle test edin."]} answer={3} explanation="Yanlış — bu aşırı öğrenme belirtisidir; doğruluğu görünmemiş veriyle test edin." />
+</Quiz>
+
+<Summary>
+  - Yanlılık ve Adillik: eğitim verisindeki yanlılığın yapay zekâ kararlarına nasıl sızdığını fark edin ve adillik için test yapın.
+  - Yanlılık veriden girer: Bir model, onu eğitmek için kullanılan verideki kalıpları öğrenir — veri geçmişteki adaletsizliği yansıtıyorsa model de öğrenir.
+  - Model: Mevcut veri kullanılarak eğitildikten sonra yeni veriye uygulanabilen, öğrenilen kurallar ya da istatistiksel ilişki kümesi.
+  - Dikkat edin: farklı gruplar için ayrı ölçüm yapmamak
+</Summary>

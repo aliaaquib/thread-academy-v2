@@ -1,0 +1,73 @@
+---
+title: "Kuyruk Kullanma"
+lede: "Veriyi gerçek bir kuyruk gibi ilk giren ilk çıkar saklayın."
+---
+
+<LearningObjectives>
+  <li>Kuyruk Kullanma'yı kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Kuyruk gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Kuyruk Kullanma'ya odaklanır: veriyi gerçek bir kuyruk gibi ilk giren ilk çıkar saklayın.
+
+<Definition term="Kuyruk Kullanma">
+  Veriyi gerçek bir kuyruk gibi ilk giren ilk çıkar saklayın.
+</Definition>
+
+## Temel fikirler
+
+### LIFO ile FIFO her şeyi değiştirir
+
+Yığınlar sırayı tersine çevirir — geri al, geri düğmeleri ve dengeli parantez kontrolü için mükemmel. Kuyruklar sırayı korur — yazıcı kuyruğu ve istekleri adilce işleme için mükemmel. İşlemler de farklıdır: yığınlar üstte iter ve çıkarır; kuyruklar arkaya ekler, önden çıkarır. Yanlışını seçmek sessizce yanlış cevaplar üretir.
+
+### Graflar gerçek dünyayı modeller
+
+Yollar, arkadaşlıklar, bilgisayar ağları ve bağımlılıklar hep graftır: yerler ya da şeyler için düğümler, bağlantılar için kenarlar. Ağırlıklı kenarlar, Dijkstra gibi algoritmaların en ucuz rotayı bulmasını sağlar. Ağaçların aksine, graflar döngü içerebilir — geri dönen yollar — algoritmaların sonsuza dek dönmemek için bunlarla başa çıkması gerekir.
+
+**Terim — kuyruk:** İlk giren ilk çıkar yapısı: öğeler arkadan katılır, önden ayrılır — süpermarket kasası sırası gibi.
+
+<WorkedExample title="Çözümlü örnek: Kuyruk Kullanma">
+  Bir kuyruk, A önde olacak şekilde [A, B, C] tutuyor. Bir kuyruktan çıkarma ve bir D kuyruğa eklemeden sonra kuyruk ne olur?
+
+  [B, C, D] — A önden ayrılır, D arkaya katılır.
+
+  **Cevap:** [B, C, D] — A önden ayrılır, D arkaya katılır.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Kuyruk gerekirken yığın kullanma** Düzeltme: 'önce gelen önce mi hizmet almalı?' diye sorun — cevap evetse kuyruk gerekir; yığın, en son geleni önce hizmete alırdı.
+  - **Boş bir yapıdan çıkarma ya da kuyruktan çıkarma** Düzeltme: önce yapının boş olmadığını her zaman kontrol edin — hiçlikten çıkarmak taşma hatasına neden olur.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir web tarayıcısının geri düğmesini hangi yapı modeller: yığın mı kuyruk mu? Neden?" hint="Ziyaret edilen son sayfa, geri döndüğünüz ilk sayfadır.">
+    Yığın — her yeni sayfa itilir ve Geri, en son sayfayı çıkarır; bu, son giren ilk çıkar.
+  </PracticeItem>
+  <PracticeItem question="5, 3, 8, 1'i bu sırayla boş bir ikili arama ağacına ekleyin. Kökün sol çocuğu nedir?" hint="Küçük değerler her düğümün soluna gider.">
+    3 — kök 5'in soluna gider, sonra 1 de 3'ün soluna gider.
+  </PracticeItem>
+  <PracticeItem question="İkili arama ağacının iç-sıra dolaşması ne üretir?" hint="Sol alt ağaç, düğüm, sağ alt ağaç — küçük değerler solda.">
+    Değerleri artan sıralı şekilde.
+  </PracticeItem>
+  <PracticeItem question="Bir yol ağı graf olarak modellenmişse düğümler, kenarlar ve ağırlıklar neyi temsil eder?" hint="Kavşakları, yolları ve mesafeleri düşünün.">
+    Düğümler kavşaklardır (ya da şehirler), kenarlar aralarındaki yollardır, ağırlıklar ise mesafeler ya da yolculuk süreleridir.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Kuyruk Kullanma — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;kuyruk&quot;u en iyi tanımlar?" options={["Grafda iki düğüm arasındaki bağlantı; yönü ve mesafe gibi bir ağırlığı olabilir.", "Son giren ilk çıkar yapısı: öğeler üst denen aynı uçtan eklenir ve çıkarılır — yaylı tabak dağıtıcısı gibi.", "Ağaç ya da graftaki tek bir öğe; veri ve diğer düğümlere bağlantılar tutar.", "İlk giren ilk çıkar yapısı: öğeler arkadan katılır, önden ayrılır — süpermarket kasası sırası gibi."]} answer={3} explanation="İlk giren ilk çıkar yapısı: öğeler arkadan katılır, önden ayrılır — süpermarket kasası sırası gibi." />
+  <QuizQuestion question="Doğru mu yanlış mı: bir yığın, bir ifadedeki parantezlerin dengeli olup olmadığını kontrol etmek için kullanılabilir." options={["Bazen doğru", "Verilen bilgilerden belirlenemez", "Yanlış", "Doğru — her açan parantezi itin ve her kapatan parantezde çıkarın; en son açılan ilk kapanmalıdır, bu tam olarak LIFO'dur."]} answer={3} explanation="Doğru — her açan parantezi itin ve her kapatan parantezde çıkarın; en son açılan ilk kapanmalıdır, bu tam olarak LIFO'dur." />
+</Quiz>
+
+<Summary>
+  - Kuyruk Kullanma: veriyi gerçek bir kuyruk gibi ilk giren ilk çıkar saklayın.
+  - LIFO ile FIFO her şeyi değiştirir: Yığınlar sırayı tersine çevirir — geri al, geri düğmeleri ve dengeli parantez kontrolü için mükemmel.
+  - Düğüm: Ağaç ya da graftaki tek bir öğe; veri ve diğer düğümlere bağlantılar tutar.
+  - Dikkat edin: kuyruk gerekirken yığın kullanma
+</Summary>

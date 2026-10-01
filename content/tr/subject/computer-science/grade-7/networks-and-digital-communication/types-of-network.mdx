@@ -1,0 +1,110 @@
+---
+title: "Ağ Türleri"
+lede: "Bilgisayarlar nasıl bağlanır: PAN, LAN, WAN ve internet."
+---
+
+<LearningObjectives>
+  <li>Ağları kendi cümlelerinle tanımla ve açıkla</li>
+  <li>LAN gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Telefonun kulaklığa, okulun bilgisayarları birbirine, okullar dünyaya bağlı. Hepsi **ağ** — ama boyutları ve işleri farklı. Boyuta göre üç tür vardır.
+
+<Definition term="Ağ">
+  Veri paylaşmak için birbirine bağlı bilgisayar ve cihaz topluluğu.
+</Definition>
+
+## Temel fikirler
+
+### Üç ağ türü
+
+- **PAN (Kişisel Alan Ağı)** — senin çevren: telefon + kulaklık + saat (Bluetooth). Birkaç metre.
+- **LAN (Yerel Alan Ağı)** — tek bir yer: okul, ev, ofis. Bilgisayarlar, yazıcılar, Wi-Fi. Hızlı, özel.
+- **WAN (Geniş Alan Ağı)** — şehirler/ülkeler arası: **internet** en büyük WAN'dir. Yavaş olabilir, herkese açık altyapı.
+
+### Kablolu vs kablosuz
+
+- **Kablolu (Ethernet)** — hızlı, kararlı, güvenli. Sabit cihazlar için: masaüstü, sunucu.
+- **Kablosuz (Wi-Fi)** — esnek, hareketli. Ama parazitlenir, menzili sınırlı, daha az güvenli.
+
+### Ağ donanımı
+
+- **Yönlendirici (router)** — paketleri ağlar arasında geçirir; evini internete bağlar.
+- **Anahtar (switch)** — LAN içinde cihazları birbirine bağlar.
+- **Erişim noktası** — kablosuz cihazların kabloya bağlandığı nokta (Wi-Fi).
+
+<Diagram caption="Üç ağ türü: PAN (çevren), LAN (binan) ve WAN (dünya).">
+<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <circle cx="100" cy="100" r="55" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="100" y="95" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">PAN</text>
+  <text x="100" y="112" fontSize="10" textAnchor="middle" fill="#5f5f5c">telefon,</text>
+  <text x="100" y="124" fontSize="10" textAnchor="middle" fill="#5f5f5c">kulaklık</text>
+  <circle cx="280" cy="100" r="70" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="95" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">LAN</text>
+  <text x="280" y="112" fontSize="10" textAnchor="middle" fill="#5f5f5c">okul, ev,</text>
+  <text x="280" y="124" fontSize="10" textAnchor="middle" fill="#5f5f5c">ofis</text>
+  <ellipse cx="470" cy="100" rx="80" ry="70" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="470" y="95" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">WAN</text>
+  <text x="470" y="112" fontSize="10" textAnchor="middle" fill="#5f5f5c">internet:</text>
+  <text x="470" y="124" fontSize="10" textAnchor="middle" fill="#5f5f5c">dünya</text>
+  <text x="280" y="190" fontSize="11" textAnchor="middle" fill="#5f5f5c">büyüdükçe hız düşebilir, kapsama artar</text>
+</svg>
+</Diagram>
+
+<WorkedExample title="Okul ağı tasarla">
+  İhtiyaç: 30 bilgisayar, 2 yazıcı, internet erişimi. Tür: LAN (tek bina).
+
+  Bilgisayarlar anahtara (switch) kablolu bağlanır (hızlı, kararlı), yönlendirici LAN'i internete (WAN) bağlar, Wi-Fi erişim noktası tabletleri katar.
+
+  **Cevap:** LAN + anahtar + yönlendirici + erişim noktası — her parça bir işe yarar.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Wi-Fi = internet** Düzeltme: Wi-Fi, LAN'e kablosuz bağlanma yoludur; internet WAN'dir.
+  - **Yönlendirici = anahtar** Düzeltme: anahtar LAN içinde bağlar, yönlendirici ağlar arasında geçirir.
+  - **Kablosuz her zaman iyidir** Düzeltme: kablolu daha hızlı ve kararlıdır.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Ağ nedir?">
+    Veri paylaşmak için birbirine bağlı bilgisayar ve cihaz topluluğu.
+  </PracticeItem>
+  <PracticeItem question="PAN, LAN ve WAN'i boyut sırasına koy ve örnek ver.">
+    PAN (telefon+kulaklık) &lt; LAN (okul) &lt; WAN (internet).
+  </PracticeItem>
+  <PracticeItem question="İnternet hangi türdür?">
+    WAN — en büyük geniş alan ağı.
+  </PracticeItem>
+  <PracticeItem question="Kablolu bağlantının iki avantajı nedir?">
+    Daha hızlı ve daha kararlı (güvenli de sayılır).
+  </PracticeItem>
+  <PracticeItem question="Yönlendirici ile anahtar arasındaki fark nedir?">
+    Anahtar LAN içinde cihazları bağlar; yönlendirici paketleri ağlar arasında (örn. LAN-WAN) geçirir.
+  </PracticeItem>
+  <PracticeItem question="Telefonun kulaklığa bağlanması hangi türdür?">
+    PAN — kişisel alan ağı (Bluetooth).
+  </PracticeItem>
+  <PracticeItem question="Okul neden kablolu + kablosuz karışımı kullanır?">
+    Sabit bilgisayarlar hız/kararlılık için kablolu, tabletler hareketlilik için kablosuz.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Ağ türleri — hızlı kontrol">
+  <QuizQuestion question="LAN nedir?" options={["Dünya çapında ağ.", "Tek bir yerdeki ağ: okul, ev, ofis.", "Telefon aksesuar ağı.", "Bir kablo türü."]} answer={1} explanation="Tek bir yerdeki ağ: okul, ev, ofis." />
+  <QuizQuestion question="Evi internete ne bağlar?" options={["Anahtar.", "Yönlendirici.", "Yazıcı.", "Monitör."]} answer={1} explanation="Yönlendirici." />
+  <QuizQuestion question="Wi-Fi ile internet aynı mı?" options={["Evet.", "Hayır: Wi-Fi kablosuz bağlanma yoludur, internet WAN'dir.", "Wi-Fi daha büyüktür.", "İnternet Wi-Fi'nin içindedir."]} answer={1} explanation="Hayır: Wi-Fi kablosuz bağlanma yoludur, internet WAN'dir." />
+</Quiz>
+
+<Summary>
+  - Ağ: veri paylaşan bağlı cihazlar topluluğu.
+  - PAN (çevren) &lt; LAN (bina) &lt; WAN (dünya); internet en büyük WAN.
+  - Kablolu: hızlı/kararlı; kablosuz: esnek.
+  - Anahtar LAN içinde bağlar, yönlendirici ağlar arasında geçirir.
+  - Dikkat et: Wi-Fi/internet karışıklığı, yönlendirici/anahtar karışıklığı.
+</Summary>

@@ -1,0 +1,117 @@
+---
+title: "Akış Şemalarında Seçim ve Mantık"
+lede: "Eşkenar dörtgenlerle karar ver, VE, VEYA ve DEĞİL ile koşulları birleştir."
+---
+
+<LearningObjectives>
+  <li>Seçimi kendi cümlelerinle tanımla ve açıkla</li>
+  <li>koşul gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Çoğu program her seferinde aynı şeyi yapamaz — tepki vermek zorundadır. Bir oyun puanına tepki verir, bir giriş ekranı şifrene tepki verir. Bu tepki vermenin bir adı var: seçim.
+
+<Definition term="Seçim">
+  Bir koşulun doğru mu yanlış mı olduğuna göre hangi talimatların çalışacağını seçme.
+</Definition>
+
+## Temel fikirler
+
+### Eşkenar dörtgen seçim yapar
+
+Akış şemasında seçim, eşkenar dörtgendir: bir ok girer, iki ok çıkar — Evet ve Hayır. Program koşulu kontrol eder, sonra uygun yolu takip eder. İki yolun yeniden birleşmesinden sonraki her şey normal şekilde devam eder.
+
+### Kararlar, kararların içinde olabilir
+
+Evet yolu doğrudan başka bir eşkenar dörtgene gidebilir. Dışarı çıkarken: "yağmur yağıyor mu?" → Evet → "şemsiyen var mı?" → Evet → "al" / Hayır → "içeride kal". Her ek eşkenar dörtgen daha özel bir durumu ele alır. Buna iç içe geçme denir ve bu sadece kararların içinde kararlardır.
+
+### Koşulları birleştirme: VE, VEYA, DEĞİL
+
+Bazen tek bir soru yetmez. Üç küçük kelime koşulları birleştirir:
+
+- **VE** — ikisi de doğru olmalı. "yaş ≥ 12 VE bileti var": bileti olan 14 yaşındaki içeri girer; bileti olmayan 14 yaşındaki giremez.
+- **VEYA** — en az biri doğru olmalı. "Cumartesi VEYA Pazar": iki gün de hafta sonu demektir.
+- **DEĞİL** — cevabı tersine çevirir. "DEĞİL yağmurlu", hava kuruyken tam olarak doğrudur.
+
+**Anahtar terim — koşul:** Doğru veya yanlış olan bir denetleme, örneğin "puan ≥ 50". Kararlar koşulları test eder.
+
+### Gerçek bir örnek: mor testi
+
+Koşullar çoğu zaman metin karşılaştırmasıdır:
+
+<CodeBlock lang="Akış şeması adımları">
+START → INPUT colour → ◆ colour == "purple"? → Yes → OUTPUT "I like purple too" → STOP
+                                                      → No → OUTPUT "That colour is ok, but purple is better" → STOP
+</CodeBlock>
+
+"purple" girdisi Evet okunu seçer; "green" girdisi Hayır okunu seçer. Dikkat et: koşul, doğru-eylem ve yanlış-eylem hep görünürdür — bir seçimin her zaman üçü de vardır.
+
+### Boole değerlerinin birçok yazılışı vardır
+
+Bir koşulun cevabı bir **Boole değeridir**: Doğru veya Yanlış. Bunu evet/hayır veya 1/0 olarak da görebilirsin — aynı fikir. VE içindeki *iki* koşul da yanlışsa bütün şey yanlıştır; VEYA'da *biri veya ikisi* yanlışken bile sonuç doğru olabilir; DEĞİL ise değeri tersine çevirir.
+
+<Diagram caption="Tek eşkenar dörtgen, iki koşul: giriş için 12 yaş ve üstü VE bilet gerekir.">
+<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <ellipse cx="280" cy="28" rx="60" ry="24" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="33" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">BAŞLAT</text>
+  <line x1="280" y1="52" x2="280" y2="78" stroke="#4c6106" strokeWidth="2"/>
+  <polygon points="280,78 400,128 280,178 160,128" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="124" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">yaş ≥ 12 VE</text>
+  <text x="280" y="140" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">bilet var mı?</text>
+  <line x1="400" y1="128" x2="450" y2="128" stroke="#4c6106" strokeWidth="2"/>
+  <text x="425" y="120" fontSize="12" fill="#4c6106">Evet</text>
+  <rect x="450" y="100" width="100" height="56" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="500" y="133" fontSize="12" textAnchor="middle" fill="#1a1a1a">Girişe izin ver</text>
+  <line x1="280" y1="178" x2="280" y2="208" stroke="#4c6106" strokeWidth="2"/>
+  <text x="294" y="198" fontSize="12" fill="#4c6106">Hayır</text>
+  <rect x="220" y="208" width="120" height="44" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="235" fontSize="12" textAnchor="middle" fill="#1a1a1a">Girişi reddet</text>
+</svg>
+</Diagram>
+
+<WorkedExample title="Giriş denetimini izle">
+  Yukarıdaki akış şeması, 10 yaşında ve bileti olan bir ziyaretçi için çalışıyor.
+
+  Koşulu kontrol et: "yaş ≥ 12" yanlış (10, 12'den küçüktür), "bileti var" doğru. VE ikisini de ister — yanlış VE doğru, yanlış verir. Hayır yolunu seç: "Girişi reddet".
+
+  **Cevap:** Bileti olmasına rağmen giriş reddedilir — VE katıdır. Ziyaretçi biletiyle 14 yaşında olsaydı iki taraf da doğru olur ve içeri girerdi.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Tek çıkış yolu olan eşkenar dörtgen** Düzeltme: bir kararın Evet ve Hayır yollarının ikisi de bir yere gitmeli — biri doğrudan DUR'a gitse bile.
+  - **VE ile VEYA'yı karıştırmak** Düzeltme: VE iki koşulun da doğru olmasını ister; VEYA yalnızca birini ister. "Hafta sonu" Cumartesi VEYA Pazar'dır, VE değil — hiçbir gün ikisi birden değildir.
+  - **DEĞİL'i ters okumak** Düzeltme: DEĞİL sonucu tersine çevirir. "DEĞİL (puan ≥ 50)", puan 50'nin *altındayken* doğrudur.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir akış şemasında karar eşkenar dörtgeninden kaç ok çıkar ve bunlar nasıl etiketlenir?">
+    İki ok: biri Evet (koşul doğru), biri Hayır (koşul yanlış) olarak etiketlenir.
+  </PracticeItem>
+  <PracticeItem question="Sinema kuralı: 'yaş ≥ 12 VEYA yetişkinle'. Babasıyla 9 yaşında bir kız geliyor. İçeri girer mi?" hint="VEYA yalnızca bir tarafın doğru olmasını ister.">
+    Evet — "yetişkinle" doğrudur ve VEYA yalnızca tek doğru taraf ister.
+  </PracticeItem>
+  <PracticeItem question="'DEĞİL (sıcaklık > 30)' düz kelimelerle ne anlama gelir?" hint="DEĞİL koşulu tersine çevirir.">
+    Sıcaklık 30 veya altındadır — DEĞİL, "30'dan sıcak"ı zıddına çevirir.
+  </PracticeItem>
+  <PracticeItem question="VE kullanmak yerine neden bir kararı diğerinin içine koyasın?">
+    İkinci soru ancak ilk cevaptan sonra anlamlı olduğunda — örneğin "şemsiyen var mı?" diye ancak yağmur yağıyorsa sor.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Seçim ve mantık — hızlı kontrol">
+  <QuizQuestion question="Seçim nedir?" options={["Talimatları belli sayıda tekrarlamak.", "Bir koşulun doğru mu yanlış mı olduğuna göre hangi talimatların çalışacağını seçmek.", "Bir kod bloğunu yeniden kullanılabilmesi için adlandırmak.", "Bir algoritmanın adımlarını diyagram olarak çizmek."]} answer={1} explanation="Bir koşulun doğru mu yanlış mı olduğuna göre hangi talimatların çalışacağını seçmek." />
+  <QuizQuestion question="Kural: 'üye VE ödedi'. Kim indirim alır?" options={["Ödememiş bir üye — üyelik tek başına yeter.", "Üye olmayan ama ödemiş biri — ödeme tek başına yeter.", "Ödemiş bir üye — VE iki tarafın da doğru olmasını ister.", "Kimse — VE asla sağlanamaz."]} answer={2} explanation="Ödemiş bir üye — VE iki tarafın da doğru olmasını ister." />
+  <QuizQuestion question="'yağmur yağıyor VEYA kar yağıyor' gibi bir koşulda VEYA ne anlama gelir?" options={["İkisi de aynı anda doğru olmalı.", "En az biri doğru olmalı — yağmur, kar veya ikisi.", "Hiçbiri doğru olmamalı.", "İki koşul zıt olmalı."]} answer={1} explanation="En az biri doğru olmalı — yağmur, kar veya ikisi." />
+</Quiz>
+
+<Summary>
+  - Seçim: bir koşulun doğru mu yanlış mı olduğuna göre hangi talimatların çalışacağını seçme — akış şemasındaki eşkenar dörtgen.
+  - Kararlar iç içe geçebilir: Evet/Hayır yolu daha özel durumlar için başka bir eşkenar dörtgene gidebilir.
+  - VE iki koşulun da doğru olmasını ister; VEYA en az birini ister; DEĞİL bir koşulun cevabını tersine çevirir.
+  - Dikkat et: dalı eksik eşkenar dörtgenler, VE ile VEYA'yı karıştırmak ve DEĞİL'i ters okumak.
+</Summary>

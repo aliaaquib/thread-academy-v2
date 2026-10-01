@@ -1,0 +1,112 @@
+---
+title: "Web Sitelerine Erişme"
+lede: "Adrese tıkladığında ne olur: DNS, sunucular ve tarayıcın."
+---
+
+<LearningObjectives>
+  <li>Ağları kendi cümlelerinle tanımla ve açıkla</li>
+  <li>DNS gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Adres çubuğuna bir site adı yazıp Enter'a basıyorsun — sayfa bir saniyede açılıyor. Perde arkasında bilgisayarın bir **soruşturma** yürütüyor: bu ad hangi bilgisayara ait, sayfa nerede, nasıl alınır?
+
+<Definition term="DNS">
+  Alan adlarını (ornek.com gibi) IP adreslerine çeviren sistem — internetin telefon rehberi.
+</Definition>
+
+## Temel fikirler
+
+### Adresten sayfaya: adımlar
+
+1. **DNS araması** — tarayıcın adın IP adresini sorar: "ornek.com hangi numarada?" DNS cevaplar: 93.184.216.34 gibi.
+2. **Bağlantı** — tarayıcın o IP'deki **sunucuya** bağlanır (sayfaları saklayan bilgisayar).
+3. **İstek** — tarayıcı sayfayı ister: "ana sayfayı gönder."
+4. **Yanıt** — sunucu sayfanın dosyalarını (HTML, resimler) gönderir.
+5. **Oluşturma** — tarayıcın dosyaları okur ve sayfayı ekrana çizer.
+
+### IP adresi nedir?
+
+**IP adresi**, ağdaki her cihazın numarasıdır: 192.168.1.5 gibi. İnsanlar adları hatırlar (ornek.com), bilgisayarlar numaraları — DNS ikisini birbirine bağlar.
+
+### İstemci ve sunucu
+
+- **İstemci** — isteyen: senin tarayıcın.
+- **Sunucu** — veren: sayfayı saklayan bilgisayar, isteklere 7/24 cevap verir.
+
+<Diagram caption="Bir web sayfası isteğinin yolculuğu: DNS, sunucu ve tarayıcı.">
+<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <rect x="20" y="70" width="110" height="60" rx="8" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="75" y="95" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">Tarayıcı</text>
+  <text x="75" y="112" fontSize="11" textAnchor="middle" fill="#5f5f5c">(istemci)</text>
+  <rect x="170" y="70" width="110" height="60" rx="8" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="225" y="95" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">DNS</text>
+  <text x="225" y="112" fontSize="11" textAnchor="middle" fill="#5f5f5c">telefon rehberi</text>
+  <rect x="320" y="70" width="110" height="60" rx="8" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="375" y="95" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">Sunucu</text>
+  <text x="375" y="112" fontSize="11" textAnchor="middle" fill="#5f5f5c">sayfayı verir</text>
+  <line x1="130" y1="85" x2="170" y2="85" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="150" y="78" fontSize="10" textAnchor="middle" fill="#5f5f5c">ad?</text>
+  <line x1="280" y1="85" x2="320" y2="85" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="300" y="78" fontSize="10" textAnchor="middle" fill="#5f5f5c">IP</text>
+  <line x1="130" y1="115" x2="320" y2="115" stroke="#1a1a1a" strokeWidth="1" strokeDasharray="4"/>
+  <text x="225" y="135" fontSize="10" textAnchor="middle" fill="#5f5f5c">sayfayı iste → dosyalar gelir</text>
+  <text x="280" y="170" fontSize="11" textAnchor="middle" fill="#5f5f5c">1. DNS adı IP'ye çevirir → 2. tarayıcı sunucudan sayfayı ister</text>
+</svg>
+</Diagram>
+
+<WorkedExample title="Site neden açılmıyor?">
+  Belirtiler: her site açılmıyor. Adım adım: DNS çalışıyor mu? Başka cihazda internet var mı?
+
+  Telefonda internet varsa sorun bu bilgisayarda; hiçbir cihazda yoksa sorun ağda. DNS arızalıysa adlar çözülmez ama IP'ler çalışır.
+
+  **Cevap:** Sorunu katman katman daralt: cihaz → ağ → DNS → sunucu.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **İnternet = web** Düzeltme: web, internetin üstünde çalışan bir servistir; internet altyapıdır.
+  - **DNS'yi atlamak** Düzeltme: ad yazdığında her seferinde DNS araması olur.
+  - **Sunucuyu tarayıcı sanmak** Düzeltme: sunucu verir, tarayıcı ister ve çizer.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="DNS ne yapar?">
+    Alan adlarını IP adreslerine çevirir — internetin telefon rehberi.
+  </PracticeItem>
+  <PracticeItem question="IP adresi nedir?">
+    Ağdaki her cihazın numarası; bilgisayarlar birbirini numarayla bulur.
+  </PracticeItem>
+  <PracticeItem question="İstemci ile sunucu arasındaki fark nedir?">
+    İstemci ister (tarayıcın), sunucu verir (sayfayı saklayan bilgisayar).
+  </PracticeItem>
+  <PracticeItem question="Adrese bastıktan sonra ilk ne olur?">
+    DNS araması — adın IP adresi bulunur.
+  </PracticeItem>
+  <PracticeItem question="Sunucu yanıt olarak ne gönderir?">
+    Sayfanın dosyalarını: HTML, resimler, stiller.
+  </PracticeItem>
+  <PracticeItem question="Tarayıcı dosyaları alınca ne yapar?">
+    Okur ve sayfayı ekrana çizer (oluşturma).
+  </PracticeItem>
+  <PracticeItem question="Hiçbir site açılmıyor ama IP'ye girince açılıyor. Sorun ne?">
+    DNS arızalı — adlar IP'ye çevrilemiyor.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Web sitelerine erişme — hızlı kontrol">
+  <QuizQuestion question="DNS nedir?" options={["Bir tarayıcı.", "Alan adlarını IP adreslerine çeviren sistem.", "Bir virüs türü.", "Bir kablo."]} answer={1} explanation="Alan adlarını IP adreslerine çeviren sistem." />
+  <QuizQuestion question="Sayfayı isteyen taraf hangisi?" options={["Sunucu.", "İstemci.", "DNS.", "IP."]} answer={1} explanation="İstemci." />
+  <QuizQuestion question="Web ile internet aynı mı?" options={["Evet.", "Hayır: web internetin üstünde çalışan bir servistir.", "Web daha eskidir.", "İnternet webin içindedir."]} answer={1} explanation="Hayır: web internetin üstünde çalışan bir servistir." />
+</Quiz>
+
+<Summary>
+  - Adres → DNS (ad → IP) → sunucuya bağlan → iste → dosyalar → tarayıcı çizer.
+  - IP: cihazın ağdaki numarası; DNS: ad-IP rehberi.
+  - İstemci ister, sunucu verir.
+  - Dikkat et: internet/web karışıklığı, DNS'yi unutmak, rolleri karıştırmak.
+</Summary>

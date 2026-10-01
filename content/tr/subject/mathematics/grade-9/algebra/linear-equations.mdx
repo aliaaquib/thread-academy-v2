@@ -1,0 +1,129 @@
+---
+title: "Doğrusal Denklemler"
+lede: "Gizli sayıyı bul: denklemin bir tarafına ne yaparsan öbürüne de onu yap. Tek adımlı ve iki adımlı denklemler."
+---
+
+<LearningObjectives>
+  <li>Ters işlemler kullanarak tek adımlı denklemleri çöz</li>
+  <li>3x + 2 = 14 gibi iki adımlı denklemleri çöz</li>
+  <li>Yerine koyarak cevapları kontrol et</li>
+</LearningObjectives>
+
+## Gizli sayı
+
+`x + 5 = 12` gibi bir **denklem** bir bulmacadır: *hangi sayı, 5 ile toplanınca 12 verir?* Onu çözmek, bu gizli sayıyı bulmak demektir. (Burada 7 — ama tahmin yürütmek değil, her seferinde işleyen bir yöntem öğrenelim.)
+
+<Definition term="denklem çözme">
+  Bir denklemi **çözmek**, denklemi doğru yapan bilinmeyenin (genellikle `x`) değerini bulmak demektir.
+</Definition>
+
+## Altın kural
+
+Eşittir işaretini mükemmel dengeli bir tahterevallinin dönme noktası gibi hayal et. Bir tarafı değiştirirsen öbür tarafı da tam aynı şekilde değiştirmelisin — yoksa devrilir.
+
+<Formula label="Altın kural">
+  Bir tarafa ne yaparsan öbür tarafa da onu yap.
+</Formula>
+
+## Tek adımlı denklemler
+
+`x + 5 = 12` denkleminde `+ 5`, `x`'in önünde duruyor. Onu **ters işlemi** — çıkarma — ile **her iki** tarafta geri al:
+
+```maths
+x + 5 = 12
+x + 5 − 5 = 12 − 5
+x = 7
+```
+
+<WorkedExample title="Çözümlü örnek">
+  `x − 4 = 9` denklemini çöz.
+
+  "Eksi 4"ün tersi "artı 4"tür:
+
+  ```maths
+  x − 4 = 9
+  x − 4 + 4 = 9 + 4
+  x = 13
+  ```
+</WorkedExample>
+
+Çarpma ve bölme de aynı şekilde çalışır — birbirlerinin tersidir:
+
+```maths
+x/3 = 9
+x = 9 × 3
+x = 27
+```
+
+## İki adımlı denklemler
+
+`3x + 2 = 14`'te `x`'in etrafında iki katman var: 3 ile çarp, sonra 2 ekle. Bunları **ters sırada** geri al — önce toplama/çıkarma:
+
+```maths
+3x + 2 = 14        subtract 2 from both sides
+3x = 12            divide both sides by 3
+x = 4
+```
+
+<ImportantNote title="Her zaman kontrol et">
+  Cevabını *orijinal* denklemde yerine koy. `3(4) + 2 = 14` ✓ — doğru!
+  Kontrol saniyeler sürer ve çoğu hatayı yakalar.
+</ImportantNote>
+
+## Kendin dene
+
+Aşağıya herhangi bir doğrusal denklem yaz ve her dengeleme adımının açılmasını izle.
+
+<EquationSolver />
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Çöz: x + 9 = 20." hint="Her iki taraftan 9 çıkar.">
+    `x = 11`. Kontrol: `11 + 9 = 20` ✓
+  </PracticeItem>
+  <PracticeItem question="Çöz: 5x = 35." hint="Her iki tarafı 5'e böl.">
+    `x = 7`. Kontrol: `5 × 7 = 35` ✓
+  </PracticeItem>
+  <PracticeItem question="Çöz: 2x − 3 = 11." hint="Önce 3 ekle, sonra 2'ye böl.">
+    `2x = 14`, yani `x = 7`. Kontrol: `2(7) − 3 = 11` ✓
+  </PracticeItem>
+  <PracticeItem question="Bir sayı tutuyorum, 4 ile çarpıyorum ve 6 çıkarıyorum. Cevap 26. Sayım kaçtı?" hint="4x − 6 = 26 olarak yaz, sonra çöz.">
+    `4x = 32`, yani `x = 8`.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Doğrusal denklemler — kısa kontrol">
+  <QuizQuestion
+    question="x + 7 = 15'i çözmek için…"
+    options={["her iki tarafa 7 ekle", "her iki taraftan 7 çıkar", "her iki tarafı 7'ye böl", "her iki tarafı 7 ile çarp"]}
+    answer={1}
+    explanation="Her iki tarafta +7'yi −7 ile geri al: x = 8."
+  />
+  <QuizQuestion
+    question="Çöz: 4x + 1 = 21."
+    options={["x = 4", "x = 5", "x = 6", "x = 5.5"]}
+    answer={1}
+    explanation="1 çıkar: 4x = 20. 4'e böl: x = 5."
+  />
+  <QuizQuestion
+    question="Cevabımızı neden kontrol ediyoruz?"
+    options={["İşi uzatmak için", "Yerine koymak hataları yakalar", "Öğretmenler bunu ister", "Cevabı değiştirir"]}
+    answer={1}
+    explanation="Geriye koymak, çözümün orijinal denklemde gerçekten işlediğini doğrular."
+  />
+</Quiz>
+
+<Summary>
+  - Çözmek, denklemi doğru yapan x'i bulmak demektir.
+  - Altın kural: her iki tarafa da aynı şeyi yap.
+  - Ters işlemlerle geri al: +/− birbirini, ×/÷ birbirini götürür.
+  - İki adımlı denklemlerde önce toplama/çıkarmayı, sonra çarpma/bölmeyi geri al.
+  - Her zaman yerine koyarak kontrol et.
+</Summary>
+
+<RelatedTopics items={[
+  { title: "Cebir — Cambridge IGCSE sürümü", href: "/subjects/mathematics/grade-9/algebra/linear-equations" },
+]} />

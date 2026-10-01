@@ -1,0 +1,77 @@
+---
+title: "Veriyi Değiştirme"
+lede: "INSERT, UPDATE ve DELETE ile satırları güvenle ekleyin, güncelleyin ve silin."
+---
+
+<LearningObjectives>
+  <li>Veriyi Değiştirme'yi kendi kelimelerinizle tanımlayın ve açıklayın</li>
+  <li>Tablo gibi temel terimleri doğru kullanın</li>
+  <li>Öğrendiklerinizi yeni örnek ve sorulara uygulayın</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçının</li>
+</LearningObjectives>
+
+Bu ders, Veriyi Değiştirme'ye odaklanır: INSERT, UPDATE ve DELETE ile satırları güvenle ekleyin, güncelleyin ve silin.
+
+<Definition term="Veriyi Değiştirme">
+  INSERT, UPDATE ve DELETE ile satırları güvenle ekleyin, güncelleyin ve silin.
+</Definition>
+
+## Temel fikirler
+
+### Anahtarlar verinin kaybolmasını engeller
+
+Bir birincil anahtar, her satırın tam bir kez bulunabileceğini garanti eder — o olmadan 'Smith' adlı iki müşteri ayırt edilemez hâle gelir. Yabancı anahtarlar da tabloları bağlar: bir sipariş satırı, müşterinin tüm adresini kopyalamak yerine müşterinin ID'sini saklar; böylece bir adres değişikliği yalnızca tek bir yerde güncellenir. Bu, güvenilir verinin temelidir.
+
+### SQL nasıl'ı değil ne'yi anlatır
+
+SELECT Name FROM Students WHERE Year = 12 yazarsınız ve veritabanı satırları nasıl bulacağını çözer — SQL bildirimseldir. WHERE satırları süzgeçler, ORDER BY sıralar, JOIN ise anahtarlar üzerinden tabloları birleştirir. İstediğiniz sonucu anlattığınız için aynı sorgu on satırda da on milyonda da çalışır.
+
+**Terim — tablo:** Satırlar (kayıtlar) ve sütunlardan (alanlar) oluşan veritabanı yapısı; tek bir şey türünü saklar — örneğin müşteri başına bir tablo, sipariş başına bir tablo.
+
+<WorkedExample title="Öğrenciler Tablosunu Sorgulama">
+  Students tablosunun ID, Name, Year sütunları ve (1, Priya, 12), (2, Tom, 11), (3, Aisha, 12), (4, Leo, 10) satırları var. 12. sınıf öğrencilerinin isimlerini alfabetik sıralayarak listeleyen bir sorgu yazın.
+
+  Yalnızca isimler gerekli, Students tablosundan: SELECT Name FROM Students.
+  Yalnızca 12. sınıf satırlarını tutun: WHERE Year = 12 ekleyin. Bu, Priya ve Aisha ile eşleşir.
+  Alfabetik sıralayın: ORDER BY Name ekleyin. Aisha, Priya'dan önce gelir.
+  Tam sorgu: SELECT Name FROM Students WHERE Year = 12 ORDER BY Name;.
+
+  **Cevap:** Sorgu iki satır döndürür: önce Aisha, sonra Priya.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **UPDATE ya da DELETE'te WHERE koşulunu unutma** Düzeltme: WHERE'siz UPDATE Students SET Year = 13 her satırı değiştirir — WHERE'yi önce yazın ya da aynı koşulla bir SELECT ile test edin.
+  - **Aynı bilgiyi iki tabloda saklama** Düzeltme: bir kez saklayın ve yabancı anahtarla bağlayın — yinelenen veri, yalnızca bir kopya güncellendiğinde senkronu bozulur.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="DELETE FROM Students; sorgusunda ne yanlış ve nasıl düzeltilir?" hint="Hangi satırları siler?">
+    Tablodaki her satırı siler — WHERE koşulu ekleyin, örneğin yalnızca Leo'yu silmek için DELETE FROM Students WHERE ID = 4;.
+  </PracticeItem>
+  <PracticeItem question="Doğru mu yanlış mı: SQL, veritabanına veriyi adım adım tam olarak nasıl bulacağını söyler." hint="Bildirimsel ile buyurgan arasındaki fark.">
+    Yanlış — SQL bildirimseldir: ne istediğinizi anlatırsınız, veritabanı motoru onu nasıl getireceğine karar verir.
+  </PracticeItem>
+  <PracticeItem question="Bir birincil anahtar neden asla yinelenmemeli ya da boş bırakılmamalı?" hint="Tek bir satırı bulmayı düşünün.">
+    O, bir satırın benzersiz tanımlayıcısıdır — yinelenenler ya da boşluklar, tam bir kaydı saptamayı imkânsız kılardı.
+  </PracticeItem>
+  <PracticeItem question="Bir Orders tablosunun CustomerID sütunu var. Burada CustomerID birincil anahtar mı yoksa yabancı anahtar mı, neden?" hint="Hangi tabloda satırları tanımlar?">
+    Yabancı anahtar — Customers tablosundaki bir satırın birincil anahtarını saklar ve her siparişi müşterisine bağlar.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Veriyi Değiştirme — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;tablo&quot;yu en iyi tanımlar?" options={["Tablodaki her satırı benzersiz tanımlayan alan (ya da alanlar birleşimi), örneğin müşteri ID'si. Asla boş ya da yinelenen olamaz.", "Veritabanına SQL ile sorulan soru — en ünlüsü, eşleşen satırları getiren SELECT ifadesidir.", "Bir tabloda, başka bir tablodaki bir satırın birincil anahtarını saklayan ve aralarında bağlantı kuran alan.", "Satırlar (kayıtlar) ve sütunlardan (alanlar) oluşan veritabanı yapısı; tek bir şey türünü saklar — örneğin müşteri başına bir tablo, sipariş başına bir tablo."]} answer={3} explanation="Satırlar (kayıtlar) ve sütunlardan (alanlar) oluşan veritabanı yapısı; tek bir şey türünü saklar — örneğin müşteri başına bir tablo, sipariş başına bir tablo." />
+  <QuizQuestion question="Örnek tabloyu kullanarak bu ne döndürür? SELECT Name FROM Students WHERE Year = 10;" options={["Bir satır: Leo — yalnızca Leo'nun Year'ı 9.", "Bir satır: Leo — yalnızca Leo'nun Year'ı 12.", "Bir satır: Leo — yalnızca Leo'nun Year'ı 11.", "Bir satır: Leo — yalnızca Leo'nun Year'ı 10."]} answer={3} explanation="Bir satır: Leo — yalnızca Leo'nun Year'ı 10." />
+  <QuizQuestion question="Bir Books tablosundan 2010'da yayımlanan her kitabın Title ve Author'ını gösterecek SQL yazın." options={["SELECT Title, Author FROM Books WHERE Year = 2011;", "SELECT Title, Author FROM Books WHERE Year = 2012;", "SELECT Title, Author FROM Books WHERE Year = 2009;", "SELECT Title, Author FROM Books WHERE Year = 2010;"]} answer={3} explanation="SELECT Title, Author FROM Books WHERE Year = 2010;." />
+</Quiz>
+
+<Summary>
+  - Veriyi Değiştirme: INSERT, UPDATE ve DELETE ile satırları güvenle ekleyin, güncelleyin ve silin.
+  - Anahtarlar verinin kaybolmasını engeller: Bir birincil anahtar, her satırın tam bir kez bulunabileceğini garanti eder — o olmadan 'Smith' adlı iki müşteri ayırt edilemez hâle gelir.
+  - Sorgu: Veritabanına SQL ile sorulan soru — en ünlüsü, eşleşen satırları getiren SELECT ifadesidir.
+  - Dikkat edin: UPDATE ya da DELETE'te WHERE koşulunu unutma
+</Summary>

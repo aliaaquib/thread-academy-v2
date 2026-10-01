@@ -1,0 +1,124 @@
+---
+title: "Akış Şemalarında Örüntü Tanıma ve Alt Programlar"
+lede: "Tekrarlanan adımları fark et ve bunları yeniden kullanılabilir alt programlara dönüştür."
+---
+
+<LearningObjectives>
+  <li>Alt programları kendi cümlelerinle tanımla ve açıkla</li>
+  <li>örüntü tanıma gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+İyi problem çözücüler her problemi yepyeniymiş gibi ele almaz. Daha önce gördükleri şeyi ararlar — iyi programcılar da akış şemalarında aynısını yapar.
+
+<Definition term="Örüntü tanıma">
+  Bir problemdeki tekrarı veya benzerliği fark ederek birçok çözüm icat etmek yerine tek bir çözümü yeniden kullanma.
+</Definition>
+
+## Temel fikirler
+
+### Tekrarı gör
+
+Üç davetliye, her birine bir kez olmak üzere parti davetiyesi yazdıran bir akış şeması düşün. "adı yazdır, tarihi yazdır, mekânı yazdır" adımları defalarca karşına çıkar. Bu tekrar bir örüntüdür ve örüntüler bir ipucudur: bu adım öbeği kendine ait bir adı hak ediyor.
+
+### Alt programlar: adlandır, yeniden kullan
+
+Bir **alt program**, tek bir iş yapan, isimlendirilmiş bir adım öbeğidir. Ana akış şeması onu, nerede gerekirse orada *çağırır*; özel bir sembol kullanılır: çift dikey çizgili bir dikdörtgen (önceden tanımlanmış işlem sembolü). Alt program bitince akış, çağrıldığı yere geri döner.
+
+<Diagram caption="Ana akış kısa kalır: tekrarlanan adımlar alt programın içinde bir kez yaşar.">
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <text x="140" y="22" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">ANA AKIŞ</text>
+  <ellipse cx="140" cy="48" rx="55" ry="22" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="140" y="53" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">BAŞLAT</text>
+  <line x1="140" y1="70" x2="140" y2="92" stroke="#4c6106" strokeWidth="2"/>
+  <rect x="80" y="92" width="120" height="48" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <line x1="92" y1="92" x2="92" y2="140" stroke="#1a1a1a" strokeWidth="2"/>
+  <line x1="188" y1="92" x2="188" y2="140" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="140" y="120" fontSize="12" textAnchor="middle" fill="#1a1a1a">print_invite</text>
+  <line x1="140" y1="140" x2="140" y2="162" stroke="#4c6106" strokeWidth="2"/>
+  <rect x="80" y="162" width="120" height="48" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <line x1="92" y1="162" x2="92" y2="210" stroke="#1a1a1a" strokeWidth="2"/>
+  <line x1="188" y1="162" x2="188" y2="210" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="140" y="190" fontSize="12" textAnchor="middle" fill="#1a1a1a">print_invite</text>
+  <ellipse cx="140" cy="232" rx="55" ry="18" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="140" y="237" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">DUR</text>
+  <text x="400" y="22" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">ALT PROGRAM: print_invite</text>
+  <ellipse cx="400" cy="48" rx="55" ry="22" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="400" y="53" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">BAŞLAT</text>
+  <line x1="400" y1="70" x2="400" y2="92" stroke="#4c6106" strokeWidth="2"/>
+  <polygon points="350,92 450,92 440,132 340,132" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="400" y="117" fontSize="12" textAnchor="middle" fill="#1a1a1a">davetiyeyi yazdır</text>
+  <line x1="400" y1="132" x2="400" y2="154" stroke="#4c6106" strokeWidth="2"/>
+  <ellipse cx="400" cy="176" rx="55" ry="22" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="400" y="181" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">DÖN</text>
+  <text x="400" y="222" fontSize="12" textAnchor="middle" fill="#5f5f5c">bir kez yazıldı, iki kez kullanıldı</text>
+</svg>
+</Diagram>
+
+### Alt programlar girdi alabilir
+
+Bir alt program, her çağrıldığında bir değer alabilir — buna **parametre** denir. `greet(name)` kendisine verilen addan sonra "Merhaba, " yazdırır: greet("Asha") "Merhaba, Asha" yazdırır, greet("Omar") "Merhaba, Omar" yazdırır. Aynı adımlar, farklı sonuç.
+
+### Neden uğraşalım? Üç sebep
+
+1. **Zaman kazan** — adımları beş kez kopyalamak yerine bir kez yaz.
+2. **Bir kez test et** — bir alt programın yalnızca bir kez test edilmesi yeter; her çağrı zaten çalıştığını bildiğin adımları yeniden kullanır.
+3. **Bir kez düzelt** — alt programın içinde düzeltilen bir hata, çağrıldığı her yerde düzelmiş olur.
+
+### Gerçek bir örnek: addNumbers
+
+<CodeBlock lang="Akış şeması adımları">
+SUB-ROUTINE addNumbers: START → INPUT num1 → INPUT num2 → total = num1 + num2 → OUTPUT total → RETURN
+MAIN: START → ... → CALL addNumbers → ... → CALL addNumbers → ... → STOP
+</CodeBlock>
+
+Alt programın bir **tanımlayıcısı** vardır — adı, addNumbers. Ana algoritma, bir toplam gerektiği her yerde onu bu adla çağırır, sonra kaldığı yerden devam eder. Toplama mantığını bir kez çizer, bir kez test eder ve istediğin kadar çağırırsın.
+
+### Alt programlar girdi alabilir
+
+<WorkedExample title="Çağrıları izle">
+  Ana akış: START → print_invite'ı çağır → print_invite'ı çağır → STOP. print_invite alt programı bir davetiye yazdırır ve geri döner.
+
+  İzle: START, print_invite'ı çağır (içine gir, davetiyeyi yazdır, DÖN ile ana akışa geri dön), print_invite'ı tekrar çağır (davetiyeyi yazdır, DÖN), STOP.
+
+  **Cevap:** Adımlar yalnızca bir kez yazılmış olmasına rağmen iki davetiye yazdırılır. Üçüncü bir davetli eklemek, adımları yeniden yazmak değil, bir çağrı eklemek demektir.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Çağırmak yerine adımları kopyalamak** Düzeltme: aynı adımları üç kez yapıştırmak, bir hatayı üç kez düzeltmek demektir — onun yerine alt programı çağır.
+  - **Belirsiz bir ad** Düzeltme: alt programa işine göre ad ver — thing1 değil, print_invite — böylece ana akış talimat gibi okunur.
+  - **Bitmesi gerektiğini unutmak** Düzeltme: bir alt program DÖN ile biter (çağırana geri), DUR ile değil — DUR bütün programı bitirirdi.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir alt programı hangi akış şeması sembolü çağırır?">
+    Önceden tanımlanmış işlem sembolü: sol ve sağ kenarlarında çift dikey çizgili bir dikdörtgen.
+  </PracticeItem>
+  <PracticeItem question="Bir akış şeması 5 satırlık bir yıldız çerçevesi, sonra bir başlık, sonra yine çerçeve yazdırıyor. Örüntü nerede?">
+    Çerçeve yazdıran adımlar tekrarlanıyor — bu tekrarlanan öbek örüntüdür ve iki kez çağrılan bir alt programa dönüşmelidir.
+  </PracticeItem>
+  <PracticeItem question="Parametre nedir, tek cümleyle söyle?" hint="Farklı adlarla çağrılan greet(name) fonksiyonunu düşün.">
+    Bir alt programa çağrıldığında verilen bir değer; böylece aynı adımlar farklı verilerle çalışabilir.
+  </PracticeItem>
+  <PracticeItem question="Bir alt program bittikten sonra akış nereye gider?">
+    Ana akışa, çağrıdan hemen sonraki adıma geri döner — DÖN bunun anlamıdır.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Hızlı kontrol
+
+<Quiz title="Örüntüler ve alt programlar — hızlı kontrol">
+  <QuizQuestion question="Problem çözmede örüntü tanıma nedir?" options={["Bir algoritmanın her adımını akış şeması olarak çizmek.", "Tek bir çözümün yeniden kullanılabilmesi için tekrarı veya benzerliği fark etmek.", "Bir programı birçok farklı girdiyle test etmek.", "Her değişkeni sakladığı şeye göre adlandırmak."]} answer={1} explanation="Tek bir çözümün yeniden kullanılabilmesi için tekrarı veya benzerliği fark etmek." />
+  <QuizQuestion question="Alt program, aynı adımları üç kez kopyalamaktan neden daha iyidir?" options={["Programı üç kat daha hızlı çalıştırır.", "Adımlar bir kez yazılır; bir yerdeki düzeltme her kullanımı düzeltir.", "BAŞLAT ovaline olan ihtiyacı ortadan kaldırır.", "Programın test edilmesini gereksiz kılar."]} answer={1} explanation="Adımlar bir kez yazılır; bir yerdeki düzeltme her kullanımı düzeltir." />
+  <QuizQuestion question="greet(name) önce 'Asha' ile, sonra 'Omar' ile çağrılıyor. Her seferinde name nedir?" options={["İkisinde de 'Asha' — parametreler asla değişmez.", "İkisinde de 'Omar' — son çağrı her yerde kazanır.", "Önce 'Asha', sonra 'Omar' — parametre her çağrıda verilen değeri alır.", "Boş — parametreler metin tutamaz."]} answer={2} explanation="Önce 'Asha', sonra 'Omar' — parametre her çağrıda verilen değeri alır." />
+</Quiz>
+
+<Summary>
+  - Örüntü tanıma: birçok çözüm icat etmek yerine tek bir çözümü yeniden kullanabilmek için tekrarı veya benzerliği fark etme.
+  - Alt program: tek bir iş yapan, isimlendirilmiş bir adım öbeği; ana akıştan çift çizgili dikdörtgen sembolüyle çağrılır.
+  - Parametreler, tek bir alt programın her çağrıda farklı verilerle çalışmasını sağlar.
+  - Dikkat et: çağırmak yerine adımları kopyalamak, belirsiz adlar ve alt programı DUR yerine DÖN ile bitirmek.
+</Summary>

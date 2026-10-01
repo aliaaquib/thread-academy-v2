@@ -1,0 +1,78 @@
+---
+title: "Bir Doğru Üzerinde Kinematik"
+lede: "Yer değiştirme, hız ve ivme; sabit ivmeli SUVAT denklemleriyle."
+---
+
+<LearningObjectives>
+  <li>Bir Doğru Üzerinde Kinematik'i kendi cümlelerinle tanımla ve açıkla</li>
+  <li>Yer değiştirme gibi anahtar terimleri doğru kullan</li>
+  <li>Öğrendiklerini yeni örnek ve sorulara uygula</li>
+  <li>Bu konuda öğrencilerin yaptığı yaygın hatalardan kaçın</li>
+</LearningObjectives>
+
+Mekanik, kaslı matematiktir: gerçek cisimlerin nasıl hareket edeceğini tahmin eder. Bir sprinterin bitişini zamanlayan denklemler uyduları da yönlendirir — bir kez öğren, evren anlamlı olmaya başlar.
+
+Bu ders Bir Doğru Üzerinde Kinematik konusuna odaklanır: yer değiştirme, hız ve ivme; sabit ivmeli SUVAT denklemleriyle.
+
+<Definition term="Bir Doğru Üzerinde Kinematik">
+  Yer değiştirme, hız ve ivme; sabit ivmeli SUVAT denklemleriyle.
+</Definition>
+
+## Temel fikirler
+
+### SUVAT denklemleri
+
+Sabit ivme için: v = u + at, s = ut + ½at² ve v² = u² + 2as. Bildiğin nicelikleri ve ihtiyaç duyduğun tek bilinmeyeni içeren denklemi seç; önce her zaman pozitif yönü tanımla.
+
+### Eğik atış
+
+Yatay ve düşey hareket bağımsızdır: yatay hız sabit kalır (hava direnci yok), düşey hareket ise g = 9,8 m/s² ile aşağı doğru ivmelenir. İlk hızı bileşenlerine ayır, sonra her yönü SUVAT ile ele al.
+
+**Anahtar terim — Yer değiştirme:** Başlangıç noktasından düz bir çizgide ölçülen, yönü de içeren mesafe; mesafeden farklı olarak negatif olabilir.
+
+<WorkedExample title="Çözümlü örnek: Sabit ivme">
+  Bir araba 4 s'de 4 m/s'den 12 m/s'ye düzgün hızlanıyor. İvmeyi ve alınan mesafeyi bul.
+
+  İvme a = (v − u)/t = (12 − 4)/4 = 8/4 = 2 m/s².
+  Mesafe s = (u + v)/2 × t = (4 + 12)/2 × 4 = 8 × 4 = 32 m.
+  s = ut + ½at² = 16 + 16 = 32 m ile kontrol et. ✓.
+
+  **Cevap:** İvme 2 m/s²; mesafe 32 m.
+</WorkedExample>
+
+<ImportantNote title="Yaygın hatalar">
+  - **Hızı süratle ya da yer değiştirmeyi mesafeyle karıştırmak** SUVAT vektörler kullanır: başta pozitif yönü sabitle ve işaretleri tutarlı tut, yoksa denklemler saçmalar.
+  - **F = ma'yı yanlış kuvvetle kullanmak** ma'ya eşit olan bileşke (net) kuvvettir — sürtünme ve ağırlık bileşenleri dâhil tüm kuvvetleri önce vektörel olarak topla.
+</ImportantNote>
+
+## Alıştırma
+
+<PracticeQuestions>
+  <PracticeItem question="Bir parçacık durgunluktan başlıyor ve 5 s boyunca 3 m/s² ivmeyle hızlanıyor. Son hızını bul." hint="v = u + at.">
+    v = 0 + 3 × 5 = 15 m/s.
+  </PracticeItem>
+  <PracticeItem question="2 kg kütleli bir cisme 10 N bileşke kuvvet etki ediyor. İvmesini bul." hint="F = ma.">
+    a = 10/2 = 5 m/s².
+  </PracticeItem>
+  <PracticeItem question="Bir önceki soruda alınan mesafeyi bul." hint="s = ut + ½at².">
+    s = 0 + ½ × 3 × 25 = 37,5 m.
+  </PracticeItem>
+  <PracticeItem question="Pürüzlü zemindeki bir kutunun normal tepkisi 50 N ve μ = 0,4. Maksimum sürtünmeyi bul." hint="F_maks = μR.">
+    F_maks = 0,4 × 50 = 20 N.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Kısa kontrol
+
+<Quiz title="Bir doğru üzerinde kinematik — kısa kontrol">
+  <QuizQuestion question="Aşağıdakilerden hangisi &quot;Yer değiştirme&quot;yi en iyi tanımlar?" options={["Hızın değişim hızı, m/s² cinsinden; seçilen yönde hızlanmada pozitif, yavaşlamada negatif (azalma).", "Yüzeyler arasındaki göreli harekete karşı koyan kuvvet; F ≤ μR olarak modellenir, burada μ sürtünme katsayısı, R normal tepkidir.", "Newton (N) cinsinden ölçülen itme ya da çekme; bileşke kuvvet F = ma ile ivmeye neden olur.", "Başlangıç noktasından düz bir çizgide ölçülen, yönü de içeren mesafe; mesafeden farklı olarak negatif olabilir."]} answer={3} explanation="Başlangıç noktasından düz bir çizgide ölçülen, yönü de içeren mesafe; mesafeden farklı olarak negatif olabilir." />
+  <QuizQuestion question="45 m'lik bir uçurumdan yatay olarak 20 m/s hızla bir mermi fırlatılıyor. Denize düşmesi ne kadar sürer? (g = 9,8 m/s²)" options={["t² = 91/9,8 ≈ 9,18; t ≈ 3,03 s.", "t² = 89/9,8 ≈ 9,18; t ≈ 3,03 s.", "t² = 92/9,8 ≈ 9,18; t ≈ 3,03 s.", "t² = 90/9,8 ≈ 9,18; t ≈ 3,03 s."]} answer={3} explanation="t² = 90/9,8 ≈ 9,18; t ≈ 3,03 s." />
+  <QuizQuestion question="Bir top durgunluktan düşürülüyor. 2 s'de ne kadar düşer? (g = 9,8 m/s²)" options={["s = ½ × 10,8 × 4 = 19,6 m.", "s = ½ × 8,8 × 4 = 19,6 m.", "s = ½ × 11,8 × 4 = 19,6 m.", "s = ½ × 9,8 × 4 = 19,6 m."]} answer={3} explanation="s = ½ × 9,8 × 4 = 19,6 m." />
+</Quiz>
+
+<Summary>
+  - Bir Doğru Üzerinde Kinematik: yer değiştirme, hız ve ivme; sabit ivmeli SUVAT denklemleriyle.
+  - SUVAT denklemleri: Sabit ivme için: v = u + at, s = ut + ½at² ve v² = u² + 2as.
+  - İvme: Hızın değişim hızı, m/s² cinsinden; seçilen yönde hızlanmada pozitif, yavaşlamada negatif (azalma).
+  - Dikkat et: hızı süratle ya da yer değiştirmeyi mesafeyle karıştırmak
+</Summary>
