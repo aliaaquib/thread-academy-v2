@@ -9,7 +9,6 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { SearchOverlayHost } from "@/components/SearchOverlayHost";
-import { TutorWidget } from "@/components/textbook/TutorWidget";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -66,7 +65,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="view">{children}</main>
           <SiteFooter />
           <SearchOverlayHost />
-          <TutorWidget />
         </div>
       </body>
     </html>
