@@ -645,6 +645,7 @@ a.chapter-link:hover{background:var(--surface);padding-left:16px;padding-right:1
 .solver-steps li{padding:12px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
 .solver-steps li.solver-result{color:var(--ink);font-weight:800}
 .empty-note{color:var(--muted);font-size:.92rem;margin:14px 0 0}
+.fallback-note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent-deep);border-radius:8px;padding:12px 16px;color:var(--ink);font-size:.9rem;margin:0 0 18px}
 
 /* TryItPython — the code-lab language */
 .tryit{background:var(--code);color:var(--code-ink);margin:28px 0;box-shadow:var(--shadow)}

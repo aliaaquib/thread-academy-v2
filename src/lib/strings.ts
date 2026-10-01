@@ -118,6 +118,8 @@ const en: Dict = {
   "chapter.read.lesson": "Read lesson →",
   "chapter.empty":
     "Lessons for this chapter are being written — check back soon, or explore another chapter.",
+  "chapter.fallback":
+    "Lessons in this language are being written — showing the English lessons for now.",
   "chapter.resources.link": "Chapter resources →",
 
   // ---- lesson (topic) page ----
@@ -431,6 +433,7 @@ const tr: Dict = {
   "chapter.aside.quiz": "Açıklamalı kısa testler",
   "chapter.read.lesson": "Dersi oku →",
   "chapter.empty": "Bu bölümün dersleri yazılıyor — yakında tekrar bak veya başka bir bölümü keşfet.",
+  "chapter.fallback": "Bu dildeki dersler yazılıyor — şimdilik İngilizce dersler gösteriliyor.",
   "chapter.resources.link": "Bölüm kaynakları →",
 
   // ---- lesson (topic) page ----
@@ -743,6 +746,7 @@ const ru: Dict = {
   "chapter.aside.quiz": "Короткие тесты с объяснениями",
   "chapter.read.lesson": "Читать урок →",
   "chapter.empty": "Уроки этой главы ещё пишутся — загляни позже или открой другую главу.",
+  "chapter.fallback": "Уроки на этом языке ещё пишутся — пока показаны уроки на английском.",
   "chapter.resources.link": "Ресурсы главы →",
 
   // ---- lesson (topic) page ----
@@ -1044,6 +1048,7 @@ const ky: Dict = {
   "chapter.aside.quiz": "Түшүндүрмөлүү кыска тесттер",
   "chapter.read.lesson": "Сабакты окуу →",
   "chapter.empty": "Бул бөлүмдүн сабактары жазылып жатат — жакында кайра кел же башка бөлүмдү кара.",
+  "chapter.fallback": "Бул тилдеги сабактар жазылып жатат — азырынча англисче сабактар көрсөтүлүүдө.",
   "chapter.resources.link": "Бөлүм ресурстары →",
 
   // ---- lesson (topic) page ----

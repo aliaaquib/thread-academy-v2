@@ -66,10 +66,24 @@ export default function ChapterPage({ params }: { params: Params }) {
   if (getGradeForChapter(params.subject, params.chapter) !== grade) notFound();
 
   const gradePath = withLang(`/subjects/${subject.slug}/${gradeSlug(grade)}`, lang);
-  const topics = getAvailableTopics(
+  // Lessons in the page language. If the teacher hasn't written them yet,
+  // fall back to the English lessons (clearly marked) instead of showing
+  // an empty chapter — nothing is ever presented as translated when it isn't.
+  let topics = getAvailableTopics(
     { subject: params.subject, chapter: params.chapter },
     lang,
   );
+  let fallbackToEnglish = false;
+  if (lang !== "en" && topics.length === 0) {
+    const englishTopics = getAvailableTopics(
+      { subject: params.subject, chapter: params.chapter },
+      "en",
+    );
+    if (englishTopics.length > 0) {
+      topics = englishTopics;
+      fallbackToEnglish = true;
+    }
+  }
 
   return (
     <>
@@ -106,6 +120,9 @@ export default function ChapterPage({ params }: { params: Params }) {
             </ul>
           </aside>
           <div>
+            {fallbackToEnglish && (
+              <p className="fallback-note">{t(lang, "chapter.fallback")}</p>
+            )}
             <div className="chapters">
               {topics.length > 0 ? (
                 topics.map((topic, i) => (
