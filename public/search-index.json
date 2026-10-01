@@ -28,6 +28,13 @@
   "text": "accepting results gracefully political science → grade 8 → voting → accepting results gracefully teaches why accepting a fair result matters, even when your side loses. teaches why accepting a fair result matters, even when your side loses."
  },
  {
+  "kind": "topic",
+  "title": "Accessing Websites",
+  "path": "Computer Science → Grade 7 → Networks and Digital Communication → Accessing Websites",
+  "url": "/subjects/computer-science/grade-7/networks-and-digital-communication/accessing-websites",
+  "text": "accessing websites computer science → grade 7 → networks and digital communication → accessing websites urls, browsers and search engines — and how to tell a site is secure. urls, browsers and search engines — and how to tell a site is secure."
+ },
+ {
   "kind": "chapter",
   "title": "Acids and Alkalis",
   "path": "Chemistry → Grade 9 → Acids and Alkalis",
@@ -39,7 +46,7 @@
   "title": "Acids and Alkalis resources",
   "path": "Resources → Chemistry → Grade 9 → Acids and Alkalis",
   "url": "/resources/chemistry/grade-9/acids-alkalis",
-  "text": "acids and alkalis resources notes worksheets videos revision chemistry → grade 9 → acids and alkalis acids in everyday life the ph scale testing with indicators acids meet alkalis"
+  "text": "acids and alkalis resources chemistry → grade 9 → acids and alkalis acids in everyday life the ph scale testing with indicators acids meet alkalis"
  },
  {
   "kind": "topic",
@@ -81,7 +88,7 @@
   "title": "Addition and Subtraction resources",
   "path": "Resources → Mathematics → Grade 7 → Addition and Subtraction",
   "url": "/resources/mathematics/grade-7/addition-subtraction",
-  "text": "addition and subtraction resources notes worksheets videos revision mathematics → grade 7 → addition and subtraction adding two numbers number bonds to 10 subtracting objects number line steps"
+  "text": "addition and subtraction resources mathematics → grade 7 → addition and subtraction adding two numbers number bonds to 10 subtracting objects number line steps"
  },
  {
   "kind": "chapter",
@@ -95,7 +102,7 @@
   "title": "Advanced Grammar resources",
   "path": "Resources → Russian → Grade 11 → Advanced Grammar",
   "url": "/resources/russian/grade-11/russian-advanced-grammar",
-  "text": "advanced grammar resources notes worksheets videos revision russian → grade 11 → advanced grammar verbs of motion aspect pairs participles in action gerunds and complex sentences"
+  "text": "advanced grammar resources russian → grade 11 → advanced grammar verbs of motion aspect pairs participles in action gerunds and complex sentences"
  },
  {
   "kind": "topic",
@@ -130,7 +137,7 @@
   "title": "AI and Ethics resources",
   "path": "Resources → Computer Science → Grade 12 → AI and Ethics",
   "url": "/resources/computer-science/grade-12/ai-ethics",
-  "text": "ai and ethics resources notes worksheets videos revision computer science → grade 12 → ai and ethics how machine learning works training data bias and fairness using ai responsibly"
+  "text": "ai and ethics resources computer science → grade 12 → ai and ethics how machine learning works training data bias and fairness using ai responsibly"
  },
  {
   "kind": "topic",
@@ -151,7 +158,7 @@
   "title": "Algebra resources",
   "path": "Resources → Mathematics → Grade 9 → Algebra",
   "url": "/resources/mathematics/grade-9/algebra",
-  "text": "algebra resources notes worksheets videos revision mathematics → grade 9 → algebra introduction to algebra variables expressions linear equations quadratic equations functions"
+  "text": "algebra resources mathematics → grade 9 → algebra introduction to algebra variables expressions linear equations quadratic equations functions"
  },
  {
   "kind": "topic",
@@ -172,21 +179,7 @@
   "title": "Algorithms resources",
   "path": "Resources → Computer Science → Grade 10 → Algorithms",
   "url": "/resources/computer-science/grade-10/algorithms",
-  "text": "algorithms resources notes worksheets videos revision computer science → grade 10 → algorithms linear search binary search bubble sort measuring efficiency"
- },
- {
-  "kind": "chapter",
-  "title": "Algorithms Without Computers",
-  "path": "Computer Science → Grade 7 → Algorithms Without Computers",
-  "url": "/subjects/computer-science/grade-7/algorithms-unplugged",
-  "text": "algorithms without computers computer science → grade 7 → algorithms without computers give precise step-by-step instructions to solve tasks. what is an algorithm? following instructions exactly writing clear steps finding and fixing mistakes"
- },
- {
-  "kind": "resource",
-  "title": "Algorithms Without Computers resources",
-  "path": "Resources → Computer Science → Grade 7 → Algorithms Without Computers",
-  "url": "/resources/computer-science/grade-7/algorithms-unplugged",
-  "text": "algorithms without computers resources notes worksheets videos revision computer science → grade 7 → algorithms without computers what is an algorithm? following instructions exactly writing clear steps finding and fixing mistakes"
+  "text": "algorithms resources computer science → grade 10 → algorithms linear search binary search bubble sort measuring efficiency"
  },
  {
   "kind": "topic",
@@ -207,7 +200,7 @@
   "title": "Analytical Techniques resources",
   "path": "Resources → Chemistry → Grade 12 → Analytical Techniques",
   "url": "/resources/chemistry/grade-12/analytical-chemistry",
-  "text": "analytical techniques resources notes worksheets videos revision chemistry → grade 12 → analytical techniques chemical tests flame tests and precipitates mass spectrometry infrared and nmr spectroscopy"
+  "text": "analytical techniques resources chemistry → grade 12 → analytical techniques chemical tests flame tests and precipitates mass spectrometry infrared and nmr spectroscopy"
  },
  {
   "kind": "topic",
@@ -235,7 +228,7 @@
   "title": "Animals and Humans resources",
   "path": "Resources → Biology → Grade 7 → Animals and Humans",
   "url": "/resources/biology/grade-7/animals-humans",
-  "text": "animals and humans resources notes worksheets videos revision biology → grade 7 → animals and humans the five senses bones and skeletons food for health staying healthy"
+  "text": "animals and humans resources biology → grade 7 → animals and humans the five senses bones and skeletons food for health staying healthy"
  },
  {
   "kind": "topic",
@@ -284,7 +277,7 @@
   "title": "Atomic Structure resources",
   "path": "Resources → Chemistry → Grade 8 → Atomic Structure",
   "url": "/resources/chemistry/grade-8/atomic-structure",
-  "text": "atomic structure resources notes worksheets videos revision chemistry → grade 8 → atomic structure atoms and elements subatomic particles atomic number and mass number electron shells"
+  "text": "atomic structure resources chemistry → grade 8 → atomic structure atoms and elements subatomic particles atomic number and mass number electron shells"
  },
  {
   "kind": "topic",
@@ -299,6 +292,13 @@
   "path": "Political Science → Grade 9 → Power and Politics → Authority and Legitimacy",
   "url": "/subjects/political-science/grade-9/power-politics/authority-and-legitimacy",
   "text": "authority and legitimacy political science → grade 9 → power and politics → authority and legitimacy explains weber's three types of legitimate authority: traditional, charismatic and rational-legal. explains weber's three types of legitimate authority: traditional, charismatic and rational-legal."
+ },
+ {
+  "kind": "topic",
+  "title": "Automation and Artificial Intelligence",
+  "path": "Computer Science → Grade 7 → Computer Systems → Automation and Artificial Intelligence",
+  "url": "/subjects/computer-science/grade-7/computer-systems/automation-and-artificial-intelligence",
+  "text": "automation and artificial intelligence computer science → grade 7 → computer systems → automation and artificial intelligence machines that act on their own: automation in industry and what ai really is. machines that act on their own: automation in industry and what ai really is."
  },
  {
   "kind": "topic",
@@ -340,7 +340,7 @@
   "title": "Behavioural Economics resources",
   "path": "Resources → Economics → Grade 10 → Behavioural Economics",
   "url": "/resources/economics/grade-10/behavioural-economics",
-  "text": "behavioural economics resources notes worksheets videos revision economics → grade 10 → behavioural economics rational choice theory biases and heuristics nudge theory behavioural economics in policy"
+  "text": "behavioural economics resources economics → grade 10 → behavioural economics rational choice theory biases and heuristics nudge theory behavioural economics in policy"
  },
  {
   "kind": "topic",
@@ -348,13 +348,6 @@
   "path": "Sociology → Grade 7 → School and Society → Being a Good Citizen",
   "url": "/subjects/sociology/grade-7/school-society/being-a-good-citizen",
   "text": "being a good citizen sociology → grade 7 → school and society → being a good citizen practise the small acts that make school better for everyone. practise the small acts that make school better for everyone."
- },
- {
-  "kind": "topic",
-  "title": "Being Kind Online",
-  "path": "Computer Science → Grade 7 → Staying Safe Online → Being Kind Online",
-  "url": "/subjects/computer-science/grade-7/staying-safe-online/kind-online",
-  "text": "being kind online computer science → grade 7 → staying safe online → being kind online practise friendly, respectful messages and learn what to do if someone is unkind. practise friendly, respectful messages and learn what to do if someone is unkind."
  },
  {
   "kind": "topic",
@@ -410,7 +403,7 @@
   "title": "Biochemistry resources",
   "path": "Resources → Biology → Grade 11 → Biochemistry",
   "url": "/resources/biology/grade-11/biochemistry",
-  "text": "biochemistry resources notes worksheets videos revision biology → grade 11 → biochemistry biological molecules protein structure enzymes in depth dna structure and replication"
+  "text": "biochemistry resources biology → grade 11 → biochemistry biological molecules protein structure enzymes in depth dna structure and replication"
  },
  {
   "kind": "chapter",
@@ -424,7 +417,7 @@
   "title": "Bioenergetics resources",
   "path": "Resources → Biology → Grade 10 → Bioenergetics",
   "url": "/resources/biology/grade-10/bioenergetics",
-  "text": "bioenergetics resources notes worksheets videos revision biology → grade 10 → bioenergetics how photosynthesis works limiting factors aerobic and anaerobic respiration energy in ecosystems"
+  "text": "bioenergetics resources biology → grade 10 → bioenergetics how photosynthesis works limiting factors aerobic and anaerobic respiration energy in ecosystems"
  },
  {
   "kind": "topic",
@@ -536,7 +529,7 @@
   "title": "Cell Biology resources",
   "path": "Resources → Biology → Grade 8 → Cell Biology",
   "url": "/resources/biology/grade-8/cell-biology",
-  "text": "cell biology resources notes worksheets videos revision biology → grade 8 → cell biology cell structure using microscopes specialised cells cell division: mitosis"
+  "text": "cell biology resources biology → grade 8 → cell biology cell structure using microscopes specialised cells cell division: mitosis"
  },
  {
   "kind": "topic",
@@ -620,7 +613,7 @@
   "title": "Chemical Bonding resources",
   "path": "Resources → Chemistry → Grade 10 → Chemical Bonding",
   "url": "/resources/chemistry/grade-10/chemical-bonding",
-  "text": "chemical bonding resources notes worksheets videos revision chemistry → grade 10 → chemical bonding ionic bonding covalent bonding metallic bonding structures and properties"
+  "text": "chemical bonding resources chemistry → grade 10 → chemical bonding ionic bonding covalent bonding metallic bonding structures and properties"
  },
  {
   "kind": "chapter",
@@ -634,7 +627,7 @@
   "title": "Chemical Changes resources",
   "path": "Resources → Chemistry → Grade 10 → Chemical Changes",
   "url": "/resources/chemistry/grade-10/chemical-changes",
-  "text": "chemical changes resources notes worksheets videos revision chemistry → grade 10 → chemical changes acids with metals and carbonates making salts the reactivity series energy in reactions"
+  "text": "chemical changes resources chemistry → grade 10 → chemical changes acids with metals and carbonates making salts the reactivity series energy in reactions"
  },
  {
   "kind": "topic",
@@ -739,7 +732,7 @@
   "title": "Coastal Systems resources",
   "path": "Resources → Geography → Grade 10 → Coastal Systems",
   "url": "/resources/geography/grade-10/coasts",
-  "text": "coastal systems resources notes worksheets videos revision geography → grade 10 → coastal systems coastal processes erosional landforms depositional landforms managing coasts"
+  "text": "coastal systems resources geography → grade 10 → coastal systems coastal processes erosional landforms depositional landforms managing coasts"
  },
  {
   "kind": "topic",
@@ -760,7 +753,7 @@
   "title": "Communities resources",
   "path": "Resources → Sociology → Grade 8 → Communities",
   "url": "/resources/sociology/grade-8/communities",
-  "text": "communities resources notes worksheets videos revision sociology → grade 8 → communities what is a community? community helpers how communities change helping your community"
+  "text": "communities resources sociology → grade 8 → communities what is a community? community helpers how communities change helping your community"
  },
  {
   "kind": "topic",
@@ -805,11 +798,32 @@
   "text": "computational thinking computer science → grade 8 → computational thinking the problem-solving mindset behind every program. breaking problems down pattern recognition focusing on what matters algorithmic thinking"
  },
  {
+  "kind": "chapter",
+  "title": "Computational Thinking and Programming",
+  "path": "Computer Science → Grade 7 → Computational Thinking and Programming",
+  "url": "/subjects/computer-science/grade-7/computational-thinking-programming",
+  "text": "computational thinking and programming computer science → grade 7 → computational thinking and programming plan with flowcharts, then bring your ideas to life in python. flowcharts selection and logic in flowcharts pattern recognition and sub-routines in flowcharts introduction to text-based programming python programming software development and testing physical computing"
+ },
+ {
+  "kind": "resource",
+  "title": "Computational Thinking and Programming resources",
+  "path": "Resources → Computer Science → Grade 7 → Computational Thinking and Programming",
+  "url": "/resources/computer-science/grade-7/computational-thinking-programming",
+  "text": "computational thinking and programming resources computer science → grade 7 → computational thinking and programming flowcharts selection and logic in flowcharts pattern recognition and sub-routines in flowcharts introduction to text-based programming python programming software development and testing physical computing"
+ },
+ {
   "kind": "resource",
   "title": "Computational Thinking resources",
   "path": "Resources → Computer Science → Grade 8 → Computational Thinking",
   "url": "/resources/computer-science/grade-8/computational-thinking",
-  "text": "computational thinking resources notes worksheets videos revision computer science → grade 8 → computational thinking breaking problems down pattern recognition focusing on what matters algorithmic thinking"
+  "text": "computational thinking resources computer science → grade 8 → computational thinking breaking problems down pattern recognition focusing on what matters algorithmic thinking"
+ },
+ {
+  "kind": "topic",
+  "title": "Computer Design",
+  "path": "Computer Science → Grade 7 → Computer Systems → Computer Design",
+  "url": "/subjects/computer-science/grade-7/computer-systems/computer-design",
+  "text": "computer design computer science → grade 7 → computer systems → computer design input, process, output: the parts inside and how they work together. input, process, output: the parts inside and how they work together."
  },
  {
   "kind": "subject",
@@ -817,6 +831,20 @@
   "path": "Subjects",
   "url": "/subjects/computer-science",
   "text": "computer science how computers think — and how to make them do what you want. computer science is about solving problems precisely. you'll learn how to break problems down, write programs in python, and understand the ideas — from variables to functions — that every piece of software is built on. computational thinking programming fundamentals algorithms data representation"
+ },
+ {
+  "kind": "chapter",
+  "title": "Computer Systems",
+  "path": "Computer Science → Grade 7 → Computer Systems",
+  "url": "/subjects/computer-science/grade-7/computer-systems",
+  "text": "computer systems computer science → grade 7 → computer systems what is inside a computer, and how it thinks in binary. computer design types of software data representation logic gates automation and artificial intelligence"
+ },
+ {
+  "kind": "resource",
+  "title": "Computer Systems resources",
+  "path": "Resources → Computer Science → Grade 7 → Computer Systems",
+  "url": "/resources/computer-science/grade-7/computer-systems",
+  "text": "computer systems resources computer science → grade 7 → computer systems computer design types of software data representation logic gates automation and artificial intelligence"
  },
  {
   "kind": "topic",
@@ -872,7 +900,7 @@
   "title": "Continents and Oceans resources",
   "path": "Resources → Geography → Grade 8 → Continents and Oceans",
   "url": "/resources/geography/grade-8/continents-oceans",
-  "text": "continents and oceans resources notes worksheets videos revision geography → grade 8 → continents and oceans the seven continents the five oceans continent highlights compass points"
+  "text": "continents and oceans resources geography → grade 8 → continents and oceans the seven continents the five oceans continent highlights compass points"
  },
  {
   "kind": "topic",
@@ -907,7 +935,7 @@
   "title": "Counting resources",
   "path": "Resources → Mathematics → Grade 7 → Counting",
   "url": "/resources/mathematics/grade-7/counting",
-  "text": "counting resources notes worksheets videos revision mathematics → grade 7 → counting counting to 10 counting to 100 ordering numbers comparing numbers"
+  "text": "counting resources mathematics → grade 7 → counting counting to 10 counting to 100 ordering numbers comparing numbers"
  },
  {
   "kind": "topic",
@@ -956,7 +984,7 @@
   "title": "Creating Digital Media resources",
   "path": "Resources → Computer Science → Grade 8 → Creating Digital Media",
   "url": "/resources/computer-science/grade-8/creating-media",
-  "text": "creating digital media resources notes worksheets videos revision computer science → grade 8 → creating digital media planning your project making images text and sound animation basics"
+  "text": "creating digital media resources computer science → grade 8 → creating digital media planning your project making images text and sound animation basics"
  },
  {
   "kind": "topic",
@@ -984,7 +1012,7 @@
   "title": "Culture and Identity resources",
   "path": "Resources → Sociology → Grade 10 → Culture and Identity",
   "url": "/resources/sociology/grade-10/culture-identity",
-  "text": "culture and identity resources notes worksheets videos revision sociology → grade 10 → culture and identity culture and norms socialisation subcultures and countercultures globalisation and hybridity"
+  "text": "culture and identity resources sociology → grade 10 → culture and identity culture and norms socialisation subcultures and countercultures globalisation and hybridity"
  },
  {
   "kind": "topic",
@@ -1005,7 +1033,7 @@
   "title": "Culture and Society resources",
   "path": "Resources → Russian → Grade 12 → Culture and Society",
   "url": "/resources/russian/grade-12/russian-culture",
-  "text": "culture and society resources notes worksheets videos revision russian → grade 12 → culture and society russian holidays food and hospitality geography and cities traditions and etiquette"
+  "text": "culture and society resources russian → grade 12 → culture and society russian holidays food and hospitality geography and cities traditions and etiquette"
  },
  {
   "kind": "topic",
@@ -1026,7 +1054,7 @@
   "title": "Cyrillic resources",
   "path": "Resources → Russian → Grade 8 → Cyrillic",
   "url": "/resources/russian/grade-8/cyrillic",
-  "text": "cyrillic resources notes worksheets videos revision russian → grade 8 → cyrillic the cyrillic alphabet pronunciation and stress look-alike letters hard and soft signs"
+  "text": "cyrillic resources russian → grade 8 → cyrillic the cyrillic alphabet pronunciation and stress look-alike letters hard and soft signs"
  },
  {
   "kind": "chapter",
@@ -1040,7 +1068,21 @@
   "title": "Daily Russian resources",
   "path": "Resources → Russian → Grade 10 → Daily Russian",
   "url": "/resources/russian/grade-10/daily-russian",
-  "text": "daily russian resources notes worksheets videos revision russian → grade 10 → daily russian numbers time and phrases telling the time days and dates"
+  "text": "daily russian resources russian → grade 10 → daily russian numbers time and phrases telling the time days and dates"
+ },
+ {
+  "kind": "topic",
+  "title": "Data Collection",
+  "path": "Computer Science → Grade 7 → Managing Data → Data Collection",
+  "url": "/subjects/computer-science/grade-7/managing-data/data-collection",
+  "text": "data collection computer science → grade 7 → managing data → data collection gather data well: surveys, sensors, and checks that catch bad data. gather data well: surveys, sensors, and checks that catch bad data."
+ },
+ {
+  "kind": "topic",
+  "title": "Data Representation",
+  "path": "Computer Science → Grade 7 → Computer Systems → Data Representation",
+  "url": "/subjects/computer-science/grade-7/computer-systems/data-representation",
+  "text": "data representation computer science → grade 7 → computer systems → data representation binary, bits and bytes: how computers store numbers, text and images. binary, bits and bytes: how computers store numbers, text and images."
  },
  {
   "kind": "chapter",
@@ -1054,7 +1096,7 @@
   "title": "Data Representation resources",
   "path": "Resources → Computer Science → Grade 9 → Data Representation",
   "url": "/resources/computer-science/grade-9/data-representation",
-  "text": "data representation resources notes worksheets videos revision computer science → grade 9 → data representation binary numbers text and characters images and pixels sound and sampling"
+  "text": "data representation resources computer science → grade 9 → data representation binary numbers text and characters images and pixels sound and sampling"
  },
  {
   "kind": "chapter",
@@ -1068,7 +1110,21 @@
   "title": "Data Structures resources",
   "path": "Resources → Computer Science → Grade 11 → Data Structures",
   "url": "/resources/computer-science/grade-11/data-structures",
-  "text": "data structures resources notes worksheets videos revision computer science → grade 11 → data structures using stacks using queues tree structures graph networks"
+  "text": "data structures resources computer science → grade 11 → data structures using stacks using queues tree structures graph networks"
+ },
+ {
+  "kind": "topic",
+  "title": "Data Transmission",
+  "path": "Computer Science → Grade 7 → Networks and Digital Communication → Data Transmission",
+  "url": "/subjects/computer-science/grade-7/networks-and-digital-communication/data-transmission",
+  "text": "data transmission computer science → grade 7 → networks and digital communication → data transmission packets, ip addresses and routers: how data crosses the world. packets, ip addresses and routers: how data crosses the world."
+ },
+ {
+  "kind": "topic",
+  "title": "Databases",
+  "path": "Computer Science → Grade 7 → Managing Data → Databases",
+  "url": "/subjects/computer-science/grade-7/managing-data/databases",
+  "text": "databases computer science → grade 7 → managing data → databases tables, records and fields: store data properly and search it fast. tables, records and fields: store data properly and search it fast."
  },
  {
   "kind": "chapter",
@@ -1082,7 +1138,7 @@
   "title": "Databases and SQL resources",
   "path": "Resources → Computer Science → Grade 11 → Databases and SQL",
   "url": "/resources/computer-science/grade-11/databases-sql",
-  "text": "databases and sql resources notes worksheets videos revision computer science → grade 11 → databases and sql tables and keys table relationships select queries changing data"
+  "text": "databases and sql resources computer science → grade 11 → databases and sql tables and keys table relationships select queries changing data"
  },
  {
   "kind": "topic",
@@ -1110,7 +1166,7 @@
   "title": "Decolonisation resources",
   "path": "Resources → History → Grade 12 → Decolonisation",
   "url": "/resources/history/grade-12/decolonisation",
-  "text": "decolonisation resources notes worksheets videos revision history → grade 12 → decolonisation why empires ended india: independence 1947 africa free legacies of empire"
+  "text": "decolonisation resources history → grade 12 → decolonisation why empires ended india: independence 1947 africa free legacies of empire"
  },
  {
   "kind": "chapter",
@@ -1124,7 +1180,7 @@
   "title": "Democracy resources",
   "path": "Resources → Political Science → Grade 10 → Democracy",
   "url": "/resources/political-science/grade-10/democracy",
-  "text": "democracy resources notes worksheets videos revision political science → grade 10 → democracy how democracy works voting systems features of liberal democracy direct versus representative democracy"
+  "text": "democracy resources political science → grade 10 → democracy how democracy works voting systems features of liberal democracy direct versus representative democracy"
  },
  {
   "kind": "topic",
@@ -1187,21 +1243,21 @@
   "title": "Development Economics resources",
   "path": "Resources → Economics → Grade 12 → Development Economics",
   "url": "/resources/economics/grade-12/development-economics",
-  "text": "development economics resources notes worksheets videos revision economics → grade 12 → development economics measuring development causes of underdevelopment inequality explored development strategies"
+  "text": "development economics resources economics → grade 12 → development economics measuring development causes of underdevelopment inequality explored development strategies"
  },
  {
   "kind": "resource",
   "title": "Development resources",
   "path": "Resources → Geography → Grade 12 → Development",
   "url": "/resources/geography/grade-12/global-development",
-  "text": "development resources notes worksheets videos revision geography → grade 12 → development measuring development causes of inequality development strategies sustainable development goals"
+  "text": "development resources geography → grade 12 → development measuring development causes of inequality development strategies sustainable development goals"
  },
  {
   "kind": "resource",
   "title": "Development resources",
   "path": "Resources → Psychology → Grade 12 → Development",
   "url": "/resources/psychology/grade-12/development",
-  "text": "development resources notes worksheets videos revision psychology → grade 12 → development child development stress and wellbeing piaget's stages vygotsky's scaffolding"
+  "text": "development resources psychology → grade 12 → development child development stress and wellbeing piaget's stages vygotsky's scaffolding"
  },
  {
   "kind": "topic",
@@ -1285,7 +1341,7 @@
   "title": "Ecology resources",
   "path": "Resources → Biology → Grade 11 → Ecology",
   "url": "/resources/biology/grade-11/ecology",
-  "text": "ecology resources notes worksheets videos revision biology → grade 11 → ecology food webs pyramids of biomass the carbon cycle humans and the environment"
+  "text": "ecology resources biology → grade 11 → ecology food webs pyramids of biomass the carbon cycle humans and the environment"
  },
  {
   "kind": "topic",
@@ -1341,7 +1397,7 @@
   "title": "Electricity resources",
   "path": "Resources → Physics → Grade 11 → Electricity",
   "url": "/resources/physics/grade-11/electricity",
-  "text": "electricity resources notes worksheets videos revision physics → grade 11 → electricity current and charge voltage and resistance series and parallel electrical power"
+  "text": "electricity resources physics → grade 11 → electricity current and charge voltage and resistance series and parallel electrical power"
  },
  {
   "kind": "topic",
@@ -1362,7 +1418,7 @@
   "title": "Empire and Industry resources",
   "path": "Resources → History → Grade 9 → Empire and Industry",
   "url": "/resources/history/grade-9/empire-industry",
-  "text": "empire and industry resources notes worksheets videos revision history → grade 9 → empire and industry machines that changed work mill towns and workers cotton and the world railways, ships and trade"
+  "text": "empire and industry resources history → grade 9 → empire and industry machines that changed work mill towns and workers cotton and the world railways, ships and trade"
  },
  {
   "kind": "chapter",
@@ -1390,7 +1446,7 @@
   "title": "Energy resources",
   "path": "Resources → Physics → Grade 9 → Energy",
   "url": "/resources/physics/grade-9/energy",
-  "text": "energy resources notes worksheets videos revision physics → grade 9 → energy kinetic energy potential energy energy transfers conservation and efficiency"
+  "text": "energy resources physics → grade 9 → energy kinetic energy potential energy energy transfers conservation and efficiency"
  },
  {
   "kind": "topic",
@@ -1467,7 +1523,7 @@
   "title": "Everyday Materials resources",
   "path": "Resources → Physics → Grade 7 → Everyday Materials",
   "url": "/resources/physics/grade-7/everyday-materials",
-  "text": "everyday materials resources notes worksheets videos revision physics → grade 7 → everyday materials hard and soft waterproof or not? let the light through right material for the job"
+  "text": "everyday materials resources physics → grade 7 → everyday materials hard and soft waterproof or not? let the light through right material for the job"
  },
  {
   "kind": "topic",
@@ -1488,7 +1544,7 @@
   "title": "Evolution resources",
   "path": "Resources → Biology → Grade 12 → Evolution",
   "url": "/resources/biology/grade-12/evolution",
-  "text": "evolution resources notes worksheets videos revision biology → grade 12 → evolution natural selection evidence for evolution how speciation happens classification and phylogeny"
+  "text": "evolution resources biology → grade 12 → evolution natural selection evidence for evolution how speciation happens classification and phylogeny"
  },
  {
   "kind": "topic",
@@ -1544,7 +1600,7 @@
   "title": "Families resources",
   "path": "Resources → Sociology → Grade 7 → Families",
   "url": "/resources/sociology/grade-7/families",
-  "text": "families resources notes worksheets videos revision sociology → grade 7 → families what makes a family? nuclear and extended families one-parent and blended families families around the world"
+  "text": "families resources sociology → grade 7 → families what makes a family? nuclear and extended families one-parent and blended families families around the world"
  },
  {
   "kind": "topic",
@@ -1572,7 +1628,7 @@
   "title": "Feelings resources",
   "path": "Resources → Psychology → Grade 7 → Feelings",
   "url": "/resources/psychology/grade-7/feelings",
-  "text": "feelings resources notes worksheets videos revision psychology → grade 7 → feelings naming our feelings what feelings are for expressing feelings safely understanding other people"
+  "text": "feelings resources psychology → grade 7 → feelings naming our feelings what feelings are for expressing feelings safely understanding other people"
  },
  {
   "kind": "chapter",
@@ -1586,14 +1642,7 @@
   "title": "Fields resources",
   "path": "Resources → Physics → Grade 12 → Fields",
   "url": "/resources/physics/grade-12/fields",
-  "text": "fields resources notes worksheets videos revision physics → grade 12 → fields gravitational fields electric fields magnetic fields potentials and equipotentials"
- },
- {
-  "kind": "topic",
-  "title": "Finding and Fixing Mistakes",
-  "path": "Computer Science → Grade 7 → Algorithms Without Computers → Finding and Fixing Mistakes",
-  "url": "/subjects/computer-science/grade-7/algorithms-unplugged/fixing-mistakes",
-  "text": "finding and fixing mistakes computer science → grade 7 → algorithms without computers → finding and fixing mistakes learn how debugging means spotting errors in instructions and correcting them. learn how debugging means spotting errors in instructions and correcting them."
+  "text": "fields resources physics → grade 12 → fields gravitational fields electric fields magnetic fields potentials and equipotentials"
  },
  {
   "kind": "topic",
@@ -1614,7 +1663,7 @@
   "title": "First Fractions resources",
   "path": "Resources → Mathematics → Grade 8 → First Fractions",
   "url": "/resources/mathematics/grade-8/fractions-first",
-  "text": "first fractions resources notes worksheets videos revision mathematics → grade 8 → first fractions halves of shapes halves of numbers quarters of shapes comparing fractions"
+  "text": "first fractions resources mathematics → grade 8 → first fractions halves of shapes halves of numbers quarters of shapes comparing fractions"
  },
  {
   "kind": "chapter",
@@ -1628,7 +1677,7 @@
   "title": "First Steps resources",
   "path": "Resources → Russian → Grade 9 → First Steps",
   "url": "/resources/russian/grade-9/first-steps",
-  "text": "first steps resources notes worksheets videos revision russian → grade 9 → first steps greetings nouns and verbs formal or friendly? noun genders"
+  "text": "first steps resources russian → grade 9 → first steps greetings nouns and verbs formal or friendly? noun genders"
  },
  {
   "kind": "topic",
@@ -1653,17 +1702,17 @@
  },
  {
   "kind": "topic",
+  "title": "Flowcharts",
+  "path": "Computer Science → Grade 7 → Computational Thinking and Programming → Flowcharts",
+  "url": "/subjects/computer-science/grade-7/computational-thinking-programming/flowcharts",
+  "text": "flowcharts computer science → grade 7 → computational thinking and programming → flowcharts draw the steps of a solution with standard flowchart symbols. draw the steps of a solution with standard flowchart symbols."
+ },
+ {
+  "kind": "topic",
   "title": "Focusing on What Matters",
   "path": "Computer Science → Grade 8 → Computational Thinking → Focusing on What Matters",
   "url": "/subjects/computer-science/grade-8/computational-thinking/abstraction",
   "text": "focusing on what matters computer science → grade 8 → computational thinking → focusing on what matters strip away unimportant detail to focus on what matters. strip away unimportant detail to focus on what matters."
- },
- {
-  "kind": "topic",
-  "title": "Following Instructions Exactly",
-  "path": "Computer Science → Grade 7 → Algorithms Without Computers → Following Instructions Exactly",
-  "url": "/subjects/computer-science/grade-7/algorithms-unplugged/following-instructions",
-  "text": "following instructions exactly computer science → grade 7 → algorithms without computers → following instructions exactly act out instructions word for word to see why order and detail matter. act out instructions word for word to see why order and detail matter."
  },
  {
   "kind": "topic",
@@ -1705,7 +1754,7 @@
   "title": "Forces resources",
   "path": "Resources → Physics → Grade 8 → Forces",
   "url": "/resources/physics/grade-8/forces",
-  "text": "forces resources notes worksheets videos revision physics → grade 8 → forces newton's laws of motion types of forces balanced and unbalanced friction and drag"
+  "text": "forces resources physics → grade 8 → forces newton's laws of motion types of forces balanced and unbalanced friction and drag"
  },
  {
   "kind": "topic",
@@ -1733,7 +1782,7 @@
   "title": "Foundations resources",
   "path": "Resources → Sociology → Grade 9 → Foundations",
   "url": "/resources/sociology/grade-9/foundations",
-  "text": "foundations resources notes worksheets videos revision sociology → grade 9 → foundations the sociological imagination research methods three core perspectives structure and agency"
+  "text": "foundations resources sociology → grade 9 → foundations the sociological imagination research methods three core perspectives structure and agency"
  },
  {
   "kind": "topic",
@@ -1789,7 +1838,7 @@
   "title": "Friendship resources",
   "path": "Resources → Psychology → Grade 7 → Friendship",
   "url": "/resources/psychology/grade-7/friendship",
-  "text": "friendship resources notes worksheets videos revision psychology → grade 7 → friendship what makes a good friend taking turns and sharing fixing arguments kindness and inclusion"
+  "text": "friendship resources psychology → grade 7 → friendship what makes a good friend taking turns and sharing fixing arguments kindness and inclusion"
  },
  {
   "kind": "topic",
@@ -1817,7 +1866,7 @@
   "title": "Further Mechanics resources",
   "path": "Resources → Physics → Grade 11 → Further Mechanics",
   "url": "/resources/physics/grade-11/further-mechanics",
-  "text": "further mechanics resources notes worksheets videos revision physics → grade 11 → further mechanics circular motion simple harmonic motion momentum and impulse elastic and inelastic collisions"
+  "text": "further mechanics resources physics → grade 11 → further mechanics circular motion simple harmonic motion momentum and impulse elastic and inelastic collisions"
  },
  {
   "kind": "chapter",
@@ -1831,7 +1880,7 @@
   "title": "Further Statistics resources",
   "path": "Resources → Mathematics → Grade 12 → Further Statistics",
   "url": "/resources/mathematics/grade-12/further-statistics",
-  "text": "further statistics resources notes worksheets videos revision mathematics → grade 12 → further statistics the binomial distribution the normal distribution hypothesis testing correlation and regression"
+  "text": "further statistics resources mathematics → grade 12 → further statistics the binomial distribution the normal distribution hypothesis testing correlation and regression"
  },
  {
   "kind": "topic",
@@ -1873,7 +1922,7 @@
   "title": "Geometry resources",
   "path": "Resources → Mathematics → Grade 10 → Geometry",
   "url": "/resources/mathematics/grade-10/geometry",
-  "text": "geometry resources notes worksheets videos revision mathematics → grade 10 → geometry angles and angle facts triangles and quadrilaterals perimeter and area circles and pi"
+  "text": "geometry resources mathematics → grade 10 → geometry angles and angle facts triangles and quadrilaterals perimeter and area circles and pi"
  },
  {
   "kind": "topic",
@@ -1908,7 +1957,7 @@
   "title": "Global Politics resources",
   "path": "Resources → Political Science → Grade 12 → Global Politics",
   "url": "/resources/political-science/grade-12/global-politics",
-  "text": "global politics resources notes worksheets videos revision political science → grade 12 → global politics international relations global challenges the united nations the european union"
+  "text": "global politics resources political science → grade 12 → global politics international relations global challenges the united nations the european union"
  },
  {
   "kind": "topic",
@@ -1950,7 +1999,7 @@
   "title": "Government and the Economy resources",
   "path": "Resources → Economics → Grade 9 → Government and the Economy",
   "url": "/resources/economics/grade-9/government-economy",
-  "text": "government and the economy resources notes worksheets videos revision economics → grade 9 → government and the economy what governments do taxes explained public services spending and budgets"
+  "text": "government and the economy resources economics → grade 9 → government and the economy what governments do taxes explained public services spending and budgets"
  },
  {
   "kind": "chapter",
@@ -1964,7 +2013,7 @@
   "title": "Grammar & Vocabulary resources",
   "path": "Resources → English → Grade 9 → Grammar & Vocabulary",
   "url": "/resources/english/grade-9/grammar-vocabulary",
-  "text": "grammar & vocabulary resources notes worksheets videos revision english → grade 9 → grammar & vocabulary word classes clauses and sentences punctuation that works building vocabulary"
+  "text": "grammar & vocabulary resources english → grade 9 → grammar & vocabulary word classes clauses and sentences punctuation that works building vocabulary"
  },
  {
   "kind": "topic",
@@ -1999,7 +2048,7 @@
   "title": "Great Events resources",
   "path": "Resources → History → Grade 8 → Great Events",
   "url": "/resources/history/grade-8/great-events",
-  "text": "great events resources notes worksheets videos revision history → grade 8 → great events the great fire of london explorers and voyages kings, queens and crowns the moon landing"
+  "text": "great events resources history → grade 8 → great events the great fire of london explorers and voyages kings, queens and crowns the moon landing"
  },
  {
   "kind": "topic",
@@ -2027,7 +2076,7 @@
   "title": "Greetings resources",
   "path": "Resources → Russian → Grade 7 → Greetings",
   "url": "/resources/russian/grade-7/russian-greetings",
-  "text": "greetings resources notes worksheets videos revision russian → grade 7 → greetings hello and goodbye how are you? saying my name magic polite words"
+  "text": "greetings resources russian → grade 7 → greetings hello and goodbye how are you? saying my name magic polite words"
  },
  {
   "kind": "topic",
@@ -2069,7 +2118,7 @@
   "title": "Growing Minds resources",
   "path": "Resources → Psychology → Grade 8 → Growing Minds",
   "url": "/resources/psychology/grade-8/growing-minds",
-  "text": "growing minds resources notes worksheets videos revision psychology → grade 8 → growing minds practice makes progress asking for help mistakes are normal the growth mindset"
+  "text": "growing minds resources psychology → grade 8 → growing minds practice makes progress asking for help mistakes are normal the growth mindset"
  },
  {
   "kind": "topic",
@@ -2104,7 +2153,7 @@
   "title": "Handwriting resources",
   "path": "Resources → English → Grade 8 → Handwriting",
   "url": "/resources/english/grade-8/handwriting",
-  "text": "handwriting resources notes worksheets videos revision english → grade 8 → handwriting grip and posture forming letters lowercase and uppercase joining letters"
+  "text": "handwriting resources english → grade 8 → handwriting grip and posture forming letters lowercase and uppercase joining letters"
  },
  {
   "kind": "topic",
@@ -2132,7 +2181,7 @@
   "title": "Health and Disease resources",
   "path": "Resources → Biology → Grade 9 → Health and Disease",
   "url": "/resources/biology/grade-9/health-disease",
-  "text": "health and disease resources notes worksheets videos revision biology → grade 9 → health and disease meet the pathogens the body's defences how vaccines work a healthy lifestyle"
+  "text": "health and disease resources biology → grade 9 → health and disease meet the pathogens the body's defences how vaccines work a healthy lifestyle"
  },
  {
   "kind": "topic",
@@ -2181,7 +2230,7 @@
   "title": "Historiography resources",
   "path": "Resources → History → Grade 10 → Historiography",
   "url": "/resources/history/grade-10/historiography",
-  "text": "historiography resources notes worksheets videos revision history → grade 10 → historiography what is historiography schools of thought debating the first world war history in public"
+  "text": "historiography resources history → grade 10 → historiography what is historiography schools of thought debating the first world war history in public"
  },
  {
   "kind": "subject",
@@ -2335,7 +2384,7 @@
   "title": "Human Geography resources",
   "path": "Resources → Geography → Grade 10 → Human Geography",
   "url": "/resources/geography/grade-10/human-geography",
-  "text": "human geography resources notes worksheets videos revision geography → grade 10 → human geography population distribution migration: push and pull urban growth global connections"
+  "text": "human geography resources geography → grade 10 → human geography population distribution migration: push and pull urban growth global connections"
  },
  {
   "kind": "chapter",
@@ -2349,7 +2398,7 @@
   "title": "Human Physiology resources",
   "path": "Resources → Biology → Grade 12 → Human Physiology",
   "url": "/resources/biology/grade-12/physiology",
-  "text": "human physiology resources notes worksheets videos revision biology → grade 12 → human physiology neurones and synapses the reflex arc hormonal control homeostasis: blood glucose"
+  "text": "human physiology resources biology → grade 12 → human physiology neurones and synapses the reflex arc hormonal control homeostasis: blood glucose"
  },
  {
   "kind": "topic",
@@ -2405,7 +2454,7 @@
   "title": "Inequality resources",
   "path": "Resources → Sociology → Grade 12 → Inequality",
   "url": "/resources/sociology/grade-12/inequality",
-  "text": "inequality resources notes worksheets videos revision sociology → grade 12 → inequality social class social mobility marx vs weber on stratification gender inequality"
+  "text": "inequality resources sociology → grade 12 → inequality social class social mobility marx vs weber on stratification gender inequality"
  },
  {
   "kind": "topic",
@@ -2433,7 +2482,7 @@
   "title": "Inheritance & Genetics resources",
   "path": "Resources → Biology → Grade 10 → Inheritance & Genetics",
   "url": "/resources/biology/grade-10/genetics",
-  "text": "inheritance & genetics resources notes worksheets videos revision biology → grade 10 → inheritance & genetics dna, genes and chromosomes punnett squares inherited disorders variation and selection"
+  "text": "inheritance & genetics resources biology → grade 10 → inheritance & genetics dna, genes and chromosomes punnett squares inherited disorders variation and selection"
  },
  {
   "kind": "topic",
@@ -2461,7 +2510,7 @@
   "title": "International Trade resources",
   "path": "Resources → Economics → Grade 11 → International Trade",
   "url": "/resources/economics/grade-11/international-trade",
-  "text": "international trade resources notes worksheets videos revision economics → grade 11 → international trade why nations trade exchange rates protectionism explained globalisation debated"
+  "text": "international trade resources economics → grade 11 → international trade why nations trade exchange rates protectionism explained globalisation debated"
  },
  {
   "kind": "topic",
@@ -2493,6 +2542,13 @@
  },
  {
   "kind": "topic",
+  "title": "Introduction to Text-Based Programming",
+  "path": "Computer Science → Grade 7 → Computational Thinking and Programming → Introduction to Text-Based Programming",
+  "url": "/subjects/computer-science/grade-7/computational-thinking-programming/introduction-to-text-based-programming",
+  "text": "introduction to text-based programming computer science → grade 7 → computational thinking and programming → introduction to text-based programming from blocks to typed code: what a programming language actually is. from blocks to typed code: what a programming language actually is."
+ },
+ {
+  "kind": "topic",
   "title": "Ionic Bonding",
   "path": "Chemistry → Grade 10 → Chemical Bonding → Ionic Bonding",
   "url": "/subjects/chemistry/grade-10/chemical-bonding/ionic-bonding",
@@ -2510,7 +2566,7 @@
   "title": "Jobs and Work resources",
   "path": "Resources → Economics → Grade 8 → Jobs and Work",
   "url": "/resources/economics/grade-8/jobs-work",
-  "text": "jobs and work resources notes worksheets videos revision economics → grade 8 → jobs and work kinds of jobs why people work goods and services jobs in our community"
+  "text": "jobs and work resources economics → grade 8 → jobs and work kinds of jobs why people work goods and services jobs in our community"
  },
  {
   "kind": "topic",
@@ -2573,7 +2629,7 @@
   "title": "Language Analysis resources",
   "path": "Resources → English → Grade 11 → Language Analysis",
   "url": "/resources/english/grade-11/language-analysis",
-  "text": "language analysis resources notes worksheets videos revision english → grade 11 → language analysis meaning and semantics grammar choices pragmatics in action stylistic analysis"
+  "text": "language analysis resources english → grade 11 → language analysis meaning and semantics grammar choices pragmatics in action stylistic analysis"
  },
  {
   "kind": "chapter",
@@ -2587,7 +2643,7 @@
   "title": "Leaders resources",
   "path": "Resources → Political Science → Grade 7 → Leaders",
   "url": "/resources/political-science/grade-7/leaders",
-  "text": "leaders resources notes worksheets videos revision political science → grade 7 → leaders what leaders do different kinds of leaders choosing leaders fairly good leader qualities"
+  "text": "leaders resources political science → grade 7 → leaders what leaders do different kinds of leaders choosing leaders fairly good leader qualities"
  },
  {
   "kind": "topic",
@@ -2629,7 +2685,7 @@
   "title": "Light and Shadows resources",
   "path": "Resources → Physics → Grade 8 → Light and Shadows",
   "url": "/resources/physics/grade-8/light-shadows",
-  "text": "light and shadows resources notes worksheets videos revision physics → grade 8 → light and shadows sources of light light travels straight how shadows form changing shadows"
+  "text": "light and shadows resources physics → grade 8 → light and shadows sources of light light travels straight how shadows form changing shadows"
  },
  {
   "kind": "topic",
@@ -2692,14 +2748,14 @@
   "title": "Literature and Film resources",
   "path": "Resources → Russian → Grade 10 → Literature and Film",
   "url": "/resources/russian/grade-10/russian-literature",
-  "text": "literature and film resources notes worksheets videos revision russian → grade 10 → literature and film pushkin and onegin chekhov's short stories tolstoy and realism russian film classics"
+  "text": "literature and film resources russian → grade 10 → literature and film pushkin and onegin chekhov's short stories tolstoy and realism russian film classics"
  },
  {
   "kind": "resource",
   "title": "Literature resources",
   "path": "Resources → English → Grade 10 → Literature",
   "url": "/resources/english/grade-10/literature",
-  "text": "literature resources notes worksheets videos revision english → grade 10 → literature reading shakespeare studying the novel analysing poetry critical lenses"
+  "text": "literature resources english → grade 10 → literature reading shakespeare studying the novel analysing poetry critical lenses"
  },
  {
   "kind": "chapter",
@@ -2713,7 +2769,14 @@
   "title": "Living Things resources",
   "path": "Resources → Biology → Grade 7 → Living Things",
   "url": "/resources/biology/grade-7/living-things",
-  "text": "living things resources notes worksheets videos revision biology → grade 7 → living things what is alive? habitats near you sorting animals simple food chains"
+  "text": "living things resources biology → grade 7 → living things what is alive? habitats near you sorting animals simple food chains"
+ },
+ {
+  "kind": "topic",
+  "title": "Logic Gates",
+  "path": "Computer Science → Grade 7 → Computer Systems → Logic Gates",
+  "url": "/subjects/computer-science/grade-7/computer-systems/logic-gates",
+  "text": "logic gates computer science → grade 7 → computer systems → logic gates and, or, not: the tiny switches behind every decision a computer makes. and, or, not: the tiny switches behind every decision a computer makes."
  },
  {
   "kind": "topic",
@@ -2755,7 +2818,7 @@
   "title": "Macroeconomics resources",
   "path": "Resources → Economics → Grade 10 → Macroeconomics",
   "url": "/resources/economics/grade-10/macroeconomics",
-  "text": "macroeconomics resources notes worksheets videos revision economics → grade 10 → macroeconomics economic growth inflation explained unemployment explained macroeconomic policy"
+  "text": "macroeconomics resources economics → grade 10 → macroeconomics economic growth inflation explained unemployment explained macroeconomic policy"
  },
  {
   "kind": "topic",
@@ -2807,6 +2870,20 @@
   "text": "managing coasts geography → grade 10 → coastal systems → managing coasts evaluate hard and soft engineering strategies and their trade-offs. evaluate hard and soft engineering strategies and their trade-offs."
  },
  {
+  "kind": "chapter",
+  "title": "Managing Data",
+  "path": "Computer Science → Grade 7 → Managing Data",
+  "url": "/subjects/computer-science/grade-7/managing-data",
+  "text": "managing data computer science → grade 7 → managing data spreadsheets, databases and collecting data properly. spreadsheets modelling databases data collection"
+ },
+ {
+  "kind": "resource",
+  "title": "Managing Data resources",
+  "path": "Resources → Computer Science → Grade 7 → Managing Data",
+  "url": "/resources/computer-science/grade-7/managing-data",
+  "text": "managing data resources computer science → grade 7 → managing data spreadsheets modelling databases data collection"
+ },
+ {
   "kind": "topic",
   "title": "Map Scale",
   "path": "Geography → Grade 9 → Map Skills → Map Scale",
@@ -2825,7 +2902,7 @@
   "title": "Map Skills resources",
   "path": "Resources → Geography → Grade 9 → Map Skills",
   "url": "/resources/geography/grade-9/map-skills",
-  "text": "map skills resources notes worksheets videos revision geography → grade 9 → map skills os map symbols four-figure grid references six-figure grid references map scale"
+  "text": "map skills resources geography → grade 9 → map skills os map symbols four-figure grid references six-figure grid references map scale"
  },
  {
   "kind": "topic",
@@ -2846,7 +2923,7 @@
   "title": "Markets resources",
   "path": "Resources → Economics → Grade 9 → Markets",
   "url": "/resources/economics/grade-9/markets",
-  "text": "markets resources notes worksheets videos revision economics → grade 9 → markets what is a market? buyers and sellers how prices are set competition in markets"
+  "text": "markets resources economics → grade 9 → markets what is a market? buyers and sellers how prices are set competition in markets"
  },
  {
   "kind": "topic",
@@ -2951,7 +3028,7 @@
   "title": "Mechanics resources",
   "path": "Resources → Mathematics → Grade 12 → Mechanics",
   "url": "/resources/mathematics/grade-12/mechanics",
-  "text": "mechanics resources notes worksheets videos revision mathematics → grade 12 → mechanics kinematics in a straight line newton's laws of motion friction and connected particles projectile motion"
+  "text": "mechanics resources mathematics → grade 12 → mechanics kinematics in a straight line newton's laws of motion friction and connected particles projectile motion"
  },
  {
   "kind": "topic",
@@ -3014,7 +3091,7 @@
   "title": "Microeconomics resources",
   "path": "Resources → Economics → Grade 8 → Microeconomics",
   "url": "/resources/economics/grade-8/microeconomics",
-  "text": "microeconomics resources notes worksheets videos revision economics → grade 8 → microeconomics supply and demand market equilibrium elasticity of demand costs of production"
+  "text": "microeconomics resources economics → grade 8 → microeconomics supply and demand market equilibrium elasticity of demand costs of production"
  },
  {
   "kind": "topic",
@@ -3042,7 +3119,7 @@
   "title": "Mind and Memory resources",
   "path": "Resources → Psychology → Grade 9 → Mind and Memory",
   "url": "/resources/psychology/grade-9/mind-memory",
-  "text": "mind and memory resources notes worksheets videos revision psychology → grade 9 → mind and memory how memory works thinking and biases the multi-store model types of long-term memory"
+  "text": "mind and memory resources psychology → grade 9 → mind and memory how memory works thinking and biases the multi-store model types of long-term memory"
  },
  {
   "kind": "topic",
@@ -3063,7 +3140,14 @@
   "title": "Mixtures resources",
   "path": "Resources → Chemistry → Grade 7 → Mixtures",
   "url": "/resources/chemistry/grade-7/mixtures",
-  "text": "mixtures resources notes worksheets videos revision chemistry → grade 7 → mixtures what is a mixture separating by sieving separating by filtering separating by evaporating"
+  "text": "mixtures resources chemistry → grade 7 → mixtures what is a mixture separating by sieving separating by filtering separating by evaporating"
+ },
+ {
+  "kind": "topic",
+  "title": "Modelling",
+  "path": "Computer Science → Grade 7 → Managing Data → Modelling",
+  "url": "/subjects/computer-science/grade-7/managing-data/modelling",
+  "text": "modelling computer science → grade 7 → managing data → modelling build a spreadsheet model and ask 'what if' to compare scenarios. build a spreadsheet model and ask 'what if' to compare scenarios."
  },
  {
   "kind": "topic",
@@ -3084,7 +3168,7 @@
   "title": "Money resources",
   "path": "Resources → Economics → Grade 7 → Money",
   "url": "/resources/economics/grade-7/money",
-  "text": "money resources notes worksheets videos revision economics → grade 7 → money what money is using money where money comes from being smart with money"
+  "text": "money resources economics → grade 7 → money what money is using money where money comes from being smart with money"
  },
  {
   "kind": "chapter",
@@ -3098,7 +3182,7 @@
   "title": "Motion resources",
   "path": "Resources → Physics → Grade 9 → Motion",
   "url": "/resources/physics/grade-9/motion",
-  "text": "motion resources notes worksheets videos revision physics → grade 9 → motion speed and velocity distance–time graphs what is acceleration velocity–time graphs"
+  "text": "motion resources physics → grade 9 → motion speed and velocity distance–time graphs what is acceleration velocity–time graphs"
  },
  {
   "kind": "topic",
@@ -3133,7 +3217,7 @@
   "title": "My History resources",
   "path": "Resources → History → Grade 7 → My History",
   "url": "/resources/history/grade-7/my-history",
-  "text": "my history resources notes worksheets videos revision history → grade 7 → my history me and my timeline family tree basics past, present, future stories from home"
+  "text": "my history resources history → grade 7 → my history me and my timeline family tree basics past, present, future stories from home"
  },
  {
   "kind": "topic",
@@ -3154,7 +3238,7 @@
   "title": "My Place resources",
   "path": "Resources → Geography → Grade 7 → My Place",
   "url": "/resources/geography/grade-7/my-place",
-  "text": "my place resources notes worksheets videos revision geography → grade 7 → my place my classroom map our school grounds symbols and keys my neighbourhood"
+  "text": "my place resources geography → grade 7 → my place my classroom map our school grounds symbols and keys my neighbourhood"
  },
  {
   "kind": "chapter",
@@ -3168,7 +3252,7 @@
   "title": "My World resources",
   "path": "Resources → Russian → Grade 9 → My World",
   "url": "/resources/russian/grade-9/russian-my-world",
-  "text": "my world resources notes worksheets videos revision russian → grade 9 → my world my family friends and school hobbies and free time describing people"
+  "text": "my world resources russian → grade 9 → my world my family friends and school hobbies and free time describing people"
  },
  {
   "kind": "topic",
@@ -3196,7 +3280,7 @@
   "title": "Needs and Wants resources",
   "path": "Resources → Economics → Grade 7 → Needs and Wants",
   "url": "/resources/economics/grade-7/needs-wants",
-  "text": "needs and wants resources notes worksheets videos revision economics → grade 7 → needs and wants needs vs wants what is scarcity? making choices saving and spending"
+  "text": "needs and wants resources economics → grade 7 → needs and wants needs vs wants what is scarcity? making choices saving and spending"
  },
  {
   "kind": "topic",
@@ -3227,11 +3311,25 @@
   "text": "networks computer science → grade 10 → networks how computers connect and share information. what is a network? packets and protocols how the internet works network security"
  },
  {
+  "kind": "chapter",
+  "title": "Networks and Digital Communication",
+  "path": "Computer Science → Grade 7 → Networks and Digital Communication",
+  "url": "/subjects/computer-science/grade-7/networks-and-digital-communication",
+  "text": "networks and digital communication computer science → grade 7 → networks and digital communication how devices connect and data travels the world. accessing websites types of network data transmission"
+ },
+ {
+  "kind": "resource",
+  "title": "Networks and Digital Communication resources",
+  "path": "Resources → Computer Science → Grade 7 → Networks and Digital Communication",
+  "url": "/resources/computer-science/grade-7/networks-and-digital-communication",
+  "text": "networks and digital communication resources computer science → grade 7 → networks and digital communication accessing websites types of network data transmission"
+ },
+ {
   "kind": "resource",
   "title": "Networks resources",
   "path": "Resources → Computer Science → Grade 10 → Networks",
   "url": "/resources/computer-science/grade-10/networks",
-  "text": "networks resources notes worksheets videos revision computer science → grade 10 → networks what is a network? packets and protocols how the internet works network security"
+  "text": "networks resources computer science → grade 10 → networks what is a network? packets and protocols how the internet works network security"
  },
  {
   "kind": "topic",
@@ -3301,7 +3399,7 @@
   "title": "Number & Arithmetic resources",
   "path": "Resources → Mathematics → Grade 8 → Number & Arithmetic",
   "url": "/resources/mathematics/grade-8/number-arithmetic",
-  "text": "number & arithmetic resources notes worksheets videos revision mathematics → grade 8 → number & arithmetic place value fractions, decimals and percentages order of operations negative numbers"
+  "text": "number & arithmetic resources mathematics → grade 8 → number & arithmetic place value fractions, decimals and percentages order of operations negative numbers"
  },
  {
   "kind": "topic",
@@ -3336,7 +3434,7 @@
   "title": "Numbers and Colours resources",
   "path": "Resources → Russian → Grade 8 → Numbers and Colours",
   "url": "/resources/russian/grade-8/russian-numbers",
-  "text": "numbers and colours resources notes worksheets videos revision russian → grade 8 → numbers and colours counting to ten counting to twenty a rainbow of colours describing things"
+  "text": "numbers and colours resources russian → grade 8 → numbers and colours counting to ten counting to twenty a rainbow of colours describing things"
  },
  {
   "kind": "topic",
@@ -3385,7 +3483,7 @@
   "title": "Organic Chemistry resources",
   "path": "Resources → Chemistry → Grade 12 → Organic Chemistry",
   "url": "/resources/chemistry/grade-12/organic-chemistry",
-  "text": "organic chemistry resources notes worksheets videos revision chemistry → grade 12 → organic chemistry meeting the alkanes the reactive alkenes alcohols and oxidation organic synthesis"
+  "text": "organic chemistry resources chemistry → grade 12 → organic chemistry meeting the alkanes the reactive alkenes alcohols and oxidation organic synthesis"
  },
  {
   "kind": "topic",
@@ -3406,7 +3504,7 @@
   "title": "Organisation resources",
   "path": "Resources → Biology → Grade 8 → Organisation",
   "url": "/resources/biology/grade-8/organisation",
-  "text": "organisation resources notes worksheets videos revision biology → grade 8 → organisation levels of organisation the digestive system heart and circulation enzymes in digestion"
+  "text": "organisation resources biology → grade 8 → organisation levels of organisation the digestive system heart and circulation enzymes in digestion"
  },
  {
   "kind": "topic",
@@ -3462,7 +3560,7 @@
   "title": "Particle Physics resources",
   "path": "Resources → Physics → Grade 12 → Particle Physics",
   "url": "/resources/physics/grade-12/particle-physics",
-  "text": "particle physics resources notes worksheets videos revision physics → grade 12 → particle physics the standard model matter meets antimatter quarks and hadrons quantum ideas"
+  "text": "particle physics resources physics → grade 12 → particle physics the standard model matter meets antimatter quarks and hadrons quantum ideas"
  },
  {
   "kind": "chapter",
@@ -3476,7 +3574,7 @@
   "title": "Particles resources",
   "path": "Resources → Chemistry → Grade 8 → Particles",
   "url": "/resources/chemistry/grade-8/particles",
-  "text": "particles resources notes worksheets videos revision chemistry → grade 8 → particles the particle model solids, liquids and gases changes of state spreading by diffusion"
+  "text": "particles resources chemistry → grade 8 → particles the particle model solids, liquids and gases changes of state spreading by diffusion"
  },
  {
   "kind": "topic",
@@ -3508,6 +3606,13 @@
  },
  {
   "kind": "topic",
+  "title": "Pattern Recognition and Sub-routines in Flowcharts",
+  "path": "Computer Science → Grade 7 → Computational Thinking and Programming → Pattern Recognition and Sub-routines in Flowcharts",
+  "url": "/subjects/computer-science/grade-7/computational-thinking-programming/pattern-recognition-and-subroutines-in-flowcharts",
+  "text": "pattern recognition and sub-routines in flowcharts computer science → grade 7 → computational thinking and programming → pattern recognition and sub-routines in flowcharts spot repeated steps and package them into reusable sub-routines. spot repeated steps and package them into reusable sub-routines."
+ },
+ {
+  "kind": "topic",
   "title": "Perimeter and area",
   "path": "Mathematics → Grade 10 → Geometry → Perimeter and area",
   "url": "/subjects/mathematics/grade-10/geometry/perimeter-and-area",
@@ -3532,7 +3637,7 @@
   "title": "Phonics resources",
   "path": "Resources → English → Grade 7 → Phonics",
   "url": "/resources/english/grade-7/phonics",
-  "text": "phonics resources notes worksheets videos revision english → grade 7 → phonics single letter sounds blending simple words digraphs and blends tricky words"
+  "text": "phonics resources english → grade 7 → phonics single letter sounds blending simple words digraphs and blends tricky words"
  },
  {
   "kind": "chapter",
@@ -3546,7 +3651,14 @@
   "title": "Physical Chemistry resources",
   "path": "Resources → Chemistry → Grade 11 → Physical Chemistry",
   "url": "/resources/chemistry/grade-11/physical-chemistry",
-  "text": "physical chemistry resources notes worksheets videos revision chemistry → grade 11 → physical chemistry enthalpy changes hess's law rates of reaction chemical equilibria"
+  "text": "physical chemistry resources chemistry → grade 11 → physical chemistry enthalpy changes hess's law rates of reaction chemical equilibria"
+ },
+ {
+  "kind": "topic",
+  "title": "Physical Computing",
+  "path": "Computer Science → Grade 7 → Computational Thinking and Programming → Physical Computing",
+  "url": "/subjects/computer-science/grade-7/computational-thinking-programming/physical-computing",
+  "text": "physical computing computer science → grade 7 → computational thinking and programming → physical computing programs that touch the real world: sensors, buttons and lights. programs that touch the real world: sensors, buttons and lights."
  },
  {
   "kind": "chapter",
@@ -3560,7 +3672,7 @@
   "title": "Physical Geography resources",
   "path": "Resources → Geography → Grade 8 → Physical Geography",
   "url": "/resources/geography/grade-8/physical-geography",
-  "text": "physical geography resources notes worksheets videos revision geography → grade 8 → physical geography rivers and erosion a river's journey erosion processes meanders and ox-bow lakes"
+  "text": "physical geography resources geography → grade 8 → physical geography rivers and erosion a river's journey erosion processes meanders and ox-bow lakes"
  },
  {
   "kind": "subject",
@@ -3630,7 +3742,7 @@
   "title": "Plants resources",
   "path": "Resources → Biology → Grade 7 → Plants",
   "url": "/resources/biology/grade-7/plants",
-  "text": "plants resources notes worksheets videos revision biology → grade 7 → plants parts of a plant what plants need how seeds grow how plants make food"
+  "text": "plants resources biology → grade 7 → plants parts of a plant what plants need how seeds grow how plants make food"
  },
  {
   "kind": "topic",
@@ -3679,7 +3791,7 @@
   "title": "Power and Politics resources",
   "path": "Resources → Political Science → Grade 9 → Power and Politics",
   "url": "/resources/political-science/grade-9/power-politics",
-  "text": "power and politics resources notes worksheets videos revision political science → grade 9 → power and politics what is politics? political ideologies understanding power authority and legitimacy"
+  "text": "power and politics resources political science → grade 9 → power and politics what is politics? political ideologies understanding power authority and legitimacy"
  },
  {
   "kind": "topic",
@@ -3703,13 +3815,6 @@
   "text": "primary and secondary socialisation sociology → grade 11 → socialisation → primary and secondary socialisation compare childhood's first lessons with the ones that come later. compare childhood's first lessons with the ones that come later."
  },
  {
-  "kind": "topic",
-  "title": "Private Stays Private",
-  "path": "Computer Science → Grade 7 → Staying Safe Online → Private Stays Private",
-  "url": "/subjects/computer-science/grade-7/staying-safe-online/private-stays-private",
-  "text": "private stays private computer science → grade 7 → staying safe online → private stays private decide which personal details are safe to share online and which must stay secret. decide which personal details are safe to share online and which must stay secret."
- },
- {
   "kind": "chapter",
   "title": "Probability",
   "path": "Mathematics → Grade 11 → Probability",
@@ -3721,7 +3826,7 @@
   "title": "Probability resources",
   "path": "Resources → Mathematics → Grade 11 → Probability",
   "url": "/resources/mathematics/grade-11/probability",
-  "text": "probability resources notes worksheets videos revision mathematics → grade 11 → probability probability scale and basics combined outcomes independent and mutually exclusive events tree diagrams and conditional probability"
+  "text": "probability resources mathematics → grade 11 → probability probability scale and basics combined outcomes independent and mutually exclusive events tree diagrams and conditional probability"
  },
  {
   "kind": "topic",
@@ -3742,7 +3847,7 @@
   "title": "Programming Fundamentals resources",
   "path": "Resources → Computer Science → Grade 9 → Programming Fundamentals",
   "url": "/resources/computer-science/grade-9/programming",
-  "text": "programming fundamentals resources notes worksheets videos revision computer science → grade 9 → programming fundamentals variables output and input making decisions repeating with loops"
+  "text": "programming fundamentals resources computer science → grade 9 → programming fundamentals variables output and input making decisions repeating with loops"
  },
  {
   "kind": "topic",
@@ -3826,7 +3931,7 @@
   "title": "Pure Mathematics resources",
   "path": "Resources → Mathematics → Grade 11 → Pure Mathematics",
   "url": "/resources/mathematics/grade-11/pure-mathematics",
-  "text": "pure mathematics resources notes worksheets videos revision mathematics → grade 11 → pure mathematics functions and graphs sequences and series introducing differentiation introducing integration"
+  "text": "pure mathematics resources mathematics → grade 11 → pure mathematics functions and graphs sequences and series introducing differentiation introducing integration"
  },
  {
   "kind": "chapter",
@@ -3840,7 +3945,7 @@
   "title": "Pushes and Pulls resources",
   "path": "Resources → Physics → Grade 7 → Pushes and Pulls",
   "url": "/resources/physics/grade-7/pushes-pulls",
-  "text": "pushes and pulls resources notes worksheets videos revision physics → grade 7 → pushes and pulls what is a push or pull starting and stopping changing shape friction: friend or foe?"
+  "text": "pushes and pulls resources physics → grade 7 → pushes and pulls what is a push or pull starting and stopping changing shape friction: friend or foe?"
  },
  {
   "kind": "topic",
@@ -3855,6 +3960,13 @@
   "path": "Biology → Grade 11 → Ecology → Pyramids of Biomass",
   "url": "/subjects/biology/grade-11/ecology/pyramids-of-biomass",
   "text": "pyramids of biomass biology → grade 11 → ecology → pyramids of biomass construct pyramids of biomass and explain why energy transfer is inefficient. construct pyramids of biomass and explain why energy transfer is inefficient."
+ },
+ {
+  "kind": "topic",
+  "title": "Python Programming",
+  "path": "Computer Science → Grade 7 → Computational Thinking and Programming → Python Programming",
+  "url": "/subjects/computer-science/grade-7/computational-thinking-programming/python-programming",
+  "text": "python programming computer science → grade 7 → computational thinking and programming → python programming your first python: print, variables, input and if-statements. your first python: print, variables, input and if-statements."
  },
  {
   "kind": "topic",
@@ -3875,7 +3987,7 @@
   "title": "Quantitative Chemistry resources",
   "path": "Resources → Chemistry → Grade 11 → Quantitative Chemistry",
   "url": "/resources/chemistry/grade-11/quantitative-chemistry",
-  "text": "quantitative chemistry resources notes worksheets videos revision chemistry → grade 11 → quantitative chemistry the mole masses in reactions yield and atom economy concentrations of solutions"
+  "text": "quantitative chemistry resources chemistry → grade 11 → quantitative chemistry the mole masses in reactions yield and atom economy concentrations of solutions"
  },
  {
   "kind": "topic",
@@ -3931,7 +4043,7 @@
   "title": "Ratio and Proportion resources",
   "path": "Resources → Mathematics → Grade 9 → Ratio and Proportion",
   "url": "/resources/mathematics/grade-9/ratio-proportion",
-  "text": "ratio and proportion resources notes worksheets videos revision mathematics → grade 9 → ratio and proportion simplifying ratios sharing in a ratio direct proportion scale and maps"
+  "text": "ratio and proportion resources mathematics → grade 9 → ratio and proportion simplifying ratios sharing in a ratio direct proportion scale and maps"
  },
  {
   "kind": "topic",
@@ -3980,7 +4092,7 @@
   "title": "Reading Skills resources",
   "path": "Resources → English → Grade 8 → Reading Skills",
   "url": "/resources/english/grade-8/reading-skills",
-  "text": "reading skills resources notes worksheets videos revision english → grade 8 → reading skills understanding theme finding information reading between the lines writers' methods"
+  "text": "reading skills resources english → grade 8 → reading skills understanding theme finding information reading between the lines writers' methods"
  },
  {
   "kind": "topic",
@@ -4015,7 +4127,7 @@
   "title": "Reproduction resources",
   "path": "Resources → Biology → Grade 9 → Reproduction",
   "url": "/resources/biology/grade-9/reproduction",
-  "text": "reproduction resources notes worksheets videos revision biology → grade 9 → reproduction plant reproduction animal life cycles the human life cycle puberty and growing up"
+  "text": "reproduction resources biology → grade 9 → reproduction plant reproduction animal life cycles the human life cycle puberty and growing up"
  },
  {
   "kind": "topic",
@@ -4043,7 +4155,7 @@
   "title": "Rhetoric resources",
   "path": "Resources → English → Grade 12 → Rhetoric",
   "url": "/resources/english/grade-12/rhetoric",
-  "text": "rhetoric resources notes worksheets videos revision english → grade 12 → rhetoric ethos, pathos, logos rhetorical devices building an argument great speeches"
+  "text": "rhetoric resources english → grade 12 → rhetoric ethos, pathos, logos rhetorical devices building an argument great speeches"
  },
  {
   "kind": "topic",
@@ -4078,7 +4190,7 @@
   "title": "Rights resources",
   "path": "Resources → Political Science → Grade 11 → Rights",
   "url": "/resources/political-science/grade-11/rights",
-  "text": "rights resources notes worksheets videos revision political science → grade 11 → rights what human rights are the universal declaration children's rights rights and responsibilities"
+  "text": "rights resources political science → grade 11 → rights what human rights are the universal declaration children's rights rights and responsibilities"
  },
  {
   "kind": "topic",
@@ -4113,7 +4225,7 @@
   "title": "Rules resources",
   "path": "Resources → Political Science → Grade 7 → Rules",
   "url": "/resources/political-science/grade-7/rules",
-  "text": "rules resources notes worksheets videos revision political science → grade 7 → rules why we have rules rules versus laws fair and unfair rules following rules and consequences"
+  "text": "rules resources political science → grade 7 → rules why we have rules rules versus laws fair and unfair rules following rules and consequences"
  },
  {
   "kind": "topic",
@@ -4183,7 +4295,7 @@
   "title": "School and Society resources",
   "path": "Resources → Sociology → Grade 7 → School and Society",
   "url": "/resources/sociology/grade-7/school-society",
-  "text": "school and society resources notes worksheets videos revision sociology → grade 7 → school and society why we have rules roles at school belonging to a group being a good citizen"
+  "text": "school and society resources sociology → grade 7 → school and society why we have rules roles at school belonging to a group being a good citizen"
  },
  {
   "kind": "topic",
@@ -4205,6 +4317,13 @@
   "path": "Computer Science → Grade 11 → Databases and SQL → SELECT Queries",
   "url": "/subjects/computer-science/grade-11/databases-sql/select-queries",
   "text": "select queries computer science → grade 11 → databases and sql → select queries retrieve exactly the data you need with select, where and order by. retrieve exactly the data you need with select, where and order by."
+ },
+ {
+  "kind": "topic",
+  "title": "Selection and Logic in Flowcharts",
+  "path": "Computer Science → Grade 7 → Computational Thinking and Programming → Selection and Logic in Flowcharts",
+  "url": "/subjects/computer-science/grade-7/computational-thinking-programming/selection-and-logic-in-flowcharts",
+  "text": "selection and logic in flowcharts computer science → grade 7 → computational thinking and programming → selection and logic in flowcharts make decisions with diamonds, and combine conditions with and, or and not. make decisions with diamonds, and combine conditions with and, or and not."
  },
  {
   "kind": "topic",
@@ -4253,7 +4372,7 @@
   "title": "Shapes and Measures resources",
   "path": "Resources → Mathematics → Grade 7 → Shapes and Measures",
   "url": "/resources/mathematics/grade-7/shapes-measures",
-  "text": "shapes and measures resources notes worksheets videos revision mathematics → grade 7 → shapes and measures flat shapes solid shapes measuring length weight and capacity"
+  "text": "shapes and measures resources mathematics → grade 7 → shapes and measures flat shapes solid shapes measuring length weight and capacity"
  },
  {
   "kind": "topic",
@@ -4309,7 +4428,7 @@
   "title": "Social Behaviour resources",
   "path": "Resources → Psychology → Grade 10 → Social Behaviour",
   "url": "/resources/psychology/grade-10/social-behaviour",
-  "text": "social behaviour resources notes worksheets videos revision psychology → grade 10 → social behaviour conformity obedience the bystander effect persuasion and attitudes"
+  "text": "social behaviour resources psychology → grade 10 → social behaviour conformity obedience the bystander effect persuasion and attitudes"
  },
  {
   "kind": "topic",
@@ -4351,7 +4470,7 @@
   "title": "Socialisation resources",
   "path": "Resources → Sociology → Grade 11 → Socialisation",
   "url": "/resources/sociology/grade-11/socialisation",
-  "text": "socialisation resources notes worksheets videos revision sociology → grade 11 → socialisation agents of socialisation primary and secondary socialisation mead's i and me socialisation for life"
+  "text": "socialisation resources sociology → grade 11 → socialisation agents of socialisation primary and secondary socialisation mead's i and me socialisation for life"
  },
  {
   "kind": "subject",
@@ -4359,6 +4478,13 @@
   "path": "Subjects",
   "url": "/subjects/sociology",
   "text": "sociology how societies shape the people in them. sociology studies the invisible forces — norms, institutions, inequality — that shape billions of lives. you’ll learn to see the social patterns behind personal troubles. foundations culture and identity inequality"
+ },
+ {
+  "kind": "topic",
+  "title": "Software Development and Testing",
+  "path": "Computer Science → Grade 7 → Computational Thinking and Programming → Software Development and Testing",
+  "url": "/subjects/computer-science/grade-7/computational-thinking-programming/software-development-and-testing",
+  "text": "software development and testing computer science → grade 7 → computational thinking and programming → software development and testing plan, code, test, fix: how software gets built properly. plan, code, test, fix: how software gets built properly."
  },
  {
   "kind": "topic",
@@ -4379,7 +4505,7 @@
   "title": "Solids and Liquids resources",
   "path": "Resources → Chemistry → Grade 7 → Solids and Liquids",
   "url": "/resources/chemistry/grade-7/solids-liquids",
-  "text": "solids and liquids resources notes worksheets videos revision chemistry → grade 7 → solids and liquids what is a solid what is a liquid melting and freezing heating and cooling"
+  "text": "solids and liquids resources chemistry → grade 7 → solids and liquids what is a solid what is a liquid melting and freezing heating and cooling"
  },
  {
   "kind": "topic",
@@ -4407,7 +4533,7 @@
   "title": "Sorting Materials resources",
   "path": "Resources → Chemistry → Grade 7 → Sorting Materials",
   "url": "/resources/chemistry/grade-7/sorting-materials",
-  "text": "sorting materials resources notes worksheets videos revision chemistry → grade 7 → sorting materials describing materials testing properties grouping materials choosing materials"
+  "text": "sorting materials resources chemistry → grade 7 → sorting materials describing materials testing properties grouping materials choosing materials"
  },
  {
   "kind": "chapter",
@@ -4435,7 +4561,7 @@
   "title": "Sound resources",
   "path": "Resources → Physics → Grade 10 → Sound",
   "url": "/resources/physics/grade-10/sound",
-  "text": "sound resources notes worksheets videos revision physics → grade 10 → sound how sounds are made sound needs a medium pitch and loudness echoes and hearing"
+  "text": "sound resources physics → grade 10 → sound how sounds are made sound needs a medium pitch and loudness echoes and hearing"
  },
  {
   "kind": "topic",
@@ -4484,7 +4610,7 @@
   "title": "Spoken Language resources",
   "path": "Resources → English → Grade 9 → Spoken Language",
   "url": "/resources/english/grade-9/spoken-language",
-  "text": "spoken language resources notes worksheets videos revision english → grade 9 → spoken language listen and respond planning a talk using your voice group discussion"
+  "text": "spoken language resources english → grade 9 → spoken language listen and respond planning a talk using your voice group discussion"
  },
  {
   "kind": "topic",
@@ -4495,17 +4621,17 @@
  },
  {
   "kind": "topic",
-  "title": "Spotting Online Tricks",
-  "path": "Computer Science → Grade 7 → Staying Safe Online → Spotting Online Tricks",
-  "url": "/subjects/computer-science/grade-7/staying-safe-online/spot-the-tricks",
-  "text": "spotting online tricks computer science → grade 7 → staying safe online → spotting online tricks recognise suspicious messages, pop-ups and requests from strangers. recognise suspicious messages, pop-ups and requests from strangers."
- },
- {
-  "kind": "topic",
   "title": "Spreading by Diffusion",
   "path": "Chemistry → Grade 8 → Particles → Spreading by Diffusion",
   "url": "/subjects/chemistry/grade-8/particles/diffusion",
   "text": "spreading by diffusion chemistry → grade 8 → particles → spreading by diffusion see how particles spread from crowded places to empty ones. see how particles spread from crowded places to empty ones."
+ },
+ {
+  "kind": "topic",
+  "title": "Spreadsheets",
+  "path": "Computer Science → Grade 7 → Managing Data → Spreadsheets",
+  "url": "/subjects/computer-science/grade-7/managing-data/spreadsheets",
+  "text": "spreadsheets computer science → grade 7 → managing data → spreadsheets cells, formulas and functions: sum, average and charts that calculate for you. cells, formulas and functions: sum, average and charts that calculate for you."
  },
  {
   "kind": "topic",
@@ -4526,7 +4652,7 @@
   "title": "Statistics resources",
   "path": "Resources → Mathematics → Grade 10 → Statistics",
   "url": "/resources/mathematics/grade-10/statistics",
-  "text": "statistics resources notes worksheets videos revision mathematics → grade 10 → statistics averages and range charts and graphs scatter diagrams interpreting data honestly"
+  "text": "statistics resources mathematics → grade 10 → statistics averages and range charts and graphs scatter diagrams interpreting data honestly"
  },
  {
   "kind": "topic",
@@ -4534,20 +4660,6 @@
   "path": "Biology → Grade 7 → Animals and Humans → Staying Healthy",
   "url": "/subjects/biology/grade-7/animals-humans/staying-healthy",
   "text": "staying healthy biology → grade 7 → animals and humans → staying healthy see why exercise, sleep, clean hands and clean teeth matter every single day. see why exercise, sleep, clean hands and clean teeth matter every single day."
- },
- {
-  "kind": "chapter",
-  "title": "Staying Safe Online",
-  "path": "Computer Science → Grade 7 → Staying Safe Online",
-  "url": "/subjects/computer-science/grade-7/staying-safe-online",
-  "text": "staying safe online computer science → grade 7 → staying safe online passwords, privacy and kind communication. strong passwords private stays private being kind online spotting online tricks"
- },
- {
-  "kind": "resource",
-  "title": "Staying Safe Online resources",
-  "path": "Resources → Computer Science → Grade 7 → Staying Safe Online",
-  "url": "/resources/computer-science/grade-7/staying-safe-online",
-  "text": "staying safe online resources notes worksheets videos revision computer science → grade 7 → staying safe online strong passwords private stays private being kind online spotting online tricks"
  },
  {
   "kind": "topic",
@@ -4568,7 +4680,7 @@
   "title": "Story Time resources",
   "path": "Resources → English → Grade 7 → Story Time",
   "url": "/resources/english/grade-7/story-time",
-  "text": "story time resources notes worksheets videos revision english → grade 7 → story time listening to stories beginning, middle, end characters and settings retelling stories"
+  "text": "story time resources english → grade 7 → story time listening to stories beginning, middle, end characters and settings retelling stories"
  },
  {
   "kind": "topic",
@@ -4576,13 +4688,6 @@
   "path": "Psychology → Grade 12 → Development → Stress and Wellbeing",
   "url": "/subjects/psychology/grade-12/development/stress-wellbeing",
   "text": "stress and wellbeing psychology → grade 12 → development → stress and wellbeing stress is the body’s alarm system — lifesaving in emergencies, corrosive when it never switches off. what stress does and how to handle it."
- },
- {
-  "kind": "topic",
-  "title": "Strong Passwords",
-  "path": "Computer Science → Grade 7 → Staying Safe Online → Strong Passwords",
-  "url": "/subjects/computer-science/grade-7/staying-safe-online/strong-passwords",
-  "text": "strong passwords computer science → grade 7 → staying safe online → strong passwords learn what makes a password hard to guess and why you must never share it. learn what makes a password hard to guess and why you must never share it."
  },
  {
   "kind": "topic",
@@ -4750,7 +4855,7 @@
   "title": "The Brain resources",
   "path": "Resources → Psychology → Grade 11 → The Brain",
   "url": "/resources/psychology/grade-11/the-brain",
-  "text": "the brain resources notes worksheets videos revision psychology → grade 11 → the brain neurons and synapses parts of the brain messages along nerves connections that grow"
+  "text": "the brain resources psychology → grade 11 → the brain neurons and synapses parts of the brain messages along nerves connections that grow"
  },
  {
   "kind": "topic",
@@ -4785,7 +4890,7 @@
   "title": "The Cold War resources",
   "path": "Resources → History → Grade 11 → The Cold War",
   "url": "/resources/history/grade-11/cold-war",
-  "text": "the cold war resources notes worksheets videos revision history → grade 11 → the cold war origins of the cold war crises and confrontation the cold war worldwide how the cold war ended"
+  "text": "the cold war resources history → grade 11 → the cold war origins of the cold war crises and confrontation the cold war worldwide how the cold war ended"
  },
  {
   "kind": "topic",
@@ -4813,7 +4918,7 @@
   "title": "The Cyrillic Alphabet resources",
   "path": "Resources → Russian → Grade 7 → The Cyrillic Alphabet",
   "url": "/resources/russian/grade-7/russian-sounds",
-  "text": "the cyrillic alphabet resources notes worksheets videos revision russian → grade 7 → the cyrillic alphabet meet the vowels consonant friends tricky letter pairs read your first words"
+  "text": "the cyrillic alphabet resources russian → grade 7 → the cyrillic alphabet meet the vowels consonant friends tricky letter pairs read your first words"
  },
  {
   "kind": "topic",
@@ -4897,7 +5002,7 @@
   "title": "The Modern World resources",
   "path": "Resources → History → Grade 8 → The Modern World",
   "url": "/resources/history/grade-8/modern-world",
-  "text": "the modern world resources notes worksheets videos revision history → grade 8 → the modern world the industrial revolution railways and steam life in victorian britain the british empire"
+  "text": "the modern world resources history → grade 8 → the modern world the industrial revolution railways and steam life in victorian britain the british empire"
  },
  {
   "kind": "topic",
@@ -4946,7 +5051,7 @@
   "title": "The Periodic Table resources",
   "path": "Resources → Chemistry → Grade 9 → The Periodic Table",
   "url": "/resources/chemistry/grade-9/periodic-table",
-  "text": "the periodic table resources notes worksheets videos revision chemistry → grade 9 → the periodic table arranging the elements groups and periods metals and non-metals trends in groups"
+  "text": "the periodic table resources chemistry → grade 9 → the periodic table arranging the elements groups and periods metals and non-metals trends in groups"
  },
  {
   "kind": "topic",
@@ -5009,7 +5114,7 @@
   "title": "The Twentieth Century resources",
   "path": "Resources → History → Grade 10 → The Twentieth Century",
   "url": "/resources/history/grade-10/twentieth-century",
-  "text": "the twentieth century resources notes worksheets videos revision history → grade 10 → the twentieth century causes of the first world war trench warfare 1914-1918 road to the second world war britain in the second world war"
+  "text": "the twentieth century resources history → grade 10 → the twentieth century causes of the first world war trench warfare 1914-1918 road to the second world war britain in the second world war"
  },
  {
   "kind": "topic",
@@ -5079,7 +5184,7 @@
   "title": "Toys from the Past resources",
   "path": "Resources → History → Grade 7 → Toys from the Past",
   "url": "/resources/history/grade-7/toys-past",
-  "text": "toys from the past resources notes worksheets videos revision history → grade 7 → toys from the past toys then and now what toys are made of games grandparents played museum detectives"
+  "text": "toys from the past resources history → grade 7 → toys from the past toys then and now what toys are made of games grandparents played museum detectives"
  },
  {
   "kind": "topic",
@@ -5174,6 +5279,20 @@
  },
  {
   "kind": "topic",
+  "title": "Types of Network",
+  "path": "Computer Science → Grade 7 → Networks and Digital Communication → Types of Network",
+  "url": "/subjects/computer-science/grade-7/networks-and-digital-communication/types-of-network",
+  "text": "types of network computer science → grade 7 → networks and digital communication → types of network pan, lan and wan: how networks are classified by size. pan, lan and wan: how networks are classified by size."
+ },
+ {
+  "kind": "topic",
+  "title": "Types of Software",
+  "path": "Computer Science → Grade 7 → Computer Systems → Types of Software",
+  "url": "/subjects/computer-science/grade-7/computer-systems/types-of-software",
+  "text": "types of software computer science → grade 7 → computer systems → types of software system software vs application software — and who makes each. system software vs application software — and who makes each."
+ },
+ {
+  "kind": "topic",
   "title": "Understanding Other People",
   "path": "Psychology → Grade 7 → Feelings → Understanding Other People",
   "url": "/subjects/psychology/grade-7/feelings/understanding-other-people",
@@ -5226,7 +5345,7 @@
   "title": "Urbanisation resources",
   "path": "Resources → Geography → Grade 11 → Urbanisation",
   "url": "/resources/geography/grade-11/urbanisation",
-  "text": "urbanisation resources notes worksheets videos revision geography → grade 11 → urbanisation causes of urbanisation urban land-use models challenges in cities sustainable cities"
+  "text": "urbanisation resources geography → grade 11 → urbanisation causes of urbanisation urban land-use models challenges in cities sustainable cities"
  },
  {
   "kind": "topic",
@@ -5324,7 +5443,7 @@
   "title": "Voting resources",
   "path": "Resources → Political Science → Grade 8 → Voting",
   "url": "/resources/political-science/grade-8/voting",
-  "text": "voting resources notes worksheets videos revision political science → grade 8 → voting what voting is one person, one vote secret ballots accepting results gracefully"
+  "text": "voting resources political science → grade 8 → voting what voting is one person, one vote secret ballots accepting results gracefully"
  },
  {
   "kind": "topic",
@@ -5359,7 +5478,7 @@
   "title": "Waves resources",
   "path": "Resources → Physics → Grade 10 → Waves",
   "url": "/resources/physics/grade-10/waves",
-  "text": "waves resources notes worksheets videos revision physics → grade 10 → waves transverse and longitudinal the wave speed equation reflection and refraction the electromagnetic spectrum"
+  "text": "waves resources physics → grade 10 → waves transverse and longitudinal the wave speed equation reflection and refraction the electromagnetic spectrum"
  },
  {
   "kind": "chapter",
@@ -5373,7 +5492,7 @@
   "title": "Weather & Climate resources",
   "path": "Resources → Geography → Grade 9 → Weather & Climate",
   "url": "/resources/geography/grade-9/weather-climate",
-  "text": "weather & climate resources notes worksheets videos revision geography → grade 9 → weather & climate the water cycle what shapes climate reading climate graphs climate change"
+  "text": "weather & climate resources geography → grade 9 → weather & climate the water cycle what shapes climate reading climate graphs climate change"
  },
  {
   "kind": "chapter",
@@ -5387,7 +5506,7 @@
   "title": "Weather and Seasons resources",
   "path": "Resources → Geography → Grade 7 → Weather and Seasons",
   "url": "/resources/geography/grade-7/weather-seasons",
-  "text": "weather and seasons resources notes worksheets videos revision geography → grade 7 → weather and seasons what is weather? recording the weather weather tools the four seasons"
+  "text": "weather and seasons resources geography → grade 7 → weather and seasons what is weather? recording the weather weather tools the four seasons"
  },
  {
   "kind": "topic",
@@ -5493,13 +5612,6 @@
   "path": "Biology → Grade 7 → Living Things → What Is Alive?",
   "url": "/subjects/biology/grade-7/living-things/what-is-alive",
   "text": "what is alive? biology → grade 7 → living things → what is alive? learn the seven life processes (mrs gren) that separate living things from things that were never alive. learn the seven life processes (mrs gren) that separate living things from things that were never alive."
- },
- {
-  "kind": "topic",
-  "title": "What Is an Algorithm?",
-  "path": "Computer Science → Grade 7 → Algorithms Without Computers → What Is an Algorithm?",
-  "url": "/subjects/computer-science/grade-7/algorithms-unplugged/what-is-an-algorithm",
-  "text": "what is an algorithm? computer science → grade 7 → algorithms without computers → what is an algorithm? discover that an algorithm is simply a careful set of instructions, like a recipe. discover that an algorithm is simply a careful set of instructions, like a recipe."
  },
  {
   "kind": "topic",
@@ -5646,7 +5758,7 @@
   "title": "Working with Sources resources",
   "path": "Resources → History → Grade 9 → Working with Sources",
   "url": "/resources/history/grade-9/source-skills",
-  "text": "working with sources resources notes worksheets videos revision history → grade 9 → working with sources what counts as evidence provenance and purpose spotting bias sources in exam answers"
+  "text": "working with sources resources history → grade 9 → working with sources what counts as evidence provenance and purpose spotting bias sources in exam answers"
  },
  {
   "kind": "topic",
@@ -5654,13 +5766,6 @@
   "path": "English → Grade 8 → Reading Skills → Writers' Methods",
   "url": "/subjects/english/grade-8/reading-skills/writers-methods",
   "text": "writers' methods english → grade 8 → reading skills → writers' methods spot how language and structure shape a reader's response. spot how language and structure shape a reader's response."
- },
- {
-  "kind": "topic",
-  "title": "Writing Clear Steps",
-  "path": "Computer Science → Grade 7 → Algorithms Without Computers → Writing Clear Steps",
-  "url": "/subjects/computer-science/grade-7/algorithms-unplugged/writing-clear-steps",
-  "text": "writing clear steps computer science → grade 7 → algorithms without computers → writing clear steps practise writing your own precise instructions for everyday tasks. practise writing your own precise instructions for everyday tasks."
  },
  {
   "kind": "chapter",
@@ -5674,7 +5779,7 @@
   "title": "Writing Skills resources",
   "path": "Resources → English → Grade 10 → Writing Skills",
   "url": "/resources/english/grade-10/writing-skills",
-  "text": "writing skills resources notes worksheets videos revision english → grade 10 → writing skills planning before writing essay paragraphs descriptive writing writing to argue"
+  "text": "writing skills resources english → grade 10 → writing skills planning before writing essay paragraphs descriptive writing writing to argue"
  },
  {
   "kind": "topic",

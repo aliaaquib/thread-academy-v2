@@ -6,6 +6,8 @@
  * SITE_URL below must be the real public domain — update it if the domain changes.
  */
 import type { Metadata } from "next";
+import { langMeta, withLang, type Lang } from "./i18n";
+import { t } from "./strings";
 
 /**
  * Canonical production URL for Thread Academy.
@@ -26,36 +28,64 @@ interface PageMetaInput {
   /** Full page title (the root layout appends " — Thread Academy" via the template). */
   title: string;
   description: string;
-  /** Site-relative path, e.g. "/subjects/mathematics". */
+  /**
+   * Site-relative path WITHOUT any language prefix, e.g. "/subjects/mathematics".
+   * The prefix for `lang` is added automatically.
+   */
   path: string;
   /** Open Graph type; "article" for lesson/chapter pages, "website" otherwise. */
   type?: "website" | "article";
   /** Set true for pages that must not be indexed (e.g. /search). */
   noindex?: boolean;
+  /** The language this page is rendered in. Defaults to English. */
+  lang?: Lang;
+  /**
+   * The languages this exact page exists in. Defaults to all four.
+   * Lesson pages pass only the languages with a teacher-written lesson file;
+   * blog posts pass only the languages with a post file. This drives both
+   * the hreflang links and the language switcher's availability check.
+   */
+  alternates?: Lang[];
 }
 
-/** Builds title, description, canonical, Open Graph and Twitter metadata. */
-export function pageMetadata({ title, description, path, type = "website", noindex = false }: PageMetaInput): Metadata {
-  const url = absoluteUrl(path);
-  // One default share image for the whole site (static export cannot
-  // generate per-page images). Resolved against metadataBase in the root layout.
-  const shareImage = {
-    url: "/og-image.png",
-    width: 1200,
-    height: 630,
-    alt: "Thread Academy — free school lessons, worked examples and practice questions, grades 7–12.",
-  };
+/** Builds title, description, canonical, hreflang, Open Graph and Twitter metadata. */
+export function pageMetadata({
+  title,
+  description,
+  path,
+  type = "website",
+  noindex = false,
+  lang = "en",
+  alternates = ["en", "tr", "ru", "ky"],
+}: PageMetaInput): Metadata {
+  const url = absoluteUrl(withLang(path, lang));
+  const languages: Record<string, string> = { "x-default": absoluteUrl(path) };
+  for (const l of alternates) {
+    languages[langMeta(l).locale] = absoluteUrl(withLang(path, l));
+  }
   return {
     title,
     description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages },
+    // Machine-readable list of languages this page is available in, read by
+    // the navbar language switcher to decide between the translated page
+    // and the language homepage.
+    other: { "thread-academy-langs": alternates.join(",") },
     openGraph: {
       type,
       url,
       siteName: SITE_NAME,
+      locale: langMeta(lang).locale,
       title: `${title} — ${SITE_NAME}`,
       description,
-      images: [shareImage],
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: t(lang, "seo.share.alt"),
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -93,6 +123,8 @@ export function courseJsonLd(input: {
   description: string;
   path: string;
   provider?: string;
+  /** BCP-47 locale of the page, e.g. "tr-TR". */
+  inLanguage?: string;
 }): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
@@ -100,6 +132,7 @@ export function courseJsonLd(input: {
     name: input.name,
     description: input.description,
     url: absoluteUrl(input.path),
+    ...(input.inLanguage ? { inLanguage: input.inLanguage } : {}),
     provider: {
       "@type": "Organization",
       name: input.provider ?? SITE_NAME,
@@ -122,6 +155,8 @@ export function articleJsonLd(input: {
   dateModified?: string;
   /** Real school level, e.g. "Grade 7". Only passed when known. */
   educationalLevel?: string;
+  /** BCP-47 locale of the page, e.g. "tr-TR". */
+  inLanguage?: string;
 }): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
@@ -130,6 +165,7 @@ export function articleJsonLd(input: {
     description: input.description,
     url: absoluteUrl(input.path),
     ...(input.dateModified ? { dateModified: input.dateModified } : {}),
+    ...(input.inLanguage ? { inLanguage: input.inLanguage } : {}),
     // Education vocabulary: this article IS a lesson, so say so with
     // schema.org's learning properties, using only real values.
     learningResourceType: "Lesson",

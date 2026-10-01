@@ -6,7 +6,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "description": "Thread Academy — a free, W3Schools-style interactive learning library for school students. Static Next.js site.",
+  "description": "Thread Academy \u2014 a free, W3Schools-style interactive learning library for school students. Static Next.js site.",
   "devDependencies": {
     "@types/node": "^20.16.0",
     "@types/react": "^18.3.5",
@@ -26,7 +26,8 @@
     "build": "next build",
     "dev": "next dev",
     "prebuild": "tsx scripts/build-search-index.ts",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "node scripts/fix-html-lang.mjs"
   },
   "version": "1.0.0",
   "allowScripts": {

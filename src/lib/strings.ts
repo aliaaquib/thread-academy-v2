@@ -1,0 +1,1295 @@
+/**
+ * UI STRINGS — every user-facing string on the student site, in all four
+ * languages: English, Turkish, Russian, Kyrgyz.
+ *
+ * Pages and components look strings up with t(lang, key, vars) from the
+ * bottom of this file. Educational *content* (lessons, chapters, blog posts)
+ * is NOT here — teachers write that per language in content/<lang>/...
+ *
+ * Plural keys use suffixes: .one / .few / .many / .other (see tn()).
+ * Interpolation: "{name}" placeholders replaced from the vars argument.
+ */
+
+type Dict = Record<string, string>;
+
+const en: Dict = {
+  // ---- navigation ----
+  "nav.home": "Home",
+  "nav.subjects": "Subjects",
+  "nav.resources": "Resources",
+  "nav.blog": "Blog",
+  "nav.about": "About",
+  "nav.search": "Search",
+  "nav.brand.home": "Thread Academy home",
+  "nav.language": "Language",
+
+  // ---- shared ----
+  "cat.stem": "STEM",
+  "cat.humanities": "Humanities",
+  "cat.languages": "Languages",
+  "common.home": "Home",
+  "common.subjects": "Subjects",
+  "common.chapters.one": "{n} chapter",
+  "common.chapters.other": "{n} chapters",
+  "common.lessons.one": "{n} lesson",
+  "common.lessons.other": "{n} lessons",
+  "common.read": "Read →",
+  "common.back": "Back",
+
+  // ---- home ----
+  "home.meta.title": "Free School Subject Revision & Learning Resources",
+  "home.meta.desc":
+    "Free school subject revision: chapter-based lessons, worked examples and practice questions for grades 7–12 — useful for GCSE, IGCSE and IB exam preparation.",
+  "home.hero.a": "Follow the thread.",
+  "home.hero.b": "Understand the subject.",
+  "home.hero.copy":
+    "Thread Academy is an open learning platform for school subjects. Pick a subject, open a chapter, and follow the thread from first principles to advanced ideas.",
+  "home.subjects.title": "Subjects, organised by chapter.",
+  "home.subjects.lede":
+    "Start with a discipline, move through its chapters, and complete textbook-style topics.",
+  "home.browse.category": "Browse {category} subjects",
+  "home.browse.all": "Browse every subject",
+  "home.why.kicker": "Why we built it",
+  "home.why.title": "Learning should have a clear structure.",
+  "home.why.copy":
+    "Lessons connect definitions, explanations, worked examples, practice, and revision so each idea leads naturally to the next.",
+  "home.why.link": "About Thread Academy",
+  "home.how.title": "How Thread Academy works.",
+  "home.how.lede":
+    "Use the platform as a guided library: find your subject, learn the topic in depth, practise, then follow related ideas.",
+  "home.how.1.title": "Choose a subject",
+  "home.how.1.text": "Pick the subject you want to learn.",
+  "home.how.2.title": "Open a chapter",
+  "home.how.2.text": "See the sequence of topics and where each idea belongs.",
+  "home.how.3.title": "Learn deeply",
+  "home.how.3.text": "Read explanations, definitions, worked examples, and diagrams.",
+  "home.how.4.title": "Use resources",
+  "home.how.4.text": "Practise with quick checks, worksheets, notes, and revision guides.",
+
+  // ---- subjects index ----
+  "subjects.meta.title": "Subjects",
+  "subjects.meta.desc":
+    "Explore 13 school subjects by category. Every subject is organised into chapters with lessons, worked examples and practice.",
+  "subjects.hero.title": "Subjects",
+  "subjects.hero.lede":
+    "Explore school subjects by category. Every subject can be followed through British, Cambridge, American, or IB structures.",
+
+  // ---- subject page (grade picker) ----
+  "subject.meta.title": "{name} revision & learning resources",
+  "subject.meta.desc":
+    "Choose your grade (7 to 12) and follow the {name} chapters: lessons, worked examples and practice questions — free, no account required.",
+  "subject.choose.grade": "Choose your grade",
+  "subject.grade.name": "Grade {grade}",
+  "subject.grade.choose": "Choose →",
+  "subject.course.name": "{name} \u2014 school lessons and practice",
+  "subject.grade.chapters.one": "{n} chapter",
+  "subject.grade.chapters.other": "{n} chapters",
+  "subject.category.meta.title": "{category} subjects",
+  "subject.category.meta.desc":
+    "Browse {category} subjects on Thread Academy: {names}. Free lessons, chapters and practice — no account required.",
+  "subject.category.hero.title": "{category} subjects",
+  "subject.category.hero.lede":
+    "Explore {category} subjects on Thread Academy: {names}. Free lessons, chapters and practice — no account required.",
+
+  // ---- grade page ----
+  "grade.meta.title": "Grade {grade} {name} — chapters",
+  "grade.meta.desc":
+    "Grade {grade} {name} chapters: {chapters}. Lessons, worked examples and practice questions — free, no account required.",
+  "grade.hero.title": "Grade {grade} {name}",
+  "grade.hero.lede.one":
+    "{n} chapter for grade {grade}. Work through the lessons in order — each one builds on the last.",
+  "grade.hero.lede.other":
+    "{n} chapters for grade {grade}. Work through the lessons in order — each one builds on the last.",
+  "grade.eyebrow": "Chapters",
+  "grade.read": "Read →",
+
+  // ---- chapter page ----
+  "chapter.meta.title": "{title} — Grade {grade} {name}",
+  "chapter.meta.desc":
+    "{desc} Open {title} for grade {grade} {name}: lessons, worked examples and practice questions.",
+  "chapter.aside.title": "In this chapter",
+  "chapter.aside.lessons.one": "{n} lesson",
+  "chapter.aside.lessons.other": "{n} lessons",
+  "chapter.aside.soon": "Lessons coming soon",
+  "chapter.aside.defs": "Definitions and key ideas",
+  "chapter.aside.worked": "Worked examples",
+  "chapter.aside.practice": "Practice questions with answers",
+  "chapter.aside.quiz": "Short quizzes with explanations",
+  "chapter.read.lesson": "Read lesson →",
+  "chapter.empty":
+    "Lessons for this chapter are being written — check back soon, or explore another chapter.",
+  "chapter.resources.link": "Chapter resources →",
+
+  // ---- lesson (topic) page ----
+  "topic.meta.title": "{title} — {name} (Grade {grade})",
+  "topic.meta.desc": "{lede} A grade {grade} {name} lesson with worked examples and practice.",
+  "topic.meta.desc.noLede": "{title}: a grade {grade} {name} lesson with worked examples and practice.",
+  "topic.jsonld.desc": "{title} — a grade {grade} {name} lesson.",
+  "topic.grade.label": "Grade {grade}",
+  "topic.back.grade": "Back to Grade {grade} chapters",
+  "topic.sidebar.aria": "Chapter lessons",
+  "topic.resources.link": "Related resources →",
+
+  // ---- resources hub ----
+  "resources.meta.title": "Resources",
+  "resources.meta.desc":
+    "Find notes, worksheets, worked examples, interactive tools, and revision materials beside the chapter they support.",
+  "resources.hero.title": "Resources",
+  "resources.hero.lede":
+    "Find notes, worksheets, worked examples, interactive tools, and revision materials beside the chapter they support.",
+  "resources.card.meta": "{chapter} · Grade {grade}",
+  "resources.empty": "No translated resources yet — teachers are writing them. Browse the English resources in the meantime.",
+  "resources.chapter.title": "{chapter} resources",
+  "resources.chapter.lede": "{subject}, grade {grade}. Notes, worksheets, videos, interactive tools and revision materials for this chapter.",
+  "resources.chapter.grade": "Grade {grade}",
+  "resources.chapter.back": "\u2190 Back to {chapter}",
+  "resources.nav.onthispage": "On this page",
+  "resources.sec.notes": "Notes",
+  "resources.sec.notes.title": "Study notes",
+  "resources.sec.notes.lede": "The chapter's lessons are the notes \u2014 read them in order, then use the resources below.",
+  "resources.read.lesson": "Read lesson \u2192",
+  "resources.sec.worksheets": "Worksheets",
+  "resources.sec.worksheets.title": "Practice worksheet",
+  "resources.sec.worksheets.lede": "Attempt every question before revealing the answer \u2014 that struggle is where learning happens.",
+  "resources.sec.worksheets.empty": "Practice questions live inside each lesson \u2014 work through them there, then return for revision.",
+  "resources.sec.videos": "Videos",
+  "resources.sec.videos.title": "Watch and learn",
+  "resources.sec.videos.lede": "Hand-picked searches to find a clear video explanation of each lesson.",
+  "resources.videos.youtube": "YouTube search \u00b7 opens in a new tab",
+  "resources.videos.watch": "Watch \u2192",
+  "resources.sec.tools": "Interactive tools",
+  "resources.sec.tools.title": "Try it yourself",
+  "resources.sec.revision": "Revision",
+  "resources.sec.revision.title": "Revision checklist",
+  "resources.sec.revision.lede": "Can you explain each of these out loud, without looking? If not, re-read that lesson.",
+
+  // ---- chapter resources page ----
+  "cres.meta.title": "{title} resources — Grade {grade} {name}",
+  "cres.meta.desc":
+    "Notes, worksheets, videos, interactive tools and revision materials for {title} (grade {grade} {name}).",
+  "cres.hero.title": "{title} resources",
+  "cres.hero.lede":
+    "{name}, grade {grade}. Notes, worksheets, videos, interactive tools and revision materials for this chapter.",
+  "cres.nav.aria": "On this page",
+  "cres.nav.notes": "Notes",
+  "cres.nav.worksheets": "Worksheets",
+  "cres.nav.videos": "Videos",
+  "cres.nav.tools": "Interactive tools",
+  "cres.nav.revision": "Revision",
+  "cres.notes.title": "Study notes",
+  "cres.notes.lede": "The chapter's lessons are the notes — read them in order, then use the resources below.",
+  "cres.worksheets.title": "Practice worksheet",
+  "cres.worksheets.lede": "Attempt every question before revealing the answer — that struggle is where learning happens.",
+  "cres.worksheets.empty":
+    "Practice questions live inside each lesson — work through them there, then return for revision.",
+  "cres.videos.title": "Watch and learn",
+  "cres.videos.lede": "Hand-picked searches to find a clear video explanation of each lesson.",
+  "cres.videos.note": "YouTube search · opens in a new tab",
+  "cres.videos.watch": "Watch →",
+  "cres.tools.title": "Try it yourself",
+  "cres.revision.title": "Revision checklist",
+  "cres.revision.lede": "Can you explain each of these out loud, without looking? If not, re-read that lesson.",
+  "cres.back": "← Back to {chapter}",
+  "cres.read.lesson": "Read lesson →",
+  "cres.video.title": "{title} — explained",
+  "cres.tools.solver.desc": "Type any linear equation and watch it solved step by step — then try the steps yourself.",
+  "cres.revision.fallback": "Read each lesson's summary and re-do its practice questions from memory.",
+
+  // ---- blog ----
+  "blog.meta.title": "Blog — Learning Journal",
+  "blog.meta.desc":
+    "The Thread Academy learning journal: in-depth student guides to the ideas students search for most, from linear equations to photosynthesis, linked to full lessons.",
+  "blog.hero.title": "The learning journal.",
+  "blog.hero.lede":
+    "Long-form guides to the ideas students search for most — each one connected to the lessons and chapters it belongs to.",
+  "blog.read": "Read article →",
+  "blog.crumb": "Blog",
+  "blog.empty": "No translated articles yet — teachers are writing them.",
+  "blog.post.related": "Related topics",
+  "blog.post.back": "Back to the blog",
+  "blog.post.browse": "Browse {subject} →",
+  "blog.post.by": "By {author} · {date}",
+  "blog.post.full": "{subject} — full subject",
+
+  // ---- about ----
+  "about.meta.title": "About",
+  "about.meta.desc":
+    "Thread Academy is an educational knowledge platform built to make complete school subjects easier to navigate, understand, and revisit.",
+  "about.hero.title": "Knowledge needs a path.",
+  "about.hero.lede":
+    "Thread Academy is an educational knowledge platform built to make complete school subjects easier to navigate, understand, and revisit.",
+  "about.provides.title": "What we provide",
+  "about.provides.1": "Subject and chapter maps",
+  "about.provides.2": "Textbook-style explanations",
+  "about.provides.3": "Practice and revision resources",
+  "about.provides.4": "Open access without an account",
+  "about.c1.title": "The problem",
+  "about.c1.desc":
+    "Online learning often separates explanations and practice. Students can find an answer without seeing where the idea belongs.",
+  "about.c2.title": "Our structure",
+  "about.c2.desc":
+    "Subject → Chapter → Topic. Every subject keeps its own chapters, ordered from foundations to advanced ideas.",
+  "about.c3.title": "How students use it",
+  "about.c3.desc":
+    "Choose your subject, read a complete topic, work through examples, answer quick checks, and follow related topics.",
+  "about.c4.title": "Our approach",
+  "about.c4.desc":
+    "Clear definitions come first. Explanations connect ideas. Worked examples make reasoning visible. Practice asks students to use what they learned.",
+
+  // ---- search page ----
+  "search.meta.title": "Search",
+  "search.meta.desc": "Search every lesson, chapter, subject and resource on Thread Academy.",
+  "search.hero.title": "Search",
+  "search.hero.lede": "Every lesson, chapter and resource — across all subjects.",
+  "search.loading": "Loading search…",
+  "search.placeholder": "Search lessons, chapters, subjects, resources…",
+  "search.aria": "Search lessons",
+  "search.button": "Search",
+  "search.unavailable.title": "Search is unavailable.",
+  "search.unavailable.body": "The search index could not be loaded. Please check your connection and try again.",
+  "search.loading.index": "Loading the search index…",
+  "search.empty.lede": "Type above to search every lesson, chapter, subject and resource. Try",
+  "search.empty.example": "linear equations",
+  "search.results.one": "{n} result for “{q}”",
+  "search.results.other": "{n} results for “{q}”",
+  "search.noresults.title": "No results.",
+  "search.noresults.body": "Nothing matched “{q}”. Try different words, or browse subjects instead.",
+  "search.kind.subject": "Subject",
+  "search.kind.chapter": "Chapter",
+  "search.kind.topic": "Lesson",
+  "search.kind.resource": "Resource",
+
+  // ---- search overlay ----
+  "overlay.placeholder": "Search subjects, chapters, and topics",
+  "overlay.aria": "Search lessons",
+  "overlay.button": "Search",
+  "overlay.close": "Close search",
+  "overlay.empty": "Try “linear equations”, “cell structure”, “Newton’s laws”, or “variables”.",
+  "overlay.none": "No matching educational content yet. Try a subject, chapter, or broader topic.",
+
+  // ---- hero quick links ----
+  "hero.try": "Try:",
+
+  // ---- footer ----
+  "footer.tagline": "Open educational knowledge, no account required.",
+  "footer.explore": "Explore",
+  "footer.learn": "Learn",
+  "footer.company": "Company",
+  "footer.other": "Other",
+  "footer.curricula": "British · Cambridge · American · IB",
+
+  // ---- textbook components ----
+  "tb.definition": "Definition",
+  "tb.definition.term": "Definition: {term}",
+  "tb.note": "Note",
+  "tb.worked": "Worked example",
+  "tb.example": "Example",
+  "tb.takeaways": "Key takeaways",
+  "tb.code": "Code",
+  "tb.copy": "Copy",
+  "tb.copied": "Copied ✓",
+  "tb.next": "Next lesson",
+  "tb.reveal": "Reveal answer",
+  "tb.hide": "Hide answer",
+  "tb.quiz.title": "Check your understanding",
+  "tb.quiz.scored": "You scored {score} out of {total}",
+  "tb.quiz.perfect": "perfect! 🎉",
+  "tb.quiz.welldone": "well done.",
+  "tb.quiz.retry": "review the lesson and try again.",
+  "tb.read.lesson": "Read lesson →",
+  "tb.back": "Back",
+  "tb.code.python": "Python",
+  "tb.code.maths": "Maths",
+  "tb.code.pseudocode": "Pseudocode",
+  "tb.code.javascript": "JavaScript",
+  "tb.code.example": "Example",
+
+  // ---- widgets ----
+  "widget.solver.title": "Linear equation solver",
+  "widget.solver.aria": "Linear equation",
+  "widget.solver.solve": "Solve",
+  "widget.solver.empty": "Press Solve to see each step — then cover the steps and try the next one yourself.",
+  "widget.solver.desc": "Type any linear equation in x \u2014 it is solved step by step, entirely in your browser.",
+  "widget.solver.error.equals": "Write the equation with exactly one '=' sign, e.g. 3x + 2 = 14.",
+  "widget.solver.error.linear": "I can only solve linear equations in x \u2014 like 3x + 2 = 14, x/2 \u2212 5 = 11 or 2(x + 3) = 4x \u2212 1.",
+  "widget.solver.start": "Start:",
+  "widget.solver.collect": "Collect the x-terms on the left:",
+  "widget.solver.isolate": "Isolate the x-term:",
+  "widget.solver.infinite": "0 = 0 \u2014 every value of x works. Infinitely many solutions!",
+  "widget.solver.nosolution": "{expr} is false \u2014 no value of x can satisfy this equation.",
+  "widget.solver.divide": "Divide both sides by {a}:",
+  "widget.python.run": "Run",
+  "widget.python.running": "Running…",
+  "widget.python.ready": "Ready — press Run.",
+  "widget.python.loading": "Loading Python runtime (first run takes a few seconds)…",
+  "widget.python.status.running": "Running…",
+  "widget.python.done": "Done in {time}.",
+  "widget.python.nooutput": "(no output)",
+  "widget.python.error": "Something went wrong — see the output.",
+  "widget.python.aria": "Python code editor",
+
+  // ---- seo ----
+  "seo.share.alt": "Thread Academy — free school lessons, worked examples and practice questions, grades 7–12.",
+  "seo.site.desc":
+    "Free school subject revision: chapter-based lessons, worked examples and practice questions for grades 7–12.",
+};
+
+const tr: Dict = {
+  // ---- navigation ----
+  "nav.home": "Ana Sayfa",
+  "nav.subjects": "Dersler",
+  "nav.resources": "Kaynaklar",
+  "nav.blog": "Blog",
+  "nav.about": "Hakkında",
+  "nav.search": "Ara",
+  "nav.brand.home": "Thread Academy ana sayfa",
+  "nav.language": "Dil",
+
+  // ---- shared ----
+  "cat.stem": "STEM",
+  "cat.humanities": "Beşeri Bilimler",
+  "cat.languages": "Diller",
+  "common.home": "Ana Sayfa",
+  "common.subjects": "Dersler",
+  "common.chapters.other": "{n} bölüm",
+  "common.lessons.other": "{n} ders",
+  "common.read": "Oku →",
+  "common.back": "Geri",
+
+  // ---- home ----
+  "home.meta.title": "Ücretsiz Okul Ders Tekrarı ve Öğrenme Kaynakları",
+  "home.meta.desc":
+    "Ücretsiz okul ders tekrarı: 7–12. sınıflar için bölümlere ayrılmış dersler, çözümlü örnekler ve pratik sorular — GCSE, IGCSE ve IB sınav hazırlığı için faydalı.",
+  "home.hero.a": "İpi takip et.",
+  "home.hero.b": "Dersi anla.",
+  "home.hero.copy":
+    "Thread Academy, okul dersleri için açık bir öğrenme platformudur. Bir ders seç, bir bölüm aç ve ipi temel ilkelerden ileri fikirlere kadar takip et.",
+  "home.subjects.title": "Bölümlere göre düzenlenmiş dersler.",
+  "home.subjects.lede": "Bir disiplinle başla, bölümlerinde ilerle ve ders kitabı tarzı konuları tamamla.",
+  "home.browse.category": "{category} derslerine göz at",
+  "home.browse.all": "Tüm derslere göz at",
+  "home.why.kicker": "Neden kurduk",
+  "home.why.title": "Öğrenmenin net bir yapısı olmalı.",
+  "home.why.copy":
+    "Dersler; tanımları, açıklamaları, çözümlü örnekleri, pratikleri ve tekrarları birbirine bağlar, böylece her fikir doğal olarak bir sonrakine götürür.",
+  "home.why.link": "Thread Academy hakkında",
+  "home.how.title": "Thread Academy nasıl çalışır?",
+  "home.how.lede":
+    "Platformu rehberli bir kütüphane gibi kullan: dersini bul, konuyu derinlemesine öğren, pratik yap, sonra ilgili fikirleri takip et.",
+  "home.how.1.title": "Bir ders seç",
+  "home.how.1.text": "Öğrenmek istediğin dersi seç.",
+  "home.how.2.title": "Bir bölüm aç",
+  "home.how.2.text": "Konuların sırasını ve her fikrin nereye ait olduğunu gör.",
+  "home.how.3.title": "Derinlemesine öğren",
+  "home.how.3.text": "Açıklamaları, tanımları, çözümlü örnekleri ve diyagramları oku.",
+  "home.how.4.title": "Kaynakları kullan",
+  "home.how.4.text": "Hızlı kontroller, çalışma kâğıtları, notlar ve tekrar rehberleriyle pratik yap.",
+
+  // ---- subjects index ----
+  "subjects.meta.title": "Dersler",
+  "subjects.meta.desc":
+    "13 okul dersini kategorilere göre keşfet. Her ders; dersler, çözümlü örnekler ve pratik içeren bölümler hâlinde düzenlenmiştir.",
+  "subjects.hero.title": "Dersler",
+  "subjects.hero.lede":
+    "Okul derslerini kategorilere göre keşfet. Her ders; İngiliz, Cambridge, Amerikan veya IB yapılarıyla takip edilebilir.",
+
+  // ---- subject page (grade picker) ----
+  "subject.meta.title": "{name} tekrar ve öğrenme kaynakları",
+  "subject.meta.desc":
+    "Sınıfını seç (7–12) ve {name} bölümlerini takip et: dersler, çözümlü örnekler ve pratik sorular — ücretsiz, hesap gerekmez.",
+  "subject.choose.grade": "Sınıfını seç",
+  "subject.grade.name": "{grade}. Sınıf",
+  "subject.grade.choose": "Seç →",
+  "subject.course.name": "{name} \u2014 okul dersleri ve al\u0131\u015ft\u0131rma",
+  "subject.grade.chapters.other": "{n} bölüm",
+  "subject.category.meta.title": "{category} dersleri",
+  "subject.category.meta.desc":
+    "Thread Academy'de {category} derslerine göz at: {names}. Ücretsiz dersler, bölümler ve pratik — hesap gerekmez.",
+  "subject.category.hero.title": "{category} dersleri",
+  "subject.category.hero.lede":
+    "Thread Academy'de {category} derslerini keşfet: {names}. Ücretsiz dersler, bölümler ve pratik — hesap gerekmez.",
+
+  // ---- grade page ----
+  "grade.meta.title": "{grade}. Sınıf {name} — bölümler",
+  "grade.meta.desc":
+    "{grade}. sınıf {name} bölümleri: {chapters}. Dersler, çözümlü örnekler ve pratik sorular — ücretsiz, hesap gerekmez.",
+  "grade.hero.title": "{grade}. Sınıf {name}",
+  "grade.hero.lede.other":
+    "{grade}. sınıf için {n} bölüm. Dersleri sırayla işle — her biri bir öncekinin üzerine kurulur.",
+  "grade.eyebrow": "Bölümler",
+  "grade.read": "Oku →",
+
+  // ---- chapter page ----
+  "chapter.meta.title": "{title} — {grade}. Sınıf {name}",
+  "chapter.meta.desc": "{desc} {grade}. sınıf {name} için {title}'i aç: dersler, çözümlü örnekler ve pratik sorular.",
+  "chapter.aside.title": "Bu bölümde",
+  "chapter.aside.lessons.other": "{n} ders",
+  "chapter.aside.soon": "Dersler yakında geliyor",
+  "chapter.aside.defs": "Tanımlar ve temel fikirler",
+  "chapter.aside.worked": "Çözümlü örnekler",
+  "chapter.aside.practice": "Cevaplı pratik sorular",
+  "chapter.aside.quiz": "Açıklamalı kısa testler",
+  "chapter.read.lesson": "Dersi oku →",
+  "chapter.empty": "Bu bölümün dersleri yazılıyor — yakında tekrar bak veya başka bir bölümü keşfet.",
+  "chapter.resources.link": "Bölüm kaynakları →",
+
+  // ---- lesson (topic) page ----
+  "topic.meta.title": "{title} — {name} ({grade}. Sınıf)",
+  "topic.meta.desc": "{lede} Çözümlü örnekler ve pratik içeren {grade}. sınıf {name} dersi.",
+  "topic.meta.desc.noLede": "{title}: çözümlü örnekler ve pratik içeren {grade}. sınıf {name} dersi.",
+  "topic.jsonld.desc": "{title} — {grade}. sınıf {name} dersi.",
+  "topic.grade.label": "{grade}. Sınıf",
+  "topic.back.grade": "{grade}. Sınıf bölümlerine dön",
+  "topic.sidebar.aria": "B\u00f6l\u00fcm dersleri",
+  "topic.resources.link": "İlgili kaynaklar →",
+
+  // ---- resources hub ----
+  "resources.meta.title": "Kaynaklar",
+  "resources.meta.desc": "Notları, çalışma kâğıtlarını, çözümlü örnekleri, interaktif araçları ve tekrar materyallerini destekledikleri bölümün yanında bul.",
+  "resources.hero.title": "Kaynaklar",
+  "resources.hero.lede": "Notları, çalışma kâğıtlarını, çözümlü örnekleri, interaktif araçları ve tekrar materyallerini destekledikleri bölümün yanında bul.",
+  "resources.card.meta": "{chapter} · {grade}. Sınıf",
+  "resources.empty": "Hen\u00fcz \u00e7evrilmi\u015f kaynak yok \u2014 \u00f6\u011fretmenlerimiz yaz\u0131yor. Bu arada \u0130ngilizce kaynaklara g\u00f6z atabilirsin.",
+  "resources.chapter.title": "{chapter} kaynaklar\u0131",
+  "resources.chapter.lede": "{subject}, {grade}. s\u0131n\u0131f. Bu b\u00f6l\u00fcm i\u00e7in notlar, \u00e7al\u0131\u015fma k\u00e2\u011f\u0131tlar\u0131, videolar, interaktif ara\u00e7lar ve tekrar materyalleri.",
+  "resources.chapter.grade": "{grade}. S\u0131n\u0131f",
+  "resources.chapter.back": "\u2190 {chapter} b\u00f6l\u00fcm\u00fcne d\u00f6n",
+  "resources.nav.onthispage": "Bu sayfada",
+  "resources.sec.notes": "Notlar",
+  "resources.sec.notes.title": "\u00c7al\u0131\u015fma notlar\u0131",
+  "resources.sec.notes.lede": "B\u00f6l\u00fcm\u00fcn dersleri notlar\u0131n ta kendisidir \u2014 s\u0131rayla oku, sonra a\u015fa\u011f\u0131daki kaynaklar\u0131 kullan.",
+  "resources.read.lesson": "Dersi oku \u2192",
+  "resources.sec.worksheets": "\u00c7al\u0131\u015fma k\u00e2\u011f\u0131tlar\u0131",
+  "resources.sec.worksheets.title": "Pratik \u00e7al\u0131\u015fma k\u00e2\u011f\u0131d\u0131",
+  "resources.sec.worksheets.lede": "Cevab\u0131 a\u00e7madan \u00f6nce her soruyu dene \u2014 \u00f6\u011frenme tam da o zorlanmada olur.",
+  "resources.sec.worksheets.empty": "Pratik sorular\u0131 her dersin i\u00e7indedir \u2014 \u00f6nce onlar\u0131 \u00e7\u00f6z, sonra tekrar i\u00e7in buraya d\u00f6n.",
+  "resources.sec.videos": "Videolar",
+  "resources.sec.videos.title": "\u0130zle ve \u00f6\u011fren",
+  "resources.sec.videos.lede": "Her ders i\u00e7in anla\u015f\u0131l\u0131r bir video a\u00e7\u0131klamas\u0131 bulmaya y\u00f6nelik \u00f6zenle se\u00e7ilmi\u015f aramalar.",
+  "resources.videos.youtube": "YouTube aramas\u0131 \u00b7 yeni sekmede a\u00e7\u0131l\u0131r",
+  "resources.videos.watch": "\u0130zle \u2192",
+  "resources.sec.tools": "\u0130nteraktif ara\u00e7lar",
+  "resources.sec.tools.title": "Kendin dene",
+  "resources.sec.revision": "Tekrar",
+  "resources.sec.revision.title": "Tekrar kontrol listesi",
+  "resources.sec.revision.lede": "Bunlar\u0131n her birini bakmadan, sesli a\u00e7\u0131klayabilir misin? Yapam\u0131yorsan o dersi yeniden oku.",
+
+  // ---- chapter resources page ----
+  "cres.meta.title": "{title} kaynakları — {grade}. Sınıf {name}",
+  "cres.meta.desc": "{title} için notlar, çalışma kâğıtları, videolar, interaktif araçlar ve tekrar materyalleri ({grade}. sınıf {name}).",
+  "cres.hero.title": "{title} kaynakları",
+  "cres.hero.lede": "{name}, {grade}. sınıf. Bu bölüm için notlar, çalışma kâğıtları, videolar, interaktif araçlar ve tekrar materyalleri.",
+  "cres.nav.aria": "Bu sayfada",
+  "cres.nav.notes": "Notlar",
+  "cres.nav.worksheets": "Çalışma Kâğıtları",
+  "cres.nav.videos": "Videolar",
+  "cres.nav.tools": "İnteraktif araçlar",
+  "cres.nav.revision": "Tekrar",
+  "cres.notes.title": "Çalışma notları",
+  "cres.notes.lede": "Bölümün dersleri notların ta kendisidir — sırayla oku, sonra aşağıdaki kaynakları kullan.",
+  "cres.worksheets.title": "Pratik çalışma kâğıdı",
+  "cres.worksheets.lede": "Cevabı açmadan önce her soruyu dene — öğrenme tam da o zorlanmada olur.",
+  "cres.worksheets.empty": "Pratik sorular her dersin içinde — önce orada çöz, sonra tekrar için dön.",
+  "cres.videos.title": "İzle ve öğren",
+  "cres.videos.lede": "Her dersin net bir video açıklamasını bulmak için özenle seçilmiş aramalar.",
+  "cres.videos.note": "YouTube araması · yeni sekmede açılır",
+  "cres.videos.watch": "İzle →",
+  "cres.tools.title": "Kendin dene",
+  "cres.revision.title": "Tekrar listesi",
+  "cres.revision.lede": "Bunların her birini bakmadan, yüksek sesle açıklayabilir misin? Yapamıyorsan o dersi tekrar oku.",
+  "cres.back": "← {chapter} bölümüne dön",
+  "cres.read.lesson": "Dersi oku →",
+  "cres.video.title": "{title} — açıklamalı",
+  "cres.tools.solver.desc": "Herhangi bir doğrusal denklem yaz ve adım adım çözülüşünü izle — sonra adımları kendin dene.",
+  "cres.revision.fallback": "Her dersin özetini oku ve pratik sorularını ezberden tekrar çöz.",
+
+  // ---- blog ----
+  "blog.meta.title": "Blog — Öğrenme Günlüğü",
+  "blog.meta.desc":
+    "Thread Academy öğrenme günlüğü: öğrencilerin en çok aradığı fikirler üzerine derinlemesine rehberler; doğrusal denklemlerden fotosenteze, tam derslere bağlantılı.",
+  "blog.hero.title": "Öğrenme günlüğü.",
+  "blog.hero.lede": "Öğrencilerin en çok aradığı fikirler üzerine uzun rehberler — her biri ait olduğu derslere ve bölümlere bağlı.",
+  "blog.read": "Makaleyi oku →",
+  "blog.crumb": "Blog",
+  "blog.empty": "Hen\u00fcz \u00e7evrilmi\u015f yaz\u0131 yok \u2014 \u00f6\u011fretmenlerimiz yaz\u0131yor.",
+  "blog.post.related": "İlgili konular",
+  "blog.post.back": "Bloga dön",
+  "blog.post.browse": "{subject} dersine göz at →",
+  "blog.post.by": "{author} · {date}",
+  "blog.post.full": "{subject} — tüm ders",
+
+  // ---- about ----
+  "about.meta.title": "Hakkında",
+  "about.meta.desc": "Thread Academy, eksiksiz okul derslerini gezinmeyi, anlamayı ve tekrar gözden geçirmeyi kolaylaştırmak için kurulmuş eğitsel bir bilgi platformudur.",
+  "about.hero.title": "Bilginin bir yolu olmalı.",
+  "about.hero.lede": "Thread Academy, eksiksiz okul derslerini gezinmeyi, anlamayı ve tekrar gözden geçirmeyi kolaylaştırmak için kurulmuş eğitsel bir bilgi platformudur.",
+  "about.provides.title": "Neler sunuyoruz",
+  "about.provides.1": "Ders ve bölüm haritaları",
+  "about.provides.2": "Ders kitabı tarzı açıklamalar",
+  "about.provides.3": "Pratik ve tekrar kaynakları",
+  "about.provides.4": "Hesapsız açık erişim",
+  "about.c1.title": "Sorun",
+  "about.c1.desc": "Çevrimiçi öğrenme çoğu zaman açıklamayla pratiği birbirinden ayırır. Öğrenci, fikrin nereye ait olduğunu görmeden cevabı bulabilir.",
+  "about.c2.title": "Yapımız",
+  "about.c2.desc": "Ders → Bölüm → Konu. Her ders kendi bölümlerini korur; temelden ileri fikirlere doğru sıralanır.",
+  "about.c3.title": "Öğrenciler nasıl kullanır",
+  "about.c3.desc": "Dersini seç, eksiksiz bir konuyu oku, örnekleri incele, hızlı kontrollere cevap ver ve ilgili konuları takip et.",
+  "about.c4.title": "Yaklaşımımız",
+  "about.c4.desc": "Önce net tanımlar gelir. Açıklamalar fikirleri birbirine bağlar. Çözümlü örnekler akıl yürütmeyi görünür kılar. Pratik, öğrenciden öğrendiklerini kullanmasını ister.",
+
+  // ---- search page ----
+  "search.meta.title": "Ara",
+  "search.meta.desc": "Thread Academy'deki her dersi, bölümü, dersi ve kaynağı ara.",
+  "search.hero.title": "Ara",
+  "search.hero.lede": "Tüm derslerdeki her ders, bölüm ve kaynak.",
+  "search.loading": "Arama yükleniyor…",
+  "search.placeholder": "Ders, bölüm, ders, kaynak ara…",
+  "search.aria": "Ders ara",
+  "search.button": "Ara",
+  "search.unavailable.title": "Arama kullanılamıyor.",
+  "search.unavailable.body": "Arama dizini yüklenemedi. Bağlantını kontrol edip tekrar dene.",
+  "search.loading.index": "Arama dizini yükleniyor…",
+  "search.empty.lede": "Her dersi, bölümü ve kaynağı aramak için yukarıya yaz. Şunu dene:",
+  "search.empty.example": "doğrusal denklemler",
+  "search.results.one": "“{q}” için {n} sonuç",
+  "search.results.other": "“{q}” için {n} sonuç",
+  "search.noresults.title": "Sonuç yok.",
+  "search.noresults.body": "“{q}” ile eşleşen bir şey yok. Farklı kelimeler dene veya derslere göz at.",
+  "search.kind.subject": "Ders",
+  "search.kind.chapter": "Bölüm",
+  "search.kind.topic": "Ders",
+  "search.kind.resource": "Kaynak",
+
+  // ---- search overlay ----
+  "overlay.placeholder": "Ders, bölüm ve konu ara",
+  "overlay.aria": "Ders ara",
+  "overlay.button": "Ara",
+  "overlay.close": "Aramayı kapat",
+  "overlay.empty": "“doğrusal denklemler”, “hücre yapısı”, “Newton yasaları” veya “değişkenler” dene.",
+  "overlay.none": "Henüz eşleşen eğitim içeriği yok. Bir ders, bölüm veya daha genel bir konu dene.",
+
+  // ---- hero quick links ----
+  "hero.try": "Dene:",
+
+  // ---- footer ----
+  "footer.tagline": "Açık eğitim bilgisi, hesap gerekmez.",
+  "footer.explore": "Keşfet",
+  "footer.learn": "Öğren",
+  "footer.company": "Kurumsal",
+  "footer.other": "Diğer",
+  "footer.curricula": "British · Cambridge · American · IB",
+
+  // ---- textbook components ----
+  "tb.definition": "Tanım",
+  "tb.definition.term": "Tanım: {term}",
+  "tb.note": "Not",
+  "tb.worked": "Çözümlü örnek",
+  "tb.example": "Örnek",
+  "tb.takeaways": "Önemli çıkarımlar",
+  "tb.code": "Kod",
+  "tb.copy": "Kopyala",
+  "tb.copied": "Kopyalandı ✓",
+  "tb.next": "Sonraki ders",
+  "tb.reveal": "Cevabı göster",
+  "tb.hide": "Cevabı gizle",
+  "tb.quiz.title": "Anladığını kontrol et",
+  "tb.quiz.scored": "{total} soruda {score} doğru",
+  "tb.quiz.perfect": "mükemmel! 🎉",
+  "tb.quiz.welldone": "aferin.",
+  "tb.quiz.retry": "dersi tekrar edip yeniden dene.",
+  "tb.read.lesson": "Dersi oku →",
+  "tb.back": "Geri",
+  "tb.code.python": "Python",
+  "tb.code.maths": "Matematik",
+  "tb.code.pseudocode": "Sözde kod",
+  "tb.code.javascript": "JavaScript",
+  "tb.code.example": "Örnek",
+
+  // ---- widgets ----
+  "widget.solver.title": "Doğrusal denklem çözücü",
+  "widget.solver.aria": "Doğrusal denklem",
+  "widget.solver.solve": "Çöz",
+  "widget.solver.empty": "Her adımı görmek için Çöz'e bas — sonra adımları kapatıp bir sonrakini kendin dene.",
+  "widget.solver.desc": "x i\u00e7eren herhangi bir do\u011frusal denklem yaz \u2014 taray\u0131c\u0131nda ad\u0131m ad\u0131m \u00e7\u00f6z\u00fcls\u00fcn.",
+  "widget.solver.error.equals": "Denklemi tek bir '=' i\u015faretiyle yaz, \u00f6rn. 3x + 2 = 14.",
+  "widget.solver.error.linear": "Yaln\u0131zca x i\u00e7eren do\u011frusal denklemleri \u00e7\u00f6zebilirim \u2014 \u00f6rn. 3x + 2 = 14, x/2 \u2212 5 = 11 veya 2(x + 3) = 4x \u2212 1.",
+  "widget.solver.start": "Ba\u015flang\u0131\u00e7:",
+  "widget.solver.collect": "x\u2019li terimleri sola topla:",
+  "widget.solver.isolate": "x\u2019li terimi yaln\u0131z b\u0131rak:",
+  "widget.solver.infinite": "0 = 0 \u2014 x\u2019in her de\u011feri sa\u011flan\u0131r. Sonsuz \u00e7\u00f6z\u00fcm var!",
+  "widget.solver.nosolution": "{expr} yanl\u0131\u015f \u2014 bu denklemi sa\u011flayan x de\u011feri yok.",
+  "widget.solver.divide": "Her iki taraf\u0131 {a} ile b\u00f6l:",
+  "widget.python.run": "Çalıştır",
+  "widget.python.running": "Çalışıyor…",
+  "widget.python.ready": "Hazır — Çalıştır'a bas.",
+  "widget.python.loading": "Python çalışma ortamı yükleniyor (ilk çalıştırma birkaç saniye sürer)…",
+  "widget.python.status.running": "Çalışıyor…",
+  "widget.python.done": "{time} içinde tamamlandı.",
+  "widget.python.nooutput": "(çıktı yok)",
+  "widget.python.error": "Bir şeyler ters gitti — çıktıya bak.",
+  "widget.python.aria": "Python kod düzenleyici",
+
+  // ---- seo ----
+  "seo.share.alt": "Thread Academy — ücretsiz okul dersleri, çözümlü örnekler ve pratik sorular, 7–12. sınıflar.",
+  "seo.site.desc": "Ücretsiz okul ders tekrarı: 7–12. sınıflar için bölümlere ayrılmış dersler, çözümlü örnekler ve pratik sorular.",
+};
+
+const ru: Dict = {
+  // ---- navigation ----
+  "nav.home": "Главная",
+  "nav.subjects": "Предметы",
+  "nav.resources": "Ресурсы",
+  "nav.blog": "Блог",
+  "nav.about": "О нас",
+  "nav.search": "Поиск",
+  "nav.brand.home": "Thread Academy — главная",
+  "nav.language": "Язык",
+
+  // ---- shared ----
+  "cat.stem": "STEM",
+  "cat.humanities": "Гуманитарные науки",
+  "cat.languages": "Языки",
+  "common.home": "Главная",
+  "common.subjects": "Предметы",
+  "common.chapters.one": "{n} глава",
+  "common.chapters.few": "{n} главы",
+  "common.chapters.many": "{n} глав",
+  "common.lessons.one": "{n} урок",
+  "common.lessons.few": "{n} урока",
+  "common.lessons.many": "{n} уроков",
+  "common.read": "Читать →",
+  "common.back": "Назад",
+
+  // ---- home ----
+  "home.meta.title": "Бесплатные материалы для повторения школьных предметов",
+  "home.meta.desc":
+    "Бесплатное повторение школьных предметов: уроки по главам, разобранные примеры и практические задания для 7–12 классов — полезно для подготовки к GCSE, IGCSE и IB.",
+  "home.hero.a": "Следуй за нитью.",
+  "home.hero.b": "Пойми предмет.",
+  "home.hero.copy":
+    "Thread Academy — открытая платформа для изучения школьных предметов. Выбери предмет, открой главу и следуй за нитью от основ к сложным идеям.",
+  "home.subjects.title": "Предметы, организованные по главам.",
+  "home.subjects.lede": "Начни с дисциплины, проходи её главы и осваивай темы в стиле учебника.",
+  "home.browse.category": "Предметы: {category}",
+  "home.browse.all": "Все предметы",
+  "home.why.kicker": "Зачем мы это создали",
+  "home.why.title": "У учёбы должна быть ясная структура.",
+  "home.why.copy":
+    "Уроки связывают определения, объяснения, разобранные примеры, практику и повторение, чтобы каждая идея естественно вела к следующей.",
+  "home.why.link": "О Thread Academy",
+  "home.how.title": "Как работает Thread Academy.",
+  "home.how.lede":
+    "Используй платформу как библиотеку с гидом: найди свой предмет, глубоко изучи тему, попрактикуйся, а затем переходи к связанным идеям.",
+  "home.how.1.title": "Выбери предмет",
+  "home.how.1.text": "Выбери предмет, который хочешь изучать.",
+  "home.how.2.title": "Открой главу",
+  "home.how.2.text": "Посмотри порядок тем и место каждой идеи.",
+  "home.how.3.title": "Учись глубоко",
+  "home.how.3.text": "Читай объяснения, определения, разобранные примеры и схемы.",
+  "home.how.4.title": "Используй ресурсы",
+  "home.how.4.text": "Практикуйся: быстрые проверки, рабочие листы, конспекты и материалы для повторения.",
+
+  // ---- subjects index ----
+  "subjects.meta.title": "Предметы",
+  "subjects.meta.desc":
+    "13 школьных предметов по категориям. Каждый предмет организован по главам: уроки, разобранные примеры и практика.",
+  "subjects.hero.title": "Предметы",
+  "subjects.hero.lede":
+    "Школьные предметы по категориям. Каждый предмет можно изучать в британской, кембриджской, американской системе или IB.",
+
+  // ---- subject page (grade picker) ----
+  "subject.meta.title": "{name}: повторение и учебные материалы",
+  "subject.meta.desc":
+    "Выбери свой класс (с 7 по 12) и проходи главы предмета «{name}»: уроки, разобранные примеры и практические задания — бесплатно, без регистрации.",
+  "subject.choose.grade": "Выбери свой класс",
+  "subject.grade.name": "{grade} класс",
+  "subject.grade.choose": "Выбрать →",
+  "subject.course.name": "{name} \u2014 \u0448\u043a\u043e\u043b\u044c\u043d\u044b\u0435 \u0443\u0440\u043e\u043a\u0438 \u0438 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0430",
+  "subject.grade.chapters.one": "{n} глава",
+  "subject.grade.chapters.few": "{n} главы",
+  "subject.grade.chapters.many": "{n} глав",
+  "subject.category.meta.title": "Предметы: {category}",
+  "subject.category.meta.desc":
+    "Предметы категории «{category}» на Thread Academy: {names}. Бесплатные уроки, главы и практика — без регистрации.",
+  "subject.category.hero.title": "Предметы: {category}",
+  "subject.category.hero.lede":
+    "Предметы категории «{category}» на Thread Academy: {names}. Бесплатные уроки, главы и практика — без регистрации.",
+
+  // ---- grade page ----
+  "grade.meta.title": "{name}, {grade} класс — главы",
+  "grade.meta.desc":
+    "Главы предмета «{name}» за {grade} класс: {chapters}. Уроки, разобранные примеры и практические задания — бесплатно, без регистрации.",
+  "grade.hero.title": "{name}, {grade} класс",
+  "grade.hero.lede.one":
+    "{n} глава за {grade} класс. Проходи уроки по порядку — каждый опирается на предыдущий.",
+  "grade.hero.lede.few":
+    "{n} главы за {grade} класс. Проходи уроки по порядку — каждый опирается на предыдущий.",
+  "grade.hero.lede.many":
+    "{n} глав за {grade} класс. Проходи уроки по порядку — каждый опирается на предыдущий.",
+  "grade.eyebrow": "Главы",
+  "grade.read": "Читать →",
+
+  // ---- chapter page ----
+  "chapter.meta.title": "{title} — {name}, {grade} класс",
+  "chapter.meta.desc": "{desc} Открой главу «{title}» ({name}, {grade} класс): уроки, разобранные примеры и практические задания.",
+  "chapter.aside.title": "В этой главе",
+  "chapter.aside.lessons.one": "{n} урок",
+  "chapter.aside.lessons.few": "{n} урока",
+  "chapter.aside.lessons.many": "{n} уроков",
+  "chapter.aside.soon": "Уроки скоро появятся",
+  "chapter.aside.defs": "Определения и ключевые идеи",
+  "chapter.aside.worked": "Разобранные примеры",
+  "chapter.aside.practice": "Практические задания с ответами",
+  "chapter.aside.quiz": "Короткие тесты с объяснениями",
+  "chapter.read.lesson": "Читать урок →",
+  "chapter.empty": "Уроки этой главы ещё пишутся — загляни позже или открой другую главу.",
+  "chapter.resources.link": "Ресурсы главы →",
+
+  // ---- lesson (topic) page ----
+  "topic.meta.title": "{title} — {name} ({grade} класс)",
+  "topic.meta.desc": "{lede} Урок предмета «{name}» за {grade} класс: разобранные примеры и практика.",
+  "topic.meta.desc.noLede": "{title}: урок предмета «{name}» за {grade} класс — разобранные примеры и практика.",
+  "topic.jsonld.desc": "{title} — урок предмета «{name}» за {grade} класс.",
+  "topic.grade.label": "{grade} класс",
+  "topic.back.grade": "Назад к главам за {grade} класс",
+  "topic.sidebar.aria": "\u0423\u0440\u043e\u043a\u0438 \u0433\u043b\u0430\u0432\u044b",
+  "topic.resources.link": "Связанные ресурсы →",
+
+  // ---- resources hub ----
+  "resources.meta.title": "Ресурсы",
+  "resources.meta.desc": "Конспекты, рабочие листы, разобранные примеры, интерактивные инструменты и материалы для повторения — рядом с главой, к которой они относятся.",
+  "resources.hero.title": "Ресурсы",
+  "resources.hero.lede": "Конспекты, рабочие листы, разобранные примеры, интерактивные инструменты и материалы для повторения — рядом с главой, к которой они относятся.",
+  "resources.card.meta": "{chapter} · {grade} класс",
+  "resources.empty": "\u041f\u043e\u043a\u0430 \u043d\u0435\u0442 \u043f\u0435\u0440\u0435\u0432\u0435\u0434\u0451\u043d\u043d\u044b\u0445 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043e\u0432 \u2014 \u0443\u0447\u0438\u0442\u0435\u043b\u044f \u043f\u0438\u0448\u0443\u0442 \u0438\u0445. \u0410 \u043f\u043e\u043a\u0430 \u0437\u0430\u0433\u043b\u044f\u043d\u0438\u0442\u0435 \u0432 \u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438\u0435 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u044b.",
+  "resources.chapter.title": "\u041c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u044b: {chapter}",
+  "resources.chapter.lede": "{subject}, {grade} \u043a\u043b\u0430\u0441\u0441. \u041a\u043e\u043d\u0441\u043f\u0435\u043a\u0442\u044b, \u0440\u0430\u0431\u043e\u0447\u0438\u0435 \u043b\u0438\u0441\u0442\u044b, \u0432\u0438\u0434\u0435\u043e, \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b \u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u044b \u0434\u043b\u044f \u043f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u044f \u043a \u044d\u0442\u043e\u0439 \u0433\u043b\u0430\u0432\u0435.",
+  "resources.chapter.grade": "{grade} \u043a\u043b\u0430\u0441\u0441",
+  "resources.chapter.back": "\u2190 \u041d\u0430\u0437\u0430\u0434 \u043a \u0433\u043b\u0430\u0432\u0435 \u00ab{chapter}\u00bb",
+  "resources.nav.onthispage": "\u041d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435",
+  "resources.sec.notes": "\u041a\u043e\u043d\u0441\u043f\u0435\u043a\u0442\u044b",
+  "resources.sec.notes.title": "\u0423\u0447\u0435\u0431\u043d\u044b\u0435 \u043a\u043e\u043d\u0441\u043f\u0435\u043a\u0442\u044b",
+  "resources.sec.notes.lede": "\u0423\u0440\u043e\u043a\u0438 \u0433\u043b\u0430\u0432\u044b \u2014 \u044d\u0442\u043e \u0438 \u0435\u0441\u0442\u044c \u043a\u043e\u043d\u0441\u043f\u0435\u043a\u0442\u044b: \u043f\u0440\u043e\u0447\u0438\u0442\u0430\u0439 \u0438\u0445 \u043f\u043e \u043f\u043e\u0440\u044f\u0434\u043a\u0443, \u0430 \u0437\u0430\u0442\u0435\u043c \u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0441\u044f \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0430\u043c\u0438 \u043d\u0438\u0436\u0435.",
+  "resources.read.lesson": "\u0427\u0438\u0442\u0430\u0442\u044c \u0443\u0440\u043e\u043a \u2192",
+  "resources.sec.worksheets": "\u0420\u0430\u0431\u043e\u0447\u0438\u0435 \u043b\u0438\u0441\u0442\u044b",
+  "resources.sec.worksheets.title": "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043e\u0447\u043d\u044b\u0439 \u043b\u0438\u0441\u0442",
+  "resources.sec.worksheets.lede": "\u0420\u0435\u0448\u0438 \u043a\u0430\u0436\u0434\u044b\u0439 \u0432\u043e\u043f\u0440\u043e\u0441 \u0434\u043e \u0442\u043e\u0433\u043e, \u043a\u0430\u043a \u043e\u0442\u043a\u0440\u043e\u0435\u0448\u044c \u043e\u0442\u0432\u0435\u0442, \u2014 \u0438\u043c\u0435\u043d\u043d\u043e \u0442\u0430\u043c \u0438 \u0440\u043e\u0436\u0434\u0430\u0435\u0442\u0441\u044f \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u0435.",
+  "resources.sec.worksheets.empty": "\u041f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0432\u043e\u043f\u0440\u043e\u0441\u044b \u0436\u0438\u0432\u0443\u0442 \u0432\u043d\u0443\u0442\u0440\u0438 \u043a\u0430\u0436\u0434\u043e\u0433\u043e \u0443\u0440\u043e\u043a\u0430 \u2014 \u0440\u0430\u0437\u0431\u0435\u0440\u0438 \u0438\u0445 \u0442\u0430\u043c, \u0430 \u0437\u0430\u0442\u0435\u043c \u0432\u0435\u0440\u043d\u0438\u0441\u044c \u0434\u043b\u044f \u043f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u044f.",
+  "resources.sec.videos": "\u0412\u0438\u0434\u0435\u043e",
+  "resources.sec.videos.title": "\u0421\u043c\u043e\u0442\u0440\u0438 \u0438 \u0443\u0447\u0438\u0441\u044c",
+  "resources.sec.videos.lede": "\u0422\u0449\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u043e\u0434\u043e\u0431\u0440\u0430\u043d\u043d\u044b\u0435 \u0437\u0430\u043f\u0440\u043e\u0441\u044b, \u0447\u0442\u043e\u0431\u044b \u043d\u0430\u0439\u0442\u0438 \u043f\u043e\u043d\u044f\u0442\u043d\u043e\u0435 \u0432\u0438\u0434\u0435\u043e\u043e\u0431\u044a\u044f\u0441\u043d\u0435\u043d\u0438\u0435 \u043a \u043a\u0430\u0436\u0434\u043e\u043c\u0443 \u0443\u0440\u043e\u043a\u0443.",
+  "resources.videos.youtube": "\u041f\u043e\u0438\u0441\u043a YouTube \u00b7 \u043e\u0442\u043a\u0440\u043e\u0435\u0442\u0441\u044f \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435",
+  "resources.videos.watch": "\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u2192",
+  "resources.sec.tools": "\u0418\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b",
+  "resources.sec.tools.title": "\u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439 \u0441\u0430\u043c",
+  "resources.sec.revision": "\u041f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u0435",
+  "resources.sec.revision.title": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u044c\u043d\u044b\u0439 \u0441\u043f\u0438\u0441\u043e\u043a \u0434\u043b\u044f \u043f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u044f",
+  "resources.sec.revision.lede": "\u0421\u043c\u043e\u0436\u0435\u0448\u044c \u043e\u0431\u044a\u044f\u0441\u043d\u0438\u0442\u044c \u043a\u0430\u0436\u0434\u044b\u0439 \u043f\u0443\u043d\u043a\u0442 \u0432\u0441\u043b\u0443\u0445, \u043d\u0435 \u043f\u043e\u0434\u0433\u043b\u044f\u0434\u044b\u0432\u0430\u044f? \u0415\u0441\u043b\u0438 \u043d\u0435\u0442 \u2014 \u043f\u0435\u0440\u0435\u0447\u0438\u0442\u0430\u0439 \u0443\u0440\u043e\u043a \u0437\u0430\u043d\u043e\u0432\u043e.",
+
+  // ---- chapter resources page ----
+  "cres.meta.title": "Ресурсы: {title} — {name}, {grade} класс",
+  "cres.meta.desc": "Конспекты, рабочие листы, видео, интерактивные инструменты и материалы для повторения по теме «{title}» ({name}, {grade} класс).",
+  "cres.hero.title": "Ресурсы: {title}",
+  "cres.hero.lede": "{name}, {grade} класс. Конспекты, рабочие листы, видео, интерактивные инструменты и материалы для повторения по этой главе.",
+  "cres.nav.aria": "На этой странице",
+  "cres.nav.notes": "Конспекты",
+  "cres.nav.worksheets": "Рабочие листы",
+  "cres.nav.videos": "Видео",
+  "cres.nav.tools": "Интерактивные инструменты",
+  "cres.nav.revision": "Повторение",
+  "cres.notes.title": "Учебные конспекты",
+  "cres.notes.lede": "Уроки главы и есть конспекты — читай их по порядку, а затем используй ресурсы ниже.",
+  "cres.worksheets.title": "Практический рабочий лист",
+  "cres.worksheets.lede": "Попробуй решить каждое задание, прежде чем открывать ответ, — именно в этом усилии и происходит учёба.",
+  "cres.worksheets.empty": "Практические задания живут внутри каждого урока — решай их там, а затем возвращайся для повторения.",
+  "cres.videos.title": "Смотри и учись",
+  "cres.videos.lede": "Тщательно подобранные запросы, чтобы найти понятное видеообъяснение каждого урока.",
+  "cres.videos.note": "Поиск на YouTube · откроется в новой вкладке",
+  "cres.videos.watch": "Смотреть →",
+  "cres.tools.title": "Попробуй сам",
+  "cres.revision.title": "Чек-лист для повторения",
+  "cres.revision.lede": "Можешь объяснить каждый пункт вслух, не подглядывая? Если нет — перечитай этот урок.",
+  "cres.back": "← Назад к главе «{chapter}»",
+  "cres.video.title": "{title} — с объяснением",
+  "cres.tools.solver.desc": "Введи любое линейное уравнение и смотри пошаговое решение — затем попробуй шаги сам.",
+  "cres.revision.fallback": "Прочитай краткое содержание каждого урока и реши практические задания по памяти.",
+  "cres.read.lesson": "Читать урок →",
+
+  // ---- blog ----
+  "blog.meta.title": "Блог — учебный журнал",
+  "blog.meta.desc":
+    "Учебный журнал Thread Academy: подробные руководства по идеям, которые ученики ищут чаще всего, — от линейных уравнений до фотосинтеза, со ссылками на полные уроки.",
+  "blog.hero.title": "Учебный журнал.",
+  "blog.hero.lede": "Подробные руководства по идеям, которые ученики ищут чаще всего, — каждое связано с уроками и главами, к которым относится.",
+  "blog.read": "Читать статью →",
+  "blog.crumb": "\u0411\u043b\u043e\u0433",
+  "blog.empty": "\u041f\u043e\u043a\u0430 \u043d\u0435\u0442 \u043f\u0435\u0440\u0435\u0432\u0435\u0434\u0451\u043d\u043d\u044b\u0445 \u0441\u0442\u0430\u0442\u0435\u0439 \u2014 \u0443\u0447\u0438\u0442\u0435\u043b\u044f \u043f\u0438\u0448\u0443\u0442 \u0438\u0445.",
+  "blog.post.related": "Связанные темы",
+  "blog.post.back": "Назад в блог",
+  "blog.post.browse": "К предмету «{subject}» →",
+  "blog.post.by": "{author} · {date}",
+  "blog.post.full": "{subject} — весь предмет",
+
+  // ---- about ----
+  "about.meta.title": "О нас",
+  "about.meta.desc": "Thread Academy — образовательная платформа знаний, созданная чтобы целые школьные предметы было легче находить, понимать и повторять.",
+  "about.hero.title": "Знанию нужен путь.",
+  "about.hero.lede": "Thread Academy — образовательная платформа знаний, созданная чтобы целые школьные предметы было легче находить, понимать и повторять.",
+  "about.provides.title": "Что мы даём",
+  "about.provides.1": "Карты предметов и глав",
+  "about.provides.2": "Объяснения в стиле учебника",
+  "about.provides.3": "Ресурсы для практики и повторения",
+  "about.provides.4": "Открытый доступ без регистрации",
+  "about.c1.title": "Проблема",
+  "about.c1.desc": "Онлайн-обучение часто разделяет объяснения и практику. Ученик может найти ответ, не видя, к какой идее он относится.",
+  "about.c2.title": "Наша структура",
+  "about.c2.desc": "Предмет → Глава → Тема. У каждого предмета свои главы, упорядоченные от основ к сложным идеям.",
+  "about.c3.title": "Как этим пользуются ученики",
+  "about.c3.desc": "Выбери предмет, прочитай тему целиком, разбери примеры, ответь на быстрые проверки и переходи к связанным темам.",
+  "about.c4.title": "Наш подход",
+  "about.c4.desc": "Сначала — чёткие определения. Объяснения связывают идеи. Разобранные примеры делают рассуждения видимыми. Практика просит ученика применить выученное.",
+
+  // ---- search page ----
+  "search.meta.title": "Поиск",
+  "search.meta.desc": "Ищи любой урок, главу, предмет и ресурс на Thread Academy.",
+  "search.hero.title": "Поиск",
+  "search.hero.lede": "Каждый урок, глава и ресурс — по всем предметам.",
+  "search.loading": "Загрузка поиска…",
+  "search.placeholder": "Поиск уроков, глав, предметов, ресурсов…",
+  "search.aria": "Поиск уроков",
+  "search.button": "Найти",
+  "search.unavailable.title": "Поиск недоступен.",
+  "search.unavailable.body": "Не удалось загрузить поисковый индекс. Проверь соединение и попробуй ещё раз.",
+  "search.loading.index": "Загрузка поискового индекса…",
+  "search.empty.lede": "Введи запрос выше, чтобы искать по всем урокам, главам, предметам и ресурсам. Попробуй:",
+  "search.empty.example": "линейные уравнения",
+  "search.results.one": "{n} результат по запросу «{q}»",
+  "search.results.few": "{n} результата по запросу «{q}»",
+  "search.results.many": "{n} результатов по запросу «{q}»",
+  "search.noresults.title": "Ничего не найдено.",
+  "search.noresults.body": "По запросу «{q}» ничего не подошло. Попробуй другие слова или открой предметы.",
+  "search.kind.subject": "Предмет",
+  "search.kind.chapter": "Глава",
+  "search.kind.topic": "Урок",
+  "search.kind.resource": "Ресурс",
+
+  // ---- search overlay ----
+  "overlay.placeholder": "Поиск предметов, глав и тем",
+  "overlay.aria": "Поиск уроков",
+  "overlay.button": "Найти",
+  "overlay.close": "Закрыть поиск",
+  "overlay.empty": "Попробуй «линейные уравнения», «строение клетки», «законы Ньютона» или «переменные».",
+  "overlay.none": "Подходящих учебных материалов пока нет. Попробуй предмет, главу или более широкую тему.",
+
+  // ---- hero quick links ----
+  "hero.try": "Попробуй:",
+
+  // ---- footer ----
+  "footer.tagline": "Открытые учебные знания, без регистрации.",
+  "footer.explore": "Навигация",
+  "footer.learn": "Учёба",
+  "footer.company": "Компания",
+  "footer.other": "Прочее",
+  "footer.curricula": "British · Cambridge · American · IB",
+
+  // ---- textbook components ----
+  "tb.definition": "Определение",
+  "tb.definition.term": "Определение: {term}",
+  "tb.note": "Заметка",
+  "tb.worked": "Разобранный пример",
+  "tb.example": "Пример",
+  "tb.takeaways": "Главные выводы",
+  "tb.code": "Код",
+  "tb.copy": "Копировать",
+  "tb.copied": "Скопировано ✓",
+  "tb.next": "Следующий урок",
+  "tb.reveal": "Показать ответ",
+  "tb.hide": "Скрыть ответ",
+  "tb.quiz.title": "Проверь своё понимание",
+  "tb.quiz.scored": "{score} из {total}",
+  "tb.quiz.perfect": "отлично! 🎉",
+  "tb.quiz.welldone": "хорошая работа.",
+  "tb.quiz.retry": "повтори урок и попробуй ещё раз.",
+  "tb.read.lesson": "Читать урок →",
+  "tb.back": "Назад",
+  "tb.code.python": "Python",
+  "tb.code.maths": "Математика",
+  "tb.code.pseudocode": "Псевдокод",
+  "tb.code.javascript": "JavaScript",
+  "tb.code.example": "Пример",
+
+  // ---- widgets ----
+  "widget.solver.title": "Решатель линейных уравнений",
+  "widget.solver.aria": "Линейное уравнение",
+  "widget.solver.solve": "Решить",
+  "widget.solver.empty": "Нажми «Решить», чтобы увидеть каждый шаг, — затем закрой шаги и попробуй следующее сам.",
+  "widget.solver.desc": "\u0412\u0432\u0435\u0434\u0438 \u043b\u044e\u0431\u043e\u0435 \u043b\u0438\u043d\u0435\u0439\u043d\u043e\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u0441 x \u2014 \u043e\u043d\u043e \u0440\u0435\u0448\u0438\u0442\u0441\u044f \u043f\u043e \u0448\u0430\u0433\u0430\u043c \u043f\u0440\u044f\u043c\u043e \u0432 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435.",
+  "widget.solver.error.equals": "\u0417\u0430\u043f\u0438\u0448\u0438 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u0440\u043e\u0432\u043d\u043e \u0441 \u043e\u0434\u043d\u0438\u043c \u0437\u043d\u0430\u043a\u043e\u043c '=', \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440 3x + 2 = 14.",
+  "widget.solver.error.linear": "\u042f \u0440\u0435\u0448\u0430\u044e \u0442\u043e\u043b\u044c\u043a\u043e \u043b\u0438\u043d\u0435\u0439\u043d\u044b\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f \u0441 x \u2014 \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440 3x + 2 = 14, x/2 \u2212 5 = 11 \u0438\u043b\u0438 2(x + 3) = 4x \u2212 1.",
+  "widget.solver.start": "\u041d\u0430\u0447\u0430\u043b\u043e:",
+  "widget.solver.collect": "\u0421\u043e\u0431\u0435\u0440\u0451\u043c \u0441\u043b\u0430\u0433\u0430\u0435\u043c\u044b\u0435 \u0441 x \u0441\u043b\u0435\u0432\u0430:",
+  "widget.solver.isolate": "\u041e\u0441\u0442\u0430\u0432\u0438\u043c \u0441\u043b\u0430\u0433\u0430\u0435\u043c\u043e\u0435 \u0441 x:",
+  "widget.solver.infinite": "0 = 0 \u2014 \u043f\u043e\u0434\u0445\u043e\u0434\u0438\u0442 \u043b\u044e\u0431\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 x. \u0411\u0435\u0441\u043a\u043e\u043d\u0435\u0447\u043d\u043e \u043c\u043d\u043e\u0433\u043e \u0440\u0435\u0448\u0435\u043d\u0438\u0439!",
+  "widget.solver.nosolution": "{expr} \u2014 \u043d\u0435\u0432\u0435\u0440\u043d\u043e, \u043d\u0435\u0442 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f x, \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0449\u0435\u0433\u043e \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e.",
+  "widget.solver.divide": "\u0420\u0430\u0437\u0434\u0435\u043b\u0438\u043c \u043e\u0431\u0435 \u0447\u0430\u0441\u0442\u0438 \u043d\u0430 {a}:",
+  "widget.python.run": "Запустить",
+  "widget.python.running": "Выполняется…",
+  "widget.python.ready": "Готово — нажми «Запустить».",
+  "widget.python.loading": "Загрузка среды Python (первый запуск занимает несколько секунд)…",
+  "widget.python.status.running": "Выполняется…",
+  "widget.python.done": "Готово за {time}.",
+  "widget.python.nooutput": "(нет вывода)",
+  "widget.python.error": "Что-то пошло не так — смотри вывод.",
+  "widget.python.aria": "Редактор кода Python",
+
+  // ---- seo ----
+  "seo.share.alt": "Thread Academy — бесплатные школьные уроки, разобранные примеры и практические задания, 7–12 классы.",
+  "seo.site.desc": "Бесплатное повторение школьных предметов: уроки по главам, разобранные примеры и практические задания для 7–12 классов.",
+};
+
+const ky: Dict = {
+  // ---- navigation ----
+  "nav.home": "Башкы бет",
+  "nav.subjects": "Предметтер",
+  "nav.resources": "Ресурстар",
+  "nav.blog": "Блог",
+  "nav.about": "Биз жөнүндө",
+  "nav.search": "Издөө",
+  "nav.brand.home": "Thread Academy башкы бети",
+  "nav.language": "Тил",
+
+  // ---- shared ----
+  "cat.stem": "STEM",
+  "cat.humanities": "Гуманитардык илимдер",
+  "cat.languages": "Тилдер",
+  "common.home": "Башкы бет",
+  "common.subjects": "Предметтер",
+  "common.chapters.other": "{n} бөлүм",
+  "common.lessons.other": "{n} сабак",
+  "common.read": "Окуу →",
+  "common.back": "Артка",
+
+  // ---- home ----
+  "home.meta.title": "Акысыз Мектеп Предметтерин Кайталоо жана Окуу Ресурстары",
+  "home.meta.desc":
+    "Акысыз мектеп предметтерин кайталоо: 7–12-класстар үчүн бөлүмдөргө бөлүнгөн сабактар, иштетилген мисалдар жана практикалык суроолор — GCSE, IGCSE жана IB сынактарына даярдануу үчүн пайдалуу.",
+  "home.hero.a": "Жипти ээрчи.",
+  "home.hero.b": "Предметти түшүн.",
+  "home.hero.copy":
+    "Thread Academy — мектеп предметтери үчүн ачык билим берүү платформасы. Предмет танда, бөлүм ач жана жипти баштапкы принциптерден татаал идеяларга чейин ээрчи.",
+  "home.subjects.title": "Бөлүмдөр боюнча уюштурулган предметтер.",
+  "home.subjects.lede": "Дисциплинадан башта, анын бөлүмдөрүн өт жана окуу китеби стилиндеги темаларды бүтүр.",
+  "home.browse.category": "{category} предметтерин көрүү",
+  "home.browse.all": "Бардык предметтерди көрүү",
+  "home.why.kicker": "Эмне үчүн түздүк",
+  "home.why.title": "Окуунун так түзүлүшү болушу керек.",
+  "home.why.copy":
+    "Сабактар аныктамаларды, түшүндүрмөлөрдү, иштетилген мисалдарды, практиканы жана кайталоону байланыштырат, ошондуктан ар бир идея табигый түрдө кийинкисине алып барат.",
+  "home.why.link": "Thread Academy жөнүндө",
+  "home.how.title": "Thread Academy кантип иштейт?",
+  "home.how.lede":
+    "Платформаны жол көрсөткүчтүү китепканадай колдон: предметиңди тап, теманы терең өздөштүр, машык, анан байланыштуу идеяларды ээрчи.",
+  "home.how.1.title": "Предмет танда",
+  "home.how.1.text": "Үйрөнгүң келген предметти танда.",
+  "home.how.2.title": "Бөлүм ач",
+  "home.how.2.text": "Темалардын ырааттуулугун жана ар бир идеянын ордун көр.",
+  "home.how.3.title": "Терең үйрөн",
+  "home.how.3.text": "Түшүндүрмөлөрдү, аныктамаларды, иштетилген мисалдарды жана диаграммаларды оку.",
+  "home.how.4.title": "Ресурстарды колдон",
+  "home.how.4.text": "Тез текшерүүлөр, иш баракчалары, конспекттер жана кайталоо колдонмолору менен машык.",
+
+  // ---- subjects index ----
+  "subjects.meta.title": "Предметтер",
+  "subjects.meta.desc":
+    "13 мектеп предметин категориялар боюнча карап чык. Ар бир предмет сабактар, иштетилген мисалдар жана практика камтыган бөлүмдөргө бөлүнгөн.",
+  "subjects.hero.title": "Предметтер",
+  "subjects.hero.lede":
+    "Мектеп предметтерин категориялар боюнча карап чык. Ар бир предметти британ, Кембридж, америка же IB түзүлүшү менен өтсө болот.",
+
+  // ---- subject page (grade picker) ----
+  "subject.meta.title": "{name}: кайталоо жана окуу ресурстары",
+  "subject.meta.desc":
+    "Классыңды танда (7ден 12ге чейин) жана {name} бөлүмдөрүн өт: сабактар, иштетилген мисалдар жана практикалык суроолор — акысыз, катталуу талап кылынбайт.",
+  "subject.choose.grade": "Классыңды танда",
+  "subject.grade.name": "{grade}-класс",
+  "subject.grade.choose": "Танда →",
+  "subject.course.name": "{name} \u2014 \u043c\u0435\u043a\u0442\u0435\u043f \u0441\u0430\u0431\u0430\u043a\u0442\u0430\u0440\u044b \u0436\u0430\u043d\u0430 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0430",
+  "subject.grade.chapters.other": "{n} бөлүм",
+  "subject.category.meta.title": "{category} предметтери",
+  "subject.category.meta.desc":
+    "Thread Academyде {category} предметтерин көр: {names}. Акысыз сабактар, бөлүмдөр жана практика — катталуу талап кылынбайт.",
+  "subject.category.hero.title": "{category} предметтери",
+  "subject.category.hero.lede":
+    "Thread Academyде {category} предметтерин карап чык: {names}. Акысыз сабактар, бөлүмдөр жана практика — катталуу талап кылынбайт.",
+
+  // ---- grade page ----
+  "grade.meta.title": "{grade}-класс {name} — бөлүмдөр",
+  "grade.meta.desc":
+    "{grade}-класс {name} бөлүмдөрү: {chapters}. Сабактар, иштетилген мисалдар жана практикалык суроолор — акысыз, катталуу талап кылынбайт.",
+  "grade.hero.title": "{grade}-класс {name}",
+  "grade.hero.lede.other":
+    "{grade}-класс үчүн {n} бөлүм. Сабактарды ырааттуулугу менен өт — ар бири мурункусуна таянат.",
+  "grade.eyebrow": "Бөлүмдөр",
+  "grade.read": "Окуу →",
+
+  // ---- chapter page ----
+  "chapter.meta.title": "{title} — {grade}-класс {name}",
+  "chapter.meta.desc": "{desc} {grade}-класс {name} үчүн {title} бөлүмүн ач: сабактар, иштетилген мисалдар жана практикалык суроолор.",
+  "chapter.aside.title": "Бул бөлүмдө",
+  "chapter.aside.lessons.other": "{n} сабак",
+  "chapter.aside.soon": "Сабактар жакында чыгат",
+  "chapter.aside.defs": "Аныктамалар жана негизги идеялар",
+  "chapter.aside.worked": "Иштетилген мисалдар",
+  "chapter.aside.practice": "Жооптору менен практикалык суроолор",
+  "chapter.aside.quiz": "Түшүндүрмөлүү кыска тесттер",
+  "chapter.read.lesson": "Сабакты окуу →",
+  "chapter.empty": "Бул бөлүмдүн сабактары жазылып жатат — жакында кайра кел же башка бөлүмдү кара.",
+  "chapter.resources.link": "Бөлүм ресурстары →",
+
+  // ---- lesson (topic) page ----
+  "topic.meta.title": "{title} — {name} ({grade}-класс)",
+  "topic.meta.desc": "{lede} Иштетилген мисалдар жана практика менен {grade}-класс {name} сабагы.",
+  "topic.meta.desc.noLede": "{title}: иштетилген мисалдар жана практика менен {grade}-класс {name} сабагы.",
+  "topic.jsonld.desc": "{title} — {grade}-класс {name} сабагы.",
+  "topic.grade.label": "{grade}-класс",
+  "topic.back.grade": "{grade}-класс бөлүмдөрүнө кайтуу",
+  "topic.sidebar.aria": "\u0411\u04e9\u043b\u04af\u043c \u0441\u0430\u0431\u0430\u043a\u0442\u0430\u0440\u044b",
+  "topic.resources.link": "Байланыштуу ресурстар →",
+
+  // ---- resources hub ----
+  "resources.meta.title": "Ресурстар",
+  "resources.meta.desc": "Конспекттерди, иш баракчаларын, иштетилген мисалдарды, интерактивдүү куралдарды жана кайталоо материалдарын алар тиешелүү бөлүмдүн жанынан тап.",
+  "resources.hero.title": "Ресурстар",
+  "resources.hero.lede": "Конспекттерди, иш баракчаларын, иштетилген мисалдарды, интерактивдүү куралдарды жана кайталоо материалдарын алар тиешелүү бөлүмдүн жанынан тап.",
+  "resources.card.meta": "{chapter} · {grade}-класс",
+  "resources.empty": "\u0410\u043b\u044b \u043a\u043e\u0442\u043e\u0440\u0443\u043b\u0433\u0430\u043d \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0434\u0430\u0440 \u0436\u043e\u043a \u2014 \u043c\u0443\u0433\u0430\u043b\u0438\u043c\u0434\u0435\u0440 \u0436\u0430\u0437\u044b\u043f \u0436\u0430\u0442\u0430\u0442. \u0410 \u0430\u0437\u044b\u0440 \u0430\u043d\u0433\u043b\u0438\u0441 \u0442\u0438\u043b\u0438\u043d\u0434\u0435\u0433\u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0434\u0430\u0440\u0434\u044b \u043a\u0430\u0440\u0430\u04a3\u044b\u0437.",
+  "resources.chapter.title": "{chapter} материалдары",
+  "resources.chapter.lede": "{subject}, {grade}-класс. Бул бөлүмгө карата конспекттер, иш баракчалары, видеолор, интерактивдүү куралдар жана кайталоо материалдары.",
+  "resources.chapter.grade": "{grade}-класс",
+  "resources.chapter.back": "\u2190 \u00ab{chapter}\u00bb бөлүмүнө кайтуу",
+  "resources.nav.onthispage": "Бул баракчада",
+  "resources.sec.notes": "Конспекттер",
+  "resources.sec.notes.title": "Окуу конспекти",
+  "resources.sec.notes.lede": "Бөлүмдүн сабактары эле конспект — аларды ирети менен окуп чыгып, анан төмөндөгү ресурстарды колдон.",
+  "resources.read.lesson": "Сабакты оку \u2192",
+  "resources.sec.worksheets": "Иш баракчалары",
+  "resources.sec.worksheets.title": "Практикалык иш баракчасы",
+  "resources.sec.worksheets.lede": "Жоопту ачканга чейин ар бир суроону өзүң чыгарып көр — окуу дал ошол кыйналууда болот.",
+  "resources.sec.worksheets.empty": "Практикалык суроолор ар бир сабактын ичинде — адегенде аларды иштеп чыгып, анан кайталоо үчүн кайра кел.",
+  "resources.sec.videos": "Видеолор",
+  "resources.sec.videos.title": "Көр жана үйрөн",
+  "resources.sec.videos.lede": "Ар бир сабакка түшүнүктүү видео түшүндүрмө табууга багытталган кылдат тандалган издөөлөр.",
+  "resources.videos.youtube": "YouTube издөө \u00b7 жаңы өтмөктө ачылат",
+  "resources.videos.watch": "Көр \u2192",
+  "resources.sec.tools": "Интерактивдүү куралдар",
+  "resources.sec.tools.title": "Өзүң сынап көр",
+  "resources.sec.revision": "Кайталоо",
+  "resources.sec.revision.title": "Кайталоо үчүн текшерүү тизмеси",
+  "resources.sec.revision.lede": "Булардын ар бирин карабай туруп, үн чыгарып түшүндүрө аласыңбы? Болбосо, ал сабакты кайра оку.",
+
+  // ---- chapter resources page ----
+  "cres.meta.title": "{title} ресурстары — {grade}-класс {name}",
+  "cres.meta.desc": "{title} үчүн конспекттер, иш баракчалары, видеолор, интерактивдүү куралдар жана кайталоо материалдары ({grade}-класс {name}).",
+  "cres.hero.title": "{title} ресурстары",
+  "cres.hero.lede": "{name}, {grade}-класс. Бул бөлүм үчүн конспекттер, иш баракчалары, видеолор, интерактивдүү куралдар жана кайталоо материалдары.",
+  "cres.nav.aria": "Бул баракчада",
+  "cres.nav.notes": "Конспекттер",
+  "cres.nav.worksheets": "Иш баракчалары",
+  "cres.nav.videos": "Видеолор",
+  "cres.nav.tools": "Интерактивдүү куралдар",
+  "cres.nav.revision": "Кайталоо",
+  "cres.notes.title": "Окуу конспекттери",
+  "cres.notes.lede": "Бөлүмдүн сабактары эле конспекттер — аларды ырааттуулугу менен оку, анан төмөндөгү ресурстарды колдон.",
+  "cres.worksheets.title": "Практикалык иш баракчасы",
+  "cres.worksheets.lede": "Жообун ачкандан мурун ар бир суроону чыгарып көр — окуу дал ушул аракетте болот.",
+  "cres.worksheets.empty": "Практикалык суроолор ар бир сабактын ичинде — аларды ал жерде чыгар, анан кайталоо үчүн кайра кел.",
+  "cres.videos.title": "Көр жана үйрөн",
+  "cres.videos.lede": "Ар бир сабактын түшүнүктүү видео түшүндүрмөсүн табуу үчүн кылдат тандалган издөөлөр.",
+  "cres.videos.note": "YouTube издөө · жаңы өтмөктө ачылат",
+  "cres.videos.watch": "Көрүү →",
+  "cres.tools.title": "Өзүң байкап көр",
+  "cres.revision.title": "Кайталоо тизмеси",
+  "cres.revision.lede": "Булардын ар бирин карабай туруп, үн чыгарып түшүндүрө аласыңбы? Болбосо, ал сабакты кайра оку.",
+  "cres.video.title": "{title} — түшүндүрмө менен",
+  "cres.tools.solver.desc": "Каалаган сызыктуу теңдемени жазып, кадам-кадам чыгарылышын көр — анан кадамдарды өзүң байкап көр.",
+  "cres.revision.fallback": "Ар бир сабактын кыскача мазмунун окуп, практикалык суроолорду жатка чыгар.",
+  "cres.back": "← «{chapter}» бөлүмүнө кайтуу",
+  "cres.read.lesson": "Сабакты окуу →",
+
+  // ---- blog ----
+  "blog.meta.title": "Блог — Окуу журналы",
+  "blog.meta.desc":
+    "Thread Academy окуу журналы: окуучулар эң көп издеген идеялар боюнча терең колдонмолор — сызыктуу теңдемелерден фотосинтезге чейин, толук сабактарга шилтемелер менен.",
+  "blog.hero.title": "Окуу журналы.",
+  "blog.hero.lede": "Окуучулар эң көп издеген идеялар боюнча көлөмдүү колдонмолор — ар бири тиешелүү сабактар жана бөлүмдөр менен байланышкан.",
+  "blog.read": "Макаланы окуу →",
+  "blog.crumb": "\u0411\u043b\u043e\u0433",
+  "blog.empty": "\u0410\u043b\u044b \u043a\u043e\u0442\u043e\u0440\u0443\u043b\u0433\u0430\u043d \u043c\u0430\u043a\u0430\u043b\u0430\u043b\u0430\u0440 \u0436\u043e\u043a \u2014 \u043c\u0443\u0433\u0430\u043b\u0438\u043c\u0434\u0435\u0440 \u0436\u0430\u0437\u044b\u043f \u0436\u0430\u0442\u0430\u0442.",
+  "blog.post.related": "Байланыштуу темалар",
+  "blog.post.back": "Блогго кайтуу",
+  "blog.post.browse": "«{subject}» предметин көрүү →",
+  "blog.post.by": "{author} · {date}",
+  "blog.post.full": "{subject} — толук предмет",
+
+  // ---- about ----
+  "about.meta.title": "Биз жөнүндө",
+  "about.meta.desc": "Thread Academy — бүтүн мектеп предметтерин табууну, түшүнүүнү жана кайталоону жеңилдетүү үчүн түзүлгөн билим берүү платформасы.",
+  "about.hero.title": "Билимге жол керек.",
+  "about.hero.lede": "Thread Academy — бүтүн мектеп предметтерин табууну, түшүнүүнү жана кайталоону жеңилдетүү үчүн түзүлгөн билим берүү платформасы.",
+  "about.provides.title": "Эмне беребиз",
+  "about.provides.1": "Предмет жана бөлүм карталары",
+  "about.provides.2": "Окуу китеби стилиндеги түшүндүрмөлөр",
+  "about.provides.3": "Практика жана кайталоо ресурстары",
+  "about.provides.4": "Катталуусуз ачык жеткиликтүүлүк",
+  "about.c1.title": "Көйгөй",
+  "about.c1.desc": "Онлайн окутуу көбүнчө түшүндүрмөнү практикадан бөлүп коёт. Окуучу идеянын кайсы жерге тиешелүү экенин көрбөй туруп жообун таап алышы мүмкүн.",
+  "about.c2.title": "Биздин түзүлүш",
+  "about.c2.desc": "Предмет → Бөлүм → Тема. Ар бир предметтин өз бөлүмдөрү бар; негиздерден татаал идеяларга чейин иреттелген.",
+  "about.c3.title": "Окуучулар кантип колдонот",
+  "about.c3.desc": "Предметиңди танда, бүтүн теманы оку, мисалдарды карап чык, тез текшерүүлөргө жооп бер жана байланыштуу темаларды ээрчи.",
+  "about.c4.title": "Биздин ыкма",
+  "about.c4.desc": "Алгач так аныктамалар келет. Түшүндүрмөлөр идеяларды байланыштырат. Иштетилген мисалдар ой жүгүртүүнү көрүнөө кылат. Практика окуучудан үйрөнгөндөрүн колдонууну талап кылат.",
+
+  // ---- search page ----
+  "search.meta.title": "Издөө",
+  "search.meta.desc": "Thread Academyдеги каалаган сабакты, бөлүмдү, предметти жана ресурсту изде.",
+  "search.hero.title": "Издөө",
+  "search.hero.lede": "Бардык предметтер боюнча ар бир сабак, бөлүм жана ресурс.",
+  "search.loading": "Издөө жүктөлүүдө…",
+  "search.placeholder": "Сабактарды, бөлүмдөрдү, предметтерди, ресурстарды издөө…",
+  "search.aria": "Сабактарды издөө",
+  "search.button": "Издөө",
+  "search.unavailable.title": "Издөө жеткиликсиз.",
+  "search.unavailable.body": "Издөө индекси жүктөлбөй калды. Байланышыңды текшерип, кайра аракет кыл.",
+  "search.loading.index": "Издөө индекси жүктөлүүдө…",
+  "search.empty.lede": "Бардык сабактарды, бөлүмдөрдү жана ресурстарды издөө үчүн жогору жаз. Муну байкап көр:",
+  "search.empty.example": "сызыктуу теңдемелер",
+  "search.results.one": "«{q}» боюнча {n} жыйынтык",
+  "search.results.other": "«{q}» боюнча {n} жыйынтык",
+  "search.noresults.title": "Жыйынтык жок.",
+  "search.noresults.body": "«{q}» боюнча эч нерсе табылган жок. Башка сөздөрдү байкап көр же предметтерди кара.",
+  "search.kind.subject": "Предмет",
+  "search.kind.chapter": "Бөлүм",
+  "search.kind.topic": "Сабак",
+  "search.kind.resource": "Ресурс",
+
+  // ---- search overlay ----
+  "overlay.placeholder": "Предметтерди, бөлүмдөрдү жана темаларды издөө",
+  "overlay.aria": "Сабактарды издөө",
+  "overlay.button": "Издөө",
+  "overlay.close": "Издөөнү жабуу",
+  "overlay.empty": "«сызыктуу теңдемелер», «клетка түзүлүшү», «Ньютон мыйзамдары» же «өзгөрмөлөр» деп байкап көр.",
+  "overlay.none": "Туура келген окуу материалы азырынча жок. Предмет, бөлүм же кененирээк тема байкап көр.",
+
+  // ---- hero quick links ----
+  "hero.try": "Байкап көр:",
+
+  // ---- footer ----
+  "footer.tagline": "Ачык билим, катталуу талап кылынбайт.",
+  "footer.explore": "Карап чыгуу",
+  "footer.learn": "Үйрөнүү",
+  "footer.company": "Компания",
+  "footer.other": "Башка",
+  "footer.curricula": "British · Cambridge · American · IB",
+
+  // ---- textbook components ----
+  "tb.definition": "Аныктама",
+  "tb.definition.term": "Аныктама: {term}",
+  "tb.note": "Эскертүү",
+  "tb.worked": "Иштетилген мисал",
+  "tb.example": "Мисал",
+  "tb.takeaways": "Негизги жыйынтыктар",
+  "tb.code": "Код",
+  "tb.copy": "Көчүрүү",
+  "tb.copied": "Көчүрүлдү ✓",
+  "tb.next": "Кийинки сабак",
+  "tb.reveal": "Жообун көрсөтүү",
+  "tb.hide": "Жообун жашыруу",
+  "tb.quiz.title": "Түшүнгөнүңдү текшер",
+  "tb.quiz.scored": "{total} суроодон {score} туура",
+  "tb.quiz.perfect": "сонун! 🎉",
+  "tb.quiz.welldone": "азаматсың.",
+  "tb.quiz.retry": "сабакты кайталап, кайра аракет кыл.",
+  "tb.read.lesson": "Сабакты окуу →",
+  "tb.back": "Артка",
+  "tb.code.python": "Python",
+  "tb.code.maths": "Математика",
+  "tb.code.pseudocode": "Псевдокод",
+  "tb.code.javascript": "JavaScript",
+  "tb.code.example": "Мисал",
+
+  // ---- widgets ----
+  "widget.solver.title": "Сызыктуу теңдеме чыгаргыч",
+  "widget.solver.aria": "Сызыктуу теңдеме",
+  "widget.solver.solve": "Чыгаруу",
+  "widget.solver.empty": "Ар бир кадамды көрүү үчүн «Чыгаруу» баскычын бас — анан кадамдарды жаап, кийинкисин өзүң чыгарып көр.",
+  "widget.solver.desc": "x \u043a\u0430\u043c\u0442\u044b\u0433\u0430\u043d \u043a\u0430\u0430\u043b\u0430\u0433\u0430\u043d \u0441\u044b\u0437\u044b\u043a\u0442\u0443\u0443 \u0442\u0435\u04a3\u0434\u0435\u043c\u0435\u043d\u0438 \u0436\u0430\u0437 \u2014 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0434\u0435 \u043a\u0430\u0434\u0430\u043c-\u043a\u0430\u0434\u0430\u043c \u0447\u044b\u0433\u0430\u0440\u044b\u043b\u0430\u0442.",
+  "widget.solver.error.equals": "\u0422\u0435\u04A3\u0434\u0435\u043C\u0435\u043D\u0438 \u0431\u0438\u0440 \u0433\u0430\u043D\u0430 '=' \u0431\u0435\u043B\u0433\u0438\u0441\u0438 \u043C\u0435\u043D\u0435\u043D \u0436\u0430\u0437, \u043C\u0438\u0441\u0430\u043B\u044B 3x + 2 = 14.",
+  "widget.solver.error.linear": "\u041C\u0435\u043D x \u043A\u0430\u043C\u0442\u044B\u0433\u0430\u043D \u0441\u044B\u0437\u044B\u043A\u0442\u0443\u0443 \u0442\u0435\u04A3\u0434\u0435\u043C\u0435\u043B\u0435\u0440\u0434\u0438 \u0433\u0430\u043D\u0430 \u0447\u044B\u0433\u0430\u0440\u0430\u043C \u2014 \u043C\u0438\u0441\u0430\u043B\u044B 3x + 2 = 14, x/2 \u2212 5 = 11 \u0436\u0435 2(x + 3) = 4x \u2212 1.",
+  "widget.solver.start": "\u0411\u0430\u0448\u0442\u0430\u043B\u044B\u0448\u044B:",
+  "widget.solver.collect": "x \u043A\u043E\u0448\u0443\u043B\u0443\u0443\u0447\u0443\u043B\u0430\u0440\u044B\u043D \u0441\u043E\u043B\u0433\u043E \u0447\u043E\u0433\u0443\u043B\u0442:",
+  "widget.solver.isolate": "x \u043A\u043E\u0448\u0443\u043B\u0443\u0443\u0447\u0443\u0441\u0443\u043D \u0431\u04E9\u043B\u04AF\u043F \u0447\u044B\u0433\u0430\u0440:",
+  "widget.solver.infinite": "0 = 0 \u2014 x \u0442\u0438\u043D \u043A\u0430\u0430\u043B\u0430\u0433\u0430\u043D \u043C\u0430\u0430\u043D\u0438\u0441\u0438 \u0442\u0443\u0443\u0440\u0430 \u043A\u0435\u043B\u0435\u0442. \u0427\u0435\u043A\u0441\u0438\u0437 \u0447\u0435\u0447\u0438\u043C \u0431\u0430\u0440!",
+  "widget.solver.nosolution": "{expr} \u0442\u0443\u0443\u0440\u0430 \u044D\u043C\u0435\u0441 \u2014 \u0442\u0435\u04A3\u0434\u0435\u043C\u0435\u043D\u0438 \u043A\u0430\u043D\u0430\u0430\u0442\u0442\u0430\u043D\u0434\u044B\u0440\u0433\u0430\u043D x \u0436\u043E\u043A.",
+  "widget.solver.divide": "\u042D\u043A\u0438 \u0442\u0430\u0440\u0430\u043F\u0442\u044B \u0442\u0435\u04A3 {a} \u0433\u0430 \u0431\u04E9\u043B:",
+  "widget.python.run": "Иштетүү",
+  "widget.python.running": "Иштеп жатат…",
+  "widget.python.ready": "Даяр — «Иштетүү» баскычын бас.",
+  "widget.python.loading": "Python чөйрөсү жүктөлүүдө (биринчи иштетүү бир нече секундга созулат)…",
+  "widget.python.status.running": "Иштеп жатат…",
+  "widget.python.done": "{time} ичинде бүттү.",
+  "widget.python.nooutput": "(чыгарылыш жок)",
+  "widget.python.error": "Бир нерсе туура эмес болду — чыгарылышты кара.",
+  "widget.python.aria": "Python код редактору",
+
+  // ---- seo ----
+  "seo.share.alt": "Thread Academy — акысыз мектеп сабактары, иштетилген мисалдар жана практикалык суроолор, 7–12-класстар.",
+  "seo.site.desc": "Акысыз мектеп предметтерин кайталоо: 7–12-класстар үчүн бөлүмдөргө бөлүнгөн сабактар, иштетилген мисалдар жана практикалык суроолор.",
+};
+
+import type { Lang } from "./i18n";
+
+export const STRINGS: Record<Lang, Dict> = { en, tr, ru, ky };
+
+/** Look up a UI string. Falls back to English, then to the key itself. */
+export function t(lang: Lang, key: string, vars?: Record<string, string | number>): string {
+  let s = STRINGS[lang][key] ?? STRINGS.en[key] ?? key;
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      s = s.replaceAll(`{${k}}`, String(v));
+    }
+  }
+  return s;
+}
+
+type PluralForm = "one" | "few" | "many" | "other";
+
+/** Russian distinguishes one/few/many; other languages use one/other. */
+function pluralForm(lang: Lang, n: number): PluralForm {
+  if (lang === "ru") {
+    const mod10 = Math.abs(n) % 10;
+    const mod100 = Math.abs(n) % 100;
+    if (mod10 === 1 && mod100 !== 11) return "one";
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return "few";
+    return "many";
+  }
+  return n === 1 ? "one" : "other";
+}
+
+/**
+ * Plural-aware lookup: key "k" resolves "k.one" / "k.few" / "k.many" / "k.other".
+ * `{n}` is always available in vars.
+ */
+export function tn(lang: Lang, key: string, n: number, vars?: Record<string, string | number>): string {
+  const form = pluralForm(lang, n);
+  const d = STRINGS[lang];
+  const s =
+    d[`${key}.${form}`] ??
+    d[`${key}.other`] ??
+    STRINGS.en[`${key}.${form}`] ??
+    STRINGS.en[`${key}.other`] ??
+    key;
+  const withN = s.replaceAll("{n}", String(n));
+  if (!vars) return withN;
+  return withN.replaceAll(/\{(\w+)\}/g, (_m, k: string) => (k in vars ? String(vars[k]) : `{${k}}`));
+}

@@ -8,6 +8,8 @@
  */
 import type { ChapterResources, WorksheetQuestion } from "./types";
 import { getAvailableTopics } from "./content";
+import type { Lang } from "./i18n";
+import { t } from "./strings";
 
 /** Real YouTube search URLs only — never invented video URLs. */
 function youTubeSearch(query: string): string {
@@ -145,20 +147,21 @@ const REVISION: Record<string, string[]> = {
 export function getChapterResources(
   subjectSlug: string,
   chapterId: string,
+  lang: Lang = "en",
 ): ChapterResources {
-  const notes = getAvailableTopics({ subject: subjectSlug, chapter: chapterId });
+  const notes = getAvailableTopics({ subject: subjectSlug, chapter: chapterId }, lang);
 
-  const videos = notes.map((t) => ({
-    title: `${t.title} — explained`,
-    url: youTubeSearch(`${t.title} ${chapterId.replace(/-/g, " ")} explained`),
+  const videos = notes.map((note) => ({
+    title: t(lang, "cres.video.title", { title: note.title }),
+    url: youTubeSearch(`${note.title} ${chapterId.replace(/-/g, " ")} explained`),
   }));
 
   const tools =
     subjectSlug === "mathematics" && chapterId === "algebra"
       ? [
           {
-            title: "Linear equation solver",
-            desc: "Type any linear equation and watch it solved step by step — then try the steps yourself.",
+            title: t(lang, "widget.solver.title"),
+            desc: t(lang, "cres.tools.solver.desc"),
             anchor: "#interactive-tools",
           },
         ]
@@ -167,7 +170,7 @@ export function getChapterResources(
   const revision =
     REVISION[chapterId] ??
     notes.flatMap((t) => [`${t.title}: ${t.desc}`]).concat([
-      "Read each lesson's summary and re-do its practice questions from memory.",
+      t(lang, "cres.revision.fallback"),
     ]);
 
   return {

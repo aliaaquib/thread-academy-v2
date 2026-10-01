@@ -6,6 +6,8 @@
 
 import { useState, isValidElement } from "react";
 import type { ReactNode } from "react";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/strings";
 
 /**
  * Pull plain text out of whatever MDX hands us. MDX compiles block-level
@@ -21,10 +23,12 @@ function textOf(node: ReactNode): string {
   return "";
 }
 
-/** Dark .code-block with language label + copy button. */
-export function CodeBlock({ lang = "Code", children }: { lang?: string; children?: ReactNode }) {
+/** Dark .code-block with language label + copy button.
+ *  `lang` is the code caption ("Python"); `uiLang` is the page language. */
+export function CodeBlock({ lang, children, uiLang = "en" }: { lang?: string; children?: ReactNode; uiLang?: Lang }) {
   const [copied, setCopied] = useState(false);
   const code = textOf(children).replace(/^\n+|\n+$/g, "");
+  const label = lang ?? t(uiLang, "tb.code");
 
   const copy = async () => {
     try {
@@ -39,9 +43,9 @@ export function CodeBlock({ lang = "Code", children }: { lang?: string; children
   return (
     <div className="code-block">
       <div className="code-head">
-        <span>{lang}</span>
+        <span>{label}</span>
         <button type="button" className="copy-btn" onClick={copy}>
-          {copied ? "Copied ✓" : "Copy"}
+          {copied ? t(uiLang, "tb.copied") : t(uiLang, "tb.copy")}
         </button>
       </div>
       <pre>{code}</pre>

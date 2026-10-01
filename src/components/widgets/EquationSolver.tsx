@@ -5,6 +5,8 @@
 "use client";
 
 import { useState } from "react";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/strings";
 
 interface Step {
   text: string;
@@ -85,44 +87,41 @@ function fmtTerm(coef: number, constant: number): string {
   return parts.join("");
 }
 
-/** Solve ax + b = cx + d, returning human-readable steps. */
-function solve(equation: string): Step[] | { error: string } {
+/** Solve ax + b = cx + d, returning human-readable steps in the page language. */
+function solve(equation: string, lang: Lang): Step[] | { error: string } {
   const sides = equation.split("=");
-  if (sides.length !== 2) return { error: "Write the equation with exactly one '=' sign, e.g. 3x + 2 = 14." };
+  if (sides.length !== 2) return { error: t(lang, "widget.solver.error.equals") };
   const L = parseSide(sides[0]);
   const R = parseSide(sides[1]);
   if (!L || !R) {
-    return {
-      error:
-        "I can only solve linear equations in x — like 3x + 2 = 14, x/2 − 5 = 11 or 2(x + 3) = 4x − 1.",
-    };
+    return { error: t(lang, "widget.solver.error.linear") };
   }
   const steps: Step[] = [];
-  steps.push({ text: `Start:  ${fmtTerm(L.a, L.b)} = ${fmtTerm(R.a, R.b)}` });
+  steps.push({ text: `${t(lang, "widget.solver.start")}  ${fmtTerm(L.a, L.b)} = ${fmtTerm(R.a, R.b)}` });
 
   const a = L.a - R.a; // bring x-terms left
   const b = R.b - L.b; // bring constants right
-  if (R.a !== 0) steps.push({ text: `Collect the x-terms on the left:  ${fmtTerm(a, 0)} = ${fmt(b)}` });
-  else if (L.b !== 0 || R.b !== 0) steps.push({ text: `Isolate the x-term:  ${fmtTerm(a, 0)} = ${fmt(b)}` });
+  if (R.a !== 0) steps.push({ text: `${t(lang, "widget.solver.collect")}  ${fmtTerm(a, 0)} = ${fmt(b)}` });
+  else if (L.b !== 0 || R.b !== 0) steps.push({ text: `${t(lang, "widget.solver.isolate")}  ${fmtTerm(a, 0)} = ${fmt(b)}` });
 
   if (a === 0) {
-    if (b === 0) return [{ text: "0 = 0 — every value of x works. Infinitely many solutions!", result: true }];
-    return [{ text: `${fmt(b)} = 0 is false — no value of x can satisfy this equation.`, result: true }];
+    if (b === 0) return [{ text: t(lang, "widget.solver.infinite"), result: true }];
+    return [{ text: t(lang, "widget.solver.nosolution", { expr: `${fmt(b)} = 0` }), result: true }];
   }
   const x = b / a;
-  if (a !== 1) steps.push({ text: `Divide both sides by ${fmt(a)}:  x = ${fmt(b)} ÷ ${fmt(a)}` });
+  if (a !== 1) steps.push({ text: `${t(lang, "widget.solver.divide", { a: fmt(a) })}  x = ${fmt(b)} ÷ ${fmt(a)}` });
   steps.push({ text: `x = ${fmt(x)}`, result: true });
   return steps;
 }
 
 /** Client-side linear equation solver / balancer, styled to the design. */
-export default function EquationSolver() {
+export default function EquationSolver({ lang = "en" }: { lang?: Lang }) {
   const [input, setInput] = useState("3x + 2 = 14");
   const [steps, setSteps] = useState<Step[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const run = () => {
-    const res = solve(input);
+    const res = solve(input, lang);
     if ("error" in res) {
       setError(res.error);
       setSteps(null);
@@ -135,8 +134,8 @@ export default function EquationSolver() {
   return (
     <div className="solver">
       <div className="solver-head">
-        <strong>Linear equation solver</strong>
-        <span>Type any linear equation in x — it is solved step by step, entirely in your browser.</span>
+        <strong>{t(lang, "widget.solver.title")}</strong>
+        <span>{t(lang, "widget.solver.desc")}</span>
       </div>
       <div className="solver-body">
         <form
@@ -149,11 +148,11 @@ export default function EquationSolver() {
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            aria-label="Linear equation"
+            aria-label={t(lang, "widget.solver.aria")}
             placeholder="e.g. 3x + 2 = 14"
             spellCheck={false}
           />
-          <button type="submit" className="run-btn">Solve</button>
+          <button type="submit" className="run-btn">{t(lang, "widget.solver.solve")}</button>
         </form>
         {error && <p className="solver-error">{error}</p>}
         {steps && (

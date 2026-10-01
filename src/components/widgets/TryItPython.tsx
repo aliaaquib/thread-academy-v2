@@ -5,6 +5,8 @@
 "use client";
 
 import { useRef, useState } from "react";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/strings";
 
 const PYODIDE_VERSION = "0.27.5";
 const PYODIDE_CDN = `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full/`;
@@ -51,15 +53,17 @@ export default function TryItPython({
   title,
   subtitle,
   initialCode,
+  lang = "en",
 }: {
   title: string;
   subtitle?: string;
   initialCode: string;
+  lang?: Lang;
 }) {
   const [code, setCode] = useState(initialCode);
   const [output, setOutput] = useState("");
   const [showOutput, setShowOutput] = useState(false);
-  const [status, setStatus] = useState("Ready — press Run.");
+  const [status, setStatus] = useState(t(lang, "widget.python.ready"));
   const [running, setRunning] = useState(false);
   const pyRef = useRef<PyodideInstance | null>(null);
 
@@ -69,22 +73,22 @@ export default function TryItPython({
     setOutput("");
     try {
       if (!pyRef.current) {
-        setStatus("Loading Python runtime (first run takes a few seconds)…");
+        setStatus(t(lang, "widget.python.loading"));
         pyRef.current = await ensurePyodide();
       }
-      setStatus("Running…");
+      setStatus(t(lang, "widget.python.status.running"));
       let out = "";
       pyRef.current.setStdout({ batched: (s: string) => { out += s + "\n"; } });
       pyRef.current.setStderr({ batched: (s: string) => { out += s + "\n"; } });
       await pyRef.current.runPythonAsync(code);
-      setOutput(out.trimEnd() || "(no output)");
-      setStatus("Done in " + new Date().toLocaleTimeString() + ".");
+      setOutput(out.trimEnd() || t(lang, "widget.python.nooutput"));
+      setStatus(t(lang, "widget.python.done", { time: new Date().toLocaleTimeString() }));
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       // Pyodide prefixes Python tracebacks; keep the useful tail.
       const tail = message.split("\n").slice(-6).join("\n");
       setOutput(tail || message);
-      setStatus("Something went wrong — see the output.");
+      setStatus(t(lang, "widget.python.error"));
     } finally {
       setShowOutput(true);
       setRunning(false);
@@ -101,11 +105,11 @@ export default function TryItPython({
         value={code}
         onChange={(e) => setCode(e.target.value)}
         spellCheck={false}
-        aria-label="Python code editor"
+        aria-label={t(lang, "widget.python.aria")}
       />
       <div className="tryit-foot">
         <button type="button" className="run-btn" onClick={run} disabled={running}>
-          {running ? "Running…" : "Run"}
+          {running ? t(lang, "widget.python.running") : t(lang, "widget.python.run")}
         </button>
         <span className="tryit-status">{status}</span>
       </div>

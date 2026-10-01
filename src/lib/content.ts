@@ -2,6 +2,8 @@
  * READS THE LESSON FILES from the content/ folder.
  *
  * Lessons live at: content/subject/<subject>/grade-<n>/<chapter>/<topic>.mdx
+ * Translated lessons live at: content/<lang>/subject/<subject>/grade-<n>/<chapter>/<topic>.mdx
+ * (lang = "tr" | "ru" | "ky"). English keeps the original unprefixed paths.
  * This file finds and reads them. You never edit this file to change content —
  * just add or edit the .mdx files and rebuild the site.
  */
@@ -12,11 +14,18 @@ import { getChapterTopics } from "./chapters";
 import { SUBJECT_SLUGS } from "./subjects";
 import { getChaptersForSubject } from "./stage-chapters";
 import { getGradeForChapter, gradeSlug } from "./grades";
+import type { Lang } from "./i18n";
+import { withLang } from "./i18n";
 import type { TopicWithContent } from "./types";
 
-/** Absolute path to the content/ directory (project root). */
-export function contentRoot(): string {
-  return path.join(process.cwd(), "content");
+/**
+ * Absolute path to the content/ directory (project root).
+ * Each non-English language has its own parallel tree: content/<lang>/.
+ */
+export function contentRoot(lang: Lang = "en"): string {
+  return lang === "en"
+    ? path.join(process.cwd(), "content")
+    : path.join(process.cwd(), "content", lang);
 }
 
 export interface TopicParams {
@@ -27,21 +36,22 @@ export interface TopicParams {
 
 /**
  * Lesson files live once per chapter at
- * content/subject/<subject>/grade-<n>/<chapter>/<topic>.mdx.
+ * content/subject/<subject>/grade-<n>/<chapter>/<topic>.mdx
+ * (or content/<lang>/subject/... for translated lessons).
  */
-function chapterDir(p: Omit<TopicParams, "topic">): string | null {
+function chapterDir(p: Omit<TopicParams, "topic">, lang: Lang = "en"): string | null {
   const grade = getGradeForChapter(p.subject, p.chapter);
   if (!grade) return null;
-  return path.join(contentRoot(), "subject", p.subject, gradeSlug(grade), p.chapter);
+  return path.join(contentRoot(lang), "subject", p.subject, gradeSlug(grade), p.chapter);
 }
 
-function topicFile(p: TopicParams): string | null {
-  const dir = chapterDir(p);
+function topicFile(p: TopicParams, lang: Lang = "en"): string | null {
+  const dir = chapterDir(p, lang);
   return dir ? path.join(dir, `${p.topic}.mdx`) : null;
 }
 
-export function topicExists(p: TopicParams): boolean {
-  const file = topicFile(p);
+export function topicExists(p: TopicParams, lang: Lang = "en"): boolean {
+  const file = topicFile(p, lang);
   return !!file && fs.existsSync(file);
 }
 
@@ -49,9 +59,9 @@ export function topicExists(p: TopicParams): boolean {
  * Last-modified time of a topic's .mdx file (used as the sitemap lastmod).
  * Falls back to build time when the file is missing.
  */
-export function topicFileMtime(p: TopicParams): Date {
+export function topicFileMtime(p: TopicParams, lang: Lang = "en"): Date {
   try {
-    const file = topicFile(p);
+    const file = topicFile(p, lang);
     if (file) return fs.statSync(file).mtime;
   } catch {
     /* fall through to the default below */
@@ -66,8 +76,8 @@ export interface TopicContent {
 }
 
 /** Read + parse an MDX topic file (frontmatter: title, lede). */
-export function getTopicContent(p: TopicParams): TopicContent | null {
-  const file = topicFile(p);
+export function getTopicContent(p: TopicParams, lang: Lang = "en"): TopicContent | null {
+  const file = topicFile(p, lang);
   if (!file || !fs.existsSync(file)) return null;
   const raw = fs.readFileSync(file, "utf8");
   const { data, content } = matter(raw);
@@ -79,8 +89,8 @@ export function getTopicContent(p: TopicParams): TopicContent | null {
 }
 
 /** Slugs of topics that actually have MDX files for this chapter. */
-export function existingTopicSlugs(p: Omit<TopicParams, "topic">): string[] {
-  const dir = chapterDir(p);
+export function existingTopicSlugs(p: Omit<TopicParams, "topic">, lang: Lang = "en"): string[] {
+  const dir = chapterDir(p, lang);
   if (!dir || !fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
@@ -93,25 +103,25 @@ export function existingTopicSlugs(p: Omit<TopicParams, "topic">): string[] {
  * Canonical topic metadata (from chapters.ts) filtered to topics that
  * actually have MDX content — so sidebars and lists never link to dead ends.
  */
-export function getAvailableTopics(p: Omit<TopicParams, "topic">): TopicWithContent[] {
-  const existing = new Set(existingTopicSlugs(p));
+export function getAvailableTopics(p: Omit<TopicParams, "topic">, lang: Lang = "en"): TopicWithContent[] {
+  const existing = new Set(existingTopicSlugs(p, lang));
   const grade = getGradeForChapter(p.subject, p.chapter);
   const chapterBase = grade
     ? `/subjects/${p.subject}/${gradeSlug(grade)}/${p.chapter}`
     : `/subjects/${p.subject}/${p.chapter}`;
-  return getChapterTopics(p.chapter)
+  return getChapterTopics(p.chapter, lang)
     .filter((t) => existing.has(t.slug))
     .map((t) => ({
       ...t,
-      url: `${chapterBase}/${t.slug}`,
+      url: withLang(`${chapterBase}/${t.slug}`, lang),
     }));
 }
 
 /** Every (subject, chapter) chapter page on the site. */
-export function allSubjectChapters(): Omit<TopicParams, "topic">[] {
+export function allSubjectChapters(lang: Lang = "en"): Omit<TopicParams, "topic">[] {
   const combos: Omit<TopicParams, "topic">[] = [];
   for (const subject of SUBJECT_SLUGS) {
-    for (const chapter of getChaptersForSubject(subject)) {
+    for (const chapter of getChaptersForSubject(subject, lang)) {
       combos.push({ subject, chapter: chapter.id });
     }
   }
@@ -119,9 +129,9 @@ export function allSubjectChapters(): Omit<TopicParams, "topic">[] {
 }
 
 /** Every topic that has an MDX file — for generateStaticParams. */
-export function getAllTopicParams(): TopicParams[] {
+export function getAllTopicParams(lang: Lang = "en"): TopicParams[] {
   const out: TopicParams[] = [];
-  const subjectRoot = path.join(contentRoot(), "subject");
+  const subjectRoot = path.join(contentRoot(lang), "subject");
   if (!fs.existsSync(subjectRoot)) return out;
   for (const subject of fs.readdirSync(subjectRoot)) {
     const sDir = path.join(subjectRoot, subject);
@@ -142,6 +152,19 @@ export function getAllTopicParams(): TopicParams[] {
   return out;
 }
 
+/**
+ * The languages in which a lesson genuinely exists (has a translated file).
+ * Used for hreflang alternates — never claims a translation that isn't there.
+ */
+export function topicLangs(subject: string, chapter: string, topic: string): Lang[] {
+  const langs: Lang[] = ["en", "tr", "ru", "ky"];
+  return langs.filter((l) =>
+    getAllTopicParams(l).some(
+      (p) => p.subject === subject && p.chapter === chapter && p.topic === topic
+    )
+  );
+}
+
 export interface SubjectChapter {
   subject: string;
   chapter: string;
@@ -151,9 +174,9 @@ export interface SubjectChapter {
 }
 
 /** Every (subject, chapter) with at least one MDX topic. */
-export function getContentChapters(): SubjectChapter[] {
+export function getContentChapters(lang: Lang = "en"): SubjectChapter[] {
   const seen = new Map<string, SubjectChapter>();
-  for (const p of getAllTopicParams()) {
+  for (const p of getAllTopicParams(lang)) {
     const key = `${p.subject}/${p.chapter}`;
     const entry = seen.get(key);
     if (entry) entry.topicCount += 1;

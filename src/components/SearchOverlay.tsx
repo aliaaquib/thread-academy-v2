@@ -6,6 +6,8 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { langMeta, withLang, type Lang } from "@/lib/i18n";
+import { t } from "@/lib/strings";
 
 interface IndexEntry {
   kind: string;
@@ -22,10 +24,12 @@ export function SearchOverlay({
   open,
   initialQuery = "",
   onClose,
+  lang,
 }: {
   open: boolean;
   initialQuery?: string;
   onClose: () => void;
+  lang: Lang;
 }) {
   const [query, setQuery] = useState(initialQuery);
   const [index, setIndex] = useState<IndexEntry[]>([]);
@@ -34,13 +38,13 @@ export function SearchOverlay({
   useEffect(() => {
     if (!open) return;
     setQuery(initialQuery);
-    fetch("/search-index.json")
+    fetch(withLang("/search-index.json", lang))
       .then((r) => (r.ok ? r.json() : []))
       .then((data: IndexEntry[]) => setIndex(Array.isArray(data) ? data : []))
       .catch(() => setIndex([]));
     const t = setTimeout(() => inputRef.current?.focus(), 40);
     return () => clearTimeout(t);
-  }, [open, initialQuery]);
+  }, [open, initialQuery, lang]);
 
   useEffect(() => {
     if (!open) return;
@@ -53,11 +57,15 @@ export function SearchOverlay({
 
   if (!open) return null;
 
-  const q = query.trim().toLowerCase();
+  const locale = langMeta(lang).locale;
+  const q = query.trim().toLocaleLowerCase(locale);
   const results = !q
     ? []
     : index
-        .filter((e) => e.text.toLowerCase().includes(q) || e.title.toLowerCase().includes(q))
+        .filter(
+          (e) =>
+            e.text.includes(q) || e.title.toLocaleLowerCase(locale).includes(q)
+        )
         .slice(0, 12);
 
   return (
@@ -65,7 +73,7 @@ export function SearchOverlay({
       className="search-overlay open"
       role="dialog"
       aria-modal="true"
-      aria-label="Search lessons"
+      aria-label={t(lang, "overlay.aria")}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -83,20 +91,20 @@ export function SearchOverlay({
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search subjects, chapters, and topics"
-              aria-label="Search lessons"
+              placeholder={t(lang, "overlay.placeholder")}
+              aria-label={t(lang, "overlay.aria")}
             />
             <button className="search-submit" type="submit">
-              Search
+              {t(lang, "overlay.button")}
             </button>
           </form>
-          <button className="close-search" onClick={onClose} aria-label="Close search">
+          <button className="close-search" onClick={onClose} aria-label={t(lang, "overlay.close")}>
             ✕
           </button>
         </div>
         <div className="search-results">
           {!q ? (
-            <div className="empty">Try &ldquo;linear equations&rdquo;, &ldquo;cell structure&rdquo;, &ldquo;Newton&rsquo;s laws&rdquo;, or &ldquo;variables&rdquo;.</div>
+            <div className="empty">{t(lang, "overlay.empty")}</div>
           ) : results.length > 0 ? (
             results.map((r) => (
               <Link key={r.url} className="search-result" href={r.url} onClick={onClose}>
@@ -105,7 +113,7 @@ export function SearchOverlay({
               </Link>
             ))
           ) : (
-            <div className="empty">No matching educational content yet. Try a subject, chapter, or broader topic.</div>
+            <div className="empty">{t(lang, "overlay.none")}</div>
           )}
         </div>
       </div>

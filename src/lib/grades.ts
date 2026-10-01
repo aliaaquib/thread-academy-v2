@@ -8,6 +8,7 @@
  */
 import type { Chapter } from "./types";
 import { getChapterForSubject } from "./stage-chapters";
+import type { Lang } from "./i18n";
 
 /** School grades offered after subject selection. */
 export const GRADES = [7, 8, 9, 10, 11, 12] as const;
@@ -146,19 +147,22 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
 };
 
 /** Chapters for one grade of a subject, easiest-first. */
-export function getChaptersForGrade(subjectSlug: string, grade: number): Chapter[] {
+export function getChaptersForGrade(subjectSlug: string, grade: number, lang: Lang = "en"): Chapter[] {
   const ids = GRADE_CHAPTER_IDS[subjectSlug]?.[grade] ?? [];
   const out: Chapter[] = [];
   for (const id of ids) {
-    const c = getChapterForSubject(subjectSlug, id);
+    const c = getChapterForSubject(subjectSlug, id, lang);
     if (c) out.push(c);
   }
   return out;
 }
 
 /** Every grade of a subject with its chapters. */
-export function getGradesForSubject(subjectSlug: string): { grade: Grade; chapters: Chapter[] }[] {
-  return GRADES.map((grade) => ({ grade, chapters: getChaptersForGrade(subjectSlug, grade) }));
+export function getGradesForSubject(
+  subjectSlug: string,
+  lang: Lang = "en",
+): { grade: Grade; chapters: Chapter[] }[] {
+  return GRADES.map((grade) => ({ grade, chapters: getChaptersForGrade(subjectSlug, grade, lang) }));
 }
 
 /** Which grade a chapter belongs to (each chapter lives in exactly one grade). */

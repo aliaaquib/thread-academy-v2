@@ -3,6 +3,8 @@
  * a lesson or blog post. Every link is built from real chapter data.
  */
 import Link from "next/link";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/strings";
 
 export interface RelatedLink {
   title: string;
@@ -10,7 +12,7 @@ export interface RelatedLink {
 }
 
 /** Related-topic rows in the reference chapter-link language. */
-export function RelatedTopics({ items }: { items: RelatedLink[] }) {
+export function RelatedTopics({ items, lang = "en" }: { items: RelatedLink[]; lang?: Lang }) {
   if (!items || items.length === 0) return null;
   return (
     <div className="chapters" style={{ marginTop: 8 }}>
@@ -22,7 +24,7 @@ export function RelatedTopics({ items }: { items: RelatedLink[] }) {
               {item.title}
             </span>
           </span>
-          <span className="chapter-status">Read lesson →</span>
+          <span className="chapter-status">{t(lang, "tb.read.lesson")}</span>
         </Link>
       ))}
     </div>

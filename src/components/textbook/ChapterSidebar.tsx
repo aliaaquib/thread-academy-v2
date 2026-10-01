@@ -3,6 +3,8 @@
  * the chapter, with the current one highlighted, plus a back link to the grade.
  */
 import Link from "next/link";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/strings";
 
 export interface SidebarTopic {
   slug: string;
@@ -20,6 +22,7 @@ export function ChapterSidebar({
   currentSlug,
   backHref,
   backLabel,
+  lang = "en",
 }: {
   subjectName: string;
   chapterTitle: string;
@@ -27,12 +30,13 @@ export function ChapterSidebar({
   currentSlug: string;
   backHref?: string;
   backLabel?: string;
+  lang?: Lang;
 }) {
   return (
-    <aside className="lesson-sidebar" aria-label="Chapter lessons">
+    <aside className="lesson-sidebar" aria-label={t(lang, "topic.sidebar.aria")}>
       {backHref && (
         <Link className="side-back" href={backHref}>
-          ← {backLabel ?? "Back"}
+          ← {backLabel ?? t(lang, "common.back")}
         </Link>
       )}
       <div className="side-title">{subjectName}</div>

@@ -7,10 +7,11 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { SearchOverlay } from "./SearchOverlay";
+import type { Lang } from "@/lib/i18n";
 
 /** Mounts the reference search overlay once for the whole site and opens it
  *  whenever any `thread-academy:open-search` event fires. */
-export function SearchOverlayHost() {
+export function SearchOverlayHost({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
   const [initialQuery, setInitialQuery] = useState("");
 
@@ -26,5 +27,5 @@ export function SearchOverlayHost() {
     return () => window.removeEventListener("thread-academy:open-search", onOpen);
   }, []);
 
-  return <SearchOverlay open={open} initialQuery={initialQuery} onClose={close} />;
+  return <SearchOverlay open={open} initialQuery={initialQuery} onClose={close} lang={lang} />;
 }

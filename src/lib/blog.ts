@@ -11,6 +11,9 @@ import matter from "gray-matter";
 import { contentRoot, getTopicContent } from "./content";
 import { getChapterForSubject } from "./stage-chapters";
 import { getGradeForChapter, gradeSlug } from "./grades";
+import type { Lang } from "./i18n";
+import { withLang } from "./i18n";
+import { t } from "./strings";
 
 export interface BlogPostMeta {
   slug: string;
@@ -35,8 +38,8 @@ export interface BlogPost extends BlogPostMeta {
   source: string;
 }
 
-function blogDir(): string {
-  return path.join(contentRoot(), "blog");
+function blogDir(lang: Lang = "en"): string {
+  return path.join(contentRoot(lang), "blog");
 }
 
 function readPost(file: string): BlogPost | null {
@@ -70,8 +73,8 @@ function readPost(file: string): BlogPost | null {
 }
 
 /** All blog posts, newest first. */
-export function getAllPosts(): BlogPostMeta[] {
-  const dir = blogDir();
+export function getAllPosts(lang: Lang = "en"): BlogPostMeta[] {
+  const dir = blogDir(lang);
   if (!fs.existsSync(dir)) return [];
   const posts: BlogPostMeta[] = [];
   for (const f of fs.readdirSync(dir)) {
@@ -87,21 +90,30 @@ export function getAllPosts(): BlogPostMeta[] {
 }
 
 /** All blog slugs — for generateStaticParams. */
-export function getPostSlugs(): string[] {
-  return getAllPosts().map((p) => p.slug);
+/**
+ * The languages in which a blog post genuinely exists (has a translated file).
+ * Used for hreflang alternates — never claims a translation that isn't there.
+ */
+export function postLangs(slug: string): Lang[] {
+  const langs: Lang[] = ["en", "tr", "ru", "ky"];
+  return langs.filter((l) => getPostSlugs(l).includes(slug));
+}
+
+export function getPostSlugs(lang: Lang = "en"): string[] {
+  return getAllPosts(lang).map((p) => p.slug);
 }
 
 /** Full post (meta + MDX source) for a slug. */
-export function getPost(slug: string): BlogPost | null {
-  const file = path.join(blogDir(), `${slug}.mdx`);
+export function getPost(slug: string, lang: Lang = "en"): BlogPost | null {
+  const file = path.join(blogDir(lang), `${slug}.mdx`);
   if (!fs.existsSync(file)) return null;
   return readPost(file);
 }
 
 /** Posts grouped by subject, preserving newest-first order within groups. */
-export function getPostsBySubject(): { subject: string; subjectSlug: string; posts: BlogPostMeta[] }[] {
+export function getPostsBySubject(lang: Lang = "en"): { subject: string; subjectSlug: string; posts: BlogPostMeta[] }[] {
   const groups = new Map<string, { subject: string; subjectSlug: string; posts: BlogPostMeta[] }>();
-  for (const post of getAllPosts()) {
+  for (const post of getAllPosts(lang)) {
     const key = post.subjectSlug || post.subject;
     const entry = groups.get(key);
     if (entry) entry.posts.push(post);
@@ -111,8 +123,8 @@ export function getPostsBySubject(): { subject: string; subjectSlug: string; pos
 }
 
 /** Lesson (topic) page title from its MDX frontmatter. */
-function lessonTitle(subjectSlug: string, chapterId: string, topicId: string): string {
-  const content = getTopicContent({ subject: subjectSlug, chapter: chapterId, topic: topicId });
+function lessonTitle(subjectSlug: string, chapterId: string, topicId: string, lang: Lang = "en"): string {
+  const content = getTopicContent({ subject: subjectSlug, chapter: chapterId, topic: topicId }, lang);
   if (content && content.title) return content.title;
   return topicId
     .split("-")
@@ -130,35 +142,41 @@ export interface RelatedLink {
  * chapter pages, then the subject page. Every href is derived from the
  * site's real chapter data, so links never 404.
  */
-export function getRelatedLinks(post: BlogPostMeta): RelatedLink[] {
+export function getRelatedLinks(post: BlogPostMeta, lang: Lang = "en"): RelatedLink[] {
   const links: RelatedLink[] = [];
   const coveredChapters = new Set<string>();
 
   for (const pair of post.lessons) {
     const [chapterId, topicId] = pair.split("/");
     if (!chapterId || !topicId) continue;
-    const chapter = getChapterForSubject(post.subjectSlug, chapterId);
+    const chapter = getChapterForSubject(post.subjectSlug, chapterId, lang);
     if (!chapter) continue;
     const grade = getGradeForChapter(post.subjectSlug, chapterId);
     if (!grade) continue;
     coveredChapters.add(chapterId);
     links.push({
-      title: lessonTitle(post.subjectSlug, chapterId, topicId),
-      href: `/subjects/${post.subjectSlug}/${gradeSlug(grade)}/${chapterId}/${topicId}`,
+      title: lessonTitle(post.subjectSlug, chapterId, topicId, lang),
+      href: withLang(`/subjects/${post.subjectSlug}/${gradeSlug(grade)}/${chapterId}/${topicId}`, lang),
     });
   }
 
   for (const chapterId of post.chapters) {
     if (coveredChapters.has(chapterId)) continue;
-    const chapter = getChapterForSubject(post.subjectSlug, chapterId);
+    const chapter = getChapterForSubject(post.subjectSlug, chapterId, lang);
     if (!chapter) continue;
     const grade = getGradeForChapter(post.subjectSlug, chapterId);
     if (!grade) continue;
-    links.push({ title: chapter.title, href: `/subjects/${post.subjectSlug}/${gradeSlug(grade)}/${chapterId}` });
+    links.push({
+      title: chapter.title,
+      href: withLang(`/subjects/${post.subjectSlug}/${gradeSlug(grade)}/${chapterId}`, lang),
+    });
   }
 
   if (post.subject) {
-    links.push({ title: `${post.subject} — full subject`, href: `/subjects/${post.subjectSlug}` });
+    links.push({
+      title: t(lang, "blog.post.full", { subject: post.subject }),
+      href: withLang(`/subjects/${post.subjectSlug}`, lang),
+    });
   }
   return links;
 }

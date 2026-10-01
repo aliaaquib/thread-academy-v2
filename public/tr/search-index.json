@@ -1,0 +1,93 @@
+[
+ {
+  "kind": "subject",
+  "title": "Biology",
+  "path": "Dersler",
+  "url": "/tr/subjects/biology",
+  "text": "biology the science of living things. biology is the study of life — from the microscopic machinery inside a single cell to entire ecosystems. you'll learn how living things are built, how they work, and how they interact with each other and their environment. cell biology organisation bioenergetics ınheritance & genetics ecology"
+ },
+ {
+  "kind": "subject",
+  "title": "Chemistry",
+  "path": "Dersler",
+  "url": "/tr/subjects/chemistry",
+  "text": "chemistry what stuff is made of — and why it reacts. chemistry explains the material world: the atoms everything is built from, how they bond into molecules, and why substances transform in reactions. you'll move from particles you can't see to predictions you can test. atomic structure the periodic table chemical bonding chemical changes quantitative chemistry"
+ },
+ {
+  "kind": "subject",
+  "title": "Computer Science",
+  "path": "Dersler",
+  "url": "/tr/subjects/computer-science",
+  "text": "computer science how computers think — and how to make them do what you want. computer science is about solving problems precisely. you'll learn how to break problems down, write programs in python, and understand the ideas — from variables to functions — that every piece of software is built on. computational thinking programming fundamentals algorithms data representation"
+ },
+ {
+  "kind": "subject",
+  "title": "Economics",
+  "path": "Dersler",
+  "url": "/tr/subjects/economics",
+  "text": "economics how choices, markets and money shape the world. economics studies how people, businesses and governments make choices when resources are scarce. from the price of bread to national inflation, you'll learn the models economists use — and their limits. microeconomics macroeconomics"
+ },
+ {
+  "kind": "subject",
+  "title": "English",
+  "path": "Dersler",
+  "url": "/tr/subjects/english",
+  "text": "english read deeply. write clearly. argue well. english builds the two skills everything else depends on: understanding what you read and expressing what you think. you'll analyse texts, craft essays and stories, and master the mechanics of powerful sentences. reading skills writing skills grammar & vocabulary"
+ },
+ {
+  "kind": "subject",
+  "title": "Geography",
+  "path": "Dersler",
+  "url": "/tr/subjects/geography",
+  "text": "geography the planet, its people and the forces connecting them. geography connects the physical planet with human life. you'll study rivers and coasts alongside cities and development, learning to explain patterns — and to evaluate the big challenges facing the world. physical geography weather & climate human geography"
+ },
+ {
+  "kind": "subject",
+  "title": "History",
+  "path": "Dersler",
+  "url": "/tr/subjects/history",
+  "text": "history what happened — and why it still matters. history is the study of how the modern world was made. you'll investigate revolutions and empires, learn to weigh evidence like a historian, and practise building arguments from sources rather than opinions. the modern world the twentieth century working with sources"
+ },
+ {
+  "kind": "subject",
+  "title": "Mathematics",
+  "path": "Dersler",
+  "url": "/tr/subjects/mathematics",
+  "text": "mathematics the language of patterns — from algebra to geometry. mathematics trains you to reason precisely. start with number and arithmetic, master algebra — the art of working with unknowns — then explore geometry, statistics and probability, where patterns and chance follow strict, beautiful rules. number & arithmetic algebra geometry statistics probability"
+ },
+ {
+  "kind": "subject",
+  "title": "Physics",
+  "path": "Dersler",
+  "url": "/tr/subjects/physics",
+  "text": "physics the rules the universe plays by. physics is the study of matter, energy and how they interact. from the forces that move a football to the waves that carry light, you'll learn to describe the physical world with precision — and to predict what happens next. forces motion energy waves electricity"
+ },
+ {
+  "kind": "subject",
+  "title": "Political Science",
+  "path": "Dersler",
+  "url": "/tr/subjects/political-science",
+  "text": "political science power, government and how decisions get made. political science studies who gets what, when and how. you’ll learn how governments work, why democracies wobble, and how ordinary people can shape the decisions that shape them. power and politics democracy global politics"
+ },
+ {
+  "kind": "subject",
+  "title": "Psychology",
+  "path": "Dersler",
+  "url": "/tr/subjects/psychology",
+  "text": "psychology why people think, feel and behave the way they do. psychology is the science of mind and behaviour. you’ll learn how memory works, why we conform, what emotions are for — and how psychologists know what they claim to know. mind and memory social behaviour development"
+ },
+ {
+  "kind": "subject",
+  "title": "Russian",
+  "path": "Dersler",
+  "url": "/tr/subjects/russian",
+  "text": "russian привет! from tolstoy to space stations. russian uses the cyrillic alphabet — learned in a weekend — and opens up 260 million speakers, great literature, and a rich scientific tradition. cyrillic first steps daily russian"
+ },
+ {
+  "kind": "subject",
+  "title": "Sociology",
+  "path": "Dersler",
+  "url": "/tr/subjects/sociology",
+  "text": "sociology how societies shape the people in them. sociology studies the invisible forces — norms, institutions, inequality — that shape billions of lives. you’ll learn to see the social patterns behind personal troubles. foundations culture and ıdentity ınequality"
+ }
+]

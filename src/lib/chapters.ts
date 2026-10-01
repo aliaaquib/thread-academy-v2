@@ -12,6 +12,8 @@
 
 import type { Topic } from "./types";
 import { EXTRA_TOPICS } from "./chapter-topics-extra";
+import type { Lang } from "./i18n";
+import { getOverlay } from "./i18n";
 
 export const CHAPTER_TOPICS: Record<string, Topic[]> = {
   // ── Mathematics ──
@@ -136,10 +138,20 @@ export const CHAPTER_TOPICS: Record<string, Topic[]> = {
   ],
 };
 
-export function getChapterTopics(chapterId: string): Topic[] {
+export function getChapterTopics(chapterId: string, lang: Lang = "en"): Topic[] {
   const base = CHAPTER_TOPICS[chapterId] ?? [];
   // Hand-written topics always come first; generated ones top the chapter up to four lessons.
-  if (base.length >= 4) return base;
-  const extra = (EXTRA_TOPICS[chapterId] ?? []).filter((t) => !base.some((b) => b.slug === t.slug));
-  return [...base, ...extra].slice(0, 4);
+  let topics: Topic[];
+  if (base.length >= 4) topics = base;
+  else {
+    const extra = (EXTRA_TOPICS[chapterId] ?? []).filter((t) => !base.some((b) => b.slug === t.slug));
+    topics = [...base, ...extra].slice(0, 4);
+  }
+  if (lang === "en") return topics;
+  const overlays = getOverlay(lang)?.topics;
+  if (!overlays) return topics;
+  return topics.map((t) => {
+    const o = overlays[t.slug];
+    return o ? { ...t, title: o.title ?? t.title, desc: o.desc ?? t.desc } : t;
+  });
 }

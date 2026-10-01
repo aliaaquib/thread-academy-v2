@@ -8,6 +8,8 @@
  * stage-chapters.ts and grades.ts, plus its folder under content/subject/.
  */
 import type { Subject, SubjectCategory } from "./types";
+import type { Lang } from "./i18n";
+import { getOverlay } from "./i18n";
 
 /**
  * Subjects, grouped by category. Chapters are subject-level outlines;
@@ -301,12 +303,35 @@ export const SUBJECT_SLUGS = Object.keys(SUBJECTS);
 
 export const CATEGORY_ORDER: SubjectCategory[] = ["STEM", "HUMANITIES", "LANGUAGES"];
 
-export function subjectsByCategory(category: SubjectCategory): Subject[] {
-  return SUBJECT_SLUGS.map((s) => SUBJECTS[s]).filter((s) => s.category === category);
+export function subjectsByCategory(category: SubjectCategory, lang: Lang = "en"): Subject[] {
+  return SUBJECT_SLUGS.map((s) => getSubject(s, lang)).filter(
+    (s): s is Subject => !!s && s.category === category,
+  );
 }
 
-export function getSubject(slug: string): Subject | null {
-  return SUBJECTS[slug] ?? null;
+export function getSubject(slug: string, lang: Lang = "en"): Subject | null {
+  const base = SUBJECTS[slug];
+  if (!base) return null;
+  if (lang === "en") return base;
+  // Teacher-written translations overlay the English text; anything missing
+  // falls back to English rather than inventing content.
+  const overlay = getOverlay(lang);
+  const o = overlay?.subjects[slug];
+  const chapterOverlays = overlay?.chapters;
+  const chapters = chapterOverlays
+    ? base.chapters.map((c) => {
+        const co = chapterOverlays[c.id];
+        return co ? { ...c, title: co.title ?? c.title, desc: co.desc ?? c.desc } : c;
+      })
+    : base.chapters;
+  return {
+    ...base,
+    name: o?.name ?? base.name,
+    tagline: o?.tagline ?? base.tagline,
+    intro: o?.intro ?? base.intro,
+    learn: o?.learn ?? base.learn,
+    chapters,
+  };
 }
 
 export function getChapter(subjectSlug: string, chapterId: string) {

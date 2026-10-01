@@ -9,6 +9,8 @@
  */
 import type { Chapter } from "./types";
 import { getSubject } from "./subjects";
+import type { Lang } from "./i18n";
+import { getOverlay } from "./i18n";
 
 /**
  * Chapter sets per subject — the data behind the Subject → Chapters flow.
@@ -31,7 +33,7 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
       { id: "living-things", title: "Living Things", desc: "What makes something alive? Explore habitats near you." },
       { id: "plants", title: "Plants", desc: "What plants need to grow and stay healthy." },
       { id: "animals-humans", title: "Animals and Humans", desc: "Senses, skeletons and how to stay healthy." },
-],
+    ],
     "developing": [
       { id: "cell-biology", title: "Cell Biology", desc: "The building blocks of life: cells, organelles and microscopes." },
       { id: "organisation", title: "Organisation", desc: "From cells to tissues, organs and body systems." },
@@ -345,9 +347,11 @@ export const BAND_CHAPTERS: Record<string, Record<Band, Chapter[]>> = {
 
 /** Chapters for a subject: the four bands merged into one ordered list,
  *  deduplicated by chapter id (first band wins). Falls back to the
- *  subject's default chapter list when no band data exists. */
-export function getChaptersForSubject(subjectSlug: string): Chapter[] {
+ *  subject's default chapter list when no band data exists.
+ *  Teacher-written translations overlay titles/descriptions per language. */
+export function getChaptersForSubject(subjectSlug: string, lang: Lang = "en"): Chapter[] {
   const byBand = BAND_CHAPTERS[subjectSlug];
+  let list: Chapter[];
   if (byBand) {
     const seen = new Set<string>();
     const merged: Chapter[] = [];
@@ -359,15 +363,27 @@ export function getChaptersForSubject(subjectSlug: string): Chapter[] {
         }
       }
     }
-    if (merged.length > 0) return merged;
+    list = merged.length > 0 ? merged : (getSubject(subjectSlug, lang)?.chapters ?? []);
+  } else {
+    list = getSubject(subjectSlug, lang)?.chapters ?? [];
   }
-  return getSubject(subjectSlug)?.chapters ?? [];
+  if (lang === "en") return list;
+  const overlays = getOverlay(lang)?.chapters;
+  if (!overlays) return list;
+  return list.map((c) => {
+    const o = overlays[c.id];
+    return o ? { ...c, title: o.title ?? c.title, desc: o.desc ?? c.desc } : c;
+  });
 }
 
 /** Find one chapter within a subject. Checks the merged band chapters
  *  first, then the subject's default chapters. */
-export function getChapterForSubject(subjectSlug: string, chapterId: string): Chapter | null {
-  const inBands = getChaptersForSubject(subjectSlug).find((c) => c.id === chapterId);
+export function getChapterForSubject(
+  subjectSlug: string,
+  chapterId: string,
+  lang: Lang = "en",
+): Chapter | null {
+  const inBands = getChaptersForSubject(subjectSlug, lang).find((c) => c.id === chapterId);
   if (inBands) return inBands;
-  return getSubject(subjectSlug)?.chapters.find((c) => c.id === chapterId) ?? null;
+  return getSubject(subjectSlug, lang)?.chapters.find((c) => c.id === chapterId) ?? null;
 }

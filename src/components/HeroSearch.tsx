@@ -1,26 +1,25 @@
 /**
- * HERO SEARCH — the big search box in the home page hero, with quick links
- * to popular lessons. Submitting jumps to /search with the query.
+ * HERO SEARCH — the quick links to popular lessons in the home page hero.
+ * Links follow the page language and only include lessons that exist in it.
  */
-"use client";
-
 import Link from "next/link";
+import { withLang, type Lang } from "@/lib/i18n";
+import { t } from "@/lib/strings";
 
-const QUICK_LINKS = [
-  { label: "Linear equations", href: "/subjects/mathematics/grade-9/algebra/linear-equations" },
-  { label: "Cell structure", href: "/subjects/biology/grade-8/cell-biology/cell-structure" },
-  { label: "Newton’s laws", href: "/subjects/physics/grade-8/forces/newtons-laws" },
-  { label: "Variables", href: "/subjects/computer-science/grade-9/programming/variables" },
-];
+export interface QuickLink {
+  label: string;
+  href: string;
+}
 
 /** Reference quick links to featured lessons. The hero search field was removed;
  *  search now lives behind the search icon in the top navigation. */
-export default function HeroSearch() {
+export default function HeroSearch({ lang, links }: { lang: Lang; links: QuickLink[] }) {
+  if (links.length === 0) return null;
   return (
     <div className="quick-links">
-      <span>Try:</span>
-      {QUICK_LINKS.map((l) => (
-        <Link key={l.href} href={l.href}>
+      <span>{t(lang, "hero.try")}</span>
+      {links.map((l) => (
+        <Link key={l.href} href={withLang(l.href, lang)}>
           {l.label}
         </Link>
       ))}
