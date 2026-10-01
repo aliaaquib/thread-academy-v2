@@ -360,11 +360,20 @@ svg{display:block}
 .nav-search{border:0;background:transparent;width:38px;height:38px;display:grid;place-items:center;border-radius:50%}
 .nav-search:hover{background:var(--surface)}
 /* Language toggle: compact EN / TR / RU / KY segmented control in the nav. */
-.lang-toggle{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px;background:var(--paper)}
-.lang-toggle button{border:0;background:transparent;padding:6px 9px;font-size:.72rem;font-weight:800;letter-spacing:.04em;color:var(--ink-soft);border-radius:999px;cursor:pointer;line-height:1}
-.lang-toggle button:hover{color:var(--ink)}
-.lang-toggle button.active{background:var(--ink);color:var(--paper)}
-@media(max-width:980px){.lang-toggle button{padding:6px 7px}}
+.lang-dropdown{position:relative;display:inline-block}
+.lang-dropdown-btn{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:var(--bg);color:var(--ink);font-size:.72rem;font-weight:800;letter-spacing:.04em;cursor:pointer;line-height:1}
+.lang-dropdown-btn:hover{border-color:var(--ink)}
+.lang-dropdown-code{line-height:1}
+.lang-chevron{transition:transform .15s ease;color:var(--muted)}
+.lang-chevron.open{transform:rotate(180deg)}
+.lang-dropdown-menu{position:absolute;right:0;top:calc(100% + 6px);margin:0;padding:4px;list-style:none;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:168px;z-index:60}
+.lang-dropdown-item{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;padding:9px 10px;border-radius:8px;cursor:pointer;color:var(--ink);font-size:.82rem;text-align:left}
+.lang-dropdown-item:hover{background:var(--surface)}
+.lang-dropdown-item.active{background:var(--surface)}
+.lang-dropdown-item .lang-dropdown-code{font-weight:800;font-size:.72rem;letter-spacing:.04em;min-width:26px}
+.lang-dropdown-item .lang-dropdown-name{flex:1;color:var(--muted)}
+.lang-dropdown-item.active .lang-dropdown-name{color:var(--ink);font-weight:700}
+.lang-dropdown-check{color:var(--ink);font-weight:800;font-size:.8rem}
 .text-btn{border:0;background:transparent;padding:10px 12px;font-weight:650}
 .learn-btn{border:1px solid var(--ink);background:var(--accent);color:var(--accent-ink);padding:11px 18px;font-weight:800;box-shadow:3px 3px 0 var(--ink)}
 
