@@ -7,7 +7,21 @@
 import type { LangOverlay } from "../i18n";
 
 export const RU_OVERLAY: LangOverlay = {
-  subjects: {},
+  subjects: {
+    mathematics: { name: "Математика" },
+    physics: { name: "Физика" },
+    chemistry: { name: "Химия" },
+    biology: { name: "Биология" },
+    "computer-science": { name: "Информатика" },
+    history: { name: "История" },
+    geography: { name: "География" },
+    economics: { name: "Экономика" },
+    english: { name: "Английский язык" },
+    psychology: { name: "Психология" },
+    sociology: { name: "Социология" },
+    "political-science": { name: "Политология" },
+    russian: { name: "Русский язык" },
+  },
   chapters: {
     "living-things": { title: "Живые организмы", desc: "Что делает что-то живым? Изучи места обитания рядом с тобой." },
     "plants": { title: "Растения", desc: "Что нужно растениям, чтобы расти и оставаться здоровыми." },

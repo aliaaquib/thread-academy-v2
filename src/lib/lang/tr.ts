@@ -7,7 +7,21 @@
 import type { LangOverlay } from "../i18n";
 
 export const TR_OVERLAY: LangOverlay = {
-  subjects: {},
+  subjects: {
+    mathematics: { name: "Matematik" },
+    physics: { name: "Fizik" },
+    chemistry: { name: "Kimya" },
+    biology: { name: "Biyoloji" },
+    "computer-science": { name: "Bilgisayar Bilimi" },
+    history: { name: "Tarih" },
+    geography: { name: "Coğrafya" },
+    economics: { name: "Ekonomi" },
+    english: { name: "İngilizce" },
+    psychology: { name: "Psikoloji" },
+    sociology: { name: "Sosyoloji" },
+    "political-science": { name: "Siyaset Bilimi" },
+    russian: { name: "Rusça" },
+  },
   chapters: {
     "living-things": { title: "Canlılar", desc: "Bir şeyi canlı yapan nedir? Yakınındaki yaşam alanlarını keşfet." },
     "plants": { title: "Bitkiler", desc: "Bitkilerin büyümesi ve sağlıklı kalması için neye ihtiyacı olduğunu öğren." },
