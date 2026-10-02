@@ -146,7 +146,10 @@ function localPassages(question: string): string[] {
 }
 
 export function AskAiWidget() {
-  const [lang] = useState<Lang>(detectLang);
+  // Rendered only after mount: the language comes from the URL on the client,
+  // so rendering during SSR/hydration would mismatch the static HTML.
+  const [mounted, setMounted] = useState(false);
+  const [lang, setLang] = useState<Lang>("en");
   const [open, setOpen] = useState(false);
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
@@ -154,6 +157,11 @@ export function AskAiWidget() {
   const boxRef = useRef<HTMLDivElement>(null);
   const s = STR[lang];
   const t = (k: string) => s[k] as string;
+
+  useEffect(() => {
+    setLang(detectLang());
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (open && msgs.length === 0) {
@@ -207,6 +215,8 @@ export function AskAiWidget() {
       setBusy(false);
     }
   }
+
+  if (!mounted) return null;
 
   return (
     <>
