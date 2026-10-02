@@ -6,6 +6,10 @@
  * Mounted once in the root layout (src/app/layout.tsx) so it appears from
  * the homepage to the last lesson page, in all four languages.
  *
+ * STYLING NOTE: this component uses inline styles only — no Tailwind classes.
+ * The academy's stylesheet (src/app/globals.css) is hand-written custom CSS;
+ * Tailwind utilities are not emitted, so class-based styling renders unstyled.
+ *
  * How it works:
  *  1. Detects the page language from the URL prefix (/tr, /ru, /ky, else en).
  *  2. On send, it grabs the visible lesson text from the page and POSTs
@@ -154,6 +158,7 @@ export function AskAiWidget() {
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
+  const [hover, setHover] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
   const s = STR[lang];
   const t = (k: string) => s[k] as string;
@@ -224,8 +229,29 @@ export function AskAiWidget() {
         <button
           type="button"
           onClick={() => setOpen(true)}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
           aria-label={t("label")}
-          className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#1a1a1a] px-5 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
+          style={{
+            position: "fixed",
+            bottom: 20,
+            right: 20,
+            zIndex: 50,
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            borderRadius: 999,
+            background: "#1a1a1a",
+            color: "#fff",
+            border: "none",
+            cursor: "pointer",
+            padding: "12px 20px",
+            fontSize: 14,
+            fontWeight: 600,
+            boxShadow: "0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1)",
+            transform: hover ? "scale(1.05)" : "scale(1)",
+            transition: "transform .15s ease",
+          }}
         >
           <span aria-hidden="true">✦</span>
           {t("label")}
@@ -235,40 +261,111 @@ export function AskAiWidget() {
         <div
           role="dialog"
           aria-label={t("title")}
-          className="fixed bottom-5 right-5 z-50 flex h-[min(70vh,560px)] w-[min(92vw,380px)] flex-col overflow-hidden rounded-2xl border-2 border-[#1a1a1a] bg-white shadow-2xl"
+          style={{
+            position: "fixed",
+            bottom: 20,
+            right: 20,
+            zIndex: 50,
+            display: "flex",
+            flexDirection: "column",
+            height: "min(70vh, 560px)",
+            width: "min(92vw, 380px)",
+            overflow: "hidden",
+            borderRadius: 16,
+            border: "2px solid #1a1a1a",
+            background: "#fff",
+            boxShadow: "0 25px 50px -12px rgba(0,0,0,.25)",
+          }}
         >
-          <div className="flex items-center justify-between bg-[#1a1a1a] px-4 py-3">
-            <p className="text-sm font-semibold text-white">
-              <span aria-hidden="true" className="mr-2">✦</span>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              background: "#1a1a1a",
+              padding: "12px 16px",
+            }}
+          >
+            <p style={{ margin: 0, fontSize: 14, fontWeight: 600, color: "#fff" }}>
+              <span aria-hidden="true" style={{ marginRight: 8 }}>
+                ✦
+              </span>
               {t("title")}
             </p>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              aria-label="×"
-              className="text-xl leading-none text-white/80 hover:text-white"
+              aria-label="Close"
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontSize: 20,
+                lineHeight: 1,
+                color: "rgba(255,255,255,.8)",
+              }}
             >
               ×
             </button>
           </div>
-          <div ref={boxRef} className="flex-1 space-y-3 overflow-y-auto bg-[#faf8f2] p-4">
+          <div
+            ref={boxRef}
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+              overflowY: "auto",
+              background: "#faf8f2",
+              padding: 16,
+            }}
+          >
             {msgs.map((m, i) =>
               m.role === "user" ? (
-                <div key={i} className="flex justify-end">
-                  <div className="max-w-[85%] rounded-2xl rounded-br-md bg-[#1a1a1a] px-3.5 py-2.5 text-sm text-white">
+                <div key={i} style={{ display: "flex", justifyContent: "flex-end" }}>
+                  <div
+                    style={{
+                      maxWidth: "85%",
+                      background: "#1a1a1a",
+                      color: "#fff",
+                      borderRadius: 16,
+                      borderBottomRightRadius: 4,
+                      padding: "10px 14px",
+                      fontSize: 14,
+                    }}
+                  >
                     {m.text}
                   </div>
                 </div>
               ) : m.role === "note" ? (
-                <p key={i} className="text-xs italic text-neutral-500">
+                <p key={i} style={{ margin: 0, fontSize: 12, fontStyle: "italic", color: "#737373" }}>
                   {m.text}
                 </p>
               ) : (
-                <div key={i} className="flex justify-start">
-                  <div className="max-w-[92%] rounded-2xl rounded-bl-md border border-[#e3ddd0] bg-white px-3.5 py-2.5 text-sm text-neutral-900">
-                    <p className="whitespace-pre-wrap">{m.text}</p>
+                <div key={i} style={{ display: "flex", justifyContent: "flex-start" }}>
+                  <div
+                    style={{
+                      maxWidth: "92%",
+                      background: "#fff",
+                      border: "1px solid #e3ddd0",
+                      borderRadius: 16,
+                      borderBottomLeftRadius: 4,
+                      padding: "10px 14px",
+                      fontSize: 14,
+                      color: "#1a1a1a",
+                    }}
+                  >
+                    <p style={{ margin: 0, whiteSpace: "pre-wrap" }}>{m.text}</p>
                     {typeof m.remaining === "number" && (
-                      <p className="mt-2 border-t border-dashed border-[#e3ddd0] pt-1.5 text-xs text-neutral-500">
+                      <p
+                        style={{
+                          margin: "8px 0 0",
+                          borderTop: "1px dashed #e3ddd0",
+                          paddingTop: 6,
+                          fontSize: 12,
+                          color: "#737373",
+                        }}
+                      >
                         {(s.left as (n: number) => string)(m.remaining)}
                       </p>
                     )}
@@ -276,9 +373,21 @@ export function AskAiWidget() {
                 </div>
               )
             )}
-            {busy && <p className="text-xs italic text-neutral-500">{t("thinking")}</p>}
+            {busy && (
+              <p style={{ margin: 0, fontSize: 12, fontStyle: "italic", color: "#737373" }}>
+                {t("thinking")}
+              </p>
+            )}
           </div>
-          <div className="flex gap-2 border-t border-[#e3ddd0] bg-white p-3">
+          <div
+            style={{
+              display: "flex",
+              gap: 8,
+              borderTop: "1px solid #e3ddd0",
+              background: "#fff",
+              padding: 12,
+            }}
+          >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -287,13 +396,32 @@ export function AskAiWidget() {
               }}
               placeholder={t("placeholder")}
               maxLength={500}
-              className="min-w-0 flex-1 rounded-full border border-[#1a1a1a] px-4 py-2.5 text-sm outline-none placeholder:text-neutral-400 focus:ring-2 focus:ring-[#1a1a1a]/20"
+              style={{
+                flex: 1,
+                minWidth: 0,
+                borderRadius: 999,
+                border: "1px solid #1a1a1a",
+                padding: "10px 16px",
+                fontSize: 14,
+                outline: "none",
+              }}
             />
             <button
               type="button"
               onClick={ask}
               disabled={busy || !input.trim()}
-              className="shrink-0 rounded-full bg-[#1a1a1a] px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-40"
+              style={{
+                flexShrink: 0,
+                borderRadius: 999,
+                background: "#1a1a1a",
+                color: "#fff",
+                border: "none",
+                cursor: "pointer",
+                padding: "10px 16px",
+                fontSize: 14,
+                fontWeight: 600,
+                opacity: busy || !input.trim() ? 0.4 : 1,
+              }}
             >
               {t("send")}
             </button>
