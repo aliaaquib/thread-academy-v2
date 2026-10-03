@@ -38,7 +38,7 @@ const STR: Record<Lang, Record<string, string | ((n: number) => string)>> = {
     label: "Ask AI",
     title: "Ask AI",
     greeting:
-      "Hi! Ask me anything about what you're reading — I answer from the lesson text on this page. You get 5 free answers a day.",
+      "Hi! Ask me anything — homework, a concept you didn't get, revision help. You get 5 free answers a day.",
     placeholder: "Ask a question…",
     send: "Send",
     connecting:
@@ -54,7 +54,7 @@ const STR: Record<Lang, Record<string, string | ((n: number) => string)>> = {
     label: "Yapay Zekâya Sor",
     title: "Yapay Zekâya Sor",
     greeting:
-      "Merhaba! Okuduğun her şeyi bana sorabilirsin — cevaplarımı bu sayfadaki ders metninden veririm. Günde 5 ücretsiz cevap hakkın var.",
+      "Merhaba! İstediğini sor — ödev, anlamadığın bir konu, tekrar yardımı. Günde 5 ücretsiz cevap hakkın var.",
     placeholder: "Bir soru sor…",
     send: "Gönder",
     connecting:
@@ -70,7 +70,7 @@ const STR: Record<Lang, Record<string, string | ((n: number) => string)>> = {
     label: "Спросить ИИ",
     title: "Спросить ИИ",
     greeting:
-      "Привет! Спрашивай о том, что читаешь — я отвечаю по тексту урока на этой странице. У тебя 5 бесплатных ответов в день.",
+      "Привет! Спрашивай что угодно — домашку, непонятную тему, помощь с повторением. У тебя 5 бесплатных ответов в день.",
     placeholder: "Задайте вопрос…",
     send: "Отправить",
     connecting:
@@ -86,7 +86,7 @@ const STR: Record<Lang, Record<string, string | ((n: number) => string)>> = {
     label: "ЖИден суроо",
     title: "ЖИден суроо",
     greeting:
-      "Салам! Окуп жатканың тууралуу суроо бер — жоопторду ушул барактагы сабактын текстинен берем. Күнүнө 5 акысыз жооп аласың.",
+      "Салам! Каалаганыңды сура — үй тапшырмасы, түшүнбөгөн тема, кайталоого жардам. Күнүнө 5 акысыз жооп аласың.",
     placeholder: "Суроо бер…",
     send: "Жөнөтүү",
     connecting:
