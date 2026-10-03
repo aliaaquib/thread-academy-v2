@@ -43,7 +43,9 @@ const STR: Record<Lang, Record<string, string | ((n: number) => string)>> = {
     send: "Send",
     connecting:
       "The AI answer-writer isn't connected yet — but here are the closest passages from this page:",
-    limited: "You've used your 5 free answers for today. Come back tomorrow!",
+    limited: "You've used your 5 free answers for today. Sign up free for 30 a day — or come back tomorrow!",
+    helloReply:
+      "Hi there! Ask me anything — homework, a concept, revision. What are you working on?",
     left: (n: number) => `${n} free answer${n === 1 ? "" : "s"} left today`,
     error: "Something went wrong on my side — please try again in a moment.",
     noPassage:
@@ -59,7 +61,9 @@ const STR: Record<Lang, Record<string, string | ((n: number) => string)>> = {
     send: "Gönder",
     connecting:
       "Yapay zekâ cevaplayıcı henüz bağlı değil — ama bu sayfadaki en yakın bölümler şunlar:",
-    limited: "Bugünkü 5 ücretsiz cevabını kullandın. Yarın tekrar gel!",
+    limited: "Bugünkü 5 ücretsiz cevabını kullandın. Ücretsiz kaydol, günde 30 cevap al — ya da yarın tekrar gel!",
+    helloReply:
+      "Merhaba! İstediğini sor — ödev, konu, tekrar. Ne üzerine çalışıyorsun?",
     left: (n: number) => `Bugün ${n} ücretsiz cevap kaldı`,
     error: "Bir sorun oluştu — lütfen birazdan tekrar dene.",
     noPassage:
@@ -75,7 +79,9 @@ const STR: Record<Lang, Record<string, string | ((n: number) => string)>> = {
     send: "Отправить",
     connecting:
       "ИИ-ответчик ещё не подключён — но вот самые близкие отрывки с этой страницы:",
-    limited: "Ты использовал(а) все 5 бесплатных ответов на сегодня. Возвращайся завтра!",
+    limited: "Ты использовал(а) все 5 бесплатных ответов на сегодня. Зарегистрируйся бесплатно и получай 30 в день — или возвращайся завтра!",
+    helloReply:
+      "Привет! Спрашивай что угодно — домашку, тему, повторение. Над чем работаешь?",
     left: (n: number) => `Осталось бесплатных ответов сегодня: ${n}`,
     error: "Что-то пошло не так — попробуй ещё раз через минуту.",
     noPassage:
@@ -91,7 +97,9 @@ const STR: Record<Lang, Record<string, string | ((n: number) => string)>> = {
     send: "Жөнөтүү",
     connecting:
       "ЖИ жооп берүүчү азырынча туташтырыла элек — бирок бул барактагы эң жакын үзүндүлөр:",
-    limited: "Бүгүнкү 5 акысыз жообуңду колдондуң. Эртең кайра кел!",
+    limited: "Бүгүнкү 5 акысыз жообуңду колдондуң. Акысыз каттал — күнүнө 30 жооп ал — же эртең кайра кел!",
+    helloReply:
+      "Салам! Каалаганыңды сура — үй тапшырмасы, тема, кайталоо. Эмне менен алектенип жатасың?",
     left: (n: number) => `Бүгүн ${n} акысыз жооп калды`,
     error: "Бир нерсе туура эмес болду — бир аздан кийин кайра аракет кыл.",
     noPassage:
@@ -104,6 +112,26 @@ function detectLang(): Lang {
   if (typeof window === "undefined") return "en";
   const seg = window.location.pathname.split("/")[1];
   return seg === "tr" || seg === "ru" || seg === "ky" ? seg : "en";
+}
+
+/**
+ * Plain greetings are answered locally — no API call, no free-answer spent.
+ * Only matches when the WHOLE message is a greeting ("hi", not "hi, what is…").
+ */
+const GREETINGS: Record<Lang, string[]> = {
+  en: ["hi", "hello", "hey", "yo", "hiya", "howdy", "good morning", "good afternoon", "good evening"],
+  tr: ["merhaba", "selam", "selamlar", "hey", "gunaydin", "günaydın", "iyi gunler", "iyi günler", "iyi aksamlar", "iyi akşamlar"],
+  ru: ["привет", "здравствуй", "здравствуйте", "хай", "доброе утро", "добрый день", "добрый вечер"],
+  ky: ["салам", "саламатсыңбы", "саламатсызбы", "кутман таң", "кутман кун", "кутман күн", "кутман кеч"],
+};
+
+function isGreeting(q: string, lang: Lang): boolean {
+  const norm = q
+    .toLowerCase()
+    .replace(/[^\p{L}\s]/gu, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return norm.length > 0 && GREETINGS[lang].includes(norm);
 }
 
 function pageExcerpt(): { title: string; url: string; excerpt: string } {
@@ -184,6 +212,12 @@ export function AskAiWidget() {
     setBusy(true);
     setMsgs((m) => [...m, { role: "user", text: q }]);
     setInput("");
+    // Greetings get an instant local reply — no API call, no quota spent.
+    if (isGreeting(q, lang)) {
+      setMsgs((m) => [...m, { role: "tutor", text: t("helloReply") }]);
+      setBusy(false);
+      return;
+    }
     try {
       if (!ASK_ENDPOINT) {
         // Worker not connected yet — quote the closest page passages honestly.
