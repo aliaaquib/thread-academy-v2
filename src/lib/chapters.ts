@@ -38,15 +38,6 @@ export const CHAPTER_TOPICS: Record<string, Topic[]> = {
     { slug: "cell-structure", title: "Cell Structure", desc: "Meet the organelles: the tiny machines inside every cell." },
   ],
   // ── Computer Science ──
-  "computational-thinking-programming": [
-    { slug: "flowcharts", title: "Flowcharts", desc: "Draw the steps of a solution with standard flowchart symbols." },
-    { slug: "selection-and-logic-in-flowcharts", title: "Selection and Logic in Flowcharts", desc: "Make decisions with diamonds, and combine conditions with AND, OR and NOT." },
-    { slug: "pattern-recognition-and-subroutines-in-flowcharts", title: "Pattern Recognition and Sub-routines in Flowcharts", desc: "Spot repeated steps and package them into reusable sub-routines." },
-    { slug: "introduction-to-text-based-programming", title: "Introduction to Text-Based Programming", desc: "From blocks to typed code: what a programming language actually is." },
-    { slug: "python-programming", title: "Python Programming", desc: "Your first Python: print, variables, input and if-statements." },
-    { slug: "software-development-and-testing", title: "Software Development and Testing", desc: "Plan, code, test, fix: how software gets built properly." },
-    { slug: "physical-computing", title: "Physical Computing", desc: "Programs that touch the real world: sensors, buttons and lights." },
-  ],
   "managing-data": [
     { slug: "spreadsheets", title: "Spreadsheets", desc: "Cells, formulas and functions: SUM, AVERAGE and charts that calculate for you." },
     { slug: "modelling", title: "Modelling", desc: "Build a spreadsheet model and ask 'what if' to compare scenarios." },
