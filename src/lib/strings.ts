@@ -216,6 +216,10 @@ const en: Dict = {
   "blog.post.by": "By {author} · {date}",
   "blog.post.readTime.one": "{n} min read",
   "blog.post.readTime.other": "{n} min read",
+  "blog.post.share": "Share",
+  "blog.post.copied": "Link copied",
+  "blog.post.save": "Save",
+  "blog.post.saved": "Saved",
   "blog.post.full": "{subject} — full subject",
 
   // ---- about ----
@@ -529,6 +533,10 @@ const tr: Dict = {
   "blog.post.by": "{author} · {date}",
   "blog.post.readTime.one": "{n} dk okuma",
   "blog.post.readTime.other": "{n} dk okuma",
+  "blog.post.share": "Paylaş",
+  "blog.post.copied": "Bağlantı kopyalandı",
+  "blog.post.save": "Kaydet",
+  "blog.post.saved": "Kaydedildi",
   "blog.post.full": "{subject} — tüm ders",
 
   // ---- about ----
@@ -848,6 +856,10 @@ const ru: Dict = {
   "blog.post.readTime.one": "{n} минута чтения",
   "blog.post.readTime.few": "{n} минуты чтения",
   "blog.post.readTime.many": "{n} минут чтения",
+  "blog.post.share": "Поделиться",
+  "blog.post.copied": "Ссылка скопирована",
+  "blog.post.save": "Сохранить",
+  "blog.post.saved": "Сохранено",
   "blog.post.full": "{subject} — весь предмет",
 
   // ---- about ----
@@ -1155,6 +1167,10 @@ const ky: Dict = {
   "blog.post.by": "{author} · {date}",
   "blog.post.readTime.one": "{n} мүнөт окуу",
   "blog.post.readTime.other": "{n} мүнөт окуу",
+  "blog.post.share": "Бөлүшүү",
+  "blog.post.copied": "Шилтеме көчүрүлдү",
+  "blog.post.save": "Сактоо",
+  "blog.post.saved": "Сакталды",
   "blog.post.full": "{subject} — толук предмет",
 
   // ---- about ----

@@ -485,6 +485,11 @@ h1,h2,h3{font-family:Newsreader,serif;letter-spacing:-.035em}
 .blog-related a{font-weight:700;color:var(--ink)}
 .blog-back{margin:44px 0 0}
 .blog-back a{font-weight:700;color:var(--muted)}
+/* Blog post title — bold sans in the Medium reference's spirit, scoped to posts */
+.blog-post .page-hero{max-width:var(--reading);padding-bottom:44px}
+.blog-post .page-hero h1{font-family:Manrope,sans-serif;font-size:clamp(2.3rem,4.5vw,3.3rem);font-weight:800;line-height:1.14;letter-spacing:-.02em}
+/* Optional cover image (frontmatter `image`), rendered between the actions and the body */
+.blog-cover{width:100%;height:auto;display:block;margin:0 0 52px}
 .overview-grid{display:grid;grid-template-columns:340px minmax(0,1fr);gap:70px}
 .overview-aside{padding-top:8px}
 .overview-aside h2{font:800 .76rem/1.2 Manrope,sans-serif;text-transform:uppercase;letter-spacing:.1em;margin:0 0 18px}

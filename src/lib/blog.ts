@@ -31,6 +31,8 @@ export interface BlogPostMeta {
   lessons: string[];
   /** Optional ISO date (YYYY-MM-DD) when the post was last substantially updated. */
   updated?: string;
+  /** Optional cover image URL (relative to /public or absolute) shown above the article. */
+  image?: string;
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -68,6 +70,7 @@ function readPost(file: string): BlogPost | null {
     chapters: arr(data.chapters),
     lessons: arr(data.lessons),
     updated: data.updated ? dateStr(data.updated) || undefined : undefined,
+    image: str(data.image) || undefined,
     source: content,
   };
 }

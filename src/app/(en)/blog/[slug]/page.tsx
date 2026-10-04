@@ -11,6 +11,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponentsForLang } from "@/mdx-components";
 import PageHero from "@/components/PageHero";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { BlogActions } from "@/components/BlogActions";
 import { JsonLd, absoluteUrl, pageMetadata, SITE_NAME } from "@/lib/seo";
 import { getPost, getPostSlugs, getRelatedLinks, postLangs } from "@/lib/blog";
 import { langMeta, withLang, type Lang } from "@/lib/i18n";
@@ -67,7 +68,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
   const readMins = Math.max(1, Math.round(post.source.split(/\s+/).length / 200));
 
   return (
-    <>
+    <div className="blog-post">
       <ReadingProgress />
       <PageHero
         crumbs={[
@@ -91,6 +92,10 @@ export default function BlogPostPage({ params }: { params: Params }) {
             </span>
           </span>
         </div>
+        <BlogActions slug={post.slug} title={post.title} />
+        {post.image && (
+          <img className="blog-cover" src={post.image} alt="" loading="lazy" />
+        )}
         <div className="mdx">
           <MDXRemote source={post.source} components={mdxComponentsForLang(lang)} />
         </div>
@@ -128,6 +133,6 @@ export default function BlogPostPage({ params }: { params: Params }) {
           inLanguage: langMeta(lang).locale,
         }}
       />
-    </>
+    </div>
   );
 }

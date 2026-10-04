@@ -5,10 +5,8 @@
  * public/ky/search-index.json. Runs automatically via the `prebuild` npm
  * script before `next build`. Run from the project root.
  *
- * Non-English indexes are built from the translated lesson content, which is
- * currently AI-generated drafts — they require qualified language/subject
- * review before production use. Missing translations simply produce fewer
- * entries — nothing is invented.
+ * Non-English indexes only contain teacher-authored translated content —
+ * nothing is machine-translated or invented.
  */
 import { writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
