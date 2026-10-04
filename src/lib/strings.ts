@@ -214,6 +214,8 @@ const en: Dict = {
   "blog.post.back": "Back to the blog",
   "blog.post.browse": "Browse {subject} →",
   "blog.post.by": "By {author} · {date}",
+  "blog.post.readTime.one": "{n} min read",
+  "blog.post.readTime.other": "{n} min read",
   "blog.post.full": "{subject} — full subject",
 
   // ---- about ----
@@ -525,6 +527,8 @@ const tr: Dict = {
   "blog.post.back": "Bloga dön",
   "blog.post.browse": "{subject} dersine göz at →",
   "blog.post.by": "{author} · {date}",
+  "blog.post.readTime.one": "{n} dk okuma",
+  "blog.post.readTime.other": "{n} dk okuma",
   "blog.post.full": "{subject} — tüm ders",
 
   // ---- about ----
@@ -841,6 +845,9 @@ const ru: Dict = {
   "blog.post.back": "Назад в блог",
   "blog.post.browse": "К предмету «{subject}» →",
   "blog.post.by": "{author} · {date}",
+  "blog.post.readTime.one": "{n} минута чтения",
+  "blog.post.readTime.few": "{n} минуты чтения",
+  "blog.post.readTime.many": "{n} минут чтения",
   "blog.post.full": "{subject} — весь предмет",
 
   // ---- about ----
@@ -1146,6 +1153,8 @@ const ky: Dict = {
   "blog.post.back": "Блогго кайтуу",
   "blog.post.browse": "«{subject}» предметин көрүү →",
   "blog.post.by": "{author} · {date}",
+  "blog.post.readTime.one": "{n} мүнөт окуу",
+  "blog.post.readTime.other": "{n} мүнөт окуу",
   "blog.post.full": "{subject} — толук предмет",
 
   // ---- about ----

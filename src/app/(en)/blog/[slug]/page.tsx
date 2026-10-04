@@ -10,10 +10,11 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponentsForLang } from "@/mdx-components";
 import PageHero from "@/components/PageHero";
+import { ReadingProgress } from "@/components/ReadingProgress";
 import { JsonLd, absoluteUrl, pageMetadata, SITE_NAME } from "@/lib/seo";
 import { getPost, getPostSlugs, getRelatedLinks, postLangs } from "@/lib/blog";
 import { langMeta, withLang, type Lang } from "@/lib/i18n";
-import { t } from "@/lib/strings";
+import { t, tn } from "@/lib/strings";
 import { requireLang, type LangParam } from "@/lib/route-lang";
 import { postParams } from "@/lib/route-params";
 
@@ -62,9 +63,12 @@ export default function BlogPostPage({ params }: { params: Params }) {
 
   const related = getRelatedLinks(post, lang);
   const url = absoluteUrl(withLang(`/blog/${post.slug}`, lang));
+  // Rough read time: 200 words/minute, minimum 1 minute.
+  const readMins = Math.max(1, Math.round(post.source.split(/\s+/).length / 200));
 
   return (
     <>
+      <ReadingProgress />
       <PageHero
         crumbs={[
           { label: t(lang, "common.home"), href: withLang("/", lang) },
@@ -75,12 +79,18 @@ export default function BlogPostPage({ params }: { params: Params }) {
         lede={post.description}
       />
       <article className="textbook-page">
-        <p className="blog-byline">
-          {t(lang, "blog.post.by", {
-            author: post.author,
-            date: formatPostDate(post.date, lang),
-          })}
-        </p>
+        <div className="blog-byline">
+          <span className="blog-avatar" aria-hidden="true">
+            {post.author.charAt(0)}
+          </span>
+          <span className="blog-meta">
+            <span className="blog-author">{post.author}</span>
+            <span className="blog-date">
+              {formatPostDate(post.date, lang)} ·{" "}
+              {tn(lang, "blog.post.readTime", readMins, { n: readMins })}
+            </span>
+          </span>
+        </div>
         <div className="mdx">
           <MDXRemote source={post.source} components={mdxComponentsForLang(lang)} />
         </div>
