@@ -23,6 +23,7 @@ import TryItPython from "./components/widgets/TryItPython";
 import EquationSolver from "./components/widgets/EquationSolver";
 import { withLang, type Lang } from "./lib/i18n";
 import { t } from "./lib/strings";
+import { isSafeHref } from "./lib/urls";
 
 /** Flatten MDX children to plain text (for fenced code blocks). */
 function textOf(node: ReactNode): string {
@@ -62,14 +63,6 @@ function Pre({ children, uiLang = "en" }: { children?: ReactNode; uiLang?: Lang 
     code = textOf(children);
   }
   return <CodeBlock lang={lang} uiLang={uiLang}>{code}</CodeBlock>;
-}
-
-/** Only these URL schemes are allowed in MDX links. Anything else
- *  (javascript:, data:, vbscript:, …) renders as plain text, never a link. */
-function isSafeHref(href: string): boolean {
-  const h = href.trim();
-  if (h === "" || h.startsWith("/") || h.startsWith("#")) return true;
-  return /^(https?:\/\/|mailto:|tel:)/i.test(h);
 }
 
 /** Site-internal MDX links follow the page language. */

@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponentsForLang } from "@/mdx-components";
+import { remarkSafeLessonMdx } from "@/lib/mdx-lesson-sanitize";
 import { ChapterSidebar } from "@/components/textbook/ChapterSidebar";
 import { getSubject } from "@/lib/subjects";
 import { getChapterForSubject } from "@/lib/stage-chapters";
@@ -144,10 +145,21 @@ export default function TopicPage({ params }: { params: Params }) {
           {content.lede && <p>{content.lede}</p>}
         </div>
         <article className="lesson-article">
-          {/* blockJS:false — our MDX is authored in-repo (trusted); it passes
-              arrays/numbers as JSX props (e.g. QuizQuestion options).
-              blockDangerousJS stays on (v6 default) as a safety net. */}
-          <MDXRemote source={content.source} components={mdxComponentsForLang(lang)} options={{ blockJS: false }} />
+          {/* Lesson MDX compiles with blockJS:false so quizzes can pass plain-data
+              JSX props (options={[...]}}. remarkSafeLessonMdx() runs first and
+              fail-closes the hole that leaves open: it throws at build time
+              on <script>/<iframe>/form tags, on* handlers, javascript: URLs
+              and any JS expression that isn't pure data (no identifiers, no
+              calls — fetch/localStorage/document can't be reached). The
+              bundled blockDangerousJS stays on underneath as defense in depth. */}
+          <MDXRemote
+            source={content.source}
+            components={mdxComponentsForLang(lang)}
+            options={{
+              blockJS: false,
+              mdxOptions: { remarkPlugins: [remarkSafeLessonMdx] },
+            }}
+          />
           <div className="lesson-finish">
             {prevTopic && (
               <Link className="next-btn" href={prevTopic.url}>
