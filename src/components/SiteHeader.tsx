@@ -9,13 +9,15 @@
 import Link from "next/link";
 import { openSiteSearch } from "./search-bus";
 import { LangToggle } from "./LangToggle";
+import { AuthButton } from "./AuthButton";
 import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
 
 /** Reference nav: 78px sticky bar, mark-only skewed lime logo, five links,
  *  language toggle + one circular search button that opens the search
  *  overlay; at <=980px the links collapse but toggle and search remain.
- *  No login/signup. */
+ *  Sign in lives in the nav-actions cluster (student = Google via the
+ *  tutor worker, teacher = link to the teacher CMS login). */
 export default function SiteHeader({ lang }: { lang: Lang }) {
   const NAV = [
     { href: withLang("/", lang), label: t(lang, "nav.home") },
@@ -39,6 +41,7 @@ export default function SiteHeader({ lang }: { lang: Lang }) {
       </nav>
       <div className="nav-actions">
         <LangToggle lang={lang} />
+        <AuthButton lang={lang} />
         <button className="nav-search" aria-label={t(lang, "nav.search")} onClick={() => openSiteSearch()}>
           <svg width="19" height="19" viewBox="0 0 19 19" fill="none" aria-hidden="true">
             <circle cx="8.5" cy="8.5" r="6.5" stroke="currentColor" strokeWidth="2" />

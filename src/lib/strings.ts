@@ -21,6 +21,13 @@ const en: Dict = {
   "nav.about": "About",
   "nav.search": "Search",
   "nav.brand.home": "Thread Academy home",
+  "nav.signin": "Sign in",
+  "nav.signout": "Sign out",
+  "auth.choose": "Sign in as",
+  "auth.student": "I'm a student",
+  "auth.student.desc": "Continue with Google",
+  "auth.teacher": "I'm a teacher",
+  "auth.teacher.desc": "Open the teacher CMS",
   "nav.language": "Language",
 
   // ---- shared ----
@@ -354,6 +361,13 @@ const tr: Dict = {
   "nav.about": "Hakkında",
   "nav.search": "Ara",
   "nav.brand.home": "Thread Academy ana sayfa",
+  "nav.signin": "Giriş yap",
+  "nav.signout": "Çıkış yap",
+  "auth.choose": "Olarak giriş yap",
+  "auth.student": "Öğrenciyim",
+  "auth.student.desc": "Google ile devam et",
+  "auth.teacher": "Öğretmenim",
+  "auth.teacher.desc": "Öğretmen panelini aç",
   "nav.language": "Dil",
 
   // ---- shared ----
@@ -664,6 +678,13 @@ const ru: Dict = {
   "nav.about": "О нас",
   "nav.search": "Поиск",
   "nav.brand.home": "Thread Academy — главная",
+  "nav.signin": "Войти",
+  "nav.signout": "Выйти",
+  "auth.choose": "Войти как",
+  "auth.student": "Я ученик",
+  "auth.student.desc": "Продолжить через Google",
+  "auth.teacher": "Я учитель",
+  "auth.teacher.desc": "Открыть панель учителя",
   "nav.language": "Язык",
 
   // ---- shared ----
@@ -988,6 +1009,13 @@ const ky: Dict = {
   "nav.about": "Биз жөнүндө",
   "nav.search": "Издөө",
   "nav.brand.home": "Thread Academy башкы бети",
+  "nav.signin": "Кирүү",
+  "nav.signout": "Чыгуу",
+  "auth.choose": "Катары кирүү",
+  "auth.student": "Мен окуучумун",
+  "auth.student.desc": "Google менен улантуу",
+  "auth.teacher": "Мен мугалиммин",
+  "auth.teacher.desc": "Мугалим панелин ачуу",
   "nav.language": "Тил",
 
   // ---- shared ----

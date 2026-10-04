@@ -374,6 +374,18 @@ svg{display:block}
 .lang-dropdown-item .lang-dropdown-name{flex:1;color:var(--muted)}
 .lang-dropdown-item.active .lang-dropdown-name{color:var(--ink);font-weight:700}
 .lang-dropdown-check{color:var(--ink);font-weight:800;font-size:.8rem}
+/* Auth button: "Sign in" in the nav, with a student/teacher chooser menu. */
+.auth-dropdown{position:relative;display:inline-block}
+.auth-btn{display:flex;align-items:center;gap:8px;border:1px solid var(--ink);border-radius:999px;padding:8px 16px;background:var(--accent);color:var(--accent-ink);font-size:.8rem;font-weight:800;cursor:pointer;line-height:1}
+.auth-btn:hover{filter:brightness(1.04)}
+.auth-avatar{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:.72rem;font-weight:800;flex:none}
+.auth-name{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.auth-dropdown-menu{position:absolute;right:0;top:calc(100% + 6px);margin:0;padding:4px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:238px;z-index:60}
+.auth-dropdown-label{padding:8px 10px 4px;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.auth-dropdown-item{display:block;width:100%;border:0;background:transparent;padding:9px 10px;border-radius:8px;cursor:pointer;color:var(--ink);text-align:left;text-decoration:none;box-sizing:border-box}
+.auth-dropdown-item:hover{background:var(--surface)}
+.auth-item-main{display:block;font-size:.85rem;font-weight:700}
+.auth-item-sub{display:block;font-size:.75rem;color:var(--muted);margin-top:2px}
 .text-btn{border:0;background:transparent;padding:10px 12px;font-weight:650}
 .learn-btn{border:1px solid var(--ink);background:var(--accent);color:var(--accent-ink);padding:11px 18px;font-weight:800;box-shadow:3px 3px 0 var(--ink)}
 
