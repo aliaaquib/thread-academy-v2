@@ -1,0 +1,145 @@
+---
+title: "Flowcharts"
+lede: "Draw the steps of a solution with standard flowchart symbols."
+---
+
+<LearningObjectives>
+  <li>Define and explain flowcharts in your own words</li>
+  <li>Use key terms such as algorithm accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+A flowchart is a picture of a plan. Before anyone writes code, they sketch what the program should do — using standard shapes, so that anyone who reads the sketch understands it the same way.
+
+<Definition term="Flowchart">
+  A diagram that shows the steps of an algorithm in order, using standard shapes joined by arrows.
+</Definition>
+
+## Key ideas
+
+### Plan on paper first
+
+Code is fiddly: one wrong character and nothing works. A flowchart lets you get the *logic* right before you fight with syntax. If the plan is wrong on paper, it will be wrong in code — so programmers draw first, then type.
+
+### The shapes everyone agrees on
+
+There are only a few shapes to learn, and they are the same all over the world:
+
+- **Oval** — start and stop. Every flowchart opens with a START oval and closes with a STOP oval.
+- **Rectangle** — a process. Something the computer does, like "add 1 to total".
+- **Parallelogram** (a slanted rectangle) — input or output. "Read the score" or "print the result".
+- **Diamond** — a decision. A question with a yes/no answer, like "is the score 50 or more?".
+- **Arrows** — flow lines. They show which step comes next, so every arrow needs a clear direction.
+
+<Diagram caption="The five flowchart symbols. Learn these and you can read any flowchart.">
+<svg viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <ellipse cx="70" cy="50" rx="58" ry="30" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="70" y="46" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">START</text>
+  <text x="70" y="62" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">STOP</text>
+  <text x="70" y="105" fontSize="12" textAnchor="middle" fill="#5f5f5c">oval</text>
+  <rect x="158" y="20" width="104" height="60" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="210" y="55" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">process</text>
+  <text x="210" y="105" fontSize="12" textAnchor="middle" fill="#5f5f5c">rectangle</text>
+  <polygon points="300,20 392,20 372,80 280,80" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="336" y="55" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">input / output</text>
+  <text x="336" y="105" fontSize="12" textAnchor="middle" fill="#5f5f5c">parallelogram</text>
+  <polygon points="476,20 528,50 476,80 424,50" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="476" y="55" fontSize="12" fontWeight="700" textAnchor="middle" fill="#1a1a1a">decision</text>
+  <text x="476" y="105" fontSize="12" textAnchor="middle" fill="#5f5f5c">diamond</text>
+</svg>
+</Diagram>
+
+### Reading a flowchart
+
+Start at the START oval and follow the arrows, top to bottom. When you reach a diamond, answer its question and take the matching path — then keep going until you hit STOP.
+
+<Diagram caption="Should you take an umbrella? Start at the top and follow the arrows.">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" fontFamily="sans-serif">
+  <ellipse cx="280" cy="30" rx="60" ry="25" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="35" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">START</text>
+  <line x1="280" y1="55" x2="280" y2="85" stroke="#4c6106" strokeWidth="2" markerEnd="url(#ah)"/>
+  <polygon points="280,85 355,135 280,185 205,135" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="140" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">Raining?</text>
+  <line x1="355" y1="135" x2="405" y2="135" stroke="#4c6106" strokeWidth="2"/>
+  <text x="380" y="128" fontSize="12" fill="#4c6106">Yes</text>
+  <rect x="405" y="105" width="120" height="60" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="465" y="140" fontSize="13" textAnchor="middle" fill="#1a1a1a">Take umbrella</text>
+  <line x1="465" y1="165" x2="465" y2="200" stroke="#4c6106" strokeWidth="2"/>
+  <ellipse cx="465" cy="225" rx="60" ry="25" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="465" y="230" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">STOP</text>
+  <line x1="280" y1="185" x2="280" y2="225" stroke="#4c6106" strokeWidth="2"/>
+  <text x="294" y="210" fontSize="12" fill="#4c6106">No</text>
+  <ellipse cx="280" cy="250" rx="60" ry="25" fill="#fff" stroke="#1a1a1a" strokeWidth="2"/>
+  <text x="280" y="255" fontSize="13" fontWeight="700" textAnchor="middle" fill="#1a1a1a">STOP</text>
+  <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#4c6106" strokeWidth="2"/></marker></defs>
+</svg>
+</Diagram>
+
+**Key term — algorithm:** A set of step-by-step instructions for solving a problem. A flowchart is one way to *show* an algorithm; code is another way to *write* it.
+
+### The book's classic: miles to kilometres
+
+One of the first flowcharts learners ever draw converts miles to kilometres:
+
+<CodeBlock lang="Flowchart steps">
+START → INPUT distanceMiles → km = distanceMiles * 1.609 → OUTPUT km → STOP
+</CodeBlock>
+
+Trace it with distanceMiles = 10: the parallelogram reads 10, the rectangle computes 10 × 1.609 = 16.09, the second parallelogram outputs 16.09. **Tracing** — walking through a flowchart with real values — is how you prove an algorithm works before you code it.
+
+### Stretching further: the seven times table
+
+The same shape scales up. This flowchart inputs a number and prints its seven times table:
+
+<CodeBlock lang="Flowchart steps">
+START → INPUT number → answer = number * 7 → OUTPUT number & " * 7 = " & answer → STOP
+</CodeBlock>
+
+With number = 3: answer becomes 21, and the output reads "3 * 7 = 21". The & joins the number, the text, and the answer into one line. One input, one process, one output — the simplest useful algorithm there is.
+
+<WorkedExample title="Trace the flowchart">
+  A flowchart for a test result: START → INPUT "read the score" → DECISION "score ≥ 50?" → Yes → OUTPUT "print Pass" → STOP; No → OUTPUT "print Fail" → STOP.
+
+  The score is 65. Follow the arrows: START, read 65, ask "is 65 ≥ 50?" — yes — so take the Yes path, print "Pass", STOP.
+
+  **Answer:** The flowchart outputs "Pass". If the score had been 40, the No path would print "Fail".
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Arrows with no direction** Correction: every arrow must point somewhere — an arrow without a clear direction leaves the reader guessing which step comes next.
+  - **Missing START or STOP** Correction: every flowchart opens with a START oval and closes with a STOP oval, so the reader knows where the algorithm begins and ends.
+  - **Rectangle for input/output** Correction: "read the score" is input, so it belongs in a parallelogram — rectangles are for processes only.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Which shape is used for a decision, such as 'is the number even'?">
+    The diamond — decisions always go in diamonds, with one arrow in and two arrows out (Yes and No).
+  </PracticeItem>
+  <PracticeItem question="A flowchart step says 'print the total'. Which shape should it be?">
+    A parallelogram — printing is output, and input/output steps use the slanted rectangle.
+  </PracticeItem>
+  <PracticeItem question="Trace this flowchart: START → 'set count to 0' → 'add 1 to count' → decision 'is count = 3?' → No loops back to 'add 1 to count'; Yes → STOP. What is count when it stops?" hint="Go round the loop, counting each pass.">
+    3 — count becomes 1, then 2, then 3; at 3 the decision answers Yes and the flowchart stops.
+  </PracticeItem>
+  <PracticeItem question="Why do programmers draw a flowchart before writing code?">
+    To get the logic right first — a mistake is easier to spot and fix in a drawing than in code.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Flowcharts — quick check">
+  <QuizQuestion question="Which shape marks the start of a flowchart?" options={["Rectangle — it holds process steps like 'add 1 to total'.", "Parallelogram — it holds input and output steps.", "Oval — every flowchart opens with a START oval and closes with a STOP oval.", "Diamond — it holds yes/no decisions."]} answer={2} explanation="Oval — every flowchart opens with a START oval and closes with a STOP oval." />
+  <QuizQuestion question="What does a diamond always contain?" options={["A process step, such as 'add 1 to total'.", "An input or output step, such as 'read the score'.", "A yes/no question, with one arrow in and two arrows out.", "The stop instruction at the end of the chart."]} answer={2} explanation="A yes/no question, with one arrow in and two arrows out." />
+  <QuizQuestion question="A step reads 'display the average'. Which shape should it be?" options={["Oval, because every step needs a start and end.", "Rectangle, because displaying is something the computer does.", "Parallelogram, because displaying is output.", "Diamond, because you must decide what to display."]} answer={2} explanation="Parallelogram, because displaying is output." />
+</Quiz>
+
+<Summary>
+  - Flowchart: a diagram that shows the steps of an algorithm in order, using standard shapes joined by arrows.
+  - Plan on paper first: get the logic right in a drawing before fighting with code syntax.
+  - Key term — algorithm: step-by-step instructions for solving a problem; a flowchart shows one, code writes one.
+  - Watch out for: arrows with no direction, missing START/STOP ovals, and using rectangles for input/output.
+</Summary>

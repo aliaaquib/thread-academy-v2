@@ -51,7 +51,8 @@ export function generateStaticParams() {
 type Params = LangParam & { subject: string };
 
 /** The title + description Google and link previews show for this page. */
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   const category = categoryFromSlug(params.subject);
   if (category) {
@@ -135,7 +136,8 @@ function CategoryView({
 }
 
 /** The page itself — what the visitor sees. */
-export default function SubjectPage({ params }: { params: Params }) {
+export default async function SubjectPage(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   const category = categoryFromSlug(params.subject);
   if (category) {

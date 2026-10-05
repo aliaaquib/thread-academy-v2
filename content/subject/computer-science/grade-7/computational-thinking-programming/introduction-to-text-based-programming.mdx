@@ -1,0 +1,104 @@
+---
+title: "Introduction to Text-Based Programming"
+lede: "From blocks to typed code: what a programming language actually is."
+---
+
+<LearningObjectives>
+  <li>Define and explain programming languages in your own words</li>
+  <li>Use key terms such as syntax accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+So far you have planned with flowcharts and (maybe) built programs from snap-together blocks. Now it is time to meet code as professionals write it: typed text.
+
+<Definition term="Programming language">
+  An agreed way of writing instructions that a computer can follow, such as Python, Java or C++.
+</Definition>
+
+## Key ideas
+
+### From blocks to text
+
+Block languages let you snap commands together like puzzle pieces — you cannot make a syntax error because the pieces only fit where they belong. Text languages give you the same ideas (sequence, selection, repetition) but you type every character yourself. More freedom, more responsibility: the computer will not guess what you meant.
+
+### What a language actually is
+
+A programming language sits between human ideas and the machine. High-level languages like Python read almost like English, which makes them good for learning. Underneath, everything is translated into **machine code** — the 1s and 0s the processor actually executes. You write for humans; the translator handles the machine.
+
+### Syntax: the grammar of code
+
+Every language has strict rules called **syntax** — its grammar and spelling. The computer is completely literal: it does exactly what you typed, not what you meant.
+
+<CodeBlock lang="Python">
+print("Hello")
+Print("Hello")
+print("Hello"
+</CodeBlock>
+
+Line 1 is correct. Line 2 fails — Python keywords are lowercase, so `Print` means nothing. Line 3 fails — the closing bracket is missing. One character can be the difference between working and broken.
+
+**Key term — syntax:** The exact spelling, punctuation and layout rules of a programming language. Break them and you get a syntax error.
+
+### Real beginner programs — and their real errors
+
+The first programs learners write print their own name:
+
+<CodeBlock lang="Python">
+print("I am 11 years old")
+print("Victoria Ellis")
+</CodeBlock>
+
+Both work. Now the classic mistakes every beginner makes:
+
+- `PRINT("Hi")` — fails: keywords are lowercase, and the language is case-sensitive.
+- `print("Hi)` — fails: the closing quotation mark is missing.
+- `print("Hi"` — fails: the closing bracket is missing.
+
+Fixing `PRINT("Victoria Ellis)` into `print("Victoria Ellis")` is two one-character changes — and the difference between a program that runs and one that does not.
+
+<WorkedExample title="Read a line of code">
+  Line: `name = input("Your name: ")`
+
+  Reading left to right: `name` is a variable — a named box to store something. `=` stores a value into it (it does not mean "equals" here). `input(...)` is a command that shows the text in brackets on screen and waits for the user to type. So the whole line means: "show 'Your name: ', wait for typing, and store what was typed in the box called name."
+
+  **Answer:** The line asks the user for their name and stores the answer in a variable called name.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Wrong capitalisation** Correction: most languages are case-sensitive — print works, Print does not. Copy keywords exactly.
+  - **Unbalanced brackets or quotes** Correction: every opening bracket needs a closing one, and every opening quote needs a closing one — count them when something breaks.
+  - **Assuming the computer understands intent** Correction: it does not. "Print hello" without quotes and brackets is just words to Python — write the full, exact instruction.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="What is the difference between a block language and a text-based language?">
+    Block languages snap visual pieces together (no syntax errors possible); text-based languages are typed by hand, giving more power but demanding exact syntax.
+  </PracticeItem>
+  <PracticeItem question="What is machine code?">
+    The 1s and 0s a processor actually executes — everything written in a high-level language is translated into it.
+  </PracticeItem>
+  <PracticeItem question="Spot the syntax error: print('Total:' total)">
+    A missing comma or plus between 'Total:' and total — two things next to each other with nothing joining them is not valid syntax.
+  </PracticeItem>
+  <PracticeItem question="In the line score = 10, does = mean 'equals'?">
+    No — here = stores the value 10 into the variable score. "Equals" in a comparison uses == (coming up in Python).
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Text-based programming — quick check">
+  <QuizQuestion question="What is syntax?" options={["The 1s and 0s a processor executes.", "The exact spelling, punctuation and layout rules of a programming language.", "A named box that stores a value.", "A diagram of an algorithm using shapes."]} answer={1} explanation="The exact spelling, punctuation and layout rules of a programming language." />
+  <QuizQuestion question="Why is print('hi') correct but Print('hi') an error?" options={["Python has no print command at all.", "Python is case-sensitive: only lowercase print is the real command.", "The quotes are the wrong type.", "print needs no brackets."]} answer={1} explanation="Python is case-sensitive: only lowercase print is the real command." />
+  <QuizQuestion question="What does a high-level language like Python give you that machine code does not?" options={["It runs without any translation.", "Instructions that read almost like English, so humans can write and read them.", "It can only be used for games.", "It needs no syntax rules."]} answer={1} explanation="Instructions that read almost like English, so humans can write and read them." />
+</Quiz>
+
+<Summary>
+  - Programming language: an agreed way of writing instructions a computer can follow; high-level languages are translated into machine code.
+  - Block languages prevent syntax errors; text languages demand exact typing but give more power.
+  - Key term — syntax: the exact spelling and punctuation rules of a language; the computer is completely literal.
+  - Watch out for: wrong capitalisation, unbalanced brackets/quotes, and assuming the computer knows what you meant.
+</Summary>

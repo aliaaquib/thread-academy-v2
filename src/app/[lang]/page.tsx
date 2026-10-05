@@ -12,13 +12,15 @@ export function generateStaticParams() {
   return (["tr", "ru", "ky"] as Lang[]).map((lang) => ({ lang }));
 }
 
-type MirrorProps = { params: Record<string, string | string[] | undefined> };
+type MirrorProps = { params: Promise<Record<string, string | string[] | undefined>> };
 
 export function generateMetadata(props: MirrorProps): Promise<Metadata> | Metadata {
-  return (enGenerateMetadata as (p: MirrorProps) => Promise<Metadata> | Metadata)(props);
+  return (enGenerateMetadata as (p: MirrorProps) => Promise<Metadata> | Metadata)(  props);
 }
 
 export default function LangMirrorPage(props: MirrorProps) {
   const Page = EnPage as unknown as (p: MirrorProps) => React.ReactElement;
-  return <Page {...props} />;
+  return (
+    <Page {...props} />
+  );
 }

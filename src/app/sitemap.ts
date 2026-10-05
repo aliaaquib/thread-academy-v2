@@ -10,6 +10,9 @@ import type { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
 import { SITE_URL } from "@/lib/seo";
+
+// Next 16 requires an explicit static opt-in for metadata routes in `output: "export"`.
+export const dynamic = "force-static";
 import { type Lang } from "@/lib/i18n";
 import { SUBJECT_SLUGS } from "@/lib/subjects";
 import { getAllPosts } from "@/lib/blog";

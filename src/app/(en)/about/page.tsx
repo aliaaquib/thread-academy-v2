@@ -10,7 +10,8 @@ import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
 import { requireLang, type LangParam } from "@/lib/route-lang";
 
-export function generateMetadata({ params }: { params: { lang?: LangParam["lang"] } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ lang?: LangParam["lang"] }> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   return pageMetadata({
     title: t(lang, "about.meta.title"),
@@ -21,7 +22,8 @@ export function generateMetadata({ params }: { params: { lang?: LangParam["lang"
 }
 
 /** The page itself — what the visitor sees. */
-export default function AboutPage({ params }: { params: { lang?: LangParam["lang"] } }) {
+export default async function AboutPage(props: { params: Promise<{ lang?: LangParam["lang"] }> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   const provides = [1, 2, 3, 4].map((n) => t(lang, `about.provides.${n}`));
   const chapters = [1, 2, 3, 4].map((n) => ({

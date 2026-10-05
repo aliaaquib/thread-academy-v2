@@ -18,7 +18,8 @@ export function generateStaticParams() {
   return (["tr", "ru", "ky"] as Lang[]).map((lang) => ({ lang }));
 }
 
-export function generateMetadata({ params }: { params: LangParam }): Metadata {
+export async function generateMetadata(props: { params: Promise<LangParam> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   return {
     description: t(lang, "seo.site.desc"),
@@ -33,13 +34,18 @@ export function generateMetadata({ params }: { params: LangParam }): Metadata {
   };
 }
 
-export default function LangLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: LangParam;
-}) {
+export default async function LangLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<LangParam>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   // Unknown language prefixes (e.g. /fr/...) 404 here.
   const lang = requireLang(params);
   return (

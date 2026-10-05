@@ -42,7 +42,8 @@ function formatPostDate(iso: string, lang: Lang): string {
 }
 
 /** The title + description Google and link previews show for this page. */
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   const post = getPost(params.slug, lang);
   if (!post) return {};
@@ -57,7 +58,8 @@ export async function generateMetadata({ params }: { params: Params }) {
 }
 
 /** The page itself — what the visitor sees. */
-export default function BlogPostPage({ params }: { params: Params }) {
+export default async function BlogPostPage(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   const post = getPost(params.slug, lang);
   if (!post) notFound();

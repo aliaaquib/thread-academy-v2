@@ -1,0 +1,128 @@
+---
+title: "Physical Computing"
+lede: "Programs that touch the real world: sensors, buttons and lights."
+---
+
+<LearningObjectives>
+  <li>Define and explain physical computing in your own words</li>
+  <li>Use key terms such as sensor accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+Until now your programs have lived on a screen. Physical computing breaks out: programs that read the real world through sensors and push back through lights, sounds and motors — the tech inside automatic doors, fitness trackers and robots.
+
+<Definition term="Physical computing">
+  Building systems where software interacts with the physical world through sensors (inputs) and actuators like lights and motors (outputs).
+</Definition>
+
+## Key ideas
+
+### Inputs sense, outputs act
+
+Every physical system is the same pattern you already know — input, process, output — with hardware on both ends:
+
+- **Inputs** detect the world: buttons, light sensors, temperature sensors, motion sensors, microphones.
+- **Outputs** change the world: LEDs, speakers/buzzers, motors, screens.
+
+A burglar alarm: motion sensor (input) → "was there movement?" (process) → siren (output).
+
+### Meet the micro:bit
+
+The classic classroom physical-computing board is the **micro:bit** — a tiny computer you can hold, with built-in inputs and outputs:
+
+- **Inputs** — button presses, movement/tilt (accelerometer), temperature sensor, compass.
+- **Outputs** — LEDs (it can light up patterns), sounds (speaker).
+
+No wiring needed: press a button (input) and the LEDs light up (output), all in one device.
+
+### A real example: the shake counter
+
+<CodeBlock lang="Pseudocode">
+number = 10
+DISPLAY smiley face
+FOREVER
+    IF micro:bit is shaken THEN
+        number = number - 1
+    IF number &lt;= 0 THEN
+        DISPLAY sad face
+    END IF
+END FOREVER
+</CodeBlock>
+
+Trace it: the micro:bit first displays a smiley face. Each shake subtracts 1 from the variable number. After 10 shakes number reaches 0 — and 0 ≤ 0 is true — so a sad face is displayed. Inputs (shake), a variable, selection, output (LEDs): a whole program in one tiny device.
+
+### Programs that never stop
+
+Screen programs usually run once and finish. Physical programs typically loop **forever**: keep checking the sensor, keep reacting. An automatic streetlight does not check the darkness once — it checks all night.
+
+### Example: a night light
+
+A small board with a light sensor and LEDs. The rule: when it gets dark, switch the LEDs on.
+
+<CodeBlock lang="Pseudocode">
+FOREVER
+    light_level = read light sensor
+    IF light_level < 20 THEN
+        turn LEDs ON
+    ELSE
+        turn LEDs OFF
+    END IF
+END FOREVER
+</CodeBlock>
+
+Trace it at dusk: light_level reads 15 → 15 < 20 is true → LEDs ON → loop back, check again. At dawn the reading rises above 20 and the ELSE branch switches them OFF. The same selection and repetition you learned in flowcharts — now controlling real hardware.
+
+**Key term — sensor:** A device that measures something in the environment (light, heat, movement, sound) and turns it into data a program can read.
+
+<WorkedExample title="Design a plant waterer">
+  Goal: water a plant when its soil gets dry. Pick the parts: a moisture sensor (input — reads how wet the soil is), a small water pump (output), and this logic:
+
+  FOREVER: moisture = read moisture sensor; IF moisture < 30 THEN turn pump ON for 5 seconds, ELSE keep pump OFF.
+
+  **Answer:** Dry soil (moisture 20) triggers 5 seconds of watering; damp soil (moisture 60) keeps the pump off. The loop means the plant is checked again and again without anyone watching.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Mixing up inputs and outputs** Correction: sensors and buttons collect information (inputs); LEDs, buzzers and motors do things (outputs). Ask: "does it sense, or does it act?"
+  - **Forgetting the forever loop** Correction: checking a sensor once is rarely enough — physical programs usually repeat their check continuously.
+  - **No threshold** Correction: "when it gets dark" is vague to a computer — give a number, like light_level < 20, so the decision is exact.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="Is a thermometer-style temperature sensor an input or an output? Why?">
+    An input — it senses the environment and feeds data into the program; it does not change anything itself.
+  </PracticeItem>
+  <PracticeItem question="An automatic door opens when someone approaches. Name the likely input and output.">
+    Input: a motion (or distance) sensor detecting the person. Output: the motor that slides the door open.
+  </PracticeItem>
+  <PracticeItem question="Why does the night-light program use FOREVER instead of running once?">
+    Because darkness comes and goes — the program must keep checking the sensor so it can react whenever conditions change.
+  </PracticeItem>
+  <PracticeItem question="A student writes: IF dark THEN lights ON. What is missing for a computer to run this?">
+    A measurable threshold — "dark" must become something exact like light_level < 20.
+  </PracticeItem>
+  <PracticeItem question="Name two inputs and two outputs of the micro:bit.">
+    Inputs: any two of button press, accelerometer/tilt/movement, temperature sensor, compass. Outputs: LEDs lighting up, speaker/sound.
+  </PracticeItem>
+  <PracticeItem question="In the shake counter, what does the micro:bit display after 10 shakes, and why?">
+    A sad face — each shake subtracts 1 from number (starting at 10), so after 10 shakes number ≤ 0 and the sad-face condition becomes true.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Physical computing — quick check">
+  <QuizQuestion question="What is physical computing?" options={["Writing programs that only run on supercomputers.", "Software interacting with the physical world through sensors and outputs like lights and motors.", "Drawing flowcharts of physical exercises.", "Testing programs with real users instead of test tables."]} answer={1} explanation="Software interacting with the physical world through sensors and outputs like lights and motors." />
+  <QuizQuestion question="Which pair is input → output?" options={["LED → button: the LED senses the press.", "Motor → temperature sensor: the motor measures heat.", "Light sensor → LED: the sensor reads darkness, the LED lights up.", "Speaker → microphone: the speaker listens."]} answer={2} explanation="Light sensor → LED: the sensor reads darkness, the LED lights up." />
+  <QuizQuestion question="Why do physical programs usually loop forever?" options={["Because computers cannot stop on their own.", "So they keep sensing and reacting as the real world changes.", "To use more electricity.", "Forever loops are required by law."]} answer={1} explanation="So they keep sensing and reacting as the real world changes." />
+</Quiz>
+
+<Summary>
+  - Physical computing: software interacting with the real world via sensors (inputs) and actuators like LEDs and motors (outputs).
+  - The same input → process → output pattern, usually wrapped in a forever loop.
+  - Decisions need exact thresholds (light_level < 20), not vague words like "dark".
+  - Watch out for: mixing up inputs and outputs, and checking a sensor only once.
+</Summary>
