@@ -39,7 +39,8 @@ export function generateStaticParams() {
 type Params = LangParam & { subject: string; grade: string; chapter: string; topic: string };
 
 /** The title + description Google and link previews show for this page. */
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   const content = getTopicContent(params, lang);
   const subject = getSubject(params.subject, lang);
@@ -59,7 +60,8 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 }
 
 /** The page itself — what the visitor sees. */
-export default function TopicPage({ params }: { params: Params }) {
+export default async function TopicPage(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   const subject = getSubject(params.subject, lang);
   const grade = parseGradeSlug(params.grade);

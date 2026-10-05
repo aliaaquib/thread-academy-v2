@@ -13,7 +13,8 @@ import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
 import { requireLang, type LangParam } from "@/lib/route-lang";
 
-export function generateMetadata({ params }: { params: { lang?: LangParam["lang"] } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ lang?: LangParam["lang"] }> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   return pageMetadata({
     title: t(lang, "search.meta.title"),
@@ -26,7 +27,8 @@ export function generateMetadata({ params }: { params: { lang?: LangParam["lang"
 
 /** Server shell (prerendered) + client search UI inside a Suspense boundary
  *  so useSearchParams() works with a fully static export. */
-export default function SearchPage({ params }: { params: { lang?: LangParam["lang"] } }) {
+export default async function SearchPage(props: { params: Promise<{ lang?: LangParam["lang"] }> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   return (
     <>

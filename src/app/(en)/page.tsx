@@ -18,7 +18,8 @@ import { t, tn } from "@/lib/strings";
 import { requireLang, type LangParam } from "@/lib/route-lang";
 
 /** The title Google shows for the home page, in the page language. */
-export function generateMetadata({ params }: { params: LangParam }): Metadata {
+export async function generateMetadata(props: { params: Promise<LangParam> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   const base = pageMetadata({
     title: t(lang, "home.meta.title"),
@@ -76,7 +77,8 @@ function quickLinks(lang: Lang): QuickLink[] {
 }
 
 /** The page itself — what the visitor sees. */
-export default function HomePage({ params }: { params: LangParam }) {
+export default async function HomePage(props: { params: Promise<LangParam> }) {
+  const params = await props.params;
   const lang = requireLang(params);
 
   const steps = [1, 2, 3, 4].map((n) => ({

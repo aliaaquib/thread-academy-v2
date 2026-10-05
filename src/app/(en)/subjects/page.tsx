@@ -13,7 +13,8 @@ import { withLang, type Lang } from "@/lib/i18n";
 import { t, tn } from "@/lib/strings";
 import { requireLang, type LangParam } from "@/lib/route-lang";
 
-export function generateMetadata({ params }: { params: { lang?: LangParam["lang"] } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ lang?: LangParam["lang"] }> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   return pageMetadata({
     title: t(lang, "subjects.meta.title"),
@@ -40,7 +41,8 @@ const GLYPHS: Record<string, string> = {
 };
 
 /** The page itself — what the visitor sees. */
-export default function SubjectsPage({ params }: { params: { lang?: LangParam["lang"] } }) {
+export default async function SubjectsPage(props: { params: Promise<{ lang?: LangParam["lang"] }> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   return (
     <>

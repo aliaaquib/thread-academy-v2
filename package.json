@@ -1,16 +1,16 @@
 {
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "next": "^14.2.18",
+    "next": "16.3.8",
     "next-mdx-remote": "^6.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "description": "Thread Academy \u2014 a free, W3Schools-style interactive learning library for school students. Static Next.js site.",
   "devDependencies": {
     "@types/node": "^20.16.0",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
@@ -18,7 +18,7 @@
     "typescript": "^5.6.2"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.9"
   },
   "name": "thread-academy",
   "private": true,

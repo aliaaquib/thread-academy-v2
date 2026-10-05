@@ -13,7 +13,8 @@ import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
 import { requireLang, type LangParam } from "@/lib/route-lang";
 
-export function generateMetadata({ params }: { params: LangParam }): Metadata {
+export async function generateMetadata(props: { params: Promise<LangParam> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   return pageMetadata({
     title: t(lang, "blog.meta.title"),
@@ -24,7 +25,8 @@ export function generateMetadata({ params }: { params: LangParam }): Metadata {
 }
 
 /** The page itself — what the visitor sees. */
-export default function BlogIndexPage({ params }: { params: LangParam }) {
+export default async function BlogIndexPage(props: { params: Promise<LangParam> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   const groups = getPostsBySubject(lang);
   let n = 0;

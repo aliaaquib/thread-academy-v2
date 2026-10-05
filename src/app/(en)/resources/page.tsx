@@ -28,7 +28,8 @@ const GLYPHS: Record<string, string> = {
   economics: "↗",
 };
 
-export function generateMetadata({ params }: { params: LangParam }): Metadata {
+export async function generateMetadata(props: { params: Promise<LangParam> }): Promise<Metadata> {
+  const params = await props.params;
   const lang = requireLang(params);
   return pageMetadata({
     title: t(lang, "resources.meta.title"),
@@ -39,7 +40,8 @@ export function generateMetadata({ params }: { params: LangParam }): Metadata {
 }
 
 /** The page itself — what the visitor sees. */
-export default function ResourcesHubPage({ params }: { params: LangParam }) {
+export default async function ResourcesHubPage(props: { params: Promise<LangParam> }) {
+  const params = await props.params;
   const lang: Lang = requireLang(params);
   const chapters = getContentChapters(lang);
 

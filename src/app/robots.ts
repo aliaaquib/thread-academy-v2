@@ -6,6 +6,9 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 
+// Next 16 requires an explicit static opt-in for metadata routes in `output: "export"`.
+export const dynamic = "force-static";
+
 /** Generates /robots.txt for the static export. */
 export default function robots(): MetadataRoute.Robots {
   return {

@@ -1,0 +1,124 @@
+---
+title: "Modelling"
+lede: "Build a spreadsheet model and ask 'what if' to compare scenarios."
+---
+
+<LearningObjectives>
+  <li>Define and explain modelling in your own words</li>
+  <li>Use key terms such as variable accurately</li>
+  <li>Apply what you have learned to new examples and questions</li>
+  <li>Avoid the common mistakes learners make with this topic</li>
+</LearningObjectives>
+
+A model is a simplified copy of something real — a toy car models a real car. A **spreadsheet model** is a simplified copy of a real-life system with numbers: a shop's takings, a school trip's cost, a phone bill. Change a number, and the model shows what would happen.
+
+<Definition term="Model">
+  A simplified representation of a real-life system, built so you can explore it safely and cheaply — here, using a spreadsheet.
+</Definition>
+
+## Key ideas
+
+### Models answer "what if?"
+
+The whole point of a model is **what-if analysis**: change one value and watch the results update, without spending real money or waiting for real events. "What if 40 pupils come on the trip instead of 30?" — type 40, read the new total. Trying that for real would mean rebooking coaches.
+
+### Variables and rules
+
+Every model has two ingredients:
+
+- **Variables** — the values you can change. Number of pupils, ticket price, coach cost.
+- **Rules (formulas)** — how values relate. Total cost = (pupils × ticket price) + coach cost.
+
+Set up the variables as input cells and the rules as formulas. Then the spreadsheet does the "what if" work for you.
+
+### A worked model: the school trip
+
+<CodeBlock lang="Example">
+A2: Number of pupils ......... 30
+A3: Ticket price .............. 12
+A4: Coach cost ............... 180
+A5: TOTAL  = (A2 * A3) + A4  →  540
+</CodeBlock>
+
+What if 40 pupils come? Change A2 to 40 → total becomes 660 instantly. What if the coach costs 220? Change A4 → 700. Each "what if" takes one keystroke.
+
+### Models are useful — and limited
+
+Models help with decisions (can we afford it?), predictions (what will we spend?) and planning. But a model is only as good as its rules: it ignores things the real world includes — pupils dropping out, traffic delays, price rises. Never trust a model blindly; ask what it leaves out.
+
+### Simulations: models that imitate real life
+
+A **simulation** is a model that gives a realistic imitation of a real-life situation or system. Think of a car-driving simulator used to train drivers:
+
+- The screens imitate a normal road: pedestrians, other traffic, road layout, traffic lights.
+- Each control does something: the steering, pedals and indicators change what the screens show, what sounds play, even what vibrations the seat gives — so it feels like the car is moving.
+- It must handle mistakes: what should happen if the driver does nothing when an obstacle appears, or steers into an object, or off the road?
+
+### Testing a model's rules
+
+A model is only trustworthy if its rules work. Take a sales model with a target: the rule says cell C6 turns green when sales are on target, red when they miss it. To test the rule, change the values in C3, C4 or C5 until C6 goes above the sales target — if the cell flips from green to red (or red to green) as expected, the rule works. Deliberately pushing a model past its limits is how you prove it behaves.
+
+### Why simulations are never perfect
+
+- A simulator can never replicate real life completely accurately.
+- Simulators can be very expensive to build.
+- If the programming contains mistakes, the simulator will not be as good.
+- People behave differently in a simulation — a driver takes risks knowing nobody can really get hurt.
+- Irrelevant data can make the system slower; too little data about rare events makes it behave unrealistically.
+
+That is why pilots train in simulators *and* in real planes: the model teaches cheaply, but reality is the final test.
+
+<WorkedExample title="Compare two scenarios">
+  The trip model above. Scenario 1: 30 pupils, tickets 12, coach 180 → total 540, which is 18 per pupil. Scenario 2: the coach company offers a bigger coach for 240 that holds 45 — 40 pupils sign up.
+
+  Change A2 to 40 and A4 to 240: total = (40 × 12) + 240 = 720, which is still 18 per pupil — but 10 more pupils get to go for the same per-person price.
+
+  **Answer:** The model lets you compare scenarios in seconds: scenario 2 serves more pupils at the same per-person cost, so it is the better choice.
+</WorkedExample>
+
+<ImportantNote title="Common mistakes">
+  - **Typing results instead of formulas** Correction: if the total is typed in, changing pupils changes nothing — the total must be a formula so "what if" works.
+  - **Changing two variables at once** Correction: change one variable at a time, or you cannot tell which change caused the result.
+  - **Believing the model completely** Correction: models simplify reality — always ask what real-life factors the model ignores.
+</ImportantNote>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="In a phone-bill model, which are the variables: minutes used, price per minute, or the formula total = minutes × price?">
+    Minutes used and price per minute are variables (changeable inputs); the total is a rule (formula) built from them.
+  </PracticeItem>
+  <PracticeItem question="What is 'what-if analysis'?">
+    Changing a variable in a model to see how the results change — exploring scenarios without real-world cost or risk.
+  </PracticeItem>
+  <PracticeItem question="A shop model predicts profit, but real profit is lower every month. Give one reason the model might be wrong.">
+    The model may ignore real factors — e.g. shoplifting, unsold stock, or price changes — because models simplify reality.
+  </PracticeItem>
+  <PracticeItem question="Why must the total be a formula, not a typed number, in a model?">
+    Only a formula recalculates when a variable changes — a typed number stays frozen and the "what if" breaks.
+  </PracticeItem>
+  <PracticeItem question="What is a simulation, in one sentence?">
+    A model that gives a realistic imitation of a real-life situation or system, e.g. a driving simulator.
+  </PracticeItem>
+  <PracticeItem question="A sales model's rule should turn C6 red when sales miss the target. How would you test that rule?">
+    Change the input values (C3, C4, C5) until C6 goes above or below the target, and check the colour flips as expected.
+  </PracticeItem>
+  <PracticeItem question="Give two reasons a driving simulator can never fully replace real driving practice.">
+    Any two: it can never replicate real life completely accurately; people behave differently knowing it is safe; programming mistakes make it less good; simulators are very expensive.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Modelling — quick check">
+  <QuizQuestion question="What is a spreadsheet model?" options={["A chart drawn from spreadsheet data.", "A simplified copy of a real-life system, built with variables and formulas so scenarios can be explored.", "A backup copy of a spreadsheet file.", "A spreadsheet protected with a password."]} answer={1} explanation="A simplified copy of a real-life system, built with variables and formulas so scenarios can be explored." />
+  <QuizQuestion question="In a model, what is the difference between a variable and a rule?" options={["There is no difference.", "A variable is a value you can change; a rule (formula) describes how values relate.", "A variable is a formula; a rule is typed text.", "Variables are only for charts."]} answer={1} explanation="A variable is a value you can change; a rule (formula) describes how values relate." />
+  <QuizQuestion question="When comparing scenarios, why change only one variable at a time?" options={["Spreadsheets cannot handle two changes.", "So you can tell which change caused the difference in results.", "It makes the model run faster.", "Variables must never change."]} answer={1} explanation="So you can tell which change caused the difference in results." />
+</Quiz>
+
+<Summary>
+  - Model: a simplified representation of a real-life system, built to explore safely and cheaply.
+  - What-if analysis: change a variable, watch results update — compare scenarios in seconds.
+  - Variables are changeable inputs; rules are formulas linking them; totals must be formulas.
+  - Watch out for: typed-in totals, changing two variables at once, and trusting a model blindly.
+</Summary>
