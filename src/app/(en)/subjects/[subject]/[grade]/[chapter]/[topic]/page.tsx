@@ -69,7 +69,7 @@ export default function TopicPage({ params }: { params: Params }) {
   if (getGradeForChapter(params.subject, params.chapter) !== grade) notFound();
 
   const gradePath = withLang(`/subjects/${params.subject}/${gradeSlug(grade)}`, lang);
-  const chapterPath = withLang(`${gradePath}/${params.chapter}`, lang);
+  const chapterPath = `${gradePath}/${params.chapter}`;
   const topics = getAvailableTopics(
     { subject: params.subject, chapter: params.chapter },
     lang,
