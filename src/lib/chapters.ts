@@ -38,12 +38,6 @@ export const CHAPTER_TOPICS: Record<string, Topic[]> = {
     { slug: "cell-structure", title: "Cell Structure", desc: "Meet the organelles: the tiny machines inside every cell." },
   ],
   // ── Computer Science ──
-  "managing-data": [
-    { slug: "spreadsheets", title: "Spreadsheets", desc: "Cells, formulas and functions: SUM, AVERAGE and charts that calculate for you." },
-    { slug: "modelling", title: "Modelling", desc: "Build a spreadsheet model and ask 'what if' to compare scenarios." },
-    { slug: "databases", title: "Databases", desc: "Tables, records and fields: store data properly and search it fast." },
-    { slug: "data-collection", title: "Data Collection", desc: "Gather data well: surveys, sensors, and checks that catch bad data." },
-  ],
   "networks-and-digital-communication": [
     { slug: "accessing-websites", title: "Accessing Websites", desc: "URLs, browsers and search engines — and how to tell a site is secure." },
     { slug: "types-of-network", title: "Types of Network", desc: "PAN, LAN and WAN: how networks are classified by size." },

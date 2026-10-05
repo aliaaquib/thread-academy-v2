@@ -57,7 +57,7 @@ export const GRADE_CHAPTER_IDS: Record<string, Record<number, string[]>> = {
     12: ["organic-chemistry", "analytical-chemistry"],
   },
   "computer-science": {
-    7: ["managing-data", "networks-and-digital-communication", "computer-systems"],
+    7: ["networks-and-digital-communication", "computer-systems"],
     8: ["creating-media", "computational-thinking"],
     9: ["programming", "data-representation"],
     10: ["networks", "algorithms"],
