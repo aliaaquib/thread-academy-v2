@@ -60,7 +60,7 @@ export default async function GradePage(props: { params: Promise<Params> }) {
       {chapters.length > 0 && (
         <JsonLd
           data={itemListJsonLd(
-            chapters.map((c) => ({ name: c.title, url: withLang(`${gradePath}/${c.id}`, lang) })),
+            chapters.map((c) => ({ name: c.title, url: `${gradePath}/${c.id}` })),
           )}
         />
       )}
@@ -86,7 +86,7 @@ export default async function GradePage(props: { params: Promise<Params> }) {
                 <Link
                   key={chapter.id}
                   className="chapter-link"
-                  href={withLang(`${gradePath}/${chapter.id}`, lang)}
+                  href={`${gradePath}/${chapter.id}`}
                 >
                   <span className="chapter-index">{String(i + 1).padStart(2, "0")}</span>
                   <span>
