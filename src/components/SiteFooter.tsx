@@ -33,6 +33,14 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
       links: [{ label: t(lang, "nav.about"), href: withLang("/about", lang) }],
     },
     {
+      heading: t(lang, "footer.legal"),
+      links: [
+        { label: t(lang, "nav.terms"), href: withLang("/terms", lang) },
+        { label: t(lang, "nav.privacy"), href: withLang("/privacy", lang) },
+        { label: t(lang, "nav.cookies"), href: withLang("/cookies", lang) },
+      ],
+    },
+    {
       heading: t(lang, "footer.other"),
       links: [{ label: t(lang, "nav.search"), href: withLang("/search", lang) }],
     },

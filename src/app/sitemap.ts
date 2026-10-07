@@ -47,6 +47,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add("/resources", 0.8, buildDate, lang);
     add("/blog", 0.8, buildDate, lang);
     add("/about", 0.5, buildDate, lang);
+    add("/terms", 0.3, buildDate, lang);
+    add("/privacy", 0.3, buildDate, lang);
+    add("/cookies", 0.3, buildDate, lang);
 
     // Blog posts (learning journal) — only genuinely translated posts.
     for (const post of getAllPosts(lang)) {
