@@ -409,6 +409,23 @@ const en: Dict = {
   "terms.s8.body": "We may update these terms as the service evolves. Continued use of the site after changes means you accept the new terms. Questions about these terms? Contact us through the website.",
   "terms.s8.title": "Changes and contact",
   "terms.updated": "Last updated: October 7, 2026",
+
+  // ---- 404 game ----
+  "game.404.lede": "This page doesn't exist — but since you're here, warm up your brain.",
+  "game.404.title": "Lost?",
+  "game.backhome": "Back to lessons",
+  "game.best": "Best",
+  "game.catch": "Catch",
+  "game.final": "Score",
+  "game.gameover": "Game over!",
+  "game.howto": "Tap the falling equations that equal the target number. Wrong taps cost a life — and letting a correct one slip past costs a life too!",
+  "game.lives": "Lives",
+  "game.newbest": "New best score!",
+  "game.playagain": "Play again",
+  "game.score": "Score",
+  "game.start": "Start",
+  "game.time": "Time",
+  "game.timesup": "Time's up!",
 };
 
 const tr: Dict = {
@@ -785,6 +802,23 @@ const tr: Dict = {
   "terms.s8.body": "Hizmet geliştikçe bu şartları güncelleyebiliriz. Değişikliklerden sonra siteyi kullanmaya devam etmeniz, yeni şartları kabul ettiğiniz anlamına gelir. Bu şartlarla ilgili sorularınız mı var? Site üzerinden bizimle iletişime geçin.",
   "terms.s8.title": "Değişiklikler ve iletişim",
   "terms.updated": "Son güncelleme: 7 Ekim 2026",
+
+  // ---- 404 game ----
+  "game.404.lede": "Bu sayfa yok — ama madem buradasın, beynini ısıt.",
+  "game.404.title": "Kayboldun mu?",
+  "game.backhome": "Derslere dön",
+  "game.best": "En iyi",
+  "game.catch": "Yakala",
+  "game.final": "Skor",
+  "game.gameover": "Oyun bitti!",
+  "game.howto": "Hedef sayıya eşit olan düşen denklemlere dokun. Yanlış dokunuşlar can kaybettirir — doğru olanı kaçırmak da can kaybettirir!",
+  "game.lives": "Can",
+  "game.newbest": "Yeni rekor!",
+  "game.playagain": "Tekrar oyna",
+  "game.score": "Skor",
+  "game.start": "Başla",
+  "game.time": "Süre",
+  "game.timesup": "Süre doldu!",
 };
 
 const ru: Dict = {
@@ -1175,6 +1209,23 @@ const ru: Dict = {
   "terms.s8.body": "Мы можем обновлять эти условия по мере развития сервиса. Продолжение использования сайта после изменений означает, что вы принимаете новые условия. Вопросы об этих условиях? Свяжитесь с нами через сайт.",
   "terms.s8.title": "Изменения и контакты",
   "terms.updated": "Последнее обновление: 7 октября 2026 г.",
+
+  // ---- 404 game ----
+  "game.404.lede": "Такой страницы нет — но раз вы здесь, разомните мозг.",
+  "game.404.title": "Заблудились?",
+  "game.backhome": "К урокам",
+  "game.best": "Рекорд",
+  "game.catch": "Лови",
+  "game.final": "Счёт",
+  "game.gameover": "Игра окончена!",
+  "game.howto": "Нажимайте на падающие примеры, равные целевому числу. Ошибка стоит жизни — пропущенный правильный пример тоже!",
+  "game.lives": "Жизни",
+  "game.newbest": "Новый рекорд!",
+  "game.playagain": "Ещё раз",
+  "game.score": "Счёт",
+  "game.start": "Играть",
+  "game.time": "Время",
+  "game.timesup": "Время вышло!",
 };
 
 const ky: Dict = {
@@ -1551,6 +1602,23 @@ const ky: Dict = {
   "terms.s8.body": "Кызмат өнүккөндө бул шарттарды жаңырта алабыз. Өзгөртүүлөрдөн кийин сайтты колдонууну улантуу жаңы шарттарды кабыл алганыңызды билдирет. Бул шарттар боюнча суроолоруңуз барбы? Веб-сайт аркылуу биз менен байланышыңыз.",
   "terms.s8.title": "Өзгөртүүлөр жана байланыш",
   "terms.updated": "Акыркы жаңыртуу: 2026-жылдын 7-октябры",
+
+  // ---- 404 game ----
+  "game.404.lede": "Мындай баракча жок — бирок келгенден кийин мээни жылыталы.",
+  "game.404.title": "Адаштыңбы?",
+  "game.backhome": "Сабактарга кайтуу",
+  "game.best": "Рекорд",
+  "game.catch": "Карма",
+  "game.final": "Упай",
+  "game.gameover": "Оюн бүттү!",
+  "game.howto": "Максаттуу санга барабар түшүп жаткан теңдемелерди бас. Туура эмес басуу жанды алат — туурасын өткөрүп жиберүү да жанды алат!",
+  "game.lives": "Жан",
+  "game.newbest": "Жаңы рекорд!",
+  "game.playagain": "Кайра ойноо",
+  "game.score": "Упай",
+  "game.start": "Баштоо",
+  "game.time": "Убакыт",
+  "game.timesup": "Убакыт бүттү!",
 };
 
 import type { Lang } from "./i18n";
