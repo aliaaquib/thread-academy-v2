@@ -206,17 +206,23 @@ export default function LostGame() {
       <p className="lost-lede">{t(lang, "game.404.lede")}</p>
 
       <div className="lost-hud">
-        <div className="lost-target">
-          {t(lang, "game.catch")}: <b>{target}</b>
+        <div className="lost-hud-item">
+          <span className="lost-hud-label">{t(lang, "game.catch")}</span>
+          <span className="lost-hud-value lost-target-num">{target}</span>
         </div>
-        <div className="lost-stat">
-          {t(lang, "game.score")}: <b>{score}</b>
+        <div className="lost-hud-item">
+          <span className="lost-hud-label">{t(lang, "game.score")}</span>
+          <span className="lost-hud-value">{score}</span>
         </div>
-        <div className="lost-stat lost-hearts" aria-label={t(lang, "game.lives")}>
-          {hearts}
+        <div className="lost-hud-item">
+          <span className="lost-hud-label">{t(lang, "game.lives")}</span>
+          <span className="lost-hud-value lost-hearts" aria-label={t(lang, "game.lives")}>
+            {hearts}
+          </span>
         </div>
-        <div className="lost-stat">
-          {t(lang, "game.time")}: <b>{timeLeft}s</b>
+        <div className="lost-hud-item">
+          <span className="lost-hud-label">{t(lang, "game.time")}</span>
+          <span className="lost-hud-value">{timeLeft}s</span>
         </div>
       </div>
 
