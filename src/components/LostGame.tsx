@@ -81,6 +81,8 @@ export default function LostGame() {
   const [endReason, setEndReason] = useState<"lives" | "time">("time");
   const idRef = useRef(1);
   const catchesRef = useRef(0);
+  const caughtRef = useRef<Set<number>>(new Set());
+  const pressRef = useRef<{ id: number; x: number; y: number } | null>(null);
   const stateRef = useRef({ phase, target, score });
   stateRef.current = { phase, target, score };
 
@@ -130,8 +132,27 @@ export default function LostGame() {
     setTimeLeft(GAME_TIME);
     setItems([]);
     catchesRef.current = 0;
+    caughtRef.current = new Set();
+    pressRef.current = null;
     pickNewTarget(-1);
     setPhase("playing");
+  }
+
+  /**
+   * Press handling: the equations fall while you press, so a classic
+   * onClick often dies — the button moves out from under the cursor
+   * between press and release. We act on pointer-up instead, and only
+   * when the press didn't travel (so page scrolls don't count as taps).
+   */
+  function pressStart(e: React.PointerEvent, item: Item) {
+    pressRef.current = { id: item.id, x: e.clientX, y: e.clientY };
+  }
+  function pressEnd(e: React.PointerEvent, item: Item) {
+    const p = pressRef.current;
+    pressRef.current = null;
+    if (!p || p.id !== item.id) return;
+    if (Math.hypot(e.clientX - p.x, e.clientY - p.y) > 14) return;
+    tap(item);
   }
 
   // Spawner: drops a new equation while playing; speeds up with score.
@@ -175,6 +196,8 @@ export default function LostGame() {
 
   function tap(item: Item) {
     if (stateRef.current.phase !== "playing") return;
+    if (caughtRef.current.has(item.id)) return; // each equation counts once
+    caughtRef.current.add(item.id);
     setItems((prev) => prev.filter((i) => i.id !== item.id));
     if (item.value === stateRef.current.target) {
       const ns = stateRef.current.score + 10;
@@ -233,7 +256,15 @@ export default function LostGame() {
             type="button"
             className="lost-eq"
             style={{ left: `${item.x}%`, animationDuration: `${item.duration}s` }}
-            onClick={() => tap(item)}
+            onPointerDown={(e) => pressStart(e, item)}
+            onPointerUp={(e) => pressEnd(e, item)}
+            onPointerCancel={() => (pressRef.current = null)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                tap(item);
+              }
+            }}
             onAnimationEnd={() => landed(item)}
           >
             {item.text}
