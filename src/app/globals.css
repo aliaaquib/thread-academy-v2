@@ -746,3 +746,30 @@ a.chapter-link:hover{background:var(--surface);padding-left:16px;padding-right:1
 .legal-section h2{font-size:1.45rem;line-height:1.3;letter-spacing:-.01em;margin:0 0 14px;color:var(--ink);display:flex;gap:12px;align-items:baseline}
 .legal-num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.95rem;color:var(--accent-deep);font-weight:700}
 .legal-section p{font-size:1.08rem;line-height:1.75;color:var(--ink);margin:0 0 18px;white-space:pre-line}
+/* 404 game — Equation Catcher (minimal) */
+.lost-page{max-width:620px;margin:auto;padding:80px 24px 120px}
+.lost-wrap{text-align:center}
+.lost-eyebrow{font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}
+.lost-title{font-size:3.25rem;font-weight:300;letter-spacing:-.03em;line-height:1.05;margin:0 0 12px;color:var(--ink)}
+.lost-lede{font-size:1.05rem;color:var(--muted);margin:0 0 44px}
+.lost-hud{display:flex;justify-content:center;gap:40px;margin:0 0 28px;padding:0 0 28px;border-bottom:1px solid var(--line)}
+.lost-hud-item{display:flex;flex-direction:column;gap:6px;min-width:64px}
+.lost-hud-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
+.lost-hud-value{font-size:1.5rem;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.lost-target-num{color:var(--accent-deep)}
+.lost-hearts{font-size:1.05rem;color:#c4554d;letter-spacing:3px}
+.lost-arena{position:relative;height:440px;overflow:hidden;touch-action:manipulation;background:color-mix(in srgb,var(--surface) 55%,transparent);border-radius:24px}
+.lost-eq{position:absolute;top:-70px;transform:translateX(-50%);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:1.05rem;font-weight:600;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:9px 20px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.06);animation-name:lostfall;animation-timing-function:linear;animation-fill-mode:forwards;white-space:nowrap;transition:transform .12s ease,box-shadow .12s ease}
+.lost-eq:hover{transform:translateX(-50%) scale(1.07);box-shadow:0 4px 18px rgba(0,0,0,.1)}
+.lost-eq:active{transform:translateX(-50%) scale(.95)}
+@keyframes lostfall{from{top:-70px}to{top:105%}}
+.lost-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(6px);padding:32px;z-index:2}
+.lost-howto{font-size:1rem;line-height:1.7;color:var(--muted);max-width:400px;margin:0}
+.lost-btn{font-size:1rem;font-weight:600;color:var(--bg);background:var(--ink);border:none;border-radius:999px;padding:13px 36px;cursor:pointer;text-decoration:none;transition:opacity .15s ease}
+.lost-btn:hover{opacity:.85}
+.lost-btn-ghost{color:var(--ink);background:transparent;border:1px solid var(--line)}
+.lost-over-title{font-size:2rem;font-weight:300;letter-spacing:-.02em;margin:0;color:var(--ink)}
+.lost-final{font-size:1.05rem;color:var(--muted);margin:0}
+.lost-final b{color:var(--ink)}
+.lost-newbest{font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);margin:0}
+.lost-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
