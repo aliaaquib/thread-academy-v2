@@ -1,5 +1,27 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/login",
+      "destination": "https://cms.threadacademy.aaquibali.com/login",
+      "permanent": true
+    },
+    {
+      "source": "/register",
+      "destination": "https://cms.threadacademy.aaquibali.com/register",
+      "permanent": true
+    },
+    {
+      "source": "/pending",
+      "destination": "https://cms.threadacademy.aaquibali.com/pending",
+      "permanent": true
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "https://cms.threadacademy.aaquibali.com/admin/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "headers": [
