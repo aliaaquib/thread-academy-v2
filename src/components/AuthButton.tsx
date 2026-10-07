@@ -15,7 +15,7 @@ import { t } from "@/lib/strings";
 const API_URL = process.env.NEXT_PUBLIC_TUTOR_API_URL || "";
 const AUTH_BASE = API_URL ? API_URL.replace(/\/$/, "") : "";
 const TOKEN_KEY = "tutor_token";
-const CMS_LOGIN = "https://thread-academy-cms-aaquibali.vercel.app/login";
+const CMS_LOGIN = "https://cms.threadacademy.aaquibali.com/login";
 
 function readToken(): string | null {
   try {
