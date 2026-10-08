@@ -2,6 +2,306 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/subjects/:subject/grade-7/:path*",
+      "destination": "/cambridge/lower-secondary/subjects/:subject/grade-7/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/subjects/:subject/grade-8/:path*",
+      "destination": "/cambridge/lower-secondary/subjects/:subject/grade-8/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/subjects/:subject/grade-9/:path*",
+      "destination": "/cambridge/lower-secondary/subjects/:subject/grade-9/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/subjects/:subject/grade-10/:path*",
+      "destination": "/cambridge/upper-secondary/subjects/:subject/grade-10/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/subjects/:subject/grade-11/:path*",
+      "destination": "/cambridge/upper-secondary/subjects/:subject/grade-11/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/subjects/:subject/grade-12/:path*",
+      "destination": "/cambridge/upper-secondary/subjects/:subject/grade-12/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:subject/grade-7/:path*",
+      "destination": "/cambridge/lower-secondary/resources/:subject/grade-7/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:subject/grade-8/:path*",
+      "destination": "/cambridge/lower-secondary/resources/:subject/grade-8/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:subject/grade-9/:path*",
+      "destination": "/cambridge/lower-secondary/resources/:subject/grade-9/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:subject/grade-10/:path*",
+      "destination": "/cambridge/upper-secondary/resources/:subject/grade-10/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:subject/grade-11/:path*",
+      "destination": "/cambridge/upper-secondary/resources/:subject/grade-11/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:subject/grade-12/:path*",
+      "destination": "/cambridge/upper-secondary/resources/:subject/grade-12/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/subjects/:subject",
+      "destination": "/cambridge/lower-secondary/subjects/:subject",
+      "permanent": true
+    },
+    {
+      "source": "/subjects",
+      "destination": "/cambridge",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/cambridge/lower-secondary/resources",
+      "permanent": true
+    },
+    {
+      "source": "/tr/subjects/:subject/grade-7/:path*",
+      "destination": "/tr/cambridge/lower-secondary/subjects/:subject/grade-7/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/subjects/:subject/grade-8/:path*",
+      "destination": "/tr/cambridge/lower-secondary/subjects/:subject/grade-8/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/subjects/:subject/grade-9/:path*",
+      "destination": "/tr/cambridge/lower-secondary/subjects/:subject/grade-9/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/subjects/:subject/grade-10/:path*",
+      "destination": "/tr/cambridge/upper-secondary/subjects/:subject/grade-10/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/subjects/:subject/grade-11/:path*",
+      "destination": "/tr/cambridge/upper-secondary/subjects/:subject/grade-11/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/subjects/:subject/grade-12/:path*",
+      "destination": "/tr/cambridge/upper-secondary/subjects/:subject/grade-12/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/resources/:subject/grade-7/:path*",
+      "destination": "/tr/cambridge/lower-secondary/resources/:subject/grade-7/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/resources/:subject/grade-8/:path*",
+      "destination": "/tr/cambridge/lower-secondary/resources/:subject/grade-8/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/resources/:subject/grade-9/:path*",
+      "destination": "/tr/cambridge/lower-secondary/resources/:subject/grade-9/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/resources/:subject/grade-10/:path*",
+      "destination": "/tr/cambridge/upper-secondary/resources/:subject/grade-10/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/resources/:subject/grade-11/:path*",
+      "destination": "/tr/cambridge/upper-secondary/resources/:subject/grade-11/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/resources/:subject/grade-12/:path*",
+      "destination": "/tr/cambridge/upper-secondary/resources/:subject/grade-12/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tr/subjects/:subject",
+      "destination": "/tr/cambridge/lower-secondary/subjects/:subject",
+      "permanent": true
+    },
+    {
+      "source": "/tr/subjects",
+      "destination": "/tr/cambridge",
+      "permanent": true
+    },
+    {
+      "source": "/tr/resources",
+      "destination": "/tr/cambridge/lower-secondary/resources",
+      "permanent": true
+    },
+    {
+      "source": "/ru/subjects/:subject/grade-7/:path*",
+      "destination": "/ru/cambridge/lower-secondary/subjects/:subject/grade-7/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/subjects/:subject/grade-8/:path*",
+      "destination": "/ru/cambridge/lower-secondary/subjects/:subject/grade-8/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/subjects/:subject/grade-9/:path*",
+      "destination": "/ru/cambridge/lower-secondary/subjects/:subject/grade-9/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/subjects/:subject/grade-10/:path*",
+      "destination": "/ru/cambridge/upper-secondary/subjects/:subject/grade-10/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/subjects/:subject/grade-11/:path*",
+      "destination": "/ru/cambridge/upper-secondary/subjects/:subject/grade-11/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/subjects/:subject/grade-12/:path*",
+      "destination": "/ru/cambridge/upper-secondary/subjects/:subject/grade-12/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/resources/:subject/grade-7/:path*",
+      "destination": "/ru/cambridge/lower-secondary/resources/:subject/grade-7/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/resources/:subject/grade-8/:path*",
+      "destination": "/ru/cambridge/lower-secondary/resources/:subject/grade-8/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/resources/:subject/grade-9/:path*",
+      "destination": "/ru/cambridge/lower-secondary/resources/:subject/grade-9/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/resources/:subject/grade-10/:path*",
+      "destination": "/ru/cambridge/upper-secondary/resources/:subject/grade-10/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/resources/:subject/grade-11/:path*",
+      "destination": "/ru/cambridge/upper-secondary/resources/:subject/grade-11/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/resources/:subject/grade-12/:path*",
+      "destination": "/ru/cambridge/upper-secondary/resources/:subject/grade-12/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/subjects/:subject",
+      "destination": "/ru/cambridge/lower-secondary/subjects/:subject",
+      "permanent": true
+    },
+    {
+      "source": "/ru/subjects",
+      "destination": "/ru/cambridge",
+      "permanent": true
+    },
+    {
+      "source": "/ru/resources",
+      "destination": "/ru/cambridge/lower-secondary/resources",
+      "permanent": true
+    },
+    {
+      "source": "/ky/subjects/:subject/grade-7/:path*",
+      "destination": "/ky/cambridge/lower-secondary/subjects/:subject/grade-7/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/subjects/:subject/grade-8/:path*",
+      "destination": "/ky/cambridge/lower-secondary/subjects/:subject/grade-8/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/subjects/:subject/grade-9/:path*",
+      "destination": "/ky/cambridge/lower-secondary/subjects/:subject/grade-9/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/subjects/:subject/grade-10/:path*",
+      "destination": "/ky/cambridge/upper-secondary/subjects/:subject/grade-10/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/subjects/:subject/grade-11/:path*",
+      "destination": "/ky/cambridge/upper-secondary/subjects/:subject/grade-11/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/subjects/:subject/grade-12/:path*",
+      "destination": "/ky/cambridge/upper-secondary/subjects/:subject/grade-12/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/resources/:subject/grade-7/:path*",
+      "destination": "/ky/cambridge/lower-secondary/resources/:subject/grade-7/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/resources/:subject/grade-8/:path*",
+      "destination": "/ky/cambridge/lower-secondary/resources/:subject/grade-8/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/resources/:subject/grade-9/:path*",
+      "destination": "/ky/cambridge/lower-secondary/resources/:subject/grade-9/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/resources/:subject/grade-10/:path*",
+      "destination": "/ky/cambridge/upper-secondary/resources/:subject/grade-10/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/resources/:subject/grade-11/:path*",
+      "destination": "/ky/cambridge/upper-secondary/resources/:subject/grade-11/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/resources/:subject/grade-12/:path*",
+      "destination": "/ky/cambridge/upper-secondary/resources/:subject/grade-12/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ky/subjects/:subject",
+      "destination": "/ky/cambridge/lower-secondary/subjects/:subject",
+      "permanent": true
+    },
+    {
+      "source": "/ky/subjects",
+      "destination": "/ky/cambridge",
+      "permanent": true
+    },
+    {
+      "source": "/ky/resources",
+      "destination": "/ky/cambridge/lower-secondary/resources",
+      "permanent": true
+    },
+    {
       "source": "/login",
       "destination": "https://cms.threadacademy.aaquibali.com/login",
       "permanent": true

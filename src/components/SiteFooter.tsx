@@ -6,26 +6,32 @@ import Link from "next/link";
 import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
 import { getSubject } from "@/lib/subjects";
+import { curriculumPath, levelPath, levelsWithContent, subjectLandingPath } from "@/lib/curricula";
 
 /** Site footer: brand, restrained link columns, and a quiet legal row.
  *  Follows the existing design language (hairlines, muted text, ink hover). */
 export default function SiteFooter({ lang }: { lang: Lang }) {
   const subjectName = (slug: string) => getSubject(slug, lang)?.name ?? slug;
+  const subjectHref = (slug: string) => {
+    const href = subjectLandingPath(slug);
+    return href ? withLang(href, lang) : withLang(curriculumPath("cambridge"), lang);
+  };
+  const firstLevel = levelsWithContent("cambridge")[0]?.id ?? "lower-secondary";
   const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] = [
     {
       heading: t(lang, "footer.explore"),
       links: [
-        { label: t(lang, "nav.subjects"), href: withLang("/subjects", lang) },
-        { label: t(lang, "nav.resources"), href: withLang("/resources", lang) },
+        { label: t(lang, "nav.subjects"), href: withLang(curriculumPath("cambridge"), lang) },
+        { label: t(lang, "nav.resources"), href: withLang(levelPath("cambridge", firstLevel) + "/resources", lang) },
       ],
     },
     {
       heading: t(lang, "footer.learn"),
       links: [
-        { label: subjectName("mathematics"), href: withLang("/subjects/mathematics", lang) },
-        { label: subjectName("biology"), href: withLang("/subjects/biology", lang) },
-        { label: subjectName("physics"), href: withLang("/subjects/physics", lang) },
-        { label: subjectName("computer-science"), href: withLang("/subjects/computer-science", lang) },
+        { label: subjectName("mathematics"), href: subjectHref("mathematics") },
+        { label: subjectName("biology"), href: subjectHref("biology") },
+        { label: subjectName("physics"), href: subjectHref("physics") },
+        { label: subjectName("computer-science"), href: subjectHref("computer-science") },
       ],
     },
     {

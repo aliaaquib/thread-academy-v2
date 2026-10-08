@@ -82,7 +82,35 @@ const en: Dict = {
     "Explore 13 school subjects by category. Every subject is organised into chapters with lessons, worked examples and practice.",
   "subjects.hero.title": "Subjects",
   "subjects.hero.lede":
-    "Explore school subjects by category. Every subject can be followed through British, Cambridge, American, or IB structures.",
+    "Explore school subjects by category. Every subject is organised into chapters with lessons, worked examples and practice.",
+
+  // ---- curricula ----
+  "curricula.title": "Curricula",
+  "curricula.hero.lede": "Thread Academy is organized by curriculum. The Cambridge curriculum is live now — British, American and IB are coming soon.",
+  "curricula.other.title": "Other curricula",
+  "curriculum.landing.title": "{name} curriculum",
+  "curriculum.landing.lede": "Explore the {name} curriculum by level — subjects, chapters and lessons, free with no account required.",
+  "curriculum.landing.desc": "Browse every {name} level on Thread Academy: subjects, chapters and lessons, free with no account required.",
+  "curriculum.levels.title": "Levels",
+  "curriculum.level.primary": "Cambridge Primary",
+  "curriculum.level.lowerSecondary": "Cambridge Lower Secondary",
+  "curriculum.level.upperSecondary": "Cambridge Upper Secondary",
+  "curriculum.level.asALevel": "International AS & A Level",
+  "curriculum.level.grades": "Grades {grades}",
+  "curriculum.level.lede": "Explore {level} subjects, chapters and lessons.",
+  "curriculum.level.lede.full": "{level} — grades {grades}. Choose a subject to start learning.",
+  "curriculum.level.meta.desc": "{level}: {name} subjects, chapters and lessons on Thread Academy — free, no account required.",
+  "curriculum.level.empty": "Lessons for {level} are coming soon.",
+  "curriculum.level.empty.short": "Lessons coming soon.",
+  "curriculum.level.subjects.title": "{level} subjects",
+  "curriculum.level.browseAll": "Browse all {level} subjects",
+  "curriculum.comingSoon": "Coming soon",
+  "curriculum.comingSoon.lede": "{name} is coming to Thread Academy. Meanwhile, explore the full Cambridge curriculum — free, no account required.",
+  "curriculum.comingSoon.short": "{name} lessons are on the way.",
+  "curriculum.exploreCambridge": "Explore the Cambridge curriculum",
+  "curriculum.viewLevels": "View all levels",
+  "subjects.meta.desc.level": "Browse {level} subjects on Thread Academy: chapters, lessons and practice — free, no account required.",
+  "subjects.hero.lede.level": "Explore school subjects by category — {level}.",
 
   // ---- subject page (grade picker) ----
   "subject.meta.title": "{name} revision & learning resources",
@@ -294,7 +322,7 @@ const en: Dict = {
   "footer.learn": "Learn",
   "footer.company": "Company",
   "footer.other": "Other",
-  "footer.curricula": "British · Cambridge · American · IB",
+  "footer.curricula": "Cambridge curriculum · British, American & IB coming soon",
 
   // ---- textbook components ----
   "tb.definition": "Definition",
@@ -495,7 +523,35 @@ const tr: Dict = {
     "13 okul dersini kategorilere göre keşfet. Her ders; dersler, çözümlü örnekler ve pratik içeren bölümler hâlinde düzenlenmiştir.",
   "subjects.hero.title": "Dersler",
   "subjects.hero.lede":
-    "Okul derslerini kategorilere göre keşfet. Her ders; İngiliz, Cambridge, Amerikan veya IB yapılarıyla takip edilebilir.",
+    "Okul derslerini kategorilere göre keşfet. Her ders; bölümler, çözümlü örnekler ve pratik sorularla düzenlenmiştir.",
+
+  // ---- curricula ----
+  "curricula.title": "Müfredatlar",
+  "curricula.hero.lede": "Thread Academy müfredata göre düzenlenmiştir. Cambridge müfredatı şu an yayında — İngiliz, Amerikan ve IB çok yakında.",
+  "curricula.other.title": "Diğer müfredatlar",
+  "curriculum.landing.title": "{name} müfredatı",
+  "curriculum.landing.lede": "{name} müfredatını seviyelere göre keşfet — dersler, bölümler ve konular; ücretsiz, hesap gerekmez.",
+  "curriculum.landing.desc": "Thread Academy'de her {name} seviyesine göz at: dersler, bölümler ve konular — ücretsiz, hesap gerekmez.",
+  "curriculum.levels.title": "Seviyeler",
+  "curriculum.level.primary": "Cambridge Primary",
+  "curriculum.level.lowerSecondary": "Cambridge Lower Secondary",
+  "curriculum.level.upperSecondary": "Cambridge Upper Secondary",
+  "curriculum.level.asALevel": "International AS & A Level",
+  "curriculum.level.grades": "{grades}. sınıflar",
+  "curriculum.level.lede": "{level} derslerini, bölümlerini ve konularını keşfet.",
+  "curriculum.level.lede.full": "{level} — {grades}. sınıflar. Öğrenmeye başlamak için bir ders seç.",
+  "curriculum.level.meta.desc": "{level}: Thread Academy'de {name} dersleri, bölümler ve konular — ücretsiz, hesap gerekmez.",
+  "curriculum.level.empty": "{level} için dersler çok yakında.",
+  "curriculum.level.empty.short": "Dersler çok yakında.",
+  "curriculum.level.subjects.title": "{level} dersleri",
+  "curriculum.level.browseAll": "Tüm {level} derslerine göz at",
+  "curriculum.comingSoon": "Çok yakında",
+  "curriculum.comingSoon.lede": "{name}, Thread Academy'ye geliyor. Bu arada tüm Cambridge müfredatını keşfet — ücretsiz, hesap gerekmez.",
+  "curriculum.comingSoon.short": "{name} dersleri yolda.",
+  "curriculum.exploreCambridge": "Cambridge müfredatını keşfet",
+  "curriculum.viewLevels": "Tüm seviyeleri gör",
+  "subjects.meta.desc.level": "Thread Academy'de {level} derslerine göz at: bölümler, konular ve pratik — ücretsiz, hesap gerekmez.",
+  "subjects.hero.lede.level": "Okul derslerini kategorilere göre keşfet — {level}.",
 
   // ---- subject page (grade picker) ----
   "subject.meta.title": "{name} tekrar ve öğrenme kaynakları",
@@ -688,7 +744,7 @@ const tr: Dict = {
   "footer.learn": "Öğren",
   "footer.company": "Kurumsal",
   "footer.other": "Diğer",
-  "footer.curricula": "British · Cambridge · American · IB",
+  "footer.curricula": "Cambridge müfredatı · İngiliz, Amerikan ve IB çok yakında",
 
   // ---- textbook components ----
   "tb.definition": "Tanım",
@@ -892,7 +948,35 @@ const ru: Dict = {
     "13 школьных предметов по категориям. Каждый предмет организован по главам: уроки, разобранные примеры и практика.",
   "subjects.hero.title": "Предметы",
   "subjects.hero.lede":
-    "Школьные предметы по категориям. Каждый предмет можно изучать в британской, кембриджской, американской системе или IB.",
+    "Школьные предметы по категориям. Каждый предмет — разделы с уроками, разобранными примерами и практикой.",
+
+  // ---- curricula ----
+  "curricula.title": "Программы",
+  "curricula.hero.lede": "Thread Academy организован по учебным программам. Программа Cambridge уже доступна — британская, американская и IB скоро появятся.",
+  "curricula.other.title": "Другие программы",
+  "curriculum.landing.title": "Программа {name}",
+  "curriculum.landing.lede": "Изучайте программу {name} по ступеням — предметы, разделы и уроки, бесплатно и без регистрации.",
+  "curriculum.landing.desc": "Все ступени программы {name} на Thread Academy: предметы, разделы и уроки — бесплатно, без регистрации.",
+  "curriculum.levels.title": "Ступени",
+  "curriculum.level.primary": "Cambridge Primary",
+  "curriculum.level.lowerSecondary": "Cambridge Lower Secondary",
+  "curriculum.level.upperSecondary": "Cambridge Upper Secondary",
+  "curriculum.level.asALevel": "International AS & A Level",
+  "curriculum.level.grades": "{grades} классы",
+  "curriculum.level.lede": "Предметы, разделы и уроки ступени {level}.",
+  "curriculum.level.lede.full": "{level} — {grades} классы. Выберите предмет, чтобы начать.",
+  "curriculum.level.meta.desc": "{level}: предметы, разделы и уроки программы {name} на Thread Academy — бесплатно, без регистрации.",
+  "curriculum.level.empty": "Уроки ступени {level} скоро появятся.",
+  "curriculum.level.empty.short": "Уроки скоро появятся.",
+  "curriculum.level.subjects.title": "Предметы ступени {level}",
+  "curriculum.level.browseAll": "Все предметы ступени {level}",
+  "curriculum.comingSoon": "Скоро",
+  "curriculum.comingSoon.lede": "Программа {name} скоро появится на Thread Academy. А пока изучайте полную программу Cambridge — бесплатно, без регистрации.",
+  "curriculum.comingSoon.short": "Уроки {name} уже в пути.",
+  "curriculum.exploreCambridge": "Изучить программу Cambridge",
+  "curriculum.viewLevels": "Все ступени",
+  "subjects.meta.desc.level": "Предметы ступени {level} на Thread Academy: разделы, уроки и практика — бесплатно, без регистрации.",
+  "subjects.hero.lede.level": "Школьные предметы по категориям — {level}.",
 
   // ---- subject page (grade picker) ----
   "subject.meta.title": "{name}: повторение и учебные материалы",
@@ -1095,7 +1179,7 @@ const ru: Dict = {
   "footer.learn": "Учёба",
   "footer.company": "Компания",
   "footer.other": "Прочее",
-  "footer.curricula": "British · Cambridge · American · IB",
+  "footer.curricula": "Программа Cambridge · британская, американская и IB скоро",
 
   // ---- textbook components ----
   "tb.definition": "Определение",
@@ -1295,7 +1379,35 @@ const ky: Dict = {
     "13 мектеп предметин категориялар боюнча карап чык. Ар бир предмет сабактар, иштетилген мисалдар жана практика камтыган бөлүмдөргө бөлүнгөн.",
   "subjects.hero.title": "Предметтер",
   "subjects.hero.lede":
-    "Мектеп предметтерин категориялар боюнча карап чык. Ар бир предметти британ, Кембридж, америка же IB түзүлүшү менен өтсө болот.",
+    "Мектеп предметтерин категориялар боюнча карап чык. Ар бир предмет сабактар, иштетилген мисалдар жана практика менен уюштурулган.",
+
+  // ---- curricula ----
+  "curricula.title": "Окуу программалары",
+  "curricula.hero.lede": "Thread Academy окуу программалары боюнча уюштурулган. Cambridge программасы азыр жеткиликтүү — британиялык, америкалык жана IB жакында чыгат.",
+  "curricula.other.title": "Башка программалар",
+  "curriculum.landing.title": "{name} программасы",
+  "curriculum.landing.lede": "{name} программасын деңгээлдер боюнча изилде — предметтер, бөлүмдөр жана сабактар, акысыз жана катталуусуз.",
+  "curriculum.landing.desc": "Thread Academyде {name} программасынын бардык деңгээлдери: предметтер, бөлүмдөр жана сабактар — акысыз, катталуусуз.",
+  "curriculum.levels.title": "Деңгээлдер",
+  "curriculum.level.primary": "Cambridge Primary",
+  "curriculum.level.lowerSecondary": "Cambridge Lower Secondary",
+  "curriculum.level.upperSecondary": "Cambridge Upper Secondary",
+  "curriculum.level.asALevel": "International AS & A Level",
+  "curriculum.level.grades": "{grades}-класстар",
+  "curriculum.level.lede": "{level} предметтерин, бөлүмдөрүн жана сабактарын изилде.",
+  "curriculum.level.lede.full": "{level} — {grades}-класстар. Баштоо үчүн предмет танда.",
+  "curriculum.level.meta.desc": "{level}: Thread Academyде {name} предметтери, бөлүмдөр жана сабактар — акысыз, катталуусуз.",
+  "curriculum.level.empty": "{level} үчүн сабактар жакында чыгат.",
+  "curriculum.level.empty.short": "Сабактар жакында чыгат.",
+  "curriculum.level.subjects.title": "{level} предметтери",
+  "curriculum.level.browseAll": "{level}дин бардык предметтери",
+  "curriculum.comingSoon": "Жакында",
+  "curriculum.comingSoon.lede": "{name} Thread Academyге жакында келет. Азырынча толук Cambridge программасын изилде — акысыз, катталуусуз.",
+  "curriculum.comingSoon.short": "{name} сабактары жакында.",
+  "curriculum.exploreCambridge": "Cambridge программасын изилде",
+  "curriculum.viewLevels": "Бардык деңгээлдер",
+  "subjects.meta.desc.level": "Thread Academyде {level} предметтери: бөлүмдөр, сабактар жана практика — акысыз, катталуусуз.",
+  "subjects.hero.lede.level": "Мектеп предметтерин категориялар боюнча карап чык — {level}.",
 
   // ---- subject page (grade picker) ----
   "subject.meta.title": "{name}: кайталоо жана окуу ресурстары",
@@ -1488,7 +1600,7 @@ const ky: Dict = {
   "footer.learn": "Үйрөнүү",
   "footer.company": "Компания",
   "footer.other": "Башка",
-  "footer.curricula": "British · Cambridge · American · IB",
+  "footer.curricula": "Cambridge программасы · британиялык, америкалык жана IB жакында",
 
   // ---- textbook components ----
   "tb.definition": "Аныктама",

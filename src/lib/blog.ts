@@ -11,6 +11,7 @@ import matter from "gray-matter";
 import { contentRoot, getTopicContent } from "./content";
 import { getChapterForSubject } from "./stage-chapters";
 import { getGradeForChapter, gradeSlug } from "./grades";
+import { chapterPathForGrade, subjectLandingPath } from "./curricula";
 import type { Lang } from "./i18n";
 import { withLang } from "./i18n";
 import { t } from "./strings";
@@ -157,9 +158,11 @@ export function getRelatedLinks(post: BlogPostMeta, lang: Lang = "en"): RelatedL
     const grade = getGradeForChapter(post.subjectSlug, chapterId);
     if (!grade) continue;
     coveredChapters.add(chapterId);
+    const lessonHref = chapterPathForGrade(post.subjectSlug, grade, chapterId, topicId);
+    if (!lessonHref) continue;
     links.push({
       title: lessonTitle(post.subjectSlug, chapterId, topicId, lang),
-      href: withLang(`/subjects/${post.subjectSlug}/${gradeSlug(grade)}/${chapterId}/${topicId}`, lang),
+      href: withLang(lessonHref, lang),
     });
   }
 
@@ -169,17 +172,22 @@ export function getRelatedLinks(post: BlogPostMeta, lang: Lang = "en"): RelatedL
     if (!chapter) continue;
     const grade = getGradeForChapter(post.subjectSlug, chapterId);
     if (!grade) continue;
+    const chapterHref = chapterPathForGrade(post.subjectSlug, grade, chapterId);
+    if (!chapterHref) continue;
     links.push({
       title: chapter.title,
-      href: withLang(`/subjects/${post.subjectSlug}/${gradeSlug(grade)}/${chapterId}`, lang),
+      href: withLang(chapterHref, lang),
     });
   }
 
   if (post.subject) {
-    links.push({
-      title: t(lang, "blog.post.full", { subject: post.subject }),
-      href: withLang(`/subjects/${post.subjectSlug}`, lang),
-    });
+    const subjectHref = subjectLandingPath(post.subjectSlug);
+    if (subjectHref) {
+      links.push({
+        title: t(lang, "blog.post.full", { subject: post.subject }),
+        href: withLang(subjectHref, lang),
+      });
+    }
   }
   return links;
 }

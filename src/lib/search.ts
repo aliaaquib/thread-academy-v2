@@ -11,6 +11,13 @@ import { getChapterForSubject } from "./stage-chapters";
 import { getChapterTopics } from "./chapters";
 import { getAllTopicParams, getTopicContent, getContentChapters } from "./content";
 import { getGradeForChapter, gradeSlug } from "./grades";
+import {
+  DEFAULT_CURRICULUM,
+  chapterPathForGrade,
+  resourcesPathForGrade,
+  subjectLandingPath,
+  levelIdForGrade,
+} from "./curricula";
 import type { Lang } from "./i18n";
 import { withLang, langMeta } from "./i18n";
 import { t } from "./strings";
@@ -38,11 +45,13 @@ export function buildSearchIndex(lang: Lang = "en"): SearchEntry[] {
   // Subjects
   for (const category of CATEGORY_ORDER) {
     for (const s of subjectsByCategory(category, lang)) {
+      const subjectUrl = subjectLandingPath(s.slug);
+      if (!subjectUrl) continue;
       push({
         kind: "subject",
         title: s.name,
         path: t(lang, "common.subjects"),
-        url: withLang(`/subjects/${s.slug}`, lang),
+        url: withLang(subjectUrl, lang),
         text: `${s.name} ${s.tagline} ${s.intro} ${s.chapters.map((c) => c.title).join(" ")}`,
       });
     }
@@ -60,11 +69,13 @@ export function buildSearchIndex(lang: Lang = "en"): SearchEntry[] {
     const content = getTopicContent(p, lang);
     const title = content?.title ?? meta?.title ?? p.topic;
     const breadcrumb = `${subject.name} → ${gradeLabel(grade)} → ${chapter.title} → ${title}`;
+    const topicUrl = chapterPathForGrade(p.subject, grade, p.chapter, p.topic);
+    if (!topicUrl) continue;
     push({
       kind: "topic",
       title,
       path: breadcrumb,
-      url: withLang(`/subjects/${p.subject}/${gradeSlug(grade)}/${p.chapter}/${p.topic}`, lang),
+      url: withLang(topicUrl, lang),
       text: `${title} ${breadcrumb} ${content?.lede ?? ""} ${meta?.desc ?? ""}`,
     });
   }
@@ -79,18 +90,21 @@ export function buildSearchIndex(lang: Lang = "en"): SearchEntry[] {
       .map((t) => t.title)
       .join(" ");
     const breadcrumb = `${subject.name} → ${gradeLabel(combo.grade)} → ${chapter.title}`;
+    const chapterUrl = chapterPathForGrade(combo.subject, combo.grade, combo.chapter);
+    const resourceUrl = resourcesPathForGrade(combo.subject, combo.grade, combo.chapter);
+    if (!chapterUrl || !resourceUrl) continue;
     push({
       kind: "chapter",
       title: chapter.title,
       path: breadcrumb,
-      url: withLang(`/subjects/${combo.subject}/${gradeSlug(combo.grade)}/${combo.chapter}`, lang),
+      url: withLang(chapterUrl, lang),
       text: `${chapter.title} ${breadcrumb} ${chapter.desc} ${topicTitles}`,
     });
     push({
       kind: "resource",
       title: t(lang, "cres.hero.title", { title: chapter.title }),
       path: `${t(lang, "nav.resources")} → ${breadcrumb}`,
-      url: withLang(`/resources/${combo.subject}/${gradeSlug(combo.grade)}/${combo.chapter}`, lang),
+      url: withLang(resourceUrl, lang),
       text: `${t(lang, "cres.hero.title", { title: chapter.title })} ${breadcrumb} ${topicTitles}`,
     });
   }

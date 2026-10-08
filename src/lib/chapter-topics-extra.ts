@@ -397,7 +397,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "what-counts-as-evidence", title: "What Counts as Evidence", desc: "Primary and secondary sources, and why historians need both." },
     { slug: "provenance-and-purpose", title: "Provenance and Purpose", desc: "Who made a source, when, and why it matters." },
     { slug: "spotting-bias", title: "Spotting Bias", desc: "How to detect one-sided sources without dismissing them." },
-    { slug: "sources-in-exam-answers", title: "Sources in Exam Answers", desc: "How to quote, compare and evaluate sources in GCSE answers." },
+    { slug: "sources-in-exam-answers", title: "Sources in Exam Answers", desc: "How to quote, compare and evaluate sources in exam answers." },
   ],
   "twentieth-century": [
     { slug: "causes-of-the-first-world-war", title: "Causes of the First World War", desc: "Alliances, arms races and the assassination that lit the fuse in 1914." },

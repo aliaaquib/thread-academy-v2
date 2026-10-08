@@ -12,6 +12,17 @@ import { CATEGORY_ORDER, subjectsByCategory } from "@/lib/subjects";
 import { getChaptersForSubject } from "@/lib/stage-chapters";
 import { getTopicContent, type TopicParams } from "@/lib/content";
 import { gradeSlug } from "@/lib/grades";
+import {
+  CURRICULUM_IDS,
+  CURRICULUM_NAMES,
+  chapterPathForGrade,
+  curriculumPath,
+  levelSubjectsPath,
+  levelsWithContent,
+  subjectLandingPath,
+  type CurriculumId,
+} from "@/lib/curricula";
+import CurriculumCard from "@/components/CurriculumCard";
 import { JsonLd, organizationJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { langMeta, withLang, type Lang } from "@/lib/i18n";
 import { t, tn } from "@/lib/strings";
@@ -68,10 +79,9 @@ function quickLinks(lang: Lang): QuickLink[] {
   for (const q of QUICK) {
     const content = getTopicContent(q, lang);
     if (!content) continue;
-    links.push({
-      label: content.title,
-      href: `/subjects/${q.subject}/${gradeSlug(q.grade)}/${q.chapter}/${q.topic}`,
-    });
+    const href = chapterPathForGrade(q.subject, q.grade, q.chapter, q.topic);
+    if (!href) continue;
+    links.push({ label: content.title, href });
   }
   return links;
 }
@@ -85,6 +95,16 @@ export default async function HomePage(props: { params: Promise<LangParam> }) {
     num: String(n),
     title: t(lang, `home.how.${n}.title`),
     text: t(lang, `home.how.${n}.text`),
+  }));
+
+  // First Cambridge level with content — homepage subject/category links
+  // land here so they never point at an empty level.
+  const firstLevel = levelsWithContent("cambridge")[0]?.id ?? "lower-secondary";
+
+  const curricula = (Object.keys(CURRICULUM_NAMES) as CurriculumId[]).map((id) => ({
+    id,
+    name: CURRICULUM_NAMES[id],
+    active: id === "cambridge",
   }));
 
   return (
@@ -103,6 +123,30 @@ export default async function HomePage(props: { params: Promise<LangParam> }) {
         <HeroSearch lang={lang} links={quickLinks(lang)} />
       </header>
 
+      <section className="section" id="curricula">
+        <div className="section-head">
+          <h2>{t(lang, "curricula.title")}</h2>
+          <p>{t(lang, "curricula.hero.lede")}</p>
+        </div>
+        <div className="subjects-grid">
+          {curricula.map((c) => (
+            <CurriculumCard
+              key={c.id}
+              lang={lang}
+              href={withLang(curriculumPath(c.id), lang)}
+              badge={c.active ? t(lang, "curriculum.levels.title") : t(lang, "curriculum.comingSoon")}
+              title={c.name}
+              lede={
+                c.active
+                  ? t(lang, "curriculum.landing.lede", { name: c.name })
+                  : t(lang, "curriculum.comingSoon.short", { name: c.name })
+              }
+              disabled={!c.active}
+            />
+          ))}
+        </div>
+      </section>
+
       <section className="section" id="subjects">
         <div className="section-head">
           <h2>{t(lang, "home.subjects.title")}</h2>
@@ -116,11 +160,13 @@ export default async function HomePage(props: { params: Promise<LangParam> }) {
             <div className="subjects-grid">
               {subjectsByCategory(category, lang).slice(0, 3).map((subject) => {
                 const n = getChaptersForSubject(subject.slug, lang).length;
+                const href = subjectLandingPath(subject.slug);
+                if (!href) return null;
                 return (
                   <Link
                     key={subject.slug}
                     className="subject-card"
-                    href={withLang(`/subjects/${subject.slug}`, lang)}
+                    href={withLang(href, lang)}
                   >
                     <div className="subject-icon" aria-hidden="true">
                       {GLYPHS[subject.slug] ?? subject.slug.slice(0, 2).toUpperCase()}
@@ -141,7 +187,7 @@ export default async function HomePage(props: { params: Promise<LangParam> }) {
               })}
             </div>
             <p style={{ marginTop: 18 }}>
-              <Link className="inline-link" href={withLang(`/subjects/${category.toLowerCase()}`, lang)}>
+              <Link className="inline-link" href={withLang(`${levelSubjectsPath("cambridge", firstLevel)}/${category.toLowerCase()}`, lang)}>
                 {t(lang, "home.browse.category", { category: t(lang, `subject.category.${category.toLowerCase()}`) })}{" "}
                 <span aria-hidden="true">→</span>
               </Link>
@@ -149,7 +195,7 @@ export default async function HomePage(props: { params: Promise<LangParam> }) {
           </div>
         ))}
         <p style={{ marginTop: 36 }}>
-          <Link className="inline-link" href={withLang("/subjects", lang)}>
+          <Link className="inline-link" href={withLang(curriculumPath("cambridge"), lang)}>
             {t(lang, "home.browse.all")} <span aria-hidden="true">→</span>
           </Link>
         </p>
