@@ -62,10 +62,10 @@ export default async function SubjectResourcesPage(props: { params: Promise<Para
               className="subject-card"
               href={withLang(`/cambridge/resources/${params.subject}/${gradeSlug(grade)}`, lang)}
             >
-              <div className="eyebrow">{t(lang, "subject.grade.label", { grade })}</div>
+              <div className="eyebrow">{t(lang, "subject.grade.name", { grade })}</div>
               <div className="subject-bottom">
                 <div>
-                  <h3>{t(lang, "subject.grade.label", { grade })}</h3>
+                  <h3>{t(lang, "subject.grade.name", { grade })}</h3>
                   <div className="subject-meta">
                     {tn(lang, "common.chapters", chapters.length, { n: chapters.length })}
                   </div>
