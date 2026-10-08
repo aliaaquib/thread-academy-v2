@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description: t("en", "seo.site.desc"),
     images: ["/og-image.png"],
   },
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: "/icon.png", apple: "/apple-icon.png" },
   robots: { index: true, follow: true },
 };
 

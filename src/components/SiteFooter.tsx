@@ -3,6 +3,7 @@
  * Edit the COLUMNS list below to change footer links.
  */
 import Link from "next/link";
+import Image from "next/image";
 import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
 import { getSubject } from "@/lib/subjects";
@@ -40,9 +41,9 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
     {
       heading: t(lang, "footer.legal"),
       links: [
-        { label: t(lang, "nav.terms"), href: withLang("/terms", lang) },
-        { label: t(lang, "nav.privacy"), href: withLang("/privacy", lang) },
-        { label: t(lang, "nav.cookies"), href: withLang("/cookies", lang) },
+        { label: t(lang, "nav.nav.terms"), href: withLang("/terms", lang) },
+        { label: t(lang, "nav.nav.privacy"), href: withLang("/privacy", lang) },
+        { label: t(lang, "nav.nav.cookies"), href: withLang("/cookies", lang) },
       ],
     },
     {
@@ -54,7 +55,13 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand">
-          <b>Thread Academy</b>
+          <Image
+            src="/brand/logo-horizontal-light.png"
+            alt="Thread Academy"
+            width={758}
+            height={328}
+            className="footer-logo"
+          />
           <p>{t(lang, "footer.tagline")}</p>
         </div>
         {COLUMNS.map((col) => (

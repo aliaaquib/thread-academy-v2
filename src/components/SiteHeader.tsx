@@ -1,21 +1,20 @@
 /**
  * SITE HEADER — the navigation bar shown on every page.
- * Logo, subject links, the language toggle, and the search button that
- * opens the search overlay.
- * (Approved design; edit links here, not the styling.)
+ * Official Thread Academy logo, subject links, the language toggle,
+ * and the search button that opens the search overlay.
  */
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { openSiteSearch } from "./search-bus";
 import { LangToggle } from "./LangToggle";
 import { AuthButton } from "./AuthButton";
 import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
 
-/** Reference nav: 78px sticky bar, mark-only skewed lime logo, five links,
- *  language toggle + one circular search button that opens the search
- *  overlay; at <=980px the links collapse but toggle and search remain.
+/** Official horizontal Thread Academy logo; at <=980px the links collapse
+ *  but toggle and search remain; at <=650px the logo renders at 34px.
  *  Sign in lives in the nav-actions cluster (student = Google via the
  *  tutor worker, teacher = link to the teacher CMS login). */
 export default function SiteHeader({ lang }: { lang: Lang }) {
@@ -29,8 +28,14 @@ export default function SiteHeader({ lang }: { lang: Lang }) {
   return (
     <header className="nav">
       <Link href={withLang("/", lang)} className="brand" aria-label={t(lang, "nav.brand.home")}>
-        <span className="brand-mark" aria-hidden="true" />
-        <span>Thread Academy</span>
+        <Image
+          src="/brand/logo-horizontal-light.png"
+          alt="Thread Academy"
+          width={758}
+          height={328}
+          className="brand-logo"
+          priority
+        />
       </Link>
       <nav className="nav-links" aria-label="Primary">
         {NAV.map((item) => (
