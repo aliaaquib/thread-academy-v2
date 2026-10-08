@@ -12,7 +12,6 @@ import { LangToggle } from "./LangToggle";
 import { AuthButton } from "./AuthButton";
 import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
-import { curriculumPath, levelPath, levelsWithContent } from "@/lib/curricula";
 
 /** Reference nav: 78px sticky bar, mark-only skewed lime logo, five links,
  *  language toggle + one circular search button that opens the search
@@ -20,11 +19,10 @@ import { curriculumPath, levelPath, levelsWithContent } from "@/lib/curricula";
  *  Sign in lives in the nav-actions cluster (student = Google via the
  *  tutor worker, teacher = link to the teacher CMS login). */
 export default function SiteHeader({ lang }: { lang: Lang }) {
-  const firstLevel = levelsWithContent("cambridge")[0]?.id ?? "lower-secondary";
   const NAV = [
     { href: withLang("/", lang), label: t(lang, "nav.home") },
-    { href: withLang(curriculumPath("cambridge"), lang), label: t(lang, "nav.subjects") },
-    { href: withLang(levelPath("cambridge", firstLevel) + "/resources", lang), label: t(lang, "nav.resources") },
+    { href: withLang("/curricula", lang), label: t(lang, "nav.curricula") },
+    { href: withLang("/resources", lang), label: t(lang, "nav.resources") },
     { href: withLang("/blog", lang), label: t(lang, "nav.blog") },
     { href: withLang("/about", lang), label: t(lang, "nav.about") },
   ];

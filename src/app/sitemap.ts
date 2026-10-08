@@ -18,7 +18,7 @@ import { type Lang } from "@/lib/i18n";
 import { SUBJECT_SLUGS } from "@/lib/subjects";
 import { getAllPosts } from "@/lib/blog";
 import { contentRoot, getAllTopicParams, getContentChapters, topicFileMtime } from "@/lib/content";
-import { GRADES, allGradeChapters, getGradeForChapter, gradeSlug } from "@/lib/grades";
+import { GRADES, allGradeChapters, getChaptersForGrade, getGradeForChapter, gradeSlug } from "@/lib/grades";
 import {
   CURRICULUM_IDS,
   CURRICULA,
@@ -56,6 +56,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const lang of langs) {
     add("/", 1.0, buildDate, lang);
+    add("/curricula", 0.9, buildDate, lang);
+    add("/resources", 0.8, buildDate, lang);
     add("/blog", 0.8, buildDate, lang);
     add("/about", 0.5, buildDate, lang);
     add("/terms", 0.3, buildDate, lang);
@@ -74,6 +76,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Cambridge levels, subjects, grades, chapters, topics, resources.
     for (const curriculum of activeCurricula()) {
+      // New resources flow: /cambridge/resources → subject → grade.
+      add("/cambridge/resources", 0.8, buildDate, lang);
+      for (const subject of SUBJECT_SLUGS) {
+        add(`/cambridge/resources/${subject}`, 0.75, buildDate, lang);
+        for (const grade of GRADES) {
+          if (getChaptersForGrade(subject, grade, "en").length === 0) continue;
+          add(`/cambridge/resources/${subject}/${gradeSlug(grade)}`, 0.7, buildDate, lang);
+        }
+      }
+
       for (const level of curriculum.levels) {
         add(levelPath(curriculum.id, level.id), 0.9, buildDate, lang);
         add(levelPath(curriculum.id, level.id) + "/subjects", 0.9, buildDate, lang);

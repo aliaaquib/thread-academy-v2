@@ -72,11 +72,6 @@
       "permanent": true
     },
     {
-      "source": "/resources",
-      "destination": "/cambridge/lower-secondary/resources",
-      "permanent": true
-    },
-    {
       "source": "/tr/subjects/:subject/grade-7/:path*",
       "destination": "/tr/cambridge/lower-secondary/subjects/:subject/grade-7/:path*",
       "permanent": true
@@ -144,11 +139,6 @@
     {
       "source": "/tr/subjects",
       "destination": "/tr/cambridge",
-      "permanent": true
-    },
-    {
-      "source": "/tr/resources",
-      "destination": "/tr/cambridge/lower-secondary/resources",
       "permanent": true
     },
     {
@@ -222,11 +212,6 @@
       "permanent": true
     },
     {
-      "source": "/ru/resources",
-      "destination": "/ru/cambridge/lower-secondary/resources",
-      "permanent": true
-    },
-    {
       "source": "/ky/subjects/:subject/grade-7/:path*",
       "destination": "/ky/cambridge/lower-secondary/subjects/:subject/grade-7/:path*",
       "permanent": true
@@ -294,11 +279,6 @@
     {
       "source": "/ky/subjects",
       "destination": "/ky/cambridge",
-      "permanent": true
-    },
-    {
-      "source": "/ky/resources",
-      "destination": "/ky/cambridge/lower-secondary/resources",
       "permanent": true
     },
     {
