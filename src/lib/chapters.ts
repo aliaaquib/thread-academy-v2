@@ -58,13 +58,6 @@ export const CHAPTER_TOPICS: Record<string, Topic[]> = {
     { slug: "types-of-network", title: "Types of Network", desc: "PAN, LAN and WAN: how networks are classified by size." },
     { slug: "data-transmission", title: "Data Transmission", desc: "Packets, IP addresses and routers: how data crosses the world." },
   ],
-  "computer-systems": [
-    { slug: "computer-design", title: "Computer Design", desc: "Input, process, output: the parts inside and how they work together." },
-    { slug: "types-of-software", title: "Types of Software", desc: "System software vs application software — and who makes each." },
-    { slug: "data-representation", title: "Data Representation", desc: "Binary, bits and bytes: how computers store numbers, text and images." },
-    { slug: "logic-gates", title: "Logic Gates", desc: "AND, OR, NOT: the tiny switches behind every decision a computer makes." },
-    { slug: "automation-and-artificial-intelligence", title: "Automation and Artificial Intelligence", desc: "Machines that act on their own: automation in industry and what AI really is." },
-  ],
   programming: [
     { slug: "variables", title: "Variables", desc: "A named box that stores a value — in real, runnable Python." },
   ],
