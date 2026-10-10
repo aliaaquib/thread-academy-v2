@@ -16,6 +16,9 @@ import { getChapterForSubject } from "@/lib/stage-chapters";
 import { getGradeForChapter, gradeSlug, parseGradeSlug } from "@/lib/grades";
 import { getContentChapters } from "@/lib/content";
 import { getChapterResources } from "@/lib/resources";
+import { getTeacherResources } from "@/lib/teacher-resources";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { mdxComponentsForLang } from "@/mdx-components";
 import { pageMetadata } from "@/lib/seo";
 import { withLang, type Lang } from "@/lib/i18n";
 import { t } from "@/lib/strings";
@@ -101,6 +104,7 @@ export default async function ChapterResourcesPage(props: { params: Promise<Para
   const curriculumName = CURRICULUM_NAMES[curriculum.id];
 
   const resources = getChapterResources(params.subject, params.chapter, lang);
+  const teacherResources = getTeacherResources(params.subject, params.chapter);
   const chapterBase = withLang(
     chapterUrl(curriculum.id, level.id, params.subject, grade, params.chapter),
     lang,
@@ -134,6 +138,7 @@ export default async function ChapterResourcesPage(props: { params: Promise<Para
           <a href="#notes">{t(lang, "resources.sec.notes")}</a>
           <a href="#worksheets">{t(lang, "resources.sec.worksheets")}</a>
           <a href="#videos">{t(lang, "resources.sec.videos")}</a>
+          {teacherResources.length > 0 && <a href="#teacher-picks">{t(lang, "resources.sec.teacher")}</a>}
           {resources.tools.length > 0 && <a href="#interactive-tools">{t(lang, "resources.sec.tools")}</a>}
           <a href="#revision">{t(lang, "resources.sec.revision")}</a>
         </div>
@@ -206,6 +211,51 @@ export default async function ChapterResourcesPage(props: { params: Promise<Para
             ))}
           </div>
         </ResourceSection>
+
+        {teacherResources.length > 0 && (
+          <ResourceSection
+            id="teacher-picks"
+            eyebrow={t(lang, "resources.sec.teacher")}
+            title={t(lang, "resources.sec.teacher.title")}
+            lede={t(lang, "resources.sec.teacher.lede")}
+          >
+            <div className="chapters">
+              {teacherResources.map((r) => {
+                const byline = [r.description, r.author ? t(lang, "resources.teacher.by", { author: r.author }) : ""]
+                  .filter(Boolean)
+                  .join(" · ");
+                const kindLabel = t(lang, `resources.kind.${r.kind}`);
+                return r.url ? (
+                  <a
+                    key={r.slug}
+                    className="chapter-link"
+                    href={r.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="chapter-index">{kindLabel}</span>
+                    <span>
+                      <span className="chapter-title">{r.title}</span>
+                      <span className="chapter-desc">{byline}</span>
+                    </span>
+                    <span className="chapter-status">{t(lang, "resources.teacher.open")}</span>
+                  </a>
+                ) : (
+                  <div key={r.slug} style={{ padding: "24px 4px", borderBottom: "1px solid var(--line)" }}>
+                    <span className="chapter-index" style={{ display: "block", marginBottom: 8 }}>{kindLabel}</span>
+                    <span className="chapter-title">{r.title}</span>
+                    <span className="chapter-desc">{byline}</span>
+                    {r.body && (
+                      <div className="mdx" style={{ marginTop: 16 }}>
+                        <MDXRemote source={r.body} components={mdxComponentsForLang(lang)} />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </ResourceSection>
+        )}
 
         {resources.tools.length > 0 && (
           <ResourceSection

@@ -210,6 +210,15 @@ const en: Dict = {
   "resources.sec.revision": "Revision",
   "resources.sec.revision.title": "Revision checklist",
   "resources.sec.revision.lede": "Can you explain each of these out loud, without looking? If not, re-read that lesson.",
+  "resources.sec.teacher": "Teacher picks",
+  "resources.sec.teacher.title": "From your teachers",
+  "resources.sec.teacher.lede": "Videos, links, documents and worksheets your teachers picked for this chapter.",
+  "resources.teacher.by": "by {author}",
+  "resources.kind.video": "Video",
+  "resources.kind.link": "Link",
+  "resources.kind.document": "Document",
+  "resources.kind.worksheet": "Worksheet",
+  "resources.teacher.open": "Open \u2192",
 
   // ---- chapter resources page ----
   "cres.meta.title": "{title} resources — Grade {grade} {name}",
@@ -650,6 +659,15 @@ const tr: Dict = {
   "resources.sec.revision": "Tekrar",
   "resources.sec.revision.title": "Tekrar kontrol listesi",
   "resources.sec.revision.lede": "Bunlar\u0131n her birini bakmadan, sesli a\u00e7\u0131klayabilir misin? Yapam\u0131yorsan o dersi yeniden oku.",
+  "resources.sec.teacher": "\u00d6\u011fretmen se\u00e7imleri",
+  "resources.sec.teacher.title": "\u00d6\u011fretmenlerinizden",
+  "resources.sec.teacher.lede": "Bu \u00fcnite i\u00e7in \u00f6\u011fretmenlerinizin se\u00e7ti\u011fi videolar, ba\u011flant\u0131lar, belgeler ve \u00e7al\u0131\u015fma k\u00e2\u011f\u0131tlar\u0131.",
+  "resources.teacher.by": "{author} taraf\u0131ndan",
+  "resources.kind.video": "Video",
+  "resources.kind.link": "Ba\u011flant\u0131",
+  "resources.kind.document": "Belge",
+  "resources.kind.worksheet": "\u00c7al\u0131\u015fma k\u00e2\u011fd\u0131",
+  "resources.teacher.open": "A\u00e7 \u2192",
 
   // ---- chapter resources page ----
   "cres.meta.title": "{title} kaynakları — {grade}. Sınıf {name}",
@@ -1091,6 +1109,15 @@ const ru: Dict = {
   "resources.sec.revision": "\u041f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u0435",
   "resources.sec.revision.title": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u044c\u043d\u044b\u0439 \u0441\u043f\u0438\u0441\u043e\u043a \u0434\u043b\u044f \u043f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u044f",
   "resources.sec.revision.lede": "\u0421\u043c\u043e\u0436\u0435\u0448\u044c \u043e\u0431\u044a\u044f\u0441\u043d\u0438\u0442\u044c \u043a\u0430\u0436\u0434\u044b\u0439 \u043f\u0443\u043d\u043a\u0442 \u0432\u0441\u043b\u0443\u0445, \u043d\u0435 \u043f\u043e\u0434\u0433\u043b\u044f\u0434\u044b\u0432\u0430\u044f? \u0415\u0441\u043b\u0438 \u043d\u0435\u0442 \u2014 \u043f\u0435\u0440\u0435\u0447\u0438\u0442\u0430\u0439 \u0443\u0440\u043e\u043a \u0437\u0430\u043d\u043e\u0432\u043e.",
+  "resources.sec.teacher": "\u0412\u044b\u0431\u043e\u0440 \u0443\u0447\u0438\u0442\u0435\u043b\u0435\u0439",
+  "resources.sec.teacher.title": "\u041e\u0442 \u0432\u0430\u0448\u0438\u0445 \u0443\u0447\u0438\u0442\u0435\u043b\u0435\u0439",
+  "resources.sec.teacher.lede": "\u0412\u0438\u0434\u0435\u043e, \u0441\u0441\u044b\u043b\u043a\u0438, \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b \u0438 \u0440\u0430\u0431\u043e\u0447\u0438\u0435 \u043b\u0438\u0441\u0442\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432\u0430\u0448\u0438 \u0443\u0447\u0438\u0442\u0435\u043b\u044f \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0434\u043b\u044f \u044d\u0442\u043e\u0439 \u0433\u043b\u0430\u0432\u044b.",
+  "resources.teacher.by": "\u043e\u0442 {author}",
+  "resources.kind.video": "\u0412\u0438\u0434\u0435\u043e",
+  "resources.kind.link": "\u0421\u0441\u044b\u043b\u043a\u0430",
+  "resources.kind.document": "\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442",
+  "resources.kind.worksheet": "\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u043b\u0438\u0441\u0442",
+  "resources.teacher.open": "\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u2192",
 
   // ---- chapter resources page ----
   "cres.meta.title": "Ресурсы: {title} — {name}, {grade} класс",
@@ -1522,6 +1549,15 @@ const ky: Dict = {
   "resources.sec.revision": "Кайталоо",
   "resources.sec.revision.title": "Кайталоо үчүн текшерүү тизмеси",
   "resources.sec.revision.lede": "Булардын ар бирин карабай туруп, үн чыгарып түшүндүрө аласыңбы? Болбосо, ал сабакты кайра оку.",
+  "resources.sec.teacher": "Мугалимдердин тандоосу",
+  "resources.sec.teacher.title": "Мугалимдериңизден",
+  "resources.sec.teacher.lede": "Бул бөлүм үчүн мугалимдериңиз тандаган видеолор, шилтемелер, документтер жана иш баракчалары.",
+  "resources.teacher.by": "{author} тарабынан",
+  "resources.kind.video": "Видео",
+  "resources.kind.link": "Шилтеме",
+  "resources.kind.document": "Документ",
+  "resources.kind.worksheet": "Иш баракчасы",
+  "resources.teacher.open": "Ачуу \u2192",
 
   // ---- chapter resources page ----
   "cres.meta.title": "{title} ресурстары — {grade}-класс {name}",
