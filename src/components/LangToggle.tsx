@@ -39,6 +39,12 @@ export function LangToggle({ lang }: { lang: Lang }) {
   function go(target: Lang) {
     setOpen(false);
     if (target === lang) return;
+    // Remember the explicit choice so AutoLang never overrides it later.
+    try {
+      document.cookie = `ta-lang=${target}; path=/; max-age=31536000; SameSite=Lax`;
+    } catch {
+      // Cookie unavailable — the toggle still navigates.
+    }
     const href = availableLangs(lang).includes(target)
       ? withLang(path, target)
       : withLang("/", target);

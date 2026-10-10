@@ -15,6 +15,7 @@ import "./globals.css";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
 import { t } from "@/lib/strings";
 import { AskAiWidget } from "@/components/AskAiWidget";
+import { AutoLang } from "@/components/AutoLang";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Fonts are self-hosted via @font-face in globals.css — no external requests. */}
       </head>
       <body>
+      <AutoLang />
       {children}
       <AskAiWidget />
     </body>
