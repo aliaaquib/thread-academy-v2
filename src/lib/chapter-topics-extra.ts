@@ -314,6 +314,7 @@ export const EXTRA_TOPICS: Record<string, Topic[]> = {
     { slug: "planning-your-project", title: "Planning Your Project", desc: "Sketch a simple storyboard before you start making anything." },
     { slug: "making-images", title: "Making Images", desc: "Create and edit pictures, then save them with sensible file names." },
     { slug: "storing-images", title: "Storing Images: Pixels and Colour Depth", desc: "How a picture becomes binary — pixels, colour depth, and how to calculate the exact file size." },
+    { slug: "activities-test", title: "Activities Test (Preview Only)", desc: "Scratch lesson proving the Match and Fill blocks render." },
     { slug: "adding-text-and-sound", title: "Text and Sound", desc: "Add clear titles, captions and recorded sound to your work." },
     { slug: "animation-basics", title: "Animation Basics", desc: "Make simple animations and slideshows that tell a story in order." },
   ],

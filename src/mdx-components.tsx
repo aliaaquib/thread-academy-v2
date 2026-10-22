@@ -18,6 +18,8 @@ import { PracticeItem, PracticeQuestions } from "./components/textbook/PracticeQ
 import { Quiz, QuizQuestion } from "./components/textbook/Quiz";
 import { LearningObjectives } from "./components/textbook/LearningObjectives";
 import { ExamFocus } from "./components/textbook/ExamFocus";
+import { MatchActivity } from "./components/textbook/MatchActivity";
+import { FillBlank } from "./components/textbook/FillBlank";
 import { BeforeYouStart } from "./components/textbook/BeforeYouStart";
 import { RelatedTopics } from "./components/textbook/RelatedTopics";
 import { NextChapter } from "./components/textbook/NextChapter";
@@ -113,6 +115,8 @@ export function mdxComponentsForLang(lang: Lang): Record<string, ComponentType<a
     QuizQuestion: withLangProp(QuizQuestion),
     LearningObjectives,
     ExamFocus: withLangProp(ExamFocus),
+    MatchActivity: withLangProp(MatchActivity),
+    FillBlank: withLangProp(FillBlank),
     BeforeYouStart: withLangProp(BeforeYouStart),
     RelatedTopics: withLangProp(RelatedTopics),
     NextChapter: withLangProp(NextChapter),
