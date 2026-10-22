@@ -1,0 +1,131 @@
+---
+title: "Storing Images: Pixels and Colour Depth"
+lede: "Every photo on your phone is just numbers. See how a computer turns a picture into bits — and learn to work out exactly how much space any image will take."
+---
+
+<LearningObjectives>
+  <li>Describe how bitmap images are stored as pixels</li>
+  <li>Explain resolution and colour depth</li>
+  <li>Calculate the file size of a bitmap image</li>
+  <li>Explain the trade-off between image quality and file size</li>
+</LearningObjectives>
+
+<BeforeYouStart>
+  You already know that computers store everything as binary, and that 8 bits make 1 byte. Images are no different: this topic shows how a picture becomes one long string of 1s and 0s — and why the "divide by 8" step from data representation will matter again.
+</BeforeYouStart>
+
+## A picture made of squares
+
+Zoom into any digital photo far enough and the smooth picture breaks into tiny squares. Each square is one **pixel** (short for *picture element*) — the smallest part of the image. A bitmap image is a grid of pixels, and the computer stores the grid row by row. Every pixel is stored as a binary number that represents its colour.
+
+If two grids show the same scene, the finer grid (more, smaller pixels) looks smoother — but it also stores far more numbers. That idea runs through this whole topic.
+
+<Definition term="pixel">
+  A **pixel** is the smallest unit of a bitmap image. Each pixel has one colour, stored as a binary value.
+</Definition>
+
+## Resolution and colour depth
+
+Two numbers decide how an image looks — and how large its file is.
+
+**Resolution** is the size of the grid: width × height in pixels. A 1920 × 1080 image has 2,073,600 pixels — about 2 million. More pixels means finer detail, because each part of the picture is drawn with more squares.
+
+**Colour depth** is the number of bits used for each pixel. The more bits per pixel, the more colours each pixel can be:
+
+- 1 bit per pixel → 2 colours (black and white)
+- 4 bits per pixel → 16 colours
+- 8 bits per pixel → 256 colours
+- 24 bits per pixel → 16,777,216 colours (about 16.7 million — called "true colour")
+
+The pattern: the number of colours is always 2 raised to the power of the colour depth.
+
+<Formula label="Bitmap file size">
+  file size (in bits) = width × height × colour depth
+</Formula>
+
+<WorkedExample>
+  An image is 1000 × 1000 pixels with a colour depth of 24 bits.
+
+  Step 1: 1000 × 1000 × 24 = 24,000,000 bits.
+  Step 2: 24,000,000 ÷ 8 = 3,000,000 bytes.
+
+  The file size is **3 MB** (3,000,000 bytes).
+</WorkedExample>
+
+<ImportantNote title="Bits are not bytes">
+  File sizes are measured in bytes, but the formula gives bits. Always divide by 8 at the end. Forgetting this step is the most common error in this topic.
+</ImportantNote>
+
+So every image is a trade-off. Higher resolution and higher colour depth give a better picture — and a bigger file. Phone apps compress photos to save space, but compression is a topic of its own.
+
+<ExamFocus
+  items={[
+    {
+      good: "The file size increases because more bits are stored for each pixel.",
+      bad: "The file size increases because the image is better quality.",
+      note: "True, but it names no reason, so it scores zero.",
+    },
+    {
+      good: "Colour depth is the number of bits used to represent each pixel.",
+      bad: "Colour depth is how many colours the image has.",
+      note: "That is the result, not the definition examiners mark.",
+    },
+  ]}
+  mistake="Giving the file size in bits when the question asks for bytes. Divide by 8 — this one step is where most marks are lost in this topic."
+/>
+
+## Practice
+
+<PracticeQuestions>
+  <PracticeItem question="An image is 200 × 200 pixels with a colour depth of 8 bits. Calculate its file size in bytes." hint="Width × height × colour depth, then divide by 8.">
+    200 × 200 × 8 = 320,000 bits. 320,000 ÷ 8 = **40,000 bytes**.
+  </PracticeItem>
+  <PracticeItem question="How many colours can a colour depth of 4 bits represent?" hint="The number of colours is 2 to the power of the number of bits.">
+    2⁴ = **16 colours**.
+  </PracticeItem>
+  <PracticeItem question="Explain why increasing the resolution of an image increases its file size." hint="What does a higher resolution add more of?">
+    A higher resolution means more pixels are stored. Every pixel needs its own bits, so the total number of bits — and the file size — grows.
+  </PracticeItem>
+  <PracticeItem question="Two images have the same resolution. One uses 24-bit colour depth, the other 8-bit. How many times larger is the 24-bit file?" hint="Compare the bits per pixel.">
+    24 ÷ 8 = 3. The 24-bit file is **3 times larger**, because each pixel stores 3 times as many bits.
+  </PracticeItem>
+  <PracticeItem level="challenge" question="A camera doubles an image's width and its height, keeping the same colour depth. The file size becomes 4 times larger, not 2. Explain why." hint="Work out what happens to the total number of pixels.">
+    Doubling the width doubles the pixels in each row, and doubling the height doubles the rows: 2 × 2 = 4 times as many pixels. Each pixel still uses the same number of bits, so the file is **4 times larger**.
+  </PracticeItem>
+</PracticeQuestions>
+
+## Quick check
+
+<Quiz title="Storing images — quick check">
+  <QuizQuestion
+    question="What is a pixel?"
+    options={["A type of image file", "The smallest unit of a bitmap image", "A colour used in a photo", "A part of a camera"]}
+    answer={1}
+    explanation="A pixel is the smallest unit of a bitmap image; each one is stored as a binary value."
+  />
+  <QuizQuestion
+    question="How many colours can a colour depth of 1 bit represent?"
+    options={["1", "2", "8", "256"]}
+    answer={1}
+    explanation="With 1 bit there are only two possible values, 0 and 1, so 2 colours."
+  />
+  <QuizQuestion
+    question="How is a bitmap image's file size calculated?"
+    options={["Width + height + colour depth", "Width × height, only", "Width × height × colour depth", "Colour depth × 8"]}
+    answer={2}
+    explanation="Every pixel (width × height of them) stores the colour depth's number of bits."
+  />
+  <QuizQuestion
+    question="Colour depth is…"
+    options={["How deep the colours look", "The number of colours in the image", "The number of bits used to represent each pixel", "The height of the image in pixels"]}
+    answer={2}
+    explanation="Colour depth is defined as bits per pixel. The number of colours is what it produces, not the definition."
+  />
+</Quiz>
+
+<Summary>
+  - A bitmap image is a grid of pixels; each pixel's colour is stored as binary.
+  - Resolution = width × height in pixels. Colour depth = bits per pixel.
+  - File size (bits) = width × height × colour depth. Divide by 8 to get bytes.
+  - Better quality — more pixels, more bits per pixel — always means a bigger file.
+</Summary>

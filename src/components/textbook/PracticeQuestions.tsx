@@ -17,17 +17,21 @@ export function PracticeQuestions({ children }: { children: ReactNode }) {
 export function PracticeItem({
   question,
   hint,
+  level,
   children,
   lang = "en",
 }: {
   question: string;
   hint?: string;
+  /** "challenge" marks the item as the optional harder question (new topic structure). */
+  level?: "challenge";
   children: ReactNode;
   lang?: Lang;
 }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="practice-item">
+      {level === "challenge" && <div className="practice-badge">{t(lang, "tb.goingfurther")}</div>}
       <div className="p-q">{question}</div>
       {hint && <div className="p-hint">{hint}</div>}
       <button type="button" className="reveal-btn" onClick={() => setOpen((v) => !v)} aria-expanded={open}>

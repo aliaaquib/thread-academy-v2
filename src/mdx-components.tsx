@@ -17,6 +17,8 @@ import { CodeBlock } from "./components/textbook/CodeBlock";
 import { PracticeItem, PracticeQuestions } from "./components/textbook/PracticeQuestions";
 import { Quiz, QuizQuestion } from "./components/textbook/Quiz";
 import { LearningObjectives } from "./components/textbook/LearningObjectives";
+import { ExamFocus } from "./components/textbook/ExamFocus";
+import { BeforeYouStart } from "./components/textbook/BeforeYouStart";
 import { RelatedTopics } from "./components/textbook/RelatedTopics";
 import { NextChapter } from "./components/textbook/NextChapter";
 import TryItPython from "./components/widgets/TryItPython";
@@ -110,6 +112,8 @@ export function mdxComponentsForLang(lang: Lang): Record<string, ComponentType<a
     Quiz: withLangProp(Quiz),
     QuizQuestion: withLangProp(QuizQuestion),
     LearningObjectives,
+    ExamFocus: withLangProp(ExamFocus),
+    BeforeYouStart: withLangProp(BeforeYouStart),
     RelatedTopics: withLangProp(RelatedTopics),
     NextChapter: withLangProp(NextChapter),
     TryItPython: withLangProp(TryItPython),

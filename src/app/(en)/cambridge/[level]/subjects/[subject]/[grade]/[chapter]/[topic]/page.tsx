@@ -15,8 +15,10 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponentsForLang } from "@/mdx-components";
 import { remarkSafeLessonMdx } from "@/lib/mdx-lesson-sanitize";
 import { ChapterSidebar } from "@/components/textbook/ChapterSidebar";
+import { AutoBeforeYouStart } from "@/components/textbook/BeforeYouStart";
+import { KeepGoing } from "@/components/textbook/KeepGoing";
 import { getSubject } from "@/lib/subjects";
-import { getChapterForSubject } from "@/lib/stage-chapters";
+import { getChapterForSubject, getChaptersForSubject } from "@/lib/stage-chapters";
 import {
   getGradeForChapter,
   gradeSlug,
@@ -109,6 +111,32 @@ export default async function TopicPage(props: { params: Promise<Params> }) {
     lang,
   );
 
+  // ── New topic structure (2026-10-22): reading time + automatic blocks.
+  // Reading time from the real word count of the lesson source (~200 wpm).
+  const readMinutes = Math.max(1, Math.round(content.source.split(/\s+/).length / 200));
+  // Automatic "Before you start" — skipped when the lesson authors its own.
+  const hasAuthoredBefore = content.source.includes("<BeforeYouStart");
+  // Automatic "Keep going" — skipped when the lesson carries an authored
+  // <RelatedTopics> (older lessons keep theirs; nothing is ever doubled).
+  const hasAuthoredRelated = content.source.includes("<RelatedTopics");
+  let keepGoingRelated: { title: string; url: string }[] = [];
+  if (!hasAuthoredRelated) {
+    const sameGradeChapters = getChaptersForSubject(params.subject, lang).filter(
+      (c) => getGradeForChapter(params.subject, c.id) === grade,
+    );
+    const chapterIndex = sameGradeChapters.findIndex((c) => c.id === params.chapter);
+    const neighbour =
+      sameGradeChapters[chapterIndex + 1] ?? sameGradeChapters[chapterIndex - 1] ?? null;
+    if (neighbour) {
+      keepGoingRelated = getAvailableTopics(
+        { subject: params.subject, chapter: neighbour.id },
+        lang,
+      )
+        .slice(0, 2)
+        .map((tp) => ({ title: tp.title, url: tp.url }));
+    }
+  }
+
   return (
     <>
       <JsonLd
@@ -174,8 +202,12 @@ export default async function TopicPage(props: { params: Promise<Params> }) {
         <div className="lesson-top">
           <h1>{content.title}</h1>
           {content.lede && <p>{content.lede}</p>}
+          <div className="lesson-meta">{t(lang, "tb.readtime", { minutes: readMinutes })}</div>
         </div>
         <article className="lesson-article">
+          {!hasAuthoredBefore && prevTopic && (
+            <AutoBeforeYouStart prevTitle={prevTopic.title} prevUrl={prevTopic.url} lang={lang} />
+          )}
           {/* Lesson MDX compiles with blockJS:false so quizzes can pass plain-data
               JSX props (options={[...]}}. remarkSafeLessonMdx() runs first and
               fail-closes the hole that leaves open: it throws at build time
@@ -191,6 +223,13 @@ export default async function TopicPage(props: { params: Promise<Params> }) {
               mdxOptions: { remarkPlugins: [remarkSafeLessonMdx] },
             }}
           />
+          {!hasAuthoredRelated && (
+            <KeepGoing
+              next={nextTopic ? { title: nextTopic.title, url: nextTopic.url } : null}
+              related={keepGoingRelated}
+              lang={lang}
+            />
+          )}
           <div className="lesson-finish">
             {prevTopic && (
               <Link className="next-btn" href={prevTopic.url}>

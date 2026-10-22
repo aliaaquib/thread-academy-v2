@@ -623,6 +623,33 @@ a.chapter-link:hover{background:var(--surface);padding-left:16px;padding-right:1
 .callout-title{font-family:Newsreader,serif;font-size:1.4rem;letter-spacing:-.02em;margin:0 0 12px;color:var(--ink)}
 .callout p:last-child{margin-bottom:0}
 
+/* ── New topic structure (2026-10-22): ExamFocus, BeforeYouStart, KeepGoing ── */
+.lesson-meta{margin-top:14px;font-size:.92rem;color:var(--muted);font-weight:600;letter-spacing:.01em}
+.exam-focus{border:1px solid var(--ink);border-left:8px solid var(--accent);padding:26px 28px;margin:36px 0;background:var(--surface)}
+.exam-focus-title{font-family:Newsreader,serif;font-size:1.5rem;letter-spacing:-.02em;margin:0 0 16px;color:var(--ink)}
+.exam-pair{padding:12px 0;border-top:1px solid var(--line)}
+.exam-pair:first-of-type{border-top:0;padding-top:0}
+.exam-row{display:flex;gap:12px;align-items:baseline;margin:5px 0}
+.exam-tag{flex:0 0 auto;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;padding:3px 8px;border-radius:99px;background:var(--accent);color:var(--accent-ink)}
+.exam-bad .exam-tag{background:var(--surface-2);color:var(--muted)}
+.exam-text{color:var(--ink)}
+.exam-note{color:var(--muted)}
+.exam-mistake{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
+.exam-mistake .exam-tag{background:#f3d9c8;color:#6b3410}
+.before-start{border:1px dashed var(--accent-deep);padding:22px 26px;margin:30px 0;background:#fbfdf3}
+.before-start-title{font-family:Newsreader,serif;font-size:1.25rem;margin:0 0 8px;color:var(--accent-deep)}
+.before-start p{margin:0;color:var(--ink)}
+.before-start a{color:var(--accent-deep);font-weight:700;text-decoration:underline}
+.practice-badge{display:inline-block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;padding:3px 9px;border-radius:99px;background:var(--accent);color:var(--accent-ink);margin-bottom:8px}
+.keep-going{border-top:2px solid var(--ink);margin:44px 0 8px;padding-top:26px}
+.keep-going-title{font-family:Newsreader,serif;font-size:1.9rem;letter-spacing:-.02em;margin:0 0 16px;color:var(--ink)}
+.keep-going .chapter-link{display:flex}
+.keep-going-label{display:block;font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-deep);margin-bottom:3px}
+.keep-going-related{margin-top:16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.keep-going-related .keep-going-label{margin:0 4px 0 0}
+.keep-going-chip{border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-weight:600;color:var(--ink);background:var(--bg)}
+.keep-going-chip:hover{border-color:var(--accent-deep)}
+
 /* Definition — the reference pull-quote (Definition component renders this class) */
 .definition p{font-size:inherit!important;color:inherit!important;line-height:inherit;margin:0 0 14px}
 .definition p:last-child{margin-bottom:0}
